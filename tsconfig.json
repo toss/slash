@@ -1,0 +1,44 @@
+{
+  "compilerOptions": {
+    /* Modules */
+    "baseUrl": ".",
+    "module": "commonjs",
+    "moduleResolution": "nodenext",
+    "paths": {
+      "@emotion/core": ["sink.d.ts"]
+    },
+    "resolveJsonModule": true,
+
+    /* Type Checking */
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitReturns": true,
+    "noUncheckedIndexedAccess": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "strict": true,
+
+    /* Language and Environment */
+    "experimentalDecorators": true,
+    "jsx": "react-jsx",
+    "lib": ["dom", "dom.iterable", "ESNext", "ESNext.AsyncIterable"],
+    "target": "es6",
+
+    /* Interop Constraints */
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+
+    /* Emit */
+    "declaration": true,
+    "downlevelIteration": true,
+    "inlineSources": true,
+    "preserveConstEnums": true,
+    "removeComments": false,
+    "sourceMap": true,
+
+    /* Completeness*/
+    "allowJs": false,
+    "skipLibCheck": true,
+  },
+  "exclude": ["**/dist/*", "**/esm/*", "**/__testfixtures__/*"]
+}

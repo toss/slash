@@ -1,0 +1,25 @@
+{
+  "search.exclude": {
+    "**/.yarn": true,
+    "**/.pnp.*": true
+  },
+  "typescript.tsdk": ".yarn/sdks/typescript/lib",
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "eslint.nodePath": ".yarn/sdks",
+  "prettier.prettierPath": ".yarn/sdks/prettier/index.js",
+  "prettier.configPath": "./.prettierrc"
+}
+// {
+//   "editor.codeActionsOnSave": {
+//     "source.fixAll.eslint": true,
+//     "source.organizeImport": true
+//   },
+//   "git.ignoreLimitWarning": true,
+//   "jestrunner.enableYarnPnpSupport": true,
+//   "yaml.schemas": {
+//     "https://json.schemastore.org/circleciconfig.json": ".circleci/config.yml"
+//   },
+//   "jestrunner.yarnPnpCommand": "yarn-3.2.0.cjs",
+//   "jest.jestCommandLine": "yarn jest",
+//   "jest.autoRun": "off"
+// }

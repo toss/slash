@@ -1,0 +1,48 @@
+{
+  "name": "@tossteam/redirect",
+  "version": "17.194.6",
+  "main": "./src/index.ts",
+  "exports": {
+    ".": "./src/base/index.ts"
+  },
+  "publishConfig": {
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "module": "esm/index.js",
+    "exports": {
+      ".": {
+        "require": "dist/index.js",
+        "import": "esm/index.js"
+      }
+    }
+  },
+  "scripts": {
+    "prepack": "yarn build",
+    "build": "concurrently \"tsc -p tsconfig.json\" \"tsc -p tsconfig.esm.json\"",
+    "test": "jest",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@babel/runtime": "^7.13.10",
+    "@testing-library/jest-dom": "^5.16.4",
+    "@testing-library/react": "^13.3.0",
+    "@types/jest": "^28.1.8",
+    "@types/node": "^14.14.41",
+    "@types/react": "^17.0.39",
+    "@types/react-dom": "^17",
+    "@types/testing-library__jest-dom": "^5.14.3",
+    "concurrently": "^4.1.0",
+    "jest": "^29.0.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "typescript": "4.8.3"
+  },
+  "sideEffects": false,
+  "dependencies": {
+    "@tossteam/assert": "workspace:^17.194.4",
+    "@tossteam/error-boundary": "workspace:^17.194.6"
+  },
+  "peerDependencies": {
+    "react": "^17 || ^18"
+  }
+}

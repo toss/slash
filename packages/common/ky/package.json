@@ -1,0 +1,47 @@
+{
+  "name": "@tossteam/ky",
+  "version": "17.191.5",
+  "main": "./built/index.server.js",
+  "types": "./built/index.server.d.ts",
+  "exports": {
+    ".": {
+      "require": {
+        "types": "./built/index.server.d.ts",
+        "default": "./built/index.server.js"
+      },
+      "import": {
+        "types": "./built/index.server.d.mts",
+        "browser": "./built/index.browser.mjs",
+        "default": "./built/index.server.mjs"
+      }
+    },
+    "./package.json": "./package.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.toss.bz/toss/frontend-libraries.git",
+    "directory": "packages/ky"
+  },
+  "scripts": {
+    "prepack": "echo [Already built: yarn build로 수동 빌드할 수 있습니다.]",
+    "build": "bash ./scripts/build.sh",
+    "test": "jest",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@babel/runtime": "^7.13.10",
+    "@types/jest": "^28.1.8",
+    "@types/node": "^14.14.41",
+    "@yarnpkg/esbuild-plugin-pnp": "^3.0.0-rc.14",
+    "abort-controller": "^3.0.0",
+    "concurrently": "^4.1.0",
+    "esbuild": "^0.14.51",
+    "jest": "^29.0.1",
+    "ky": "^0.31.1",
+    "node-fetch": "^3.2.10",
+    "tsup": "^6.2.0",
+    "typescript": "4.8.3",
+    "web-streams-polyfill": "^3.2.1"
+  },
+  "sideEffects": false
+}

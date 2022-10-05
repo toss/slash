@@ -1,0 +1,64 @@
+{
+  "name": "@tossteam/sentry",
+  "version": "17.191.5",
+  "main": "./src/index.node.ts",
+  "exports": {
+    ".": "./src/index.node.ts",
+    "./nextjs": "./src/index.nextjs.ts"
+  },
+  "publishConfig": {
+    "main": "dist/index.node.js",
+    "types": "dist/index.node.d.ts",
+    "browser": "esm/index.browser.js",
+    "module": "esm/index.node.js",
+    "exports": {
+      ".": {
+        "require": "dist/index.node.js",
+        "types": "dist/index.node.d.ts",
+        "browser": "esm/index.browser.js",
+        "import": "esm/index.node.js"
+      },
+      "./nextjs": {
+        "require": "dist/index.nextjs.js",
+        "types": "dist/index.nextjs.d.ts",
+        "browser": "esm/index.browser.js",
+        "import": "esm/index.nextjs.js"
+      }
+    }
+  },
+  "scripts": {
+    "prepack": "yarn build",
+    "build": "concurrently \"tsc -p tsconfig.json\" \"tsc -p tsconfig.esm.json\"",
+    "test": "jest",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@babel/runtime": "^7.13.10",
+    "@types/jest": "^28.1.8",
+    "@types/node": "^14.14.41",
+    "concurrently": "^4.1.0",
+    "jest": "^29.0.1",
+    "typescript": "4.8.3",
+    "wait-for-expect": "^3.0.2"
+  },
+  "peerDependencies": {
+    "next": "*",
+    "react": "^16.8 || ^17 || ^18"
+  },
+  "peerDependenciesMeta": {
+    "next": {
+      "optional": true
+    },
+    "react": {
+      "optional": true
+    }
+  },
+  "sideEffects": false,
+  "dependencies": {
+    "@sentry/browser": "^6.18.1",
+    "@sentry/nextjs": "^6.18.1",
+    "@sentry/node": "^6.18.1",
+    "@sentry/types": "^6.18.1",
+    "sentry-testkit": "^3.3.7"
+  }
+}
