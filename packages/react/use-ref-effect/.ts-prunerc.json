@@ -1,0 +1,4 @@
+{
+  "error": true,
+  "ignore": "^src\/index.ts"
+}

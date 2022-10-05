@@ -1,0 +1,229 @@
+version: 2.1
+
+parameters:
+  pull_request:
+    type: boolean
+    default: false
+
+orbs:
+  slack: circleci/slack@4.5.0
+
+commands:
+  setup:
+    steps:
+      - run:
+          name: Install yarn
+          command: |
+            COREPACK_PATH=$HOME/.local/bin
+
+            mkdir -p $COREPACK_PATH
+            eval "$(echo PATH=$COREPACK_PATH:\$PATH | tee -a $BASH_ENV)"
+
+            corepack enable --install-directory $COREPACK_PATH
+            yarn install --immutable --immutable-cache
+      - run:
+          name: Setup git
+          command: |
+            export GITHUB_TOKEN="$GITHUB_TOKEN"
+            git remote set-url origin https://${GITHUB_TOKEN}@github.com/toss/slash.git
+            git fetch --all --tags
+            git fetch --force --progress -- origin +refs/heads/main:refs/remotes/origin/main
+            git config user.email "frontend.chapter@toss.im"
+            git config user.name "Toss Frontend Chapter"
+  export_published_version:
+    description: Export Publised Version Environment Variable
+    steps:
+      - run:
+          name: Export PUBLISHED_VERSION
+          command: echo "export PUBLISHED_VERSION=$(node -p "require('./lerna.json').version")" >> $BASH_ENV
+  export_commit_message:
+    description: Export Commit Message
+    steps:
+      - run:
+          name: Export COMMIT_MESSAGE
+          command: echo "export COMMIT_MESSAGE=\"$(printf "%s\n" "$(git log --format=%B -n 1 "$CIRCLE_SHA1" | head -n 1)")\"" >> $BASH_ENV
+
+jobs:
+  lint:
+    docker:
+      - image: cimg/node:16.17
+    steps:
+      - checkout
+      - setup
+      - run:
+          name: Lint
+          command: yarn eslint -c .eslintrc.js $(git diff --name-only --diff-filter=ACMRUXB origin/main | grep -E "(.js$|.ts$|.tsx$)")
+  typecheck:
+    parallelism: 2
+    docker:
+      - image: cimg/node:16.17
+    steps:
+      - checkout
+      - setup
+      - run:
+          name: Typecheck
+          command: |
+            WORKSPACES_TO_TEST=$(
+              yarn workspaces since list origin/main HEAD |
+                circleci tests split
+            )
+            echo $WORKSPACES_TO_TEST
+
+            INCLUDE=$(
+              echo $WORKSPACES_TO_TEST |
+                # 띄어쓰기로 연결된 문자열을 콤마로 연결
+                sed 's/ /,/g'
+            )
+            yarn workspaces since run "typecheck" remotes/origin/main --include="{$INCLUDE}"
+
+  pre-pack:
+    parallelism: 2
+    docker:
+      - image: cimg/node:16.17
+    steps:
+      - checkout
+      - setup
+      - run:
+          name: Prepack
+          command: |
+            WORKSPACES_TO_TEST=$(
+              yarn workspaces since list origin/main HEAD |
+                circleci tests split
+            )
+            echo $WORKSPACES_TO_TEST
+
+            INCLUDE=$(
+              echo $WORKSPACES_TO_TEST |
+                # 띄어쓰기로 연결된 문자열을 콤마로 연결
+                sed 's/ /,/g'
+            )
+            yarn workspaces since run "prepack" remotes/origin/main --include="{$INCLUDE}"
+
+  check-peer:
+    docker:
+      - image: cimg/node:16.17
+    steps:
+      - checkout
+      - setup
+      - run:
+          name: Check Peer Dependency
+          command: ./.scripts/check-peer.sh || (echo "Peer Dependency 오류가 발생했습니다."; exit -1)
+
+  test:
+    docker:
+      - image: cimg/node:16.17
+    parallelism: 2
+    steps:
+      - checkout
+      - setup
+      - run:
+          name: Jest
+          command: |
+            UPDATED_PACKAGES=$(yarn workspaces since list origin/main HEAD)
+            echo "updated packages:"
+            echo $UPDATED_PACKAGES
+
+            UPDATED_DIRS=$(echo $UPDATED_PACKAGES | tr ' ' ',')
+
+            if [[ -z $UPDATED_DIRS ]]; then
+              echo "업데이트된 패키지가 없습니다."
+              exit 0
+            fi
+
+            # 테스트 파일이 없는 경우 아래 오류 발생
+            # panic: runtime error: index out of range [0] with length 0
+            if [[ -z $(circleci tests glob "{$UPDATED_DIRS}/**/*.{test,spec}.{ts,tsx}") ]]; then
+              echo "업데이트된 패키지에 실행할 테스트 파일이 없습니다."
+              exit 0
+            fi
+
+            TESTS=$(
+              circleci tests glob "{$UPDATED_DIRS}/**/*.{test,spec}.{ts,tsx}" | \
+                awk '!/__manual__/' | \
+                  circleci tests split --split-by=timings
+            )
+
+            echo "tests to run:"
+            echo $TESTS | xargs -n 1 echo
+
+            if [[ -z $TESTS ]]; then
+              echo "실행할 테스트가 없습니다."
+              exit 0
+            fi
+
+            yarn jest $TESTS --passWithNoTests --runInBand
+          environment:
+            YARN_ENABLE_IMMUTABLE_INSTALLS: 'false'
+            JEST_JUNIT_OUTPUT_DIR: ./.test-reports/junit/
+      - store_test_results:
+          path: ./.test-reports/junit/
+      - store_artifacts:
+          path: ./.test-reports/junit
+
+  test-all:
+    docker:
+      - image: cimg/node:16.17
+    parallelism: 4
+    steps:
+      - checkout
+      - setup
+      - run:
+          name: Jest
+          command: |
+            yarn jest --runInBand
+          environment:
+            JEST_JUNIT_OUTPUT_DIR: ./.test-reports/junit/
+      - store_test_results:
+          path: ./.test-reports/junit/
+      - store_artifacts:
+          path: ./.test-reports/junit
+
+  save-git-cache:
+    docker:
+      - image: cimg/node:16.17
+    steps:
+      - checkout
+      - setup
+      - save_checkout_cache
+
+workflows:
+  main:
+    jobs:
+      - test:
+          context:
+            - github-com-fe
+            - npm-public
+          filters:
+            branches:
+              ignore: main
+      - test-all:
+          context:
+            - github-com-fe
+            - npm-public
+          filters:
+            branches:
+              only: main
+      - lint:
+          context:
+            - github-com-fe
+          filters:
+            branches:
+              ignore: main
+      - typecheck:
+          context:
+            - github-com-fe
+          filters:
+            branches:
+              ignore: main
+      - pre-pack:
+          context:
+            - github-com-fe
+          filters:
+            branches:
+              ignore: main
+      - check-peer:
+          context:
+            - github-com-fe
+          filters:
+            branches:
+              ignore: main

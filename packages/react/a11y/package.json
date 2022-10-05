@@ -1,0 +1,59 @@
+{
+  "name": "@toss/a11y",
+  "version": "0.0.1",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "require": "./src/index.ts",
+      "import": "./src/index.ts"
+    },
+    "./package.json": "./package.json"
+  },
+  "main": "./src/index.ts",
+  "scripts": {
+    "build": "rm -rf dist esm && tsc --declaration --emitDeclarationOnly --declarationDir dist && rollup -c rollup.config.js",
+    "prepack": "yarn build",
+    "test": "echo \"no test specified.\"",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@toss/utils": "workspace:^1.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7",
+    "@babel/runtime": "^7.14.8",
+    "@slash/rollup-config": "workspace:^",
+    "@tossteam/jest": "^17",
+    "@types/jest": "^28.1.8",
+    "@types/node": "^14.14.41",
+    "@types/react": "^18.0.21",
+    "babel-jest": "^29",
+    "concurrently": "^4.1.0",
+    "jest": "^29.0.1",
+    "jest-environment-jsdom": "^29",
+    "react": "^18.2.0",
+    "require-from-string": "^2.0.2",
+    "rollup": "^2.77.0",
+    "typescript": "4.8.3"
+  },
+  "peerDependencies": {
+    "react": "^16.0.0 || ^17.0.0 || ^18",
+    "react-dom": "^16.12.0 || ^17.0.0 || ^18"
+  },
+  "publishConfig": {
+    "access": "public",
+    "exports": {
+      ".": {
+        "require": "./dist/index.js",
+        "import": "./esm/index.mjs",
+        "types": "./dist/index.d.ts"
+      },
+      "./package.json": "./package.json"
+    },
+    "import": "./esm/index.mjs",
+    "main": "./dist/index.js",
+    "module": "./esm/index.mjs",
+    "types": "./dist/index.d.ts"
+  },
+  "gitHead": "4bc2ded41e13e6846ada529af9d675c283bceb8a"
+}
