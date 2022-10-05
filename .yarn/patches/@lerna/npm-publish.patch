@@ -1,0 +1,112 @@
+diff --git a/npm-publish.js b/npm-publish.js
+index ee6ad133e..6a31d1775 100644
+--- a/npm-publish.js
++++ b/npm-publish.js
+@@ -32,6 +32,17 @@ const PublishConfig = figgyPudding(
+   }
+ );
+ 
++function stripWorkspaceProtocolFromDeps(deps) {
++  if (!deps) return;
++  for (const [name, version] of Object.entries(deps)) {
++    if (version.startsWith("workspace:")) {
++      const packagePath = version.slice(10);
++      const resolvedVersion = require(`${process.cwd()}/${packagePath}/package.json`).version;
++      deps[name] = `^${resolvedVersion}`;
++    }
++  }
++}
++
+ function npmPublish(pkg, tarFilePath, _opts, otpCache) {
+   const { scope } = npa(pkg.name);
+   // pass only the package scope to libnpmpublish
+@@ -67,6 +76,10 @@ function npmPublish(pkg, tarFilePath, _opts, otpCache) {
+         manifest.publishConfig.tag = opts.tag;
+       }
+ 
++      stripWorkspaceProtocolFromDeps(manifest.dependencies);
++      stripWorkspaceProtocolFromDeps(manifest.peerDependencies);
++      stripWorkspaceProtocolFromDeps(manifest.devDependencies);
++
+       return otplease(innerOpts => publish(manifest, tarData, innerOpts), opts, otpCache).catch(err => {
+         opts.log.silly("", err);
+         opts.log.error(err.code, (err.body && err.body.error) || err.message);
+diff --git a/npm-publish.js b/npm-publish.js
+index a237a54ae262e592a1c160ade2ace3fad0e2ee24..18ae008e40a2d826f0ad58448d8c873db05b713e 100644
+--- a/npm-publish.js
++++ b/npm-publish.js
+@@ -10,6 +10,7 @@ const figgyPudding = require("figgy-pudding");
+ const runLifecycle = require("@lerna/run-lifecycle");
+ const npa = require("npm-package-arg");
+ const otplease = require("@lerna/otplease");
++const pnpapi = require("pnpapi");
+ 
+ module.exports = npmPublish;
+ 
+@@ -32,12 +33,23 @@ const PublishConfig = figgyPudding(
+   }
+ );
+ 
+-function stripWorkspaceProtocolFromDeps(deps) {
++function stripWorkspaceProtocolFromDeps(deps, manifestLocation) {
+   if (!deps) return;
+   for (const [name, version] of Object.entries(deps)) {
+     if (version.startsWith("workspace:")) {
+-      const packagePath = version.slice(10);
+-      const resolvedVersion = require(`${process.cwd()}/${packagePath}/package.json`).version;
++      const locator = pnpapi.findPackageLocator(pnpapi.resolveToUnqualified(name, manifestLocation));
++
++      if (locator == null) {
++        throw new Error(`올바르지 않은 의존성 ${name}이 ${manifestLocation}에서 사용되었습니다.`)
++      }
++
++      const information = pnpapi.getPackageInformation(locator);
++
++      if (information == null) {
++        throw new Error(`locator ${JSON.stringify(locator)} 에 대한 정보가 없습니다.`)
++      }
++
++      const resolvedVersion = require(`${information.packageLocation}/package.json`).version;
+       deps[name] = `^${resolvedVersion}`;
+     }
+   }
+@@ -63,9 +75,9 @@ function npmPublish(pkg, tarFilePath, _opts, otpCache) {
+         manifestLocation = path.join(pkg.contents, "package.json");
+       }
+ 
+-      return Promise.all([fs.readFile(tarFilePath), readJSONAsync(manifestLocation)]);
++      return Promise.all([fs.readFile(tarFilePath), readJSONAsync(manifestLocation), manifestLocation]);
+     });
+-    chain = chain.then(([tarData, manifest]) => {
++    chain = chain.then(([tarData, manifest, manifestLocation]) => {
+       // non-default tag needs to override publishConfig.tag,
+       // which is merged over opts.tag in libnpmpublish
+       if (
+@@ -78,9 +90,9 @@ function npmPublish(pkg, tarFilePath, _opts, otpCache) {
+         manifest.publishConfig.tag = opts.tag;
+       }
+ 
+-      stripWorkspaceProtocolFromDeps(manifest.dependencies);
+-      stripWorkspaceProtocolFromDeps(manifest.peerDependencies);
+-      stripWorkspaceProtocolFromDeps(manifest.devDependencies);
++      stripWorkspaceProtocolFromDeps(manifest.dependencies, manifestLocation);
++      stripWorkspaceProtocolFromDeps(manifest.peerDependencies, manifestLocation);
++      stripWorkspaceProtocolFromDeps(manifest.devDependencies, manifestLocation);
+ 
+       return otplease(innerOpts => publish(manifest, tarData, innerOpts), opts, otpCache).catch(err => {
+         opts.log.silly("", err);
+diff --git a/npm-publish.js b/npm-publish.js
+index 18ae008e40a2d826f0ad58448d8c873db05b713e..e1a4c2f17716e68d6487e7694957077e1231b3b1 100644
+--- a/npm-publish.js
++++ b/npm-publish.js
+@@ -90,6 +90,10 @@ function npmPublish(pkg, tarFilePath, _opts, otpCache) {
+         manifest.publishConfig.tag = opts.tag;
+       }
+ 
++      if (manifest.publishConfig && manifest.publishConfig.bin) {
++        manifest.bin = manifest.publishConfig.bin;
++      }
++
+       stripWorkspaceProtocolFromDeps(manifest.dependencies, manifestLocation);
+       stripWorkspaceProtocolFromDeps(manifest.peerDependencies, manifestLocation);
+       stripWorkspaceProtocolFromDeps(manifest.devDependencies, manifestLocation);

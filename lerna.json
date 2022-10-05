@@ -1,0 +1,15 @@
+{
+  "version": "independent",
+  "npmClient": "yarn",
+  "useWorkspaces": true,
+  "command": {
+    "version": {
+      "message": "chore(release): 라이브러리 배포 [skip ci]",
+      "registry": "https://registry.npmjs.org/"
+    },
+    "publish": {
+      "graphType": "all",
+      "registry": "https://registry.npmjs.org/"
+    }
+  }
+}
