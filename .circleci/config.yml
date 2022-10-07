@@ -23,15 +23,15 @@ commands:
 
             corepack enable --install-directory $COREPACK_PATH
             yarn install --immutable --immutable-cache
-      # - run:
-      #     name: Setup git
-      #     command: |
-      #       export GITHUB_TOKEN="$TOSS_FE_CORE_GITHUB_ACCESS_TOKEN"
-      #       git remote set-url origin https://${GITHUB_TOKEN}@github.com/toss/slash.git
-      #       git fetch --all --tags
-      #       git fetch --force --progress -- origin +refs/heads/main:refs/remotes/origin/main
-      #       git config user.email "frontend.chapter@toss.im"
-      #       git config user.name "Toss Frontend Chapter"
+      - run:
+          name: Setup git
+          command: |
+            export GITHUB_TOKEN="$GITHUB_TOKEN"
+            git remote set-url origin https://${GITHUB_TOKEN}@github.com/toss/slash.git
+            git fetch --all --tags
+            git fetch --force --progress -- origin +refs/heads/main:refs/remotes/origin/main
+            git config user.email "frontend.chapter@toss.im"
+            git config user.name "Toss Frontend Chapter"
   export_published_version:
     description: Export Publised Version Environment Variable
     steps:
@@ -180,168 +180,153 @@ jobs:
       - store_artifacts:
           path: ./.test-reports/junit
 
-  publish:
-    docker:
-      - image: cimg/node:16.17
-    resource_class: large
-    steps:
-      - checkout
-      - setup
-      - run:
-          name: Publish libraries
-          command: |
-            echo //registry.npmjs.org/:_authToken=${YARN_NPM_AUTH_TOKEN} | tee .npmrc $HOME/.npmrc > /dev/null
-            git switch main
-            git reset --hard origin/main
-            [[ $(yarn lerna changed --all | grep "@tossteam/global-footer" | wc -l) -ne 1 ]] || (cd ./packages/pc/global-footer && yarn publish)
-            yarn lerna version --conventional-commits --yes --git-remote origin
-            yarn lerna publish from-git --no-verify-access --yes --concurrency=4
-            yarn
-            git add -A
-            git push origin HEAD || echo "push할 것이 없습니다."
+  # publish:
+  #   docker:
+  #     - image: cimg/node:16.17
+  #   resource_class: large
+  #   steps:
+  #     - checkout
+  #     - setup
+  #     - run:
+  #         name: Publish libraries
+  #         command: |
+  #           echo //registry.npmjs.org/:_authToken=${YARN_NPM_AUTH_TOKEN} | tee .npmrc $HOME/.npmrc > /dev/null
+  #           git switch main
+  #           git reset --hard origin/main
+  #           [[ $(yarn lerna changed --all | grep "@tossteam/global-footer" | wc -l) -ne 1 ]] || (cd ./packages/pc/global-footer && yarn publish)
+  #           yarn lerna version --conventional-commits --yes --git-remote origin
+  #           yarn lerna publish from-git --no-verify-access --yes --concurrency=4
+  #           yarn
+  #           git add -A
+  #           git push origin HEAD || echo "push할 것이 없습니다."
 
-      - export_published_version
-      - export_commit_message
-      - slack/notify:
-          channel: frontend-libraries-dep
-          event: pass
-          custom: |
-            {
-              "text": "라이브러리가 배포되었습니다.",
-              "blocks": [
-                {
-                  "type": "header",
-                  "text": {
-                    "type": "plain_text",
-                    "text": ":white_check_mark: 라이브러리가 배포되었습니다.",
-                    "emoji": true
-                  }
-                },
-                {
-                  "type": "section",
-                  "text": {
-                    "type": "mrkdwn",
-                    "text": "*${COMMIT_MESSAGE}*"
-                  }
-                },
-                {
-                  "type": "section",
-                  "fields": [
-                    {
-                      "type": "mrkdwn",
-                      "text": "*Job*: ${CIRCLE_JOB}"
-                    },
-                    {
-                      "type": "mrkdwn",
-                      "text": "*Version*: $PUBLISHED_VERSION"
-                    },
-                    {
-                      "type": "mrkdwn",
-                      "text": "*Commit*: $CIRCLE_SHA1"
-                    },
-                    {
-                      "type": "mrkdwn",
-                      "text": "*Author*: $CIRCLE_USERNAME"
-                    }
-                  ],
-                  "accessory": {
-                    "type": "image",
-                    "image_url": "https://assets.brandfolder.com/otz5mn-bw4j2w-6jzqo8/original/circle-logo-badge-black.png",
-                    "alt_text": "CircleCI logo"
-                  }
-                },
-                {
-                  "type": "actions",
-                  "elements": [
-                    {
-                      "type": "button",
-                      "text": {
-                        "type": "plain_text",
-                        "text": "View Job"
-                      },
-                      "url": "${CIRCLE_BUILD_URL}"
-                    }
-                  ]
-                }
-              ]
-            }
-      - slack/notify:
-          channel: frontend-devops-alert
-          event: fail
-          mentions: '<!subteam^S0201NMAH8Q>'
-          custom: |
-            {
-              "text": "라이브러리 배포가 실패했습니다.",
-              "blocks": [
-                {
-                  "type": "header",
-                  "text": {
-                    "type": "plain_text",
-                    "text": ":sos: 라이브러리 배포가 실패했습니다.",
-                    "emoji": true
-                  }
-                },
-                {
-                  "type": "section",
-                  "fields": [
-                    {
-                      "type": "mrkdwn",
-                      "text": "*Job*: ${CIRCLE_JOB}"
-                    },
-                    {
-                      "type": "mrkdwn",
-                      "text": "*Commit*: $CIRCLE_SHA1"
-                    },
-                    {
-                      "type": "mrkdwn",
-                      "text": "*Author*: $CIRCLE_USERNAME"
-                    }
-                  ],
-                  "accessory": {
-                    "type": "image",
-                    "image_url": "https://assets.brandfolder.com/otz5mn-bw4j2w-6jzqo8/original/circle-logo-badge-black.png",
-                    "alt_text": "CircleCI logo"
-                  }
-                },
-                {
-                  "type": "section",
-                  "fields": [
-                    {
-                      "type": "mrkdwn",
-                      "text": "*Mentions*:\n$SLACK_PARAM_MENTIONS"
-                    }
-                  ]
-                },
-                {
-                  "type": "actions",
-                  "elements": [
-                    {
-                      "type": "button",
-                      "text": {
-                        "type": "plain_text",
-                        "text": "View Job"
-                      },
-                      "url": "${CIRCLE_BUILD_URL}"
-                    }
-                  ]
-                }
-              ]
-            }
-
-  publish-canary:
-    docker:
-      - image: cimg/node:16.17
-    resource_class: large
-    steps:
-      - checkout
-      - setup
-      - run:
-          name: Publish canary version of library
-          command: |
-            export GITHUB_TOKEN=$TOSS_FE_CORE_GITHUB_ACCESS_TOKEN
-            # Forked PR 지원을 위해 CIRCLE_SHA1 fetch 추가
-            git switch -C ${CIRCLE_BRANCH} || git checkout ${CIRCLE_SHA1}
-            yarn publish:canary
+  #     - export_published_version
+  #     - export_commit_message
+  #     - slack/notify:
+  #         channel: frontend-libraries-dep
+  #         event: pass
+  #         custom: |
+  #           {
+  #             "text": "라이브러리가 배포되었습니다.",
+  #             "blocks": [
+  #               {
+  #                 "type": "header",
+  #                 "text": {
+  #                   "type": "plain_text",
+  #                   "text": ":white_check_mark: 라이브러리가 배포되었습니다.",
+  #                   "emoji": true
+  #                 }
+  #               },
+  #               {
+  #                 "type": "section",
+  #                 "text": {
+  #                   "type": "mrkdwn",
+  #                   "text": "*${COMMIT_MESSAGE}*"
+  #                 }
+  #               },
+  #               {
+  #                 "type": "section",
+  #                 "fields": [
+  #                   {
+  #                     "type": "mrkdwn",
+  #                     "text": "*Job*: ${CIRCLE_JOB}"
+  #                   },
+  #                   {
+  #                     "type": "mrkdwn",
+  #                     "text": "*Version*: $PUBLISHED_VERSION"
+  #                   },
+  #                   {
+  #                     "type": "mrkdwn",
+  #                     "text": "*Commit*: $CIRCLE_SHA1"
+  #                   },
+  #                   {
+  #                     "type": "mrkdwn",
+  #                     "text": "*Author*: $CIRCLE_USERNAME"
+  #                   }
+  #                 ],
+  #                 "accessory": {
+  #                   "type": "image",
+  #                   "image_url": "https://assets.brandfolder.com/otz5mn-bw4j2w-6jzqo8/original/circle-logo-badge-black.png",
+  #                   "alt_text": "CircleCI logo"
+  #                 }
+  #               },
+  #               {
+  #                 "type": "actions",
+  #                 "elements": [
+  #                   {
+  #                     "type": "button",
+  #                     "text": {
+  #                       "type": "plain_text",
+  #                       "text": "View Job"
+  #                     },
+  #                     "url": "${CIRCLE_BUILD_URL}"
+  #                   }
+  #                 ]
+  #               }
+  #             ]
+  #           }
+  #     - slack/notify:
+  #         channel: frontend-devops-alert
+  #         event: fail
+  #         mentions: '<!subteam^S0201NMAH8Q>'
+  #         custom: |
+  #           {
+  #             "text": "라이브러리 배포가 실패했습니다.",
+  #             "blocks": [
+  #               {
+  #                 "type": "header",
+  #                 "text": {
+  #                   "type": "plain_text",
+  #                   "text": ":sos: 라이브러리 배포가 실패했습니다.",
+  #                   "emoji": true
+  #                 }
+  #               },
+  #               {
+  #                 "type": "section",
+  #                 "fields": [
+  #                   {
+  #                     "type": "mrkdwn",
+  #                     "text": "*Job*: ${CIRCLE_JOB}"
+  #                   },
+  #                   {
+  #                     "type": "mrkdwn",
+  #                     "text": "*Commit*: $CIRCLE_SHA1"
+  #                   },
+  #                   {
+  #                     "type": "mrkdwn",
+  #                     "text": "*Author*: $CIRCLE_USERNAME"
+  #                   }
+  #                 ],
+  #                 "accessory": {
+  #                   "type": "image",
+  #                   "image_url": "https://assets.brandfolder.com/otz5mn-bw4j2w-6jzqo8/original/circle-logo-badge-black.png",
+  #                   "alt_text": "CircleCI logo"
+  #                 }
+  #               },
+  #               {
+  #                 "type": "section",
+  #                 "fields": [
+  #                   {
+  #                     "type": "mrkdwn",
+  #                     "text": "*Mentions*:\n$SLACK_PARAM_MENTIONS"
+  #                   }
+  #                 ]
+  #               },
+  #               {
+  #                 "type": "actions",
+  #                 "elements": [
+  #                   {
+  #                     "type": "button",
+  #                     "text": {
+  #                       "type": "plain_text",
+  #                       "text": "View Job"
+  #                     },
+  #                     "url": "${CIRCLE_BUILD_URL}"
+  #                   }
+  #                 ]
+  #               }
+  #             ]
+  #           }
 
   save-git-cache:
     docker:
@@ -356,57 +341,46 @@ workflows:
     jobs:
       - test:
           context:
-            - github-enterprise
+            - github-com-fe
             - npm
           filters:
             branches:
               ignore: main
       - test-all:
           context:
-            - github-enterprise
+            - github-com-fe
             - npm
           filters:
             branches:
               only: main
       - lint:
           context:
-            - github-enterprise
+            - github-com-fe
           filters:
             branches:
               ignore: main
       - typecheck:
           context:
-            - github-enterprise
+            - github-com-fe
           filters:
             branches:
               ignore: main
       - pre-pack:
           context:
-            - github-enterprise
+            - github-com-fe
           filters:
             branches:
               ignore: main
       - check-peer:
           context:
-            - github-enterprise
+            - github-com-fe
           filters:
             branches:
               ignore: main
-      # - publish:
-      #     context:
-      #       - github-enterprise
-      #       - aws-tosscore-main
-      #       - aws-tosscore-fe
-      #       - slack-dove
-      #       - npm
-      #     filters:
-      #       branches:
-      #         only: main
-      - publish-canary:
+      - publish:
           context:
-            - github-enterprise
-            - aws-tosscore-main
-            - slack-dove
+            - github-com-fe
+            - npm
           filters:
             branches:
-              only: /dev\/.*/
+              only: main
