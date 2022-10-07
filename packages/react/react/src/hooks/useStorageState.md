@@ -14,7 +14,7 @@ function MyComponent() {
 
   useVisibilityEvent(() => {
     refresh();
-  })
+  });
 }
 ```
 

@@ -11,7 +11,7 @@ export interface TypedStorageOptions<T> {
  *
  * @example
  * // #1
- * import { TypedStorage } from '@tossteam/storage/typed';
+ * import { TypedStorage } from '@toss/storage/typed';
  * type Gender = 'men' | 'women';
  * const count = new TypedStorage<Gender>('gender', { initialValue: 'men' });
  * count.get(); // 'men'
@@ -19,7 +19,7 @@ export interface TypedStorageOptions<T> {
  * count.set('not-gender-string'); // Type Error
  *
  * // #2
- * import { TypedStorage } from '@tossteam/storage/typed';
+ * import { TypedStorage } from '@toss/storage/typed';
  *
  * const count = new TypedStorage('count', { initialValue: 0 });
  * count.get(); // 0

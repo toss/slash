@@ -1,7 +1,7 @@
 import { isBirthDate6 } from './is-birth-date-6';
 
 /**
- * @deprecated 2020년 10월 이후에 주민등록번호를 새로 부여받거나 변경되는 경우 해당 로직의 동작이 올바르게 동작하지 않습니다.
+ * @note 2020년 10월 이후에 주민등록번호를 새로 부여받거나 변경되는 경우 해당 로직의 동작이 올바르게 동작하지 않습니다.
  * @name isRRN
  * @description
  * 주어진 문자열이 2020년 10월 이전에 신고된 YYMMDDGHIJKLM 형식의 유효한 주민등록번호인지 검사합니다.

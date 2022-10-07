@@ -6,10 +6,10 @@
 
 ## 테스트하기
 
-`@tossteam/impression-area/testing`을 이용하여 테스트할 수 있습니다.
+`@toss/impression-area/testing`을 이용하여 테스트할 수 있습니다.
 
 ```tsx
-import { mockImpression } from '@tossteam/impression-area/testing';
+import { mockImpression } from '@toss/impression-area/testing';
 
 describe('ImpressionArea', () => {
   it('사용자에게 보여지면 onImpressionStart가 호출되고, 가려지면 onImpressionEnd가 호출된다.', async () => {

@@ -21,7 +21,6 @@ describe('parseQueryString은', () => {
   });
 
   /**
-   * @see https://tossteam.slack.com/archives/C02H1T51D71/p1642611353185700?thread_ts=1642603925.184000&cid=C02H1T51D71
    * @see https://stackoverflow.com/questions/31670413/plus-sign-in-encoded-url
    */
   it('space가 포함된 문자열을 RFC3986에 맞게 잘 디코딩한다', () => {
@@ -83,7 +82,6 @@ describe('createQueryString은', () => {
   });
 
   /**
-   * @see https://tossteam.slack.com/archives/C02H1T51D71/p1642611353185700?thread_ts=1642603925.184000&cid=C02H1T51D71
    * @see https://stackoverflow.com/questions/31670413/plus-sign-in-encoded-url
    */
   it('space가 포함된 문자열을 RFC3986에 맞게 잘 인코딩한다', () => {

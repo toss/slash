@@ -1,9 +1,8 @@
-import { QS } from '@tossteam/utils';
+import { QS } from '@toss/utils';
 import { useMemo } from 'react';
 
 /**
  * @name useQueryParams
- * @deprecated `useNextQueryParams`를 사용해주세요
  */
 export function useQueryParams<T extends { [key: string]: string } = { [key: string]: string }>(): Partial<T> {
   return useMemo(() => {
@@ -24,7 +23,6 @@ export function useQueryParams<T extends { [key: string]: string } = { [key: str
  *
  * @example
  * const parsedValue = useQueryParam<number>('type', Number) ?? 0;
- * @deprecated `useNextQueryParam`을 사용해주세요
  */
 export function useQueryParam<T extends string = string>(name: string): T | undefined;
 export function useQueryParam<T>(name: string, parser: (val: string) => T): T | undefined;

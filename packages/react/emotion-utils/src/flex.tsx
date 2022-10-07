@@ -1,5 +1,6 @@
+/** @jsxImportSource @emotion/react */
 import { css, SerializedStyles } from '@emotion/react';
-import { CSSProperties, forwardRef, Ref, ReactElement } from 'react';
+import { CSSProperties, forwardRef, ReactElement, Ref } from 'react';
 import type { AsProps, InferenceHTMLElement } from './types';
 export interface FlexOptions {
   align?: CSSProperties['alignItems'];
@@ -64,7 +65,7 @@ export function flex(alignOrFlexOptions: FlexOptions | string, justify = 'flex-s
 
 flex.center = (direction?: FlexOptions['direction']) => flex({ justify: 'center', align: 'center', direction });
 
-interface FlexProps<T extends keyof JSX.IntrinsicElements = 'div'> extends AsProps<T>, FlexOptions {}
+interface FlexProps<T extends keyof JSX.IntrinsicElements = 'div'> extends AsProps<T>, FlexOptions { }
 
 type FlexReturnType = <T extends keyof JSX.IntrinsicElements = 'div'>(
   props: FlexProps<T> & { ref?: Ref<InferenceHTMLElement<T>> }

@@ -1,5 +1,5 @@
 /** @tossdocs-ignore */
-import { safeLocalStorage, Storage } from '@tossteam/utils';
+import { safeLocalStorage, Storage } from '@toss/storage';
 import { SetStateAction, useCallback, useState } from 'react';
 
 export type Serializable<T> = T extends string | number | boolean | unknown[] | Record<string, unknown> ? T : never;

@@ -1,2 +1,2 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
-require("@tossteam/jest").setup.jsdom();
+require('@tossteam/jest').setup.jsdom();

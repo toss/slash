@@ -1,5 +1,6 @@
-import { Spacing } from './spacing';
+/** @jsxImportSource @emotion/react */
 import { ComponentProps, Fragment, ReactNode } from 'react';
+import { Spacing } from './spacing';
 
 import { SafeArea as SafeAreaCssValues } from './utils/safeArea';
 

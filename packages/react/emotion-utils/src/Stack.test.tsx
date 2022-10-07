@@ -1,3 +1,4 @@
+/** @jsxImportSource @emotion/react */
 import { render, renderHook } from '@testing-library/react';
 import { ComponentProps, useRef } from 'react';
 

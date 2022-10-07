@@ -1,5 +1,5 @@
 /** @tossdocs-ignore */
-import { isServer } from '@tossteam/utils';
+import { isServer } from '@toss/utils';
 import { EMPTY, fromEvent } from 'rxjs';
 import { share } from 'rxjs/operators';
 

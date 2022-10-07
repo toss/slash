@@ -1,6 +1,5 @@
-import { usePreservedCallback } from '@tossteam/use-preserved-callback';
-import { useRefEffect } from '@tossteam/use-ref-effect';
-import { noop } from '@tossteam/utils';
+import { usePreservedCallback, useRefEffect } from '@toss/react';
+import { noop } from '@toss/utils';
 import debounce from 'lodash.debounce';
 import { useMemo, useRef } from 'react';
 import { ImpressionAreaProps } from './ImpressionArea';

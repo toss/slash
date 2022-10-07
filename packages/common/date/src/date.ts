@@ -27,7 +27,7 @@ export type DateFnsDateType = number | Date;
  * ): string
  * ```
  * @example
- * import { kstFormat } from '@tossteam/date';
+ * import { kstFormat } from '@toss/date';
  *
  * // 한국 시간 (GMT+9) 기준으로 Date를 ISO 8601 문자열로 바꿉니다.
  * kstFormat(new Date(), "yyyy-MM-dd'T'HH:mm:ss.SSSXXX")

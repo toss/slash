@@ -1,62 +1,69 @@
 {
-  "name": "@tossteam/use-overlay",
-  "version": "17.194.6",
-  "main": "src/index.ts",
+  "name": "@toss/use-overlay",
+  "version": "0.0.1",
+  "sideEffects": false,
   "exports": {
-    ".": "./src/index.ts"
+    ".": {
+      "require": "./src/index.ts",
+      "import": "./src/index.ts"
+    },
+    "./package.json": "./package.json"
   },
-  "publishConfig": {
-    "main": "dist/index.js",
-    "types": "dist/index.d.ts",
-    "module": "esm/index.js",
-    "exports": {
-      ".": {
-        "require": "./dist/index.js",
-        "import": "./esm/index.js"
-      }
-    }
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.toss.bz/toss/frontend-libraries.git",
-    "directory": "packages/use-overlay"
-  },
+  "main": "./src/index.ts",
   "scripts": {
+    "build": "rm -rf dist esm && tsc --declaration --emitDeclarationOnly --declarationDir dist && rollup -c rollup.config.js",
     "prepack": "yarn build",
-    "build": "concurrently \"tsc -p tsconfig.json\" \"tsc -p tsconfig.esm.json\"",
     "test": "jest",
     "typecheck": "tsc --noEmit"
   },
+  "dependencies": {
+    "@types/react": "^18.0.21"
+  },
   "devDependencies": {
-    "@babel/core": "^7.17.2",
+    "@babel/core": "^7",
     "@babel/preset-env": "^7.16.11",
     "@babel/preset-typescript": "^7.18.6",
     "@babel/runtime": "^7.17.2",
     "@emotion/babel-plugin": "^11.3.0",
     "@emotion/react": "^11.9.3",
+    "@slash/rollup-config": "workspace:^",
     "@testing-library/dom": "^8.13.0",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^14.2.0",
-    "@tossteam/react": "workspace:^17.194.6",
-    "@tossteam/utils": "workspace:^17.194.4",
+    "@toss/react": "workspace:^",
+    "@toss/utils": "workspace:^",
+    "@tossteam/jest": "^17",
     "@types/babel__preset-env": "^7",
     "@types/jest": "^28.1.8",
-    "@types/react-dom": "^17.0.2",
+    "@types/react-dom": "^18.0.6",
     "@types/testing-library__jest-dom": "^5.14.2",
+    "babel-jest": "^29",
     "concurrently": "^4.1.0",
     "framer-motion": "^6.5.1",
     "jest": "^29.0.1",
+    "jest-environment-jsdom": "^29",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "require-from-string": "^2.0.2",
+    "rollup": "^2.77.0",
     "typescript": "4.8.3"
-  },
-  "dependencies": {
-    "@types/react": "^17.0.3"
   },
   "peerDependencies": {
     "react": "^16.8 || ^17 || ^18"
   },
-  "sideEffects": false
+  "publishConfig": {
+    "exports": {
+      ".": {
+        "require": "./dist/index.js",
+        "import": "./esm/index.mjs",
+        "types": "./dist/index.d.ts"
+      },
+      "./package.json": "./package.json"
+    },
+    "import": "./esm/index.mjs",
+    "main": "./dist/index.js",
+    "module": "./esm/index.mjs",
+    "types": "./dist/index.d.ts"
+  }
 }

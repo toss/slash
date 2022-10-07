@@ -1,4 +1,5 @@
-import { ImpressionArea, useBooleanState, useCombinedRefs } from './react';
+import { ImpressionArea } from '@toss/impression-area';
+import { useBooleanState, useCombinedRefs } from '@toss/react';
 import { forwardRef, Ref, useCallback, useEffect, useImperativeHandle, useRef, useState } from 'react';
 import { AnimationChain } from './AnimationChain';
 import { LoopType } from './AnimationPlayer';
@@ -45,8 +46,6 @@ interface LottieRef {
  * @name Lottie
  * @description
  * `lottie-web` 라이브러리를 이용하여 리액트 환경에서 로띠를 쉽게 사용할 수 있도록 토스팀에서 만든 라이브러리입니다.
- *
- * - [👉 사용할 수 있는 로띠 보러가기](https://www.notion.so/tossteam/265d7675209c406889b110c94b2b9252?v=cf7ca1f997c84eae99f0b4427b1c65d9)
  *
  * ```tsx
  * <Lottie

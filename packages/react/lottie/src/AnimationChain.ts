@@ -1,6 +1,5 @@
 /** @tossdocs-ignore */
-/* eslint-disable import/no-duplicates */
-import { createQueryString } from './utils';
+import { createQueryString } from '@toss/utils';
 import type lottie from 'lottie-web';
 import type { AnimationEventCallback, AnimationEventName } from 'lottie-web';
 import { AnimationData, SPEED_DEFAULT } from './AnimationData';

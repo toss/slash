@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
-module.exports = require("../../../jest.config.js")({
-  testEnvironment: "node",
+module.exports = require('@tossteam/jest').config({
+  testEnvironment: 'node',
   rootDir: __dirname,
 });

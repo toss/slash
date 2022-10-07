@@ -1,5 +1,5 @@
 import { screen, render, waitFor } from '@testing-library/react';
-import { range } from '@tossteam/utils';
+import { range } from '@toss/utils';
 import userEvent from '@testing-library/user-event';
 import { useCallback, useState } from 'react';
 import useOutsideClickEffect from './useOutsideClickEffect';

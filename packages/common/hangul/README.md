@@ -3,7 +3,7 @@ hide_title: true
 sidebar_label: '라이브러리 소개'
 ---
 
-# @tossteam/hangul
+# @toss/hangul
 
 한글 관련 라이브러리 입니다.
 

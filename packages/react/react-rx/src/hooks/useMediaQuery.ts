@@ -1,4 +1,4 @@
-import { isServer } from '@tossteam/utils';
+import { isServer } from '@toss/utils';
 import { animationFrameScheduler, Observable, SchedulerLike } from 'rxjs';
 import { useObservable } from 'rxjs-hooks';
 import { auditTime as auditTimeOperator, distinctUntilChanged, observeOn, startWith, switchMap } from 'rxjs/operators';

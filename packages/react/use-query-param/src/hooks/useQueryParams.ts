@@ -17,7 +17,6 @@ import { useNextRouter } from './useNextRouter';
  *
  * const id = params.id;
  *
- * @see https://www.notion.so/tossteam/Next-js-CSR-Query-1a953f2dad11406499b14e5d62a83899 - Next.js CSR에서의 Query 파라미터 대응
  * @see https://nextjs.org/docs/api-reference/next/router - router.isReady 관련 docs
  */
 export function useQueryParams<T extends { [key: string]: string } = { [key: string]: string }>(): Partial<T> {

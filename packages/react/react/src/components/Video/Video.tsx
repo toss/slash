@@ -1,10 +1,10 @@
 /** @jsxImportSource react */
-import { memo, RefObject, useMemo, useRef } from 'react';
-import { isServer } from '@tossteam/utils';
-import { useBooleanState } from '../../hooks';
-import { useEnforcePlay, useFirstTimePlayedCallback } from './hooks';
-import Style, { generateClassNames } from '../../utils/Style';
+import { isServer } from '@toss/utils';
 import classnames from 'classnames';
+import { memo, RefObject, useMemo, useRef } from 'react';
+import { useBooleanState } from '../../hooks';
+import Style, { generateClassNames } from '../../utils/Style';
+import { useEnforcePlay, useFirstTimePlayedCallback } from './hooks';
 
 type VideoHtmlProps = React.DetailedHTMLProps<React.VideoHTMLAttributes<HTMLVideoElement>, HTMLVideoElement>;
 
@@ -16,8 +16,7 @@ interface VideoProps extends VideoHtmlProps {
   /*
    * 플레이스홀드 이미지를 필수로 설정해주어야 합니다. 그렇지 않은 경우 안드로이드에서 동영상
    * 재생 버튼이 표시될 수 있습니다.
-   * 보통은 동영상의 첫번째 프레임을 포스터로 추출합니다. 첫번째 프레임을 추출하는 방법은 아래 문서를 참조하세요.
-   * @see https://www.notion.so/tossteam/Poster-7f8f90ee637f49c18947b23dbc38d728
+   * 보통은 동영상의 첫번째 프레임을 포스터로 추출합니다.
    */
   poster: string;
   /*
@@ -35,7 +34,6 @@ interface VideoProps extends VideoHtmlProps {
   /*
    * 일부 안드로이드 버전 (Chrome 83, 84) 에서 비디오가 전체화면으로 포함되면
    * 화면 전체가 검정색으로 깜빡이는 현상이 발생하여, 이것을 poster만 보여줌으로써 방지합니다.
-   * @see https://tossteam.slack.com/archives/C83Q0T5U1/p1595401337013000
    * @default 브라우저에 따라 다름
    */
   enforcePoster?: boolean;
@@ -49,9 +47,8 @@ interface VideoProps extends VideoHtmlProps {
 }
 
 /**
- * @deprecated
  * @name Video
- * @description `@tossteam/video`를 사용해주세요.
+ * @description `@toss/video`를 사용해주세요.
  */
 const Video: React.FC<VideoProps> = ({
   className,

@@ -1,6 +1,6 @@
 import throttle from 'lodash/throttle';
 import { useEffect, useMemo } from 'react';
-import { usePreservedCallback } from '@tossteam/use-preserved-callback';
+import { usePreservedCallback } from './usePreservedCallback';
 
 /**
  * @description

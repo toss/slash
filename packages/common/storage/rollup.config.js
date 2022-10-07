@@ -1,7 +1,7 @@
-import path from 'path';
 import babel from '@rollup/plugin-babel';
 import commonjs from '@rollup/plugin-commonjs';
 import resolve from '@rollup/plugin-node-resolve';
+import path from 'path';
 import dts from 'rollup-plugin-dts';
 import packageJson from './package.json';
 
@@ -35,7 +35,7 @@ function buildJS(input, output, format) {
       isESMFormat && commonjs(),
       babel({
         extensions,
-        babelHelpers: 'runtime',
+        babelHelpers: 'bundled',
         rootMode: 'upward',
       }),
     ].filter(Boolean),

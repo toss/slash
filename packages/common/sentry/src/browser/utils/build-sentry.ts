@@ -1,6 +1,6 @@
 /** @tossdocs-ignore */
-import { Sentry } from '../../types';
-import { getSentry } from './get-sentry';
+import { Sentry } from '../../types.js';
+import { getSentry } from './get-sentry.js';
 
 // FIXME(@raon0211):
 // Sentry lazy-loading으로 인해 사용하는 코드.

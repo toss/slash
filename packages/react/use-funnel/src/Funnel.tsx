@@ -1,5 +1,5 @@
 /** @tossdocs-ignore */
-import { assert } from '@tossteam/assert';
+import { assert } from '@toss/assert';
 import { Children, isValidElement, ReactElement, ReactNode, useEffect } from 'react';
 import { NonEmptyArray } from './models';
 

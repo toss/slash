@@ -43,7 +43,7 @@ interface Options {
  *
  * @example
  * // _app.tsx
- * import { OverlayProvider } from '@tossteam/use-overlay';
+ * import { OverlayProvider } from '@toss/use-overlay';
  *
  * export default function App({ Component, pageProps }: AppProps) {
  *   return (
@@ -54,7 +54,7 @@ interface Options {
  * }
  *
  * // Page.tsx
- * import { useOverlay } from '@tossteam/use-overlay';
+ * import { useOverlay } from '@toss/use-overlay';
  *
  * const overlay = useOverlay();
  * const openFooConfirmDialog = () => {

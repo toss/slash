@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { safeScrollTo } from '@tossteam/utils';
+import { safeScrollTo } from '@toss/utils';
 
 /**
  * @description

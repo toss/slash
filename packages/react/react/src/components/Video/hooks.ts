@@ -8,7 +8,6 @@ interface EnforcePlayOptions {
 
 /**
  * @name useEnforcePlay
- * @deprecated `@tossteam/video`의 `useEnforcePlay`를 사용하세요
  */
 export function useEnforcePlay(ref: RefObject<HTMLVideoElement>, { enabled, onFail }: EnforcePlayOptions) {
   useEffect(() => {
@@ -62,7 +61,6 @@ function isNotAllowedError(error: unknown): boolean {
 
 /**
  * @name useFirstTimePlayedCallback
- * @deprecated `@tossteam/video`의 `useFirstTimePlayedCallback`를 사용하세요
  */
 export function useFirstTimePlayedCallback(ref: RefObject<HTMLVideoElement>, callback: () => void) {
   useEffect(() => {

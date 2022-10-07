@@ -16,7 +16,7 @@ GET 파라미터로 전달되는 쿼리 스트링을 제작합니다.
 
 ### createSearchParamString
 
-전달하는 object의 nilable value를 필터링하고 URLSearchParams로 파싱하고 string을 반환합니다. 인코딩은 [RFC3986](https://tossteam.slack.com/archives/C02H1T51D71/p1642611353185700?thread_ts=1642603925.184000&cid=C02H1T51D71)을 기준으로 합니다.
+전달하는 object의 nilable value를 필터링하고 URLSearchParams로 파싱하고 string을 반환합니다. 인코딩은 [RFC3986]을 기준으로 합니다.
 
 ```ts
 createSearchParamString({ foo: 1, bar: ['a', 'b'], baz: undefined }); // => foo=1&bar=a&bar=b
@@ -26,7 +26,7 @@ createSearchParamString({ foo: 1, bar: ['a', 'b'], baz: undefined }); // => foo=
 
 URL 쿼리 문자열을 파싱하여 타입 파라미터 `Result` 형식으로 반환합니다.
 
-parseQueryString을 첫 번째 파라미터 없이 사용하는 것은 SSR unsafe합니다. 페이지의 query parameter(location.search)를 사용해야 하는 경우 `@tossteam/use-query-param`을 사용해주세요.
+parseQueryString을 첫 번째 파라미터 없이 사용하는 것은 SSR unsafe합니다.
 
 ```ts
 type Result = { foo: string; bar: string };
@@ -38,10 +38,5 @@ parseQueryString<Result>('?foo=bar&bar=baz'); // { foo: bar, bar: baz }
 URL의 `search`에 새 쿼리 파라미터를 추가합니다.
 
 ```ts
-QS.set('?foo=bar', 'baz', 'quux') === '?foo=bar&baz=quux'
+QS.set('?foo=bar', 'baz', 'quux') === '?foo=bar&baz=quux';
 ```
-
-### ~~getQueryString (QS.get)~~ (deprecated)
-
-getQueryString은 SSR unsafe합니다. 페이지의 query parameter(location.search)를 사용해야 하는 경우 `@tossteam/use-query-param`을 사용해주세요.
-

@@ -1,13 +1,14 @@
 /** @tossdocs-ignore */
+import { assert } from '@toss/assert';
+import { safeSessionStorage } from '@toss/storage';
+import { useQueryParam } from '@toss/use-query-param';
+import { QS } from '@toss/utils';
 import deepEqual from 'fast-deep-equal';
-import { NonEmptyArray } from './models';
-import { useFunnelState } from './useFunnelState';
-import { useCallback, useRef, useEffect, useMemo } from 'react';
-import { assert } from '@tossteam/assert';
-import { useQueryParam } from '@tossteam/use-query-param';
-import { QS } from '@tossteam/utils';
 import { useRouter } from 'next/router';
+import { SetStateAction, useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { useQuery } from 'react-query';
 import { Funnel, FunnelProps, Step, StepProps } from './Funnel';
+import { NonEmptyArray } from './models';
 
 interface SetStepOptions {
   stepChangeType?: 'push' | 'replace';
@@ -37,14 +38,14 @@ export const useFunnel = <Steps extends NonEmptyArray<string>>(
   withState: <StateExcludeStep extends Record<string, unknown> & { step?: never }>(
     initialState: StateExcludeStep
   ) => [
-    FunnelComponent<Steps>,
-    StateExcludeStep,
-    (
-      next:
-        | Partial<StateExcludeStep & { step: Steps[number] }>
-        | ((next: Partial<StateExcludeStep & { step: Steps[number] }>) => StateExcludeStep & { step: Steps[number] })
-    ) => void
-  ];
+      FunnelComponent<Steps>,
+      StateExcludeStep,
+      (
+        next:
+          | Partial<StateExcludeStep & { step: Steps[number] }>
+          | ((next: Partial<StateExcludeStep & { step: Steps[number] }>) => StateExcludeStep & { step: Steps[number] })
+      ) => void
+    ];
 } => {
   const router = useRouter();
   const stepQueryKey = options?.stepQueryKey ?? DEFAULT_STEP_QUERY_KEY;
@@ -160,13 +161,103 @@ export const useFunnel = <Steps extends NonEmptyArray<string>>(
     withState: <StateExcludeStep extends Record<string, unknown> & { step?: never }>(
       initialState: StateExcludeStep
     ) => [
-      FunnelComponent<Steps>,
-      StateExcludeStep,
-      (
-        next:
-          | Partial<StateExcludeStep & { step: Steps[number] }>
-          | ((next: Partial<StateExcludeStep & { step: Steps[number] }>) => StateExcludeStep & { step: Steps[number] })
-      ) => void
-    ];
+        FunnelComponent<Steps>,
+        StateExcludeStep,
+        (
+          next:
+            | Partial<StateExcludeStep & { step: Steps[number] }>
+            | ((next: Partial<StateExcludeStep & { step: Steps[number] }>) => StateExcludeStep & { step: Steps[number] })
+        ) => void
+      ];
   };
 };
+
+type FunnelStateId = `use-funnel-state__${string}`;
+
+function createFunnelStateId(id: string): FunnelStateId {
+  return `use-funnel-state__${id}`;
+}
+
+/*
+ * NOTE: 이후 Secure Storage 등 다른 스토리지를 사용하도록 스펙이 변경될 수 있으므로, Asynchronous 함수로 만듭니다.
+ *
+ * @param funnelStateId
+ * @param storage
+ * @returns
+ */
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+function createFunnelStorage<T>(funnelStateId: FunnelStateId, storageType = 'sessionStorage'): FunnelStorage<T> {
+  switch (storageType) {
+    case 'sessionStorage':
+      return {
+        get: async () => {
+          const d = safeSessionStorage.get(funnelStateId);
+          if (d == null) {
+            return null;
+          }
+          return JSON.parse(d) as Partial<T>;
+        },
+        set: async (value: Partial<T>) => {
+          safeSessionStorage.set(funnelStateId, JSON.stringify(value));
+        },
+        clear: async () => {
+          safeSessionStorage.remove(funnelStateId);
+        },
+      };
+    default:
+      throw new Error('정확한 스토리지 타입을 명시해주세요.');
+  }
+}
+
+interface FunnelStorage<T> {
+  get: () => Promise<Partial<T> | null>;
+  set: (value: Partial<T>) => Promise<void>;
+  clear: () => Promise<void>;
+}
+
+function useFunnelState<T extends Record<string, any>>(
+  defaultValue: Partial<T>,
+  options?: { storage?: FunnelStorage<T> }
+) {
+  const { pathname, basePath } = useRouter();
+
+  const storage = options?.storage ?? createFunnelStorage<T>(createFunnelStateId(`${basePath}${pathname}`));
+  const persistentStorage = useRef(storage).current;
+
+  const initialState = useQuery({
+    queryFn: () => {
+      return persistentStorage.get();
+    },
+    suspense: true,
+    refetchOnWindowFocus: false,
+    refetchOnReconnect: false,
+  }).data;
+
+  const [_state, _setState] = useState<Partial<T>>(initialState ?? defaultValue);
+
+  const setState = useCallback(
+    (state: SetStateAction<Partial<T>>) => {
+      _setState(prev => {
+        /**
+         * React Batch Update 그리고 Local State와 Persistent Storage의 State의 일관성을 위해서 이렇게 작성했습니다.
+         */
+        if (typeof state === 'function') {
+          const newState = state(prev);
+          persistentStorage.set(newState);
+          return newState;
+        } else {
+          persistentStorage.set(state);
+          return state;
+        }
+      });
+    },
+    [persistentStorage]
+  );
+
+  const clearState = useCallback(() => {
+    _setState({});
+    persistentStorage.clear();
+  }, [persistentStorage]);
+
+  return [_state, setState, clearState] as const;
+}

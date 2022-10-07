@@ -1,14 +1,13 @@
-import { ErrorBoundary } from '@tossteam/error-boundary';
-import { SSRSuspense } from '@tossteam/ssr-suspense';
-import { ComponentProps, forwardRef, Ref, useImperativeHandle, useRef } from 'react';
+import { ErrorBoundary } from '@toss/error-boundary';
+import { ComponentProps, forwardRef, Ref, Suspense, useImperativeHandle, useRef } from 'react';
 
 type ErrorBoundaryProps = Omit<ComponentProps<typeof ErrorBoundary>, 'renderFallback'>;
-type SSRSuspenseProps = Omit<ComponentProps<typeof SSRSuspense>, 'fallback'>;
+type SuspenseProps = Omit<ComponentProps<typeof Suspense>, 'fallback'>;
 
-type Props = SSRSuspenseProps &
+type Props = SuspenseProps &
   ErrorBoundaryProps & {
     rejectedFallback: ComponentProps<typeof ErrorBoundary>['renderFallback'];
-    pendingFallback: ComponentProps<typeof SSRSuspense>['fallback'];
+    pendingFallback: ComponentProps<typeof Suspense>['fallback'];
   };
 
 interface ResetRef {
@@ -40,7 +39,7 @@ interface ResetRef {
  * @see https://toss.im/slash-21/sessions/3-1 Suspense와 에러 처리 관련된 Slash 21 발표
  */
 const AsyncBoundary = forwardRef(function (
-  { pendingFallback, rejectedFallback, children, transition, timeoutOptions, ...errorBoundaryProps }: Props,
+  { pendingFallback, rejectedFallback, children, ...errorBoundaryProps }: Props,
   resetRef: Ref<ResetRef>
 ) {
   const ref = useRef<ErrorBoundary | null>(null);
@@ -51,9 +50,9 @@ const AsyncBoundary = forwardRef(function (
 
   return (
     <ErrorBoundary ref={ref} renderFallback={rejectedFallback} {...errorBoundaryProps}>
-      <SSRSuspense transition={transition} timeoutOptions={timeoutOptions} fallback={pendingFallback}>
+      <Suspense fallback={pendingFallback}>
         {children}
-      </SSRSuspense>
+      </Suspense>
     </ErrorBoundary>
   );
 });

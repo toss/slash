@@ -1,11 +1,11 @@
 # useQueryParam
 
-@tossteam/use-query-param는 쿼리 파라미터 값을 가져오는데 도움이 되는 라이브러리입니다.
+@toss/use-query-param는 쿼리 파라미터 값을 가져오는데 도움이 되는 라이브러리입니다.
 
 ## 설치
 
 ```shell
-yarn add @tossteam/use-query-param
+yarn add @toss/use-query-param
 ```
 
 ## API

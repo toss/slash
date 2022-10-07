@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { isServer } from '@tossteam/utils';
+import { isServer } from '@toss/utils';
 
 const HOTJAR_SCRIPT_ID = 'TOSS_HOTJAR';
 

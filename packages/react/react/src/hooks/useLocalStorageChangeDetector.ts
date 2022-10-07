@@ -1,5 +1,5 @@
-import { useState, useMemo } from 'react';
-import { generateStorage } from '@tossteam/utils';
+import { generateStorage } from '@toss/storage';
+import { useMemo, useState } from 'react';
 import useVisibilityEvent from './useVisibilityEvent';
 
 const storage = generateStorage();

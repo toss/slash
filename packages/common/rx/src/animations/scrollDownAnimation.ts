@@ -1,4 +1,4 @@
-import { getScrollYOffset } from '@tossteam/utils';
+import { getScrollYOffset } from '@toss/utils';
 import { map, tap } from 'rxjs/operators';
 import { duration } from './core';
 import { quarticInOut } from './eases';

@@ -1,5 +1,5 @@
 /** @tossdocs-ignore */
-import { Sentry } from '../../types';
+import { Sentry } from '../../types.js';
 
 declare const window: Window & {
   Sentry?: Sentry;

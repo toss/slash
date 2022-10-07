@@ -1,28 +1,28 @@
 {
-  "name": "@tossteam/utils",
-  "version": "17.194.4",
-  "main": "src/index.ts",
-  "publishConfig": {
-    "main": "dist/index.js",
-    "types": "dist/index.d.ts",
-    "module": "esm/index.js",
-    "import": "esm/index.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.toss.bz/toss/frontend-libraries.git",
-    "directory": "packages/utils"
-  },
+  "name": "@toss/utils",
+  "version": "0.0.1",
   "sideEffects": false,
+  "exports": {
+    ".": {
+      "require": "./src/index.ts",
+      "import": "./src/index.ts"
+    },
+    "./package.json": "./package.json"
+  },
+  "main": "src/index.ts",
   "scripts": {
-    "prepack": "yarn build",
     "build": "rm -rf dist esm && tsc --declaration --emitDeclarationOnly --declarationDir dist && rollup -c rollup.config.js",
+    "prepack": "yarn build",
     "test": "jest -c jest.config.js && tsc --noEmit",
     "test:unit": "jest -c jest.config.js",
     "typecheck": "tsc --noEmit"
   },
+  "dependencies": {
+    "@babel/runtime": "^7.14.8",
+    "date-fns": "^2.25.0"
+  },
   "devDependencies": {
-    "@babel/core": "^7.16.5",
+    "@babel/core": "^7",
     "@babel/plugin-proposal-class-properties": "^7.14.5",
     "@babel/plugin-proposal-nullish-coalescing-operator": "^7.14.5",
     "@babel/plugin-proposal-optional-chaining": "^7.14.5",
@@ -32,6 +32,8 @@
     "@rollup/plugin-commonjs": "^22.0.1",
     "@rollup/plugin-json": "^4.1.0",
     "@rollup/plugin-node-resolve": "^13.3.0",
+    "@slash/rollup-config": "workspace:^",
+    "@tossteam/jest": "^17",
     "@types/babel__core": "^7",
     "@types/babel__preset-env": "^7",
     "@types/jest": "^28.1.8",
@@ -47,14 +49,21 @@
     "tslib": "^2.0.0",
     "typescript": "4.8.3"
   },
-  "dependencies": {
-    "@babel/runtime": "^7.14.8",
-    "@tossteam/date": "workspace:^17.193.2",
-    "@tossteam/hangul": "workspace:^17.191.5",
-    "@tossteam/storage": "workspace:^17.194.4",
-    "date-fns": "^2.25.0"
+  "publishConfig": {
+    "exports": {
+      ".": {
+        "require": "./dist/index.js",
+        "import": "./esm/index.mjs",
+        "types": "./dist/index.d.ts"
+      },
+      "./package.json": "./package.json"
+    },
+    "import": "./esm/index.mjs",
+    "main": "./dist/index.js",
+    "module": "./esm/index.mjs",
+    "types": "./dist/index.d.ts"
   },
+  "gitHead": "7b2c73345d7182f7b8d03a1b4c26670622e485ce",
   "readme": "ERROR: No README data found!",
-  "_id": "@tossteam/utils@4.1.0",
-  "gitHead": "7b2c73345d7182f7b8d03a1b4c26670622e485ce"
+  "_id": "@toss/utils@4.1.0"
 }

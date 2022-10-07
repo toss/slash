@@ -1,3 +1,4 @@
+/** @jsxImportSource @emotion/react */
 import { memo } from 'react';
 import { coerceCssPixelValue } from './coerceCssPixelValue';
 import { ExtendHTMLProps } from './types';

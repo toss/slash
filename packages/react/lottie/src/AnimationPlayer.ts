@@ -1,5 +1,5 @@
 /** @tossdocs-ignore */
-import { delay } from './utils';
+import { delay } from '@toss/utils';
 import type { AnimationEventCallback, AnimationEventName, AnimationItem } from 'lottie-web';
 import { SPEED_DEFAULT } from './AnimationData';
 import { Asset } from './Asset';

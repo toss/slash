@@ -46,7 +46,6 @@ export function createSearchParamString(params: Record<string, any>) {
  * @param [queryString=location.search] - 파싱 대상 문자열(`?foo=bar` 형태), 기본값 `location.search`
  * @warn
  * parseQueryString을 첫 번째 파라미터 없이 사용하는 것은 SSR unsafe합니다.
- * 페이지의 query parameter(location.search)를 사용해야 하는 경우 `@tossteam/use-query-param`을 사용해주세요.
  */
 export function parseQueryString<Result = Record<string, string>>(
   queryString: string = typeof location !== 'undefined' ? location.search : ''
@@ -76,12 +75,6 @@ function fromEntries<T extends readonly [string | number, unknown]>(iterable: It
 
 function getQueryString(name: string): string | undefined;
 function getQueryString<T>(name: string, parser: (val: string) => T): T | undefined;
-
-/**
- * @deprecated
- * getQueryString은 SSR unsafe합니다.
- * 페이지의 query parameter(location.search)를 사용해야 하는 경우 `@tossteam/use-query-param`을 사용해주세요.
- */
 function getQueryString<T = string>(name: string, parser?: (val: string) => T) {
   const value = QS.parse<{ [name: string]: string | undefined }>()[name];
 
@@ -132,7 +125,7 @@ export const QS = {
    * @description
    * URL 쿼리 문자열을 파싱하여 타입 파라미터 `Result` 형식으로 반환합니다.
    *
-   * - 주의: QS.parse를 첫 번째 파라미터 없이 사용하는 것은 SSR unsafe합니다. 페이지의 query parameter(location.search)를 사용해야 하는 경우 `@tossteam/use-query-param`을 사용해주세요.
+   * - 주의: QS.parse를 첫 번째 파라미터 없이 사용하는 것은 SSR unsafe합니다.
    *
    * ```typescript
    * QS.parse<Result = Record<string, string>>(
@@ -157,9 +150,6 @@ export const QS = {
    *   name: string
    * ): T
    * ```
-   * @deprecated
-   * QS.get은 SSR unsafe합니다.
-   * 페이지의 query parameter(location.search)를 사용해야 하는 경우 `@tossteam/use-query-param`을 사용해주세요.
    */
   get: getQueryString,
   /**

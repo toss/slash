@@ -1,5 +1,6 @@
-import '@testing-library/jest-dom';
+/** @jsxImportSource @emotion/react */
 import { matchers } from '@emotion/jest';
+import '@testing-library/jest-dom';
 import { render } from '@testing-library/react';
 import { position } from './position';
 
@@ -10,8 +11,6 @@ describe('position 테스트', () => {
     const { getByTestId } = render(<div data-testid="test" css={position('absolute', 0, 0, 0, 0)} />);
 
     const el = getByTestId('test');
-
-    expect(el).toBeInTheDocument();
 
     expect(el).toHaveStyleRule('position', 'absolute');
     expect(el).toHaveStyleRule('top', '0');

@@ -13,7 +13,7 @@ interface Params {
  * 서버시간을 가져올 수 있는 observalbes 변수입니다.
  *
  * ```ts
- * import { serverTime$ } from '@tossteam/react-rx';
+ * import { serverTime$ } from '@toss/react-rx';
  *
  * useEffect(() => {
  *   const subscription = serverTime$({

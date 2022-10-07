@@ -36,7 +36,7 @@ interface Coordinates {
  * ```
  *
  * @example
- * import { position } from '@tossteam/emotion-utils';
+ * import { position } from '@toss/emotion-utils';
  *
  * const fullPageLayer = position('fixed', 0, 0, 0, 0);
  * // 위 코드는 아래 코드와 동치입니다.

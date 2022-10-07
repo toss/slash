@@ -70,8 +70,6 @@ return (
 - 스텝의 전환을 useFunnel을 사용하는 곳에 보이도록 해주세요. setStep을 prop으로 컴포넌트 안으로 주입하여 Imperative하게 스텝을 전환하는 로직은 지양하는게 좋습니다.
 - 퍼널의 상태 관리를 useFunnel을 사용하는 곳에서 해주세요. 퍼널에서 사용하는 상태의 흐름을 한 곳에서 명확하게 파악하기 쉬울거에요!
 
-조금 더 자세한 사용법을 알고싶다면, [Notion 가이드 문서](https://www.notion.so/tossteam/a4db57ec1c8646ed89518d4d0fa90a42)를 참고하세요!
-
 ```javascript
 const KyoboLifeFunnel = () => {
   const [Funnel, state, setState] = useFunnel(['아파트여부', '지역선택', '완료'] as const).withState<{

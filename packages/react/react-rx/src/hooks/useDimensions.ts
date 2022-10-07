@@ -1,6 +1,6 @@
 import { animationFrameScheduler, merge, Observable } from 'rxjs';
 import { map, observeOn, startWith, withLatestFrom } from 'rxjs/operators';
-import { isServer } from '@tossteam/utils';
+import { isServer } from '@toss/utils';
 import { useObservable } from 'rxjs-hooks';
 import produce from 'immer';
 import { windowResizeObservable } from '../observables/windowResizeObservable';
@@ -25,7 +25,7 @@ type ElementLike = Window | Document | HTMLElement;
  * ```
  *
  * @example
- * import { useDimensions } from '@tossteam/react-rx';
+ * import { useDimensions } from '@toss/react-rx';
  *
  * const elementRef = useRef<HTMLDivElement>(null);
  *

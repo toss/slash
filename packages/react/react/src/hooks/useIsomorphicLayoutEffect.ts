@@ -1,4 +1,4 @@
-import { isClient } from '@tossteam/utils';
+import { isClient } from '@toss/utils';
 import { useEffect, useLayoutEffect } from 'react';
 
 /**

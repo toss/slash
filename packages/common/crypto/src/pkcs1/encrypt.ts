@@ -21,7 +21,7 @@ import { random, concat, os2ip, rsaep, i2osp, getKeySize } from './utils';
  *
  * @example
  * import BigNumber from 'bn.js';
- * import { byteToHex, pcksEncrypt as encrypt } from `@tossteam/crypto`;
+ * import { byteToHex, pcksEncrypt as encrypt } from `@toss/crypto`;
  * const encrypted = encrypt(
  *   new BigNumber(n, 'hex'),
  *   new BigNumber(e, 16),

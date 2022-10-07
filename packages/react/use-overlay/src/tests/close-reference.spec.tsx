@@ -62,12 +62,6 @@ describe('useOverlay는', () => {
       expect(overlay).toBeNull();
     });
 
-    /**
-     * onClose의 레퍼런스가 변경되면, useEffect가 두 번 실행돼서 타임아웃이 한 번 더 발생한다.
-     * 이로 인해 handleClose가 두 번 실행되어버리는 경우가 있었음.
-     * @see https://tossteam.slack.com/archives/C01G6U4HJ3A/p1644821948595129?thread_ts=1644819563.714499&cid=C01G6U4HJ3A
-     * @see https://github.toss.bz/toss/toss-frontend/pull/14869/files#diff-567909b7e8549c16896bd5f3ba275cc4f9d529e7e8dae79b35f0fa3167c2b0a8R20
-     **/
     act(() => {
       jest.advanceTimersByTime(closeDuration + 1);
     });

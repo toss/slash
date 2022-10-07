@@ -1,36 +1,52 @@
 {
-  "name": "@tossteam/react-query",
-  "version": "17.194.6",
+  "name": "@toss/react-query",
+  "version": "0.0.1",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "require": "./src/index.ts",
+      "import": "./src/index.ts"
+    },
+    "./package.json": "./package.json"
+  },
   "main": "./src/index.ts",
-  "publishConfig": {
-    "main": "dist/index.js",
-    "types": "dist/index.d.ts",
-    "module": "esm/index.js",
-    "import": "esm/index.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.toss.bz/toss/frontend-libraries.git",
-    "directory": "packages/react-query"
-  },
   "scripts": {
+    "build": "rm -rf dist esm && tsc --declaration --emitDeclarationOnly --declarationDir dist && rollup -c rollup.config.js",
     "prepack": "yarn build",
-    "build": "concurrently \"tsc -p tsconfig.json\" \"tsc -p tsconfig.esm.json\"",
     "test": "echo \"no test specified.\"",
     "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
+    "@babel/core": "^7",
     "@babel/runtime": "^7.13.10",
+    "@slash/rollup-config": "workspace:^",
+    "@tossteam/jest": "^17",
     "@types/jest": "^28.1.8",
     "@types/node": "^14.14.41",
+    "babel-jest": "^29",
     "concurrently": "^4.1.0",
     "jest": "^29.0.1",
+    "jest-environment-jsdom": "^29",
     "react-query": "^3.19.5",
+    "rollup": "^2.77.0",
     "typescript": "4.8.3"
   },
   "peerDependencies": {
     "react": ">=16.8.0 || ^17.0.0 || ^18",
     "react-query": "*"
   },
-  "sideEffects": false
+  "publishConfig": {
+    "exports": {
+      ".": {
+        "require": "./dist/index.js",
+        "import": "./esm/index.mjs",
+        "types": "./dist/index.d.ts"
+      },
+      "./package.json": "./package.json"
+    },
+    "import": "./esm/index.mjs",
+    "main": "./dist/index.js",
+    "module": "./esm/index.mjs",
+    "types": "./dist/index.d.ts"
+  }
 }

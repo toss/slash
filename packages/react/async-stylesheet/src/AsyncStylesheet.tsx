@@ -1,4 +1,4 @@
-import { useIsMounted } from '@tossteam/react';
+import { useIsMounted } from '@toss/react';
 import Head from 'next/head';
 
 interface Props {

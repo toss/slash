@@ -1,5 +1,5 @@
 import { render, waitFor } from '@testing-library/react';
-import { ErrorBoundary } from '@tossteam/error-boundary';
+import { ErrorBoundary } from '@toss/error-boundary';
 import { Redirection } from '..';
 import { RedirectionBoundary } from './index';
 

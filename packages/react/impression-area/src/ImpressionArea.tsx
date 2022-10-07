@@ -1,4 +1,4 @@
-import { useCombinedRefs } from '@tossteam/use-combined-refs';
+import { useCombinedRefs } from '@toss/react';
 import { forwardRef, Ref } from 'react';
 import { useImpressionRef } from './useImpressionRef';
 

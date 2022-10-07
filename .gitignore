@@ -9,3 +9,15 @@
 # Documentation here: https://yarnpkg.com/features/zero-installs
 !.yarn/cache
 #.pnp.*
+
+dist
+esm
+
+*.tsbuildinfo
+*.tgz
+*.map
+*.log
+*.DS_Store
+
+node_modules
+junit.xml

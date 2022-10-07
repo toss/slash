@@ -1,4 +1,4 @@
-import { getScrollYOffset } from '@tossteam/utils';
+import { getScrollYOffset } from '@toss/utils';
 import { useEffect } from 'react';
 import { animationFrameScheduler, fromEvent } from 'rxjs';
 import { map, observeOn, startWith } from 'rxjs/operators';
@@ -10,8 +10,8 @@ import { map, observeOn, startWith } from 'rxjs/operators';
  * 콜백은 레퍼런스가 변하지 않도록 주의해 주세요. 필요한 경우에만 레퍼런스를 변경하여 구독 취소 후 새로운 구독을 만듭니다.
  *
  * @example
- * import { useScrollDispatching } from '@tossteam/react-rx';
- * import { getScrollDiffFromBottom } from '@tossteam/utils';
+ * import { useScrollDispatching } from '@toss/react-rx';
+ * import { getScrollDiffFromBottom } from '@toss/utils';
  *
  * const PAGING_BUFFER = 600;
  * const handleScroll = useCallback(() => {

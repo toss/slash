@@ -21,7 +21,7 @@ interface State<R> {
  * 비동기 함수를 인자로 넘기면 넘긴 함수를 호출할 수 있는 callback 함수와 응답값(data), 결과(status), 오류(error)를 사용할 수 있습니다.
  *
  * ```tsx
- * import { useAsyncStateCallback, AsyncStatus } from '@tossteam/react-rx';
+ * import { useAsyncStateCallback, AsyncStatus } from '@toss/react-rx';
  *
  * const [
  *   // 비동기함수의 콜백함수

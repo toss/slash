@@ -1,4 +1,3 @@
-/** @jsxImportSource react */
 import { ComponentType, Fragment } from 'react';
 
 interface Props {
@@ -22,25 +21,19 @@ interface Props {
 function OpenGraph({ container: Container = Fragment, title, description, imageUrl }: Props) {
   return (
     <Container>
-      <meta name="twitter:creator" content="Viva Republica" />
-      <meta name="twitter:site" content="@Toss_service" />
-      <meta name="twitter:card" content="summary_large_image" />
       {title !== undefined && (
         <>
           <meta property="og:title" content={title} />
-          <meta name="twitter:title" content={title} />
         </>
       )}
       {description !== undefined && (
         <>
           <meta property="og:description" content={description} />
-          <meta name="twitter:description" content={description} />
         </>
       )}
       {imageUrl !== undefined && (
         <>
           <meta property="og:image" content={imageUrl} />
-          <meta name="twitter:image" content={imageUrl} />
         </>
       )}
     </Container>

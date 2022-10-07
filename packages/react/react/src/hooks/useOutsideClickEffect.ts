@@ -1,5 +1,5 @@
 import { useEffect, useCallback, useRef } from 'react';
-import { isNotNil } from '@tossteam/utils';
+import { isNotNil } from '@toss/utils';
 
 type OneOrMore<T> = T | T[];
 
