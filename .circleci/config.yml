@@ -377,10 +377,10 @@ workflows:
           filters:
             branches:
               ignore: main
-      - publish:
-          context:
-            - github-com-fe
-            - npm
-          filters:
-            branches:
-              only: main
+      # - publish:
+      #     context:
+      #       - github-com-fe
+      #       - npm
+      #     filters:
+      #       branches:
+      #         only: main
