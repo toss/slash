@@ -7,7 +7,7 @@
  *   // 문자열로 바꿀 이진 데이터
  *   encrypted: Uint8Array
  * ): string
- *
+ * ```
  * @example
  * import BigNumber from 'bn.js';
  * import { byteToHex, pcksEncrypt as encrypt } from `@toss/crypto`;

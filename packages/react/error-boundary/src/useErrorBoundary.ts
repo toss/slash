@@ -15,6 +15,7 @@ import { useState } from 'react';
  *     }
  *   }}
  * />
+ * ```
  */
 export default function useErrorBoundary<ErrorType extends Error>() {
   const [error, setError] = useState<ErrorType | null>(null);
