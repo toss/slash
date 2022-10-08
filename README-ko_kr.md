@@ -19,4 +19,4 @@ Slash 라이브러리에는 토스 팀원이 아니더라도 누구나 기여할
 
 MIT © Viva Republica, Inc. [LICENSE](./LICENSE) 파일을 참고하세요.
 
-<img src="https://static.toss.im/logos/png/4x/logo-toss.png" alt="토스" width="100" style="margin-top: 10px" />
+<img src="https://static.toss.im/logos/png/4x/logo-toss.png" alt="토스" width="100" />

@@ -19,4 +19,4 @@ We welcome contribution from everyone in the community. Read below for detailed 
 
 MIT © Viva Republica, Inc. See [LICENSE](./LICENSE) for details.
 
-<img src="https://static.toss.im/logos/png/4x/logo-toss.png" alt="Toss" width="100" style="margin-top: 10px" />
+<img src="https://static.toss.im/logos/png/4x/logo-toss.png" alt="Toss" width="100" />
