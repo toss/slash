@@ -4,6 +4,4 @@
   command = "yarn build"
 
 [build.environment]
-YARN_ENABLE_GLOBAL_CACHE="true"
-YARN_CACHE_FOLDER = "$NETLIFY_BUILD_BASE/.yarn_cache"
 NETLIFY_USE_YARN="true"
