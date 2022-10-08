@@ -1,3 +1,4 @@
+/** @tossdocs-ignore */
 export * from './validators/is-age';
 export * from './validators/is-birth-date-6';
 export * from './validators/is-email';
