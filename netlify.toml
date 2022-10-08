@@ -6,3 +6,4 @@
 [build.environment]
 YARN_GLOBAL_FOLDER="$NETLIFY_BUILD_BASE/.yarn_cache"
 YARN_VERSION="3.2.3"
+NETLIFY_USE_YARN="true"
