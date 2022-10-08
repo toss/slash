@@ -1,6 +1,6 @@
 [build]
   base = "docs/"
-  publish = "docs/build/"
+  publish = "build"
   command = "yarn build"
 
 [build.environment]
