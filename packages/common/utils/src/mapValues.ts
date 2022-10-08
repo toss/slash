@@ -3,7 +3,7 @@
  * @description
  * 오브젝트의 값을 map 하는 함수입니다.
  *
- * ```
+ * ```typescript
  * function mapValues<T, U>(value: T, mapper: (value: T[keyof T]) => U): { [K in keyof T]: U; }
  * ```
  *

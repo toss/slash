@@ -4,7 +4,7 @@
  * IE, 구형 안드로이드에선 element.scrollTo 함수가 없는 브라우저에서도 안전하게 스크롤 하기 위한 함수
  * https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollTo
  *
- * ```
+ * ```typescript
  * function safeScrollTo(
  *   // 스크롤할 요소
  *   element: Element | Window | null,
@@ -54,7 +54,7 @@ type ScrollConfig = { speed: number } | { duration: number };
  * @name smoothScrollTo
  * @description Smooth하게 Scroll을 합니다.
  *
- * ```
+ * ```typescript
  * function smoothScrollTo(
  *   element: Element | Window,
  *   scrollTo: { top: number },
