@@ -14,6 +14,7 @@ import { DISASSEMBLED_CONSONANTS_BY_CONSONANT, DISASSEMBLED_VOWELS_BY_VOWEL } fr
  *   // 분리할 한글 문자열
  *   str: string
  * ): string[][]
+ * ```
  * @example
  * disassembleHangulToGroups('값')      // [['ㄱ', 'ㅏ', 'ㅂ', 'ㅅ']]
  * disassembleHangulToGroups('토스 짱')  // [['ㅌ', 'ㅗ'], ['ㅅ', 'ㅡ'], [' '], ['ㅉ', 'ㅏ', 'ㅇ']]
@@ -70,6 +71,7 @@ export function disassembleHangulToGroups(str: string) {
  *   // 분리할 한글 문자열
  *   str: string
  * ): string
+ * ```
  * @example
  * disassembleHangulToGroups('값')         // 'ㄱㅏㅂㅅ'
  * disassembleHangulToGroups('값이 비싸다')  // 'ㄱㅏㅂㅅㅇㅣ ㅂㅣㅆㅏㄷㅏ'

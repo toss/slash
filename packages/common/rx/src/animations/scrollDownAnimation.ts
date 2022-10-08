@@ -11,7 +11,7 @@ export interface ScrollDownAnimationOptions {
 /**
  * 목적지(distanceOffset)로 지정된 시간(durationTime)(단위: ms) 동안 부드럽게 스크롤
  * 합니다.
- * ```
+ * ```typescript
  * function scrollDownAnimation(options: {
  *   distanceOffset: number;
  *   durationTime: number;

@@ -2,7 +2,7 @@
  * @name isBirthDate6
  * @description
  * 주어진 문자열이 올바른 생년월일 여섯자리인지 검증합니다.
- * ```
+ * ```typescript
  * function isBirthDate6(birthDate: string): boolean;
  * ```
  *

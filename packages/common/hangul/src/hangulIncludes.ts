@@ -12,6 +12,7 @@ import { disassembleHangul } from './disassemble';
  *   // 첫 번째 인자 x에 포함되는지 검사할 문자열
  *   y: string
  * ): boolean
+ * ```
  * @example
  * hangulIncludes('토스', '')   // true
  * hangulIncludes('토스', 'ㅌ')  // true

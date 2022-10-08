@@ -29,7 +29,7 @@ const isKorean = /^[ㄱ-ㅎ|ㅏ-ㅣ|가-힣0-9]*$/;
  *   - 한 글자 성씨: [성, 이름]
  * - 그 외: ['', 풀네임]
  *
- * ```
+ * ```typescript
  * function parseName(koreanName: string): string[];
  * ```
  *
