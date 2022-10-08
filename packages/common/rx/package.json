@@ -1,6 +1,6 @@
 {
   "name": "@toss/rx",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "exports": {
     ".": {
       "require": "./src/index.ts",

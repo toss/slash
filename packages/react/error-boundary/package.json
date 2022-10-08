@@ -1,6 +1,6 @@
 {
   "name": "@toss/error-boundary",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "sideEffects": false,
   "exports": {
     ".": {
