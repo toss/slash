@@ -10500,9 +10500,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"docs@workspace:docusaurus":
+"docs@workspace:docs":
   version: 0.0.0-use.local
-  resolution: "docs@workspace:docusaurus"
+  resolution: "docs@workspace:docs"
   dependencies:
     "@babel/core": ^7
     "@babel/preset-env": ^7.15.0

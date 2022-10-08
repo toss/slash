@@ -2,7 +2,7 @@
   "name": "frontend-libraries-open-source",
   "packageManager": "yarn@3.2.3",
   "workspaces": [
-    "docusaurus",
+    "docs",
     "packages/**/**",
     "configs/*"
   ],

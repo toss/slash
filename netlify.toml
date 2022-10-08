@@ -1,0 +1,4 @@
+[build]
+  base = "docs/"
+  publish = "docs/build/"
+  command = "yarn build"
