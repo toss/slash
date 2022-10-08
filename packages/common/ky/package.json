@@ -16,6 +16,9 @@
     },
     "./package.json": "./package.json"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "main": "./built/index.server.js",
   "types": "./built/index.server.d.ts",
   "scripts": {
@@ -43,5 +46,5 @@
     "typescript": "4.8.3",
     "web-streams-polyfill": "^3.2.1"
   },
-  "gitHead": "4bc2ded41e13e6846ada529af9d675c283bceb8a"
+  "gitHead": "bd6da79df8f3177ac1f13eac0edbf5b7549ea3d3"
 }

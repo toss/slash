@@ -5690,7 +5690,7 @@ __metadata:
     "@testing-library/react": ^13.3.0
     "@testing-library/user-event": ^14.2.0
     "@toss/storage": "workspace:^1.0.0"
-    "@toss/use-ref-effect": "workspace:^"
+    "@toss/use-ref-effect": "workspace:^1.0.0"
     "@toss/utils": "workspace:^1.0.0"
     "@tossteam/jest": ^17
     "@types/babel__preset-env": ^7
@@ -6070,7 +6070,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@toss/use-ref-effect@workspace:^, @toss/use-ref-effect@workspace:^1.0.0, @toss/use-ref-effect@workspace:packages/react/use-ref-effect":
+"@toss/use-ref-effect@workspace:^1.0.0, @toss/use-ref-effect@workspace:packages/react/use-ref-effect":
   version: 0.0.0-use.local
   resolution: "@toss/use-ref-effect@workspace:packages/react/use-ref-effect"
   dependencies:
