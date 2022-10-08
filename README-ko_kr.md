@@ -11,7 +11,7 @@ Slash 라이브러리는 [토스](https://toss.im)에서 사용하는 TypeScript
 
 ## 기여하기
 
-Slash 라이브러리에는 토스팀원이 아니더라도 누구나 기여할 수 있어요. Slash 라이브러리에 기여하고 싶다고 생각하셨다면 아래 문서를 참고해주세요.
+Slash 라이브러리에는 토스 팀원이 아니더라도 누구나 기여할 수 있어요. Slash 라이브러리에 기여하고 싶다고 생각하셨다면 아래 문서를 참고해주세요.
 
 [CONTRIBUTING](./.github/CONTRIBUTING.md)
 
