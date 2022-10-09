@@ -1,5 +1,5 @@
-import { usePreservedCallback } from '@toss/use-preserved-callback';
 import { useCallback, useRef } from 'react';
+import { usePreservedCallback } from './usePreservedCallback';
 
 export type EffectRef<E extends HTMLElement = HTMLElement> = (element: E | null) => void;
 

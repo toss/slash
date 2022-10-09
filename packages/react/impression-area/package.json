@@ -16,7 +16,6 @@
   },
   "dependencies": {
     "@toss/react": "workspace:^1.0.0",
-    "@toss/use-ref-effect": "workspace:^1.0.0",
     "@toss/utils": "workspace:^1.0.0",
     "@types/react": "^18.0.21",
     "lodash.debounce": "^4.0.8"
