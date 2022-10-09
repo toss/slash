@@ -7,9 +7,6 @@ import useIsomorphicLayoutEffect from './useIsomorphicLayoutEffect';
  */
 export default function useBodyClass(className: string) {
   useIsomorphicLayoutEffect(() => {
-    if (isServer()) {
-      return;
-    }
     document.body.classList.add(className);
 
     return () => {
