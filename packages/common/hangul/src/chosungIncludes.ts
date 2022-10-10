@@ -14,6 +14,7 @@ import { getFirstConsonants } from './utils';
  *   // 초성 문자열 (e.g. 'ㅍㄹㅌㅇㄷ')
  *   y: string
  * ): boolean
+ * ```
  * @example
  * chosungIncludes('프론트엔드', 'ㅍㄹㅌ')   // true
  * chosungIncludes('00프론트엔드', 'ㅍㄹㅌ') // true

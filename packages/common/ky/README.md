@@ -1,4 +1,9 @@
-# `@toss/ky`
+---
+hide_title: true
+sidebar_label: '라이브러리 소개'
+---
+
+# @toss/ky
 
 [ky](https://github.com/sindresorhus/ky) 라이브러리를 CJS-ESM 모두에서 호환되도록 만든 토스팀 라이브러리입니다.
 

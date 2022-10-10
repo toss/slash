@@ -50,6 +50,7 @@ export const kstFormat = (date: DateFnsDateType, format: string) => _format(date
  *   // 24시간 단위로 올림할 시간
  *   hours: number
  * ): number
+ * ```
  * @example
  * roundUpHoursInDays(48) => 48
  * roundUpHoursInDays(35) => 48
@@ -70,6 +71,7 @@ export const roundUpHoursInDays = (hours: number) => {
  *   // Date로 파싱할 문자열
  *   yyyyMMdd: string
  * ): Date
+ * ```
  * @example
  * parseYYYYMMDD('2022-09-10')
  */
@@ -138,6 +140,7 @@ export function getDateDistance(startDate: Date, endDate: Date) {
  *   // 계산할 두번째 Date
  *   rhs: Date
  * ): boolean
+ * ```
  * @example
  * isEqualOrBefore(new Date(2022, 8, 10), new Date(2022, 8, 10)) // true
  * isEqualOrBefore(new Date(2022, 9, 10), new Date(2022, 8, 10)) // false
@@ -162,6 +165,7 @@ export function isEqualOrBefore(lhs: Date, rhs: Date) {
  *   // 계산할 두번째 Date
  *   rhs: Date
  * ): boolean
+ * ```
  * @example
  * isEqualOrAfter(new Date(2022, 8, 10), new Date(2022, 8, 10)) // true
  * isEqualOrAfter(new Date(2022, 9, 10), new Date(2022, 8, 10)) // true
@@ -213,6 +217,7 @@ interface Options {
  *     seconds?: (timeUnits: TimeUnits) => boolean;
  *   }
  * );
+ * ```
  * @example
  * const startDate = new Date(2022, 8, 10);
  * const endDate = new Date(2022, 8, 11);

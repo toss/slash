@@ -3,7 +3,10 @@ import { isServer } from './isServer';
 /**
  * @name isMobileWeb
  * @description
- * 현재 JS 런타임
+ * Mobile Web 환경에서 실행된 JS 런타임인지 확인합니다.
+ * ```typescript
+ * isMobileWeb(): boolean;
+ * ```
  */
 export function isMobileWeb() {
   if (isServer()) {
