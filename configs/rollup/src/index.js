@@ -52,7 +52,6 @@ exports.generateRollupConfig = function generateRollupConfig({ packageDir, entry
   }
 
   function buildCJS(input, output) {
-    const filename = path.parse(input).name;
     return buildJS(input, output, 'cjs');
   }
 
