@@ -4,7 +4,7 @@
 
 Slash 라이브러리는 [토스](https://toss.im)에서 사용하는 TypeScript/JavaScript 패키지들이에요. 좋은 웹 서비스를 만들 수 있는 기반으로 사용할 수 있도록 30개 이상의 npm 패키지를 제공하고 있어요.
 
-- [**common**](https://github.com/toss/slash/blob/main/packages/common): Node.js 및 브라우저 환경 모두에서 사용할 수 있는 일반적인 라이브러리들이에요. 대표적인 예시로 [@toss/utils](https://github.com/toss/slash/blob/main/packages/utils), [@toss/hangul](https://github.com/toss/slash/blob/main/packages/common/hangul)이 있어요.
+- [**common**](https://github.com/toss/slash/blob/main/packages/common): Node.js 및 브라우저 환경 모두에서 사용할 수 있는 일반적인 라이브러리들이에요. 대표적인 예시로 [@toss/utils](https://github.com/toss/slash/blob/main/packages/common/utils), [@toss/hangul](https://github.com/toss/slash/blob/main/packages/common/hangul)이 있어요.
 - [**react**](https://github.com/toss/slash/blob/main/packages/react): React로 웹 서비스를 개발할 때 쉽게 사용할 수 있는 컴포넌트, Hooks, 또는 유틸리티 함수예요. 대표적인 예시로 [@toss/use-overlay](https://github.com/toss/slash/blob/main/packages/react/use-overlay), [@toss/emotion-utils](https://github.com/toss/slash/blob/main/packages/react/emotion-utils)가 있어요.
 
 [Slash 라이브러리 공식 문서](https://slash.page)
