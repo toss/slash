@@ -74,7 +74,7 @@ jobs:
                 # 띄어쓰기로 연결된 문자열을 콤마로 연결
                 sed 's/ /,/g'
             )
-            yarn workspaces since run "typecheck" remotes/origin/main --include="{$INCLUDE}"
+            yarn workspaces since run "typecheck" remotes/origin/main --include="{$INCLUDE,}"
 
   pre-pack:
     parallelism: 2
@@ -97,7 +97,7 @@ jobs:
                 # 띄어쓰기로 연결된 문자열을 콤마로 연결
                 sed 's/ /,/g'
             )
-            yarn workspaces since run "prepack" remotes/origin/main --include="{$INCLUDE}"
+            yarn workspaces since run "prepack" remotes/origin/main --include="{$INCLUDE,}"
 
   check-peer:
     docker:
