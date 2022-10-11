@@ -32,7 +32,7 @@ exports.generateRollupConfig = function generateRollupConfig({ packageDir, entry
       output: [
         {
           format,
-          ...(isESMFormat ? { dir: output, entryFileNames: `[name].mjs` } : { file: output }),
+          ...(isESMFormat ? { dir: path.dirname(output), entryFileNames: `[name]${path.extname(output)}` } : { file: output }),
         },
       ],
       plugins: [
@@ -52,12 +52,11 @@ exports.generateRollupConfig = function generateRollupConfig({ packageDir, entry
   }
 
   function buildCJS(input, output) {
-    const filename = path.parse(input).name;
     return buildJS(input, output, 'cjs');
   }
 
   function buildESM(input, output) {
-    return buildJS(input, path.dirname(output), 'es');
+    return buildJS(input, output, 'es');
   }
 
   return entrypoints.flatMap(entrypoint => {
