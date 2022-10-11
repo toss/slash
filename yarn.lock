@@ -5530,7 +5530,6 @@ __metadata:
     "@testing-library/jest-dom": ^5.16.4
     "@testing-library/react": ^13.3.0
     "@toss/react": "workspace:^1.0.0"
-    "@toss/use-ref-effect": "workspace:^1.0.0"
     "@toss/utils": "workspace:^1.0.0"
     "@tossteam/jest": ^17
     "@types/jest": ^28.1.8
@@ -5690,7 +5689,6 @@ __metadata:
     "@testing-library/react": ^13.3.0
     "@testing-library/user-event": ^14.2.0
     "@toss/storage": "workspace:^1.0.0"
-    "@toss/use-ref-effect": "workspace:^1.0.0"
     "@toss/utils": "workspace:^1.0.0"
     "@tossteam/jest": ^17
     "@types/babel__preset-env": ^7
@@ -6007,33 +6005,6 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@toss/use-preserved-callback@workspace:^1.0.0, @toss/use-preserved-callback@workspace:packages/react/use-preserved-callback":
-  version: 0.0.0-use.local
-  resolution: "@toss/use-preserved-callback@workspace:packages/react/use-preserved-callback"
-  dependencies:
-    "@babel/core": ^7
-    "@babel/runtime": ^7.13.10
-    "@slash/rollup-config": "workspace:^"
-    "@types/jest": ^28.1.8
-    "@types/node": ^14.14.41
-    "@types/react": ^18.0.15
-    babel-jest: ^29.0.1
-    concurrently: ^4.1.0
-    jest: ^29.0.1
-    jest-environment-jsdom: ^29
-    react: ^18.2.0
-    rollup: ^2.77.0
-    ts-prune: ^0.9.2
-    typescript: ^4.2.3
-  peerDependencies:
-    "@types/react": "*"
-    react: ^16 || ^17 || ^18
-  peerDependenciesMeta:
-    "@types/react":
-      optional: true
-  languageName: unknown
-  linkType: soft
-
 "@toss/use-query-param@workspace:^1.0.0, @toss/use-query-param@workspace:packages/react/use-query-param":
   version: 0.0.0-use.local
   resolution: "@toss/use-query-param@workspace:packages/react/use-query-param"
@@ -6067,37 +6038,6 @@ __metadata:
     next: ^11.1 || ^12
     react: ^16.8 || ^17 || ^18
     react-dom: ^16.8 || ^17 || ^18
-  languageName: unknown
-  linkType: soft
-
-"@toss/use-ref-effect@workspace:^1.0.0, @toss/use-ref-effect@workspace:packages/react/use-ref-effect":
-  version: 0.0.0-use.local
-  resolution: "@toss/use-ref-effect@workspace:packages/react/use-ref-effect"
-  dependencies:
-    "@babel/core": ^7
-    "@babel/preset-env": ^7.16.4
-    "@babel/preset-typescript": ^7.18.6
-    "@babel/runtime": ^7.16.3
-    "@slash/rollup-config": "workspace:^"
-    "@testing-library/react": ^13.3.0
-    "@toss/use-preserved-callback": "workspace:^1.0.0"
-    "@tossteam/jest": ^17.187.2
-    "@types/babel__core": ^7
-    "@types/babel__preset-env": ^7
-    "@types/jest": ^28.1.8
-    "@types/node": ^14.14.41
-    "@types/react": ^17.0.3
-    babel-jest: ^29.0.1
-    concurrently: ^4.1.0
-    jest: ^29.0.1
-    jest-environment-jsdom: ^29
-    react: ^18.2.0
-    react-dom: ^18.2.0
-    rollup: ^2.77.0
-    ts-prune: ^0.9.2
-    typescript: ^4.2.3
-  peerDependencies:
-    react: ^16 || ^17 || ^18
   languageName: unknown
   linkType: soft
 
@@ -6214,18 +6154,6 @@ __metadata:
   version: 0.2.0
   resolution: "@trysound/sax@npm:0.2.0"
   checksum: 11226c39b52b391719a2a92e10183e4260d9651f86edced166da1d95f39a0a1eaa470e44d14ac685ccd6d3df7e2002433782872c0feeb260d61e80f21250e65c
-  languageName: node
-  linkType: hard
-
-"@ts-morph/common@npm:~0.10.1":
-  version: 0.10.1
-  resolution: "@ts-morph/common@npm:0.10.1"
-  dependencies:
-    fast-glob: ^3.2.5
-    minimatch: ^3.0.4
-    mkdirp: ^1.0.4
-    path-browserify: ^1.0.1
-  checksum: 24c8185a2c165d18d683dd822ee2e2070f325e328f87281ff3bc53e555aabf331bb5498ff89e3d1364e462f2b4be237442c38e2920d1ecb7438f4e2f30804e63
   languageName: node
   linkType: hard
 
@@ -6795,7 +6723,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:*, @types/react@npm:>=16.9.0, @types/react@npm:^18.0.15, @types/react@npm:^18.0.21":
+"@types/react@npm:*, @types/react@npm:>=16.9.0, @types/react@npm:^18.0.21":
   version: 18.0.21
   resolution: "@types/react@npm:18.0.21"
   dependencies:
@@ -6806,7 +6734,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:^17, @types/react@npm:^17.0.3":
+"@types/react@npm:^17":
   version: 17.0.50
   resolution: "@types/react@npm:17.0.50"
   dependencies:
@@ -9308,13 +9236,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"code-block-writer@npm:^10.1.1":
-  version: 10.1.1
-  resolution: "code-block-writer@npm:10.1.1"
-  checksum: e048037acbcbda19fca62a3a63e4a64226ea6b5dc0fad7632d34a88c1165b29a357e5e19f0497811e9911472e824ab85f68176f40e439da87e051908956eb47c
-  languageName: node
-  linkType: hard
-
 "code-point-at@npm:^1.0.0":
   version: 1.1.0
   resolution: "code-point-at@npm:1.1.0"
@@ -9459,13 +9380,6 @@ __metadata:
   version: 5.1.0
   resolution: "commander@npm:5.1.0"
   checksum: 0b7fec1712fbcc6230fcb161d8d73b4730fa91a21dc089515489402ad78810547683f058e2a9835929c212fead1d6a6ade70db28bbb03edbc2829a9ab7d69447
-  languageName: node
-  linkType: hard
-
-"commander@npm:^6.2.1":
-  version: 6.2.1
-  resolution: "commander@npm:6.2.1"
-  checksum: d7090410c0de6bc5c67d3ca41c41760d6d268f3c799e530aafb73b7437d1826bbf0d2a3edac33f8b57cc9887b4a986dce307fa5557e109be40eadb7c43b21742
   languageName: node
   linkType: hard
 
@@ -12033,7 +11947,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fast-glob@npm:^3.2.11, fast-glob@npm:^3.2.12, fast-glob@npm:^3.2.5, fast-glob@npm:^3.2.9":
+"fast-glob@npm:^3.2.11, fast-glob@npm:^3.2.12, fast-glob@npm:^3.2.9":
   version: 3.2.12
   resolution: "fast-glob@npm:3.2.12"
   dependencies:
@@ -15703,7 +15617,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"json5@npm:^2.1.2, json5@npm:^2.1.3, json5@npm:^2.2.1":
+"json5@npm:^2.1.2, json5@npm:^2.2.1":
   version: 2.2.1
   resolution: "json5@npm:2.2.1"
   bin:
@@ -18788,13 +18702,6 @@ __metadata:
   version: 0.1.1
   resolution: "pascalcase@npm:0.1.1"
   checksum: f83681c3c8ff75fa473a2bb2b113289952f802ff895d435edd717e7cb898b0408cbdb247117a938edcbc5d141020909846cc2b92c47213d764e2a94d2ad2b925
-  languageName: node
-  linkType: hard
-
-"path-browserify@npm:^1.0.1":
-  version: 1.0.1
-  resolution: "path-browserify@npm:1.0.1"
-  checksum: c6d7fa376423fe35b95b2d67990060c3ee304fc815ff0a2dc1c6c3cfaff2bd0d572ee67e18f19d0ea3bbe32e8add2a05021132ac40509416459fffee35200699
   languageName: node
   linkType: hard
 
@@ -23090,27 +22997,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"true-myth@npm:^4.1.0":
-  version: 4.1.1
-  resolution: "true-myth@npm:4.1.1"
-  checksum: 0b937bb215b78d0ccff8637ac1c49be7f08c04f32a7b755c45a1566a1d522f50b0cadac93ad869b6bea9b843f60479160d3382c2c91d2381ef3559915564ff82
-  languageName: node
-  linkType: hard
-
 "ts-interface-checker@npm:^0.1.9":
   version: 0.1.13
   resolution: "ts-interface-checker@npm:0.1.13"
   checksum: 20c29189c2dd6067a8775e07823ddf8d59a33e2ffc47a1bd59a5cb28bb0121a2969a816d5e77eda2ed85b18171aa5d1c4005a6b88ae8499ec7cc49f78571cb5e
-  languageName: node
-  linkType: hard
-
-"ts-morph@npm:^11.0.2":
-  version: 11.0.3
-  resolution: "ts-morph@npm:11.0.3"
-  dependencies:
-    "@ts-morph/common": ~0.10.1
-    code-block-writer: ^10.1.1
-  checksum: a59c17c317d8b26fd41d1933667e0deb058d04ad2c48b16afc261817f372d18c0fefe994788c243eeaa91bca782e4f1d6baaaf833c29cb7eaa55e616c9ae77cd
   languageName: node
   linkType: hard
 
@@ -23149,22 +23039,6 @@ __metadata:
     ts-node-transpile-only: dist/bin-transpile.js
     ts-script: dist/bin-script-deprecated.js
   checksum: 090adff1302ab20bd3486e6b4799e90f97726ed39e02b39e566f8ab674fd5bd5f727f43615debbfc580d33c6d9d1c6b1b3ce7d8e3cca3e20530a145ffa232c35
-  languageName: node
-  linkType: hard
-
-"ts-prune@npm:^0.9.2":
-  version: 0.9.3
-  resolution: "ts-prune@npm:0.9.3"
-  dependencies:
-    commander: ^6.2.1
-    cosmiconfig: ^7.0.0
-    json5: ^2.1.3
-    lodash: ^4.17.21
-    true-myth: ^4.1.0
-    ts-morph: ^11.0.2
-  bin:
-    ts-prune: lib/index.js
-  checksum: 49c909c97a0a118ffb7d0a106ddd1f2560d5abef4b55bbe1510e7b304bc9d2a56b0f74f50c7b365a03e2c63b0b6e0dbfe920238c0730a5e46e70a3370fc6740e
   languageName: node
   linkType: hard
 

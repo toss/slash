@@ -17,6 +17,7 @@ export { default as useOutsideClickEffect } from './useOutsideClickEffect';
 export * from './usePreservedCallback';
 export { default as usePreservedReference } from './usePreservedReference';
 export { default as usePrevious } from './usePrevious';
+export * from './useRefEffect';
 export * from './useStorageState';
 export { default as useThrottle } from './useThrottle';
 export { default as useTimeout } from './useTimeout';
