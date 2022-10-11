@@ -1,6 +1,6 @@
 {
   "name": "@toss/rx",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "exports": {
     ".": {
       "require": "./src/index.ts",
@@ -16,7 +16,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@toss/utils": "workspace:^1.0.0"
+    "@toss/utils": "workspace:^1.0.1"
   },
   "devDependencies": {
     "@babel/core": "^7",

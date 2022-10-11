@@ -1,6 +1,6 @@
 {
   "name": "@toss/async-stylesheet",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "sideEffects": false,
   "exports": {
     ".": {
@@ -17,7 +17,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@toss/react": "workspace:^1.0.0"
+    "@toss/react": "workspace:^1.1.0"
   },
   "devDependencies": {
     "@babel/core": "^7",

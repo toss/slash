@@ -1,6 +1,6 @@
 {
   "name": "@toss/react",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "sideEffects": false,
   "exports": {
     ".": {
@@ -18,8 +18,8 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.14.8",
-    "@toss/storage": "workspace:^1.0.0",
-    "@toss/utils": "workspace:^1.0.0",
+    "@toss/storage": "workspace:^1.0.1",
+    "@toss/utils": "workspace:^1.0.1",
     "classnames": "^2.3.1",
     "lodash": "^4.17.20",
     "lottie-web": "^5.5.9"
