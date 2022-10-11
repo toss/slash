@@ -1,6 +1,6 @@
 {
   "name": "@toss/impression-area",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "sideEffects": false,
   "exports": {
     ".": "./src/index.ts",
@@ -15,8 +15,8 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@toss/react": "workspace:^1.0.0",
-    "@toss/utils": "workspace:^1.0.0",
+    "@toss/react": "workspace:^1.1.0",
+    "@toss/utils": "workspace:^1.0.1",
     "@types/react": "^18.0.21",
     "lodash.debounce": "^4.0.8"
   },
@@ -61,8 +61,8 @@
     },
     "import": "./esm/index.mjs",
     "main": "./dist/index.js",
-    "module": "./esm/index.js",
+    "module": "./esm/index.mjs",
     "types": "./dist/index.d.ts"
   },
-  "gitHead": "bd6da79df8f3177ac1f13eac0edbf5b7549ea3d3"
+  "gitHead": "18cb6253ca2131397da2c209932a2413d9cd93c1"
 }
