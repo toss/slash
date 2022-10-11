@@ -1,4 +1,3 @@
-import { isServer } from '@toss/utils';
 import useIsomorphicLayoutEffect from './useIsomorphicLayoutEffect';
 
 /**
