@@ -61,7 +61,7 @@
     },
     "import": "./esm/index.mjs",
     "main": "./dist/index.js",
-    "module": "./esm/index.js",
+    "module": "./esm/index.mjs",
     "types": "./dist/index.d.ts"
   },
   "gitHead": "bd6da79df8f3177ac1f13eac0edbf5b7549ea3d3"
