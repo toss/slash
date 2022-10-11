@@ -23,10 +23,7 @@
   },
   "publishConfig": {
     "access": "public",
-    "import": "esm/index.js",
-    "main": "dist/index.js",
-    "module": "esm/index.js",
-    "types": "dist/index.d.ts"
+    "main": "./dist/index.js"
   },
   "gitHead": "bd6da79df8f3177ac1f13eac0edbf5b7549ea3d3"
 }
