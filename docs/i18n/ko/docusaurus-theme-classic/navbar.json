@@ -1,10 +1,10 @@
 {
   "title": {
-    "message": "Slash libraries",
+    "message": "Slash 라이브러리",
     "description": "The title in the navbar"
   },
   "item.label.Docs": {
-    "message": "Docs",
+    "message": "문서",
     "description": "Navbar item with label Docs"
   },
   "item.label.GitHub": {

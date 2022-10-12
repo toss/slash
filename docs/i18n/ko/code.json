@@ -251,29 +251,29 @@
     "description": "The ARIA label and title attribute for expand button of doc sidebar"
   },
   "theme.SearchBar.noResultsText": {
-    "message": "No results"
+    "message": "결과 없음"
   },
   "theme.SearchBar.seeAll": {
-    "message": "See all results"
+    "message": "모든 결과 보기"
   },
   "theme.SearchBar.label": {
-    "message": "Search",
+    "message": "검색",
     "description": "The ARIA label and placeholder for search button"
   },
   "theme.SearchPage.existingResultsTitle": {
-    "message": "Search results for \"{query}\"",
+    "message": "\"{query}\" 검색 결과",
     "description": "The search page title for non-empty query"
   },
   "theme.SearchPage.emptyResultsTitle": {
-    "message": "Search the documentation",
+    "message": "문서 검색",
     "description": "The search page title for empty query"
   },
   "theme.SearchPage.documentsFound.plurals": {
-    "message": "1 document found|{count} documents found",
+    "message": "문서 1개 발견|문서 {count}개 발견",
     "description": "Pluralized label for \"{count} documents found\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
   },
   "theme.SearchPage.noResultsText": {
-    "message": "No documents were found",
+    "message": "발견된 문서 없음",
     "description": "The paragraph for empty search result"
   }
 }

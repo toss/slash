@@ -1,6 +1,6 @@
 {
   "version.label": {
-    "message": "Next",
+    "message": "최신",
     "description": "The label for version current"
   },
   "sidebar.librariesSidebar.category.@toss/hangul": {
