@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.14.8",
+    "@toss/utils": "workspace:^1.0.1",
     "csstype": "^3.0.9"
   },
   "devDependencies": {
