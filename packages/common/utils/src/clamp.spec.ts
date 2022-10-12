@@ -16,8 +16,14 @@ describe('clamp should', () => {
   });
 
   it('throw error when bound1 is bigger than bound2', () => {
-    expect(() => clamp(3, 10, 5)).toThrowError();
-    expect(() => clamp(7, 12, 5)).toThrowError();
-    expect(() => clamp(100, 6, 5)).toThrowError();
+    expect(() => clamp(3, 10, 5)).toThrowErrorMatchingInlineSnapshot(
+      `"The value of bound2 must be a number greater than bound1."`
+    );
+    expect(() => clamp(7, 12, 5)).toThrowErrorMatchingInlineSnapshot(
+      `"The value of bound2 must be a number greater than bound1."`
+    );
+    expect(() => clamp(100, 6, 5)).toThrowErrorMatchingInlineSnapshot(
+      `"The value of bound2 must be a number greater than bound1."`
+    );
   });
 });
