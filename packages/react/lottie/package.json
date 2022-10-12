@@ -1,6 +1,6 @@
 {
   "name": "@toss/lottie",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "sideEffects": false,
   "exports": {
     ".": {
@@ -18,9 +18,9 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@toss/impression-area": "workspace:^1.1.0",
-    "@toss/react": "workspace:^1.1.0",
-    "@toss/utils": "workspace:^1.0.1",
+    "@toss/impression-area": "workspace:^1.1.2",
+    "@toss/react": "workspace:^1.1.2",
+    "@toss/utils": "workspace:^1.0.3",
     "lodash.debounce": "^4.0.8",
     "lottie-web": "^5.5.9"
   },
