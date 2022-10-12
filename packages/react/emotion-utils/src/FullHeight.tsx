@@ -1,9 +1,8 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
+import { isServer } from '@toss/utils';
 import { HTMLAttributes, ReactNode, useEffect, useLayoutEffect, useState } from 'react';
 
-declare const global: unknown;
-const isServer = () => typeof window === 'undefined' && typeof global !== 'undefined';
 const useIsomorphicLayoutEffect = isServer() ? useEffect : useLayoutEffect;
 
 /**
@@ -23,9 +22,6 @@ export function FullHeight({ children, ...props }: { children: ReactNode } & HTM
   const [height, setHeight] = useState(0);
 
   useIsomorphicLayoutEffect(() => {
-    if (isServer()) {
-      return;
-    }
     setHeight(window.innerHeight);
   }, []);
 

@@ -1,24 +1,12 @@
-## 어떤 목적의 PR인가요?
-
-===
-
-- [ ] Documentation update
-- [ ] Bug fix
-- [ ] New feature
-- [ ] Refactor
-- [ ] Other : <!-- Purpose -->
-
-## 내용을 설명해주세요
+## Overview
 
 <!--
-    변경사항에 대해 알기 쉽게 설명해주세요.
-    리뷰어가 특별히 더 집중해서 봐야 하는 부분이 있다면 알려주세요.
+    A clear and concise description of what this pr is about.
  -->
 
-## 체크리스트
+## PR Checklist
 
-- [ ] 아래 항목들을 모두 확인하였습니다.
+- [ ] I read and included theses actions below
 
-1. PR 내용을 잘 설명하였습니다
-2. 문서화를 충분히 하였습니다 (필요시)
-3. 테스트가 충분히 작성되었습니다 (필요시)
+1. I have read the [Contributing Guide](https://github.com/toss/slash/blob/main/.github/CONTRIBUTING.md)
+2. I have written documents and tests, if needed.

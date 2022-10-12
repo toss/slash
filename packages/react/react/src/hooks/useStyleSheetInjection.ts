@@ -1,4 +1,3 @@
-import { isServer } from '@toss/utils';
 import useIsomorphicLayoutEffect from './useIsomorphicLayoutEffect';
 
 /**
@@ -8,9 +7,6 @@ import useIsomorphicLayoutEffect from './useIsomorphicLayoutEffect';
  */
 export default function useStyleSheetInjection(cssText: string) {
   useIsomorphicLayoutEffect(() => {
-    if (isServer()) {
-      return;
-    }
     const style = document.createElement('style');
     style.type = 'text/css';
     style.appendChild(document.createTextNode(cssText));
