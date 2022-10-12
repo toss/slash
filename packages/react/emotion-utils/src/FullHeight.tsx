@@ -22,9 +22,6 @@ export function FullHeight({ children, ...props }: { children: ReactNode } & HTM
   const [height, setHeight] = useState(0);
 
   useIsomorphicLayoutEffect(() => {
-    if (isServer()) {
-      return;
-    }
     setHeight(window.innerHeight);
   }, []);
 
