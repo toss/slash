@@ -24,7 +24,7 @@ require('@babel/register')({
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
   title: 'Slash libraries',
-  tagline: 'A collection of TypeScript/JavaScript packages to build high-quality web services ',
+  tagline: 'A collection of TypeScript/JavaScript packages to build high-quality web services.',
   url: 'https://slash.page/',
   baseUrl: '/',
   onBrokenLinks: 'warn',
@@ -114,6 +114,9 @@ module.exports = {
     [
       '@docusaurus/preset-classic',
       {
+        theme: {
+          customCss: [require.resolve('./styles.css')],
+        },
         docs: {
           path: '../packages',
           routeBasePath: '/libraries',
@@ -136,6 +139,7 @@ module.exports = {
       },
     ],
   ],
+  stylesheets: ['https://static.toss.im/tps/main.css', 'https://static.toss.im/tps/others.css'],
 };
 
 const GITHUB_EDIT_PAGE_PREFIX = 'https://github.com/toss/slash/edit/main';
