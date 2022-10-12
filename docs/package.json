@@ -10,6 +10,7 @@
     "deploy": "docusaurus deploy",
     "clear": "docusaurus clear",
     "serve": "docusaurus serve",
+    "prepare:docs": "rm -rf docs && yarn ts-node -T ./scripts/build-docs/index.ts",
     "write-translations": "docusaurus write-translations",
     "write-heading-ids": "docusaurus write-heading-ids"
   },
@@ -28,6 +29,7 @@
     "@toss/react": "workspace:^1.1.0",
     "@toss/utils": "workspace:^1.0.1",
     "clsx": "^1.1.1",
+    "documentation": "^14.0.0",
     "file-loader": "^6.2.0",
     "globby": "^11",
     "prism-react-renderer": "^1.2.1",
@@ -49,6 +51,11 @@
   },
   "devDependencies": {
     "@types/babel__preset-env": "^7",
+    "@types/fs-extra": "^9.0.13",
+    "@types/node": "^18.8.4",
+    "fs-extra": "^10.1.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.7",
     "webpack": "^5.65.0"
   }
 }

@@ -6323,6 +6323,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/fs-extra@npm:^9.0.13":
+  version: 9.0.13
+  resolution: "@types/fs-extra@npm:9.0.13"
+  dependencies:
+    "@types/node": "*"
+  checksum: add79e212acd5ac76b97b9045834e03a7996aef60a814185e0459088fd290519a3c1620865d588fa36c4498bf614210d2a703af5cf80aa1dbc125db78f6edac3
+  languageName: node
+  linkType: hard
+
 "@types/github-slugger@npm:^1.0.0":
   version: 1.3.0
   resolution: "@types/github-slugger@npm:1.3.0"
@@ -6535,6 +6544,13 @@ __metadata:
   version: 17.0.45
   resolution: "@types/node@npm:17.0.45"
   checksum: aa04366b9103b7d6cfd6b2ef64182e0eaa7d4462c3f817618486ea0422984c51fc69fd0d436eae6c9e696ddfdbec9ccaa27a917f7c2e8c75c5d57827fe3d95e8
+  languageName: node
+  linkType: hard
+
+"@types/node@npm:^18.8.4":
+  version: 18.8.4
+  resolution: "@types/node@npm:18.8.4"
+  checksum: c2b87f6b0b1f02b2ce61ca7cb93ea287119bda086a3f33e48da8f5e70c24ad7141cc3465946e0e36abb7eba70c7b320c7659842096e4aa573b3a8d557322c818
   languageName: node
   linkType: hard
 
@@ -10592,12 +10608,18 @@ __metadata:
     "@toss/react": "workspace:^1.1.0"
     "@toss/utils": "workspace:^1.0.1"
     "@types/babel__preset-env": ^7
+    "@types/fs-extra": ^9.0.13
+    "@types/node": ^18.8.4
     clsx: ^1.1.1
+    documentation: ^14.0.0
     file-loader: ^6.2.0
+    fs-extra: ^10.1.0
     globby: ^11
     prism-react-renderer: ^1.2.1
     react: ^18.2.0
     react-dom: ^18.2.0
+    ts-node: ^10.9.1
+    typescript: ^4.7
     url-loader: ^4.1.1
     webpack: ^5.65.0
   languageName: unknown
@@ -10686,7 +10708,7 @@ __metadata:
 
 "documentation@patch:documentation@npm:14.0.0#.yarn/patches/documentation-npm-14.0.0-c422c3490f.patch::locator=frontend-libraries-open-source%40workspace%3A.":
   version: 14.0.0
-  resolution: "documentation@patch:documentation@npm%3A14.0.0#.yarn/patches/documentation-npm-14.0.0-c422c3490f.patch::version=14.0.0&hash=c66819&locator=frontend-libraries-open-source%40workspace%3A."
+  resolution: "documentation@patch:documentation@npm%3A14.0.0#.yarn/patches/documentation-npm-14.0.0-c422c3490f.patch::version=14.0.0&hash=d395a6&locator=frontend-libraries-open-source%40workspace%3A."
   dependencies:
     "@babel/core": ^7.18.10
     "@babel/generator": ^7.18.10
@@ -12347,7 +12369,6 @@ __metadata:
     "@types/node": ^18.8.3
     "@typescript-eslint/eslint-plugin": ^5.39.0
     "@typescript-eslint/parser": ^5.39.0
-    documentation: "patch:documentation@npm:14.0.0#.yarn/patches/documentation-npm-14.0.0-c422c3490f.patch"
     eslint: ^7
     eslint-config-prettier: ^8.5.0
     eslint-plugin-import: ^2.26.0

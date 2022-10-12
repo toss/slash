@@ -55,7 +55,7 @@ module.exports = {
       items: [
         {
           type: 'doc',
-          docId: 'common/utils/README',
+          docId: 'packages/common/utils/src/zip.ts.tossdocs',
           position: 'left',
           label: 'Docs',
         },
@@ -115,7 +115,7 @@ module.exports = {
       '@docusaurus/preset-classic',
       {
         docs: {
-          path: '../packages',
+          path: './docs',
           routeBasePath: '/libraries',
           sidebarPath: require.resolve('./sidebars.libraries.js'),
           exclude: ['**/CHANGELOG.md'],
