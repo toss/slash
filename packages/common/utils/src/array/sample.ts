@@ -1,3 +1,4 @@
+/** @tossdocs-ignore */
 import { NonEmptyArray } from './NonEmptyArray';
 
 export function sample<T>(arr: NonEmptyArray<T>): T;
