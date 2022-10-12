@@ -1,6 +1,6 @@
 {
   "name": "@toss/validators",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "sideEffects": false,
   "exports": {
     ".": {
@@ -17,7 +17,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@toss/utils": "workspace:^1.0.2"
+    "@toss/utils": "workspace:^1.0.3"
   },
   "devDependencies": {
     "@babel/core": "^7",

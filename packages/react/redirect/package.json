@@ -1,6 +1,6 @@
 {
   "name": "@toss/redirect",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "sideEffects": false,
   "exports": {
     ".": {
@@ -17,7 +17,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@toss/assert": "workspace:^1.0.2",
+    "@toss/assert": "workspace:^1.0.3",
     "@toss/error-boundary": "workspace:^1.0.2"
   },
   "devDependencies": {
