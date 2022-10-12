@@ -1,5 +1,4 @@
 import { useEffect } from 'react';
-import { isServer } from '@toss/utils';
 
 const HOTJAR_SCRIPT_ID = 'TOSS_HOTJAR';
 
@@ -20,7 +19,7 @@ interface HotjarOptions {
  */
 export default function useHotjarTracker({ id, enable }: HotjarOptions) {
   useEffect(() => {
-    if (isServer() || !enable || document.getElementById(HOTJAR_SCRIPT_ID) != null) {
+    if (!enable || document.getElementById(HOTJAR_SCRIPT_ID) != null) {
       return;
     }
 
