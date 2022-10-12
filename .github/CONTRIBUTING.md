@@ -7,8 +7,8 @@ We welcome contribution from everyone in the community.
 You can contribute to Slash libraries via:
 
 - Improving our [docs](https://slash.page)
-- [Reporting a bug in our issues tab](https://github.com/toss/slash/issues/new)
-- [Requesting a new feature or package](https://github.com/toss/slash/issues/new)
+- [Reporting a bug in our issues tab](https://github.com/toss/slash/issues/new/choose)
+- [Requesting a new feature or package](https://github.com/toss/slash/issues/new/choose)
 - [Having a look at our issue list](https://github.com/toss/slash/issues) to see what's to be fixed
 - [Opening a pull request](https://github.com/toss/slash/compare) by yourself
 
