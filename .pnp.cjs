@@ -9224,6 +9224,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@slash/rollup-config", "workspace:configs/rollup"],\
             ["@testing-library/jest-dom", "npm:5.16.5"],\
             ["@testing-library/react", "virtual:62cb29918b2e63dff97923d985a18238631a18b918521fd9ac48de2be213715676e8b999d7ab4431ea536d1917af1465d5695ceae059c69bf4c14df5968dd6a1#npm:13.4.0"],\
+            ["@toss/utils", "workspace:packages/common/utils"],\
             ["@tossteam/jest", "virtual:0835ce41fe753ee669a09c94e84dd26310451851363a65d2417959e3e0283ec86ca67d0fd1af37d1ef29305b0e8874a5ee5f46b0b0361b1a5cb993fb9b79e9eb#npm:17.187.2"],\
             ["@types/babel__core", "npm:7.1.19"],\
             ["@types/jest", "npm:29.1.2"],\
