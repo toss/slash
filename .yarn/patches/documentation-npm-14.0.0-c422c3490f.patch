@@ -4,12 +4,12 @@ index abe624c7cb99ec316ce88e45e3e22cf672b1af50..cb0e4d950bbe87986d215666c5336b8e
 +++ b/src/index.js
 @@ -104,7 +104,7 @@ function buildInternal(inputsAndConfig) {
    ]);
- 
+
    const extractedComments = _.flatMap(inputs, function (sourceFile) {
 -    return parseJavaScript(sourceFile, config).map(buildPipeline);
 +    return parseJavaScript(sourceFile, config);
    }).filter(Boolean);
- 
+
    return filterAccess(
 diff --git a/src/output/markdown_ast.js b/src/output/markdown_ast.js
 index 507942818bd8752d786b83f2846e02417b691efe..a25dbdb9cebaa8fce0946be74a76727cee3c9d0c 100644

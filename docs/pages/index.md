@@ -59,7 +59,7 @@ hide_table_of_contents: true
 
 ## Featured libraries
 
-- [**@toss/use-overlay**](https://slash.page/libraries/react/use-overlay/src/useOverlay.tsx.tossdocs) provides the `useOverlay` React hook to control overlays in a declarative way.
+- [**@toss/use-overlay**](https://slash.page/libraries/react/use-overlay/src/useOverlay.i18n) provides the `useOverlay` React hook to control overlays in a declarative way.
 - [**@toss/react**](https://slash.page/libraries/react/react/src/components/ClickArea/ClickArea.tsx.tossdocs) provides several React components and hooks to develop high-quality web services.
 - [**@toss/utils**](https://slash.page/libraries/common/utils/) provides simple and modern helper libraries which can be used both in Node.js and browser environments.
 - [**@toss/hangul**](https://slash.page/libraries/common/hangul/) provides utility functions to manipulate [hangul](https://en.wikipedia.org/wiki/Hangul) characters.
