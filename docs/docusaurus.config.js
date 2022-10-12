@@ -78,7 +78,7 @@ module.exports = {
           items: [
             {
               label: 'Docs',
-              to: '/libraries/utils/README',
+              to: '/libraries/common/utils/',
             },
           ],
         },
