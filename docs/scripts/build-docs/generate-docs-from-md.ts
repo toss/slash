@@ -18,7 +18,7 @@ async function generateLanguageDocs(lang: string, outdir: string) {
   await Promise.all(
     filepaths.map(async filepath => {
       const source = path.join(PROJECT_ROOT, filepath);
-      const destination = path.join(outdir, filepath).replace(new RegExp(`\\.${lang}\\.md$`), '.md');
+      const destination = path.join(outdir, filepath);
 
       await fse.ensureDir(path.dirname(destination));
       await fse.copy(source, destination);
