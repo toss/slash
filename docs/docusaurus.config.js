@@ -32,11 +32,24 @@ module.exports = {
   favicon: 'https://static.toss.im/tds/favicon/favicon.ico',
   organizationName: 'toss',
   projectName: 'slash',
+  i18n: {
+    path: './i18n',
+    defaultLocale: 'en',
+    locales: ['en', 'ko'],
+    localeConfigs: {
+      en: {
+        htmlLang: 'en-US',
+      },
+      ko: {
+        htmlLang: 'ko-KR',
+      },
+    },
+  },
   themeConfig: {
     navbar: {
       title: 'Slash libraries',
       logo: {
-        alt: '토스',
+        alt: 'Toss',
         src: 'https://static.toss.im/icons/png/4x/icon-toss-logo.png',
       },
       items: [
@@ -49,6 +62,10 @@ module.exports = {
         {
           href: 'https://github.com/toss/slash',
           label: 'GitHub',
+          position: 'right',
+        },
+        {
+          type: 'localeDropdown',
           position: 'right',
         },
       ],
@@ -66,7 +83,7 @@ module.exports = {
           ],
         },
         {
-          title: '더보기',
+          title: 'More',
           items: [
             {
               label: 'GitHub',
