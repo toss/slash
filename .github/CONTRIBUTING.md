@@ -1,6 +1,8 @@
 # Contributing to Slash libraries
 
-We welcome contribution from everyone in the community.
+We welcome contribution from everyone in the community. <br/>
+All communications in this repo will be by English.
+
 > Every contributor to Slash libraries should adhere to our Code of Conduct. 
 > <br/>Please read the [full text](./CODE_OF_CONDUCT.md) to understand what actions will and will not be tolerated.
 
