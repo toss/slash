@@ -5403,6 +5403,7 @@ __metadata:
     "@slash/rollup-config": "workspace:^"
     "@testing-library/jest-dom": ^5.16.4
     "@testing-library/react": ^13.3.0
+    "@toss/utils": "workspace:^1.0.1"
     "@tossteam/jest": ^17
     "@types/babel__core": ^7
     "@types/jest": ^28.1.8
