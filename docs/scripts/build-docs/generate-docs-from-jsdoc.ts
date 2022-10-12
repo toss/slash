@@ -2,14 +2,14 @@ import fs from 'fs';
 import fse from 'fs-extra';
 import glob from 'globby';
 import path from 'path';
-import { DOCS_ROOT, PROJECT_ROOT } from './constants';
+import { DOCS_ROOT, PACKAGES_ROOT } from './constants';
 
 const TOSSDOCS_IGNORE_SYMBOL = '/** @tossdocs-ignore */';
 
 export async function generateDocsFromJSDoc() {
   const filepaths = await glob('**/*.{ts,tsx}', {
     ignore: ['**/*.{spec,test,d,setup,stories,config}.{ts,tsx}', 'docs/**/*'],
-    cwd: PROJECT_ROOT,
+    cwd: PACKAGES_ROOT,
   });
 
   if (filepaths.length === 0) {
@@ -22,7 +22,7 @@ export async function generateDocsFromJSDoc() {
 
   await Promise.all(
     filepaths.map(async filepath => {
-      const fullpath = path.join(PROJECT_ROOT, filepath);
+      const fullpath = path.join(PACKAGES_ROOT, filepath);
       const source = fs.readFileSync(fullpath, 'utf-8');
 
       if (source.includes(TOSSDOCS_IGNORE_SYMBOL)) {
