@@ -1,0 +1,113 @@
+---
+title: Introduction
+hide_table_of_contents: true
+---
+
+import Head from '@docusaurus/Head';
+import Translate, { translate } from '@docusaurus/Translate';
+
+# <Translate>Slash libraries</Translate>
+
+<div className="mainpage_hero">
+  <div style={{ gridArea: 'text' }}></div>
+  <p
+    text={translate({
+      id: 'homepage.hero.description',
+      description: 'The description of Slash libraries',
+      message: 'Slash is a collection of TypeScript/JavaScript packages used in {link}',
+      values: {
+        link: <a href="https://toss.im">Toss</a>,
+      },
+    })}
+  />
+  <p
+    text={translate({
+      id: 'homepage.hero.description2',
+      description: 'The description of Slash libraries',
+      message: 'It provides over 30 npm packages which can serve as a foundation to provide high-quality web services.',
+    })}
+  />
+  <p
+    text={translate({
+      id: 'homepage.hero.description3',
+      description: 'The description of Slash libraries',
+      message: 'Slash is open source and free to use.',
+    })}
+  />
+  <div style={{ gridArea: 'image', textAlign: 'center' }}>
+    <img
+      src="https://static.toss.im/illusts-common/img-stock-file-alpha.png"
+      alt=""
+      style={{ width: 200, height: 150, objectFit: 'cover' }}
+    />
+  </div>
+</div>
+
+<style
+  dangerouslySetInnerHTML={{
+    __html: `
+.mainpage_hero {
+  display: grid;
+}
+
+@media (min-width: 400px) {
+  .mainpage_hero {
+    grid-template-areas: "text image";
+    grid-template-columns: 1fr 200px;
+  }
+}
+
+@media (max-width: 400px) {
+  .mainpage_hero {
+    grid-template-areas: "image" "text";
+    grid-template-rows: min-content min-content;
+  }
+}
+`,
+  }}
+></style>
+
+<div style={{ height: 24 }} />
+
+## <Translate>Featured libraries</Translate>
+
+<ul>
+  <li
+    text={translate({
+      id: 'homepage.featured.use-overlay',
+      description: 'The description of @toss/use-overlay',
+      message:
+        '[**@toss/use-overlay**](/libraries/react/use-overlay/src/useOverlay.tsx.tossdocs) provides the `useOverlay` React hook to control overlays in a declarative way.',
+    })}
+  />
+  <li
+    text={translate({
+      id: 'homepage.featured.react',
+      description: 'The description of @toss/react',
+      message:
+        '[**@toss/react**](/libraries/react/react/src/components/ClickArea/ClickArea.tsx.tossdocs) provides several React components and hooks to develop high-quality web services.',
+    })}
+  />
+  <li
+    text={translate({
+      id: 'homepage.featured.utils',
+      description: 'The description of @toss/utils',
+      message:
+        '[**@toss/utils**](/libraries/common/utils/) provides simple and modern helper libraries which can be used both in Node.js and browser environments.',
+    })}
+  />
+  <li
+    text={translate({
+      id: 'homepage.featured.hangul',
+      description: 'The description of @toss/hangul',
+      message:
+        '[**@toss/hangul**](/libraries/common/hangul/) provides utility functions to manipulate [hangul](https://en.wikipedia.org/wiki/Hangul) characters',
+    })}
+  />
+</ul>
+
+<div style={{ height: 24 }} />
+
+## More reading
+
+- [Contributing](https://github.com/toss/slash/blob/main/.github/CONTRIBUTING.md)
