@@ -15,7 +15,6 @@ const paths = globby
 const groups = {};
 
 for (const p of paths) {
-  console.log(`${p}`);
   const { name } = pnpapi.findPackageLocator(`${PROJECT_PATH}/${p}`);
 
   if (groups[name] == null) {
