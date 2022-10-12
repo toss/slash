@@ -1,0 +1,54 @@
+{
+  "version.label": {
+    "message": "최신",
+    "description": "The label for version current"
+  },
+  "sidebar.librariesSidebar.category.@toss/hangul": {
+    "message": "@toss/hangul",
+    "description": "The label for category @toss/hangul in sidebar librariesSidebar"
+  },
+  "sidebar.librariesSidebar.category.@toss/ky": {
+    "message": "@toss/ky",
+    "description": "The label for category @toss/ky in sidebar librariesSidebar"
+  },
+  "sidebar.librariesSidebar.category.@toss/sentry": {
+    "message": "@toss/sentry",
+    "description": "The label for category @toss/sentry in sidebar librariesSidebar"
+  },
+  "sidebar.librariesSidebar.category.@toss/storage": {
+    "message": "@toss/storage",
+    "description": "The label for category @toss/storage in sidebar librariesSidebar"
+  },
+  "sidebar.librariesSidebar.category.@toss/utils": {
+    "message": "@toss/utils",
+    "description": "The label for category @toss/utils in sidebar librariesSidebar"
+  },
+  "sidebar.librariesSidebar.category.@toss/a11y": {
+    "message": "@toss/a11y",
+    "description": "The label for category @toss/a11y in sidebar librariesSidebar"
+  },
+  "sidebar.librariesSidebar.category.@toss/emotion-utils": {
+    "message": "@toss/emotion-utils",
+    "description": "The label for category @toss/emotion-utils in sidebar librariesSidebar"
+  },
+  "sidebar.librariesSidebar.category.@toss/impression-area": {
+    "message": "@toss/impression-area",
+    "description": "The label for category @toss/impression-area in sidebar librariesSidebar"
+  },
+  "sidebar.librariesSidebar.category.@toss/react": {
+    "message": "@toss/react",
+    "description": "The label for category @toss/react in sidebar librariesSidebar"
+  },
+  "sidebar.librariesSidebar.category.@toss/scroll-animation": {
+    "message": "@toss/scroll-animation",
+    "description": "The label for category @toss/scroll-animation in sidebar librariesSidebar"
+  },
+  "sidebar.librariesSidebar.category.@toss/use-funnel": {
+    "message": "@toss/use-funnel",
+    "description": "The label for category @toss/use-funnel in sidebar librariesSidebar"
+  },
+  "sidebar.librariesSidebar.category.@toss/use-query-param": {
+    "message": "@toss/use-query-param",
+    "description": "The label for category @toss/use-query-param in sidebar librariesSidebar"
+  }
+}
