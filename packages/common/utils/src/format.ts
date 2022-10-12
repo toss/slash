@@ -22,7 +22,7 @@
  * maskName('나토스') // '나*스'
  * maskName('제갈토스') // '제**스'
  * maskName('NA TO SEU') // 'N*******U'
- * maskName('박토스', { maskChar: '#' }) // '허#'
+ * maskName('박토스', { maskChar: '#' }) // '박#스'
  */
 export function maskName(name: string, { maskChar = '*' }: { maskChar?: string } = {}) {
   const firstLetter = name.slice(0, 1);
