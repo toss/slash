@@ -64,7 +64,7 @@ export default function useCheckList<T extends Item>(initialItems: T[]) {
     (id: IdType, checked: boolean) => {
       const idx = findIndex(id);
       if (idx > -1) {
-        const item = listRef.current[idx]!;
+        const item = listRef.current[idx];
 
         if (item.checked !== checked) {
           const arr = [...listRef.current];
