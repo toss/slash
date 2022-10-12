@@ -10,7 +10,7 @@
     "deploy": "docusaurus deploy",
     "clear": "docusaurus clear",
     "serve": "docusaurus serve",
-    "prepare:docs": "rm -rf docs && yarn ts-node -T ./scripts/build-docs/index.ts",
+    "prepare:docs": "rm -rf docs i18n/ko/docusaurus-plugin-content/docs/current && yarn ts-node -T ./scripts/build-docs/index.ts",
     "write-translations": "docusaurus write-translations",
     "write-heading-ids": "docusaurus write-heading-ids"
   },
