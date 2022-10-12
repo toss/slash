@@ -1,21 +1,19 @@
-describe('generateID는', () => {
-  beforeEach(() => {
-    jest.resetModules();
+import { generateID } from './generateID';
+
+describe('generateID should', () => {
+  it('return different string values each time it is called', () => {
+    const id1 = generateID();
+    const id2 = generateID();
+    const id3 = generateID();
+
+    expect(id1).not.toEqual(id2);
+    expect(id1).not.toEqual(id3);
+    expect(id2).not.toEqual(id3);
   });
 
-  it('순서대로 고유한 ID를 생성합니다.', () => {
-    import('./generateID').then(({ generateID }) => {
-      expect(generateID()).toEqual('1');
-      expect(generateID()).toEqual('2');
-      expect(generateID()).toEqual('3');
-    });
-  });
+  it('start with the prefix, if given', () => {
+    const id = generateID('toss');
 
-  it('prefix를 포함한 고유의 ID를 생성합니다.', () => {
-    import('./generateID').then(({ generateID }) => {
-      expect(generateID('toss')).toEqual('toss1');
-      expect(generateID('toss')).toEqual('toss2');
-      expect(generateID('toss')).toEqual('toss3');
-    });
+    expect(id.startsWith('toss')).toBe(true);
   });
 });
