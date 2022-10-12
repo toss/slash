@@ -1,6 +1,6 @@
 {
   "name": "@toss/ky",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "sideEffects": false,
   "exports": {
     ".": {
@@ -46,5 +46,5 @@
     "typescript": "4.8.3",
     "web-streams-polyfill": "^3.2.1"
   },
-  "gitHead": "bd6da79df8f3177ac1f13eac0edbf5b7549ea3d3"
+  "gitHead": "18cb6253ca2131397da2c209932a2413d9cd93c1"
 }
