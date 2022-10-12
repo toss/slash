@@ -45,7 +45,7 @@ export function flex(
 ): SerializedStyles;
 export function flex(alignOrFlexOptions: FlexOptions | string, justify = 'flex-start', direction = 'row') {
   if (typeof alignOrFlexOptions === 'object') {
-    const { align = 'flex-start', direction = 'row', justify = 'flex-start' } = alignOrFlexOptions;
+    const { align = 'stretch', direction = 'row', justify = 'flex-start' } = alignOrFlexOptions;
 
     return css`
       align-items: ${align};
@@ -65,14 +65,14 @@ export function flex(alignOrFlexOptions: FlexOptions | string, justify = 'flex-s
 
 flex.center = (direction?: FlexOptions['direction']) => flex({ justify: 'center', align: 'center', direction });
 
-interface FlexProps<T extends keyof JSX.IntrinsicElements = 'div'> extends AsProps<T>, FlexOptions { }
+interface FlexProps<T extends keyof JSX.IntrinsicElements = 'div'> extends AsProps<T>, FlexOptions {}
 
 type FlexReturnType = <T extends keyof JSX.IntrinsicElements = 'div'>(
   props: FlexProps<T> & { ref?: Ref<InferenceHTMLElement<T>> }
 ) => ReactElement | null;
 
 export const BaseFlex = forwardRef<HTMLElement, FlexProps>(function BaseFlex(props, ref) {
-  const { align = 'flex-start', as = 'div', direction = 'row', justify = 'flex-start', ...rest } = props;
+  const { align = 'stretch', as = 'div', direction = 'row', justify = 'flex-start', ...rest } = props;
 
   const Component = as as any;
 

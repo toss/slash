@@ -22,6 +22,18 @@ describe('Flex', () => {
     });
   });
 
+  describe('align', () => {
+    it(`Flex의 align의 기본값은 stretch이다`, () => {
+      const { container } = render(<Flex data-testid="root">Text Message</Flex>);
+      expect(container.querySelector('div')).toHaveStyle('align-items: stretch');
+    });
+
+    it(`Flex의 align의 기본값은 flex-start가 아니다`, () => {
+      const { container } = render(<Flex data-testid="root">Text Message</Flex>);
+      expect(container.querySelector('div')).not.toHaveStyle('align-items: flex-start');
+    });
+  });
+
   describe('ref', () => {
     it(`Flex는 ref를 받을 수 있어야 한다`, () => {
       const {
