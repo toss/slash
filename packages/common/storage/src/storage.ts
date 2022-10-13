@@ -1,3 +1,4 @@
+/** @tossdocs-ignore */
 export interface Storage {
   get(key: string): string | null;
 

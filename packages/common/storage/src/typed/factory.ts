@@ -1,3 +1,4 @@
+/** @tossdocs-ignore */
 import { safeLocalStorage, safeSessionStorage } from '../storage';
 import { NumberTypedStorage, TypedStorage, TypedStorageOptions } from './storages';
 
