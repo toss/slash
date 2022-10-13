@@ -12,7 +12,7 @@ hide_table_of_contents: true
     content="A collection of TypeScript/JavaScript packages to build high-quality web services."
   />
   <meta property="og:url" content="https://slash.page" />
-  <meta property="og:image" content="https://static.toss.im/homepage-static/newtoss/newtoss-og.jpg" />
+  <meta property="og:image" content="https://static.toss.im/assets/slash-libraries/slash-og.png" />
 </head>
 
 <div className="mainpage_hero">
