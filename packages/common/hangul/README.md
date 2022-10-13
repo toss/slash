@@ -1,17 +1,26 @@
 ---
 hide_title: true
-sidebar_label: '라이브러리 소개'
+sidebar_label: 'Introduction'
 ---
 
 # @toss/hangul
 
-한글 관련 라이브러리 입니다.
+A library to handle [Hangul](https://en.wikipedia.org/wiki/Hangul) (Korean) characters, in modern JavaScript.
 
-## 어떤 경우 사용하나요?
+## Motivation
 
-대표적으로 아래의 경우 사용합니다.
+In Korean services, there are cases where we have to handle Hangul characters in a sophisticated way.
 
-- 김토스가, 김프챕이 와 같이 "은는이가" 를 판단해줘야하는 경우 `josa` 를 사용합니다.
-- 한글검색 및 초성검색이 필요한 경우 (e.g. 연락처 검색)
-  - `hangulIncludes('김토스', '김토')`
-  - `chosungIncludes('김토스', 'ㄱㅌㅅ')`
+For example, when searching among Korean strings, most Koreans expect for the string `토스` to be included in the results when the keyword is `톳`.
+
+Also, many Koreans search with [initial consonants (chosung)](https://en.wikipedia.org/wiki/Hangul_consonant_and_vowel_tables). They expect `토스` to be searched with the string `ㅌㅅ`.
+
+`@toss/hangul` provides fundamental constructs to handle these Hangul strings.
+
+## Function list
+
+- [chosungIncludes](https://slash.page/libraries/common/hangul/src/chosungIncludes.i18n)
+- [disassembleHangul](https://slash.page/libraries/common/hangul/src/disassembleHangul.i18n)
+- [disassembleHangulToGroups](https://slash.page/libraries/common/hangul/src/disassembleHangulToGroups.i18n)
+- [hangulIncludes](https://slash.page/libraries/common/hangul/src/hangulIncludes.i18n)
+- [josa](https://slash.page/libraries/common/hangul/src/josa.i18n)

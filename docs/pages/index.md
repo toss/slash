@@ -7,7 +7,10 @@ hide_table_of_contents: true
 
 <head>
   <meta property="og:title" content="Slash libraries" />
-  <meta property="og:description" content="A collection of TypeScript/JavaScript packages to build high-quality web services." />
+  <meta
+    property="og:description"
+    content="A collection of TypeScript/JavaScript packages to build high-quality web services."
+  />
   <meta property="og:url" content="https://slash.page" />
   <meta property="og:image" content="https://static.toss.im/homepage-static/newtoss/newtoss-og.jpg" />
 </head>
@@ -18,16 +21,16 @@ hide_table_of_contents: true
   Slash is a collection of TypeScript/JavaScript packages used in <a href="https://toss.im">Toss</a>.
   </p>
 
-  <p>
-  It provides over 30 npm packages which can serve as a foundation to provide high-quality web services.
-  </p>
+<p>It provides over 30 npm packages which can serve as a foundation to provide high-quality web services.</p>
 
-  <p>Use <code>⌘ + K</code> to search through our libraries documentation.</p>
+<p>
+  Use <code>⌘ + K</code> to search through our libraries documentation.
+</p>
 
   </div>
 
   <div style={{ gridArea: 'image', textAlign: 'center' }}>
-  <img src="https://static.toss.im/illusts-common/img-stock-file-alpha.png" alt="" style={{ width: 200, height: 150, objectFit: 'cover' }} />
+  <video class="key-video" src="https://static.toss.im/assets/slash-libraries/keyvis.mp4" autoplay="true" muted="true" playsInline="true" loop="true" />
   </div>
 </div>
 
@@ -38,17 +41,27 @@ hide_table_of_contents: true
   display: grid;
 }
 
-@media (min-width: 400px) {
+@media (min-width: 600px) {
   .mainpage_hero {
     grid-template-areas: "text image";
-    grid-template-columns: 1fr 200px;
+    grid-template-columns: 1fr 300px;
+  }
+
+  .key-video {
+    width: 260px;
+    height: 146px;
   }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 600px) {
   .mainpage_hero {
     grid-template-areas: "image" "text";
     grid-template-rows: min-content min-content;
+  }
+
+  .key-video {
+    width: 80%;
+    margin: 24px auto;
   }
 }
 `,
