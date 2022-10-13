@@ -1,3 +1,4 @@
+/** @tossdocs-ignore */
 import { disassembleCompleteHangulCharacter } from './disassembleCompleteHangulCharacter';
 import { hasBatchim } from './utils';
 
