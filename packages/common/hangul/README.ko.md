@@ -1,8 +1,3 @@
----
-hide_title: true
-sidebar_label: '라이브러리 소개'
----
-
 # @toss/hangul
 
 현대적인 JavaScript로 한글을 다루는 라이브러리입니다.

@@ -1,8 +1,3 @@
----
-hide_title: true
-sidebar_label: 'Introduction'
----
-
 # @toss/hangul
 
 A library to handle [Hangul](https://en.wikipedia.org/wiki/Hangul) (Korean) characters, in modern JavaScript.

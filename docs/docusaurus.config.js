@@ -167,6 +167,16 @@ function getSourceFilename(markdownFilename, locale) {
     return markdownFilename.replace('.tossdocs.md', '');
   }
 
+  const isREADME = markdownFilename.endsWith('/README.i18n.md');
+
+  if (isREADME) {
+    if (locale === 'en') {
+      return markdownFilename.replace('.i18n.md', '.md');
+    } else {
+      return markdownFilename.replace('.i18n.md', `.${locale}.md`);
+    }
+  }
+
   const isI18n = markdownFilename.endsWith('.i18n.md');
 
   if (isI18n) {
