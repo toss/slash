@@ -4,7 +4,7 @@ title: createTypedLocalStorage
 
 # createTypedLocalStorage
 
-Generates a [TypedStorage](/libraries/common/storage/src/typed/storages/typedstorage.i18n) instance using local storage, depending on type of `initialValue`;
+Generates a [TypedStorage](/libraries/common/storage/src/typed/storages/typedstorage.i18n) instance using local storage, depending on type of `initialValue`.
 
 ## Note
 
