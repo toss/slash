@@ -55,7 +55,7 @@ module.exports = {
       items: [
         {
           type: 'doc',
-          docId: 'common/utils/README',
+          docId: 'common/utils/README.i18n',
           position: 'left',
           label: 'Docs',
         },
