@@ -1,13 +1,13 @@
 /** @jsxImportSource @emotion/react */
 import { memo } from 'react';
 import { coerceCssPixelValue } from './coerceCssPixelValue';
-import { CSSPixelValue, ExtendHTMLProps } from './types';
+import { AxisDirection, CSSPixelValue, ExtendHTMLProps } from './types';
 
 type SpacingProps = ExtendHTMLProps<
   HTMLDivElement,
   {
     children?: never;
-    direction?: 'vertical' | 'horizontal';
+    direction?: AxisDirection;
     size: CSSPixelValue;
   }
 >;
@@ -18,7 +18,7 @@ type SpacingProps = ExtendHTMLProps<
  * function Spacing(props: {
  *   children?: never;
  *   // default: 'vertical'
- *   direction?: 'vertical' | 'horizontal';
+ *   direction?: AxisDirection;
  *   size: CSSPixelValue;
  * }): JSX.Element;
  * ```
