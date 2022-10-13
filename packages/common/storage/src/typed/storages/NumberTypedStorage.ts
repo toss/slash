@@ -1,3 +1,4 @@
+/** @tossdocs-ignore */
 import { TypedStorage } from './TypedStorage';
 
 export class NumberTypedStorage extends TypedStorage<number> {

@@ -1,3 +1,4 @@
+/** @tossdocs-ignore */
 import { safeLocalStorage, Storage } from '../../storage';
 
 export interface TypedStorageOptions<T> {

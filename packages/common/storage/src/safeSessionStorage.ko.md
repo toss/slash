@@ -4,7 +4,7 @@ title: safeSessionStorage
 
 # safeSessionStorage
 
-[generateSessionStorage](/ko/libraries/common/storage/src/typed/storages/generatesessionstorage.i18n)로 생성된 session storage accessor 입니다.
+[generateSessionStorage](/ko/libraries/common/storage/src/generatesessionstorage.i18n)로 생성된 session storage accessor 입니다.
 
 ## Examples
 
