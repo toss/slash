@@ -78,7 +78,7 @@ module.exports = {
           items: [
             {
               label: 'Docs',
-              to: '/libraries/common/utils/',
+              to: '/libraries/common/utils/README.i18n',
             },
           ],
         },
@@ -167,7 +167,7 @@ function getSourceFilename(markdownFilename, locale) {
     return markdownFilename.replace('.tossdocs.md', '');
   }
 
-  const isREADME = markdownFilename.endsWith('/README.i18n.md');
+  const isREADME = markdownFilename === 'README.i18n.md';
 
   if (isREADME) {
     if (locale === 'en') {
