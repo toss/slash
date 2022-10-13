@@ -2,14 +2,14 @@
 import { forwardRef, ReactElement, Ref } from 'react';
 
 import { Flex, FlexOptions } from './flex';
-import { Direction, GutterOptions, gutter } from './gutter';
-import { AsProps, InferenceHTMLElement } from './types';
+import { gutter, GutterOptions } from './gutter';
+import { AsProps, AxisDirection, InferenceHTMLElement } from './types';
 
 interface StackProps<T extends keyof JSX.IntrinsicElements = 'div'>
   extends AsProps<T>,
     Omit<FlexOptions, 'direction'>,
     Omit<GutterOptions, 'direction' | 'space'> {
-  direction?: Direction;
+  direction?: AxisDirection;
   gutter?: number;
 }
 
