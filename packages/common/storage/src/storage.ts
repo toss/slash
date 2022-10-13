@@ -83,15 +83,6 @@ function generateTestKey() {
     .join('');
 }
 
-/**
- * @name generateStorage
- * @description
- * LocalStorage를 생성합니다. LocalStorage를 사용할 수 없는 환경에서는 fallback으로 MemoStorage를 생성합니다.
- *
- * @example
- * const storage = generateStorage();
- * storage.set('foo', 'bar');
- */
 export function generateStorage(): Storage {
   if (LocalStorage.canUse()) {
     return new LocalStorage();
@@ -99,16 +90,6 @@ export function generateStorage(): Storage {
   return new MemoStorage();
 }
 
-/**
- * @name generateSessionStorage
- * @description
- * SessionStorage를 생성합니다.
- * SessionStorage를 사용할 수 없는 환경에서는 fallback으로 MemoStorage를 생성합니다.
- *
- * @example
- * const storage = generateSessionStorage();
- * storage.set('foo', 'bar');
- */
 export function generateSessionStorage(): Storage {
   if (SessionStorage.canUse()) {
     return new SessionStorage();
@@ -116,22 +97,6 @@ export function generateSessionStorage(): Storage {
   return new MemoStorage();
 }
 
-/**
- * @name safeLocalStorage
- * @description
- * generateStorage로 생성한 localStorage입니다.
- *
- * @example
- * safeLocalStorage.set('foo', 'bar');
- */
 export const safeLocalStorage = generateStorage();
 
-/**
- * @name safeSessionStorage
- * @description
- * generateSessionStorage로 생성한 sessionStorage입니다.
- *
- * @example
- * safeSessionStorage.set('foo', 'bar');
- */
 export const safeSessionStorage = generateSessionStorage();
