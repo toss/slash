@@ -4,7 +4,7 @@ title: safeLocalStorage
 
 # safeLocalStorage
 
-[generateStorage](./generateStorage.ko.md)로 생성된 local storage accessor 입니다.
+[generateStorage](/ko/libraries/common/storage/src/typed/storages/generatestorage.i18n)로 생성된 local storage accessor 입니다.
 
 ## Examples
 

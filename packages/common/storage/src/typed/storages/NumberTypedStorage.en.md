@@ -4,7 +4,7 @@ title: NumberTypedStorage
 
 # NumberTypedStorage
 
-Provides number-specific utils by extending [TypedStorage](./TypedStorage.en.md).
+Provides number-specific utils by extending [TypedStorage](/libraries/common/storage/src/typed/storages/typedstorage.i18n).
 
 ## Note
 
