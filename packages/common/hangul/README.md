@@ -4,11 +4,7 @@ A library to handle [Hangul](https://en.wikipedia.org/wiki/Hangul) (Korean) char
 
 ## Motivation
 
-In Korean services, there are cases where we have to handle Hangul characters in a sophisticated way.
-
-For example, when searching among Korean strings, most Koreans expect for the string `토스` to be included in the results when the keyword is `톳`.
-
-Also, many Koreans search with [initial consonants (chosung)](https://en.wikipedia.org/wiki/Hangul_consonant_and_vowel_tables). They expect `토스` to be searched with the string `ㅌㅅ`.
+In Korean services, there are cases where we have to handle Hangul characters in a sophisticated way. For example, when searching among Korean strings, most Koreans expect to search `토스` with `톳`, or `토스` with `ㅌㅅ`.
 
 `@toss/hangul` provides fundamental constructs to handle these Hangul strings.
 
