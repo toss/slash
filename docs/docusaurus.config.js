@@ -63,6 +63,7 @@ module.exports = {
           href: 'https://github.com/toss/slash',
           label: 'GitHub',
           position: 'right',
+          className: 'navbar-github-link',
         },
         {
           type: 'localeDropdown',
