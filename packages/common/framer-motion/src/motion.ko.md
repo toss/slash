@@ -10,6 +10,8 @@ title: motion
 원래 `motion` 컴포넌트는 `Proxy` 라고 하는 Polyfill 불가능한 API를 사용하기 때문에, 구형 브라우저에서 실행할 수 없습니다.
 보다 넓은 범위의 기기를 지원하기 위해서 `@toss/framer-motion` 의 `motion` 컴포넌트를 사용해주세요.
 
+- https://www.framer.com/motion/
+
 ## Examples
 
 ```typescript
