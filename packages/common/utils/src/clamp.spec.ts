@@ -1,13 +1,13 @@
 import { clamp } from './clamp';
 
-describe('clamp should', () => {
-  it('work well when only given max value', () => {
+describe('clamp', () => {
+  it('should work well when only given max value', () => {
     expect(clamp(3, 5)).toBe(3);
     expect(clamp(10, 6)).toBe(6);
     expect(clamp(6, 10)).toBe(6);
   });
 
-  it('work well when both value was given', () => {
+  it('should work well when both value was given', () => {
     expect(clamp(3, 5, 10)).toBe(5);
     expect(clamp(10, 6, 10)).toBe(10);
     expect(clamp(6, 10, 10)).toBe(10);
@@ -15,7 +15,7 @@ describe('clamp should', () => {
     expect(clamp(100, 5, 6)).toBe(6);
   });
 
-  it('throw error when bound1 is bigger than bound2', () => {
+  it('should throw error when bound1 is bigger than bound2', () => {
     expect(() => clamp(3, 10, 5)).toThrowErrorMatchingInlineSnapshot(
       `"The value of bound2 must be a number greater than bound1."`
     );
