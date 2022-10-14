@@ -16,6 +16,9 @@
     "test": "jest",
     "typecheck": "tsc --noEmit"
   },
+  "dependencies": {
+    "@toss/utils": "workspace:^1.0.3"
+  },
   "devDependencies": {
     "@babel/core": "^7",
     "@babel/preset-env": "^7.14.8",
