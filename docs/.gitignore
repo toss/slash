@@ -1,6 +1,9 @@
 # Dependencies
 /node_modules
 
+# Built docs
+/docs
+
 # Production
 /build
 

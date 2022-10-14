@@ -3,19 +3,19 @@ const globby = require('globby');
 const path = require('path');
 const pnpapi = require('pnpapi');
 
-const BASE_PATH = path.resolve(__dirname, '../packages');
+const PACKAGES_PATH = path.resolve(__dirname, '..', 'packages');
+const BASE_PATH = path.resolve(__dirname, 'docs');
 
 const paths = globby
   .sync('**/*.md', {
     cwd: BASE_PATH,
   })
-  .filter(x => !x.endsWith('/CHANGELOG.md'))
   .sort();
 
 const groups = {};
 
 for (const p of paths) {
-  const { name } = pnpapi.findPackageLocator(`${BASE_PATH}/${p}`);
+  const { name } = pnpapi.findPackageLocator(`${PACKAGES_PATH}/${p}`);
 
   if (groups[name] == null) {
     groups[name] = [];

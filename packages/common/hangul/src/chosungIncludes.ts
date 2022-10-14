@@ -1,5 +1,6 @@
+/** @tossdocs-ignore */
 import { HANGUL_CHARACTERS_BY_FIRST_INDEX } from './constants';
-import { disassembleHangulToGroups } from './disassemble';
+import { disassembleHangulToGroups } from './disassembleHangulToGroups';
 import { getFirstConsonants } from './utils';
 
 /**

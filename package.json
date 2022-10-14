@@ -19,7 +19,6 @@
     "@types/node": "^18.8.3",
     "@typescript-eslint/eslint-plugin": "^5.39.0",
     "@typescript-eslint/parser": "^5.39.0",
-    "documentation": "patch:documentation@npm:14.0.0#.yarn/patches/documentation-npm-14.0.0-c422c3490f.patch",
     "eslint": "^7",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-import": "^2.26.0",
@@ -53,7 +52,8 @@
     "babel-jest": "29",
     "@types/jest": "29",
     "@tossteam/jest": "^17",
-    "esbuild": "npm:esbuild-wasm@0.15.10"
+    "esbuild": "npm:esbuild-wasm@0.15.10",
+    "documentation": "patch:documentation@npm:14.0.0#.yarn/patches/documentation-npm-14.0.0-c422c3490f.patch"
   },
   "dependenciesMeta": {
     "@sentry/cli": {

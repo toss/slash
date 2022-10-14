@@ -5,6 +5,8 @@ export type ExtendHTMLProps<Elem extends HTMLElement, T> = Omit<HTMLProps<Elem>,
 
 export type CSSPixelValue = string | number;
 
+export type AxisDirection = 'vertical' | 'horizontal';
+
 export type InferenceHTMLElement<K extends keyof JSX.IntrinsicElements> = NonNullable<
   Extract<JSX.IntrinsicElements[K]['ref'], React.RefObject<any>>['current']
 >;
