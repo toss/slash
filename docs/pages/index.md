@@ -13,7 +13,7 @@ hide_table_of_contents: true
   />
   <meta property="og:url" content="https://slash.page" />
   <meta property="og:image" content="https://static.toss.im/assets/slash-libraries/slash-og.png" />
-  <link href="../styles/index.css" rel="stylesheet">
+  <link href="../styles/index.css" rel="stylesheet"/>
 </head>
 
 <div className="mainpage_hero">
