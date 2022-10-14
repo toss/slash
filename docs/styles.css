@@ -15,7 +15,7 @@ body {
   height: 24px;
   display: flex;
   transition: opacity 0.2s ease-in-out;
-  background: url(../stati/img/github.svg) no-repeat center;
+  background: url(../static/img/github.svg) no-repeat center;
 }
 
 .navbar-github-link:hover::before {
@@ -23,5 +23,5 @@ body {
 }
 
 [data-theme='dark'] .navbar-github-link::before {
-  background: url(../../static/icons/github-dark.svg) no-repeat center;
+  background: url(../static/icons/github-dark.svg) no-repeat center;
 }
