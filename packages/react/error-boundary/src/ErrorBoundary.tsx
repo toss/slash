@@ -1,5 +1,5 @@
+import { isDifferentArray } from '@toss/utils';
 import { Component, ErrorInfo, PropsWithChildren, PropsWithRef, ReactNode } from 'react';
-import isDifferentArray from './isDifferentArray';
 
 type RenderFallbackProps<ErrorType extends Error = Error> = {
   error: ErrorType;

@@ -9240,6 +9240,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@slash/rollup-config", "workspace:configs/rollup"],\
             ["@testing-library/jest-dom", "npm:5.16.5"],\
             ["@testing-library/react", "virtual:62cb29918b2e63dff97923d985a18238631a18b918521fd9ac48de2be213715676e8b999d7ab4431ea536d1917af1465d5695ceae059c69bf4c14df5968dd6a1#npm:13.4.0"],\
+            ["@toss/utils", "workspace:packages/common/utils"],\
             ["@tossteam/jest", "virtual:9b0054e10472894acc6e1831a01d94bc6960af68ced3a77c0569df2dcc99996305ccf0051fd1e1f3827bc2f0f81d464cccbf0994c97c6b9eadb0efa4a1509c16#npm:17.187.2"],\
             ["@types/babel__core", "npm:7.1.19"],\
             ["@types/babel__preset-env", "npm:7.9.2"],\
@@ -9277,6 +9278,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@slash/rollup-config", "workspace:configs/rollup"],\
             ["@testing-library/jest-dom", "npm:5.16.5"],\
             ["@testing-library/react", "virtual:62cb29918b2e63dff97923d985a18238631a18b918521fd9ac48de2be213715676e8b999d7ab4431ea536d1917af1465d5695ceae059c69bf4c14df5968dd6a1#npm:13.4.0"],\
+            ["@toss/utils", "workspace:packages/common/utils"],\
             ["@tossteam/jest", "virtual:9b0054e10472894acc6e1831a01d94bc6960af68ced3a77c0569df2dcc99996305ccf0051fd1e1f3827bc2f0f81d464cccbf0994c97c6b9eadb0efa4a1509c16#npm:17.187.2"],\
             ["@types/babel__core", "npm:7.1.19"],\
             ["@types/babel__preset-env", "npm:7.9.2"],\

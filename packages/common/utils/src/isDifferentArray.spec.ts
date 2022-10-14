@@ -1,7 +1,7 @@
-import isDifferentArray from './isDifferentArray';
+import { isDifferentArray } from '.';
 
 describe('isDifferentArray', () => {
-  it('두 값이 길이가 다를 경우, true를 반환한다.', () => {
+  it('should return true if the two values are different in length.', () => {
     // Given
     const value1 = [1];
     const value2 = [2, 3];
@@ -13,7 +13,7 @@ describe('isDifferentArray', () => {
     expect(result).toBe(true);
   });
 
-  it('두 배열이 길이는 같지만 하나의 primitive 값이 다를 경우 true를 반환한다', () => {
+  it('should return true if the two arrays have the same length but one primitive value is different.', () => {
     // Given
     const value1 = [1, 3];
     const value2 = [1, 2];
@@ -25,7 +25,7 @@ describe('isDifferentArray', () => {
     expect(result).toBe(true);
   });
 
-  it('두 배열이 길이는 같지만 하나의 객체 필드값이 다를 경우, true를 반환한다.', () => {
+  it('should return true if two arrays have the same length but have different field', () => {
     // Given
     const value1 = [{ test: 1 }, { test: 2 }];
     const value2 = [{ test: 1 }, { test: 3 }];
@@ -37,7 +37,7 @@ describe('isDifferentArray', () => {
     expect(result).toBe(true);
   });
 
-  it('두 배열이 동일할 경우, false를 반환한다.', () => {
+  it('should return false when two array is same', () => {
     // Given
     const value1 = [1, 2];
     const value2 = [1, 2];
