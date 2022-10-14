@@ -1,0 +1,24 @@
+.mainpage_hero {
+  display: flex;
+}
+@media (min-width: 600px) {
+  .mainpage_hero {
+    grid-template-areas: 'text image';
+    grid-template-columns: 1fr 300px;
+  }
+  .key-video {
+    width: 260px;
+    height: 146px;
+  }
+}
+@media (max-width: 600px) {
+  .mainpage_hero {
+    grid-template-areas: 'image' 'text';
+    grid-template-rows: min-content min-content;
+  }
+
+  .key-video {
+    width: 80%;
+    margin: 24px auto;
+  }
+}

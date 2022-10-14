@@ -10,35 +10,7 @@ hide_table_of_contents: true
   <meta property="og:description" content="높은 퀄리티의 웹 서비스를 개발하기 위한 TypeScript/JavaScript 패키지 세트" />
   <meta property="og:url" content="https://slash.page/ko" />
   <meta property="og:image" content="https://static.toss.im/assets/slash-libraries/slash-og.png" />
-  <style
-    dangerouslySetInnerHTML={{
-      __html: `
-      .mainpage_hero {
-        display: grid;
-      }
-      @media (min-width: 600px) {
-        .mainpage_hero {
-          grid-template-areas: "text image";
-          grid-template-columns: 1fr 300px;
-          }
-        .key-video {
-          width: 260px;
-          height: 146px;
-          }
-      }
-      @media (max-width: 600px) {
-        .mainpage_hero {
-          grid-template-areas: "image" "text";
-          grid-template-rows: min-content min-content;
-          }
-        .key-video {
-          width: 80%;
-          margin: 24px auto;
-          }
-      }
-  `,
-  }}
-  ></style>
+  <link href="../../../styles/index.css" rel="stylesheet">
 </head>
 
 <div className="mainpage_hero">
