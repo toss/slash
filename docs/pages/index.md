@@ -30,7 +30,7 @@ hide_table_of_contents: true
   </div>
 
   <div style={{ gridArea: 'image', textAlign: 'center' }}>
-  <video class="key-video" src="https://static.toss.im/assets/slash-libraries/keyvis.mp4" autoplay="true" muted="true" playsInline="true" loop="true" />
+  <video class="key-video" src="https://static.toss.im/assets/slash-libraries/keyvis.mp4" autoplay muted="true" playsInline="true" loop="true" />
   </div>
 </div>
 
