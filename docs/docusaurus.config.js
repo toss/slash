@@ -108,6 +108,7 @@ module.exports = {
         language: ['en', 'ko'],
       },
     ],
+    '@docusaurus/theme-live-codeblock',
   ],
   plugins: [require.resolve('./scripts/webpack5-compat.js')],
   presets: [
