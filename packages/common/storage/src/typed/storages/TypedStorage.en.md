@@ -21,11 +21,11 @@ There are some repetitive logics for WebStorage:
 ```typescript
 import { TypedStorage } from '@toss/storage/typed';
 
-type Gender = 'men' | 'women';
-const count = new TypedStorage<Gender>('gender', { initialValue: 'men' });
-count.get(); // 'men'
-count.set('women'); // 'women'
-count.set('not-gender-string'); // Type Error
+type SupportedOS = 'ios' | 'android';
+const count = new TypedStorage<SupportedOS>('os', { initialValue: 'ios' });
+count.get(); // 'ios'
+count.set('android'); // 'android'
+count.set('toss-os'); // Type Error
 ```
 
 ```typescript
