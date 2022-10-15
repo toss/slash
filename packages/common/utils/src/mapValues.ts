@@ -19,7 +19,7 @@ export function mapValues<T extends Record<PropertyKey, T[ObjectKeys<T>]>, U>(
 ): { [K in keyof T]: U } {
   const entries = Object.entries(value) as Array<[ObjectKeys<T>, T[ObjectKeys<T>]]>;
 
-  return Object.fromEntries<U>(
+  return Object.fromEntries(
     entries.map(([k, v]) => {
       return [k, mapper(v)];
     })
