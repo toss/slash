@@ -38,12 +38,15 @@ export interface FlexOptions {
  */
 export function flex(options: FlexOptions): SerializedStyles;
 export function flex(
-  // NOTE(@noahluftyang): CSSProperties['alignItems']로 정의하면 union 타입이 잘 동작하지 않음
-  align: string,
+  align: CSSProperties['alignItems'],
   justify?: CSSProperties['justifyContent'],
   direction?: CSSProperties['flexDirection']
 ): SerializedStyles;
-export function flex(alignOrFlexOptions: FlexOptions | string, justify = 'flex-start', direction = 'row') {
+export function flex(
+  alignOrFlexOptions: FlexOptions | CSSProperties['alignItems'],
+  justify = 'flex-start',
+  direction = 'row'
+) {
   if (typeof alignOrFlexOptions === 'object') {
     const { align = 'stretch', direction = 'row', justify = 'flex-start' } = alignOrFlexOptions;
 
