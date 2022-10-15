@@ -1,6 +1,6 @@
 // eslint-disable-next-line import/no-duplicates
 import { format as _format, isAfter, isBefore, isEqual, isValid } from 'date-fns';
-import locale from 'date-fns/locale/ko';
+import locale from 'date-fns/locale/ko/index.js';
 
 // eslint-disable-next-line import/no-duplicates
 /**
