@@ -1,3 +1,5 @@
+import { ObjectKeys } from './index';
+
 /**
  * @name mapValues
  * @description
@@ -11,10 +13,13 @@
  * mapValues({ foo: 1, bar: 2 }, x => x * 2)
  * // => { foo: 2, bar: 4 }
  */
-export function mapValues<T, U>(value: T, mapper: (value: T[keyof T]) => U): { [K in keyof T]: U } {
-  const entries = Object.entries(value);
+export function mapValues<T extends Record<PropertyKey, T[ObjectKeys<T>]>, U>(
+  value: T,
+  mapper: (value: T[keyof T]) => U
+): { [K in keyof T]: U } {
+  const entries = Object.entries(value) as Array<[ObjectKeys<T>, T[ObjectKeys<T>]]>;
 
-  return Object.fromEntries(
+  return Object.fromEntries<U>(
     entries.map(([k, v]) => {
       return [k, mapper(v)];
     })
