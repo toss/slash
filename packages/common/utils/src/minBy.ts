@@ -7,7 +7,7 @@
  *   // 최솟값을 찾을 배열
  *   collection: T[],
  *   // 배열의 값을 계산하는 방법
- *   iteratee: (element: T) => T | undefined
+ *   iteratee: (element: T) => number
  * // 배열이 비어 있을 경우, undefined를 반환합니다.
  * ): T | undefined;
  * ```
