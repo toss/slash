@@ -13,7 +13,7 @@ function isEmail(email: string): boolean;
 ## Examples
 
 ```typescript
-isEmail('raon0211@gmail.com'); // true
-isEmail('raon0211@gmail.'); // false
-isEmail('raon0211@gmail.com123'); // false
+isEmail('johndoe@example.com'); // true
+isEmail('johndoe@example.'); // false
+isEmail('johndoe@example.com123'); // false
 ```
