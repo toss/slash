@@ -8,3 +8,20 @@ body {
   word-break: keep-all;
   word-wrap: break-word;
 }
+
+.navbar-github-link::before {
+  content: '';
+  width: 24px;
+  height: 24px;
+  display: flex;
+  transition: opacity 0.2s ease-in-out;
+  background: url(./static/img/github.svg) no-repeat center;
+}
+
+.navbar-github-link:hover::before {
+  opacity: 0.6;
+}
+
+[data-theme='dark'] .navbar-github-link::before {
+  background: url(./static/img/github-dark.svg) no-repeat center;
+}
