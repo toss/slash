@@ -1,3 +1,4 @@
+/** @tossdocs-ignore */
 import { sum, zip } from '@toss/utils';
 
 const BUSINESS_REG_NO_KEYS = [1, 3, 7, 1, 3, 7, 1, 3, 5];

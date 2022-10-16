@@ -1,3 +1,4 @@
+/** @tossdocs-ignore */
 export function isAge(ageInput: string): boolean {
   if (!/^\d*$/.test(ageInput)) {
     return false;

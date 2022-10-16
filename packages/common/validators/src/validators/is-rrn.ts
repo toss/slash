@@ -1,3 +1,4 @@
+/** @tossdocs-ignore */
 import { isBirthDate6 } from './is-birth-date-6';
 
 export function isRRN(val: string, { allowForeigner }: { allowForeigner?: boolean } = { allowForeigner: false }) {
