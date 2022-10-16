@@ -1,8 +1,8 @@
 ---
-title: is-businessRegNo
+title: isBusinessRegNo
 ---
 
-# is-businessRegNo
+# isBusinessRegNo
 
 Business number validation
 

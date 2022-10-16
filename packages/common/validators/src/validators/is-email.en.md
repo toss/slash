@@ -1,8 +1,8 @@
 ---
-title: is-email
+title: isEmail
 ---
 
-# is-email
+# isEmail
 
 Check that the email address complies with the RFC 5322 standard. [RFC 5322](https://emailregex.com/)
 

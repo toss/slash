@@ -1,8 +1,8 @@
 ---
-title: is-birth-date-6
+title: isBirthDate6
 ---
 
-# is-birth-date-6
+# isBirthDate6
 
 Checks that the given string is a valid six digits of the date of birth.
 

@@ -1,8 +1,8 @@
 ---
-title: is-home-phone
+title: isHomePhone
 ---
 
-# is-home-phone
+# isHomePhone
 
 주어진 문자열이 집전화번호 (또는 인터넷 전화, 통신사업자 대표전화) 인지 확인합니다.
 

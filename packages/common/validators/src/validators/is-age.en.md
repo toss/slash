@@ -1,8 +1,8 @@
 ---
-title: is-age
+title: isAge
 ---
 
-# is-age
+# isAge
 
 Checks whether a given string is a valid age.
 

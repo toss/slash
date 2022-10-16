@@ -1,8 +1,8 @@
 ---
-title: is-home-phone
+title: isHomePhone
 ---
 
-# is-home-phone
+# isHomePhone
 
 Check that the given string is a home phone number (or Internet phone, business representative phone).
 

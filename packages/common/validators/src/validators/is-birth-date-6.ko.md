@@ -1,8 +1,8 @@
 ---
-title: is-birth-date-6
+title: isBirthDate6
 ---
 
-# is-birth-date-6
+# isBirthDate6
 
 주어진 문자열이 올바른 생년월일 여섯자리인지 검증합니다.
 

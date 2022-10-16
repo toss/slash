@@ -1,8 +1,8 @@
 ---
-title: is-age
+title: isAge
 ---
 
-# is-age
+# isAge
 
 주어진 문자열이 유효한 나이인지 검사합니다.
 

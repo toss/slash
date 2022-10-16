@@ -1,8 +1,8 @@
 ---
-title: is-rrn
+title: isRRN
 ---
 
-# is-rrn
+# isRRN
 
 **If a new resident registration number is granted or changed after October 2020, the logic will not work properly.**
 
