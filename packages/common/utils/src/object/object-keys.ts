@@ -1,4 +1,4 @@
-export type ObjectKeys<T extends Record<PropertyKey, unknown>> = `${Exclude<keyof T, symbol>}`;
+export type ObjectKeys<T extends Record<PropertyKey, unknown>> = Exclude<keyof T, symbol>;
 
 /**
  * 타입이 깨지는 것을 방지하기 위해 사용합니다.
