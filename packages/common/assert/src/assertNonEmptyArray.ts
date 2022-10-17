@@ -1,3 +1,4 @@
+/** @tossdocs-ignore */
 import { NonEmptyArray } from '@toss/utils';
 
 /**

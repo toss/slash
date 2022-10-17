@@ -1,6 +1,5 @@
-import { SerializedStyles, css } from '@emotion/react';
-
-export type Direction = 'horizontal' | 'vertical';
+import { css, SerializedStyles } from '@emotion/react';
+import { AxisDirection } from './types';
 
 function horizontalGutter(space: number, selector: string) {
   return css`
@@ -19,7 +18,7 @@ function verticalGutter(space: number, selector: string) {
 }
 
 export interface GutterOptions {
-  direction: Direction;
+  direction: AxisDirection;
   space?: number;
   selector?: string;
 }
@@ -29,11 +28,11 @@ export interface GutterOptions {
  *
  * ```ts
  * function gutter(options: {
- *   direction: Direction;
+ *   direction: AxisDirection;
  *   space?: number;
  *   selector?: string;
  * }): SerializedStyles;
- * function gutter(direction: Direction, space?: number, selector?: string): SerializedStyles;
+ * function gutter(direction: AxisDirection, space?: number, selector?: string): SerializedStyles;
  * ```
  *
  * @example
@@ -55,8 +54,8 @@ export interface GutterOptions {
  * </Flex.Center>
  */
 export function gutter(options: GutterOptions): SerializedStyles;
-export function gutter(direction: Direction, space?: number, selector?: string): SerializedStyles;
-export function gutter(directionOrGutterOptions: GutterOptions | Direction, space = 24, selector = '*:not(style)') {
+export function gutter(direction: AxisDirection, space?: number, selector?: string): SerializedStyles;
+export function gutter(directionOrGutterOptions: GutterOptions | AxisDirection, space = 24, selector = '*:not(style)') {
   if (typeof directionOrGutterOptions === 'object') {
     const { direction, space = 24, selector = '*:not(style)' } = directionOrGutterOptions;
 

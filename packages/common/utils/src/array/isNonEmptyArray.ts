@@ -12,8 +12,8 @@ import { NonEmptyArray } from './NonEmptyArray';
  * ): arr is NonEmptyArray<T>;
  * ```
  * @example
- * isNonEmptyArray([]); // true
- * isNonEmptyArray(['hi']); // false
+ * isNonEmptyArray([]); // false
+ * isNonEmptyArray(['hi']); // true
  */
 export function isNonEmptyArray<T>(array: T[]): array is NonEmptyArray<T> {
   return array.length >= 1;
