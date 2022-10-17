@@ -1,12 +1,12 @@
-import { parseYYYYMMDD, getDateDistance, getDateDistanceText, TimeUnits } from './index';
+import { getDateDistance, getDateDistanceText, parseYYYYMMDD, TimeUnits } from './index';
 
 describe('parseYYYYMMDD', () => {
   test('"2020-04-23"은 2019년 4월 23일로 파싱한다.', () => {
     const date = parseYYYYMMDD('2020-04-23');
 
-    expect(date?.getFullYear()).toEqual(2020);
-    expect(date?.getMonth()).toEqual(3);
-    expect(date?.getDate()).toEqual(23);
+    expect(date.getFullYear()).toEqual(2020);
+    expect(date.getMonth()).toEqual(3);
+    expect(date.getDate()).toEqual(23);
   });
 
   test('"2020-13-02"는 에러를 던진다.', () => {
