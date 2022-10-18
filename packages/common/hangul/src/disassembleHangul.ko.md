@@ -18,8 +18,8 @@ function disassembleHangul(
 ## Examples
 
 ```tsx
-disassembleHangulToGroups('값'); // 'ㄱㅏㅂㅅ'
-disassembleHangulToGroups('값이 비싸다'); // 'ㄱㅏㅂㅅㅇㅣ ㅂㅣㅆㅏㄷㅏ'
-disassembleHangulToGroups('ㅘ'); // 'ㅗㅏ'
-disassembleHangulToGroups('ㄵ'); // 'ㄴㅈ'
+disassembleHangul('값'); // 'ㄱㅏㅂㅅ'
+disassembleHangul('값이 비싸다'); // 'ㄱㅏㅂㅅㅇㅣ ㅂㅣㅆㅏㄷㅏ'
+disassembleHangul('ㅘ'); // 'ㅗㅏ'
+disassembleHangul('ㄵ'); // 'ㄴㅈ'
 ```
