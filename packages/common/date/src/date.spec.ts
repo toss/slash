@@ -10,19 +10,11 @@ describe('parseYYYYMMDD', () => {
   });
 
   test('"2020-13-02"는 에러를 던진다.', () => {
-    try {
-      parseYYYYMMDD('2020-13-02');
-    } catch (e: any) {
-      expect(e.message).toBe('Invalid date format');
-    }
+    expect(() => parseYYYYMMDD('2020-13-02')).toThrow('Invalid date format');
   });
 
   test('"2020-01-32"는 에러를 던진다.', () => {
-    try {
-      parseYYYYMMDD('2020-01-32');
-    } catch (e: any) {
-      expect(e.message).toBe('Invalid date format');
-    }
+    expect(() => parseYYYYMMDD('2020-01-32')).toThrow('Invalid date format');
   });
 });
 
