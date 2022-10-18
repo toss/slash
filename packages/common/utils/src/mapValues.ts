@@ -13,11 +13,11 @@ import { ObjectKeys } from './index';
  * mapValues({ foo: 1, bar: 2 }, x => x * 2)
  * // => { foo: 2, bar: 4 }
  */
-export function mapValues<T extends Record<PropertyKey, T[ObjectKeys<T>]>, U>(
+export function mapValues<T extends Record<string | number, T[ObjectKeys<T>]>, U>(
   value: T,
   mapper: (value: T[keyof T]) => U
 ): { [K in keyof T]: U } {
-  const entries = Object.entries(value) as Array<[ObjectKeys<T>, T[ObjectKeys<T>]]>;
+  const entries = Object.entries(value);
 
   return Object.fromEntries(
     entries.map(([k, v]) => {
