@@ -6,7 +6,7 @@
  * ```typescript
  * function mapValues<T extends Record<PropertyKey, any>, U>(
  *   value: T,
- *   mapper: (value: Exclude<keyof T, symbol>) => U
+ *   mapper: (value: T[Exclude<keyof T, symbol>) => U
  * ): { [K in Exclude<keyof T, symbol>]: U };
  * ```
  *
