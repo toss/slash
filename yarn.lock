@@ -5660,7 +5660,6 @@ __metadata:
     jest-environment-jsdom: ^29
     jsdom: ^15.2.1
     lodash: ^4.17.20
-    lottie-web: ^5.5.9
     react: ^18.2.0
     react-dom: ^18.2.0
     react-test-renderer: ^18.2.0
