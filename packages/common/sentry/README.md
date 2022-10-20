@@ -18,7 +18,7 @@ Sentry.captureException(...);
   <summary><b>왜 일반 앱과 Next.js 앱을 구분해야 하나요?</b></summary>
   <br />
   <ul>
-    <li>일반 서버의 `@sentry/node`는 에러를 그루핑할 때 요청 기준이 아닌 Node.js 프로세스 기준으로 그루핑합니다. (수동으로 [Sentry.Handlers.requestHandler()](https://docs.sentry.io/platforms/node/guides/express/)를 사용해야 함)</li>
+    <li>일반 서버의 `@sentry/node`는 에러를 그루핑할 때 요청 기준이 아닌 Node.js 프로세스 기준으로 그루핑합니다. (수동으로 <a href="https://docs.sentry.io/platforms/node/guides/express/">Sentry.Handlers.requestHandler</a>를 사용해야 함)</li>
     <li>`@sentry/nextjs`는 서버 에러를 그루핑할 때 Next.js로 들어온 요청을 기준으로 그루핑합니다.</li>
   </ul>
 </details>
