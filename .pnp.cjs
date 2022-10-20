@@ -9513,7 +9513,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["jest-environment-jsdom", "npm:29.1.2"],\
             ["jsdom", "virtual:62cb29918b2e63dff97923d985a18238631a18b918521fd9ac48de2be213715676e8b999d7ab4431ea536d1917af1465d5695ceae059c69bf4c14df5968dd6a1#npm:15.2.1"],\
             ["lodash", "npm:4.17.21"],\
-            ["lottie-web", "npm:5.9.6"],\
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:62cb29918b2e63dff97923d985a18238631a18b918521fd9ac48de2be213715676e8b999d7ab4431ea536d1917af1465d5695ceae059c69bf4c14df5968dd6a1#npm:18.2.0"],\
             ["react-test-renderer", "virtual:62cb29918b2e63dff97923d985a18238631a18b918521fd9ac48de2be213715676e8b999d7ab4431ea536d1917af1465d5695ceae059c69bf4c14df5968dd6a1#npm:18.2.0"],\
@@ -9564,7 +9563,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["jest-environment-jsdom", "npm:29.1.2"],\
             ["jsdom", "virtual:62cb29918b2e63dff97923d985a18238631a18b918521fd9ac48de2be213715676e8b999d7ab4431ea536d1917af1465d5695ceae059c69bf4c14df5968dd6a1#npm:15.2.1"],\
             ["lodash", "npm:4.17.21"],\
-            ["lottie-web", "npm:5.9.6"],\
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:62cb29918b2e63dff97923d985a18238631a18b918521fd9ac48de2be213715676e8b999d7ab4431ea536d1917af1465d5695ceae059c69bf4c14df5968dd6a1#npm:18.2.0"],\
             ["react-test-renderer", "virtual:62cb29918b2e63dff97923d985a18238631a18b918521fd9ac48de2be213715676e8b999d7ab4431ea536d1917af1465d5695ceae059c69bf4c14df5968dd6a1#npm:18.2.0"],\
