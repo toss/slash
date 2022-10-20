@@ -1,6 +1,6 @@
 {
   "name": "@toss/framer-motion",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "sideEffects": false,
   "exports": {
     ".": {
@@ -57,5 +57,5 @@
     "module": "./esm/index.mjs",
     "types": "./dist/index.d.ts"
   },
-  "gitHead": "18cb6253ca2131397da2c209932a2413d9cd93c1"
+  "gitHead": "5aa81f2a04bf77320ca339619f2a80df02e84d6e"
 }

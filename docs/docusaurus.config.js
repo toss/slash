@@ -60,13 +60,14 @@ module.exports = {
           label: 'Docs',
         },
         {
-          href: 'https://github.com/toss/slash',
-          label: 'GitHub',
+          type: 'localeDropdown',
           position: 'right',
         },
         {
-          type: 'localeDropdown',
+          href: 'https://github.com/toss/slash',
+          'aria-label': 'GitHub',
           position: 'right',
+          className: 'navbar-github-link',
         },
       ],
     },

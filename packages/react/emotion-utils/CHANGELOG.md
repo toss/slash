@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.4](https://github.com/toss/slash/compare/@toss/emotion-utils@1.0.3...@toss/emotion-utils@1.0.4) (2022-10-18)
+
+
+### Bug Fixes
+
+* **emotion-utils:** replace flex's align type with a more specific type ([#64](https://github.com/toss/slash/issues/64)) ([4fd556e](https://github.com/toss/slash/commit/4fd556ea4c5a58a4f68f28adea8c4c06d3b8e44c))
+
+
+
+
+
 ## [1.0.3](https://github.com/toss/slash/compare/@toss/emotion-utils@1.0.2...@toss/emotion-utils@1.0.3) (2022-10-12)
 
 **Note:** Version bump only for package @toss/emotion-utils

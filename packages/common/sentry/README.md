@@ -37,8 +37,6 @@ Sentry.captureException(...);
 
 Lazy loading 스크립트가 없는 곳에서 `@toss/sentry` 를 사용하게 되면 에러가 발생하므로, 반드시 스크립트를 추가해주시기 바랍니다.
 
-토스코어의 경우 `@toss/twdk-next` 내부에 내장된 `<SentryScript />` 컴포넌트로 Lazy loading 스크립트를 포함하고 있습니다.
-
 ## 테스트하기
 
 `@toss/sentry/testing` 모듈로 테스트할 수 있습니다.
