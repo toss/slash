@@ -21,7 +21,7 @@ export type OnResize = (entry: ResizeObserverEntry) => void;
  *
  * <button ref={ref}>...</button>
  */
-export function useResizeObserver<E extends HTMLElement = HTMLElement>(onResize: OnResize) {
+export default function useResizeObserver<E extends HTMLElement = HTMLElement>(onResize: OnResize) {
   const resizeCallback = usePreservedCallback(onResize);
   const ref = useRefEffect<E>(
     elem => {

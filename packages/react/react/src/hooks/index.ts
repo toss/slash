@@ -1,4 +1,5 @@
 /** @tossdocs-ignore */
+export { default as useBodyClass } from './useBodyClass';
 export { default as useBooleanState } from './useBooleanState';
 export { default as useCallbackOnce } from './useCallbackOnce';
 export { default as useCheckList } from './useCheckList';
@@ -18,7 +19,9 @@ export * from './usePreservedCallback';
 export { default as usePreservedReference } from './usePreservedReference';
 export { default as usePrevious } from './usePrevious';
 export * from './useRefEffect';
+export { default as useResizeObserver } from './useResizeObserver';
 export * from './useStorageState';
+export { default as useStyleSheetInjection } from './useStyleSheetInjection';
 export { default as useThrottle } from './useThrottle';
 export { default as useTimeout } from './useTimeout';
 export * from './useTimeoutQueue';
