@@ -1,5 +1,5 @@
 import { renderHook } from '@testing-library/react';
-import { useTimeoutQueue } from './useTimeoutQueue';
+import useTimeoutQueue from './useTimeoutQueue';
 
 let mockSetTimeout: jest.SpyInstance;
 

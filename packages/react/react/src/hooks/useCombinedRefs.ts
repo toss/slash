@@ -1,4 +1,4 @@
-import { Ref, useCallback, MutableRefObject } from 'react';
+import { MutableRefObject, Ref, useCallback } from 'react';
 
 type CallbackRef<T> = (ref: T | null) => void;
 
@@ -18,7 +18,7 @@ type CallbackRef<T> = (ref: T | null) => void;
  *   return <div ref={ref} />;
  * })
  */
-export function useCombinedRefs<T>(...refs: Array<Ref<T> | CallbackRef<T>>): Ref<T> {
+export default function useCombinedRefs<T>(...refs: Array<Ref<T> | CallbackRef<T>>): Ref<T> {
   return useCallback(
     (value: T) => {
       for (const ref of refs) {

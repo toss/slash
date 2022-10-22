@@ -1,5 +1,5 @@
 import { render } from '@testing-library/react';
-import { useRefEffect } from './useRefEffect';
+import useRefEffect from './useRefEffect';
 
 const TestComponent = ({ onRef, deps }: { onRef: (element: HTMLDivElement) => void; deps: any[] }) => {
   const ref = useRefEffect(onRef, deps);

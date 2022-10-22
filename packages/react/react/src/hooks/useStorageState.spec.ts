@@ -1,5 +1,5 @@
 import { act, renderHook } from '@testing-library/react';
-import { Serializable, useStorageState } from './useStorageState';
+import useStorageState, { Serializable } from './useStorageState';
 
 describe('useLocalStorageState는', () => {
   it('초기 상태를 스토리지에서 가져온다.', () => {

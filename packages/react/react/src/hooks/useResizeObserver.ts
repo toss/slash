@@ -1,5 +1,5 @@
-import { usePreservedCallback } from './usePreservedCallback';
-import { useRefEffect } from './useRefEffect';
+import usePreservedCallback from './usePreservedCallback';
+import useRefEffect from './useRefEffect';
 
 export type OnResize = (entry: ResizeObserverEntry) => void;
 

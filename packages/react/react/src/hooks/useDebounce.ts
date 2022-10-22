@@ -1,6 +1,6 @@
-import { useEffect, useMemo } from 'react';
 import debounce from 'lodash/debounce';
-import { usePreservedCallback } from './usePreservedCallback';
+import { useEffect, useMemo } from 'react';
+import usePreservedCallback from './usePreservedCallback';
 
 /**
  * @description
