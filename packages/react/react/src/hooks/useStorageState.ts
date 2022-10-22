@@ -17,18 +17,18 @@ interface StorageStateOptionsWithDefaultValue<T> extends StorageStateOptions<T> 
  * 스토리지에 상태값을 저장하고 불러와서 값이 보존되는 useState로 동작하는 hook입니다.
  * @param key 스토리지에 저장할 키
  */
-export default function useStorageState<T>(
+export function useStorageState<T>(
   key: string
 ): readonly [Serializable<T> | undefined, (value: SetStateAction<Serializable<T> | undefined>) => void, () => void];
-export default function useStorageState<T>(
+export function useStorageState<T>(
   key: string,
   { storage, defaultValue }: StorageStateOptionsWithDefaultValue<T>
 ): readonly [Serializable<T>, (value: SetStateAction<Serializable<T>>) => void, () => void];
-export default function useStorageState<T>(
+export function useStorageState<T>(
   key: string,
   { storage, defaultValue }: StorageStateOptions<T>
 ): readonly [Serializable<T> | undefined, (value: SetStateAction<Serializable<T> | undefined>) => void, () => void];
-export default function useStorageState<T>(
+export function useStorageState<T>(
   key: string,
   { storage = safeLocalStorage, defaultValue }: StorageStateOptions<T> = {}
 ): readonly [Serializable<T> | undefined, (value: SetStateAction<Serializable<T> | undefined>) => void, () => void] {

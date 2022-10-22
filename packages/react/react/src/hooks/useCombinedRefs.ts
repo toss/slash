@@ -18,7 +18,7 @@ type CallbackRef<T> = (ref: T | null) => void;
  *   return <div ref={ref} />;
  * })
  */
-export default function useCombinedRefs<T>(...refs: Array<Ref<T> | CallbackRef<T>>): Ref<T> {
+export function useCombinedRefs<T>(...refs: Array<Ref<T> | CallbackRef<T>>): Ref<T> {
   return useCallback(
     (value: T) => {
       for (const ref of refs) {

@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { useCallback, useRef } from 'react';
-import useCombinedRefs from './useCombinedRefs';
+import { useCombinedRefs } from './useCombinedRefs';
 
 describe('useCombinedRefs', () => {
   it('여러 개의 ref를 하나로 합칠 수 있다.', async () => {

@@ -1,5 +1,5 @@
-import usePreservedCallback from './usePreservedCallback';
-import useRefEffect from './useRefEffect';
+import { usePreservedCallback } from './usePreservedCallback';
+import { useRefEffect } from './useRefEffect';
 
 export type OnResize = (entry: ResizeObserverEntry) => void;
 
@@ -21,7 +21,7 @@ export type OnResize = (entry: ResizeObserverEntry) => void;
  *
  * <button ref={ref}>...</button>
  */
-export default function useResizeObserver<E extends HTMLElement = HTMLElement>(onResize: OnResize) {
+export function useResizeObserver<E extends HTMLElement = HTMLElement>(onResize: OnResize) {
   const resizeCallback = usePreservedCallback(onResize);
   const ref = useRefEffect<E>(
     elem => {

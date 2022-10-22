@@ -1,5 +1,5 @@
 import { useCallback, useRef } from 'react';
-import useForceUpdate from './useForceUpdate';
+import { useForceUpdate } from './useForceUpdate';
 
 interface Item {
   id: string | number;
@@ -39,7 +39,7 @@ interface Item {
  * @warning
  * 리스트의 아이템이 많은 경우 perf 가 떨어질 수 있다.
  */
-export default function useCheckList<T extends Item>(initialItems: T[]) {
+export function useCheckList<T extends Item>(initialItems: T[]) {
   type IdType = T['id'];
   const listRef = useRef<T[]>(initialItems);
   const forceUpdate = useForceUpdate();
