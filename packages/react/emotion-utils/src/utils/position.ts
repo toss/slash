@@ -71,14 +71,19 @@ export function position(position: CSSProperties['position'], coordinates?: Coor
 
 export function position(
   positionOrTop: CSSProperties['position'] | CSSPixelValue,
-  topOrCoordinates: CSSPixelValue | Coordinates = {},
+  topOrRightOrCoordinates: CSSPixelValue | Coordinates = {},
   ...values: CSSPixelValue[]
 ) {
   const [top, right, bottom, left] = isPositionValue(positionOrTop)
-    ? isCSSPixelValue(topOrCoordinates)
-      ? [topOrCoordinates, ...values]
-      : [topOrCoordinates.top, topOrCoordinates.right, topOrCoordinates.bottom, topOrCoordinates.left]
-    : [positionOrTop, topOrCoordinates as CSSPixelValue, ...values];
+    ? isCSSPixelValue(topOrRightOrCoordinates)
+      ? [topOrRightOrCoordinates, ...values]
+      : [
+          topOrRightOrCoordinates.top,
+          topOrRightOrCoordinates.right,
+          topOrRightOrCoordinates.bottom,
+          topOrRightOrCoordinates.left,
+        ]
+    : [positionOrTop, topOrRightOrCoordinates as CSSPixelValue, ...values];
 
   return css([
     css({ position: isPositionValue(positionOrTop) ? positionOrTop : undefined }),
