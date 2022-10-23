@@ -77,7 +77,7 @@ export function position(
   const [top, right, bottom, left] = isPositionValue(positionOrTop)
     ? isCSSPixelValue(topOrCoordinates)
       ? [topOrCoordinates, ...values]
-      : [topOrCoordinates?.top, topOrCoordinates?.right, topOrCoordinates?.bottom, topOrCoordinates?.left]
+      : [topOrCoordinates.top, topOrCoordinates.right, topOrCoordinates.bottom, topOrCoordinates.left]
     : [positionOrTop, topOrCoordinates as CSSPixelValue, ...values];
 
   return css([
