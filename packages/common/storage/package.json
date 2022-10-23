@@ -59,9 +59,9 @@
       },
       "./package.json": "./package.json"
     },
-    "main": "dist/index.js",
-    "module": "esm/index.mjs",
-    "types": "dist/index.d.ts"
+    "main": "./dist/index.js",
+    "module": "./esm/index.mjs",
+    "types": "./dist/index.d.ts"
   },
   "gitHead": "5aa81f2a04bf77320ca339619f2a80df02e84d6e"
 }
