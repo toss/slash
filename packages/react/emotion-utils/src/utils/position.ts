@@ -92,7 +92,8 @@ export function position(
 }
 
 function isPositionValue(value: unknown): value is Property.Position {
-  return [`static`, `relative`, `absolute`, `fixed`, `sticky`, `-webkit-sticky`].includes(value as string);
+  const positions: Property.Position[] = ['static', 'relative', 'absolute', 'fixed', 'sticky', '-webkit-sticky'];
+  return positions.includes(value as Property.Position);
 }
 
 function isCSSPixelValue(value: unknown): value is CSSPixelValue {
