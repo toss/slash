@@ -17,7 +17,7 @@ import AsyncBoundary from './AsyncBoundary';
  * @see https://jbee.io/react/error-declarative-handling-1/ 선언적으로 로딩과 에러 상태 처리하기
  * @see https://toss.im/slash-21/sessions/3-1 Suspense와 에러 처리 관련된 Slash 21 발표
  */
-export default function withAsyncBoundary<Props = {}>(
+export default function withAsyncBoundary<Props extends Record<string, unknown> = Record<string, never>>(
   WrappedComponent: ComponentType<Props>,
   asyncBoundaryProps: ComponentProps<typeof AsyncBoundary>
 ) {
