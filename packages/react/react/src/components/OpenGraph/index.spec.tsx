@@ -12,16 +12,19 @@ describe('OpenGraph', () => {
     throw new Error('cannot find your meta tag');
   };
   it(`should render inserted title`, () => {
-    render(<OpenGraph title="토스" />);
-    expect(getMeta('og:title')).toEqual('토스');
+    const title = '토스';
+    render(<OpenGraph title={title} />);
+    expect(getMeta('og:title')).toEqual(title);
   });
   it(`should render inserted description`, () => {
-    render(<OpenGraph description="금융의 모든 것, 토스에서 쉽고 간편하게" />);
-    expect(getMeta('og:description')).toEqual('금융의 모든 것, 토스에서 쉽고 간편하게');
+    const description = '금융의 모든 것, 토스에서 쉽고 간편하게';
+    render(<OpenGraph description={description} />);
+    expect(getMeta('og:description')).toEqual(description);
   });
   it(`should render inserted imageUrl`, () => {
-    render(<OpenGraph imageUrl="https://static.toss.im/homepage-static/newtoss/newtoss-og.jpg" />);
-    expect(getMeta('og:image')).toEqual('https://static.toss.im/homepage-static/newtoss/newtoss-og.jpg');
+    const imageUrl = 'https://static.toss.im/homepage-static/newtoss/newtoss-og.jpg';
+    render(<OpenGraph imageUrl={imageUrl} />);
+    expect(getMeta('og:image')).toEqual(imageUrl);
   });
   it(`should throw error when no meta tag is found `, () => {
     render(<OpenGraph />);
