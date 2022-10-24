@@ -74,16 +74,20 @@ export function position(
   topOrRightOrCoordinates: CSSPixelValue | Coordinates = {},
   ...values: CSSPixelValue[]
 ) {
-  const [top, right, bottom, left] = isPositionValue(positionOrTop)
-    ? isCSSPixelValue(topOrRightOrCoordinates)
-      ? [topOrRightOrCoordinates, ...values]
-      : [
-          topOrRightOrCoordinates.top,
-          topOrRightOrCoordinates.right,
-          topOrRightOrCoordinates.bottom,
-          topOrRightOrCoordinates.left,
-        ]
-    : [positionOrTop, topOrRightOrCoordinates as CSSPixelValue, ...values];
+  const [top, right, bottom, left] = (() => {
+    if (!isPositionValue(positionOrTop)) {
+      return [positionOrTop, topOrRightOrCoordinates as CSSPixelValue, ...values];
+    }
+    if (!isCSSPixelValue(topOrRightOrCoordinates)) {
+      return [
+        topOrRightOrCoordinates.top,
+        topOrRightOrCoordinates.right,
+        topOrRightOrCoordinates.bottom,
+        topOrRightOrCoordinates.left,
+      ];
+    }
+    return [topOrRightOrCoordinates, ...values];
+  })();
 
   return css([
     css({ position: isPositionValue(positionOrTop) ? positionOrTop : undefined }),
