@@ -1,7 +1,7 @@
+import { cleanup, fireEvent, render, renderHook } from '@testing-library/react';
 import { createElement } from 'react';
-import { renderHook, render, cleanup, fireEvent } from '@testing-library/react';
 
-import useInputState from './useInputState';
+import { useInputState } from './useInputState';
 
 function createTestInput(...params: Parameters<typeof useInputState>) {
   return function Input() {

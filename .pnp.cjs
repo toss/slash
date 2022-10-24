@@ -41,10 +41,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         "reference": "workspace:packages/common/date"\
       },\
       {\
-        "name": "@toss/framer-motion",\
-        "reference": "workspace:packages/common/framer-motion"\
-      },\
-      {\
         "name": "@toss/hangul",\
         "reference": "workspace:packages/common/hangul"\
       },\
@@ -95,6 +91,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       {\
         "name": "@toss/error-boundary",\
         "reference": "workspace:packages/react/error-boundary"\
+      },\
+      {\
+        "name": "@toss/framer-motion",\
+        "reference": "workspace:packages/react/framer-motion"\
       },\
       {\
         "name": "@toss/impression-area",\
@@ -149,7 +149,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       ["@toss/date", ["workspace:packages/common/date"]],\
       ["@toss/emotion-utils", ["workspace:packages/react/emotion-utils"]],\
       ["@toss/error-boundary", ["virtual:7a74fcab29040ff837408b387048e2be3766ca2349cbcd1b3e995824fbefafa8873bf518f24421452709a1f5b3e74a33e0d01df9f80851a0802e06430b9ddbcb#workspace:packages/react/error-boundary", "workspace:packages/react/error-boundary"]],\
-      ["@toss/framer-motion", ["workspace:packages/common/framer-motion"]],\
+      ["@toss/framer-motion", ["workspace:packages/react/framer-motion"]],\
       ["@toss/hangul", ["workspace:packages/common/hangul"]],\
       ["@toss/impression-area", ["virtual:d417fb7527a88160b05d2e6baabe48df062b15ea0efd0d02920705bd1d19cf6486917235459b80cd4e5025244ee3ea15a7da8977541501b0bf2c3dc703c1a644#workspace:packages/react/impression-area", "workspace:packages/react/impression-area"]],\
       ["@toss/ky", ["workspace:packages/common/ky"]],\
@@ -8924,24 +8924,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],\
           "linkType": "SOFT"\
         }],\
-        ["virtual:284cdf98e5a18fe524f19fb69fa6976916c0a2b6124bfc2f0323aa4aabbcc61e0ab70941714434e142001a6d88e14a5c39c5b442491b87170e6a238d6eb0d58c#npm:13.4.0", {\
-          "packageLocation": "./.yarn/__virtual__/@testing-library-react-virtual-dacb537b79/0/cache/@testing-library-react-npm-13.4.0-eaa652c0f5-51ec548c1f.zip/node_modules/@testing-library/react/",\
-          "packageDependencies": [\
-            ["@testing-library/react", "virtual:284cdf98e5a18fe524f19fb69fa6976916c0a2b6124bfc2f0323aa4aabbcc61e0ab70941714434e142001a6d88e14a5c39c5b442491b87170e6a238d6eb0d58c#npm:13.4.0"],\
-            ["@babel/runtime", "npm:7.19.0"],\
-            ["@testing-library/dom", "npm:8.18.1"],\
-            ["@types/react", null],\
-            ["@types/react-dom", "npm:18.0.6"],\
-            ["react", null],\
-            ["react-dom", null]\
-          ],\
-          "packagePeers": [\
-            "@types/react",\
-            "react-dom",\
-            "react"\
-          ],\
-          "linkType": "HARD"\
-        }],\
         ["virtual:62cb29918b2e63dff97923d985a18238631a18b918521fd9ac48de2be213715676e8b999d7ab4431ea536d1917af1465d5695ceae059c69bf4c14df5968dd6a1#npm:13.4.0", {\
           "packageLocation": "./.yarn/__virtual__/@testing-library-react-virtual-8a2c1ff09a/0/cache/@testing-library-react-npm-13.4.0-eaa652c0f5-51ec548c1f.zip/node_modules/@testing-library/react/",\
           "packageDependencies": [\
@@ -8952,6 +8934,24 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/react-dom", "npm:18.0.6"],\
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:62cb29918b2e63dff97923d985a18238631a18b918521fd9ac48de2be213715676e8b999d7ab4431ea536d1917af1465d5695ceae059c69bf4c14df5968dd6a1#npm:18.2.0"]\
+          ],\
+          "packagePeers": [\
+            "@types/react",\
+            "react-dom",\
+            "react"\
+          ],\
+          "linkType": "HARD"\
+        }],\
+        ["virtual:a27e190cfafeeee5c910137530d3c7f25959973eb1c2654b848e4a60c7694c9b3ea51ce1186ac489f016c6cdea36ba4dee6b8c44c65a70c015f14fbb8b3b7253#npm:13.4.0", {\
+          "packageLocation": "./.yarn/__virtual__/@testing-library-react-virtual-55583b24bf/0/cache/@testing-library-react-npm-13.4.0-eaa652c0f5-51ec548c1f.zip/node_modules/@testing-library/react/",\
+          "packageDependencies": [\
+            ["@testing-library/react", "virtual:a27e190cfafeeee5c910137530d3c7f25959973eb1c2654b848e4a60c7694c9b3ea51ce1186ac489f016c6cdea36ba4dee6b8c44c65a70c015f14fbb8b3b7253#npm:13.4.0"],\
+            ["@babel/runtime", "npm:7.19.0"],\
+            ["@testing-library/dom", "npm:8.18.1"],\
+            ["@types/react", null],\
+            ["@types/react-dom", "npm:18.0.6"],\
+            ["react", null],\
+            ["react-dom", null]\
           ],\
           "packagePeers": [\
             "@types/react",\
@@ -9303,17 +9303,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@toss/framer-motion", [\
-        ["workspace:packages/common/framer-motion", {\
-          "packageLocation": "./packages/common/framer-motion/",\
+        ["workspace:packages/react/framer-motion", {\
+          "packageLocation": "./packages/react/framer-motion/",\
           "packageDependencies": [\
-            ["@toss/framer-motion", "workspace:packages/common/framer-motion"],\
+            ["@toss/framer-motion", "workspace:packages/react/framer-motion"],\
             ["@babel/core", "npm:7.19.3"],\
             ["@babel/preset-env", "virtual:bcd0c1141064bf940376b9b2c4f8a211deda5f9c27293f215379edb7c7917846a6a1d22044c7c1b3bb8002672fb9461cbd1f53c3889b2fe3b5bfbab9a70f1ac4#npm:7.19.3"],\
             ["@babel/preset-typescript", "virtual:bcd0c1141064bf940376b9b2c4f8a211deda5f9c27293f215379edb7c7917846a6a1d22044c7c1b3bb8002672fb9461cbd1f53c3889b2fe3b5bfbab9a70f1ac4#npm:7.18.6"],\
             ["@babel/runtime", "npm:7.19.0"],\
             ["@slash/rollup-config", "workspace:configs/rollup"],\
             ["@testing-library/jest-dom", "npm:5.16.5"],\
-            ["@testing-library/react", "virtual:284cdf98e5a18fe524f19fb69fa6976916c0a2b6124bfc2f0323aa4aabbcc61e0ab70941714434e142001a6d88e14a5c39c5b442491b87170e6a238d6eb0d58c#npm:13.4.0"],\
+            ["@testing-library/react", "virtual:a27e190cfafeeee5c910137530d3c7f25959973eb1c2654b848e4a60c7694c9b3ea51ce1186ac489f016c6cdea36ba4dee6b8c44c65a70c015f14fbb8b3b7253#npm:13.4.0"],\
             ["@tossteam/jest", "virtual:bcd0c1141064bf940376b9b2c4f8a211deda5f9c27293f215379edb7c7917846a6a1d22044c7c1b3bb8002672fb9461cbd1f53c3889b2fe3b5bfbab9a70f1ac4#npm:17.187.2"],\
             ["@types/babel__core", "npm:7.1.19"],\
             ["@types/babel__preset-env", "npm:7.9.2"],\
@@ -9321,7 +9321,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/testing-library__jest-dom", "npm:5.14.5"],\
             ["babel-jest", "virtual:785204e63ba96625a23f896ee431c9a36baff7a533742c7d2c1d3e8c51b41da4d9b22d61afa2e1bb44d0338b2a9e895a7c77e29d79f3a357a12dae28feb7f916#npm:29.1.2"],\
             ["concurrently", "npm:4.1.2"],\
-            ["framer-motion", "virtual:284cdf98e5a18fe524f19fb69fa6976916c0a2b6124bfc2f0323aa4aabbcc61e0ab70941714434e142001a6d88e14a5c39c5b442491b87170e6a238d6eb0d58c#npm:7.5.2"],\
+            ["framer-motion", "virtual:a27e190cfafeeee5c910137530d3c7f25959973eb1c2654b848e4a60c7694c9b3ea51ce1186ac489f016c6cdea36ba4dee6b8c44c65a70c015f14fbb8b3b7253#npm:7.5.2"],\
             ["jest", "virtual:01ae7c33d4655a48cbb29902912466a761e01d57e32af25620c31e36065eb1601cc4f6394afcb6b2f9c9f1b941b9fbeecba9aa1bca8ca304ae87cee07a6864e9#npm:29.1.2"],\
             ["jest-environment-jsdom", "npm:29.1.2"],\
             ["rollup", "npm:2.79.1"],\
@@ -17802,10 +17802,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],\
           "linkType": "SOFT"\
         }],\
-        ["virtual:284cdf98e5a18fe524f19fb69fa6976916c0a2b6124bfc2f0323aa4aabbcc61e0ab70941714434e142001a6d88e14a5c39c5b442491b87170e6a238d6eb0d58c#npm:7.5.2", {\
-          "packageLocation": "./.yarn/__virtual__/framer-motion-virtual-c08503aaab/0/cache/framer-motion-npm-7.5.2-c3ba13b2c0-8c7f664e75.zip/node_modules/framer-motion/",\
+        ["virtual:a27e190cfafeeee5c910137530d3c7f25959973eb1c2654b848e4a60c7694c9b3ea51ce1186ac489f016c6cdea36ba4dee6b8c44c65a70c015f14fbb8b3b7253#npm:7.5.2", {\
+          "packageLocation": "./.yarn/__virtual__/framer-motion-virtual-158b01c806/0/cache/framer-motion-npm-7.5.2-c3ba13b2c0-8c7f664e75.zip/node_modules/framer-motion/",\
           "packageDependencies": [\
-            ["framer-motion", "virtual:284cdf98e5a18fe524f19fb69fa6976916c0a2b6124bfc2f0323aa4aabbcc61e0ab70941714434e142001a6d88e14a5c39c5b442491b87170e6a238d6eb0d58c#npm:7.5.2"],\
+            ["framer-motion", "virtual:a27e190cfafeeee5c910137530d3c7f25959973eb1c2654b848e4a60c7694c9b3ea51ce1186ac489f016c6cdea36ba4dee6b8c44c65a70c015f14fbb8b3b7253#npm:7.5.2"],\
             ["@emotion/is-prop-valid", "npm:0.8.8"],\
             ["@motionone/dom", "npm:10.13.1"],\
             ["@types/react", null],\

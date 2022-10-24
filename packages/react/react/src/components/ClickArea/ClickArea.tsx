@@ -1,6 +1,6 @@
 /** @jsxImportSource react */
-import { PureComponent } from 'react';
 import classnames from 'classnames';
+import { PureComponent } from 'react';
 import Style, { generateClassNames } from '../../utils/Style';
 
 interface Props {
@@ -34,7 +34,7 @@ interface Props {
  *   <Icon name="guide-line" color={adaptive.grey500} />
  * </ClickArea>
  */
-export default class ClickArea extends PureComponent<Props> {
+export class ClickArea extends PureComponent<Props> {
   public render() {
     const { className, children, enabled = true, ...rest } = this.props;
 
@@ -69,15 +69,15 @@ const css = `
   display: block;
 }
 .${CLASSNAMES.enabled}::after {
-  position: absolute; 
-  content: ' '; 
-  background-color: transparent; 
-  left: 0; 
-  right: 0; 
+  position: absolute;
+  content: ' ';
+  background-color: transparent;
+  left: 0;
+  right: 0;
   top: 0;
-  bottom: 0; 
+  bottom: 0;
   transition: background-color 0.1s ease-in-out;
-} 
+}
 .${CLASSNAMES.enabled}:active::after {
   background-color: rgba(0, 0, 0, 0.04);
 }`;
