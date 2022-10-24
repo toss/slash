@@ -14,7 +14,7 @@ import { useEffect, useRef } from 'react';
  *   setTitle(`거의 다 끝났어요`);
  * }, 4000);
  */
-export default function useTimeout(callback: () => void, delay = 0) {
+export function useTimeout(callback: () => void, delay = 0) {
   const savedCallback = useRef<() => void>();
 
   useEffect(() => {

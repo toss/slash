@@ -1,5 +1,5 @@
 import { Children, cloneElement, ReactElement } from 'react';
-import useDebounce from '../../hooks/useDebounce';
+import { useDebounce } from '../../hooks/useDebounce';
 
 interface Props {
   /*
