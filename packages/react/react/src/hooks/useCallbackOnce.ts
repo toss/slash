@@ -16,7 +16,7 @@ import { DependencyList, useCallback, useRef } from 'react';
  *   openAlert();
  * }, [openAlert]);
  */
-export default function useCallbackOnce<F extends (...args: any[]) => void>(callback: F, deps: DependencyList) {
+export function useCallbackOnce<F extends (...args: any[]) => void>(callback: F, deps: DependencyList) {
   const hasFired = useRef(false);
   const memoizedCallback = useCallback((...args: Parameters<F>) => {
     if (hasFired.current) {

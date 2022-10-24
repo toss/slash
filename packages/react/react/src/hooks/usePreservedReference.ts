@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 // eslint-disable-next-line @typescript-eslint/ban-types
 type NotNullishValue = {};
@@ -27,7 +27,7 @@ type NotNullishValue = {};
  * @example
  * const params = usePreservedReference(loggerParams, areParamsEqual);
  */
-export default function usePreservedReference<T extends NotNullishValue>(
+export function usePreservedReference<T extends NotNullishValue>(
   value: T,
   areValuesEqual: (a: T, b: T) => boolean = areDeeplyEqual
 ) {
