@@ -1,5 +1,5 @@
 import { render } from '@testing-library/react';
-import ClickArea from '.';
+import { ClickArea } from '.';
 
 describe('ClickArea', () => {
   it('정상적으로 rendering 된다', () => {

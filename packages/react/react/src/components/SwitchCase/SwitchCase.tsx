@@ -20,7 +20,7 @@ interface Props<Case extends string> {
  *    defaultComponent={<Default />}
  * />
  */
-export default function SwitchCase<Case extends string>({
+export function SwitchCase<Case extends string>({
   value,
   caseBy,
   defaultComponent: defaultComponent = null,

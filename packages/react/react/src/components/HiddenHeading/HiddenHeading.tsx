@@ -1,7 +1,7 @@
 /** @jsxImportSource react */
+import classnames from 'classnames';
 import { ComponentType, HTMLAttributes, ReactNode } from 'react';
 import Style, { generateClassNames } from '../../utils/Style';
-import classnames from 'classnames';
 
 type HeadingType = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 
@@ -36,7 +36,7 @@ interface Props {
  * </BottomSheet>
  * @see https://www.accessibility-developer-guide.com/examples/headings/html-5-outline/
  */
-export default function HiddenHeading({ as = 'h1', id, className, children }: Props) {
+export function HiddenHeading({ as = 'h1', id, className, children }: Props) {
   const Heading = as as unknown as ComponentType<HTMLAttributes<HTMLHeadingElement>>;
 
   return (
