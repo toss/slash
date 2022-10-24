@@ -5,7 +5,6 @@ export * from './useCallbackOnce';
 export * from './useCheckList';
 export * from './useCombinedRefs';
 export * from './useDebounce';
-export * from './useDidUpdate';
 export * from './useForceUpdate';
 export * from './useHotjarTracker';
 export * from './useInputState';
