@@ -9,7 +9,7 @@ const updater = (num: number): number => (num + 1) % 1_000_000;
  *
  * @note useReduce가 state보다 조금 더 저렴(?) 하다고 합니다. https://github.com/streamich/react-use/pull/837
  */
-export default function useForceUpdate() {
+export function useForceUpdate() {
   const [, forceUpdate] = useReducer(updater, 0);
 
   return forceUpdate as () => void;

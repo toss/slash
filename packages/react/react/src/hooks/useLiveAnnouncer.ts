@@ -1,4 +1,4 @@
-import { useRef, useCallback, useEffect } from 'react';
+import { useCallback, useEffect, useRef } from 'react';
 
 /* Possible politeness levels. */
 type AriaLivePoliteness = 'off' | 'polite' | 'assertive';
@@ -49,7 +49,7 @@ interface AnnounceOptions {
  * announce('안녕 세상!');
  * clear();
  */
-export default function useLiveAnnouncer() {
+export function useLiveAnnouncer() {
   const previousTimeout = useRef<number>();
 
   const clear = useCallback(() => {

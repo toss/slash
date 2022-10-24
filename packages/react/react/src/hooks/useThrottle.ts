@@ -12,7 +12,7 @@ import { usePreservedCallback } from './usePreservedCallback';
  *   mutate();
  * }, 200);
  */
-export default function useThrottle<F extends (...args: any[]) => any>(
+export function useThrottle<F extends (...args: any[]) => any>(
   callback: F,
   wait: number,
   options?: Parameters<typeof throttle>[2]

@@ -1,5 +1,5 @@
-import { useEffect, useCallback, useRef } from 'react';
 import { isNotNil } from '@toss/utils';
+import { useCallback, useEffect, useRef } from 'react';
 
 type OneOrMore<T> = T | T[];
 
@@ -26,7 +26,7 @@ type OneOrMore<T> = T | T[];
  * });
  * ```
  */
-export default function useOutsideClickEffect(container: OneOrMore<HTMLElement | null>, callback: () => void) {
+export function useOutsideClickEffect(container: OneOrMore<HTMLElement | null>, callback: () => void) {
   const containers = useRef<HTMLElement[]>([]);
 
   useEffect(() => {

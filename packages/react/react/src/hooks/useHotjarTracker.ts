@@ -17,7 +17,7 @@ interface HotjarOptions {
  *   enable: getOperationalEnvironment() === 'live',
  * });
  */
-export default function useHotjarTracker({ id, enable }: HotjarOptions) {
+export function useHotjarTracker({ id, enable }: HotjarOptions) {
   useEffect(() => {
     if (!enable || document.getElementById(HOTJAR_SCRIPT_ID) != null) {
       return;

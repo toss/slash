@@ -1,4 +1,4 @@
-import { useRef, useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 
 /**
  * @description
@@ -20,7 +20,7 @@ import { useRef, useEffect } from 'react';
  *   }
  * }, [isStoreChanged, onStoreChange]);
  */
-export default function usePrevious<T>(value: T): T {
+export function usePrevious<T>(value: T): T {
   const ref = useRef<T>(value);
 
   useEffect(() => {

@@ -1,4 +1,4 @@
-import { useState, useCallback, ChangeEventHandler } from 'react';
+import { ChangeEventHandler, useCallback, useState } from 'react';
 
 /**
  * @description Input에 two way binding이 필요할 때 사용합니다.
@@ -7,7 +7,7 @@ import { useState, useCallback, ChangeEventHandler } from 'react';
  *
  * return <input value={value} onChange={handleInputChange} />
  */
-export default function useInputState(initialValue = '', transformValue: (value: string) => string = echo) {
+export function useInputState(initialValue = '', transformValue: (value: string) => string = echo) {
   const [value, setValue] = useState(initialValue);
 
   const handleValueChange: ChangeEventHandler<HTMLElement & { value: string }> = useCallback(

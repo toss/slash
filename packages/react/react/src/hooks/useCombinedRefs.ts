@@ -1,4 +1,4 @@
-import { Ref, useCallback, MutableRefObject } from 'react';
+import { MutableRefObject, Ref, useCallback } from 'react';
 
 type CallbackRef<T> = (ref: T | null) => void;
 

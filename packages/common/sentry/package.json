@@ -47,7 +47,7 @@
   },
   "publishConfig": {
     "access": "public",
-    "browser": "esm/index.browser.mjs",
+    "browser": "./esm/index.browser.mjs",
     "exports": {
       ".": {
         "require": "./dist/index.node.js",
@@ -62,9 +62,9 @@
         "import": "./esm/index.nextjs.mjs"
       }
     },
-    "main": "dist/index.node.js",
-    "module": "esm/index.node.mjs",
-    "types": "dist/index.node.d.ts"
+    "main": "./dist/index.node.js",
+    "module": "./esm/index.node.mjs",
+    "types": "./dist/index.node.d.ts"
   },
   "gitHead": "5aa81f2a04bf77320ca339619f2a80df02e84d6e"
 }
