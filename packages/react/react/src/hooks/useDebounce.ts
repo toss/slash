@@ -1,5 +1,5 @@
-import { useEffect, useMemo } from 'react';
 import debounce from 'lodash/debounce';
+import { useEffect, useMemo } from 'react';
 import { usePreservedCallback } from './usePreservedCallback';
 
 /**
@@ -12,7 +12,7 @@ import { usePreservedCallback } from './usePreservedCallback';
  *   getV2Logger().log(schemaId, parameter);
  * }, 500);
  */
-export default function useDebounce<F extends (...args: any[]) => any>(callback: F, wait: number) {
+export function useDebounce<F extends (...args: any[]) => any>(callback: F, wait: number) {
   const preservedCallback = usePreservedCallback(callback);
 
   const debounced = useMemo(() => {
