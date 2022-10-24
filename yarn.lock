@@ -5464,9 +5464,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@toss/framer-motion@workspace:packages/common/framer-motion":
+"@toss/framer-motion@workspace:packages/react/framer-motion":
   version: 0.0.0-use.local
-  resolution: "@toss/framer-motion@workspace:packages/common/framer-motion"
+  resolution: "@toss/framer-motion@workspace:packages/react/framer-motion"
   dependencies:
     "@babel/core": ^7
     "@babel/preset-env": ^7.16.5

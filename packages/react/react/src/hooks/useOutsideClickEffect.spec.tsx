@@ -1,8 +1,8 @@
-import { screen, render, waitFor } from '@testing-library/react';
-import { range } from '@toss/utils';
+import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import { range } from '@toss/utils';
 import { useCallback, useState } from 'react';
-import useOutsideClickEffect from './useOutsideClickEffect';
+import { useOutsideClickEffect } from './useOutsideClickEffect';
 
 afterEach(() => {
   jest.clearAllMocks();

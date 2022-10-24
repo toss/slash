@@ -1,6 +1,6 @@
-import { renderHook, act } from '@testing-library/react';
+import { act, renderHook } from '@testing-library/react';
 
-import useCheckList from './useCheckList';
+import { useCheckList } from './useCheckList';
 
 describe('`useCheckList`', () => {
   it('초기화', () => {

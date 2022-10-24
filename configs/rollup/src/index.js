@@ -5,7 +5,7 @@ const json = require('@rollup/plugin-json');
 const resolve = require('@rollup/plugin-node-resolve').default;
 const builtins = require('builtin-modules');
 
-exports.generateRollupConfig = function generateRollupConfig({ packageDir, entrypoints: _entrypoints }) {
+exports.generateRollupConfig = function generateRollupConfig({ packageDir }) {
   const packageJSON = require(path.join(packageDir, 'package.json'));
 
   if (packageJSON.exports == null) {

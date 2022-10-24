@@ -1,4 +1,4 @@
-import { useRef, useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 
 type IntervalOptions =
   | number
@@ -26,7 +26,7 @@ type IntervalOptions =
  * @example
  * useInterval(updateServerTime, { delay: interval });
  */
-export default function useInterval(callback: () => void, options: IntervalOptions) {
+export function useInterval(callback: () => void, options: IntervalOptions) {
   const delay = typeof options === 'number' ? options : options.delay;
   const trailing = typeof options === 'number' ? undefined : options.trailing;
   const savedCallback = useRef<() => void>();
