@@ -1,5 +1,5 @@
 import { render } from '@testing-library/react';
-import OpenGraph from './index';
+import { OpenGraph } from '.';
 
 describe('OpenGraph', () => {
   const getMeta = (metaName: string) => {
