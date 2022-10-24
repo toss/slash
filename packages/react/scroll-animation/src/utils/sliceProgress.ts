@@ -26,7 +26,6 @@ interface Options {
  *
  * e.g. `start: 0.5`, `end: 0.9` 일 때 `progress: 0.6` 이면 0.5와 0.9 사이에서 25% 진행된 것이므로 `0.25` 반환
  *
- * @param param0
  * @returns 잘린 progress 값
  */
 export function sliceProgress({ progress, start = 0, end = 1, clip = true }: Options) {
