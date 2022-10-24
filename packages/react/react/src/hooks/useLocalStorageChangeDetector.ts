@@ -1,6 +1,6 @@
 import { generateStorage } from '@toss/storage';
 import { useMemo, useState } from 'react';
-import useVisibilityEvent from './useVisibilityEvent';
+import { useVisibilityEvent } from './useVisibilityEvent';
 
 const storage = generateStorage();
 
@@ -24,7 +24,7 @@ const storage = generateStorage();
  *   }
  * }, [deviceWasRegistered])
  */
-function useLocalStorageChangeDetector(key: string) {
+export function useLocalStorageChangeDetector(key: string) {
   const [value, setValue] = useState(storage.get(key));
 
   useVisibilityEvent(state => {
@@ -44,5 +44,3 @@ function useLocalStorageChangeDetector(key: string) {
 
   return [value, utils] as const;
 }
-
-export default useLocalStorageChangeDetector;

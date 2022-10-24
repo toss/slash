@@ -12,6 +12,4 @@ import { useEffect, useLayoutEffect } from 'react';
  *   setSwipeRefreshEnabled(false);
  * }, []);
  */
-const useIsomorphicLayoutEffect = isClient() ? useLayoutEffect : useEffect;
-
-export default useIsomorphicLayoutEffect;
+export const useIsomorphicLayoutEffect = isClient() ? useLayoutEffect : useEffect;

@@ -1,4 +1,4 @@
-import { useRef, useEffect, DependencyList } from 'react';
+import { DependencyList, useEffect, useRef } from 'react';
 
 /**
  * @name useDidUpdate
@@ -13,7 +13,7 @@ import { useRef, useEffect, DependencyList } from 'react';
  *   // value가 '바뀌면' 실행됨
  * }, [value])
  */
-export default function useDidUpdate<F extends () => (() => void) | void>(effect: F, deps: DependencyList) {
+export function useDidUpdate<F extends () => (() => void) | void>(effect: F, deps: DependencyList) {
   const hasMounted = useRef(false);
 
   useEffect(() => {

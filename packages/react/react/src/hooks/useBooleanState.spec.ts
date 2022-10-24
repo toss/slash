@@ -1,6 +1,6 @@
-import { renderHook, act } from '@testing-library/react';
+import { act, renderHook } from '@testing-library/react';
 
-import useBooleanState from './useBooleanState';
+import { useBooleanState } from './useBooleanState';
 
 describe('`useBooleanState`', () => {
   describe('반환 값 타입 체크', () => {

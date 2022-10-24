@@ -21,7 +21,7 @@ import { useEffect, useState } from 'react';
  *   setBenefitIntelliContents(clientBenefitIntelliQuery.data);
  * }, [clientBenefitIntelliQuery.data, isMounted]);
  */
-export default function useIsMounted() {
+export function useIsMounted() {
   const [mounted, setMounted] = useState(false);
   useEffect(() => {
     setMounted(true);
