@@ -1,8 +1,8 @@
 import { render } from '@testing-library/react';
-import SwitchCase from './index';
+import { SwitchCase } from '.';
 
 describe('SwitchCase', () => {
-  function prepare(key: any) {
+  function prepare(key: string) {
     return render(
       <SwitchCase
         value={key}

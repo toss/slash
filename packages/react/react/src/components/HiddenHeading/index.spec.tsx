@@ -1,5 +1,5 @@
 import { render } from '@testing-library/react';
-import HiddenHeading from '.';
+import { HiddenHeading } from '.';
 
 describe('HiddenHeading', () => {
   it('id를 줄 수 있다.', () => {

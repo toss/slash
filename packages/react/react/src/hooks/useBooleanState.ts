@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react';
+import { useCallback, useState } from 'react';
 
 /**
  * @description
@@ -11,7 +11,7 @@ import { useState, useCallback } from 'react';
  * @example
  * const [open, openBottomSheet, closeBottomSheet, toggleBottomSheet] = useBooleanState(false);
  */
-const useBooleanState = (defaultValue = false): readonly [boolean, () => void, () => void, () => void] => {
+export const useBooleanState = (defaultValue = false): readonly [boolean, () => void, () => void, () => void] => {
   const [bool, setBool] = useState(defaultValue);
 
   const setTrue = useCallback(() => {
@@ -28,5 +28,3 @@ const useBooleanState = (defaultValue = false): readonly [boolean, () => void, (
 
   return [bool, setTrue, setFalse, toggle] as const;
 };
-
-export default useBooleanState;

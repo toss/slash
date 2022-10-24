@@ -1,2 +1,2 @@
 /** @tossdocs-ignore */
-export { default } from './OpenGraph';
+export * from './OpenGraph';

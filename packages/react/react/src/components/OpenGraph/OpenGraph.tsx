@@ -18,7 +18,7 @@ interface Props {
  *    imageUrl="https://static.toss.im/assets/paper0/pc_og.png"
  * />
  */
-function OpenGraph({ container: Container = Fragment, title, description, imageUrl }: Props) {
+export function OpenGraph({ container: Container = Fragment, title, description, imageUrl }: Props) {
   return (
     <Container>
       {title !== undefined && (
@@ -39,5 +39,3 @@ function OpenGraph({ container: Container = Fragment, title, description, imageU
     </Container>
   );
 }
-
-export default OpenGraph;
