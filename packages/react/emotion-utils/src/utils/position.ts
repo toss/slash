@@ -1,5 +1,4 @@
 import { css, SerializedStyles } from '@emotion/react';
-import { CSSProperties } from 'react';
 
 import { CSSPixelValue } from '../types';
 
@@ -55,7 +54,7 @@ interface Coordinates {
  * position('absolute', {top: 0, left: 0});
  */
 export function position(
-  position: CSSProperties['position'],
+  position: Property.Position,
   top: CSSPixelValue,
   right: CSSPixelValue,
   bottom: CSSPixelValue,
@@ -67,10 +66,10 @@ export function position(
   bottom: CSSPixelValue,
   left: CSSPixelValue
 ): SerializedStyles;
-export function position(position: CSSProperties['position'], coordinates?: Coordinates): SerializedStyles;
+export function position(position: Property.Position, coordinates?: Coordinates): SerializedStyles;
 
 export function position(
-  positionOrTop: CSSProperties['position'] | CSSPixelValue,
+  positionOrTop: Property.Position | CSSPixelValue,
   topOrRightOrCoordinates: CSSPixelValue | Coordinates = {},
   ...values: CSSPixelValue[]
 ) {
