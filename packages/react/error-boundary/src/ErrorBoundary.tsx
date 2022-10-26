@@ -12,7 +12,6 @@ type IgnoreErrorType = <ErrorType extends Error = Error>(error: ErrorType) => bo
 type Props<ErrorType extends Error = Error> = {
   /*
    * @description 발생할 수 있는 error에 대한 기준값으로 이 값이 변경되면 error를 초기화합니다.
-   * @see https://github.com/tosspayments/frontend/pull/955#pullrequestreview-568141641
    */
   resetKeys?: unknown[];
   onReset?(): void;
@@ -20,7 +19,6 @@ type Props<ErrorType extends Error = Error> = {
   onError?(error: ErrorType, info: ErrorInfo): void;
   /*
    * @description 이 ErrorBoundary Context에서 처리하지 않고 throw해줄 error의 조건을 명시할 callback
-   * @see https://github.com/tosspayments/frontend/pull/964#pullrequestreview-568847692
    */
   ignoreError?: IgnoreErrorType;
 };

@@ -1,5 +1,4 @@
 import { css, SerializedStyles } from '@emotion/react';
-import { CSSProperties } from 'react';
 
 import { CSSPixelValue } from '../types';
 
@@ -55,7 +54,7 @@ interface Coordinates {
  * position('absolute', {top: 0, left: 0});
  */
 export function position(
-  position: CSSProperties['position'],
+  position: Property.Position,
   top: CSSPixelValue,
   right: CSSPixelValue,
   bottom: CSSPixelValue,
@@ -67,18 +66,30 @@ export function position(
   bottom: CSSPixelValue,
   left: CSSPixelValue
 ): SerializedStyles;
-export function position(position: CSSProperties['position'], coordinates?: Coordinates): SerializedStyles;
+export function position(position: Property.Position, coordinates?: Coordinates): SerializedStyles;
 
 export function position(
-  positionOrTop: CSSProperties['position'] | CSSPixelValue,
-  topOrCoordinates: CSSPixelValue | Coordinates = {},
+  positionOrTop: Property.Position | CSSPixelValue,
+  topOrRightOrCoordinates: CSSPixelValue | Coordinates = {},
   ...values: CSSPixelValue[]
 ) {
-  const [top, right, bottom, left] = isPositionValue(positionOrTop)
-    ? isCSSPixelValue(topOrCoordinates)
-      ? [topOrCoordinates, ...values]
-      : [topOrCoordinates?.top, topOrCoordinates?.right, topOrCoordinates?.bottom, topOrCoordinates?.left]
-    : [positionOrTop, topOrCoordinates as CSSPixelValue, ...values];
+  const [top, right, bottom, left] = (() => {
+    // position(top, right, bottom, left);
+    if (!isPositionValue(positionOrTop)) {
+      return [positionOrTop, topOrRightOrCoordinates as CSSPixelValue, ...values];
+    }
+    // position(position, coordinates);
+    if (!isCSSPixelValue(topOrRightOrCoordinates)) {
+      return [
+        topOrRightOrCoordinates.top,
+        topOrRightOrCoordinates.right,
+        topOrRightOrCoordinates.bottom,
+        topOrRightOrCoordinates.left,
+      ];
+    }
+    // position(position, top, right, bottom, left);
+    return [topOrRightOrCoordinates, ...values];
+  })();
 
   return css([
     css({ position: isPositionValue(positionOrTop) ? positionOrTop : undefined }),
@@ -87,7 +98,7 @@ export function position(
 }
 
 function isPositionValue(value: unknown): value is Property.Position {
-  return [`static`, `relative`, `absolute`, `fixed`, `sticky`, `-webkit-sticky`].includes(value as string);
+  return ['static', 'relative', 'absolute', 'fixed', 'sticky', '-webkit-sticky'].includes(value as any);
 }
 
 function isCSSPixelValue(value: unknown): value is CSSPixelValue {
