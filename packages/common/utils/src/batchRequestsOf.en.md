@@ -2,11 +2,11 @@
 title: batchRequestsOf
 ---
 
-비동기 함수 `func`가 짧은 시간 안에 여러 번 실행되어도 한 번만 호출되도록 합니다. 함수 호출의 결과값은 첫 번째 `func` 함수 호출의 결과값이 됩니다.
+Make the asynchronous function `func` to be called only once, even if it is called multiple times in a short time frame. The result of the first call is returned to all function invocations.
 
 ```typescript
 function batchRequestsOf<Func extends (...args: any[]) => any>(
-  // 요청을 합칠 함수
+  // The function to batch the invocations
   func: Func
 ): Func;
 ```
