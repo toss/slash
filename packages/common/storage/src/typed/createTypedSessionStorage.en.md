@@ -4,7 +4,7 @@ title: createTypedSessionStorage
 
 # createTypedSessionStorage
 
-Generates a [TypedStorage](/libraries/common/storage/src/typed/storages/typedstorage.i18n) instance using session storage, depending on type of `initialValue`.
+Generates a [TypedStorage](https://slash.page/libraries/common/storage/src/typed/storages/typedstorage.i18n) instance using session storage, depending on type of `initialValue`.
 
 ## Note
 

@@ -4,7 +4,7 @@ title: NumberTypedStorage
 
 # NumberTypedStorage
 
-[TypedStorage](/ko/libraries/common/storage/src/typed/storages/typedstorage.i18n)를 확장하여, number 타입에 specific한 유틸 메소드들을 제공합니다.
+[TypedStorage](https://slash.page/ko/libraries/common/storage/src/typed/storages/typedstorage.i18n)를 확장하여, number 타입에 specific한 유틸 메소드들을 제공합니다.
 
 ## Note
 

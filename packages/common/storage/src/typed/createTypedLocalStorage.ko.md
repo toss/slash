@@ -4,7 +4,7 @@ title: createTypedLocalStorage
 
 # createTypedLocalStorage
 
-local storage를 사용하는 [TypedStorage](/ko/libraries/common/storage/src/typed/storages/typedstorage.i18n) 인스턴스를 생성합니다. `initialValue`의 타입에 맞추어 적절한 타입의 인스턴스가 생성됩니다.
+local storage를 사용하는 [TypedStorage](https://slash.page/ko/libraries/common/storage/src/typed/storages/typedstorage.i18n) 인스턴스를 생성합니다. `initialValue`의 타입에 맞추어 적절한 타입의 인스턴스가 생성됩니다.
 
 ## Note
 
