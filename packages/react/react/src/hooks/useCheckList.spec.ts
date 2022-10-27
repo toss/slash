@@ -2,8 +2,8 @@ import { act, renderHook } from '@testing-library/react';
 
 import { useCheckList } from './useCheckList';
 
-describe('`useCheckList`', () => {
-  it('초기화', () => {
+describe('useCheckList', () => {
+  it('should carry out initialization', () => {
     const items = [
       { id: 1, checked: false },
       { id: 3, checked: true },
@@ -16,13 +16,16 @@ describe('`useCheckList`', () => {
       { id: 3, checked: true },
       { id: 5, checked: true },
     ]);
+
+    expect(result.current.getCheckedIds()).toEqual([3, 5]);
+
     expect(result.current.isChecked(1)).toBe(false);
     expect(result.current.isChecked(3)).toBe(true);
 
     expect(result.current.isAllChecked()).toBe(false);
   });
 
-  it('업데이트', () => {
+  it('should update well', () => {
     const items = [
       { id: 1, checked: false },
       { id: 3, checked: true },
@@ -57,6 +60,16 @@ describe('`useCheckList`', () => {
     expect(result.current.isChecked(1)).toBe(false);
 
     act(() => {
+      result.current.updateItem(1, true);
+    });
+    expect(result.current.isChecked(1)).toBe(true);
+
+    act(() => {
+      result.current.updateItem(1, false);
+    });
+    expect(result.current.isChecked(1)).toBe(false);
+
+    act(() => {
       result.current.toggle(1);
     });
     expect(result.current.isChecked(1)).toBe(true);
@@ -75,9 +88,15 @@ describe('`useCheckList`', () => {
       result.current.unCheckAll();
     });
     expect(result.current.getCheckedList().every(item => item.checked === false)).toBe(true);
+
+    act(() => {
+      result.current.check(1);
+      result.current.check(3);
+    });
+    expect(result.current.getCheckedIds()).toEqual([1, 3]);
   });
 
-  it('추가데이터 보존', () => {
+  it('should preserve inserted data', () => {
     const items = [
       { id: 1, checked: false, foo: 'bar' },
       { id: 3, checked: true, baz: '3' },
