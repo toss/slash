@@ -1,6 +1,6 @@
 # kstFormat
 
-한국 시간(KST) 기준으로 Date를 포맷팅하는 함수입니다.q
+한국 시간(KST) 기준으로 Date를 포맷팅하는 함수입니다.
 
 이 함수를 사용하지 않으면, `date-fns/locale/ko` 를 매번 import 하여 사용해야 합니다.
 
