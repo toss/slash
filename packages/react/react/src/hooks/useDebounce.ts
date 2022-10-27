@@ -1,4 +1,4 @@
-import debounce from 'lodash/debounce';
+import { debounce, type DebounceSettings } from 'lodash';
 import { useEffect, useMemo } from 'react';
 import { usePreservedCallback } from './usePreservedCallback';
 
@@ -12,12 +12,12 @@ import { usePreservedCallback } from './usePreservedCallback';
  *   getV2Logger().log(schemaId, parameter);
  * }, 500);
  */
-export function useDebounce<F extends (...args: any[]) => any>(callback: F, wait: number) {
+export function useDebounce<F extends (...args: any[]) => any>(callback: F, wait: number, options?: DebounceSettings) {
   const preservedCallback = usePreservedCallback(callback);
 
   const debounced = useMemo(() => {
-    return debounce(preservedCallback, wait);
-  }, [preservedCallback, wait]);
+    return debounce(preservedCallback, wait, options);
+  }, [options, preservedCallback, wait]);
 
   useEffect(() => {
     return () => {
