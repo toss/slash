@@ -1,6 +1,12 @@
 # isMobileWeb
 
-현재 JS 런타임이 Mobile Web 환경에서 실행되었는지 확인합니다.
+Check if the current JavaScript runtime is running on mobile devices.
+
+It checks if the user agent includes any of the strings below:
+
+- ipad
+- iphone
+- android
 
 ```typescript
 function isMobileWeb(): boolean;

@@ -5,7 +5,7 @@ sidebar_label: objectKeys
 
 # objectKeys
 
-[Object.keys()](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Object/keys)를 사용했을 때 key 타입이 깨지는 불편함을 해소해주는 유틸입니다.
+A utility function which behaves identical to [Object.keys()](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Object/keys). It strictly infers the `key` type of an object.
 
 ## Example
 

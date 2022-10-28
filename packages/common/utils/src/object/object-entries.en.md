@@ -5,7 +5,7 @@ sidebar_label: objectEntries
 
 # objectEntries
 
-[Object.entries()](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Object/entries)를 사용했을 때 key 타입이 깨지는 불편함을 해소해주는 유틸입니다.
+A utility function which behaves identical to [Object.entries()](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Object/entries). It strictly infers the `key` type of an object.
 
 ## Example
 

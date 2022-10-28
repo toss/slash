@@ -1,8 +1,12 @@
 # isServer
 
-현재 JS 런타임이 서버 환경(Node.js)인지 확인합니다.
+```typescript
+function isServer(): boolean;
+```
 
-SSR 환경에서 서버에서만 실행되는 로직을 작성할 때 사용합니다.
+Check if the current JavaScript runtime is Node.js.
+
+It can be used to run some logic only in the server, when developing server-side rendered services.
 
 ## Example
 

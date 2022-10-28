@@ -1,3 +1,3 @@
 # NonEmptyArray
 
-비어 있지 않은 배열을 나타내는 타입입니다.
+A type which indicates that an array is not empty. We can assert an array not to be empty by `isNonEmptyArray` function.
