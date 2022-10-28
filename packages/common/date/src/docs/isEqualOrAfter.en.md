@@ -3,8 +3,9 @@
 <<<<<<< HEAD
 Check if the first date (`lhs`) is equal or after the second date (`rhs`).
 =======
-Evaluates whether `lhs` is later than or equal to `rhs`.
->>>>>>> 0d91b2a (fix en docs)
+Checks if `lhs` is later than or equal to `rhs`.
+
+> > > > > > > 0d91b2a (fix en docs)
 
 ```typescript
 function isEqualOrAfter(

@@ -5,7 +5,7 @@ sidebar_label: isAlphaValue
 
 # isAlphaValue
 
-Evaluates whether the given number is between 0 and 1.
+Checks if the given number is between 0 and 1.
 
 # Example
 

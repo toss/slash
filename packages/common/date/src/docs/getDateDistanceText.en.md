@@ -3,11 +3,11 @@
 <<<<<<< HEAD
 Formats a value returned by [getDateDistance()](https://slash.page/ko/libraries/common/date/src/docs/getdatedistance.i18n).
 
-```typescript
+````typescript
 function getDateDistanceText(
   // The difference calculated by `getDateDistance`
 =======
-Formats the return value of [getDateDistance()](https://slash.page/ko/libraries/common/date/src/docs/getdatedistance.i18n) to korean string.
+Formats the return value of [getDateDistance()](https://slash.page/ko/libraries/common/date/src/docs/getdatedistance.i18n) to Korean string.
 
 ```typescript
 function getDateDistanceText(
@@ -49,7 +49,7 @@ function getDateDistanceText(
     seconds?: (timeUnits: TimeUnits) => boolean;
   }
 ): string;
-```
+````
 
 ## Examples
 

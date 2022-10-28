@@ -1,6 +1,6 @@
 # isNonEmptyArray
 
-Evaluates whether an array has one or more elements.
+Checks if an array has one or more elements.
 
 ## Example
 

@@ -5,7 +5,7 @@ sidebar_label: isRGBDecimalValue
 
 # isRGBDecimalValue
 
-Evaluates whether the given number is between 0 and 255.
+Checks if the given number is between 0 and 255.
 
 # Example
 

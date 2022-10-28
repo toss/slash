@@ -1,6 +1,6 @@
 # isNotNil
 
-Evaluates whether the given value is not `null` or `undefined`;
+Checks if the given value is not `null` or `undefined`;
 
 ```typescript
 function isNotNil<T>(value: T | null | undefined): value is T;

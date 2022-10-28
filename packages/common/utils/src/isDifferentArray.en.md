@@ -1,6 +1,6 @@
 # isDifferenceArray
 
-Evaluates whether two given arrays are different.
+Checks if two given arrays are different.
 
 ```typescript
 function isDifferentArray(a: unknown[], b: unknown[]): boolean;
