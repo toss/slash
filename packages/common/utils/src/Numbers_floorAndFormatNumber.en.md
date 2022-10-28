@@ -1,14 +1,14 @@
 ---
 hide_title: true
-sidebar_label: commaizeNumber
+sidebar_label: floorAndFormatNumber
 ---
 
-# commaizeNumber
+# floorAndFormatNumber
 
 Rounds the given number and [commaize](https://slash.page/libraries/common/utils/src/Numbers_commaize.i18n).
 
 ```typescript
-function floorAndFormatNumber(value: number): strubg;
+function floorAndFormatNumber(value: number): string;
 ```
 
 ## Example

@@ -10,7 +10,7 @@ sidebar_label: formatPhoneNumber
 서울 국번인 경우(`02XXXXZZZZ`)나 10자리 전화번호인 경우(`011XXXZZZZ`) 형태에도 대응하고 있습니다.
 
 ```typescript
-function formatPhoneNumber(phoneNumber: string): strubg;
+function formatPhoneNumber(phoneNumber: string): string;
 ```
 
 ## Example

@@ -8,7 +8,7 @@ sidebar_label: formatPhoneNumber
 Separates the given phone number by hypen(`-`).
 
 ```typescript
-function formatPhoneNumber(phoneNumber: number | string): strubg;
+function formatPhoneNumber(phoneNumber: string): string;
 ```
 
 ## Example
