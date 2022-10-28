@@ -1,14 +1,16 @@
 # differenceWith
 
-첫 번째 배열에서 두 번째 배열에 포함되지 않은 값들을 반환합니다. `areItemsEqual` 함수로 포함 여부를 결정합니다.
+Returns the values which is included in the first array (`xs`) but not included in the second array (`ys`).
+
+It receives a function `areItemsEqual`, which specifies when two values are equal.
 
 ```typescript
 function differenceWith<T>(
-  // 첫 번째 배열
+  // First array
   xs: T[],
-  // 두 번째 배열
+  // Second array
   ys: T[],
-  // 두 값이 같은지 여부를 정하는 함수
+  // A function which returns if two values are equal
   areItemsEqual: (x: T, y: T) => boolean
 ): T[];
 ```
