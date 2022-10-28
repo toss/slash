@@ -1,6 +1,6 @@
 # delay
 
-입력한 밀리초 후에 resolve되는 Promise를 반환하는 유틸입니다.
+Returns a Promise which is resolved after given milliseconds.
 
 ```typescript
 function delay(milliseconds: number): Promise<void>;

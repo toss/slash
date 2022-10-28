@@ -7,7 +7,7 @@ function createMapByKey<Entity, KeyName extends keyof Entity>(
 ): Map<Entity[KeyName], Entity>;
 ```
 
-`Entity[]`를 `Map` 객체로 변환하는 유틸입니다. 변환된 `Map`은 `Entity[key]`를 key로, `Entity`를 value로 갖습니다.
+Convert `Entity[]` to a `Map`. The converted map has `Entity[key]` as the key, and `Entity` as the value.
 
 ## Example
 

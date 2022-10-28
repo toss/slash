@@ -1,6 +1,8 @@
 # isIE
 
-현재 JS 런타임이 Internet Explorer 환경에서 실행되었는지 확인합니다.
+Check if the current JavaScript runtime is running on Internet Explorer.
+
+It checks whether `navigator.userAgent` includes `MSIE` or `Trident`.
 
 ```typescript
 function isIE(): boolean;

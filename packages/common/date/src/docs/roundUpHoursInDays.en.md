@@ -1,6 +1,6 @@
 # roundUpHoursInDays
 
-24시간 단위로 올림합니다.
+Rounds up hours by the unit of `24` (one day, 24 hours).
 
 ## Example
 

@@ -1,12 +1,12 @@
 # isEqualOrAfter
 
-첫 번째 Date(`lhs`)가 두 번째 Date(`rhs`)와 같거나 늦은지를 판단합니다.
+Check if the first date (`lhs`) is equal or after the second date (`rhs`).
 
 ```typescript
 function isEqualOrAfter(
-  // 계산할 첫번째 Date
+  // First date
   lhs: Date,
-  // 계산할 두번째 Date
+  // Second date
   rhs: Date
 ): boolean;
 ```

@@ -1,6 +1,13 @@
 # isMacOS
 
-현재 JS 런타임이 Mac OS 환경에서 실행되었는지 확인합니다.
+Check if the current JavaScript runtime is running on macOS.
+
+It returns if `navigator.platform` includes any of the strings below:
+
+- Macintosh
+- MacIntel
+- MacPPC
+- Mac68K
 
 ```typescript
 function isMacOS(): boolean;

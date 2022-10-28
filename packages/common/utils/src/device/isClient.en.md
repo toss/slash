@@ -1,8 +1,8 @@
 # isClient
 
-현재 JS 런타임이 클라이언트 환경(브라우저)인지 확인합니다.
+Check if the current JavaScript runtime is running on the browser.
 
-SSR 환경에서 브라우저에서만 실행되는 로직을 작성할 때 사용합니다.
+Used to run browser-specific logics.
 
 ## Example
 

@@ -1,12 +1,14 @@
 # difference
 
-첫 번째 배열(`xs`)에서 두 번째 배열(`ys`)에 포함되지 않은 값들을 반환합니다.
+Returns the values which is included in the first array (`xs`) but not included in the second array (`ys`).
+
+It checks if two values are equal by triple-equals operator (`===`).
 
 ```typescript
 function difference<T>(
-  // 첫 번째 배열
+  // First array
   xs: T[],
-  // 두 번째 배열
+  // Second aray
   ys: T[]
 ): T[];
 ```
