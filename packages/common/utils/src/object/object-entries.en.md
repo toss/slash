@@ -16,9 +16,7 @@ const languages = {
   javascript: 3,
 } as const;
 
-// key 타입이 string
 Object.entries(languages); // Array<[string, 1 | 2 | 3]>
 
-// key 타입이 'rust' | 'swift' | 'javascript'
 objectEntries(languages); // Array<['rust' | 'swift' | 'javascript', 1 | 2 | 3]>
 ```

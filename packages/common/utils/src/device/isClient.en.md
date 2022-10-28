@@ -1,6 +1,6 @@
 # isClient
 
-Check if the current JavaScript runtime is running on the browser.
+Checks if the current JavaScript runtime is running on the browser.
 
 Used to run browser-specific logics.
 
@@ -8,7 +8,7 @@ Used to run browser-specific logics.
 
 ```typescript
 if (isClient()) {
-  // 브라우저 환경임이 보장된다.
+  // Guarantees to be run on the client-side
   doSomethingInBrowser();
 }
 ```

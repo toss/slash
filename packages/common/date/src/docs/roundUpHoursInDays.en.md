@@ -1,6 +1,10 @@
 # roundUpHoursInDays
 
+<<<<<<< HEAD
 Rounds up hours by the unit of `24` (one day, 24 hours).
+=======
+Rounds the input number to a multiple of 24.
+>>>>>>> 0d91b2a (fix en docs)
 
 ## Example
 
