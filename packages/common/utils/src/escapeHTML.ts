@@ -1,3 +1,4 @@
+/** @tossdocs-ignore */
 /**
  * @name escapeHTML
  * @description
