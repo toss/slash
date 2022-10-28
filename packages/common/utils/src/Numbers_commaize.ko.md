@@ -8,7 +8,7 @@ sidebar_label: commaizeNumber
 주어진 숫자를 콤마로 구분합니다.
 
 ```typescript
-function commaizeNumber(value: number | string): strubg;
+function commaizeNumber(value: number | string): string;
 ```
 
 ## Example
