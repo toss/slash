@@ -5793,6 +5793,7 @@ __metadata:
     jest-environment-jsdom: ^29
     react-query: ^3.19.5
     rollup: ^2.77.0
+    tsd: ^0.24.1
     typescript: 4.8.3
   peerDependencies:
     react: ">=16.8.0 || ^17.0.0 || ^18"
@@ -6291,6 +6292,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@tsd/typescript@npm:~4.8.3":
+  version: 4.8.4
+  resolution: "@tsd/typescript@npm:4.8.4"
+  checksum: f820d4e382bbfb59465ff4547366ec1dba10989a115ce8f23e7ecf9db20a26f8ce371bccee0da1eb28ebeac129553ab9b0f3429a31deb4b0126bd41f7a2cb9e3
+  languageName: node
+  linkType: hard
+
 "@types/aria-query@npm:^4.2.0":
   version: 4.2.2
   resolution: "@types/aria-query@npm:4.2.2"
@@ -6445,6 +6453,16 @@ __metadata:
     "@types/estree": "*"
     "@types/json-schema": "*"
   checksum: bfaf27b00031b2238139003965475d023306119e467947f7a43a41e380918e365618e2ae6a6ae638697f6421a6bb1571db078695ff5e548f23618000b38acd23
+  languageName: node
+  linkType: hard
+
+"@types/eslint@npm:^7.2.13":
+  version: 7.29.0
+  resolution: "@types/eslint@npm:7.29.0"
+  dependencies:
+    "@types/estree": "*"
+    "@types/json-schema": "*"
+  checksum: df13991c554954353ce8f3bb03e19da6cc71916889443d68d178d4f858b561ba4cc4a4f291c6eb9eebb7f864b12b9b9313051b3a8dfea3e513dadf3188a77bdf
   languageName: node
   linkType: hard
 
@@ -11606,6 +11624,22 @@ __metadata:
   languageName: node
   linkType: hard
 
+"eslint-formatter-pretty@npm:^4.1.0":
+  version: 4.1.0
+  resolution: "eslint-formatter-pretty@npm:4.1.0"
+  dependencies:
+    "@types/eslint": ^7.2.13
+    ansi-escapes: ^4.2.1
+    chalk: ^4.1.0
+    eslint-rule-docs: ^1.1.5
+    log-symbols: ^4.0.0
+    plur: ^4.0.0
+    string-width: ^4.2.0
+    supports-hyperlinks: ^2.0.0
+  checksum: e8e0cd3843513fff32a70b036dd349fdab81d73b5e522f23685181c907a1faf2b2ebcae1688dc71d0fc026184011792f7e39b833d349df18fe2baea00d017901
+  languageName: node
+  linkType: hard
+
 "eslint-import-resolver-node@npm:^0.3.6":
   version: 0.3.6
   resolution: "eslint-import-resolver-node@npm:0.3.6"
@@ -11681,6 +11715,13 @@ __metadata:
   peerDependencies:
     eslint: ^3 || ^4 || ^5 || ^6 || ^7 || ^8
   checksum: 0683e2a624a4df6f08264a3f6bc614a81e8f961c83173bdf2d8d3523f84ed5d234cddc976dbc6815913e007c5984df742ba61be0c0592b27c3daabe0f68165a3
+  languageName: node
+  linkType: hard
+
+"eslint-rule-docs@npm:^1.1.5":
+  version: 1.1.235
+  resolution: "eslint-rule-docs@npm:1.1.235"
+  checksum: b163596f9a05568e287b2c78f51a280092122a2e43c45fa2c200f0bd3f61877af186c641dab97620978bec96d9e2cfb621e51728044d9efe42ddc24f5a594b26
   languageName: node
   linkType: hard
 
@@ -14264,6 +14305,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"irregular-plurals@npm:^3.2.0":
+  version: 3.3.0
+  resolution: "irregular-plurals@npm:3.3.0"
+  checksum: 1282d8adfb00a9718655ce21e5b096d4b31d2115c817a30e1e3254648ae4ac0f84d706cd0cad2a93c64f4bb5c5572ea8f63fcc9766f005a5362031c56d9e77b5
+  languageName: node
+  linkType: hard
+
 "is-absolute@npm:^1.0.0":
   version: 1.0.0
   resolution: "is-absolute@npm:1.0.0"
@@ -14807,6 +14855,13 @@ __metadata:
   dependencies:
     unc-path-regex: ^0.1.2
   checksum: e8abfde203f7409f5b03a5f1f8636e3a41e78b983702ef49d9343eb608cdfe691429398e8815157519b987b739bcfbc73ae7cf4c8582b0ab66add5171088eab6
+  languageName: node
+  linkType: hard
+
+"is-unicode-supported@npm:^0.1.0":
+  version: 0.1.0
+  resolution: "is-unicode-supported@npm:0.1.0"
+  checksum: a2aab86ee7712f5c2f999180daaba5f361bdad1efadc9610ff5b8ab5495b86e4f627839d085c6530363c6d6d4ecbde340fb8e54bdb83da4ba8e0865ed5513c52
   languageName: node
   linkType: hard
 
@@ -16205,6 +16260,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"log-symbols@npm:^4.0.0":
+  version: 4.1.0
+  resolution: "log-symbols@npm:4.1.0"
+  dependencies:
+    chalk: ^4.1.0
+    is-unicode-supported: ^0.1.0
+  checksum: fce1497b3135a0198803f9f07464165e9eb83ed02ceb2273930a6f8a508951178d8cf4f0378e9d28300a2ed2bc49050995d2bd5f53ab716bb15ac84d58c6ef74
+  languageName: node
+  linkType: hard
+
 "longest-streak@npm:^3.0.0":
   version: 3.0.1
   resolution: "longest-streak@npm:3.0.1"
@@ -16809,6 +16874,26 @@ __metadata:
     type-fest: ^0.18.0
     yargs-parser: ^20.2.3
   checksum: bc23bf1b4423ef6a821dff9734406bce4b91ea257e7f10a8b7f896f45b59649f07adc0926e2917eacd8cf1df9e4cd89c77623cf63dfd0f8bf54de07a32ee5a85
+  languageName: node
+  linkType: hard
+
+"meow@npm:^9.0.0":
+  version: 9.0.0
+  resolution: "meow@npm:9.0.0"
+  dependencies:
+    "@types/minimist": ^1.2.0
+    camelcase-keys: ^6.2.2
+    decamelize: ^1.2.0
+    decamelize-keys: ^1.1.0
+    hard-rejection: ^2.1.0
+    minimist-options: 4.1.0
+    normalize-package-data: ^3.0.0
+    read-pkg-up: ^7.0.1
+    redent: ^3.0.0
+    trim-newlines: ^3.0.0
+    type-fest: ^0.18.0
+    yargs-parser: ^20.2.3
+  checksum: 99799c47247f4daeee178e3124f6ef6f84bde2ba3f37652865d5d8f8b8adcf9eedfc551dd043e2455cd8206545fd848e269c0c5ab6b594680a0ad4d3617c9639
   languageName: node
   linkType: hard
 
@@ -19026,6 +19111,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"plur@npm:^4.0.0":
+  version: 4.0.0
+  resolution: "plur@npm:4.0.0"
+  dependencies:
+    irregular-plurals: ^3.2.0
+  checksum: fea2e903efca67cc5c7a8952fca3db46ae8d9e9353373b406714977e601a5d3b628bcb043c3ad2126c6ff0e73d8020bf43af30a72dd087eff1ec240eb13b90e1
+  languageName: node
+  linkType: hard
+
 "pn@npm:^1.1.0":
   version: 1.1.0
   resolution: "pn@npm:1.1.0"
@@ -20290,7 +20384,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"read-pkg-up@npm:^7.0.1":
+"read-pkg-up@npm:^7.0.0, read-pkg-up@npm:^7.0.1":
   version: 7.0.1
   resolution: "read-pkg-up@npm:7.0.1"
   dependencies:
@@ -23118,6 +23212,22 @@ __metadata:
     minimist: ^1.2.6
     strip-bom: ^3.0.0
   checksum: 8afa01c673ebb4782ba53d3a12df97fa837ce524f8ad38ee4e2b2fd57f5ac79abc21c574e9e9eb014d93efe7fe8214001b96233b5c6ea75bd1ea82afe17a4c6d
+  languageName: node
+  linkType: hard
+
+"tsd@npm:^0.24.1":
+  version: 0.24.1
+  resolution: "tsd@npm:0.24.1"
+  dependencies:
+    "@tsd/typescript": ~4.8.3
+    eslint-formatter-pretty: ^4.1.0
+    globby: ^11.0.1
+    meow: ^9.0.0
+    path-exists: ^4.0.0
+    read-pkg-up: ^7.0.0
+  bin:
+    tsd: dist/cli.js
+  checksum: 9c0cabcfb3d5bce468e8566f849d6ba9d483a4d4a86ac9f1a34d238dee90756d3b21d52d07afca878685773efd99dab93988e4a9e0c5d836616ce12c109382be
   languageName: node
   linkType: hard
 
