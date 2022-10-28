@@ -1,17 +1,7 @@
-import { getScrollYOffset } from './getScrollYOffset';
+/** @tossdocs-ignore */
 import { isServer } from './device/index';
+import { getScrollYOffset } from './getScrollYOffset';
 
-/**
- * @name getScrollPercent
- * @description
- * 현재 스크롤된 퍼센티지를 나타냅니다.
- * ```typescript
- * getScrollPercent(): number
- * ```
- *
- * @example
- * getScrollPercent() // 50.2
- */
 export function getScrollPercent() {
   if (isServer() || !document.documentElement) {
     return 0;

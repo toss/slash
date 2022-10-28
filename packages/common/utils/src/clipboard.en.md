@@ -11,8 +11,8 @@ const clipboard = {
 ## Example
 
 ```typescript
-// Copy 'Hello, World!' to the clipboard
-const isSuccess = clipboard.writeText('Hello, World!');
+// Copies 'Hello, world!' to clipboard.
+const isSuccess = clipboard.writeText('Hello, world!');
 
 if (isSuccess) {
   window.alert('Copy succeeded!');
