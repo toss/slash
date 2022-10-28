@@ -1,12 +1,8 @@
 # kstFormat
 
-<<<<<<< HEAD
 Formats a date according to Korean Standard Time (KST).
 
 Without this function, importing `date-fns/locale/ko` is needed every time.
-=======
-Formates `Date` based on KST.
->>>>>>> 0d91b2a (fix en docs)
 
 ## Examples
 

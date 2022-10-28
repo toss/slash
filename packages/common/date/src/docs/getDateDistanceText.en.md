@@ -1,22 +1,13 @@
 # getDateDistanceText
 
-<<<<<<< HEAD
 Formats a value returned by [getDateDistance()](https://slash.page/ko/libraries/common/date/src/docs/getdatedistance.i18n).
-
-````typescript
-function getDateDistanceText(
-  // The difference calculated by `getDateDistance`
-=======
-Formats the return value of [getDateDistance()](https://slash.page/ko/libraries/common/date/src/docs/getdatedistance.i18n) to Korean string.
 
 ```typescript
 function getDateDistanceText(
-  // the return value of getDateDistance()
->>>>>>> 0d91b2a (fix en docs)
+  // The difference calculated by `getDateDistance`
   timeUnits: { days: number; hours: number; minutes: number; seconds: number },
   // The method to format text
   options: {
-<<<<<<< HEAD
     // Separator to distinguish days, hours, minutes, and seconds
     // @default ' '
     separator?: string;
@@ -30,26 +21,11 @@ function getDateDistanceText(
     // @default t => t.minutes > 0
     minutes?: (timeUnits: TimeUnits) => boolean;
     // Condition to check if `seconds` is included in the string
-=======
-    // separator for days, hours, minutes, seconds
-    // @default ' '
-    separator?: string;
-    // determine to include days
-    // @default t => t.days > 0
-    days?: (timeUnits: TimeUnits) => boolean;
-    // determine to include hours
-    // @default t => t.hours > 0
-    hours?: (timeUnits: TimeUnits) => boolean;
-    // determine to include minutes
-    // @default t => t.minutes > 0
-    minutes?: (timeUnits: TimeUnits) => boolean;
-    // determine to include seconds
->>>>>>> 0d91b2a (fix en docs)
     // @default t => t.seconds > 0
     seconds?: (timeUnits: TimeUnits) => boolean;
   }
 ): string;
-````
+```
 
 ## Examples
 

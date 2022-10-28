@@ -1,11 +1,6 @@
 # isEqualOrBefore
 
-<<<<<<< HEAD
 Check if the first date (`lhs`) is equal or before the second date (`rhs`).
-=======
-Checks if `lhs` is ealier than or equal to `rhs`.
-
-> > > > > > > 0d91b2a (fix en docs)
 
 ```typescript
 function isEqualOrBefore(
