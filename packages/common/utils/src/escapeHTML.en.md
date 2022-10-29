@@ -4,7 +4,7 @@
 function escapeHTML(str: string): string;
 ```
 
-Replace a special character to an HTML entity.
+Replaces a special character with an HTML entity.
 
 - `&` -> `&amp;`
 - `<` -> `&lt;`

@@ -1,6 +1,6 @@
 # isIE
 
-Check if the current JavaScript runtime is running on Internet Explorer.
+Checks if the current JavaScript runtime is running on Internet Explorer.
 
 It checks whether `navigator.userAgent` includes `MSIE` or `Trident`.
 

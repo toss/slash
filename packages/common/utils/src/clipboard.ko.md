@@ -5,8 +5,8 @@
 ## Example
 
 ```typescript
-// 'Hello, World!' 라는 문자열을 클립보드에 복사해둡니다.
-const isSuccess = clipboard.writeText('Hello, World!');
+// 'Hello, world!' 라는 문자열을 클립보드에 복사해둡니다.
+const isSuccess = clipboard.writeText('Hello, world!');
 
 if (isSuccess) {
   window.alert('복사 성공!');
