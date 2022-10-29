@@ -74,13 +74,7 @@ export function formatToKRW(
 }
 
 export function commaizeNumber(value: string | number) {
-  if (typeof value === 'string') {
-    return String(value).replace(/(\d)(?=(\d\d\d)+(?!\d))/g, '$1,');
-  }
-
-  // maximumFractionDigits은 최대 소수점 자리수인데, default가 3입니다.
-  // 3자리보다 많은 수를 쓰는 경우가 있을 수도 있겠다고 생각해서 넉넉하게 10으로 잡았습니다.
-  return value.toLocaleString('en-us', { maximumFractionDigits: 10 });
+  return String(value).replace(/(\d)(?=(\d\d\d)+(?!\d))/g, '$1,');
 }
 
 export function floorAndFormatNumber(value: number) {
