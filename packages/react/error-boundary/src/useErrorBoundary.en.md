@@ -1,8 +1,8 @@
 # useErrorBoundary
 
-React's [`ErrorBoundary`](https://reactjs.org/docs/error-boundaries.html) component only catches an error occurred on render or in `useEffect` callback.
+React's [error boundary](https://reactjs.org/docs/error-boundaries.html) component cannot catch an error occurred in event handlers, asynchronous code like `setTimeout`, etc.
 
-So `useErrorBoundary` returns a function to deliver any error occurred in other place to `ErrorBoundary`.
+`useErrorBoundary` is useful to deliver an error to the nearest error boundary in anywhere.
 
 ```typescript
 const throwError = useErrorBoundary();
