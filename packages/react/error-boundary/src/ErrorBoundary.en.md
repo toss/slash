@@ -1,8 +1,5 @@
 # ErrorBoundary
 
-- see https://jbee.io/react/error-declarative-handling-1/ Declaratively handle loading and error conditions
-- see https://toss.im/slash-21/sessions/3-1 Suspense & error handling presentation in Slash 21
-
 Declaratively, the component used to manage errors.
 `ErrorBoundary` component catches errors in the render/useEffect and renders the given component with `renderFallback`
 
