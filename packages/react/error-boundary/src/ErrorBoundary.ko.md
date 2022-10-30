@@ -1,8 +1,5 @@
 # ErrorBoundary
 
-- see https://jbee.io/react/error-declarative-handling-1/ 선언적으로 로딩과 에러 상태 처리하기
-- see https://toss.im/slash-21/sessions/3-1 Suspense와 에러 처리 관련된 Slash 21 발표
-
 선언적으로 에러를 관리하기 위해서 사용하는 컴포넌트입니다.
 `ErrorBoundary` 컴포넌트는 children의 render/useEffect에서 발생한 에러를 잡아 `renderFallback`으로 주어진 컴포넌트를 렌더링합니다.
 
@@ -32,3 +29,8 @@
   <에러를_발생시킬_수_있는_컴포넌트 />
 </ErrorBoundary>
 ```
+
+## References
+
+- [React에서 선언적으로 비동기 다루기 - JBEE.io](https://jbee.io/react/error-declarative-handling-1/)
+- [프론트엔드 웹 서비스에서 우아하게 비동기 처리하기 - SLASH 21](https://toss.im/slash-21/sessions/3-1)
