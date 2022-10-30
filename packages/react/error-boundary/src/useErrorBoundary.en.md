@@ -8,7 +8,7 @@ const throwError = useErrorBoundary();
 <Button
   onClick={() => {
     if (someCondition) {
-      // This parameter will be showed in ErrorBoundary
+      // Throws `new Error('throw error')` to the nearest `ErrorBoundary`.
       throwError(new Error('throw error'));
     }
   }}

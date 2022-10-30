@@ -8,7 +8,7 @@ const throwError = useErrorBoundary();
 <Button
   onClick={() => {
     if (someCondition) {
-      // 가장 가까운 ErrorBoundary에 인자로 넘겨주는 에러를 보여줍니다.
+      // 가장 가까운 ErrorBoundary로 new Error('에러 발생')이 throw됩니다.
       throwError(new Error('에러 발생'));
     }
   }}
