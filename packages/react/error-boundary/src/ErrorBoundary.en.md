@@ -1,7 +1,7 @@
 # ErrorBoundary
 
-Declaratively, the component used to manage errors.
-`ErrorBoundary` component catches errors in the render/useEffect and renders the given component with `renderFallback`
+A component which is useful to manage an error declaratively.
+It catches the error occurred on render or in `useEffect` callback and then renders `renderFallback`.
 
 ```typescript
 <ErrorBoundary
