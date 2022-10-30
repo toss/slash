@@ -11,11 +11,10 @@ Declaratively, the component used to manage errors.
   // Components to be rendered when an error occurs.
   // The first parameter represents a caught error.
   renderFallback={error => <div>error is occured. {error.message}</div>}
-
   //  Callback function to be called when an error occurs.
   //  The first parameter represents the caught error, and the second parameter represents the stack of the
   //  component where the error occurred.
-  //  Type of componentStack의 is `string`
+  //  Type of componentStack is `string`
   onError={(error, { componentStack }) => {
     alert(error.message);
     console.log(componentStack);
