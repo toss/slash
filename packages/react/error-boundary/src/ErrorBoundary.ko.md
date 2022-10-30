@@ -1,6 +1,7 @@
 # ErrorBoundary
 
 선언적으로 에러를 관리하기 위해서 사용하는 컴포넌트입니다.
+
 `ErrorBoundary` 컴포넌트는 children의 render/useEffect에서 발생한 에러를 잡아 `renderFallback`으로 주어진 컴포넌트를 렌더링합니다.
 
 ```typescript
