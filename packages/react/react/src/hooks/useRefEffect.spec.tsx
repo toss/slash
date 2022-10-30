@@ -1,7 +1,8 @@
 import { render } from '@testing-library/react';
+import { DependencyList } from 'react';
 import { useRefEffect } from './useRefEffect';
 
-const TestComponent = ({ onRef, deps }: { onRef: (element: HTMLDivElement) => void; deps: any[] }) => {
+const TestComponent = ({ onRef, deps }: { onRef: (element: HTMLDivElement) => void; deps: DependencyList }) => {
   const ref = useRefEffect(onRef, deps);
   return <div ref={ref} />;
 };
