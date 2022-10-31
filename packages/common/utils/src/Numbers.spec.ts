@@ -1,11 +1,12 @@
 import {
-  formatBusinessRegistrationNumber,
+  ceilToUnit,
+  commaizeNumber,
   floorToUnit,
+  formatBusinessRegistrationNumber,
+  formatPhoneNumber,
   formatToKoreanNumber,
   formatToKRW,
-  formatPhoneNumber,
   roundToUnit,
-  ceilToUnit,
 } from '.';
 
 describe('Numbers', () => {
@@ -25,6 +26,15 @@ describe('Numbers', () => {
     expect(roundToUnit(320980, 10000)).toEqual(320000);
     expect(roundToUnit(1234.56, 10)).toEqual(1230);
     expect(roundToUnit(1234, 1)).toEqual(1234);
+  });
+
+  test('commaizeNumber', () => {
+    expect(commaizeNumber(1234.1234)).toEqual('1,234.1234');
+    expect(commaizeNumber(100)).toEqual('100');
+    expect(commaizeNumber(100000000)).toEqual('100,000,000');
+    expect(commaizeNumber('1234.1234')).toEqual('1,234.1234');
+    expect(commaizeNumber('100')).toEqual('100');
+    expect(commaizeNumber('100000000')).toEqual('100,000,000');
   });
 
   test('formatToKoreanNumber', () => {
