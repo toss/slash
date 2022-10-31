@@ -4,7 +4,7 @@ A component which is useful to manage an error declaratively.
 
 It catches the error occurred on render or in `useEffect` callback and then renders `renderFallback`.
 
-```typescript
+```jsx
 <ErrorBoundary
   // Components to be rendered when an error occurs.
   // The first parameter represents a caught error.

@@ -4,7 +4,7 @@ React's [error boundary](https://reactjs.org/docs/error-boundaries.html) compone
 
 `useErrorBoundary` is useful to deliver an error to the nearest error boundary in anywhere.
 
-```typescript
+```jsx
 const throwError = useErrorBoundary();
 
 <Button

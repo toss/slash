@@ -4,7 +4,7 @@
 
 `useErrorBoundary`를 사용하면 Error Boundary가 인지하지 못하는 에러를 전달해줄 수 있습니다.
 
-```typescript
+```jsx
 const throwError = useErrorBoundary();
 
 <Button
