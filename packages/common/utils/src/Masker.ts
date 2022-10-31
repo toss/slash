@@ -1,3 +1,4 @@
+/** @tossdocs-ignore */
 function maskAll(str: string) {
   return str.replace(/./g, '*');
 }
@@ -56,23 +57,6 @@ function maskPhoneNumber(phoneNumber: string) {
 }
 
 export const Masker = {
-  /**
-   * @name Masker.maskName
-   * @description 개인정보보호위원회, KISA 기준으로 고객의 이름을 마스킹하는 유틸리티입니다.
-   * @example
-   * Masker.maskName('강찬규'); // 강*규
-   * Masker.maskName('TossFrontendLibraries'); // To*****************es
-   * @see https://docs.google.com/spreadsheets/d/1FmlykxVhSUD1pqw25FMeltAvhT_rFcBb/edit#gid=890278753
-   */
   maskName,
-
-  /**
-   * @name Masker.maskPhoneNumber
-   * @description 개인정보보호위원회, KISA 기준으로 고객의 핸드폰번호를 마스킹하는 유틸리티입니다.
-   * @example
-   * Masker.maskPhoneNumber('010-1234-5678'); // 010-****-5678
-   * Masker.maskPhoneNumber('01012345678'); // 010****5678
-   * @see https://docs.google.com/spreadsheets/d/1FmlykxVhSUD1pqw25FMeltAvhT_rFcBb/edit#gid=890278753
-   */
   maskPhoneNumber,
 };

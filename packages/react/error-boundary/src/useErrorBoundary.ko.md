@@ -1,12 +1,8 @@
----
-title: useErrorBoundary
----
-
 # useErrorBoundary
 
-가장 가까운 `ErrorBoundary` 에 에러를 전달하기 위해 사용하는 Hook 입니다.
+리액트의 [`Error Boundary`](https://ko.reactjs.org/docs/error-boundaries.html)는 이벤트 핸들러 등에서 발생한 에러는 인지하지 못합니다.
 
-## Examples
+`useErrorBoundary`를 사용하면 Error Boundary가 인지하지 못하는 에러를 전달해줄 수 있습니다.
 
 ```jsx
 const throwError = useErrorBoundary();
@@ -14,7 +10,7 @@ const throwError = useErrorBoundary();
 <Button
   onClick={() => {
     if (someCondition) {
-      // 가장 가까운 ErrorBoundary에 인자로 넘겨주는 에러를 보여줍니다.
+      // 가장 가까운 ErrorBoundary로 new Error('에러 발생')이 throw됩니다.
       throwError(new Error('에러 발생'));
     }
   }}

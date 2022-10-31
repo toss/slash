@@ -31,7 +31,6 @@ interface State<ErrorType extends Error = Error> {
 const initialState: State = {
   error: null,
 };
-
 export default class ErrorBoundary extends Component<PropsWithRef<PropsWithChildren<Props>>, State> {
   state = initialState;
   /**

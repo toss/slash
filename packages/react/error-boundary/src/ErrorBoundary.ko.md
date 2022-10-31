@@ -8,8 +8,6 @@ title: ErrorBoundary
 `ErrorBoundary` 컴포넌트는 children의 render/useEffect에서 발생한 에러를 잡아
 `renderFallback`으로 주어진 컴포넌트를 렌더링합니다.
 
-## Examples
-
 ```jsx
 <ErrorBoundary
   // 에러가 발생하면 그려질 컴포넌트입니다.
