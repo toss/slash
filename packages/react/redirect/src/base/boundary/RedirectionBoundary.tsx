@@ -1,3 +1,4 @@
+/** @tossdocs-ignore */
 import { assert } from '@toss/assert';
 import { ErrorBoundary } from '@toss/error-boundary';
 import { ReactNode } from 'react';
