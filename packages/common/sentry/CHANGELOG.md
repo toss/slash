@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.4](https://github.com/toss/slash/compare/@toss/sentry@1.0.3...@toss/sentry@1.0.4) (2022-11-01)
+
+
+### Bug Fixes
+
+* apply relative path ([#81](https://github.com/toss/slash/issues/81)) ([dd101b4](https://github.com/toss/slash/commit/dd101b4b727bfd0b120e9f0a24e7321aceb547bf))
+
+
+
+
+
 ## [1.0.3](https://github.com/toss/slash/compare/@toss/sentry@1.0.1...@toss/sentry@1.0.3) (2022-10-18)
 
 

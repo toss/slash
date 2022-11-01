@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.5](https://github.com/toss/slash/compare/@toss/utils@1.0.4...@toss/utils@1.0.5) (2022-11-01)
+
+
+### Bug Fixes
+
+* **utils:** fix commaize not working in RN ([#104](https://github.com/toss/slash/issues/104)) ([11bd50d](https://github.com/toss/slash/commit/11bd50d2bcb15d4fc865b57bd5c8d22ef3d748f3))
+* **utils:** fix mapValues type error ([#60](https://github.com/toss/slash/issues/60)) ([0590556](https://github.com/toss/slash/commit/05905560262ec3cf0ae1390081abb8d882265e86))
+
+
+
+
+
 ## [1.0.4](https://github.com/toss/slash/compare/@toss/utils@1.0.3...@toss/utils@1.0.4) (2022-10-18)
 
 

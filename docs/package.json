@@ -1,6 +1,6 @@
 {
   "name": "docs",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "private": true,
   "scripts": {
     "docusaurus": "docusaurus",
@@ -27,8 +27,8 @@
     "@easyops-cn/docusaurus-search-local": "^0.32.0",
     "@mdx-js/react": "^1.6.21",
     "@svgr/webpack": "^5.5.0",
-    "@toss/react": "workspace:^1.1.3",
-    "@toss/utils": "workspace:^1.0.4",
+    "@toss/react": "workspace:^1.2.0",
+    "@toss/utils": "workspace:^1.0.5",
     "clsx": "^1.1.1",
     "documentation": "^14.0.0",
     "file-loader": "^6.2.0",
