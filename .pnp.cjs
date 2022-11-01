@@ -4386,19 +4386,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             "react"\
           ],\
           "linkType": "HARD"\
-        }],\
-        ["virtual:d213235143395ecf636aef0499f2670b8f1362c43322d75aba927f218796bb18fcafa8b7f8af7be4e0a98ddab4d85ecec7d95d259c1dc036d6197f359bfaa860#npm:0.0.0-e48fa74", {\
-          "packageLocation": "./.yarn/__virtual__/@code-hike-classer-virtual-f990ed8438/0/cache/@code-hike-classer-npm-0.0.0-e48fa74-6371bd8ef3-2f0fe945c7.zip/node_modules/@code-hike/classer/",\
-          "packageDependencies": [\
-            ["@code-hike/classer", "virtual:d213235143395ecf636aef0499f2670b8f1362c43322d75aba927f218796bb18fcafa8b7f8af7be4e0a98ddab4d85ecec7d95d259c1dc036d6197f359bfaa860#npm:0.0.0-e48fa74"],\
-            ["@types/react", "npm:18.0.21"],\
-            ["react", "npm:18.2.0"]\
-          ],\
-          "packagePeers": [\
-            "@types/react",\
-            "react"\
-          ],\
-          "linkType": "HARD"\
         }]\
       ]],\
       ["@codemirror/autocomplete", [\
@@ -4681,46 +4668,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@codesandbox/sandpack-react", "npm:1.17.0"]\
           ],\
           "linkType": "SOFT"\
-        }],\
-        ["virtual:62cb29918b2e63dff97923d985a18238631a18b918521fd9ac48de2be213715676e8b999d7ab4431ea536d1917af1465d5695ceae059c69bf4c14df5968dd6a1#npm:1.17.0", {\
-          "packageLocation": "./.yarn/__virtual__/@codesandbox-sandpack-react-virtual-d213235143/0/cache/@codesandbox-sandpack-react-npm-1.17.0-0539bc3073-5277961538.zip/node_modules/@codesandbox/sandpack-react/",\
-          "packageDependencies": [\
-            ["@codesandbox/sandpack-react", "virtual:62cb29918b2e63dff97923d985a18238631a18b918521fd9ac48de2be213715676e8b999d7ab4431ea536d1917af1465d5695ceae059c69bf4c14df5968dd6a1#npm:1.17.0"],\
-            ["@code-hike/classer", "virtual:d213235143395ecf636aef0499f2670b8f1362c43322d75aba927f218796bb18fcafa8b7f8af7be4e0a98ddab4d85ecec7d95d259c1dc036d6197f359bfaa860#npm:0.0.0-e48fa74"],\
-            ["@codemirror/closebrackets", "npm:0.19.2"],\
-            ["@codemirror/commands", "npm:0.19.8"],\
-            ["@codemirror/comment", "npm:0.19.1"],\
-            ["@codemirror/gutter", "npm:0.19.9"],\
-            ["@codemirror/highlight", "npm:0.19.8"],\
-            ["@codemirror/history", "npm:0.19.2"],\
-            ["@codemirror/lang-css", "npm:0.19.3"],\
-            ["@codemirror/lang-html", "virtual:cc64d69f4da03155ff432b2a4b54ebcf91ca31b0edc77cfdb2e7d46c7b68863a230bb7c6ec472e30062f5af475792d19aa81eb4290b4f1138a69b1e890368df6#npm:0.19.4"],\
-            ["@codemirror/lang-javascript", "npm:0.19.7"],\
-            ["@codemirror/language", "npm:0.19.10"],\
-            ["@codemirror/matchbrackets", "npm:0.19.4"],\
-            ["@codemirror/state", "npm:0.19.9"],\
-            ["@codemirror/view", "npm:0.19.48"],\
-            ["@codesandbox/sandpack-client", "npm:1.12.1"],\
-            ["@react-hook/intersection-observer", "virtual:d213235143395ecf636aef0499f2670b8f1362c43322d75aba927f218796bb18fcafa8b7f8af7be4e0a98ddab4d85ecec7d95d259c1dc036d6197f359bfaa860#npm:3.1.1"],\
-            ["@stitches/core", "npm:1.2.8"],\
-            ["@types/react", "npm:18.0.21"],\
-            ["@types/react-dom", null],\
-            ["clean-set", "npm:1.1.2"],\
-            ["codesandbox-import-util-types", "npm:2.3.0"],\
-            ["lodash.isequal", "npm:4.5.0"],\
-            ["lz-string", "npm:1.4.4"],\
-            ["react", "npm:18.2.0"],\
-            ["react-devtools-inline", "virtual:cc64d69f4da03155ff432b2a4b54ebcf91ca31b0edc77cfdb2e7d46c7b68863a230bb7c6ec472e30062f5af475792d19aa81eb4290b4f1138a69b1e890368df6#npm:4.4.0"],\
-            ["react-dom", "virtual:62cb29918b2e63dff97923d985a18238631a18b918521fd9ac48de2be213715676e8b999d7ab4431ea536d1917af1465d5695ceae059c69bf4c14df5968dd6a1#npm:18.2.0"],\
-            ["react-is", "npm:17.0.2"]\
-          ],\
-          "packagePeers": [\
-            "@types/react-dom",\
-            "@types/react",\
-            "react-dom",\
-            "react"\
-          ],\
-          "linkType": "HARD"\
         }],\
         ["virtual:b5b5dfb1662b30d0d5b62f084f8b8fddd0eee56dd8737572197395ab6309e644fa76525392b1d0250ce3c07c5eeeb90901439953af682fc76f8ab38f71b8b09d#npm:1.17.0", {\
           "packageLocation": "./.yarn/__virtual__/@codesandbox-sandpack-react-virtual-cc64d69f4d/0/cache/@codesandbox-sandpack-react-npm-1.17.0-0539bc3073-5277961538.zip/node_modules/@codesandbox/sandpack-react/",\
@@ -8414,21 +8361,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             "react"\
           ],\
           "linkType": "HARD"\
-        }],\
-        ["virtual:d213235143395ecf636aef0499f2670b8f1362c43322d75aba927f218796bb18fcafa8b7f8af7be4e0a98ddab4d85ecec7d95d259c1dc036d6197f359bfaa860#npm:3.1.1", {\
-          "packageLocation": "./.yarn/__virtual__/@react-hook-intersection-observer-virtual-94a8512e37/0/cache/@react-hook-intersection-observer-npm-3.1.1-2433c13d46-4c76b21e4f.zip/node_modules/@react-hook/intersection-observer/",\
-          "packageDependencies": [\
-            ["@react-hook/intersection-observer", "virtual:d213235143395ecf636aef0499f2670b8f1362c43322d75aba927f218796bb18fcafa8b7f8af7be4e0a98ddab4d85ecec7d95d259c1dc036d6197f359bfaa860#npm:3.1.1"],\
-            ["@react-hook/passive-layout-effect", "virtual:94a8512e374c79087a4a1468ceb844940e3cc92d873ab8c52ff151219e71f9e03be4bc2a0d4589700dc895be71c9bd2501c5d2d66bb3756c535c010cd0dfaa45#npm:1.2.1"],\
-            ["@types/react", "npm:18.0.21"],\
-            ["intersection-observer", "npm:0.10.0"],\
-            ["react", "npm:18.2.0"]\
-          ],\
-          "packagePeers": [\
-            "@types/react",\
-            "react"\
-          ],\
-          "linkType": "HARD"\
         }]\
       ]],\
       ["@react-hook/passive-layout-effect", [\
@@ -8444,19 +8376,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["@react-hook/passive-layout-effect", "virtual:1a570f113d34dd92c8b04ec6ff0bf7aa7813f776e29d9a345567b37391d7ca0ee9b8471646dd89f0bb360442a95a0143037f0d15ace4dc9a6f7cf98215814720#npm:1.2.1"],\
             ["@types/react", null],\
-            ["react", "npm:18.2.0"]\
-          ],\
-          "packagePeers": [\
-            "@types/react",\
-            "react"\
-          ],\
-          "linkType": "HARD"\
-        }],\
-        ["virtual:94a8512e374c79087a4a1468ceb844940e3cc92d873ab8c52ff151219e71f9e03be4bc2a0d4589700dc895be71c9bd2501c5d2d66bb3756c535c010cd0dfaa45#npm:1.2.1", {\
-          "packageLocation": "./.yarn/__virtual__/@react-hook-passive-layout-effect-virtual-c3a7912534/0/cache/@react-hook-passive-layout-effect-npm-1.2.1-ef94afc326-217cb8aa90.zip/node_modules/@react-hook/passive-layout-effect/",\
-          "packageDependencies": [\
-            ["@react-hook/passive-layout-effect", "virtual:94a8512e374c79087a4a1468ceb844940e3cc92d873ab8c52ff151219e71f9e03be4bc2a0d4589700dc895be71c9bd2501c5d2d66bb3756c535c010cd0dfaa45#npm:1.2.1"],\
-            ["@types/react", "npm:18.0.21"],\
             ["react", "npm:18.2.0"]\
           ],\
           "packagePeers": [\
@@ -10024,7 +9943,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@babel/preset-react", "virtual:01ae7c33d4655a48cbb29902912466a761e01d57e32af25620c31e36065eb1601cc4f6394afcb6b2f9c9f1b941b9fbeecba9aa1bca8ca304ae87cee07a6864e9#npm:7.18.6"],\
             ["@babel/preset-typescript", "virtual:01ae7c33d4655a48cbb29902912466a761e01d57e32af25620c31e36065eb1601cc4f6394afcb6b2f9c9f1b941b9fbeecba9aa1bca8ca304ae87cee07a6864e9#npm:7.18.6"],\
             ["@babel/runtime", "npm:7.19.0"],\
-            ["@codesandbox/sandpack-react", "virtual:62cb29918b2e63dff97923d985a18238631a18b918521fd9ac48de2be213715676e8b999d7ab4431ea536d1917af1465d5695ceae059c69bf4c14df5968dd6a1#npm:1.17.0"],\
             ["@slash/rollup-config", "workspace:configs/rollup"],\
             ["@testing-library/dom", "npm:8.18.1"],\
             ["@testing-library/react", "virtual:62cb29918b2e63dff97923d985a18238631a18b918521fd9ac48de2be213715676e8b999d7ab4431ea536d1917af1465d5695ceae059c69bf4c14df5968dd6a1#npm:13.4.0"],\
@@ -10075,7 +9993,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@babel/preset-react", "virtual:01ae7c33d4655a48cbb29902912466a761e01d57e32af25620c31e36065eb1601cc4f6394afcb6b2f9c9f1b941b9fbeecba9aa1bca8ca304ae87cee07a6864e9#npm:7.18.6"],\
             ["@babel/preset-typescript", "virtual:01ae7c33d4655a48cbb29902912466a761e01d57e32af25620c31e36065eb1601cc4f6394afcb6b2f9c9f1b941b9fbeecba9aa1bca8ca304ae87cee07a6864e9#npm:7.18.6"],\
             ["@babel/runtime", "npm:7.19.0"],\
-            ["@codesandbox/sandpack-react", "virtual:62cb29918b2e63dff97923d985a18238631a18b918521fd9ac48de2be213715676e8b999d7ab4431ea536d1917af1465d5695ceae059c69bf4c14df5968dd6a1#npm:1.17.0"],\
             ["@slash/rollup-config", "workspace:configs/rollup"],\
             ["@testing-library/dom", "npm:8.18.1"],\
             ["@testing-library/react", "virtual:62cb29918b2e63dff97923d985a18238631a18b918521fd9ac48de2be213715676e8b999d7ab4431ea536d1917af1465d5695ceae059c69bf4c14df5968dd6a1#npm:13.4.0"],\
