@@ -24,7 +24,6 @@
     "@docusaurus/preset-classic": "^2.1.0",
     "@docusaurus/theme-common": "^2.1.0",
     "@docusaurus/types": "^2.1.0",
-    "@easyops-cn/docusaurus-search-local": "^0.32.0",
     "@mdx-js/react": "^1.6.21",
     "@svgr/webpack": "^5.5.0",
     "@toss/react": "workspace:^1.2.0",

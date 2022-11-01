@@ -94,22 +94,20 @@ module.exports = {
         },
       ],
       copyright: `Copyright © ${new Date().getFullYear()} Viva Republica, Inc.`,
+      algolia: {
+        appId: 'N8IA4IAEPJ',
+        apiKey: process.env.ALGOLIA_API_KEY,
+        siteId: 'f93364cf-0ae8-4398-b7bd-9a9f582c78ac',
+        branch: 'main',
+        selector: 'div#search',
+        contextualSearch: true,
+      },
     },
     prism: {
       theme: lightCodeTheme,
       darkTheme: darkCodeTheme,
     },
   },
-  themes: [
-    [
-      require.resolve('@easyops-cn/docusaurus-search-local'),
-      {
-        hashed: true,
-        indexPages: true,
-        language: ['en', 'ko'],
-      },
-    ],
-  ],
   plugins: [require.resolve('./scripts/webpack5-compat.js')],
   presets: [
     [
