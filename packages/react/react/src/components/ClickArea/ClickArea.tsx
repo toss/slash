@@ -1,3 +1,4 @@
+/** @tossdocs-ignore */
 /** @jsxImportSource react */
 import classnames from 'classnames';
 import { PureComponent } from 'react';
