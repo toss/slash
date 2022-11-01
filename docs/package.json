@@ -19,6 +19,7 @@
     "@babel/preset-env": "^7.15.0",
     "@babel/preset-typescript": "^7.18.6",
     "@babel/register": "^7.15.3",
+    "@codesandbox/sandpack-react": "^1.17.0",
     "@docusaurus/core": "^2.1.0",
     "@docusaurus/preset-classic": "^2.1.0",
     "@docusaurus/theme-common": "^2.1.0",
