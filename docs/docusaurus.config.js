@@ -100,7 +100,7 @@ module.exports = {
       darkTheme: darkCodeTheme,
     },
     algolia: {
-      appId: 'N8IA4IAEPJ',
+      appId: '5HUNJYWIP5',
       apiKey: process.env.ALGOLIA_API_KEY,
       siteId: 'f93364cf-0ae8-4398-b7bd-9a9f582c78ac',
       indexName: 'slash',
