@@ -1,4 +1,4 @@
-## clearRecoilCache
+# clearRecoilCache
 
 Recoil의 Selector Cache를 초기화합니다. Jest에서 테스트하는 경우에 유용합니다.
 

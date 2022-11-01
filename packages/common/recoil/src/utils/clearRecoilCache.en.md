@@ -1,4 +1,4 @@
-## clearRecoilCache
+# clearRecoilCache
 
 Clear the selector cache in Recoil. Useful when testing with Jest.
 
