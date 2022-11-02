@@ -40,7 +40,7 @@ describe('Numbers', () => {
 
   test('decommaizeNumber', () => {
     expect(decommaizeNumber('13,209,802')).toEqual(13209802);
-    expect(decommaizeNumber('1234,1,,234')).toEqual(12341234);
+    expect(decommaizeNumber('12,341,234')).toEqual(12341234);
   });
 
   test('formatToKoreanNumber', () => {
