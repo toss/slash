@@ -1,6 +1,10 @@
 {
   "name": "@toss/react-query",
   "version": "1.0.3",
+  "types": "./dist/index.d.ts",
+  "tsd": {
+    "directory": "./test-d"
+  },
   "sideEffects": false,
   "exports": {
     ".": {
@@ -11,7 +15,7 @@
   },
   "main": "./src/index.ts",
   "scripts": {
-    "build": "rm -rf dist esm && tsc --declaration --emitDeclarationOnly --declarationDir dist && rollup -c rollup.config.js",
+    "build": "rm -rf dist esm && tsc --declaration --emitDeclarationOnly --declarationDir dist && rollup -c rollup.config.js && pnpify tsd",
     "prepack": "yarn build",
     "test": "echo \"no test specified.\"",
     "typecheck": "tsc --noEmit"
@@ -23,6 +27,7 @@
     "@tossteam/jest": "^17",
     "@types/jest": "^28.1.8",
     "@types/node": "^14.14.41",
+    "@yarnpkg/pnpify": "^4.0.0-rc.27",
     "babel-jest": "^29",
     "concurrently": "^4.1.0",
     "jest": "^29.0.1",
