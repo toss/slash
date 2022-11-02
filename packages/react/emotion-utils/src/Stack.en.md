@@ -11,7 +11,7 @@ A layout component for stacking elements.
 - Use `gutter` prop to specify spacing between elements.
 
 ```ts
-function Stack(props: {
+function Stack(props: {g
   // 요소들의 align-items 값
   align?: CSSProperties['alignItems'];
   // 요소들의 justify-content 값
@@ -39,7 +39,7 @@ import { Sandpack } from "@codesandbox/sandpack-react";
 import { Stack } from '@toss/emotion-utils';\n
 export default function App() {
   return (
-    <Stack gutter={16} direction="horizontal">
+    <Stack.Horizontal gutter={16}>
       <button>
         Button
       </button>
