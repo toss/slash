@@ -11,7 +11,7 @@ A layout component for stacking elements.
 - Use `gutter` prop to specify spacing between elements.
 
 ```ts
-function Stack(props: {g
+function Stack(props: {
   // 요소들의 align-items 값
   align?: CSSProperties['alignItems'];
   // 요소들의 justify-content 값
