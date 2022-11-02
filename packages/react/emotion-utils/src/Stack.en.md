@@ -12,14 +12,14 @@ A layout component for stacking elements.
 
 ```ts
 function Stack(props: {
-  // 요소들의 align-items 값
+  // align-items for elements
   align?: CSSProperties['alignItems'];
-  // 요소들의 justify-content 값
+  // justify-content for elements
   justify?: CSSProperties['justifyContent'];
-  // 요소들의 flex-direction 값
-  // (값: row, column)
+  // flex-direction for elements
+  // (e.g.: row, column)
   direction?: CSSProperties['flexDirection'];
-  // 요소들 사이의 간격
+  // Space between elements
   // @default 24
   gutter?: number;
 }): JSX.Element;
