@@ -25,3 +25,7 @@ body {
 [data-theme='dark'] .navbar-github-link::before {
   background: url(./static/img/github-dark.svg) no-repeat center;
 }
+
+.sp-wrapper {
+  margin: 24px 0;
+}

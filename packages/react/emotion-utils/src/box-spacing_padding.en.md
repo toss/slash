@@ -39,18 +39,18 @@ import { Sandpack } from "@codesandbox/sandpack-react";
   template="react"
   files={{
     '/App.js': `/** @jsxImportSource @emotion/react */
-import { margin } from '@toss/emotion-utils';\n
+import { padding } from '@toss/emotion-utils';\n
 export default function App() {
   return (
     <>
-      <div css={margin(24)}>
-        Margin 24
+      <div css={padding(24)}>
+        Padding 24
       </div>
-      <div css={margin.y12}>
-        Margin Y 12
+      <div css={padding.y12}>
+        Padding Y 12
       </div>
-      <div css={margin.left(24)}>
-        Margin left 24
+      <div css={padding.left(24)}>
+        Padding left 24
       </div>
     </>
   );
