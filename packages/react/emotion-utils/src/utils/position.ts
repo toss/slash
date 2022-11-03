@@ -52,6 +52,10 @@ interface Coordinates {
  *
  * // 다음처럼도 사용 가능합니다
  * position('absolute', {top: 0, left: 0});
+ *
+ * // 다음처럼도 사용 가능합니다(absolute, fixed, sticky)
+ * position.absolute(0, 0, 0, ,0);
+ * position.absolute({top: 0, left: 0});
  */
 export function position(
   position: Property.Position,
@@ -103,4 +107,46 @@ function isPositionValue(value: unknown): value is Property.Position {
 
 function isCSSPixelValue(value: unknown): value is CSSPixelValue {
   return typeof value === 'string' || typeof value === 'number';
+}
+
+position.absolute = absolute;
+position.fixed = fixed;
+position.sticky = sticky;
+
+function absolute(coordinates: Coordinates): SerializedStyles;
+function absolute(
+  top: CSSPixelValue,
+  right: CSSPixelValue,
+  bottom: CSSPixelValue,
+  left: CSSPixelValue
+): SerializedStyles;
+function absolute(topOrCoordinates: Coordinates | CSSPixelValue, ...values: CSSPixelValue[]) {
+  // position(position, coordinates);
+  if (!isCSSPixelValue(topOrCoordinates)) {
+    return position('absolute', topOrCoordinates);
+  }
+  // position(position, top, right, bottom, left);
+  return position('absolute', topOrCoordinates, values[0], values[1], values[2]);
+}
+
+function fixed(coordinates: Coordinates): SerializedStyles;
+function fixed(top: CSSPixelValue, right: CSSPixelValue, bottom: CSSPixelValue, left: CSSPixelValue): SerializedStyles;
+function fixed(topOrCoordinates: Coordinates | CSSPixelValue, ...values: CSSPixelValue[]) {
+  // position(position, coordinates);
+  if (!isCSSPixelValue(topOrCoordinates)) {
+    return position('fixed', topOrCoordinates);
+  }
+  // position(position, top, right, bottom, left);
+  return position('fixed', topOrCoordinates, values[0], values[1], values[2]);
+}
+
+function sticky(coordinates: Coordinates): SerializedStyles;
+function sticky(top: CSSPixelValue, right: CSSPixelValue, bottom: CSSPixelValue, left: CSSPixelValue): SerializedStyles;
+function sticky(topOrCoordinates: Coordinates | CSSPixelValue, ...values: CSSPixelValue[]) {
+  // position(position, coordinates);
+  if (!isCSSPixelValue(topOrCoordinates)) {
+    return position('sticky', topOrCoordinates);
+  }
+  // position(position, top, right, bottom, left);
+  return position('sticky', topOrCoordinates, values[0], values[1], values[2]);
 }
