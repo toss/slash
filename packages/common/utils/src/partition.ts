@@ -1,3 +1,4 @@
+/** @tossdocs-ignore */
 export function partition<T>(items: T[], predicate: (item: T) => boolean): [T[], T[]] {
   const first: T[] = [];
   const second: T[] = [];

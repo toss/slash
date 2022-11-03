@@ -1,3 +1,4 @@
+/** @tossdocs-ignore */
 interface RetryOptions {
   retries: number;
   shouldRetry?: (error: Error) => boolean;
