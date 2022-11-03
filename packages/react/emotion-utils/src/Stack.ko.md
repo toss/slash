@@ -49,7 +49,7 @@ export default function App() {
       <button>
         Button
       </button>
-    </Stack.Horizontal>
+    </Stack>
   );
 }
 `,
