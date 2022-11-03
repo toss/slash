@@ -1,3 +1,4 @@
+/** @tossdocs-ignore */
 type Primitive = undefined | null | boolean | number | symbol | string;
 
 export type Serializable =
