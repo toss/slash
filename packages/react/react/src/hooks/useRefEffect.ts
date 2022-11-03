@@ -1,4 +1,4 @@
-import { useCallback, useRef } from 'react';
+import { DependencyList, useCallback, useRef } from 'react';
 import { usePreservedCallback } from './usePreservedCallback';
 
 export type EffectRef<E extends HTMLElement = HTMLElement> = (element: E | null) => void;
@@ -64,7 +64,10 @@ export type RefCallback<E extends HTMLElement = HTMLElement> = (element: E) => C
  * <div ref={ref}>...</div>
  * @see https://github.com/facebook/react/issues/15176 - `ref`의 cleanup을 구현해달라고 요청하는 GitHub Issue
  */
-export function useRefEffect<E extends HTMLElement = HTMLElement>(callback: RefCallback<E>, deps: any[]): EffectRef<E> {
+export function useRefEffect<E extends HTMLElement = HTMLElement>(
+  callback: RefCallback<E>,
+  deps: DependencyList
+): EffectRef<E> {
   const preservedCallback = usePreservedCallback(callback);
   const disposeRef = useRef<CleanupCallback>(noop);
 

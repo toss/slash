@@ -99,17 +99,15 @@ module.exports = {
       theme: lightCodeTheme,
       darkTheme: darkCodeTheme,
     },
+    algolia: {
+      appId: '5HUNJYWIP5',
+      apiKey: '7deeee6b4d09217c1dff5ff279561bf4',
+      siteId: 'f93364cf-0ae8-4398-b7bd-9a9f582c78ac',
+      indexName: 'slash',
+      branch: 'main',
+      contextualSearch: true,
+    },
   },
-  themes: [
-    [
-      require.resolve('@easyops-cn/docusaurus-search-local'),
-      {
-        hashed: true,
-        indexPages: true,
-        language: ['en', 'ko'],
-      },
-    ],
-  ],
   plugins: [require.resolve('./scripts/webpack5-compat.js')],
   presets: [
     [

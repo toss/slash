@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.4](https://github.com/toss/slash/compare/@toss/error-boundary@1.0.3...@toss/error-boundary@1.0.4) (2022-11-01)
+
+
+### Bug Fixes
+
+* **error-boundary:** remove 404 urls ([#87](https://github.com/toss/slash/issues/87)) ([c1d7da8](https://github.com/toss/slash/commit/c1d7da8ce31db02f395f7d093a2f2f882b3218a0))
+
+
+
+
+
 ## [1.0.3](https://github.com/toss/slash/compare/@toss/error-boundary@1.0.1...@toss/error-boundary@1.0.3) (2022-10-18)
 
 

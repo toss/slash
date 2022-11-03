@@ -8,6 +8,7 @@ module.exports = function pluginWebpackCompat() {
         resolve: {
           alias: {
             react: path.dirname(require.resolve('react/package.json')),
+            'react-dom': path.dirname(require.resolve('react-dom/package.json')),
             '@mdx-js/react': path.dirname(require.resolve('@mdx-js/react/package.json')),
           },
         },

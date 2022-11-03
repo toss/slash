@@ -1,3 +1,4 @@
+/** @tossdocs-ignore */
 /** @jsxImportSource react */
 import classnames from 'classnames';
 import { PureComponent } from 'react';
@@ -11,29 +12,6 @@ interface Props {
   enabled?: boolean;
 }
 
-/**
- * @name ClickArea
- * @description
- * Clickable한 영역에 사용합니다. 영역이 `div`로 감싸지며, 클릭 시 살짝 어두워집니다.
- *
- * ```typescript
- * <ClickArea
- *   // CSS className
- *   className={className}
- *   // 클릭 시 실행할 함수 (`() => void`)
- *   onClick={onClick}
- *   // 클릭 가능 여부 (`boolean`)
- *   enabled={enabled}
- * >
- *   {children}
- * </ClickArea>
- * ```
- *
- * @example
- * <ClickArea onClick={openBottomSheet}>
- *   <Icon name="guide-line" color={adaptive.grey500} />
- * </ClickArea>
- */
 export class ClickArea extends PureComponent<Props> {
   public render() {
     const { className, children, enabled = true, ...rest } = this.props;

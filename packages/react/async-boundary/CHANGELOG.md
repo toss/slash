@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.4](https://github.com/toss/slash/compare/@toss/async-boundary@1.0.3...@toss/async-boundary@1.0.4) (2022-11-01)
+
+
+### Bug Fixes
+
+* **async-boundary:** add generic constraint of withAsyncBoundary ([#82](https://github.com/toss/slash/issues/82)) ([6cf223f](https://github.com/toss/slash/commit/6cf223fbc3001123347de03992c7fc569efe787a))
+
+
+
+
+
 ## [1.0.3](https://github.com/toss/slash/compare/@toss/async-boundary@1.0.1...@toss/async-boundary@1.0.3) (2022-10-18)
 
 

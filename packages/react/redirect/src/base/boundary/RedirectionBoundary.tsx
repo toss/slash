@@ -1,13 +1,9 @@
+/** @tossdocs-ignore */
 import { assert } from '@toss/assert';
 import { ErrorBoundary } from '@toss/error-boundary';
 import { ReactNode } from 'react';
 import { BaseRedirectionOptions, isRedirection, Redirection } from '../model/Redirection';
 
-/**
- * @name RedirectionBoundary
- * @description
- * 문서화가 필요합니다.
- */
 export function RedirectionBoundary({
   children,
   onRedirect,
