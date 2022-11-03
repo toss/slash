@@ -9,6 +9,7 @@ range(
   // 시작할 숫자
   start: number,
   // 끝날 숫자 (주의: `end` 는 포함되지 않습니다)
+  // @default start
   end?: number,
   // 배열에 포함될 숫자의 간격
   // @default 1

@@ -9,6 +9,7 @@ range(
   // start number
   start: number,
   // end number (note: `end` is not included)
+  // @default start
   end?: number,
   // spacing of the numbers to be included in the array
   // @default 1
