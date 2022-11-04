@@ -1,6 +1,7 @@
 import {
   ceilToUnit,
   commaizeNumber,
+  decommaizeNumber,
   floorToUnit,
   formatBusinessRegistrationNumber,
   formatPhoneNumber,
@@ -35,6 +36,11 @@ describe('Numbers', () => {
     expect(commaizeNumber('1234.1234')).toEqual('1,234.1234');
     expect(commaizeNumber('100')).toEqual('100');
     expect(commaizeNumber('100000000')).toEqual('100,000,000');
+  });
+
+  test('decommaizeNumber', () => {
+    expect(decommaizeNumber('13,209,802')).toEqual(13209802);
+    expect(decommaizeNumber('12,341,234')).toEqual(12341234);
   });
 
   test('formatToKoreanNumber', () => {
