@@ -47,7 +47,7 @@ describe('position 테스트', () => {
     expect(el).toHaveStyleRule('left', '0');
   });
 
-  describe('position 메서드', () => {
+  describe('position methods', () => {
     describe('absolute', () => {
       it('position.absolute({top: 0, left: 0})', () => {
         const { getByTestId } = render(<div data-testid="test" css={position.absolute({ top: 0, left: 0 })} />);
