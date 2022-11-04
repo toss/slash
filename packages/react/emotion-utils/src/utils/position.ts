@@ -109,44 +109,21 @@ function isCSSPixelValue(value: unknown): value is CSSPixelValue {
   return typeof value === 'string' || typeof value === 'number';
 }
 
-position.absolute = absolute;
-position.fixed = fixed;
-position.sticky = sticky;
+position.absolute = createPosition('absolute');
+position.fixed = createPosition('fixed');
+position.sticky = createPosition('sticky');
 
-function absolute(coordinates: Coordinates): SerializedStyles;
-function absolute(
-  top: CSSPixelValue,
-  right: CSSPixelValue,
-  bottom: CSSPixelValue,
-  left: CSSPixelValue
-): SerializedStyles;
-function absolute(topOrCoordinates: Coordinates | CSSPixelValue, ...values: CSSPixelValue[]) {
-  // position(position, coordinates);
-  if (!isCSSPixelValue(topOrCoordinates)) {
-    return position('absolute', topOrCoordinates);
+function createPosition(pos: Property.Position) {
+  function func(coordinates: Coordinates): SerializedStyles;
+  function func(top: CSSPixelValue, right: CSSPixelValue, bottom: CSSPixelValue, left: CSSPixelValue): SerializedStyles;
+  function func(topOrCoordinates: Coordinates | CSSPixelValue, ...values: CSSPixelValue[]) {
+    // position(position, coordinates);
+    if (!isCSSPixelValue(topOrCoordinates)) {
+      return position(pos, topOrCoordinates);
+    }
+    // position(position, top, right, bottom, left);
+    return position(pos, topOrCoordinates, values[0], values[1], values[2]);
   }
-  // position(position, top, right, bottom, left);
-  return position('absolute', topOrCoordinates, values[0], values[1], values[2]);
-}
 
-function fixed(coordinates: Coordinates): SerializedStyles;
-function fixed(top: CSSPixelValue, right: CSSPixelValue, bottom: CSSPixelValue, left: CSSPixelValue): SerializedStyles;
-function fixed(topOrCoordinates: Coordinates | CSSPixelValue, ...values: CSSPixelValue[]) {
-  // position(position, coordinates);
-  if (!isCSSPixelValue(topOrCoordinates)) {
-    return position('fixed', topOrCoordinates);
-  }
-  // position(position, top, right, bottom, left);
-  return position('fixed', topOrCoordinates, values[0], values[1], values[2]);
-}
-
-function sticky(coordinates: Coordinates): SerializedStyles;
-function sticky(top: CSSPixelValue, right: CSSPixelValue, bottom: CSSPixelValue, left: CSSPixelValue): SerializedStyles;
-function sticky(topOrCoordinates: Coordinates | CSSPixelValue, ...values: CSSPixelValue[]) {
-  // position(position, coordinates);
-  if (!isCSSPixelValue(topOrCoordinates)) {
-    return position('sticky', topOrCoordinates);
-  }
-  // position(position, top, right, bottom, left);
-  return position('sticky', topOrCoordinates, values[0], values[1], values[2]);
+  return func;
 }
