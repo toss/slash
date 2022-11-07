@@ -15,9 +15,10 @@
   },
   "main": "./src/index.ts",
   "scripts": {
-    "build": "rm -rf dist esm && tsc --declaration --emitDeclarationOnly --declarationDir dist && rollup -c rollup.config.js && pnpify tsd",
+    "build": "rm -rf dist esm && tsc --declaration --emitDeclarationOnly --declarationDir dist && rollup -c rollup.config.js",
     "prepack": "yarn build",
     "test": "echo \"no test specified.\"",
+    "tsd": "pnpify tsd",
     "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
