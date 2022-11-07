@@ -9288,16 +9288,21 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@babel/core", "npm:7.19.3"],\
             ["@babel/runtime", "npm:7.19.0"],\
             ["@slash/rollup-config", "workspace:configs/rollup"],\
+            ["@testing-library/dom", "npm:8.18.1"],\
+            ["@testing-library/jest-dom", "npm:5.16.5"],\
+            ["@testing-library/react", "virtual:62cb29918b2e63dff97923d985a18238631a18b918521fd9ac48de2be213715676e8b999d7ab4431ea536d1917af1465d5695ceae059c69bf4c14df5968dd6a1#npm:13.4.0"],\
             ["@toss/utils", "workspace:packages/common/utils"],\
             ["@tossteam/jest", "virtual:55e030f4e280704fb3c8fb1f5442518cdfa67839a0eec1be27dcc560d69cd26b152fe91949e78fd51e5877ad1e56ceeeea20eb02c239e5ccca466c5488cbdc0d#npm:17.187.2"],\
             ["@types/jest", "npm:29.1.2"],\
             ["@types/node", "npm:14.18.31"],\
             ["@types/react", "npm:18.0.21"],\
+            ["@types/testing-library__jest-dom", "npm:5.14.5"],\
             ["babel-jest", "virtual:785204e63ba96625a23f896ee431c9a36baff7a533742c7d2c1d3e8c51b41da4d9b22d61afa2e1bb44d0338b2a9e895a7c77e29d79f3a357a12dae28feb7f916#npm:29.1.2"],\
             ["concurrently", "npm:4.1.2"],\
             ["jest", "virtual:01ae7c33d4655a48cbb29902912466a761e01d57e32af25620c31e36065eb1601cc4f6394afcb6b2f9c9f1b941b9fbeecba9aa1bca8ca304ae87cee07a6864e9#npm:29.1.2"],\
             ["jest-environment-jsdom", "npm:29.1.2"],\
             ["react", "npm:18.2.0"],\
+            ["react-dom", "virtual:62cb29918b2e63dff97923d985a18238631a18b918521fd9ac48de2be213715676e8b999d7ab4431ea536d1917af1465d5695ceae059c69bf4c14df5968dd6a1#npm:18.2.0"],\
             ["require-from-string", "npm:2.0.2"],\
             ["rollup", "npm:2.79.1"],\
             ["typescript", "patch:typescript@npm%3A4.7.4#~builtin<compat/typescript>::version=4.7.4&hash=a1c5e5"]\

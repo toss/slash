@@ -5,7 +5,7 @@ type Props<Element extends keyof JSX.IntrinsicElements = 'span'> = {
   as?: Element;
 } & Omit<AllHTMLAttributes<Element>, 'as'>;
 
-function ScreenReaderOnly({ as: Component = 'span', children, ...props }: Props) {
+export function ScreenReaderOnly({ as: Component = 'span', children, ...props }: Props) {
   return (
     <Component
       style={{

@@ -29,6 +29,70 @@ Element를 Stack처럼 쌓는 방식으로 묶기 위한 레이아웃 컴포넌�
 
 ## Examples
 
+import { Sandpack } from "@codesandbox/sandpack-react";
+
+<!-- prettier-ignore -->
+<Sandpack
+  template="react"
+  files={{
+    '/App.js': `/** @jsxImportSource @emotion/react */
+import { Stack } from '@toss/emotion-utils';\n
+export default function App() {
+  return (
+    <Stack gutter={16} direction="horizontal">
+      <button>
+        Button
+      </button>
+      <button>
+        Button
+      </button>
+      <button>
+        Button
+      </button>
+    </Stack>
+  );
+}
+`,
+  }}
+  customSetup={{
+    dependencies: {
+      '@toss/emotion-utils': 'latest',
+      '@emotion/react': '^11',
+    },
+  }}
+/>
+
+<!-- prettier-ignore -->
+<Sandpack
+  template="react"
+  files={{
+    '/App.js': `/** @jsxImportSource @emotion/react */
+import { Stack } from '@toss/emotion-utils';\n
+export default function App() {
+  return (
+    <Stack gutter={16} direction="vertical">
+      <button>
+        Button
+      </button>
+      <button>
+        Button
+      </button>
+      <button>
+        Button
+      </button>
+    </Stack>
+  );
+}
+`,
+  }}
+  customSetup={{
+    dependencies: {
+      '@toss/emotion-utils': 'latest',
+      '@emotion/react': '^11',
+    },
+  }}
+/>
+
 ```jsx
 function ComponentA() {
   return (

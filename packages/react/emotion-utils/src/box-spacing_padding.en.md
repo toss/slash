@@ -1,10 +1,6 @@
----
-title: box-spacing
----
-
 # padding
 
-padding 스타일링을 위한 유틸리티입니다.
+A utility to specify `padding`.
 
 ```ts
 type BoxSpacingOption =
@@ -36,6 +32,39 @@ const padding.<x|y|top|right|bottom|left><4|8|12|16|32>: SerializedStyles;
 
 ## Examples
 
+import { Sandpack } from "@codesandbox/sandpack-react";
+
+<!-- prettier-ignore -->
+<Sandpack
+  template="react"
+  files={{
+    '/App.js': `/** @jsxImportSource @emotion/react */
+import { padding } from '@toss/emotion-utils';\n
+export default function App() {
+  return (
+    <>
+      <div css={padding(24)}>
+        Padding 24
+      </div>
+      <div css={padding.y12}>
+        Padding Y 12
+      </div>
+      <div css={padding.left(24)}>
+        Padding left 24
+      </div>
+    </>
+  );
+}
+`,
+  }}
+  customSetup={{
+    dependencies: {
+      '@toss/emotion-utils': 'latest',
+      '@emotion/react': '^11',
+    },
+  }}
+/>
+
 ```jsx
 // css`padding: 4px`;
 <div css={padding(4)} />;
@@ -64,45 +93,4 @@ padding.y12;
 
 // css`padding-left: 8px;`
 padding.left(8);
-```
-
-# margin
-
-margin 스타일링을 위한 유틸리티입니다.
-
-```ts
-function margin(options: BoxSpacingOption): SerializedStyles;
-const margin.<x|y|top|right|bottom|left><4|8|12|16|32>: SerializedStyles;
-```
-
-## Examples
-
-```jsx
-// css`margin: 4px`;
-<div css={margin(4)} />;
-
-// css`
-//   margin-left: 8px;
-//   margin-right: 8px;
-//   margin-bottom: 4px;
-// `
-margin({
-  x: 8,
-  bottom: 4,
-});
-
-// css`
-//   margin-left: 12px;
-//   margin-right: 12px;
-// `
-margin.x(4);
-
-// css`
-//   margin-top: 12px;
-//   margin-bottom: 12px;
-// `
-margin.y12;
-
-// css`margin-left: 8px;`
-margin.left(8);
 ```

@@ -14,6 +14,5 @@ function decommaizeNumber(numStr: string): number;
 ## Example
 
 ```typescript
-decommaizeNumber(13209802); // => '13,209,802'
-decommaizeNumber('13209802'); // => '13,209,802'
+decommaizeNumber('13,209,802'); // 13209802
 ```
