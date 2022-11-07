@@ -30,9 +30,9 @@ describe('ScreenReaderOnly', () => {
   });
 
   it('should receive other props', () => {
-    const { getByText } = render(<ScreenReaderOnly color="white">토스</ScreenReaderOnly>);
+    const { getByText } = render(<ScreenReaderOnly aria-live="polite">토스</ScreenReaderOnly>);
     const fixture = getByText('토스');
-    expect(fixture.getAttribute('color')).toEqual('white');
-    expect(fixture.getAttribute('color')).not.toEqual('black');
+    expect(fixture.getAttribute('aria-live')).toEqual('polite');
+    expect(fixture.getAttribute('aria-live')).not.toEqual('off');
   });
 });
