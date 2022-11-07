@@ -1,2 +1,2 @@
 /** @tossdocs-ignore */
-export { default } from './ScreenReaderOnly';
+export * from './ScreenReaderOnly';
