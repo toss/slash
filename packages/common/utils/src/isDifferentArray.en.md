@@ -1,4 +1,4 @@
-# isDifferenceArray
+# isDifferentArray
 
 Checks if two given arrays are different.
 
