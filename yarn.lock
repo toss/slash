@@ -4996,6 +4996,7 @@ __metadata:
     "@rollup/plugin-json": ^4.1.0
     "@rollup/plugin-node-resolve": ^14.1.0
     builtin-modules: ^3.3.0
+    rollup: ^2.79.1
   peerDependencies:
     rollup: ^2.79.1
   languageName: unknown
