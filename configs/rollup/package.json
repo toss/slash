@@ -1,14 +1,15 @@
 {
   "name": "@slash/rollup-config",
-  "private": true,
   "main": "./src/index.js",
-  "devDependencies": {
+  "dependencies": {
     "@babel/core": "^7.19.3",
     "@rollup/plugin-babel": "^5.3.1",
     "@rollup/plugin-commonjs": "^22.0.2",
     "@rollup/plugin-json": "^4.1.0",
     "@rollup/plugin-node-resolve": "^14.1.0",
-    "builtin-modules": "^3.3.0",
+    "builtin-modules": "^3.3.0"
+  },
+  "peerDependencies": {
     "rollup": "^2.79.1"
   }
 }
