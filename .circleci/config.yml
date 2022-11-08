@@ -31,7 +31,7 @@ commands:
             git config user.email "frontend.chapter@toss.im"
             git config user.name "Toss Frontend Chapter"
   export_published_version:
-    description: Export Publised Version Environment Variable
+    description: Export Published Version Environment Variable
     steps:
       - run:
           name: Export PUBLISHED_VERSION
