@@ -21,17 +21,8 @@ commands:
 
             corepack enable --install-directory $COREPACK_PATH
             yarn install --immutable --immutable-cache
-      - run:
-          name: Setup git
-          command: |
-            export GITHUB_TOKEN="$GITHUB_TOKEN"
-            git remote set-url origin https://${GITHUB_TOKEN}@github.com/toss/slash.git
-            git fetch --all --tags
-            git fetch --force --progress -- origin +refs/heads/main:refs/remotes/origin/main
-            git config user.email "frontend.chapter@toss.im"
-            git config user.name "Toss Frontend Chapter"
   export_published_version:
-    description: Export Publised Version Environment Variable
+    description: Export Published Version Environment Variable
     steps:
       - run:
           name: Export PUBLISHED_VERSION
@@ -191,39 +182,29 @@ workflows:
     jobs:
       - test:
           context:
-            - github-com-fe
             - npm-public
           filters:
             branches:
               ignore: main
       - test-all:
           context:
-            - github-com-fe
             - npm-public
           filters:
             branches:
               only: main
       - lint:
-          context:
-            - github-com-fe
           filters:
             branches:
               ignore: main
       - typecheck:
-          context:
-            - github-com-fe
           filters:
             branches:
               ignore: main
       - pre-pack:
-          context:
-            - github-com-fe
           filters:
             branches:
               ignore: main
       - check-peer:
-          context:
-            - github-com-fe
           filters:
             branches:
               ignore: main
