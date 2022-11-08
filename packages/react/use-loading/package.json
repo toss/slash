@@ -18,8 +18,8 @@
   },
   "devDependencies": {
     "@babel/core": "^7",
-    "@slash/rollup-config": "workspace:^",
     "@testing-library/react": "^13.3.0",
+    "@toss/rollup-config": "workspace:^",
     "@tossteam/jest": "^17",
     "@types/babel__core": "^7",
     "@types/jest": "^28.1.8",
