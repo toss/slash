@@ -1,5 +1,5 @@
 {
-  "name": "@slash/rollup-config",
+  "name": "@toss/rollup-config",
   "main": "./src/index.js",
   "dependencies": {
     "@babel/core": "^7.19.3",
@@ -14,5 +14,8 @@
   },
   "peerDependencies": {
     "rollup": "^2"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
