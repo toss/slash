@@ -26,23 +26,23 @@ The library created by toss using the `lottie-web` library to make lottie easy t
   // To use autoPlay
   // `@default true`
   autoPlay={false}
-  // 로띠 컴포넌트의 너비
+  // width of lottie component
   // `@optional (number | string)`
   width={160}
-  // 로띠 컴포넌트의 높이
+  // height of lottie component
   // `@optional (number | string)`
   height={160}
-  // 애니메이션이 시작되면 onPlay 핸들러를 호출합니다.
+  // Invoke the `onPlay` function when animation starts.
   // `@optional `
   onPlay={onPlay}
-  // 반복되는 로띠가 종료될 때 onLoopComplete 핸들러를 호출합니다.
+  // Invoke the `onLoopComplete` function when the repeated lottie ends.
   // `@optional `
   onLoopComplete={onLoopComplete}
-  // 로띠가 완료되었을 때 onComplete 핸들러를 호출합니다.
+  // Invoke the `onComplete` function when the lottie is complete.
   // `@optional `
   onComplete={onComplete}
-  // 접근성을 위한 속성을 의미합니다.
-  // 넘어온 alt 값은 aria-labal로 설정되고, role은 "img"가 됩니다. (없으면 aria-hidden 처리됩니다.)
+  // Indicates an attribute for accessibility.
+  // The passed alt value is set to aria-labal, and role is "img". (If not, aria-hidden)
   // `@optional `
   alt={''}
 />
