@@ -4,26 +4,26 @@ title: Lottie
 
 # Lottie
 
-`lottie-web` 라이브러리를 이용하여 리액트 환경에서 로띠를 쉽게 사용할 수 있도록 토스팀에서 만든 라이브러리입니다.
+The library created by toss using the `lottie-web` library to make lottie easy to use in a react.
 
 ```tsx
 <Lottie
-  // 동적으로 로띠 내의 에셋을 변경할 때 사용
+  // To change assets dynamically within the lottie
   // `@optional `
   assets={[...assets]}
-  // 애니메이션이 반복 재생되는지 여부
+  // Whether the animation is played repeatedly
   // `@default false (boolean | 'normal' | 'reversed')`
   loop={true}
-  // 애니메이션이 반복 재생될 때 사이의 딜레이
+  // The delay between the repetition of the animation
   // `@default 0`
   interval={0}
-  // 애니메이션 재생 딜레이 (ms)
+  // Animation playback delay (ms)
   // `@default 0`
   delay={0}
-  // 애니메이션 재생 속도
+  // Animation playback speed
   // `@default 1`
   speed={1}
-  // 자동 시작 여부
+  // To use autoPlay
   // `@default true`
   autoPlay={false}
   // 로띠 컴포넌트의 너비
