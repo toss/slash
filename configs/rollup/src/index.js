@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 const path = require('path');
 const babel = require('@rollup/plugin-babel').default;
 const commonjs = require('@rollup/plugin-commonjs');
@@ -32,7 +33,9 @@ exports.generateRollupConfig = function generateRollupConfig({ packageDir }) {
       output: [
         {
           format,
-          ...(isESMFormat ? { dir: path.dirname(output), entryFileNames: `[name]${path.extname(output)}` } : { file: output }),
+          ...(isESMFormat
+            ? { dir: path.dirname(output), entryFileNames: `[name]${path.extname(output)}` }
+            : { file: output }),
         },
       ],
       plugins: [
@@ -71,10 +74,7 @@ exports.generateRollupConfig = function generateRollupConfig({ packageDir }) {
 
     const esmEntrypoint = path.resolve(
       packageDir,
-      ensure(
-        handleESMEntrypoint(packageJSON.exports, entrypoint),
-        'ESM entrypoint not found'
-      )
+      ensure(handleESMEntrypoint(packageJSON.exports, entrypoint), 'ESM entrypoint not found')
     );
     const esmOutput = path.resolve(
       packageDir,
@@ -108,8 +108,6 @@ function handleESMEntrypoint(exports = {}, entrypoint) {
 
   return undefined;
 }
-
-
 
 function ensure(value, message) {
   if (value == null) {

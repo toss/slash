@@ -1,4 +1,4 @@
-# isDifferenceArray
+# isDifferentArray
 
 주어진 두 배열이 서로 다른지 검사합니다.
 

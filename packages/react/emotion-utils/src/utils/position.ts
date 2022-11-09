@@ -52,6 +52,10 @@ interface Coordinates {
  *
  * // 다음처럼도 사용 가능합니다
  * position('absolute', {top: 0, left: 0});
+ *
+ * // 다음처럼도 사용 가능합니다(absolute, fixed, sticky)
+ * position.absolute(0, 0, 0, ,0);
+ * position.absolute({top: 0, left: 0});
  */
 export function position(
   position: Property.Position,
@@ -103,4 +107,23 @@ function isPositionValue(value: unknown): value is Property.Position {
 
 function isCSSPixelValue(value: unknown): value is CSSPixelValue {
   return typeof value === 'string' || typeof value === 'number';
+}
+
+position.absolute = createPosition('absolute');
+position.fixed = createPosition('fixed');
+position.sticky = createPosition('sticky');
+
+function createPosition(pos: Property.Position) {
+  function func(coordinates: Coordinates): SerializedStyles;
+  function func(top: CSSPixelValue, right: CSSPixelValue, bottom: CSSPixelValue, left: CSSPixelValue): SerializedStyles;
+  function func(topOrCoordinates: Coordinates | CSSPixelValue, ...values: CSSPixelValue[]) {
+    // position(position, coordinates);
+    if (!isCSSPixelValue(topOrCoordinates)) {
+      return position(pos, topOrCoordinates);
+    }
+    // position(position, top, right, bottom, left);
+    return position(pos, topOrCoordinates, values[0], values[1], values[2]);
+  }
+
+  return func;
 }
