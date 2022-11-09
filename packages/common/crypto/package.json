@@ -24,7 +24,7 @@
     "@rollup/plugin-babel": "^5.3.1",
     "@rollup/plugin-commonjs": "^22.0.1",
     "@rollup/plugin-node-resolve": "^13.3.0",
-    "@slash/rollup-config": "workspace:^",
+    "@toss/rollup-config": "workspace:^",
     "@tossteam/jest": "^17",
     "@types/babel__plugin-transform-runtime": "^7",
     "@types/babel__preset-env": "^7",
