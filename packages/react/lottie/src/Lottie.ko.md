@@ -17,9 +17,6 @@ title: Lottie
   // 애니메이션이 반복 재생될 때 사이의 딜레이
   // `@default 0`
   interval={0}
-  // 애니메이션이 화면 바깥으로 나갔을 때 애니메이션 재생을 잠시 일시정지하는지 여부
-  // `@default false`
-  stopOnExit={true}
   // 애니메이션 재생 딜레이 (ms)
   // `@default 0`
   delay={0}
