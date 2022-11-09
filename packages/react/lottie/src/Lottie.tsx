@@ -12,7 +12,6 @@ interface CommonProps {
   assets?: Asset[];
   loop?: LoopType;
   interval?: number;
-  stopOnExit?: boolean;
   delay?: number;
   speed?: number;
   autoPlay?: boolean;
