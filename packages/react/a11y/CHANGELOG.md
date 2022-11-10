@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.1.0](https://github.com/toss/slash/compare/@toss/a11y@1.0.5...@toss/a11y@1.1.0) (2022-11-10)
+
+
+### Features
+
+* **a11y:** write test code ScreenReaderOnly function ([#118](https://github.com/toss/slash/issues/118)) ([e5db160](https://github.com/toss/slash/commit/e5db160377894f3610d9cc6b349ee45f5c518654))
+* **rollup-config:** Make rollup-config public ([#125](https://github.com/toss/slash/issues/125)) ([f6370e8](https://github.com/toss/slash/commit/f6370e8c4b0fa926e923b518c26b7071ee0e53da))
+
+
+
+
+
 ## [1.0.5](https://github.com/toss/slash/compare/@toss/a11y@1.0.4...@toss/a11y@1.0.5) (2022-11-01)
 
 **Note:** Version bump only for package @toss/a11y
