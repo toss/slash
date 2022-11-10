@@ -1,6 +1,6 @@
 {
   "name": "@toss/react-query",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "types": "./dist/index.d.ts",
   "tsd": {
     "directory": "./test-d"
@@ -24,7 +24,7 @@
   "devDependencies": {
     "@babel/core": "^7",
     "@babel/runtime": "^7.13.10",
-    "@toss/rollup-config": "workspace:^",
+    "@toss/rollup-config": "workspace:^0.1.0",
     "@tossteam/jest": "^17",
     "@types/jest": "^28.1.8",
     "@types/node": "^14.14.41",
@@ -57,5 +57,5 @@
     "module": "./esm/index.mjs",
     "types": "./dist/index.d.ts"
   },
-  "gitHead": "18cb6253ca2131397da2c209932a2413d9cd93c1"
+  "gitHead": "0e9ecc319f9d7df27372fb6e8e0a4281f420619d"
 }

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.1.0](https://github.com/toss/slash/compare/@toss/recoil@1.0.3...@toss/recoil@1.1.0) (2022-11-10)
+
+
+### Features
+
+* **rollup-config:** Make rollup-config public ([#125](https://github.com/toss/slash/issues/125)) ([f6370e8](https://github.com/toss/slash/commit/f6370e8c4b0fa926e923b518c26b7071ee0e53da))
+
+
+
+
+
 ## [1.0.3](https://github.com/toss/slash/compare/@toss/recoil@1.0.1...@toss/recoil@1.0.3) (2022-11-01)
 
 

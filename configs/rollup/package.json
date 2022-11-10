@@ -1,6 +1,6 @@
 {
   "name": "@toss/rollup-config",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "main": "./src/index.js",
   "dependencies": {
     "@babel/core": "^7.19.3",
@@ -18,5 +18,6 @@
   },
   "publishConfig": {
     "access": "public"
-  }
+  },
+  "gitHead": "0e9ecc319f9d7df27372fb6e8e0a4281f420619d"
 }

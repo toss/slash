@@ -1,6 +1,6 @@
 {
   "name": "@toss/hangul",
-  "version": "1.0.4",
+  "version": "1.1.0",
   "sideEffects": false,
   "exports": {
     ".": {
@@ -20,7 +20,7 @@
     "@babel/core": "^7",
     "@babel/runtime": "^7.13.10",
     "@testing-library/jest-dom": "^5.16.4",
-    "@toss/rollup-config": "workspace:^",
+    "@toss/rollup-config": "workspace:^0.1.0",
     "@tossteam/jest": "^17",
     "@types/jest": "^28.1.8",
     "@types/node": "^14.14.41",
@@ -47,5 +47,5 @@
     "module": "./esm/index.mjs",
     "types": "./dist/index.d.ts"
   },
-  "gitHead": "5aa81f2a04bf77320ca339619f2a80df02e84d6e"
+  "gitHead": "0e9ecc319f9d7df27372fb6e8e0a4281f420619d"
 }

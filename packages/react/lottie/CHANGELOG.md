@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.1.0](https://github.com/toss/slash/compare/@toss/lottie@1.0.5...@toss/lottie@1.1.0) (2022-11-10)
+
+
+### Bug Fixes
+
+* **lottie:** remove unused param & translation for i18n ([#126](https://github.com/toss/slash/issues/126)) ([09c9ba6](https://github.com/toss/slash/commit/09c9ba699d6ffc0b937784b7ea58ed111528ba2e))
+
+
+### Features
+
+* **rollup-config:** Make rollup-config public ([#125](https://github.com/toss/slash/issues/125)) ([f6370e8](https://github.com/toss/slash/commit/f6370e8c4b0fa926e923b518c26b7071ee0e53da))
+
+
+
+
+
 ## [1.0.5](https://github.com/toss/slash/compare/@toss/lottie@1.0.4...@toss/lottie@1.0.5) (2022-11-01)
 
 **Note:** Version bump only for package @toss/lottie

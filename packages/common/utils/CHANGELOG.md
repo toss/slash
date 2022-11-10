@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.1.0](https://github.com/toss/slash/compare/@toss/utils@1.0.5...@toss/utils@1.1.0) (2022-11-10)
+
+
+### Bug Fixes
+
+* **utils:** fix incorrect example in docs & add test code ([#111](https://github.com/toss/slash/issues/111)) ([05376c6](https://github.com/toss/slash/commit/05376c60583e6ccf6ef6153cb79a4d46a32b7ae6))
+
+
+### Features
+
+* **rollup-config:** Make rollup-config public ([#125](https://github.com/toss/slash/issues/125)) ([f6370e8](https://github.com/toss/slash/commit/f6370e8c4b0fa926e923b518c26b7071ee0e53da))
+
+
+
+
+
 ## [1.0.5](https://github.com/toss/slash/compare/@toss/utils@1.0.4...@toss/utils@1.0.5) (2022-11-01)
 
 

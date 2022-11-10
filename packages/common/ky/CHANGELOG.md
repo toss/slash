@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.1.0](https://github.com/toss/slash/compare/@toss/ky@1.0.3...@toss/ky@1.1.0) (2022-11-10)
+
+
+### Features
+
+* **ky:** Support react-native ([#129](https://github.com/toss/slash/issues/129)) ([890de77](https://github.com/toss/slash/commit/890de77ad11af72349be7fa5b38c9aede04f4167))
+
+
+
+
+
 ## [1.0.3](https://github.com/toss/slash/compare/@toss/ky@1.0.1...@toss/ky@1.0.3) (2022-11-01)
 
 

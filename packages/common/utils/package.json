@@ -1,6 +1,6 @@
 {
   "name": "@toss/utils",
-  "version": "1.0.5",
+  "version": "1.1.0",
   "sideEffects": false,
   "exports": {
     ".": {
@@ -32,7 +32,7 @@
     "@rollup/plugin-commonjs": "^22.0.1",
     "@rollup/plugin-json": "^4.1.0",
     "@rollup/plugin-node-resolve": "^13.3.0",
-    "@toss/rollup-config": "workspace:^",
+    "@toss/rollup-config": "workspace:^0.1.0",
     "@tossteam/jest": "^17",
     "@types/babel__core": "^7",
     "@types/babel__preset-env": "^7",
@@ -64,7 +64,7 @@
     "module": "./esm/index.mjs",
     "types": "./dist/index.d.ts"
   },
-  "gitHead": "5aa81f2a04bf77320ca339619f2a80df02e84d6e",
+  "gitHead": "0e9ecc319f9d7df27372fb6e8e0a4281f420619d",
   "readme": "ERROR: No README data found!",
   "_id": "@toss/utils@4.1.0"
 }

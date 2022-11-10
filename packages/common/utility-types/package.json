@@ -1,6 +1,6 @@
 {
   "name": "@toss/utility-types",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "sideEffects": false,
   "main": "./src/index.ts",
   "scripts": {
@@ -25,5 +25,5 @@
     "access": "public",
     "main": "./dist/index.js"
   },
-  "gitHead": "18cb6253ca2131397da2c209932a2413d9cd93c1"
+  "gitHead": "0e9ecc319f9d7df27372fb6e8e0a4281f420619d"
 }
