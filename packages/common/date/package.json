@@ -22,7 +22,7 @@
   "devDependencies": {
     "@babel/core": "^7",
     "@babel/runtime": "^7.13.10",
-    "@slash/rollup-config": "workspace:^",
+    "@toss/rollup-config": "workspace:^",
     "@tossteam/jest": "^17",
     "@types/babel__core": "^7",
     "@types/jest": "^28.1.8",
