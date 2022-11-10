@@ -1,6 +1,7 @@
 /** @tossdocs-ignore */
 import { ImpressionArea } from '@toss/impression-area';
-import { useBooleanState, useCombinedRefs } from '@toss/react';
+import { useBooleanState, useCombinedRefs, usePreservedCallback } from '@toss/react';
+import { noop } from '@toss/utils';
 import { forwardRef, Ref, useCallback, useEffect, useImperativeHandle, useRef, useState } from 'react';
 import { AnimationChain } from './AnimationChain';
 import { LoopType } from './AnimationPlayer';
@@ -56,12 +57,16 @@ export const Lottie = forwardRef(function Lottie(
     width,
     height,
     alt,
-    onPlay,
-    onLoopComplete,
-    onComplete,
+    onPlay: _onPlay,
+    onLoopComplete: _onLoopComplete,
+    onComplete: _onComplete,
   }: Props,
   lottieRef: Ref<LottieRef>
 ) {
+  const onPlay = usePreservedCallback(_onPlay ?? noop);
+  const onLoopComplete = usePreservedCallback(_onLoopComplete ?? noop);
+  const onComplete = usePreservedCallback(_onComplete ?? noop);
+
   const containerRef = useRef<HTMLDivElement>(null);
   const animationChainRef = useRef<AnimationChain | null>(null);
 
@@ -80,8 +85,8 @@ export const Lottie = forwardRef(function Lottie(
       typeof json === 'string'
         ? [{ json, assets }]
         : typeof src === 'string'
-        ? [{ url: src, assets }]
-        : src!.map(url => ({ url, assets }));
+          ? [{ url: src, assets }]
+          : src!.map(url => ({ url, assets }));
 
     const chain = AnimationChain(animationData, {
       loop,
