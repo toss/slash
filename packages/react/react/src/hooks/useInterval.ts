@@ -12,7 +12,7 @@ type IntervalOptions =
  * window.setInterval 를 쉽게 사용할 수 있는 hook 입니다.
  *
  * ```ts
- * // number 혹은 InvervalOptions를 입력해주세요
+ * // number 혹은 IntervalOptions를 입력해주세요
  * type IntervalOptions =
  *   | number
  *   | {
