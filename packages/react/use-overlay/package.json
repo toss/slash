@@ -67,5 +67,5 @@
     "module": "./esm/index.mjs",
     "types": "./dist/index.d.ts"
   },
-  "gitHead": "5aa81f2a04bf77320ca339619f2a80df02e84d6e"
+  "gitHead": "0e9ecc319f9d7df27372fb6e8e0a4281f420619d"
 }
