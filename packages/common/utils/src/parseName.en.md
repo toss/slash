@@ -15,4 +15,5 @@ A parser to separate Korean name into `[last name, first name]`.
 parseName('김토스'); // => ['김', '토스']
 parseName('이도'); // => ['이', '도']
 parseName('김나박이'); // => ['', '김나박이']
+parseName('John Doe'); // => ['', 'John Doe']
 ```
