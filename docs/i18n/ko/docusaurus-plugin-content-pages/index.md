@@ -70,7 +70,7 @@ hide_table_of_contents: true
 ## 추천 라이브러리
 
 - [**@toss/use-overlay**](https://slash.page/ko/libraries/react/use-overlay/src/useOverlay.i18n) 는 `useOverlay` React hook을 제공하여, 오버레이를 선언적으로 관리할 수 있게 해 줘요.
-- [**@toss/react**](https://slash.page/libraries/react/react/src/components/ClickArea/ClickArea.tsx.tossdocs)는 높은 퀄리티의 웹 서비스를 개발할 수 있도록 다양한 React 컴포넌트, Hooks, 유틸리티 함수를 제공해요.
+- [**@toss/react**](https://slash.page/ko/libraries/react/react/src/components/clickarea/clickarea.i18n) 는 높은 퀄리티의 웹 서비스를 개발할 수 있도록 다양한 React 컴포넌트, Hooks, 유틸리티 함수를 제공해요.
 - [**@toss/utils**](https://slash.page/ko/libraries/common/utils/README.i18n) 는 Node.js와 브라우저 환경에서 사용할 수 있는 간단하고 모던한 유틸리티 함수를 제공해요.
 - [**@toss/hangul**](https://slash.page/ko/libraries/common/hangul/README.i18n) 는 [hangul](https://en.wikipedia.org/wiki/Hangul) 문자를 다루기 위한 유틸리티 함수를 제공해요.
 
