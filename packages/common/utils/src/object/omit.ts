@@ -1,3 +1,4 @@
+/** @tossdocs-ignore */
 import {ObjectKeys, objectKeys} from "./object-keys";
 
 type ArrayUnion<Type extends readonly unknown[]> = Type[number];
