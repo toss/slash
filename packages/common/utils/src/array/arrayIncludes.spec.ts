@@ -1,7 +1,7 @@
 import { arrayIncludes } from '.';
 
 describe('arrayIncludes', () => {
-  it('should work well as well Array.prototype.includes()', () => {
+  it('should work identical to Array.prototype.includes', () => {
     const arr: Array<'a' | 'b' | 'c'> = ['a', 'b', 'c'];
 
     const includedElement = 'a';
