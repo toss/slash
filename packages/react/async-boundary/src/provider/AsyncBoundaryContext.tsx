@@ -8,6 +8,9 @@ interface AsyncBoundaryProvider {
 }
 
 const AsyncBoundaryContext = createContext<AsyncBoundaryProvider | null>(null);
+if (process.env.NODE_ENV !== 'production') {
+  AsyncBoundaryContext.displayName = 'AsyncBoundaryContext';
+}
 
 interface Props {
   children: ReactNode;
