@@ -5866,9 +5866,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@toss/recoil@workspace:packages/common/recoil":
+"@toss/recoil@workspace:packages/react/recoil":
   version: 0.0.0-use.local
-  resolution: "@toss/recoil@workspace:packages/common/recoil"
+  resolution: "@toss/recoil@workspace:packages/react/recoil"
   dependencies:
     "@babel/core": ^7
     "@babel/runtime": ^7.13.10
