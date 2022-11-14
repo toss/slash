@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.2.0](https://github.com/toss/slash/compare/@toss/utils@1.1.0...@toss/utils@1.2.0) (2022-11-14)
+
+
+### Features
+
+* **utils:** Add `omit` ([#137](https://github.com/toss/slash/issues/137)) ([2df87c6](https://github.com/toss/slash/commit/2df87c63872fa84daa8d90e0c93515811ebd86c3))
+* **utils:** write test code if it is not Korean name ([#132](https://github.com/toss/slash/issues/132)) ([8ae070e](https://github.com/toss/slash/commit/8ae070eebd6a4f393d6b23f4b27855b2877288ba))
+
+
+
+
+
 # [1.1.0](https://github.com/toss/slash/compare/@toss/utils@1.0.5...@toss/utils@1.1.0) (2022-11-10)
 
 

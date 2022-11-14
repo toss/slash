@@ -1,6 +1,6 @@
 {
   "name": "@toss/assert",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "sideEffects": false,
   "exports": {
     ".": {
@@ -17,14 +17,14 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@toss/utils": "workspace:^1.1.0"
+    "@toss/utils": "workspace:^1.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7",
     "@babel/preset-env": "^7.16.4",
     "@babel/preset-typescript": "^7.18.6",
     "@babel/runtime": "^7.16.3",
-    "@toss/rollup-config": "workspace:^0.1.0",
+    "@toss/rollup-config": "workspace:^0.1.1",
     "@tossteam/jest": "^17",
     "@types/babel__core": "^7",
     "@types/babel__preset-env": "^7",

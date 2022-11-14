@@ -21,7 +21,6 @@ export * from './getViewportSize';
 export * from './groupBy';
 export * from './hexToRgba';
 export * from './identity';
-export * from './isDifferentArray';
 export * from './isNotNil';
 export * from './mapValues';
 export * from './Masker';
