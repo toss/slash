@@ -181,8 +181,6 @@ workflows:
   main:
     jobs:
       - test:
-          context:
-            - npm-public
           filters:
             branches:
               ignore: main
