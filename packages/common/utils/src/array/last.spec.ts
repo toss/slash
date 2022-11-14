@@ -1,11 +1,11 @@
 import { last } from './last';
 
-describe('last는', () => {
-  it('배열의 마지막 요소를 반환한다.', () => {
+describe('last', () => {
+  it('should return last element of array.', () => {
     expect(last([1, 2, 3])).toEqual(3);
   });
 
-  it('빈 배열의 경우 undefined를 반환한다.', () => {
+  it('should return undefined when array is empty', () => {
     expect(last([])).toEqual(undefined);
   });
 });
