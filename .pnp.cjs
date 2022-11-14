@@ -10141,6 +10141,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@tossteam/jest", "virtual:62cb29918b2e63dff97923d985a18238631a18b918521fd9ac48de2be213715676e8b999d7ab4431ea536d1917af1465d5695ceae059c69bf4c14df5968dd6a1#npm:17.187.2"],\
             ["@types/babel__preset-env", "npm:7.9.2"],\
             ["@types/jest", "npm:29.1.2"],\
+            ["@types/node", "npm:14.18.31"],\
             ["@types/react", "npm:18.0.21"],\
             ["@types/react-dom", "npm:18.0.6"],\
             ["@types/testing-library__jest-dom", "npm:5.14.5"],\
