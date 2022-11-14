@@ -11,7 +11,7 @@ describe('arrayIncludes', () => {
     expect(arrayIncludes(arr, excludedElement)).toBe(false);
   });
 
-  it('should work well with fronIndex', () => {
+  it('should work well with fromIndex', () => {
     const arr: Array<'a' | 'b' | 'c'> = ['a', 'b', 'c'];
 
     const element = 'a';
