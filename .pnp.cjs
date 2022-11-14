@@ -49,10 +49,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         "reference": "workspace:packages/common/ky"\
       },\
       {\
-        "name": "@toss/recoil",\
-        "reference": "workspace:packages/common/recoil"\
-      },\
-      {\
         "name": "@toss/sentry",\
         "reference": "workspace:packages/common/sentry"\
       },\
@@ -113,6 +109,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         "reference": "workspace:packages/react/react-query"\
       },\
       {\
+        "name": "@toss/recoil",\
+        "reference": "workspace:packages/react/recoil"\
+      },\
+      {\
         "name": "@toss/redirect",\
         "reference": "workspace:packages/react/redirect"\
       },\
@@ -155,7 +155,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       ["@toss/lottie", ["workspace:packages/react/lottie"]],\
       ["@toss/react", ["virtual:b5b5dfb1662b30d0d5b62f084f8b8fddd0eee56dd8737572197395ab6309e644fa76525392b1d0250ce3c07c5eeeb90901439953af682fc76f8ab38f71b8b09d#workspace:packages/react/react", "workspace:packages/react/react"]],\
       ["@toss/react-query", ["workspace:packages/react/react-query"]],\
-      ["@toss/recoil", ["workspace:packages/common/recoil"]],\
+      ["@toss/recoil", ["workspace:packages/react/recoil"]],\
       ["@toss/redirect", ["workspace:packages/react/redirect"]],\
       ["@toss/rollup-config", ["virtual:bcd0c1141064bf940376b9b2c4f8a211deda5f9c27293f215379edb7c7917846a6a1d22044c7c1b3bb8002672fb9461cbd1f53c3889b2fe3b5bfbab9a70f1ac4#workspace:configs/rollup", "workspace:configs/rollup"]],\
       ["@toss/scroll-animation", ["workspace:packages/react/scroll-animation"]],\
@@ -9870,10 +9870,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@toss/recoil", [\
-        ["workspace:packages/common/recoil", {\
-          "packageLocation": "./packages/common/recoil/",\
+        ["workspace:packages/react/recoil", {\
+          "packageLocation": "./packages/react/recoil/",\
           "packageDependencies": [\
-            ["@toss/recoil", "workspace:packages/common/recoil"],\
+            ["@toss/recoil", "workspace:packages/react/recoil"],\
             ["@babel/core", "npm:7.19.3"],\
             ["@babel/runtime", "npm:7.19.0"],\
             ["@testing-library/jest-dom", "npm:5.16.5"],\
@@ -9891,7 +9891,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["jest-environment-jsdom", "npm:29.1.2"],\
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:62cb29918b2e63dff97923d985a18238631a18b918521fd9ac48de2be213715676e8b999d7ab4431ea536d1917af1465d5695ceae059c69bf4c14df5968dd6a1#npm:18.2.0"],\
-            ["recoil", "virtual:23b960604dbd57a39605acf5bb5cf3c0724b17a22db3d1e6005f881b796dcad144c03cf19a3e3e36d0a033ce7d6b7726230ac14462a26e34c7b26991c096637f#npm:0.6.1"],\
+            ["recoil", "virtual:4ce737d8b2df22a81aa87143a65dcb259347aa12077eb550fc905c2d3b2ab60f21de07b8ed151a457f5f8788f7919d51f6b70ccf08db09d5c05ad6dcd98d620f#npm:0.6.1"],\
             ["rollup", "npm:2.79.1"],\
             ["typescript", "patch:typescript@npm%3A4.7.4#~builtin<compat/typescript>::version=4.7.4&hash=a1c5e5"]\
           ],\
@@ -28199,10 +28199,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],\
           "linkType": "SOFT"\
         }],\
-        ["virtual:23b960604dbd57a39605acf5bb5cf3c0724b17a22db3d1e6005f881b796dcad144c03cf19a3e3e36d0a033ce7d6b7726230ac14462a26e34c7b26991c096637f#npm:0.6.1", {\
-          "packageLocation": "./.yarn/__virtual__/recoil-virtual-65bc9298f0/0/cache/recoil-npm-0.6.1-12c4d62952-823c098e30.zip/node_modules/recoil/",\
+        ["virtual:4ce737d8b2df22a81aa87143a65dcb259347aa12077eb550fc905c2d3b2ab60f21de07b8ed151a457f5f8788f7919d51f6b70ccf08db09d5c05ad6dcd98d620f#npm:0.6.1", {\
+          "packageLocation": "./.yarn/__virtual__/recoil-virtual-69c154c2e1/0/cache/recoil-npm-0.6.1-12c4d62952-823c098e30.zip/node_modules/recoil/",\
           "packageDependencies": [\
-            ["recoil", "virtual:23b960604dbd57a39605acf5bb5cf3c0724b17a22db3d1e6005f881b796dcad144c03cf19a3e3e36d0a033ce7d6b7726230ac14462a26e34c7b26991c096637f#npm:0.6.1"],\
+            ["recoil", "virtual:4ce737d8b2df22a81aa87143a65dcb259347aa12077eb550fc905c2d3b2ab60f21de07b8ed151a457f5f8788f7919d51f6b70ccf08db09d5c05ad6dcd98d620f#npm:0.6.1"],\
             ["@types/react", "npm:18.0.21"],\
             ["@types/react-dom", "npm:18.0.6"],\
             ["@types/react-native", null],\
