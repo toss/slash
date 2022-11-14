@@ -1,6 +1,6 @@
 {
   "name": "@toss/recoil",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "sideEffects": false,
   "exports": {
     ".": {
@@ -21,7 +21,7 @@
     "@babel/runtime": "^7.13.10",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
-    "@toss/rollup-config": "workspace:^0.1.0",
+    "@toss/rollup-config": "workspace:^0.1.1",
     "@tossteam/jest": "^17",
     "@types/jest": "^28.1.8",
     "@types/node": "^14.14.41",
