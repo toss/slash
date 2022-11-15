@@ -36,7 +36,7 @@ export function useOverlay({ exitOnUnmount = true }: Options = {}) {
         mount(
           id,
           <OverlayController
-            key={Date.now()}
+            key={id}
             ref={overlayRef}
             overlayElement={overlayElement}
             onExit={() => {

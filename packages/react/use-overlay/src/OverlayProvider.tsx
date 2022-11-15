@@ -9,7 +9,7 @@ if (process.env.NODE_ENV !== 'production') {
   OverlayContext.displayName = 'OverlayContext';
 }
 
-export function OverlayProvider({ children }: PropsWithChildren<{ containerId?: string }>) {
+export function OverlayProvider({ children }: PropsWithChildren) {
   const [overlayById, setOverlayById] = useState<Map<string, ReactNode>>(new Map());
 
   const mount = useCallback((id: string, element: ReactNode) => {
