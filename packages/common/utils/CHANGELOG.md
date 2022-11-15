@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.1](https://github.com/toss/slash/compare/@toss/utils@1.2.0...@toss/utils@1.2.1) (2022-11-15)
+
+**Note:** Version bump only for package @toss/utils
+
+
+
+
+
 # [1.2.0](https://github.com/toss/slash/compare/@toss/utils@1.1.0...@toss/utils@1.2.0) (2022-11-14)
 
 

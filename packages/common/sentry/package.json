@@ -1,6 +1,6 @@
 {
   "name": "@toss/sentry",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "sideEffects": false,
   "exports": {
     ".": "./src/index.node.ts",

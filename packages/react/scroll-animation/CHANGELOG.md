@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.2.0](https://github.com/toss/slash/compare/@toss/scroll-animation@1.1.1...@toss/scroll-animation@1.2.0) (2022-11-15)
+
+
+### Features
+
+* **context:** add all context's displayName only on development ([#143](https://github.com/toss/slash/issues/143)) ([4625d8a](https://github.com/toss/slash/commit/4625d8a5b0fc70a9e77a0a14e16f9d2a53a644ea))
+
+
+
+
+
 ## [1.1.1](https://github.com/toss/slash/compare/@toss/scroll-animation@1.1.0...@toss/scroll-animation@1.1.1) (2022-11-14)
 
 **Note:** Version bump only for package @toss/scroll-animation
