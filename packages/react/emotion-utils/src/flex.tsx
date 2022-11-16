@@ -1,7 +1,7 @@
 /** @tossdocs-ignore */
 /** @jsxImportSource @emotion/react */
 import { css, SerializedStyles } from '@emotion/react';
-import { CSSProperties, forwardRef, ReactElement, Ref } from 'react';
+import { ComponentType, CSSProperties, forwardRef, ReactElement, Ref } from 'react';
 import type { AsProps, InferenceHTMLElement } from './types';
 export interface FlexOptions {
   align?: CSSProperties['alignItems'];
@@ -56,27 +56,24 @@ export const BaseFlex = forwardRef<HTMLElement, FlexProps>(function BaseFlex(pro
 }) as FlexReturnType;
 
 type FlexType = typeof BaseFlex & {
-  Center: typeof BaseFlex;
-  CenterVertical: typeof BaseFlex;
-  CenterHorizontal: typeof BaseFlex;
+  Center: ComponentType<FlexWithJustifyAlignProps>;
+  CenterVertical: ComponentType<FlexWithJustifyProps>;
+  CenterHorizontal: ComponentType<FlexWithJustifyProps>;
 };
 
 export const Flex = BaseFlex as FlexType;
 
-Flex.Center = forwardRef<HTMLElement, FlexProps<keyof JSX.IntrinsicElements>>(function Center(props, ref) {
+type FlexWithJustifyAlignProps = Omit<FlexProps<keyof JSX.IntrinsicElements>, 'justify' | 'align'>;
+type FlexWithJustifyProps = Omit<FlexProps<keyof JSX.IntrinsicElements>, 'justify'>;
+
+Flex.Center = forwardRef<HTMLElement, FlexWithJustifyAlignProps>(function Center(props, ref) {
   return <BaseFlex align="center" justify="center" {...props} ref={ref} />;
 });
 
-Flex.CenterVertical = forwardRef<HTMLElement, FlexProps<keyof JSX.IntrinsicElements>>(function CenterVertical(
-  props,
-  ref
-) {
+Flex.CenterVertical = forwardRef<HTMLElement, FlexWithJustifyProps>(function CenterVertical(props, ref) {
   return <BaseFlex align="center" {...props} ref={ref} />;
 });
 
-Flex.CenterHorizontal = forwardRef<HTMLElement, FlexProps<keyof JSX.IntrinsicElements>>(function CenterHorizontal(
-  props,
-  ref
-) {
+Flex.CenterHorizontal = forwardRef<HTMLElement, FlexWithJustifyProps>(function CenterHorizontal(props, ref) {
   return <BaseFlex justify="center" {...props} ref={ref} />;
 });
