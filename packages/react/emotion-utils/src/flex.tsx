@@ -67,13 +67,13 @@ type FlexWithJustifyAlignProps = Omit<FlexProps<keyof JSX.IntrinsicElements>, 'j
 type FlexWithJustifyProps = Omit<FlexProps<keyof JSX.IntrinsicElements>, 'justify'>;
 
 Flex.Center = forwardRef<HTMLElement, FlexWithJustifyAlignProps>(function Center(props, ref) {
-  return <BaseFlex align="center" justify="center" {...props} ref={ref} />;
+  return <BaseFlex {...props} align="center" justify="center" ref={ref} />;
 });
 
 Flex.CenterVertical = forwardRef<HTMLElement, FlexWithJustifyProps>(function CenterVertical(props, ref) {
-  return <BaseFlex align="center" {...props} ref={ref} />;
+  return <BaseFlex {...props} align="center" ref={ref} />;
 });
 
 Flex.CenterHorizontal = forwardRef<HTMLElement, FlexWithJustifyProps>(function CenterHorizontal(props, ref) {
-  return <BaseFlex justify="center" {...props} ref={ref} />;
+  return <BaseFlex {...props} justify="center" ref={ref} />;
 });
