@@ -51,6 +51,7 @@ exports.generateRollupConfig = function generateRollupConfig({ packageDir }) {
         json(),
       ],
       preserveModules: isESMFormat,
+      preserveModulesRoot: isESMFormat ? path.dirname(output) : undefined,
     };
   }
 
