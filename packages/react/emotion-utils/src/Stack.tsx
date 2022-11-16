@@ -31,7 +31,6 @@ const BaseStack = forwardRef<HTMLElement, StackProps>(function BaseStack(props, 
   );
 }) as StackReturnType;
 
-
 export const Stack = BaseStack as typeof BaseStack & {
   Vertical: ComponentType<StackWithDirectionProps>;
   Horizontal: ComponentType<StackWithDirectionProps>;
@@ -40,9 +39,15 @@ export const Stack = BaseStack as typeof BaseStack & {
 type StackWithDirectionProps = Omit<StackProps<keyof JSX.IntrinsicElements>, 'direction'>;
 
 Stack.Horizontal = forwardRef<HTMLElement, StackWithDirectionProps>(function StackHorizontal(props, ref) {
-  return <Stack direction="horizontal" {...props} ref={ref} />;
+  return <Stack {...props} direction="horizontal" ref={ref} />;
 });
 
 Stack.Vertical = forwardRef<HTMLElement, StackWithDirectionProps>(function StackVertical(props, ref) {
-  return <Stack direction="vertical" {...props} ref={ref} />;
+  return <Stack {...props} direction="vertical" ref={ref} />;
 });
+
+const Comp = () => {
+  return <Stack.Horizontal direction="horizontal"></Stack.Horizontal>;
+};
+
+console.log(Comp);
