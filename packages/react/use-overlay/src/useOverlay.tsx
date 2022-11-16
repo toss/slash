@@ -14,7 +14,7 @@ export function useOverlay({ exitOnUnmount = true }: Options = {}) {
   const context = useContext(OverlayContext);
 
   if (context == null) {
-    throw new Error('useOverlay는 OverlayProvider 안에서만 사용 가능합니다.');
+    throw new Error('useOverlay is only available within OverlayProvider.');
   }
 
   const { mount, unmount } = context;
