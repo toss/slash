@@ -37,7 +37,7 @@ exports.generateRollupConfig = function generateRollupConfig({ packageDir }) {
             ? {
                 dir: path.dirname(output),
                 entryFileNames: `[name]${path.extname(output)}`,
-                preserveModulesRoot: isESMFormat ? path.dirname(output) : undefined,
+                preserveModulesRoot: isESMFormat ? path.dirname(input) : undefined,
               }
             : { file: output }),
         },
