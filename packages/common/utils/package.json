@@ -1,6 +1,6 @@
 {
   "name": "@toss/utils",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "sideEffects": false,
   "exports": {
     ".": {
@@ -32,7 +32,7 @@
     "@rollup/plugin-commonjs": "^22.0.1",
     "@rollup/plugin-json": "^4.1.0",
     "@rollup/plugin-node-resolve": "^13.3.0",
-    "@toss/rollup-config": "workspace:^0.1.1",
+    "@toss/rollup-config": "workspace:^0.1.3",
     "@tossteam/jest": "^17",
     "@types/babel__core": "^7",
     "@types/babel__preset-env": "^7",
