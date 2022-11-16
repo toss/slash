@@ -14,7 +14,6 @@
     "build": "rm -rf dist esm && tsc --declaration --emitDeclarationOnly --declarationDir dist && rollup -c rollup.config.js",
     "prepack": "yarn build",
     "test": "jest -c jest.config.js && tsc --noEmit",
-    "testt": "jest -c jest.config.js",
     "test:unit": "jest -c jest.config.js",
     "typecheck": "tsc --noEmit"
   },
