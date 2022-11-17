@@ -27,11 +27,13 @@ function useOverlay(options?: {
   // Set exitOnUnmount to false by disabling this behavior.
   // If you forget to run the exit function, the overlay remains in the web service indefinitely.
   // If you have set exitOnUnmount to false, you should not forget to call the exit function.
+  // The reason why we have both close and exit is that when overlay has some kind of fade-out animations,
   // default: true
   exitOnUnmount?: boolean;
 }): {
   open: (overlayElement: CreateOverlayElement) => void;
   close: () => void;
+  exit: () => void;
 };
 ```
 
