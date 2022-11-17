@@ -1,42 +1,35 @@
-import { act, screen, waitFor } from '@testing-library/react';
-import React, { useEffect } from 'react';
+import { screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import { useOverlay } from '../useOverlay';
 import { renderWithContext } from './utils';
-
-const closeDuration = 1000;
 
 function TestComponent() {
   const overlay = useOverlay();
 
-  useEffect(() => {
-    overlay.open(() => {
-      return <div>toss</div>;
-    });
-
-    const timeoutID = setTimeout(() => {
-      overlay.exit();
-    }, closeDuration);
-
-    return () => clearTimeout(timeoutID);
-  }, [overlay]);
-
-  return null;
+  return (
+    <div>
+      <button onClick={() => overlay.open(() => <div>toss</div>)}>open</button>
+      <button onClick={() => overlay.close()}>close</button>
+      <button onClick={() => overlay.exit()}>exit</button>
+    </div>
+  );
 }
 
 describe('useOverlay', () => {
   it('should unmount overlay when exit function is called', async () => {
     renderWithContext(<TestComponent />);
 
-    const overlay = screen.getByText('toss');
-    expect(overlay).toBeInTheDocument();
+    const openButton = screen.getByText('open');
+    const closeButton = screen.getByText('close');
+    const exitButton = screen.getByText('exit');
 
-    act(() => {
-      jest.advanceTimersByTime(closeDuration + 1);
-    });
+    await userEvent.click(openButton);
+    expect(screen.getByText('toss')).toBeInTheDocument();
 
-    await waitFor(() => {
-      const overlay = screen.queryByText('toss');
-      expect(overlay).toBeNull();
-    });
+    await userEvent.click(closeButton);
+    expect(screen.getByText('toss')).toBeInTheDocument();
+
+    await userEvent.click(exitButton);
+    expect(screen.queryByText('toss')).not.toBeInTheDocument();
   });
 });
