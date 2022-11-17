@@ -5,7 +5,7 @@ import { renderWithContext } from './utils';
 
 const closeDuration = 1000;
 
-function OverlayCallerComponent() {
+function TestComponent() {
   const overlay = useOverlay();
 
   useEffect(() => {
@@ -25,7 +25,7 @@ function OverlayCallerComponent() {
 
 describe('useOverlay', () => {
   it('should unmount overlay when exit function is called', async () => {
-    renderWithContext(<OverlayCallerComponent />);
+    renderWithContext(<TestComponent />);
 
     const overlay = screen.getByText('toss');
     expect(overlay).toBeInTheDocument();
