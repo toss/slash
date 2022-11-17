@@ -49,6 +49,9 @@ export function useOverlay({ exitOnUnmount = true }: Options = {}) {
       close: () => {
         overlayRef.current?.close();
       },
+      exit: () => {
+        unmount(id);
+      },
     }),
     [id, mount, unmount]
   );
