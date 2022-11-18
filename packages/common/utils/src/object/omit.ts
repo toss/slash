@@ -1,5 +1,6 @@
 /** @tossdocs-ignore */
-import { ArrayElements, ObjectKeys, objectKeys } from '.';
+import { ObjectKeys, objectKeys } from '.';
+import { ArrayElements } from './types';
 
 export function omit<ObjectType extends Record<PropertyKey, unknown>, KeyTypes extends Array<ObjectKeys<ObjectType>>>(
   obj: ObjectType,

@@ -5,5 +5,4 @@ export * from './object-values';
 export * from './omit';
 export * from './pick';
 export * from './split';
-export * from './types';
 
