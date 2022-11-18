@@ -11,11 +11,11 @@ sidebar_label: omit
 
 ```typescript
 const country = {
-    KR: 'KR',
-    US: 'US',
-    JP: 'JP',
+  KR: 'KR',
+  US: 'US',
+  JP: 'JP',
 } as const;
 
 omit(country, ['CA']); //  TS2322: Type '"CA"' is not assignable to type '"KR" | "US" | "JP"'
-omit(country, ['KR']); //  Omit<{readonly KR: "KR", readonly US: "US", readonly JP: "JP"}, "KR">
+omit(country, ['KR']); //  { US: 'US', JP: 'JP' }
 ```

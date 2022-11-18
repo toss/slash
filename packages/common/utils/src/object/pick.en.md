@@ -5,7 +5,7 @@ sidebar_label: pick
 
 # pick
 
-A utility function to construct new object by picking the key-value pairs corresponding to the given keys from the object.
+Creates an object which composed of the given keys.
 
 ## Example
 
@@ -17,5 +17,5 @@ const country = {
 } as const;
 
 pick(country, ['CA']); //  TS2322: Type '"CA"' is not assignable to type '"KR" | "US" | "JP"'
-pick(country, ['KR']); //  Pick<{readonly KR: "KR", readonly US: "US", readonly JP: "JP"}, "KR">
+pick(country, ['KR']); //  { KR: 'KR' }
 ```
