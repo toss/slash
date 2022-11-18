@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.6](https://github.com/toss/slash/compare/@toss/sentry@1.0.5...@toss/sentry@1.0.6) (2022-11-16)
+
+**Note:** Version bump only for package @toss/sentry
+
+
+
+
+
 ## [1.0.5](https://github.com/toss/slash/compare/@toss/sentry@1.0.4...@toss/sentry@1.0.5) (2022-11-15)
 
 **Note:** Version bump only for package @toss/sentry
