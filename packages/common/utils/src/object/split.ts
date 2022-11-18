@@ -1,9 +1,21 @@
 /** @tossdocs-ignore */
-import { ObjectKeys, omit, pick } from '.';
+import { ArrayElements, ObjectKeys, objectKeys } from '.';
 
 export function split<ObjectType extends Record<PropertyKey, unknown>, KeyTypes extends Array<ObjectKeys<ObjectType>>>(
   obj: ObjectType,
   keys: KeyTypes
-): [ReturnType<typeof pick<ObjectType, KeyTypes>>, ReturnType<typeof omit<ObjectType, KeyTypes>>] {
-  return [pick(obj, keys), omit(obj, keys)];
+) {
+  const keysSet = new Set(keys);
+  const picked = {} as ObjectType;
+  const omitted = {} as ObjectType;
+
+  for (const key of objectKeys(obj)) {
+    if (keysSet.has(key)) {
+      picked[key] = obj[key];
+    } else {
+      omitted[key] = obj[key];
+    }
+  }
+
+  return [picked, omitted] as [Pick<ObjectType, ArrayElements<KeyTypes>>, Omit<ObjectType, ArrayElements<KeyTypes>>];
 }

@@ -1,2 +1,2 @@
 /** @tossdocs-ignore */
-export type ArrayUnion<Type extends readonly unknown[]> = Type[number];
+export type ArrayElements<Type extends readonly unknown[]> = Type[number];

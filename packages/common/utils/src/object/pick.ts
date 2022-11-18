@@ -1,11 +1,15 @@
 /** @tossdocs-ignore */
-import { ArrayUnion, ObjectKeys, objectKeys } from '.';
+import { ArrayElements, ObjectKeys } from '.';
 
 export function pick<ObjectType extends Record<PropertyKey, unknown>, KeyTypes extends Array<ObjectKeys<ObjectType>>>(
   obj: ObjectType,
   keys: KeyTypes
 ) {
-  return objectKeys(obj)
-    .filter((k): k is Exclude<ObjectKeys<ObjectType>, ArrayUnion<KeyTypes>> => keys.includes(k))
-    .reduce((acc, key) => ((acc[key] = obj[key]), acc), {} as Pick<ObjectType, ArrayUnion<KeyTypes>>);
+  const picked = {} as Pick<ObjectType, ArrayElements<KeyTypes>>;
+  for (const key of keys) {
+    picked[key] = obj[key];
+  }
+  return picked;
 }
+
+
