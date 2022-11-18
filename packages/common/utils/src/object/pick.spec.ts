@@ -1,7 +1,7 @@
 import { pick } from '.';
 
 describe('pick', () => {
-  it('should work well array of keys is empty', () => {
+  it('should create an object composed of the given keys', () => {
     const country = {
       KR: 'KR',
       US: 'US',
@@ -9,14 +9,6 @@ describe('pick', () => {
     } as const;
 
     expect(pick(country, [])).toStrictEqual({});
-  });
-
-  it('should work with proper keys', () => {
-    const country = {
-      KR: 'KR',
-      US: 'US',
-      JP: 'JP',
-    } as const;
 
     expect(pick(country, ['JP'])).toStrictEqual({
       JP: 'JP',
