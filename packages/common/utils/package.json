@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.14.8",
+    "@toss/utility-types": "workspace:^1.0.5",
     "date-fns": "^2.25.0"
   },
   "devDependencies": {
