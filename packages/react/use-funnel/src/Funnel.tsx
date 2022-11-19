@@ -1,11 +1,12 @@
 /** @tossdocs-ignore */
 import { assert } from '@toss/assert';
+import { ArrayElements } from '@toss/utility-types';
 import { Children, isValidElement, ReactElement, ReactNode, useEffect } from 'react';
 import { NonEmptyArray } from './models';
 
 export interface FunnelProps<Steps extends NonEmptyArray<string>> {
   steps: Steps;
-  step: Steps[number];
+  step: ArrayElements<Steps>;
   children: Array<ReactElement<StepProps<Steps>>> | ReactElement<StepProps<Steps>>;
 }
 
@@ -24,7 +25,7 @@ export const Funnel = <Steps extends NonEmptyArray<string>>({ steps, step, child
 };
 
 export interface StepProps<Steps extends NonEmptyArray<string>> {
-  name: Steps[number];
+  name: ArrayElements<Steps>;
   onEnter?: () => void;
   children: ReactNode;
 }

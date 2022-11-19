@@ -2,6 +2,7 @@
 import { assert } from '@toss/assert';
 import { safeSessionStorage } from '@toss/storage';
 import { useQueryParam } from '@toss/use-query-param';
+import { ArrayElements } from '@toss/utility-types';
 import { QS } from '@toss/utils';
 import deepEqual from 'fast-deep-equal';
 import { useRouter } from 'next/router';
@@ -31,21 +32,23 @@ export const useFunnel = <Steps extends NonEmptyArray<string>>(
      * @default 'funnel-step'
      */
     stepQueryKey?: string;
-    initialStep?: Steps[number];
-    onStepChange?: (name: Steps[number]) => void;
+    initialStep?: ArrayElements<Steps>;
+    onStepChange?: (name: ArrayElements<Steps>) => void;
   }
-): readonly [FunnelComponent<Steps>, (step: Steps[number], options?: SetStepOptions) => void] & {
+): readonly [FunnelComponent<Steps>, (step: ArrayElements<Steps>, options?: SetStepOptions) => void] & {
   withState: <StateExcludeStep extends Record<string, unknown> & { step?: never }>(
     initialState: StateExcludeStep
   ) => [
-      FunnelComponent<Steps>,
-      StateExcludeStep,
-      (
-        next:
-          | Partial<StateExcludeStep & { step: Steps[number] }>
-          | ((next: Partial<StateExcludeStep & { step: Steps[number] }>) => StateExcludeStep & { step: Steps[number] })
-      ) => void
-    ];
+    FunnelComponent<Steps>,
+    StateExcludeStep,
+    (
+      next:
+        | Partial<StateExcludeStep & { step: ArrayElements<Steps> }>
+        | ((
+            next: Partial<StateExcludeStep & { step: ArrayElements<Steps> }>
+          ) => StateExcludeStep & { step: ArrayElements<Steps> })
+    ) => void
+  ];
 } => {
   const router = useRouter();
   const stepQueryKey = options?.stepQueryKey ?? DEFAULT_STEP_QUERY_KEY;
@@ -57,7 +60,7 @@ export const useFunnel = <Steps extends NonEmptyArray<string>>(
       Object.assign(
         function RouteFunnel(props: RouteFunnelProps<Steps>) {
           // eslint-disable-next-line react-hooks/rules-of-hooks
-          const step = useQueryParam<Steps[number]>(stepQueryKey) ?? options?.initialStep;
+          const step = useQueryParam<ArrayElements<Steps>>(stepQueryKey) ?? options?.initialStep;
 
           assert(
             step != null,
@@ -75,7 +78,7 @@ export const useFunnel = <Steps extends NonEmptyArray<string>>(
   );
 
   const setStep = useCallback(
-    (step: Steps[number], setStepOptions?: SetStepOptions) => {
+    (step: ArrayElements<Steps>, setStepOptions?: SetStepOptions) => {
       const { preserveQuery = true } = setStepOptions ?? {};
 
       const url = `${QS.create({
@@ -111,7 +114,7 @@ export const useFunnel = <Steps extends NonEmptyArray<string>>(
 
   type S = Record<string, unknown>;
   const [state, _setState] = useFunnelState<S>({});
-  type Step = Steps[number];
+  type Step = ArrayElements<Steps>;
   type NextState = S & { step?: Step };
 
   const nextPendingStepRef = useRef<Step | null>(null);
@@ -156,19 +159,21 @@ export const useFunnel = <Steps extends NonEmptyArray<string>>(
 
   return Object.assign([FunnelComponent, setStep] as const, { withState }) as readonly [
     FunnelComponent<Steps>,
-    (step: Steps[number], options?: SetStepOptions) => void
+    (step: ArrayElements<Steps>, options?: SetStepOptions) => void
   ] & {
     withState: <StateExcludeStep extends Record<string, unknown> & { step?: never }>(
       initialState: StateExcludeStep
     ) => [
-        FunnelComponent<Steps>,
-        StateExcludeStep,
-        (
-          next:
-            | Partial<StateExcludeStep & { step: Steps[number] }>
-            | ((next: Partial<StateExcludeStep & { step: Steps[number] }>) => StateExcludeStep & { step: Steps[number] })
-        ) => void
-      ];
+      FunnelComponent<Steps>,
+      StateExcludeStep,
+      (
+        next:
+          | Partial<StateExcludeStep & { step: ArrayElements<Steps> }>
+          | ((
+              next: Partial<StateExcludeStep & { step: ArrayElements<Steps> }>
+            ) => StateExcludeStep & { step: ArrayElements<Steps> })
+      ) => void
+    ];
   };
 };
 
