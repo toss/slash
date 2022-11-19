@@ -1,7 +1,7 @@
 import { omit } from '.';
 
 describe('omit', () => {
-  it('should work well array of keys is empty', () => {
+  it('should create an object without given keys', () => {
     const country = {
       KR: 'KR',
       US: 'US',
@@ -9,14 +9,6 @@ describe('omit', () => {
     } as const;
 
     expect(omit(country, [])).toStrictEqual(country);
-  });
-
-  it('should work with proper keys', () => {
-    const country = {
-      KR: 'KR',
-      US: 'US',
-      JP: 'JP',
-    } as const;
 
     expect(omit(country, ['JP'])).toStrictEqual({
       KR: 'KR',
