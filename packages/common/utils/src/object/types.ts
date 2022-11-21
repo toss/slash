@@ -1,3 +1,3 @@
 /** @tossdocs-ignore */
 
-export type ArrayElements<Type extends readonly unknown[]> = Type[number];
+export type ElementType<Type extends readonly unknown[]> = Type[number];
