@@ -1,3 +1,3 @@
 /** @tossdocs-ignore */
-export * from './arrayElements';
+export * from './elementType';
 export * from './serializable';
