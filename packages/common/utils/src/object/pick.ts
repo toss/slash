@@ -1,6 +1,6 @@
 /** @tossdocs-ignore */
-import { ArrayElements } from '@toss/utility-types';
 import { ObjectKeys } from '.';
+import { ArrayElements } from './types';
 
 export function pick<ObjectType extends Record<PropertyKey, unknown>, KeyTypes extends Array<ObjectKeys<ObjectType>>>(
   obj: ObjectType,
