@@ -14,7 +14,7 @@ function get(
   // 경로에 해당하는 값이 없을 때 반환할 기본값
   // @default undefined
   defaultValue?: any
-): any;
+): Record<string, any> | undefined;
 ```
 
 ## Example

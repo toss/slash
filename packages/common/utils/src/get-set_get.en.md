@@ -11,7 +11,7 @@ function get(
   path: string,
   // @default undefined
   defaultValue?: any
-): any;
+): Record<string, any> | undefined;
 ```
 
 ## Example
