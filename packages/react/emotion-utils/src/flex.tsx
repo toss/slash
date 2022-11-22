@@ -43,7 +43,7 @@ flex.center = (direction?: FlexOptions['direction']) => flex({ justify: 'center'
 
 interface FlexProps<T extends keyof JSX.IntrinsicElements = 'div'> extends AsProps<T>, FlexOptions {}
 
-type FlexReturnType = <T extends keyof JSX.IntrinsicElements = 'div'>(
+type BaseFlexType = <T extends keyof JSX.IntrinsicElements = 'div'>(
   props: FlexProps<T> & { ref?: Ref<InferenceHTMLElement<T>> }
 ) => ReactElement | null;
 
@@ -53,7 +53,7 @@ export const BaseFlex = forwardRef<HTMLElement, FlexProps>(function BaseFlex(pro
   const Component = as as any;
 
   return <Component ref={ref} css={flex({ align, direction, justify })} {...rest} />;
-}) as FlexReturnType;
+}) as BaseFlexType;
 
 type FlexType = typeof BaseFlex & {
   Center: typeof BaseFlex;
