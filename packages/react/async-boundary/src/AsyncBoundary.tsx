@@ -1,5 +1,5 @@
 /** @tossdocs-ignore */
-import { ErrorBoundary } from '@toss/error-boundary';
+import { BaseErrorBoundary, ErrorBoundary } from '@toss/error-boundary';
 import { ComponentProps, forwardRef, Ref, Suspense, useImperativeHandle, useRef } from 'react';
 
 type ErrorBoundaryProps = Omit<ComponentProps<typeof ErrorBoundary>, 'renderFallback'>;
@@ -19,7 +19,7 @@ const AsyncBoundary = forwardRef(function (
   { pendingFallback, rejectedFallback, children, ...errorBoundaryProps }: Props,
   resetRef: Ref<ResetRef>
 ) {
-  const ref = useRef<ErrorBoundary | null>(null);
+  const ref = useRef<BaseErrorBoundary | null>(null);
 
   useImperativeHandle(resetRef, () => ({
     reset: () => ref.current?.resetErrorBoundary(),

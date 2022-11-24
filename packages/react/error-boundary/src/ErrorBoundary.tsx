@@ -1,6 +1,17 @@
 /** @tossdocs-ignore */
 import { isDifferentArray } from '@toss/utils';
-import { Component, ErrorInfo, PropsWithChildren, PropsWithRef, ReactNode } from 'react';
+import {
+  Component,
+  ComponentProps,
+  ErrorInfo,
+  forwardRef,
+  PropsWithChildren,
+  PropsWithRef,
+  ReactNode,
+  useImperativeHandle,
+  useRef,
+} from 'react';
+import { useResetKey } from './contexts/ResetKey';
 
 type RenderFallbackProps<ErrorType extends Error = Error> = {
   error: ErrorType;
@@ -31,7 +42,7 @@ interface State<ErrorType extends Error = Error> {
 const initialState: State = {
   error: null,
 };
-export default class ErrorBoundary extends Component<PropsWithRef<PropsWithChildren<Props>>, State> {
+export class BaseErrorBoundary extends Component<PropsWithRef<PropsWithChildren<Props>>, State> {
   state = initialState;
   /**
    * @see https://github.com/bvaughn/react-error-boundary/blob/master/src/index.tsx#L97
@@ -95,3 +106,24 @@ export default class ErrorBoundary extends Component<PropsWithRef<PropsWithChild
     return children;
   }
 }
+
+const ResetKeyErrorBoundary = forwardRef<{ reset?(): void }, ComponentProps<typeof BaseErrorBoundary>>(
+  ({ resetKeys, ...rest }, resetRef) => {
+    const { resetKey } = useResetKey();
+
+    const ref = useRef<BaseErrorBoundary | null>(null);
+
+    useImperativeHandle(resetRef, () => ({
+      reset: () => ref.current?.resetErrorBoundary(),
+    }));
+
+    return <BaseErrorBoundary {...rest} resetKeys={[resetKey, ...(resetKeys ? resetKeys : [])]} />;
+  }
+);
+
+const ErrorBoundary = BaseErrorBoundary as typeof BaseErrorBoundary & {
+  ResetKey: typeof ResetKeyErrorBoundary;
+};
+ErrorBoundary.ResetKey = ResetKeyErrorBoundary;
+
+export default ErrorBoundary;
