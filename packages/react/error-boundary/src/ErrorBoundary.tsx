@@ -11,7 +11,7 @@ import {
   useImperativeHandle,
   useRef,
 } from 'react';
-import { useResetKey } from './contexts/ResetKey';
+import { useErrorBoundaryGroup } from './ErrorBoundaryGroup';
 
 type RenderFallbackProps<ErrorType extends Error = Error> = {
   error: ErrorType;
@@ -42,7 +42,7 @@ interface State<ErrorType extends Error = Error> {
 const initialState: State = {
   error: null,
 };
-export class BaseErrorBoundary extends Component<PropsWithRef<PropsWithChildren<Props>>, State> {
+class BaseErrorBoundary extends Component<PropsWithRef<PropsWithChildren<Props>>, State> {
   state = initialState;
   /**
    * @see https://github.com/bvaughn/react-error-boundary/blob/master/src/index.tsx#L97
@@ -107,23 +107,16 @@ export class BaseErrorBoundary extends Component<PropsWithRef<PropsWithChildren<
   }
 }
 
-const ResetKeyErrorBoundary = forwardRef<{ reset?(): void }, ComponentProps<typeof BaseErrorBoundary>>(
-  ({ resetKeys, ...rest }, resetRef) => {
-    const { resetKey } = useResetKey();
+const ErrorBoundary = forwardRef<{ reset?(): void }, ComponentProps<typeof BaseErrorBoundary>>((props, resetRef) => {
+  const { groupResetKey } = useErrorBoundaryGroup();
+  const resetKeys = groupResetKey ? [groupResetKey, ...(props.resetKeys || [])] : props.resetKeys;
 
-    const ref = useRef<BaseErrorBoundary | null>(null);
+  const ref = useRef<BaseErrorBoundary | null>(null);
+  useImperativeHandle(resetRef, () => ({
+    reset: () => ref.current?.resetErrorBoundary(),
+  }));
 
-    useImperativeHandle(resetRef, () => ({
-      reset: () => ref.current?.resetErrorBoundary(),
-    }));
-
-    return <BaseErrorBoundary {...rest} resetKeys={[resetKey, ...(resetKeys ? resetKeys : [])]} />;
-  }
-);
-
-const ErrorBoundary = BaseErrorBoundary as typeof BaseErrorBoundary & {
-  ResetKey: typeof ResetKeyErrorBoundary;
-};
-ErrorBoundary.ResetKey = ResetKeyErrorBoundary;
+  return <BaseErrorBoundary {...props} resetKeys={resetKeys} />;
+});
 
 export default ErrorBoundary;
