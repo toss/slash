@@ -29,16 +29,11 @@ hide_table_of_contents: true
   Slash is a collection of TypeScript/JavaScript packages used in <a href="https://toss.im">Toss</a>.
   </p>
 
-<p>It provides over 30 npm packages which can serve as a foundation to provide high-quality web services.</p>
+  <p>It provides over 30 npm packages which can serve as a foundation to provide high-quality web services.</p>
 
-<p>
-  Use <code>⌘ + K</code> to search through our libraries documentation.
-</p>
-
-  </div>
-
-  <div style={{ gridArea: 'image', textAlign: 'center' }}>
-
+  <p>
+    Use <code>⌘ + K</code> to search through our libraries documentation.
+  </p>
   </div>
 </div>
 
