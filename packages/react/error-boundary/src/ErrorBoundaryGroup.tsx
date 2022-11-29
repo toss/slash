@@ -18,7 +18,6 @@ export const ErrorBoundaryGroup = ({
   children,
 }: {
   blockOutside?: boolean;
-  onReset?: () => void;
   children?: ReactNode;
 }) => {
   const blockOutsideRef = useRef(blockOutside);
