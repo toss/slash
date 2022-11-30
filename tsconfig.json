@@ -37,7 +37,7 @@
 
     /* Completeness*/
     "allowJs": false,
-    "skipLibCheck": true,
+    "skipLibCheck": true
   },
   "exclude": ["**/dist/*", "**/esm/*", "**/__testfixtures__/*"]
 }
