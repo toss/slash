@@ -1,3 +1,4 @@
+/** @tossdocs-ignore */
 import { expectType } from 'tsd';
 import { SuspendedUseQueryResultOnIdle, SuspendedUseQueryResultOnSuccess, useSuspendedQuery } from '../dist';
 
