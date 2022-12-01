@@ -8,6 +8,9 @@ describe('get은', () => {
     expect(get({ a: { b: { c: 'd' } } }, 'a.b')).toStrictEqual({ c: 'd' });
     expect(get({ a: { b: { c: 'd' } } }, 'a.b.c')).toStrictEqual('d');
   });
+  it('경로에 해당하는 값이 없을 때 기본값을 반환한다', () => {
+    expect(get({ a: { b: { c: 'd' } } }, 'a.c',"f")).toStrictEqual("f");
+  });
 });
 
 describe('set은', () => {
