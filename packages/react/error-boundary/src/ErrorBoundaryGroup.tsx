@@ -1,7 +1,7 @@
-import { ComponentType, createContext, ReactNode, useContext, useEffect, useRef } from 'react';
+import { ComponentType, createContext, ReactNode, useContext, useEffect, useMemo, useRef } from 'react';
 import { useIsMounted, useKey } from './hooks';
 
-const ErrorBoundaryGroupContext = createContext({ groupResetKey: {}, resetGroup: () => {} });
+const ErrorBoundaryGroupContext = createContext({ groupResetKey: {}, resetGroup: () => { } });
 if (process.env.NODE_ENV !== 'production') {
   ErrorBoundaryGroupContext.displayName = 'ErrorBoundaryGroupContext';
 }
@@ -31,8 +31,12 @@ export const ErrorBoundaryGroup = ({
     }
   }, [groupResetKey, isMounted, reset]);
 
+  const context = useMemo(() => {
+    return { resetGroup: reset, groupResetKey: resetKey }
+  }, [reset, resetKey]);
+
   return (
-    <ErrorBoundaryGroupContext.Provider value={{ resetGroup: () => reset, groupResetKey: resetKey }}>
+    <ErrorBoundaryGroupContext.Provider value={context}>
       {children}
     </ErrorBoundaryGroupContext.Provider>
   );
@@ -43,7 +47,7 @@ export const useErrorBoundaryGroup = () => useContext(ErrorBoundaryGroupContext)
 
 export const withErrorBoundaryGroup =
   <P extends Record<string, unknown> = Record<string, never>>(Component: ComponentType<P>) =>
-  (props: P) =>
+    (props: P) =>
     (
       <ErrorBoundaryGroup>
         <Component {...props} />

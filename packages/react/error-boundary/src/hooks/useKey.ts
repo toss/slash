@@ -4,6 +4,7 @@ export const useKey = (): [number, () => void] => {
   const [key, setKey] = useState(0);
   const refresh = useCallback(() => {
     setKey(prev => prev + 1);
+    console.log(`refreshed`);
   }, []);
 
   return [key, refresh];

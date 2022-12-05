@@ -9,7 +9,7 @@ import {
   PropsWithRef,
   ReactNode,
   useImperativeHandle,
-  useRef,
+  useRef
 } from 'react';
 import { useErrorBoundaryGroup } from './ErrorBoundaryGroup';
 
