@@ -5,7 +5,7 @@ export const get = <T = any>(obj: Record<string, any>, path: string, defaultValu
       .call(path, regexp)
       .filter(Boolean)
       .reduce((acc, key) => (acc !== null && acc !== undefined ? acc[key] : acc), obj);
-  const result = travel(/[,[\]]+?/) || travel(/[,[\].]+?/);
+  const result = travel(/[,[\].]+?/);
   return (result === undefined || result === obj ? defaultValue : result) as T;
 };
 
