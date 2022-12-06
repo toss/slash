@@ -22,7 +22,7 @@ describe('ErrorBoundaryGroup', () => {
         <button
           onClick={() => {
             state.hasError = false;
-            group.resetGroup();
+            group.reset();
           }}
         >
           Reset

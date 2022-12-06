@@ -8,10 +8,11 @@ import {
   PropsWithChildren,
   PropsWithRef,
   ReactNode,
+  useContext,
   useImperativeHandle,
-  useRef
+  useRef,
 } from 'react';
-import { useErrorBoundaryGroup } from './ErrorBoundaryGroup';
+import { ErrorBoundaryGroupContext } from './ErrorBoundaryGroup';
 
 type RenderFallbackProps<ErrorType extends Error = Error> = {
   error: ErrorType;
@@ -108,8 +109,8 @@ class BaseErrorBoundary extends Component<PropsWithRef<PropsWithChildren<Props>>
 }
 
 const ErrorBoundary = forwardRef<{ reset?(): void }, ComponentProps<typeof BaseErrorBoundary>>((props, resetRef) => {
-  const { groupResetKey } = useErrorBoundaryGroup();
-  const resetKeys = groupResetKey ? [groupResetKey, ...(props.resetKeys || [])] : props.resetKeys;
+  const group = useContext(ErrorBoundaryGroupContext);
+  const resetKeys = group.resetKey ? [group.resetKey, ...(props.resetKeys || [])] : props.resetKeys;
 
   const ref = useRef<BaseErrorBoundary | null>(null);
   useImperativeHandle(resetRef, () => ({

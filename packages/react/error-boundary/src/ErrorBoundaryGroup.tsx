@@ -1,16 +1,16 @@
 import { ComponentType, createContext, ReactNode, useContext, useEffect, useMemo, useRef } from 'react';
 import { useIsMounted, useKey } from './hooks';
 
-const ErrorBoundaryGroupContext = createContext({ groupResetKey: {}, resetGroup: () => { } });
+export const ErrorBoundaryGroupContext = createContext({ resetKey: {}, reset: () => {} });
 if (process.env.NODE_ENV !== 'production') {
   ErrorBoundaryGroupContext.displayName = 'ErrorBoundaryGroupContext';
 }
 
-const ErrorBoundaryGroupReset = ({ trigger }: { trigger: ComponentType<{ resetGroup: () => void }> }) => {
-  const { resetGroup } = useErrorBoundaryGroup();
+const ErrorBoundaryGroupReset = ({ trigger }: { trigger: ComponentType<{ reset: () => void }> }) => {
+  const group = useErrorBoundaryGroup();
   const Trigger = trigger;
 
-  return <Trigger resetGroup={resetGroup} />;
+  return <Trigger reset={group.reset} />;
 };
 
 export const ErrorBoundaryGroup = ({
@@ -22,32 +22,30 @@ export const ErrorBoundaryGroup = ({
 }) => {
   const blockOutsideRef = useRef(blockOutside);
   const isMounted = useIsMounted();
-  const { groupResetKey } = useErrorBoundaryGroup();
+  const group = useContext(ErrorBoundaryGroupContext);
   const [resetKey, reset] = useKey();
 
   useEffect(() => {
     if (isMounted && !blockOutsideRef.current) {
       reset();
     }
-  }, [groupResetKey, isMounted, reset]);
+  }, [group.resetKey, isMounted, reset]);
 
-  const context = useMemo(() => {
-    return { resetGroup: reset, groupResetKey: resetKey }
-  }, [reset, resetKey]);
+  const value = useMemo(() => ({ reset, resetKey }), [reset, resetKey]);
 
-  return (
-    <ErrorBoundaryGroupContext.Provider value={context}>
-      {children}
-    </ErrorBoundaryGroupContext.Provider>
-  );
+  return <ErrorBoundaryGroupContext.Provider value={value}>{children}</ErrorBoundaryGroupContext.Provider>;
 };
 ErrorBoundaryGroup.Reset = ErrorBoundaryGroupReset;
 
-export const useErrorBoundaryGroup = () => useContext(ErrorBoundaryGroupContext);
+export const useErrorBoundaryGroup = () => {
+  const { reset } = useContext(ErrorBoundaryGroupContext);
+
+  return { reset };
+};
 
 export const withErrorBoundaryGroup =
   <P extends Record<string, unknown> = Record<string, never>>(Component: ComponentType<P>) =>
-    (props: P) =>
+  (props: P) =>
     (
       <ErrorBoundaryGroup>
         <Component {...props} />
