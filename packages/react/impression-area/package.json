@@ -8,6 +8,10 @@
     "./testing": "./src/testing/index.ts"
   },
   "main": "./src/index.ts",
+  "files": [
+    "dist",
+    "esm"
+  ],
   "scripts": {
     "build": "rm -rf dist esm && tsc --declaration --emitDeclarationOnly --declarationDir dist && rollup -c rollup.config.js",
     "prepack": "yarn build",

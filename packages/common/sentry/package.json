@@ -7,6 +7,10 @@
     "./nextjs": "./src/index.nextjs.ts"
   },
   "main": "./src/index.node.ts",
+  "files": [
+    "dist",
+    "esm"
+  ],
   "scripts": {
     "build": "concurrently \"tsc -p tsconfig.json\" \"tsc -p tsconfig.esm.json\"",
     "prepack": "yarn build",
