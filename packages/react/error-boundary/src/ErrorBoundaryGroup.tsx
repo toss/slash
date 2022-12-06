@@ -6,13 +6,6 @@ if (process.env.NODE_ENV !== 'production') {
   ErrorBoundaryGroupContext.displayName = 'ErrorBoundaryGroupContext';
 }
 
-const ErrorBoundaryGroupReset = ({ trigger }: { trigger: ComponentType<{ reset: () => void }> }) => {
-  const group = useErrorBoundaryGroup();
-  const Trigger = trigger;
-
-  return <Trigger reset={group.reset} />;
-};
-
 export const ErrorBoundaryGroup = ({
   blockOutside = false,
   children,
@@ -35,7 +28,6 @@ export const ErrorBoundaryGroup = ({
 
   return <ErrorBoundaryGroupContext.Provider value={value}>{children}</ErrorBoundaryGroupContext.Provider>;
 };
-ErrorBoundaryGroup.Reset = ErrorBoundaryGroupReset;
 
 export const useErrorBoundaryGroup = () => {
   const { reset } = useContext(ErrorBoundaryGroupContext);
