@@ -1,6 +1,6 @@
 {
   "name": "@toss/rollup-config",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "main": "./src/index.js",
   "dependencies": {
     "@babel/core": "^7.19.3",

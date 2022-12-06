@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.1.0](https://github.com/toss/slash/compare/@toss/utility-types@1.0.5...@toss/utility-types@1.1.0) (2022-12-06)
+
+
+### Features
+
+* **utility-types:** arrayElements type  ([#152](https://github.com/toss/slash/issues/152)) ([6a6451c](https://github.com/toss/slash/commit/6a6451c237ec09dabd1b6ce4d2cba43d2db6bf4c))
+
+
+
+
+
 ## [1.0.5](https://github.com/toss/slash/compare/@toss/utility-types@1.0.4...@toss/utility-types@1.0.5) (2022-11-14)
 
 **Note:** Version bump only for package @toss/utility-types

@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.3.0](https://github.com/toss/slash/compare/@toss/use-overlay@1.2.1...@toss/use-overlay@1.3.0) (2022-12-06)
+
+
+### Bug Fixes
+
+* **use-overlay:** remove unused props ([#145](https://github.com/toss/slash/issues/145)) ([bc82da9](https://github.com/toss/slash/commit/bc82da9945ff96212cc8ad049d15a4e081c840e0))
+
+
+### Features
+
+* **use-overlay:** add exit function  ([#150](https://github.com/toss/slash/issues/150)) ([c3933ff](https://github.com/toss/slash/commit/c3933ff84f5eb01dd4905b3873273e66a58e0a2e))
+
+
+
+
+
 ## [1.2.1](https://github.com/toss/slash/compare/@toss/use-overlay@1.2.0...@toss/use-overlay@1.2.1) (2022-11-16)
 
 **Note:** Version bump only for package @toss/use-overlay

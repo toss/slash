@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.3.0](https://github.com/toss/slash/compare/@toss/utils@1.2.2...@toss/utils@1.3.0) (2022-12-06)
+
+
+### Features
+
+* **utility-types:** arrayElements type  ([#152](https://github.com/toss/slash/issues/152)) ([6a6451c](https://github.com/toss/slash/commit/6a6451c237ec09dabd1b6ce4d2cba43d2db6bf4c))
+* **utils:** Add pick function for util object ([#147](https://github.com/toss/slash/issues/147)) ([e005b01](https://github.com/toss/slash/commit/e005b01a83ca48ac9bfade1979d7897736d7d483))
+* **utils:** Allow generic argument in `get` ([#154](https://github.com/toss/slash/issues/154)) ([7538184](https://github.com/toss/slash/commit/7538184655a9c023f35b6fe64c9e46386e5a10f2))
+
+
+
+
+
 ## [1.2.2](https://github.com/toss/slash/compare/@toss/utils@1.2.1...@toss/utils@1.2.2) (2022-11-16)
 
 **Note:** Version bump only for package @toss/utils

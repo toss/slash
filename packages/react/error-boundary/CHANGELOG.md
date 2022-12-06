@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.2.0](https://github.com/toss/slash/compare/@toss/error-boundary@1.1.3...@toss/error-boundary@1.2.0) (2022-12-06)
+
+
+### Features
+
+* **error-boundary:** Add ErrorBoundaryGroup ([#157](https://github.com/toss/slash/issues/157)) ([34204c1](https://github.com/toss/slash/commit/34204c14b661daba89e469653a64171242d94684))
+
+
+
+
+
 ## [1.1.3](https://github.com/toss/slash/compare/@toss/error-boundary@1.1.2...@toss/error-boundary@1.1.3) (2022-11-16)
 
 **Note:** Version bump only for package @toss/error-boundary

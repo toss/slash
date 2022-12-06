@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.1.0](https://github.com/toss/slash/compare/@toss/storage@1.0.6...@toss/storage@1.1.0) (2022-12-06)
+
+
+### Features
+
+* test code for clear method ([#151](https://github.com/toss/slash/issues/151)) ([03b98d3](https://github.com/toss/slash/commit/03b98d38d51cdf859b872f3cce78a3b3cc8d4486))
+
+
+
+
+
 ## [1.0.6](https://github.com/toss/slash/compare/@toss/storage@1.0.5...@toss/storage@1.0.6) (2022-11-16)
 
 **Note:** Version bump only for package @toss/storage
