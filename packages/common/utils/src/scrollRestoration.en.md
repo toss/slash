@@ -1,4 +1,4 @@
-# scrollRestoration.set
+# scrollRestoration
 
 This is a helper that helps you easily set/clear related to scrollRestoration.
 
