@@ -3,6 +3,10 @@
   "version": "1.1.0",
   "sideEffects": false,
   "main": "./src/index.ts",
+  "files": [
+    "dist",
+    "esm"
+  ],
   "scripts": {
     "build": "concurrently \"tsc -p tsconfig.json\" \"tsc -p tsconfig.esm.json\"",
     "prepack": "yarn build",

@@ -10,6 +10,10 @@
     "./package.json": "./package.json"
   },
   "main": "./src/index.ts",
+  "files": [
+    "dist",
+    "esm"
+  ],
   "scripts": {
     "build": "rm -rf dist/ && rm -rf esm/ && rollup -c && tsc --declaration --emitDeclarationOnly --declarationDir dist",
     "prepack": "yarn build",

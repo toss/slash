@@ -8,6 +8,10 @@
     "./package.json": "./package.json"
   },
   "main": "./src/index.ts",
+  "files": [
+    "dist",
+    "esm"
+  ],
   "scripts": {
     "build": "tsc --emitDeclarationOnly --outDir types && rollup -c && rm -rf types",
     "prepack": "yarn build",
