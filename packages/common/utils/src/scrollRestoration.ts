@@ -1,3 +1,4 @@
+/** @tossdocs-ignore */
 import { noop } from './noop';
 
 export const scrollRestoration = {
