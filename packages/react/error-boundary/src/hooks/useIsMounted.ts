@@ -1,3 +1,4 @@
+/** @tossdocs-ignore */
 import { useEffect, useState } from 'react';
 
 export const useIsMounted = () => {
