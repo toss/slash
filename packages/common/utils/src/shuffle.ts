@@ -9,9 +9,7 @@
  * ```
  *
  * @example
- * const target = [1, 2, 3];
- * const shuffled = shuffle(target);
- * // => [2, 3, 1];
+ * shuffle([1, 2, 3]); // [2, 3, 1]...
  */
 export function shuffle<T>(array: T[]): T[] {
   let currentIndex = array.length;

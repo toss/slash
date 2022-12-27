@@ -10,14 +10,13 @@ import { css } from '@emotion/react';
  * ```
  *
  * @example
+ * ```tsx
  * <p css={css`
  *   ${ellipsis}
  * `}>
  *   이것은 1번째 줄입니다. 헬로우월드
- * </p>
- *
- * // =>
- * // 이것은 1번...
+ * </p> // 이것은 1번...
+ * ```
  */
 export const ellipsis = css`
   overflow: hidden;
@@ -26,7 +25,6 @@ export const ellipsis = css`
 `;
 
 /**
- * @name multiLineEllipsis
  * @description multiline ellipsis 스타일링을 위한 유틸리티
  *
  * ```ts
@@ -39,9 +37,10 @@ export const ellipsis = css`
  * ```
  *
  * @example
- * <p css=css`
+ * ```tsx
+ * <p css={css`
  *   ${multiLineEllipsis(3)}
- * `>
+ * `}>
  *   이것은 1번째 줄입니다 <br>
  *   이것은 2번째 줄입니다 <br>
  *   이것은 3번째 줄입니다 <br>
@@ -49,10 +48,10 @@ export const ellipsis = css`
  *   이것은 5번째 줄입니다 <br>
  *   이것은 6번째 줄입니다 <br>
  * </p>
- * // =>
  * // 이것은 1번째 줄입니다
  * // 이것은 2번째 줄입니다
  * // 이것은 3번째 줄입니다...
+ * ```
  */
 export const multiLineEllipsis = (line: number, lineHeight = 1.6) => css`
   display: -webkit-box;

@@ -11,8 +11,7 @@
  * ```
  *
  * @example
- * uniq([1, 2, 2, 3]);
- * // => [1, 2, 3]
+ * uniq([1, 2, 2, 3]) // [1, 2, 3]
  */
 export function uniq<T>(arr: T[]): T[] {
   return [...new Set(arr)];

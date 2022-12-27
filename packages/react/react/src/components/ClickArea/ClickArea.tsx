@@ -8,7 +8,9 @@ interface Props {
   className?: string;
   children: React.ReactNode;
   onClick?: () => void;
-  /* default true */
+  /**
+   * @default true
+   */
   enabled?: boolean;
 }
 
