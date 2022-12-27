@@ -1,3 +1,4 @@
+/** @tossdocs-ignore */
 import { useCallback, useState } from 'react';
 
 export const useKey = (): [number, () => void] => {
