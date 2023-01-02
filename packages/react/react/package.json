@@ -25,7 +25,7 @@
     "@toss/storage": "workspace:^1.1.0",
     "@toss/utils": "workspace:^1.3.0",
     "classnames": "^2.3.1",
-    "lodash": "^4.17.20"
+    "lodash.debounce": "^4.0.8"
   },
   "devDependencies": {
     "@babel/core": "^7",
@@ -44,7 +44,7 @@
     "@tossteam/jest": "^17",
     "@types/babel__preset-env": "^7",
     "@types/jest": "^28.1.8",
-    "@types/lodash": "^4",
+    "@types/lodash.debounce": "^4",
     "@types/react": "^18.0.21",
     "@types/testing-library__jest-dom": "^5.9.5",
     "@types/testing-library__react-hooks": "^3.2.0",

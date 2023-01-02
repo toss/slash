@@ -5858,7 +5858,7 @@ __metadata:
     "@tossteam/jest": ^17
     "@types/babel__preset-env": ^7
     "@types/jest": ^28.1.8
-    "@types/lodash": ^4
+    "@types/lodash.debounce": ^4
     "@types/react": ^18.0.21
     "@types/testing-library__jest-dom": ^5.9.5
     "@types/testing-library__react-hooks": ^3.2.0
@@ -5870,7 +5870,7 @@ __metadata:
     jest: ^29.0.1
     jest-environment-jsdom: ^29
     jsdom: ^15.2.1
-    lodash: ^4.17.20
+    lodash.debounce: ^4.0.8
     react: ^18.2.0
     react-dom: ^18.2.0
     react-test-renderer: ^18.2.0
@@ -6739,7 +6739,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/lodash@npm:*, @types/lodash@npm:^4":
+"@types/lodash@npm:*":
   version: 4.14.186
   resolution: "@types/lodash@npm:4.14.186"
   checksum: ee0c1368a8100bb6efb88335107473a41928fc307ff1ef4ff1278868ccddba9c04c68c36d1ffe3a0392ef4a956e1955f7de3203ec09df4f1655dd1b88485c549
