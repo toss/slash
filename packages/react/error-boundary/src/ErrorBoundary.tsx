@@ -113,7 +113,7 @@ const ErrorBoundary = forwardRef<{ reset?(): void }, ComponentPropsWithoutRef<ty
     const group = useContext(ErrorBoundaryGroupContext);
     const resetKeys = group.resetKey ? [group.resetKey, ...(props.resetKeys || [])] : props.resetKeys;
 
-    const ref = useRef<BaseErrorBoundary | null>(null);
+    const ref = useRef<BaseErrorBoundary>(null);
     useImperativeHandle(resetRef, () => ({
       reset: () => ref.current?.resetErrorBoundary(),
     }));
