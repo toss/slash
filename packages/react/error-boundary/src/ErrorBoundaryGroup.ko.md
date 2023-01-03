@@ -21,7 +21,7 @@ const NestedErrorBoundary = () => {
 };
 
 const ErrorBoundaryGroupReset = ({ trigger: Trigger }) => {
-  const { reset } = useErrorBoundaryGroup(); // ErrorBoundaryGroup의 children으로 있는 ErrorBoundary들이 공유하는 resetKey를 새로 발급해 모두 reset 하고 싶다면 useErrorBoundaryGroup hook을 활용하면 됩니다.
+  const { reset } = useErrorBoundaryGroup(); // ErrorBoundaryGroup의 children으로 있는 ErrorBoundary들이 내부적으로 공유하는 resetKey를 새로 발급해 모두 reset 하고 싶다면 useErrorBoundaryGroup hook을 활용하면 됩니다.
 
   return <Trigger reset={reset} />;
 };
