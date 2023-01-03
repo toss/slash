@@ -40,7 +40,7 @@ describe('ErrorBoundary', () => {
 
     act(() => {
       isError = false;
-      ref.current?.reset?.();
+      ref.current?.reset();
     });
 
     expect(screen.getByText(TEXT_NO_ERROR)).toBeInTheDocument();

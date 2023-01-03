@@ -108,7 +108,7 @@ class BaseErrorBoundary extends Component<PropsWithRef<PropsWithChildren<Props>>
   }
 }
 
-const ErrorBoundary = forwardRef<{ reset?(): void }, ComponentPropsWithoutRef<typeof BaseErrorBoundary>>(
+const ErrorBoundary = forwardRef<{ reset(): void }, ComponentPropsWithoutRef<typeof BaseErrorBoundary>>(
   (props, resetRef) => {
     const group = useContext(ErrorBoundaryGroupContext);
     const resetKeys = group.resetKey ? [group.resetKey, ...(props.resetKeys || [])] : props.resetKeys;
