@@ -16,7 +16,7 @@ interface Props {
 
 export class ClickArea extends PureComponent<Props> {
   public render() {
-    const { className, children, enabled = true, ...rest } = this.props;
+    const { className, children, enabled = true, onClick, ...rest } = this.props;
 
     return (
       <Style css={css}>
@@ -25,6 +25,7 @@ export class ClickArea extends PureComponent<Props> {
           className={classnames(className, CLASSNAMES.clickArea, { [CLASSNAMES.enabled]: enabled })}
           {...rest}
           onTouchStart={this.dummyhandleTouchStart}
+          onClick={enabled ? onClick : undefined}
         >
           {children}
         </a>

@@ -18,4 +18,30 @@ describe('ClickArea', () => {
 
     expect(result.getAllByRole('button')[0]).not.toHaveClass('tossteam-react__click-area__enabled');
   });
+
+  it('enabled 가 true일 때 onClick 이벤트가 발생한다', () => {
+    const onClick = jest.fn();
+    const result = render(
+      <ClickArea enabled={true} onClick={onClick}>
+        click
+      </ClickArea>
+    );
+
+    result.getAllByRole('button')[0].click();
+
+    expect(onClick).toHaveBeenCalled();
+  });
+
+  it('enabled 가 false일 때 onClick 이벤트가 발생하지 않는다', () => {
+    const onClick = jest.fn();
+    const result = render(
+      <ClickArea enabled={false} onClick={onClick}>
+        click
+      </ClickArea>
+    );
+
+    result.getAllByRole('button')[0].click();
+
+    expect(onClick).not.toHaveBeenCalled();
+  });
 });

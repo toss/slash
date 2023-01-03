@@ -9802,7 +9802,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@tossteam/jest", "virtual:62cb29918b2e63dff97923d985a18238631a18b918521fd9ac48de2be213715676e8b999d7ab4431ea536d1917af1465d5695ceae059c69bf4c14df5968dd6a1#npm:17.187.2"],\
             ["@types/babel__preset-env", "npm:7.9.2"],\
             ["@types/jest", "npm:29.1.2"],\
-            ["@types/lodash", "npm:4.14.186"],\
+            ["@types/lodash.debounce", "npm:4.0.7"],\
+            ["@types/lodash.throttle", "npm:4.1.7"],\
             ["@types/react", "npm:18.0.21"],\
             ["@types/testing-library__jest-dom", "npm:5.14.5"],\
             ["@types/testing-library__react-hooks", "npm:3.4.1"],\
@@ -9814,7 +9815,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["jest", "virtual:01ae7c33d4655a48cbb29902912466a761e01d57e32af25620c31e36065eb1601cc4f6394afcb6b2f9c9f1b941b9fbeecba9aa1bca8ca304ae87cee07a6864e9#npm:29.1.2"],\
             ["jest-environment-jsdom", "npm:29.1.2"],\
             ["jsdom", "virtual:62cb29918b2e63dff97923d985a18238631a18b918521fd9ac48de2be213715676e8b999d7ab4431ea536d1917af1465d5695ceae059c69bf4c14df5968dd6a1#npm:15.2.1"],\
-            ["lodash", "npm:4.17.21"],\
+            ["lodash.debounce", "npm:4.0.8"],\
+            ["lodash.throttle", "npm:4.1.1"],\
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:62cb29918b2e63dff97923d985a18238631a18b918521fd9ac48de2be213715676e8b999d7ab4431ea536d1917af1465d5695ceae059c69bf4c14df5968dd6a1#npm:18.2.0"],\
             ["react-test-renderer", "virtual:62cb29918b2e63dff97923d985a18238631a18b918521fd9ac48de2be213715676e8b999d7ab4431ea536d1917af1465d5695ceae059c69bf4c14df5968dd6a1#npm:18.2.0"],\
@@ -9852,7 +9854,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@tossteam/jest", "virtual:62cb29918b2e63dff97923d985a18238631a18b918521fd9ac48de2be213715676e8b999d7ab4431ea536d1917af1465d5695ceae059c69bf4c14df5968dd6a1#npm:17.187.2"],\
             ["@types/babel__preset-env", "npm:7.9.2"],\
             ["@types/jest", "npm:29.1.2"],\
-            ["@types/lodash", "npm:4.14.186"],\
+            ["@types/lodash.debounce", "npm:4.0.7"],\
+            ["@types/lodash.throttle", "npm:4.1.7"],\
             ["@types/react", "npm:18.0.21"],\
             ["@types/testing-library__jest-dom", "npm:5.14.5"],\
             ["@types/testing-library__react-hooks", "npm:3.4.1"],\
@@ -9864,7 +9867,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["jest", "virtual:01ae7c33d4655a48cbb29902912466a761e01d57e32af25620c31e36065eb1601cc4f6394afcb6b2f9c9f1b941b9fbeecba9aa1bca8ca304ae87cee07a6864e9#npm:29.1.2"],\
             ["jest-environment-jsdom", "npm:29.1.2"],\
             ["jsdom", "virtual:62cb29918b2e63dff97923d985a18238631a18b918521fd9ac48de2be213715676e8b999d7ab4431ea536d1917af1465d5695ceae059c69bf4c14df5968dd6a1#npm:15.2.1"],\
-            ["lodash", "npm:4.17.21"],\
+            ["lodash.debounce", "npm:4.0.8"],\
+            ["lodash.throttle", "npm:4.1.1"],\
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:62cb29918b2e63dff97923d985a18238631a18b918521fd9ac48de2be213715676e8b999d7ab4431ea536d1917af1465d5695ceae059c69bf4c14df5968dd6a1#npm:18.2.0"],\
             ["react-test-renderer", "virtual:62cb29918b2e63dff97923d985a18238631a18b918521fd9ac48de2be213715676e8b999d7ab4431ea536d1917af1465d5695ceae059c69bf4c14df5968dd6a1#npm:18.2.0"],\
@@ -11181,6 +11185,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/@types-lodash.debounce-npm-4.0.7-efe92bf273-e873b2d77f.zip/node_modules/@types/lodash.debounce/",\
           "packageDependencies": [\
             ["@types/lodash.debounce", "npm:4.0.7"],\
+            ["@types/lodash", "npm:4.14.186"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@types/lodash.throttle", [\
+        ["npm:4.1.7", {\
+          "packageLocation": "./.yarn/cache/@types-lodash.throttle-npm-4.1.7-6156818330-6e1b383648.zip/node_modules/@types/lodash.throttle/",\
+          "packageDependencies": [\
+            ["@types/lodash.throttle", "npm:4.1.7"],\
             ["@types/lodash", "npm:4.14.186"]\
           ],\
           "linkType": "HARD"\
@@ -22690,6 +22704,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["lodash.templatesettings", "npm:4.2.0"],\
             ["lodash._reinterpolate", "npm:3.0.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["lodash.throttle", [\
+        ["npm:4.1.1", {\
+          "packageLocation": "./.yarn/cache/lodash.throttle-npm-4.1.1-856641af92-129c0a28ce.zip/node_modules/lodash.throttle/",\
+          "packageDependencies": [\
+            ["lodash.throttle", "npm:4.1.1"]\
           ],\
           "linkType": "HARD"\
         }]\
