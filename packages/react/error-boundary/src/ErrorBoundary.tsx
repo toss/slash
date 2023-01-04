@@ -2,7 +2,7 @@
 import { isDifferentArray } from '@toss/utils';
 import {
   Component,
-  ComponentProps,
+  ComponentPropsWithoutRef,
   ErrorInfo,
   forwardRef,
   PropsWithChildren,
@@ -108,16 +108,18 @@ class BaseErrorBoundary extends Component<PropsWithRef<PropsWithChildren<Props>>
   }
 }
 
-const ErrorBoundary = forwardRef<{ reset?(): void }, ComponentProps<typeof BaseErrorBoundary>>((props, resetRef) => {
-  const group = useContext(ErrorBoundaryGroupContext);
-  const resetKeys = group.resetKey ? [group.resetKey, ...(props.resetKeys || [])] : props.resetKeys;
+const ErrorBoundary = forwardRef<{ reset(): void }, ComponentPropsWithoutRef<typeof BaseErrorBoundary>>(
+  (props, resetRef) => {
+    const group = useContext(ErrorBoundaryGroupContext);
+    const resetKeys = group.resetKey ? [group.resetKey, ...(props.resetKeys || [])] : props.resetKeys;
 
-  const ref = useRef<BaseErrorBoundary | null>(null);
-  useImperativeHandle(resetRef, () => ({
-    reset: () => ref.current?.resetErrorBoundary(),
-  }));
+    const ref = useRef<BaseErrorBoundary>(null);
+    useImperativeHandle(resetRef, () => ({
+      reset: () => ref.current?.resetErrorBoundary(),
+    }));
 
-  return <BaseErrorBoundary {...props} resetKeys={resetKeys} />;
-});
+    return <BaseErrorBoundary {...props} resetKeys={resetKeys} ref={ref} />;
+  }
+);
 
 export default ErrorBoundary;
