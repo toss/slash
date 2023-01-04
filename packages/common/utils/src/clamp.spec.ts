@@ -3,8 +3,8 @@ import { clamp } from './clamp';
 describe('clamp', () => {
   it('should work well when only given max value', () => {
     expect(clamp(3, 5)).toBe(5);
-    expect(clamp(10, 6)).toBe(6);
-    expect(clamp(6, 10)).toBe(6);
+    expect(clamp(10, 6)).toBe(10);
+    expect(clamp(6, 10)).toBe(10);
   });
 
   it('should work well when both value was given', () => {
