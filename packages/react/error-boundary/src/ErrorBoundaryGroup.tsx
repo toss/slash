@@ -16,11 +16,34 @@ if (process.env.NODE_ENV !== 'production') {
   ErrorBoundaryGroupContext.displayName = 'ErrorBoundaryGroupContext';
 }
 
+/**
+ * @description ErrorBoundaryGroup is Component to manage multiple ErrorBoundaries
+ * @example
+ * ```jsx
+ * <ErrorBoundaryGroup>
+ *   <ErrorBoundary />
+ *   <ErrorBoundary />
+ * </ErrorBoundaryGroup>
+ *
+ * const ErrorBoundaryGroupReset = ({ trigger: Trigger }) => {
+ *   const { reset } = useErrorBoundaryGroup();
+ *
+ *   return <Trigger reset={reset} />;
+ * };
+ * ```
+ */
 export const ErrorBoundaryGroup = ({
   blockOutside = false,
   children,
 }: {
+  /**
+   * @description If you use blockOutside as true, ErrorBoundaryGroup will protect multiple ErrorBoundaries as its children from external ErrorBoundaryGroup's resetKey
+   * @default false
+   */
   blockOutside?: boolean;
+  /**
+   * @description Use multiple ErrorBoundaries inside of children
+   */
   children?: ReactNode;
 }) => {
   const blockOutsideRef = useRef(blockOutside);
