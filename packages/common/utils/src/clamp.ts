@@ -1,7 +1,7 @@
 /** @tossdocs-ignore */
 export function clamp(value: number, bound1: number, bound2?: number) {
   if (bound2 == null) {
-    return Math.max(value, bound1);
+    return Math.min(value, bound1);
   }
 
   if (bound2 < bound1) {
