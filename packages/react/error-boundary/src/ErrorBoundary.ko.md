@@ -1,7 +1,3 @@
----
-title: ErrorBoundary
----
-
 # ErrorBoundary
 
 선언적으로 에러를 관리하기 위해서 사용하는 컴포넌트입니다.
