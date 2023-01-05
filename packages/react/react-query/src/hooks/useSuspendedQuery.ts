@@ -12,7 +12,7 @@ export type SuspendedUseQueryResultOnSuccess<TData> = BaseSuspendedUseQueryResul
   isSuccess: true;
   isIdle: false;
 };
-export type SuspendedUseQueryResultOnIdle<TData> = BaseSuspendedUseQueryResult<TData> & {
+export type SuspendedUseQueryResultOnIdle = BaseSuspendedUseQueryResult<undefined> & {
   status: 'idle';
   isSuccess: false;
   isIdle: true;
@@ -58,7 +58,7 @@ export function useSuspendedQuery<
   options: Omit<SuspendedUseQueryOptions<TQueryFnData, TError, TData, TQueryKey>, 'enabled'> & {
     enabled: false;
   }
-): SuspendedUseQueryResultOnIdle<undefined>;
+): SuspendedUseQueryResultOnIdle;
 export function useSuspendedQuery<
   TQueryFnData = unknown,
   TError = unknown,
@@ -68,7 +68,7 @@ export function useSuspendedQuery<
   queryKey: TQueryKey,
   queryFn: QueryFunction<TQueryFnData, TQueryKey>,
   options: SuspendedUseQueryOptions<TQueryFnData, TError, TData, TQueryKey>
-): SuspendedUseQueryResultOnSuccess<TData> | SuspendedUseQueryResultOnIdle<undefined>;
+): SuspendedUseQueryResultOnSuccess<TData> | SuspendedUseQueryResultOnIdle;
 export function useSuspendedQuery<
   TQueryFnData = unknown,
   TError = unknown,
