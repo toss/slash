@@ -9,7 +9,7 @@ title: clamp
 - 주의: `clamp` 함수에 주어진 최솟값이 최댓값보다 크면 에러를 발생시킵니다.
 
 ```typescript
-function clamp(value: number, min: number): number;
+function clamp(value: number, max: number): number;
 function clamp(value: number, min: number, max: number): number;
 ```
 
@@ -18,6 +18,6 @@ function clamp(value: number, min: number, max: number): number;
 ```typescript
 clamp(3, 1); // 3
 clamp(3, 1, 5); // 3
-clamp(3, 5); // 5
+clamp(3, 5); // 3
 clamp(7, 3, 5); // 5
 ```
