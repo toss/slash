@@ -2,7 +2,7 @@
 import { QueryFunction, QueryKey, useQuery, UseQueryOptions, UseQueryResult } from 'react-query';
 
 export interface BaseSuspendedUseQueryResult<TData>
-  extends Omit<UseQueryResult<TData, never>, 'data' | 'status' | 'error' | 'isLoading' | 'isError' | 'isFetching'> {
+  extends Omit<UseQueryResult, 'error' | 'isLoading' | 'isError' | 'isFetching'> {
   data: TData;
   status: 'success' | 'idle';
 }
