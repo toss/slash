@@ -53,7 +53,7 @@ type ScrollConfig = { speed: number } | { duration: number };
  * ```
  *
  * @example
- * smoothScrollTo(window, { top: 2000 }, { speed: 1000 });
+ * smoothScrollTo(window, { top: 2000 }, { speed: 1000 })
  */
 export async function smoothScrollTo(
   element: Element | Window,
