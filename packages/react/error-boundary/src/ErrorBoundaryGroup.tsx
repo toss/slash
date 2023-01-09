@@ -21,14 +21,15 @@ if (process.env.NODE_ENV !== 'production') {
  * @example
  * ```jsx
  * <ErrorBoundaryGroup>
+ *   <ErrorBoundaryGroupReset trigger={( group ) => <button onClick={group.reset} />} />
  *   <ErrorBoundary />
  *   <ErrorBoundary />
  * </ErrorBoundaryGroup>
  *
  * const ErrorBoundaryGroupReset = ({ trigger: Trigger }) => {
- *   const { reset } = useErrorBoundaryGroup();
+ *   const group = useErrorBoundaryGroup();
  *
- *   return <Trigger reset={reset} />;
+ *   return <Trigger {...group} />;
  * };
  * ```
  */

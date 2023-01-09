@@ -16,8 +16,7 @@ const safeAreaBottom = '--toss-safe-area-bottom';
  * ```
  *
  * @example
- * console.log(SafeArea.Top);
- * // => 'var(--toss-safe-area-top, env(safe-area-inset-top, 0px))'
+ * console.log(SafeArea.Top) // 'var(--toss-safe-area-top, env(safe-area-inset-top, 0px))'
  */
 export const SafeArea = {
   Top: `var(${safeAreaTop}, env(safe-area-inset-top, 0px))`,
