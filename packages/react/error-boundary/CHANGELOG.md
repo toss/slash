@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.3.0](https://github.com/toss/slash/compare/@toss/error-boundary@1.2.0...@toss/error-boundary@1.3.0) (2023-01-09)
+
+
+### Bug Fixes
+
+* **error-boundary:** Make ref work ([#180](https://github.com/toss/slash/issues/180)) ([c97e310](https://github.com/toss/slash/commit/c97e310e55f1a5db83305bc5838031864d087467))
+* remove unnecessary files of all packages ([#165](https://github.com/toss/slash/issues/165)) ([d883a0b](https://github.com/toss/slash/commit/d883a0b2aebdbc2ca39c67902cec754c63921dfe))
+
+
+### Features
+
+* **error-boundary:** Add option to pass props in `withErrorBoundaryGroup` ([#182](https://github.com/toss/slash/issues/182)) ([fae2988](https://github.com/toss/slash/commit/fae2988190eeffef92babb1802636b3550f087d4))
+
+
+
+
+
 # [1.2.0](https://github.com/toss/slash/compare/@toss/error-boundary@1.1.3...@toss/error-boundary@1.2.0) (2022-12-06)
 
 

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.5](https://github.com/toss/slash/compare/@toss/validators@1.1.4...@toss/validators@1.1.5) (2023-01-09)
+
+
+### Bug Fixes
+
+* remove unnecessary files of all packages ([#165](https://github.com/toss/slash/issues/165)) ([d883a0b](https://github.com/toss/slash/commit/d883a0b2aebdbc2ca39c67902cec754c63921dfe))
+
+
+
+
+
 ## [1.1.4](https://github.com/toss/slash/compare/@toss/validators@1.1.3...@toss/validators@1.1.4) (2022-12-06)
 
 **Note:** Version bump only for package @toss/validators
