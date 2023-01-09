@@ -10,16 +10,54 @@ import { importLottie } from './importLottie';
 
 interface CommonProps {
   className?: string;
+  /**
+   * @description To change assets dynamically within the lottie
+   */
   assets?: Asset[];
+  /**
+   * @description Whether the animation is played repeatedly
+   * @default false
+   */
   loop?: LoopType;
+  /**
+   * @description The delay between the repetition of the animation
+   * @default 0
+   */
   interval?: number;
+  /**
+   * @description Animation playback delay (ms)
+   * @default 0
+   */
   delay?: number;
+  /**
+   * @description Animation playback speed
+   * @default 1
+   */
   speed?: number;
+  /**
+   * @description To use autoPlay
+   * @default true
+   */
   autoPlay?: boolean;
+  /**
+   * @description width of lottie component
+   */
   width?: number | string;
+  /**
+   * @description height of lottie component
+   */
   height?: number | string;
+  /**
+   * @description Invoke the `onPlay` function when animation starts.
+   */
   onPlay?: () => void;
+  /**
+   * @description Invoke the `onLoopComplete` function when the repeated lottie ends.
+   */
   onLoopComplete?: () => void;
+  /**
+   * @description Invoke the `onComplete` function when the lottie is complete.
+   */
   onComplete?: () => void;
   alt?: string;
 }
@@ -85,8 +123,8 @@ export const Lottie = forwardRef(function Lottie(
       typeof json === 'string'
         ? [{ json, assets }]
         : typeof src === 'string'
-          ? [{ url: src, assets }]
-          : src!.map(url => ({ url, assets }));
+        ? [{ url: src, assets }]
+        : src!.map(url => ({ url, assets }));
 
     const chain = AnimationChain(animationData, {
       loop,

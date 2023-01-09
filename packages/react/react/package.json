@@ -1,6 +1,6 @@
 {
   "name": "@toss/react",
-  "version": "1.3.4",
+  "version": "1.3.5",
   "sideEffects": false,
   "exports": {
     ".": {
@@ -22,8 +22,8 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.14.8",
-    "@toss/storage": "workspace:^1.1.0",
-    "@toss/utils": "workspace:^1.3.0",
+    "@toss/storage": "workspace:^1.1.1",
+    "@toss/utils": "workspace:^1.3.1",
     "classnames": "^2.3.1",
     "lodash.debounce": "^4.0.8",
     "lodash.throttle": "^4.1.1"

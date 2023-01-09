@@ -23,14 +23,14 @@ type RenderFallbackType = <ErrorType extends Error>(props: RenderFallbackProps<E
 type IgnoreErrorType = <ErrorType extends Error = Error>(error: ErrorType) => boolean;
 
 type Props<ErrorType extends Error = Error> = {
-  /*
+  /**
    * @description 발생할 수 있는 error에 대한 기준값으로 이 값이 변경되면 error를 초기화합니다.
    */
   resetKeys?: unknown[];
   onReset?(...args: unknown[]): void;
   renderFallback: RenderFallbackType;
   onError?(error: ErrorType, info: ErrorInfo): void;
-  /*
+  /**
    * @description 이 ErrorBoundary Context에서 처리하지 않고 throw해줄 error의 조건을 명시할 callback
    */
   ignoreError?: IgnoreErrorType;
