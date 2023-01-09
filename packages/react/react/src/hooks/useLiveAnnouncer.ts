@@ -32,7 +32,7 @@ function removeLiveElement() {
 interface AnnounceOptions {
   message: string;
   politeness?: AriaLivePoliteness;
-  /*
+  /**
    * 몇 milliseconds 이후에 Announcer Element를 제거할지 시간을 설정합니다.
    * 단, Announcer Element가 100ms 이후에 삽입되므로, 대기시간은 100ms 이후에 적용됩니다.
    */

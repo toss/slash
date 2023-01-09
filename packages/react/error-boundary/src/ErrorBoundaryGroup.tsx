@@ -1,5 +1,14 @@
 /** @tossdocs-ignore */
-import { ComponentType, createContext, ReactNode, useContext, useEffect, useMemo, useRef } from 'react';
+import {
+  ComponentPropsWithoutRef,
+  ComponentType,
+  createContext,
+  ReactNode,
+  useContext,
+  useEffect,
+  useMemo,
+  useRef,
+} from 'react';
 import { useIsMounted, useKey } from './hooks';
 
 export const ErrorBoundaryGroupContext = createContext({ resetKey: {}, reset: () => {} });
@@ -12,14 +21,15 @@ if (process.env.NODE_ENV !== 'production') {
  * @example
  * ```jsx
  * <ErrorBoundaryGroup>
+ *   <ErrorBoundaryGroupReset trigger={( group ) => <button onClick={group.reset} />} />
  *   <ErrorBoundary />
  *   <ErrorBoundary />
  * </ErrorBoundaryGroup>
  *
  * const ErrorBoundaryGroupReset = ({ trigger: Trigger }) => {
- *   const { reset } = useErrorBoundaryGroup();
+ *   const group = useErrorBoundaryGroup();
  *
- *   return <Trigger reset={reset} />;
+ *   return <Trigger {...group} />;
  * };
  * ```
  */
@@ -60,10 +70,13 @@ export const useErrorBoundaryGroup = () => {
 };
 
 export const withErrorBoundaryGroup =
-  <P extends Record<string, unknown> = Record<string, never>>(Component: ComponentType<P>) =>
+  <P extends Record<string, unknown> = Record<string, never>>(
+    Component: ComponentType<P>,
+    errorBoundaryGroupProps?: Omit<ComponentPropsWithoutRef<typeof ErrorBoundaryGroup>, 'children'>
+  ) =>
   (props: P) =>
     (
-      <ErrorBoundaryGroup>
+      <ErrorBoundaryGroup {...errorBoundaryGroupProps}>
         <Component {...props} />
       </ErrorBoundaryGroup>
     );

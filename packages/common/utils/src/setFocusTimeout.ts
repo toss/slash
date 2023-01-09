@@ -17,8 +17,8 @@
  *
  * @example
  * setFocusTimeout(() => {
- *   input$.focus();
- * }, 3000);
+ *   input$.focus()
+ * }, 3000)
  */
 export async function setFocusTimeout(executeFocus: () => void, delay: number) {
   return new Promise<boolean>(resolve => {

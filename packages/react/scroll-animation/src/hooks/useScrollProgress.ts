@@ -23,7 +23,7 @@ interface Options {
    * - onCenter: 화면 중앙에 ref 요소의 상단이 등장했을 때 (triggerHook = 0.5)
    * - onLeave: 화면에서 벗어나기 시작할 때 (triggerHook = 0)
    *
-   * @default onCenter
+   * @default 'onCenter'
    */
   triggerHook?: TriggerHook;
 

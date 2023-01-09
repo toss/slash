@@ -1,6 +1,6 @@
 {
   "name": "@toss/use-funnel",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "sideEffects": false,
   "exports": {
     ".": {
@@ -21,11 +21,11 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@toss/assert": "workspace:^1.1.4",
-    "@toss/react": "workspace:^1.3.4",
-    "@toss/storage": "workspace:^1.1.0",
-    "@toss/use-query-param": "workspace:^1.1.3",
-    "@toss/utils": "workspace:^1.3.0",
+    "@toss/assert": "workspace:^1.1.5",
+    "@toss/react": "workspace:^1.3.5",
+    "@toss/storage": "workspace:^1.1.1",
+    "@toss/use-query-param": "workspace:^1.1.4",
+    "@toss/utils": "workspace:^1.3.1",
     "fast-deep-equal": "^3.1.3"
   },
   "devDependencies": {

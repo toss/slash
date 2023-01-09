@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.1](https://github.com/toss/slash/compare/@toss/utility-types@1.1.0...@toss/utility-types@1.1.1) (2023-01-09)
+
+
+### Bug Fixes
+
+* remove unnecessary files of all packages ([#165](https://github.com/toss/slash/issues/165)) ([d883a0b](https://github.com/toss/slash/commit/d883a0b2aebdbc2ca39c67902cec754c63921dfe))
+
+
+
+
+
 # [1.1.0](https://github.com/toss/slash/compare/@toss/utility-types@1.0.5...@toss/utility-types@1.1.0) (2022-12-06)
 
 

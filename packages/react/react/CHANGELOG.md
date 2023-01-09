@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.5](https://github.com/toss/slash/compare/@toss/react@1.3.4...@toss/react@1.3.5) (2023-01-09)
+
+
+### Bug Fixes
+
+* **react:** Don’t fire `onClick` if`ClickArea` is disabled ([#174](https://github.com/toss/slash/issues/174)) ([64cb43f](https://github.com/toss/slash/commit/64cb43f288b8d1321c235d7852e15db1b67ee69d))
+* **react:** fix @toss/react to support esm ([#179](https://github.com/toss/slash/issues/179)) ([3fe4d0a](https://github.com/toss/slash/commit/3fe4d0a9bf19c93f7760514e8f8a649f25f49081))
+* remove unnecessary files of all packages ([#165](https://github.com/toss/slash/issues/165)) ([d883a0b](https://github.com/toss/slash/commit/d883a0b2aebdbc2ca39c67902cec754c63921dfe))
+
+
+
+
+
 ## [1.3.4](https://github.com/toss/slash/compare/@toss/react@1.3.3...@toss/react@1.3.4) (2022-12-06)
 
 **Note:** Version bump only for package @toss/react

@@ -13,9 +13,7 @@
  * ```
  *
  * @example
- * const objects = [{ 'x': 1, 'y': 2 }, { 'x': 2, 'y': 1 }, { 'x': 1, 'y': 2 }];
- * uniqWith(objects, isEqual);
- * // => [{ 'x': 1, 'y': 2 }, { 'x': 2, 'y': 1 }]
+ * uniqWith([{ 'x': 1, 'y': 2 }, { 'x': 2, 'y': 1 }, { 'x': 1, 'y': 2 }], isEqual) // [{ 'x': 1, 'y': 2 }, { 'x': 2, 'y': 1 }]
  */
 export function uniqWith<T>(arr: T[], comparator: (x: T, y: T) => boolean) {
   const result: T[] = [];

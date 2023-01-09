@@ -7,9 +7,9 @@
  * ```
  *
  * @example
- * sum(1, 2, 3) === 6
- * sum(...[1, 2, 3]) === 6
- * sum([1, 2, 3]) === 6
+ * sum(1, 2, 3) // 6
+ * sum(...[1, 2, 3]) // 6
+ * sum([1, 2, 3]) // 6
  */
 export function sum(...nums: number[] | number[][]) {
   return nums.flat().reduce((acc, curr) => {

@@ -178,12 +178,8 @@ function createFunnelStateId(id: string): FunnelStateId {
   return `use-funnel-state__${id}`;
 }
 
-/*
+/**
  * NOTE: 이후 Secure Storage 등 다른 스토리지를 사용하도록 스펙이 변경될 수 있으므로, Asynchronous 함수로 만듭니다.
- *
- * @param funnelStateId
- * @param storage
- * @returns
  */
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 function createFunnelStorage<T>(funnelStateId: FunnelStateId, storageType = 'sessionStorage'): FunnelStorage<T> {
