@@ -21,12 +21,7 @@ interface SizeOptions {
  * ```
  *
  * @example
- * size({ width: '50%', height: '100px' });
- * // =>
- * // css`
- * //   width: 50%;
- * //   height: 100px;
- * // `;
+ * size({ width: '50%', height: '100px' }); // css`width: 50%; height: 100px;`;
  */
 export function size({ width, height }: SizeOptions) {
   return css({ width, height });

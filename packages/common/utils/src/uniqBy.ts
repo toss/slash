@@ -12,8 +12,7 @@
  * )
  * ```
  * @example
- * uniqBy([{ x: 1 }, { x: 2 }, { x: 1 }], item => item.x);
- * // => [{ x: 1 }, { x: 2 }]
+ * uniqBy([{ x: 1 }, { x: 2 }, { x: 1 }], item => item.x) // [{ x: 1 }, { x: 2 }]
  */
 export function uniqBy<T>(arr: T[], hasher: (value: T) => unknown): T[] {
   const result: T[] = [];
