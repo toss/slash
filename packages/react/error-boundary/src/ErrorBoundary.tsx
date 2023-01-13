@@ -16,7 +16,7 @@ import { ErrorBoundaryGroupContext } from './ErrorBoundaryGroup';
 
 type RenderFallbackProps<ErrorType extends Error = Error> = {
   error: ErrorType;
-  reset: (...args: unknown[]) => void;
+  reset: () => void;
 };
 
 type RenderFallbackType = <ErrorType extends Error>(props: RenderFallbackProps<ErrorType>) => ReactNode;
@@ -27,7 +27,7 @@ type Props<ErrorType extends Error = Error> = {
    * @description 발생할 수 있는 error에 대한 기준값으로 이 값이 변경되면 error를 초기화합니다.
    */
   resetKeys?: unknown[];
-  onReset?(...args: unknown[]): void;
+  onReset?(): void;
   renderFallback: RenderFallbackType;
   onError?(error: ErrorType, info: ErrorInfo): void;
   /**
@@ -69,8 +69,8 @@ class BaseErrorBoundary extends Component<PropsWithRef<PropsWithChildren<Props>>
     this.setState(initialState);
   }
 
-  resetErrorBoundary = (...args: unknown[]) => {
-    this.props.onReset?.(...args);
+  resetErrorBoundary = () => {
+    this.props.onReset?.();
     this.resetState();
   };
 
