@@ -64,6 +64,11 @@
         "types": "./dist/index.nextjs.d.ts",
         "browser": "./esm/index.browser.mjs",
         "import": "./esm/index.nextjs.mjs"
+      },
+      "./testing": {
+        "require": "./dist/testing/index.js",
+        "types": "./dist/testing/index.d.ts",
+        "import": "./esm/testing/index.mjs"
       }
     },
     "main": "./dist/index.node.js",
