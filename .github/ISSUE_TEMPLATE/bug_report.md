@@ -1,31 +1,37 @@
 ---
 name: Bug report
-about: 'Repot a bug '
-title: "[BUG]:"
+about: 'Report a bug '
+title: '[BUG]:'
 labels: ''
 assignees: ''
-
 ---
 
-### **Package Scope** 
+### **Package Scope**
+
 <!-- Is this issue related to a specific package? -->
-Package name: 
+
+Package name:
 
 ### **Describe the bug**
+
 <!-- A clear and concise description of what the bug is. -->
 
 ### **Expected behavior**
+
 <!-- A clear and concise description of what you expected to happen. -->
 
-### **To Reproduce** 
-<!-- 
-  Minimal reproducible code 
+### **To Reproduce**
+
+<!--
+  Minimal reproducible code
   or describe steps to reproduce.
   Optional, but recommended.
 -->
 
-### **Possible Solution** 
+### **Possible Solution**
+
 <!-- If you have suggestions on a fix for the bug  -->
 
-### **Additional context** 
+### **Additional context**
+
 <!-- Add any other context about the problem here. -->
