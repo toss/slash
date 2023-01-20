@@ -19,7 +19,7 @@ byteToHex(
 
 ```typescript
 import BigNumber from 'bn.js';
-import { byteToHex, pcksEncrypt as encrypt } from `@toss/crypto`;
+import { byteToHex, pkcsEncrypt as encrypt } from '@toss/crypto';
 const encrypted = encrypt(
   new BigNumber(n, 'hex'),
   new BigNumber(e, 16),
