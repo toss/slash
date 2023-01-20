@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.1](https://github.com/toss/slash/compare/@toss/error-boundary@1.3.0...@toss/error-boundary@1.3.1) (2023-01-20)
+
+
+### Bug Fixes
+
+* **error-boundary:** connect RenderFallbackProps.reset's args to onReset correctly ([#178](https://github.com/toss/slash/issues/178)) ([80a046a](https://github.com/toss/slash/commit/80a046aa93954dce0f0868823127185e810623b9))
+
+
+
+
+
 # [1.3.0](https://github.com/toss/slash/compare/@toss/error-boundary@1.2.0...@toss/error-boundary@1.3.0) (2023-01-09)
 
 

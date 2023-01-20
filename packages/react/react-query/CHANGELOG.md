@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.5](https://github.com/toss/slash/compare/@toss/react-query@1.1.4...@toss/react-query@1.1.5) (2023-01-20)
+
+
+### Bug Fixes
+
+* **react-query:** remove chance to use generic of type SuspendedUseQueryResultOnIdle ([#186](https://github.com/toss/slash/issues/186)) ([a12487d](https://github.com/toss/slash/commit/a12487d80fe5161b52b1793669f7a300d81ff281))
+
+
+
+
+
 ## [1.1.4](https://github.com/toss/slash/compare/@toss/react-query@1.1.3...@toss/react-query@1.1.4) (2023-01-09)
 
 
