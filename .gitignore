@@ -12,6 +12,7 @@
 
 dist
 esm
+built
 
 *.tsbuildinfo
 *.tgz

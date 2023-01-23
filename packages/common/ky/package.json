@@ -5,23 +5,17 @@
   "exports": {
     ".": {
       "require": {
-        "types": "./built/index.server.d.ts",
-        "default": "./built/index.server.js"
+        "default": "./src/index.server.ts"
       },
       "import": {
-        "types": "./built/index.server.d.mts",
-        "browser": "./built/index.browser.mjs",
-        "default": "./built/index.server.mjs"
+        "browser": "./src/index.browser.ts",
+        "default": "./src/index.server.ts"
       }
     },
     "./package.json": "./package.json"
   },
-  "publishConfig": {
-    "access": "public"
-  },
-  "main": "./built/index.server.js",
-  "types": "./built/index.server.d.ts",
-  "react-native": "./built/index.browser.mjs",
+  "main": "./src/index.server.ts",
+  "react-native": "./src/index.browser.ts",
   "scripts": {
     "build": "bash ./scripts/build.sh",
     "prepack": "echo [Already built: yarn build로 수동 빌드할 수 있습니다.]",
@@ -46,6 +40,24 @@
     "tsup": "^6.2.0",
     "typescript": "4.8.3",
     "web-streams-polyfill": "^3.2.1"
+  },
+  "publishConfig": {
+    "access": "public",
+    "exports": {
+      ".": {
+        "require": {
+          "types": "./built/index.server.d.ts",
+          "default": "./built/index.server.js"
+        },
+        "import": {
+          "types": "./built/index.server.d.mts",
+          "browser": "./built/index.browser.mjs",
+          "default": "./built/index.server.mjs"
+        }
+      },
+      "./package.json": "./package.json"
+    },
+    "types": "./built/index.server.d.ts"
   },
   "gitHead": "0e9ecc319f9d7df27372fb6e8e0a4281f420619d"
 }
