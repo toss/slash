@@ -45,9 +45,6 @@ const initialState: State = {
 };
 class BaseErrorBoundary extends Component<PropsWithRef<PropsWithChildren<Props>>, State> {
   state = initialState;
-  /**
-   * @see https://github.com/bvaughn/react-error-boundary/blob/master/src/index.tsx#L97
-   */
   updatedWithError = false;
 
   static getDerivedStateFromError(error: Error) {
