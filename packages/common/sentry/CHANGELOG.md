@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.9](https://github.com/toss/slash/compare/@toss/sentry@1.0.8...@toss/sentry@1.0.9) (2023-01-20)
+
+
+### Bug Fixes
+
+* **sentry:** Expose `./testing` export ([#187](https://github.com/toss/slash/issues/187)) ([f4801c4](https://github.com/toss/slash/commit/f4801c4815c6304393ecc749fcae9c4175856d93))
+
+
+
+
+
 ## [1.0.8](https://github.com/toss/slash/compare/@toss/sentry@1.0.7...@toss/sentry@1.0.8) (2023-01-09)
 
 
