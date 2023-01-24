@@ -13,7 +13,7 @@ export default function withAsyncBoundary<Props extends Record<string, unknown> 
   );
 
   if (process.env.NODE_ENV !== 'production') {
-    const name = Component.displayName || Component.name || 'Unknown';
+    const name = Component.displayName || Component.name || 'Component';
     Wrapped.displayName = `withAsyncBoundary(${name})`;
   }
 
