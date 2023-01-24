@@ -1,20 +1,20 @@
 /** @tossdocs-ignore */
 import { ComponentProps, ComponentType } from 'react';
-import AsyncBoundary from './AsyncBoundary';
+import ErrorBoundary from './ErrorBoundary';
 
-export default function withAsyncBoundary<Props extends Record<string, unknown> = Record<string, never>>(
+export default function withErrorBoundary<Props extends Record<string, unknown> = Record<string, never>>(
   Component: ComponentType<Props>,
-  asyncBoundaryProps: ComponentProps<typeof AsyncBoundary>
+  errorBoundaryProps: ComponentProps<typeof ErrorBoundary>
 ) {
   const Wrapped = (props: Props) => (
-    <AsyncBoundary {...asyncBoundaryProps}>
+    <ErrorBoundary {...errorBoundaryProps}>
       <Component {...props} />
-    </AsyncBoundary>
+    </ErrorBoundary>
   );
 
   if (process.env.NODE_ENV !== 'production') {
     const name = Component.displayName || Component.name || 'Component';
-    Wrapped.displayName = `withAsyncBoundary(${name})`;
+    Wrapped.displayName = `withErrorBoundary(${name})`;
   }
 
   return Wrapped;
