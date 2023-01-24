@@ -3,14 +3,19 @@ import { ComponentProps, ComponentType } from 'react';
 import AsyncBoundary from './AsyncBoundary';
 
 export default function withAsyncBoundary<Props extends Record<string, unknown> = Record<string, never>>(
-  WrappedComponent: ComponentType<Props>,
+  Component: ComponentType<Props>,
   asyncBoundaryProps: ComponentProps<typeof AsyncBoundary>
 ) {
-  return (props: Props) => {
-    return (
-      <AsyncBoundary {...asyncBoundaryProps}>
-        <WrappedComponent {...props} />
-      </AsyncBoundary>
-    );
-  };
+  const Wrapped = (props: Props) => (
+    <AsyncBoundary {...asyncBoundaryProps}>
+      <Component {...props} />
+    </AsyncBoundary>
+  );
+
+  if (process.env.NODE_ENV !== 'production') {
+    const name = Component.displayName || Component.name || 'Unknown';
+    Wrapped.displayName = `withAsyncBoundary(${name})`;
+  }
+
+  return Wrapped;
 }
