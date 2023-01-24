@@ -24,7 +24,9 @@ describe('useErrorBoundary', () => {
     });
 
     act(() => {
-      result.current(error);
+      const boundary = result.current;
+
+      boundary.throw(error);
     });
 
     // Then

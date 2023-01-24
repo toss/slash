@@ -1,5 +1,5 @@
 /** @tossdocs-ignore */
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 
 export default function useErrorBoundary<ErrorType extends Error>() {
   const [error, setError] = useState<ErrorType | null>(null);
@@ -8,5 +8,7 @@ export default function useErrorBoundary<ErrorType extends Error>() {
     throw error;
   }
 
-  return setError;
+  const errorBoundary = useMemo(() => ({ throw: setError }), [setError]);
+
+  return errorBoundary;
 }
