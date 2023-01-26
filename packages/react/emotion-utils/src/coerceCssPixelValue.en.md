@@ -4,7 +4,7 @@ title: coerceCssPixelValue
 
 # coerceCssPixelValue
 
-CSS value를 string value로 변경합니다.
+Change CSS value to string value.
 
 ## Examples
 
