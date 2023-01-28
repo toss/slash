@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import ErrorBoundary from './ErrorBoundary';
+import { ErrorBoundary } from './ErrorBoundary';
 import { ErrorBoundaryGroup, useErrorBoundaryGroup } from './ErrorBoundaryGroup';
 
 describe('ErrorBoundaryGroup', () => {

@@ -1,18 +1,11 @@
 /** @tossdocs-ignore */
-import {
-  ComponentPropsWithoutRef,
-  ComponentType,
-  createContext,
-  ReactNode,
-  useContext,
-  useEffect,
-  useMemo,
-  useRef,
-} from 'react';
+import { ComponentType, createContext, ReactNode, useContext, useEffect, useMemo, useRef } from 'react';
 import { useIsMounted, useKey } from './hooks';
+import { ComponentPropsWithoutChildren } from './types';
+import { isDevelopment } from './utils';
 
 export const ErrorBoundaryGroupContext = createContext({ resetKey: {}, reset: () => {} });
-if (process.env.NODE_ENV !== 'production') {
+if (isDevelopment) {
   ErrorBoundaryGroupContext.displayName = 'ErrorBoundaryGroupContext';
 }
 
@@ -69,14 +62,20 @@ export const useErrorBoundaryGroup = () => {
   return { reset };
 };
 
-export const withErrorBoundaryGroup =
-  <P extends Record<string, unknown> = Record<string, never>>(
-    Component: ComponentType<P>,
-    errorBoundaryGroupProps?: Omit<ComponentPropsWithoutRef<typeof ErrorBoundaryGroup>, 'children'>
-  ) =>
-  (props: P) =>
-    (
-      <ErrorBoundaryGroup {...errorBoundaryGroupProps}>
-        <Component {...props} />
-      </ErrorBoundaryGroup>
-    );
+export const withErrorBoundaryGroup = <Props extends Record<string, unknown> = Record<string, never>>(
+  Component: ComponentType<Props>,
+  errorBoundaryGroupProps?: ComponentPropsWithoutChildren<typeof ErrorBoundaryGroup>
+) => {
+  const Wrapped = (props: Props) => (
+    <ErrorBoundaryGroup {...errorBoundaryGroupProps}>
+      <Component {...props} />
+    </ErrorBoundaryGroup>
+  );
+
+  if (isDevelopment) {
+    const name = Component.displayName || Component.name || 'Component';
+    Wrapped.displayName = `withErrorBoundaryGroup(${name})`;
+  }
+
+  return Wrapped;
+};
