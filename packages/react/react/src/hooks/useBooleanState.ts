@@ -5,26 +5,16 @@ import { useCallback, useState } from 'react';
  * boolean 타입으로 useState를 쉽게 사용할 수 있는 hook 입니다.
  *
  * ```ts
- * function useBooleanState(defaultValue = false): readonly [bool, setTrue, setFalse, toggle];
+ * function useBooleanState(defaultValue = false): readonly [bool, boolValue];
  * ```
  *
  * @example
- * const [open, openBottomSheet, closeBottomSheet, toggleBottomSheet] = useBooleanState(false);
+ * const [open, setOpen] = useBooleanState(false);
  */
-export const useBooleanState = (defaultValue = false): readonly [boolean, () => void, () => void, () => void] => {
+export const useBooleanState = (defaultValue = false): readonly [boolean, (state?: boolean) => void] => {
   const [bool, setBool] = useState(defaultValue);
 
-  const setTrue = useCallback(() => {
-    setBool(true);
-  }, []);
+  const boolValue = useCallback((state?: boolean) => setBool(b => (typeof state === 'boolean' ? state : !b)), []);
 
-  const setFalse = useCallback(() => {
-    setBool(false);
-  }, []);
-
-  const toggle = useCallback(() => {
-    setBool(b => !b);
-  }, []);
-
-  return [bool, setTrue, setFalse, toggle] as const;
+  return [bool, boolValue] as const;
 };
