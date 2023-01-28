@@ -6,18 +6,10 @@ describe('`useBooleanState`', () => {
   describe('반환 값 타입 체크', () => {
     const { result } = renderHook(useBooleanState);
 
-    const [bool, setTrue, setFalse] = result.current;
+    const [bool] = result.current;
 
     it('bool의 타입은 boolean이다.', () => {
       expect(typeof bool).toBe('boolean');
-    });
-
-    it('setTrue의 타입은 function이다.', () => {
-      expect(typeof setTrue).toBe('function');
-    });
-
-    it('setFalse의 타입은 function이다.', () => {
-      expect(typeof setFalse).toBe('function');
     });
   });
 
@@ -44,14 +36,12 @@ describe('`useBooleanState`', () => {
     });
   });
 
-  it('`setTrue` 실행 시, `bool`은 `true`가 된다.', () => {
+  it('`setBool(true)` 실행 시, `bool`은 `true`가 된다.', () => {
     {
       const { result } = renderHook(() => useBooleanState(false));
-      const [, setTrue] = result.current;
+      const [, setBool] = result.current;
 
-      act(() => {
-        setTrue();
-      });
+      act(() => setBool(true));
 
       const [bool] = result.current;
 
@@ -59,14 +49,12 @@ describe('`useBooleanState`', () => {
     }
   });
 
-  it('`setFalse` 실행 시, `bool`은 `false`가 된다.', () => {
+  it('`setBool(false)` 실행 시, `bool`은 `false`가 된다.', () => {
     {
       const { result } = renderHook(() => useBooleanState(true));
-      const [, , setFalse] = result.current;
+      const [, setBool] = result.current;
 
-      act(() => {
-        setFalse();
-      });
+      act(() => setBool(false));
 
       const [bool] = result.current;
 
@@ -76,10 +64,10 @@ describe('`useBooleanState`', () => {
 
   it('`toggle` 실행 시, `bool`은 `true` -> `false`, `false` -> `true`가 된다.', () => {
     const { result } = renderHook(() => useBooleanState(true));
-    const [, , , toggle] = result.current;
+    const [, setBool] = result.current;
 
     {
-      act(toggle);
+      act(() => setBool());
 
       const [bool] = result.current;
 
@@ -87,7 +75,7 @@ describe('`useBooleanState`', () => {
     }
 
     {
-      act(toggle);
+      act(() => setBool());
 
       const [bool] = result.current;
 
@@ -95,7 +83,7 @@ describe('`useBooleanState`', () => {
     }
 
     {
-      act(toggle);
+      act(() => setBool());
 
       const [bool] = result.current;
 
