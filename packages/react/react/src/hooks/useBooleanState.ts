@@ -14,7 +14,10 @@ import { useCallback, useState } from 'react';
 export const useBooleanState = (defaultValue = false): readonly [boolean, (state?: boolean) => void] => {
   const [bool, setBool] = useState(defaultValue);
 
-  const boolValue = useCallback((state?: boolean) => setBool(b => (typeof state === 'boolean' ? state : !b)), []);
+  const handleBoolChange = useCallback(
+    (state?: boolean) => setBool(b => (typeof state === 'boolean' ? state : !b)),
+    []
+  );
 
-  return [bool, boolValue] as const;
+  return [bool, handleBoolChange] as const;
 };
