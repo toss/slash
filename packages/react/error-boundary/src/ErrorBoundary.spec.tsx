@@ -48,7 +48,7 @@ describe('ErrorBoundary', () => {
 });
 
 describe('useErrorBoundary', () => {
-  it('반환되는 setError에 Error를 넘겨주면 throw 된다.', async () => {
+  it('if function returned by this hook is called with Error as argument, Error will be thrown', async () => {
     // Given
     const error = new Error('test');
 
