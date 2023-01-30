@@ -1,3 +1,9 @@
+<div align="center">
+  <a href="https://slash.page" title="Slash - A collection of TypeScript/JavaScript packages to build high-quality web services.">
+    <img src="https://raw.githubusercontent.com/toss/slash/main/docs/static/banner.gif" alt="Slash Logo - A collection of TypeScript/JavaScript packages to build high-quality web services." />
+  </a>
+</div>
+
 # [Slash](https://slash.page) libraries &middot; [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/toss/slash/blob/main/LICENSE) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/toss/slash/blob/main/.github/CONTRIBUTING.md)
 
 English | [한국어](./README-ko_kr.md)
