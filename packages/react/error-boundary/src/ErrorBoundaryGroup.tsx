@@ -66,7 +66,7 @@ export const ErrorBoundaryGroup = ({
 export const useErrorBoundaryGroup = () => {
   const { reset } = useContext(ErrorBoundaryGroupContext);
 
-  return { reset };
+  return useMemo(() => ({ reset }), [reset]);
 };
 
 export const withErrorBoundaryGroup =
