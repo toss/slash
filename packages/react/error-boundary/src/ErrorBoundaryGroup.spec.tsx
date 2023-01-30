@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+import { render, renderHook, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { ErrorBoundary } from './ErrorBoundary';
 import { ErrorBoundaryGroup, useErrorBoundaryGroup } from './ErrorBoundaryGroup';
@@ -50,5 +50,19 @@ describe('ErrorBoundaryGroup', () => {
     await user.click(screen.getByRole('button', { name: `Reset` }));
 
     expect(screen.getByText(`It succeeded!`)).toBeInTheDocument();
+  });
+});
+
+describe('useErrorBoundaryGroup', () => {
+  it("useErrorBoundaryGroup's returning object is same with object returned in previous render", () => {
+    const { result, rerender } = renderHook(useErrorBoundaryGroup, {
+      wrapper: ({ children }) => <ErrorBoundaryGroup>{children}</ErrorBoundaryGroup>,
+    });
+
+    const prev = result.current;
+    rerender();
+    const next = result.current;
+
+    expect(prev).toBe(next);
   });
 });
