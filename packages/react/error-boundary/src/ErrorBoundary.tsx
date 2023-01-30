@@ -16,7 +16,6 @@ import {
 } from 'react';
 import { ErrorBoundaryGroupContext } from './ErrorBoundaryGroup';
 import { ComponentPropsWithoutChildren } from './types';
-import { isDevelopment } from './utils';
 
 type RenderFallbackProps<ErrorType extends Error = Error> = {
   error: ErrorType;
@@ -146,7 +145,7 @@ export const withErrorBoundary = <Props extends Record<string, unknown> = Record
     </ErrorBoundary>
   );
 
-  if (isDevelopment) {
+  if (process.env.NODE_ENV !== 'production') {
     const name = Component.displayName || Component.name || 'Component';
     Wrapped.displayName = `withErrorBoundary(${name})`;
   }
