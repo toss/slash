@@ -4,6 +4,8 @@
 `ErrorBoundary` 컴포넌트는 children의 render/useEffect에서 발생한 에러를 잡아
 `renderFallback`으로 주어진 컴포넌트를 렌더링합니다.
 
+## Example
+
 ```jsx
 <ErrorBoundary
   // 에러가 발생하면 그려질 컴포넌트입니다.
@@ -33,5 +35,24 @@
 
 ## References
 
-https://jbee.io/react/error-declarative-handling-1/ 선언적으로 로딩과 에러 상태 처리하기
-https://toss.im/slash-21/sessions/3-1 Suspense와 에러 처리 관련된 Slash 21 발표
+- [jbee.io | 선언적으로 로딩과 에러 상태 처리하기](https://jbee.io/react/error-declarative-handling-1/)
+- [Slash 21 발표 | Suspense와 에러 처리](https://toss.im/slash-21/sessions/3-1)
+
+## useErrorBoundary
+
+리액트의 [`Error Boundary`](https://ko.reactjs.org/docs/error-boundaries.html)는 이벤트 핸들러 등에서 발생한 에러는 인지하지 못합니다.
+
+`useErrorBoundary`를 사용하면 Error Boundary가 인지하지 못하는 에러를 전달해줄 수 있습니다.
+
+```jsx
+const throwError = useErrorBoundary();
+
+<Button
+  onClick={() => {
+    if (someCondition) {
+      // 가장 가까운 ErrorBoundary로 new Error('에러 발생')이 throw됩니다.
+      throwError(new Error('에러 발생'));
+    }
+  }}
+/>;
+```
