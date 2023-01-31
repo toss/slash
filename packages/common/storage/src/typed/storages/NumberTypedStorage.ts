@@ -2,13 +2,13 @@
 import { TypedStorage } from './TypedStorage';
 
 export class NumberTypedStorage extends TypedStorage<number> {
-  public increase(): void {
+  public increase(offset = 1): void {
     const value = this.get() ?? 0;
-    this.set(value + 1);
+    this.set(value + offset);
   }
 
-  public decrease(): void {
+  public decrease(offset = 1): void {
     const value = this.get() ?? 0;
-    this.set(value - 1);
+    this.set(value - offset);
   }
 }
