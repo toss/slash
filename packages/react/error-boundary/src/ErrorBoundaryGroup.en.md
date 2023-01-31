@@ -73,7 +73,7 @@ As in the code above, to manage the resetKey shared by ErrorBoundaries, related 
 
 ErrorBoundaryGroup solves this annoyance declaratively.
 
-## Reference
+## References
 
 - [ErrorBoundaryGroup Pull Request](https://github.com/toss/slash/pull/157)
 - [@suspensive/react's ErrorBoundaryGroup](https://docs.suspensive.org/docs/react/src/ErrorBoundaryGroup.i18n)
