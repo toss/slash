@@ -21,13 +21,18 @@ type CallbackRef<T> = (ref: T | null) => void;
 export function useCombinedRefs<T>(...refs: Array<Ref<T> | CallbackRef<T>>): Ref<T> {
   return useCallback(
     (value: T) => {
-      for (const ref of refs) {
+      refs.forEach(ref => {
+        if (ref == null) {
+          return;
+        }
+
         if (typeof ref === 'function') {
           ref(value);
-        } else if (ref != null) {
-          (ref as MutableRefObject<T>).current = value;
+          return;
         }
-      }
+
+        (ref as MutableRefObject<T>).current = value;
+      });
     },
     [refs]
   );
