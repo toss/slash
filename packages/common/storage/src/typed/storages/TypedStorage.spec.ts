@@ -20,7 +20,7 @@ describe('TypedStorage', () => {
 
   describe('using clear() method', () => {
     it('should clear value of given key', () => {
-      const key = 'set-test-key';
+      const key = 'clear-test-key';
       const typed = new TypedStorage(key, { initialValue: 'some-value' });
       typed.clear();
       expect(typed.get()).toBeNull();
