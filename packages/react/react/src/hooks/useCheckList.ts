@@ -28,6 +28,7 @@ interface Item {
  *   getCheckedList: () => T[];
  *   getCheckedIds: () => (string | number)[];
  * }
+ * ```
  *
  * @example
  * const { list, isChecked, toggle, toggleAll, checkAll, getCheckedIds } = useCheckList(shopList);
