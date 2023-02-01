@@ -1,4 +1,4 @@
-import { MutableRefObject, Ref, RefCallback, useMemo } from 'react';
+import { MutableRefObject, Ref, RefCallback, useCallback } from 'react';
 
 /**
  * @description 여러 개의 ref를 하나로 합치고 싶을 때 사용할 수 있는 hook입니다.
@@ -16,21 +16,15 @@ import { MutableRefObject, Ref, RefCallback, useMemo } from 'react';
  *   return <div ref={ref} />;
  * })
  */
-export function useCombinedRefs<T>(...refs: Array<Ref<T>>): RefCallback<T> | null {
-  return useMemo(() => {
-    if (refs.every(ref => ref == null)) {
-      return null;
-    }
-
-    return (value: T) => {
-      for (const ref of refs) {
+export const useCombinedRefs = <T>(...refs: Array<Ref<T>>): RefCallback<T> =>
+  useCallback(
+    (value: T) =>
+      refs.forEach(ref => {
         if (typeof ref === 'function') {
           ref(value);
-          return;
+        } else if (ref != null) {
+          (ref as MutableRefObject<T>).current = value;
         }
-
-        (ref as MutableRefObject<T>).current = value;
-      }
-    };
-  }, [refs]);
-}
+      }),
+    [refs]
+  );
