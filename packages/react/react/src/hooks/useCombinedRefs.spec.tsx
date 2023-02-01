@@ -1,15 +1,15 @@
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { useCallback, useRef } from 'react';
+import React, { useCallback, useRef } from 'react';
 import { useCombinedRefs } from './useCombinedRefs';
 
 describe('useCombinedRefs', () => {
   it('여러 개의 ref를 하나로 합칠 수 있다.', async () => {
-    const refs: Array<HTMLDivElement | null> = [];
+    const refs: Array<HTMLDivElement | null | undefined> = [];
     const callbackRef = jest.fn();
 
     function TestComponent() {
-      const ref1 = useRef<HTMLDivElement>(null);
+      const ref1 = useRef<HTMLDivElement>();
       const ref2 = useRef<HTMLDivElement>(null);
       const ref3 = useCallback((element: HTMLDivElement | null) => {
         callbackRef(element);
