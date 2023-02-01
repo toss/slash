@@ -1,6 +1,4 @@
-import { MutableRefObject, Ref, useCallback } from 'react';
-
-type CallbackRef<T> = (ref: T | null) => void;
+import { useCallback } from 'react';
 
 /**
  * @description 여러 개의 ref를 하나로 합치고 싶을 때 사용할 수 있는 hook입니다.
@@ -18,7 +16,7 @@ type CallbackRef<T> = (ref: T | null) => void;
  *   return <div ref={ref} />;
  * })
  */
-export function useCombinedRefs<T>(...refs: Array<Ref<T> | CallbackRef<T>>): Ref<T> {
+export function useCombinedRefs<T>(...refs: Array<React.ForwardedRef<T>>) {
   return useCallback(
     (value: T) => {
       refs.forEach(ref => {
@@ -31,7 +29,7 @@ export function useCombinedRefs<T>(...refs: Array<Ref<T> | CallbackRef<T>>): Ref
           return;
         }
 
-        (ref as MutableRefObject<T>).current = value;
+        ref.current = value;
       });
     },
     [refs]
