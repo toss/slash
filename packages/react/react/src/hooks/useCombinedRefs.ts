@@ -16,20 +16,17 @@ import { useCallback } from 'react';
  *   return <div ref={ref} />;
  * })
  */
-export function useCombinedRefs<T>(...refs: Array<React.ForwardedRef<T>>) {
+export function useCombinedRefs<T>(
+  ...refs: Array<React.MutableRefObject<T | null> | ((instance: T | null) => void) | null | undefined>
+) {
   return useCallback(
     (value: T) => {
       refs.forEach(ref => {
-        if (ref == null) {
-          return;
-        }
-
         if (typeof ref === 'function') {
           ref(value);
-          return;
+        } else if (ref) {
+          ref.current = value;
         }
-
-        ref.current = value;
       });
     },
     [refs]
