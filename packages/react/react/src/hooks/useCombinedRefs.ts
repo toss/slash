@@ -20,7 +20,7 @@ export function useCombinedRefs<T>(
   ...refs: Array<React.MutableRefObject<T | null> | ((instance: T | null) => void) | null | undefined>
 ) {
   return useCallback(
-    (value: T) => {
+    (value: T | null) => {
       refs.forEach(ref => {
         if (typeof ref === 'function') {
           ref(value);
