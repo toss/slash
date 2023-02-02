@@ -71,7 +71,7 @@ const NestedErrorBoundary = ({
 
 ErrorBoundaryGroup은 이러한 불편함을 선언적으로 해결합니다.
 
-## Reference
+## References
 
 - [ErrorBoundaryGroup Pull Request](https://github.com/toss/slash/pull/157)
 - [@suspensive/react's ErrorBoundaryGroup](https://docs.suspensive.org/ko/docs/react/src/ErrorBoundaryGroup.i18n)
