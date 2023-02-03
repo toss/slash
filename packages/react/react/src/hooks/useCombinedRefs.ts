@@ -26,5 +26,6 @@ export const useCombinedRefs = <T>(...refs: Array<Ref<T>>): RefCallback<T> =>
           (ref as MutableRefObject<T>).current = value;
         }
       }),
-    [refs]
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    refs
   );
