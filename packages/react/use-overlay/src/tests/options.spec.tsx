@@ -1,5 +1,5 @@
 import { act, screen, waitFor } from '@testing-library/react';
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useOverlay } from '../useOverlay';
 import { renderWithContext } from './utils';
 
