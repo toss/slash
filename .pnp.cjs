@@ -9927,7 +9927,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["jest-environment-jsdom", "npm:29.1.2"],\
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:62cb29918b2e63dff97923d985a18238631a18b918521fd9ac48de2be213715676e8b999d7ab4431ea536d1917af1465d5695ceae059c69bf4c14df5968dd6a1#npm:18.2.0"],\
-            ["recoil", "virtual:4ce737d8b2df22a81aa87143a65dcb259347aa12077eb550fc905c2d3b2ab60f21de07b8ed151a457f5f8788f7919d51f6b70ccf08db09d5c05ad6dcd98d620f#npm:0.6.1"],\
+            ["recoil", "virtual:4ce737d8b2df22a81aa87143a65dcb259347aa12077eb550fc905c2d3b2ab60f21de07b8ed151a457f5f8788f7919d51f6b70ccf08db09d5c05ad6dcd98d620f#npm:0.7.6"],\
             ["rollup", "npm:2.79.1"],\
             ["typescript", "patch:typescript@npm%3A4.7.4#~builtin<compat/typescript>::version=4.7.4&hash=a1c5e5"]\
           ],\
@@ -28248,17 +28248,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["recoil", [\
-        ["npm:0.6.1", {\
-          "packageLocation": "./.yarn/cache/recoil-npm-0.6.1-12c4d62952-823c098e30.zip/node_modules/recoil/",\
+        ["npm:0.7.6", {\
+          "packageLocation": "./.yarn/cache/recoil-npm-0.7.6-6f8de04e3d-2b31dd29a7.zip/node_modules/recoil/",\
           "packageDependencies": [\
-            ["recoil", "npm:0.6.1"]\
+            ["recoil", "npm:0.7.6"]\
           ],\
           "linkType": "SOFT"\
         }],\
-        ["virtual:4ce737d8b2df22a81aa87143a65dcb259347aa12077eb550fc905c2d3b2ab60f21de07b8ed151a457f5f8788f7919d51f6b70ccf08db09d5c05ad6dcd98d620f#npm:0.6.1", {\
-          "packageLocation": "./.yarn/__virtual__/recoil-virtual-69c154c2e1/0/cache/recoil-npm-0.6.1-12c4d62952-823c098e30.zip/node_modules/recoil/",\
+        ["virtual:4ce737d8b2df22a81aa87143a65dcb259347aa12077eb550fc905c2d3b2ab60f21de07b8ed151a457f5f8788f7919d51f6b70ccf08db09d5c05ad6dcd98d620f#npm:0.7.6", {\
+          "packageLocation": "./.yarn/__virtual__/recoil-virtual-3660714d6f/0/cache/recoil-npm-0.7.6-6f8de04e3d-2b31dd29a7.zip/node_modules/recoil/",\
           "packageDependencies": [\
-            ["recoil", "virtual:4ce737d8b2df22a81aa87143a65dcb259347aa12077eb550fc905c2d3b2ab60f21de07b8ed151a457f5f8788f7919d51f6b70ccf08db09d5c05ad6dcd98d620f#npm:0.6.1"],\
+            ["recoil", "virtual:4ce737d8b2df22a81aa87143a65dcb259347aa12077eb550fc905c2d3b2ab60f21de07b8ed151a457f5f8788f7919d51f6b70ccf08db09d5c05ad6dcd98d620f#npm:0.7.6"],\
             ["@types/react", "npm:18.0.21"],\
             ["@types/react-dom", "npm:18.0.6"],\
             ["@types/react-native", null],\

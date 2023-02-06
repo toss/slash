@@ -15,7 +15,7 @@
     "esm"
   ],
   "scripts": {
-    "build": "rm -rf dist/ && rm -rf esm/ && rollup -c && tsc --declaration --emitDeclarationOnly --declarationDir dist",
+    "build": "rm -rf dist/ && rm -rf esm/ && rollup -c && tsc -p tsconfig.build.json --declaration --emitDeclarationOnly --declarationDir dist",
     "prepack": "yarn build",
     "test": "jest",
     "typecheck": "tsc --noEmit"

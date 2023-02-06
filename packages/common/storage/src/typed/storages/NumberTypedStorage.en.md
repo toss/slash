@@ -18,4 +18,6 @@ import { NumberTypedStorage } from '@toss/storage/typed';
 const count = new NumberTypedStorage('count', { initialValue: 0 });
 count.increase(); // 1
 count.decrease(); // 0
+count.increase(10); // 10
+count.decrease(5); // 5
 ```
