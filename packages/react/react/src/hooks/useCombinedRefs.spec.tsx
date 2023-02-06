@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import React, { useCallback, useRef } from 'react';
+import { useCallback, useRef } from 'react';
 import { useCombinedRefs } from './useCombinedRefs';
 
 describe('useCombinedRefs', () => {
