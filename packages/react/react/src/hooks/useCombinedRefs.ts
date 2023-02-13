@@ -29,6 +29,7 @@ export function useCombinedRefs<T>(...refs: Array<Ref<T> | CallbackRef<T>>): Ref
         }
       }
     },
-    [refs]
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    refs
   );
 }
