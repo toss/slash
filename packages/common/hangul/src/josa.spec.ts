@@ -29,6 +29,10 @@ describe('Hangul', () => {
       expect(josa('샴푸', '이나/나')).toBe('샴푸나');
       expect(josa('칫솔', '이나/나')).toBe('칫솔이나');
     });
+    test('화제의 보조사', () => {
+      expect(josa('샴푸', '이란/란')).toBe('샴푸란');
+      expect(josa('칫솔', '이란/란')).toBe('칫솔이란');
+    });
   });
 
   describe('josa.pick', () => {
@@ -58,6 +62,10 @@ describe('Hangul', () => {
     test('선택의 보조사', () => {
       expect(josa.pick('샴푸', '이나/나')).toBe('나');
       expect(josa.pick('칫솔', '이나/나')).toBe('이나');
+    });
+    test('화제의 보조사', () => {
+      expect(josa.pick('샴푸', '이란/란')).toBe('란');
+      expect(josa.pick('칫솔', '이란/란')).toBe('이란');
     });
   });
 });
