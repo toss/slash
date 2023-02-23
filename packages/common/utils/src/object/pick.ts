@@ -1,7 +1,7 @@
 /** @tossdocs-ignore */
 import { ElementType } from './types';
 
-export function pick<ObjectType extends Record<PropertyKey, unknown>, KeyTypes extends Array<keyof ObjectType>>(
+export function pick<ObjectType extends Record<PropertyKey, any>, KeyTypes extends Array<keyof ObjectType>>(
   obj: ObjectType,
   keys: KeyTypes
 ) {
