@@ -11,7 +11,7 @@ type CallbackRef<T> = (ref: T | null) => void;
  *
  * @example
  * const SomeComponent = forwardRef((props, parentRef) => {
- *   const myRef = useRef();
+ *   const myRef = useRef(null);
  *   const ref = useCombinedRefs(myRef, parentRef);
  *
  *   // 하단 div가 업데이트되면 myRef와 parentRef 모두가 업데이트됨
@@ -29,6 +29,7 @@ export function useCombinedRefs<T>(...refs: Array<Ref<T> | CallbackRef<T>>): Ref
         }
       }
     },
-    [refs]
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    refs
   );
 }
