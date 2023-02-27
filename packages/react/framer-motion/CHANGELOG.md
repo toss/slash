@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.6](https://github.com/toss/slash/compare/@toss/framer-motion@1.1.5...@toss/framer-motion@1.1.6) (2023-02-27)
+
+**Note:** Version bump only for package @toss/framer-motion
+
+
+
+
+
 ## [1.1.5](https://github.com/toss/slash/compare/@toss/framer-motion@1.1.4...@toss/framer-motion@1.1.5) (2023-01-09)
 
 

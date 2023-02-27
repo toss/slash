@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.2.0](https://github.com/toss/slash/compare/@toss/storage@1.1.1...@toss/storage@1.2.0) (2023-02-27)
+
+
+### Bug Fixes
+
+* **storage:** modify key value in test code in test code about `clear` method ([#208](https://github.com/toss/slash/issues/208)) ([0edf408](https://github.com/toss/slash/commit/0edf408194eb6ec869a5b80b4c70ed6b1be2e9b2))
+
+
+### Features
+
+* **@toss/storage:** Gave scalability to two methods of NumberTypedStorage. ([#209](https://github.com/toss/slash/issues/209)) ([859a5c3](https://github.com/toss/slash/commit/859a5c3e0fc5ff56f0ad05f147db6a8f1ebdfb9e))
+
+
+
+
+
 ## [1.1.1](https://github.com/toss/slash/compare/@toss/storage@1.1.0...@toss/storage@1.1.1) (2023-01-09)
 
 

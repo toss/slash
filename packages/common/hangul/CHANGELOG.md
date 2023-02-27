@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.2.0](https://github.com/toss/slash/compare/@toss/hangul@1.1.5...@toss/hangul@1.2.0) (2023-02-27)
+
+
+### Features
+
+* **hangul:** add '이란/란' in josa ([#217](https://github.com/toss/slash/issues/217)) ([6b9811a](https://github.com/toss/slash/commit/6b9811af5e0e8d3dc5650b46ef735cbf2079818f))
+
+
+
+
+
 ## [1.1.5](https://github.com/toss/slash/compare/@toss/hangul@1.1.4...@toss/hangul@1.1.5) (2023-01-09)
 
 

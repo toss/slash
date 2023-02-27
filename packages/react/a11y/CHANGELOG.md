@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.2.0](https://github.com/toss/slash/compare/@toss/a11y@1.1.5...@toss/a11y@1.2.0) (2023-02-27)
+
+
+### Features
+
+* **a11y:** Make ScreenReaderOnly polymorphic component using `as` prop ([#201](https://github.com/toss/slash/issues/201)) ([75b0150](https://github.com/toss/slash/commit/75b01508800ed432cd4eb1e0076640c128a91a38))
+
+
+
+
+
 ## [1.1.5](https://github.com/toss/slash/compare/@toss/a11y@1.1.4...@toss/a11y@1.1.5) (2023-01-09)
 
 
