@@ -34,6 +34,7 @@ hide_table_of_contents: true
   <p>
     Use <code>⌘ + K</code> to search through our libraries documentation.
   </p>
+
   </div>
 </div>
 
@@ -76,7 +77,7 @@ hide_table_of_contents: true
 .jumbotron-inner-wrapper {
   position: relative;
   height: 100%;
-  }
+}
 
 @media (min-width: 600px) {
   .mainpage_hero {
