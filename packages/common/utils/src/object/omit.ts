@@ -2,7 +2,7 @@
 import { ObjectKeys, objectKeys } from '.';
 import { ElementType } from './types';
 
-export function omit<ObjectType extends Record<PropertyKey, unknown>, KeyTypes extends Array<ObjectKeys<ObjectType>>>(
+export function omit<ObjectType extends Record<PropertyKey, any>, KeyTypes extends Array<ObjectKeys<ObjectType>>>(
   obj: ObjectType,
   keys: KeyTypes
 ) {

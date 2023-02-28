@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.4.0](https://github.com/toss/slash/compare/@toss/error-boundary@1.3.1...@toss/error-boundary@1.4.0) (2023-02-27)
+
+
+### Features
+
+* **error-boundary:** add withErrorBoundary for consistency, and add displayName in development mode ([#195](https://github.com/toss/slash/issues/195)) ([25f43a9](https://github.com/toss/slash/commit/25f43a9faa4e73e24cbd6aeb93fbc00744a5eaa4))
+
+
+### Performance Improvements
+
+* **error-boundary:** optimize return of useErrorBoundaryGroup ([#200](https://github.com/toss/slash/issues/200)) ([afef04f](https://github.com/toss/slash/commit/afef04f800ac7ab124120f86a747fbf90913e052))
+
+
+
+
+
 ## [1.3.1](https://github.com/toss/slash/compare/@toss/error-boundary@1.3.0...@toss/error-boundary@1.3.1) (2023-01-20)
 
 

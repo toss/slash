@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.6](https://github.com/toss/slash/compare/@toss/react@1.3.5...@toss/react@1.3.6) (2023-02-27)
+
+
+### Performance Improvements
+
+* **react:** make correct way to use useCallback's dependencyList in useCombinedRefs ([#213](https://github.com/toss/slash/issues/213)) ([6cd77f1](https://github.com/toss/slash/commit/6cd77f17e7369ab3c3e10d72c6d447636d5800f0))
+
+
+
+
+
 ## [1.3.5](https://github.com/toss/slash/compare/@toss/react@1.3.4...@toss/react@1.3.5) (2023-01-09)
 
 
