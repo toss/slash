@@ -11,15 +11,15 @@ type NonEmptyArray<T> = [T, ...T[]];
 # Example
 
 ```typescript
-// There is no problem at the time of declaration, but runtime errors may occur depending on the internal logic.
-const getSum = (array: number[]) => array.reduce((x, y) => x + y);
+function getFirstElement<T>(arr: T[]): T {
+  return arr[0];
+}
 
-// [ERR]: Reduce of empty array with no initial value
-getSum([]);
+const items: number[] = [];
 
-// Runtime errors can be prevented through type errors at the time of declaration.
-const getSum = (array: NonEmptyArray<number>) => array.reduce((x, y) => x + y);
+// Runtime error
+getFirstElement([]).toString();
 
-// Argument of type '[]' is not assignable to parameter of type 'NonEmptyArray<number>'. Source has 0 element(s) but target requires
-getSum([]);
+// Type error
+const fixItems: NonEmptyArray<number> = [];
 ```
