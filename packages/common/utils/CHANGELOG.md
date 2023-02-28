@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.4.0](https://github.com/toss/slash/compare/@toss/utils@1.3.1...@toss/utils@1.4.0) (2023-02-27)
+
+
+### Bug Fixes
+
+* **utils:** remove Objectkey type in pick function ([#215](https://github.com/toss/slash/issues/215)) ([828bd50](https://github.com/toss/slash/commit/828bd50fd3e2c64fd59a6ac305f86ae7fd2ffde4))
+
+
+### Features
+
+* **utils:** change unknown to any in value part of Record ([#216](https://github.com/toss/slash/issues/216)) ([7f4fe99](https://github.com/toss/slash/commit/7f4fe99dd16772a0b5a3f0ab8e89428f7ae39835))
+
+
+
+
+
 ## [1.3.1](https://github.com/toss/slash/compare/@toss/utils@1.3.0...@toss/utils@1.3.1) (2023-01-09)
 
 

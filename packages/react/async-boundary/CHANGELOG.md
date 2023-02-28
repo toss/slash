@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.4.0](https://github.com/toss/slash/compare/@toss/async-boundary@1.3.2...@toss/async-boundary@1.4.0) (2023-02-27)
+
+
+### Bug Fixes
+
+* **async-boundary:** remove @types/react-dom of dependencies to devDependencies ([#197](https://github.com/toss/slash/issues/197)) ([37559d1](https://github.com/toss/slash/commit/37559d144743b29cb4ea23f3d13dee169d3e303f))
+
+
+### Features
+
+* **error-boundary:** add withErrorBoundary for consistency, and add displayName in development mode ([#195](https://github.com/toss/slash/issues/195)) ([25f43a9](https://github.com/toss/slash/commit/25f43a9faa4e73e24cbd6aeb93fbc00744a5eaa4))
+
+
+
+
+
 ## [1.3.2](https://github.com/toss/slash/compare/@toss/async-boundary@1.3.1...@toss/async-boundary@1.3.2) (2023-01-20)
 
 **Note:** Version bump only for package @toss/async-boundary

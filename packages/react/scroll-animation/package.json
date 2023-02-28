@@ -1,6 +1,6 @@
 {
   "name": "@toss/scroll-animation",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "exports": {
     ".": {
       "require": "./src/index.ts",
