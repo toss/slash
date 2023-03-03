@@ -1,50 +1,52 @@
 /** @tossdocs-ignore */
 /** @jsxImportSource @emotion/react */
-import { forwardRef, ReactElement, Ref } from 'react';
-
+import { ComponentPropsWithRef, forwardRef, ReactElement } from 'react';
 import { Flex, FlexOptions } from './flex';
 import { gutter, GutterOptions } from './gutter';
-import { AsProps, AxisDirection, InferenceHTMLElement } from './types';
+import { AsProps, StringElementType } from './types';
 
-interface StackProps<T extends keyof JSX.IntrinsicElements = 'div'>
-  extends AsProps<T>,
-    Omit<FlexOptions, 'direction'>,
-    Omit<GutterOptions, 'direction' | 'space'> {
-  direction?: AxisDirection;
-  gutter?: number;
-}
+type StackOptions = Pick<FlexOptions, 'align' | 'justify'> &
+  Partial<Pick<GutterOptions, 'direction' | 'selector'>> & {
+    gutter?: number;
+  };
 
-type StackReturnType = <T extends keyof JSX.IntrinsicElements = 'div'>(
-  props: StackProps<T> & { ref?: Ref<InferenceHTMLElement<T>> }
+type StackProps<T extends StringElementType = StringElementType> = AsProps<T> & StackOptions;
+
+type BaseStackType = <T extends StringElementType = StringElementType>(
+  props: StackProps<T> & Partial<Pick<ComponentPropsWithRef<T>, 'ref'>>
 ) => ReactElement | null;
 
-const BaseStack = forwardRef<HTMLElement, StackProps>(function BaseStack(props, ref) {
+const BaseStack: BaseStackType = forwardRef(function BaseStack<T extends StringElementType = StringElementType>(
+  props: StackProps<T>,
+  ref: ComponentPropsWithRef<T>['ref']
+) {
   const { direction = 'vertical', gutter: gutterSpace = 24, as = 'div', selector, ...rest } = props;
-
   return (
     <Flex
       as={as}
-      ref={ref as any}
+      ref={ref}
       css={gutter(direction, gutterSpace, selector)}
       direction={direction === 'vertical' ? 'column' : 'row'}
       {...rest}
     />
   );
-}) as StackReturnType;
+});
 
-type StackType = typeof BaseStack & {
+export const Stack = BaseStack as typeof BaseStack & {
   Vertical: typeof BaseStack;
   Horizontal: typeof BaseStack;
 };
 
-export const Stack = BaseStack as StackType;
-
-type StackWithDirectionProps = Omit<StackProps<keyof JSX.IntrinsicElements>, 'direction'>;
-
-Stack.Horizontal = forwardRef<HTMLElement, StackWithDirectionProps>(function StackHorizontal(props, ref) {
+Stack.Horizontal = forwardRef(function StackHorizontal<T extends StringElementType = StringElementType>(
+  props: StackProps<T>,
+  ref: ComponentPropsWithRef<T>['ref']
+) {
   return <Stack direction="horizontal" {...props} ref={ref} />;
-}) as StackReturnType;
+});
 
-Stack.Vertical = forwardRef<HTMLElement, StackWithDirectionProps>(function StackVertical(props, ref) {
+Stack.Vertical = forwardRef(function StackVertical<T extends StringElementType = StringElementType>(
+  props: StackProps<T>,
+  ref: ComponentPropsWithRef<T>['ref']
+) {
   return <Stack direction="vertical" {...props} ref={ref} />;
-}) as StackReturnType;
+});
