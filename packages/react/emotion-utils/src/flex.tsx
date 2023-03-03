@@ -84,7 +84,3 @@ Flex.CenterHorizontal = forwardRef(function CenterHorizontal<T extends StringEle
 ) {
   return <BaseFlex justify="center" {...props} ref={ref} />;
 });
-
-export const Comp = () => {
-  return <Flex.Center as="div"></Flex.Center>;
-};
