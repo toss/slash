@@ -12,41 +12,38 @@ type StackOptions = Pick<FlexOptions, 'align' | 'justify'> &
 
 type StackProps<T extends StringElementType = StringElementType> = AsProps<T> & StackOptions;
 
-type BaseStackType = <T extends StringElementType = StringElementType>(
+type StackComponentType = <T extends StringElementType = StringElementType>(
   props: StackProps<T> & Partial<Pick<ComponentPropsWithRef<T>, 'ref'>>
 ) => ReactElement | null;
 
-const BaseStack: BaseStackType = forwardRef(function BaseStack<T extends StringElementType = StringElementType>(
-  props: StackProps<T>,
-  ref: ComponentPropsWithRef<T>['ref']
-) {
-  const { direction = 'vertical', gutter: gutterSpace = 24, as = 'div', selector, ...rest } = props;
-  return (
-    <Flex
-      as={as}
-      ref={ref}
-      css={gutter(direction, gutterSpace, selector)}
-      direction={direction === 'vertical' ? 'column' : 'row'}
-      {...rest}
-    />
-  );
-});
+const createStackComponent = (stackOptions?: StackOptions): StackComponentType =>
+  forwardRef(function Stack<T extends StringElementType = StringElementType>(
+    props: StackProps<T>,
+    ref: ComponentPropsWithRef<T>['ref']
+  ) {
+    const {
+      as = 'div',
+      direction = stackOptions?.direction ?? 'vertical',
+      gutter: gutterSpace = stackOptions?.gutter ?? 24,
+      selector = stackOptions?.selector,
+      ...rest
+    } = props;
+    return (
+      <Flex
+        as={as}
+        ref={ref}
+        css={gutter(direction, gutterSpace, selector)}
+        direction={direction === 'vertical' ? 'column' : 'row'}
+        {...rest}
+      />
+    );
+  });
 
-export const Stack = BaseStack as typeof BaseStack & {
-  Vertical: typeof BaseStack;
-  Horizontal: typeof BaseStack;
+type StackType = StackComponentType & {
+  Vertical: StackComponentType;
+  Horizontal: StackComponentType;
 };
 
-Stack.Horizontal = forwardRef(function StackHorizontal<T extends StringElementType = StringElementType>(
-  props: StackProps<T>,
-  ref: ComponentPropsWithRef<T>['ref']
-) {
-  return <Stack direction="horizontal" {...props} ref={ref} />;
-});
-
-Stack.Vertical = forwardRef(function StackVertical<T extends StringElementType = StringElementType>(
-  props: StackProps<T>,
-  ref: ComponentPropsWithRef<T>['ref']
-) {
-  return <Stack direction="vertical" {...props} ref={ref} />;
-});
+export const Stack = createStackComponent() as StackType;
+Stack.Horizontal = createStackComponent({ direction: 'horizontal' });
+Stack.Vertical = createStackComponent({ direction: 'vertical' });

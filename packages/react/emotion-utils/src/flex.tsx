@@ -43,44 +43,33 @@ flex.center = (direction?: FlexOptions['direction']) => flex({ justify: 'center'
 
 export type FlexProps<T extends StringElementType = StringElementType> = AsProps<T> & FlexOptions;
 
-export type BaseFlexType = <T extends StringElementType = StringElementType>(
+type FlexComponentType = <T extends StringElementType = StringElementType>(
   props: FlexProps<T> & Partial<Pick<ComponentPropsWithRef<T>, 'ref'>>
 ) => JSX.Element | null;
 
-export const BaseFlex: BaseFlexType = forwardRef(function BaseFlex<T extends StringElementType = StringElementType>(
-  props: FlexProps<T>,
-  ref: ComponentPropsWithRef<T>['ref']
-) {
-  const { as = 'div', direction = 'row', justify = 'flex-start', align = 'stretch', ...rest } = props;
-  const As = as;
-  return <As ref={ref} css={flex({ direction, align, justify })} {...rest} />;
-});
+const createFlexComponent = (flexOptions?: FlexOptions): FlexComponentType =>
+  forwardRef(function Flex<T extends StringElementType = StringElementType>(
+    props: FlexProps<T>,
+    ref: ComponentPropsWithRef<T>['ref']
+  ) {
+    const {
+      as = 'div',
+      direction = flexOptions?.direction ?? 'row',
+      justify = flexOptions?.justify ?? 'flex-start',
+      align = flexOptions?.align ?? 'stretch',
+      ...rest
+    } = props;
+    const Component = as;
+    return <Component ref={ref} css={flex({ direction, align, justify })} {...rest} />;
+  });
 
-type FlexType = typeof BaseFlex & {
-  Center: typeof BaseFlex;
-  CenterVertical: typeof BaseFlex;
-  CenterHorizontal: typeof BaseFlex;
+type FlexType = FlexComponentType & {
+  Center: FlexComponentType;
+  CenterVertical: FlexComponentType;
+  CenterHorizontal: FlexComponentType;
 };
 
-export const Flex = BaseFlex as FlexType;
-
-Flex.Center = forwardRef(function Center<T extends StringElementType = StringElementType>(
-  props: FlexProps<T>,
-  ref: ComponentPropsWithRef<T>['ref']
-) {
-  return <BaseFlex align="center" justify="center" {...props} ref={ref} />;
-});
-
-Flex.CenterVertical = forwardRef(function CenterVertical<T extends StringElementType = StringElementType>(
-  props: FlexProps<T>,
-  ref: ComponentPropsWithRef<T>['ref']
-) {
-  return <BaseFlex align="center" {...props} ref={ref} />;
-});
-
-Flex.CenterHorizontal = forwardRef(function CenterHorizontal<T extends StringElementType = StringElementType>(
-  props: FlexProps<T>,
-  ref: ComponentPropsWithRef<T>['ref']
-) {
-  return <BaseFlex justify="center" {...props} ref={ref} />;
-});
+export const Flex = createFlexComponent() as FlexType;
+Flex.Center = createFlexComponent({ align: 'center', justify: 'center' });
+Flex.CenterVertical = createFlexComponent({ align: 'center' });
+Flex.CenterHorizontal = createFlexComponent({ justify: 'center' });
