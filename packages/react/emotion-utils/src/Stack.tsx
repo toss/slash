@@ -1,6 +1,6 @@
 /** @tossdocs-ignore */
 /** @jsxImportSource @emotion/react */
-import { ComponentPropsWithRef, forwardRef, ReactElement } from 'react';
+import { ComponentPropsWithRef, forwardRef } from 'react';
 import { Flex, FlexOptions } from './flex';
 import { gutter, GutterOptions } from './gutter';
 import { AsProps, StringElementType } from './types';
@@ -10,17 +10,14 @@ type StackOptions = Pick<FlexOptions, 'align' | 'justify'> &
     gutter?: number;
   };
 
-type StackProps<T extends StringElementType = StringElementType> = AsProps<T> & StackOptions;
+type StackProps<T extends StringElementType = 'div'> = AsProps<T> & StackOptions;
 
-type StackComponentType = <T extends StringElementType = StringElementType>(
+type StackComponentType = <T extends StringElementType = 'div'>(
   props: StackProps<T> & Partial<Pick<ComponentPropsWithRef<T>, 'ref'>>
-) => ReactElement | null;
+) => JSX.Element | null;
 
 const createStackComponent = (stackOptions?: StackOptions): StackComponentType =>
-  forwardRef(function Stack<T extends StringElementType = StringElementType>(
-    props: StackProps<T>,
-    ref: ComponentPropsWithRef<T>['ref']
-  ) {
+  forwardRef(function Stack<T extends StringElementType>(props: StackProps<T>, ref: ComponentPropsWithRef<T>['ref']) {
     const {
       as = 'div',
       direction = stackOptions?.direction ?? 'vertical',

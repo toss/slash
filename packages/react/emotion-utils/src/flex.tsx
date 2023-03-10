@@ -41,17 +41,14 @@ export function flex(
 
 flex.center = (direction?: FlexOptions['direction']) => flex({ justify: 'center', align: 'center', direction });
 
-export type FlexProps<T extends StringElementType = StringElementType> = AsProps<T> & FlexOptions;
+export type FlexProps<T extends StringElementType = 'div'> = AsProps<T> & FlexOptions;
 
-type FlexComponentType = <T extends StringElementType = StringElementType>(
+type FlexComponentType = <T extends StringElementType = 'div'>(
   props: FlexProps<T> & Partial<Pick<ComponentPropsWithRef<T>, 'ref'>>
 ) => JSX.Element | null;
 
 const createFlexComponent = (flexOptions?: FlexOptions): FlexComponentType =>
-  forwardRef(function Flex<T extends StringElementType = StringElementType>(
-    props: FlexProps<T>,
-    ref: ComponentPropsWithRef<T>['ref']
-  ) {
+  forwardRef(function Flex<T extends StringElementType>(props: FlexProps<T>, ref: ComponentPropsWithRef<T>['ref']) {
     const {
       as = 'div',
       direction = flexOptions?.direction ?? 'row',
