@@ -19,15 +19,15 @@ interface StorageStateOptionsWithDefaultValue<T> extends StorageStateOptions<T> 
 export function useStorageState<T extends Serializable>(
   key: string
 ): readonly [T | undefined, (value: SetStateAction<T | undefined>) => void, () => void];
-export function useStorageState<T>(
+export function useStorageState<T extends Serializable>(
   key: string,
   { storage, defaultValue }: StorageStateOptionsWithDefaultValue<T>
 ): readonly [T, (value: SetStateAction<T>) => void, () => void];
-export function useStorageState<T>(
+export function useStorageState<T extends Serializable>(
   key: string,
   { storage, defaultValue }: StorageStateOptions<T>
 ): readonly [T | undefined, (value: SetStateAction<T | undefined>) => void, () => void];
-export function useStorageState<T>(
+export function useStorageState<T extends Serializable>(
   key: string,
   { storage = safeLocalStorage, defaultValue }: StorageStateOptions<T> = {}
 ): readonly [T | undefined, (value: SetStateAction<T | undefined>) => void, () => void] {
