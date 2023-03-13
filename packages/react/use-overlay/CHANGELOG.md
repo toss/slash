@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.3](https://github.com/toss/slash/compare/@toss/use-overlay@1.3.2...@toss/use-overlay@1.3.3) (2023-03-13)
+
+**Note:** Version bump only for package @toss/use-overlay
+
+
+
+
+
 ## [1.3.2](https://github.com/toss/slash/compare/@toss/use-overlay@1.3.1...@toss/use-overlay@1.3.2) (2023-02-27)
 
 **Note:** Version bump only for package @toss/use-overlay

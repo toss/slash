@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.1](https://github.com/toss/slash/compare/@toss/async-boundary@1.4.0...@toss/async-boundary@1.4.1) (2023-03-13)
+
+**Note:** Version bump only for package @toss/async-boundary
+
+
+
+
+
 # [1.4.0](https://github.com/toss/slash/compare/@toss/async-boundary@1.3.2...@toss/async-boundary@1.4.0) (2023-02-27)
 
 
