@@ -57,7 +57,7 @@ export function useStorageState<T extends Serializable>(
   const set = useCallback(
     (value: SetStateAction<T | undefined>) => {
       setState(curr => {
-        const nextValue = value instanceof Function ? value(curr) : value;
+        const nextValue = typeof value === 'function' ? value(curr) : value;
 
         if (nextValue == null) {
           storage.remove(key);
