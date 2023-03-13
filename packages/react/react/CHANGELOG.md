@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.7](https://github.com/toss/slash/compare/@toss/react@1.3.6...@toss/react@1.3.7) (2023-03-13)
+
+
+### Bug Fixes
+
+* **react:** infer defaultValue as primitive type ([#223](https://github.com/toss/slash/issues/223)) ([cbead2a](https://github.com/toss/slash/commit/cbead2a5e5dbe8eaf48f2292b27e9b25a09ba85d))
+
+
+
+
+
 ## [1.3.6](https://github.com/toss/slash/compare/@toss/react@1.3.5...@toss/react@1.3.6) (2023-02-27)
 
 

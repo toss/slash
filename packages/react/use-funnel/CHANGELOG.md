@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.3](https://github.com/toss/slash/compare/@toss/use-funnel@1.2.2...@toss/use-funnel@1.2.3) (2023-03-13)
+
+**Note:** Version bump only for package @toss/use-funnel
+
+
+
+
+
 ## [1.2.2](https://github.com/toss/slash/compare/@toss/use-funnel@1.2.1...@toss/use-funnel@1.2.2) (2023-02-27)
 
 **Note:** Version bump only for package @toss/use-funnel
