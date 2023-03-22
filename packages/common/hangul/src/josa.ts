@@ -2,7 +2,7 @@
 import { disassembleCompleteHangulCharacter } from './disassembleCompleteHangulCharacter';
 import { hasBatchim } from './utils';
 
-type JosaOption = '이/가' | '을/를' | '은/는' | '으로/로' | '와/과' | '이나/나' | '이에/에' | '이란/란';
+type JosaOption = '이/가' | '을/를' | '은/는' | '으로/로' | '와/과' | '이나/나' | '이에/에' | '이란/란' | '아/야';
 
 export function josa(word: string, josa: JosaOption): string {
   if (word.length === 0) {
