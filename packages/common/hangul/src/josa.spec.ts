@@ -33,6 +33,10 @@ describe('Hangul', () => {
       expect(josa('샴푸', '이란/란')).toBe('샴푸란');
       expect(josa('칫솔', '이란/란')).toBe('칫솔이란');
     });
+    test('호격조사', () => {
+      expect(josa('철수', '아/야')).toBe('철수야');
+      expect(josa('길동', '아/야')).toBe('길동아');
+    });
   });
 
   describe('josa.pick', () => {
@@ -66,6 +70,10 @@ describe('Hangul', () => {
     test('화제의 보조사', () => {
       expect(josa.pick('샴푸', '이란/란')).toBe('란');
       expect(josa.pick('칫솔', '이란/란')).toBe('이란');
+    });
+    test('호격조사', () => {
+      expect(josa.pick('철수', '아/야')).toBe('야');
+      expect(josa.pick('길동', '아/야')).toBe('아');
     });
   });
 });
