@@ -1,8 +1,8 @@
 /** @tossdocs-ignore */
 /** @jsxImportSource @emotion/react */
 import { css, SerializedStyles } from '@emotion/react';
-import { CSSProperties, forwardRef, ReactElement, Ref } from 'react';
-import type { AsProps, InferenceHTMLElement } from './types';
+import { ComponentPropsWithRef, CSSProperties, forwardRef } from 'react';
+import { AsProps, StringElementType } from './types';
 export interface FlexOptions {
   align?: CSSProperties['alignItems'];
   justify?: CSSProperties['justifyContent'];
@@ -41,42 +41,32 @@ export function flex(
 
 flex.center = (direction?: FlexOptions['direction']) => flex({ justify: 'center', align: 'center', direction });
 
-interface FlexProps<T extends keyof JSX.IntrinsicElements = 'div'> extends AsProps<T>, FlexOptions {}
+export type FlexProps<T extends StringElementType = 'div'> = AsProps<T> & FlexOptions;
 
-type BaseFlexType = <T extends keyof JSX.IntrinsicElements = 'div'>(
-  props: FlexProps<T> & { ref?: Ref<InferenceHTMLElement<T>> }
-) => ReactElement | null;
+type FlexComponentType = <T extends StringElementType = 'div'>(
+  props: FlexProps<T> & Partial<Pick<ComponentPropsWithRef<T>, 'ref'>>
+) => JSX.Element | null;
 
-export const BaseFlex = forwardRef<HTMLElement, FlexProps>(function BaseFlex(props, ref) {
-  const { align = 'stretch', as = 'div', direction = 'row', justify = 'flex-start', ...rest } = props;
+const createFlexComponent = (flexOptions?: FlexOptions): FlexComponentType =>
+  forwardRef(function Flex<T extends StringElementType>(props: FlexProps<T>, ref: ComponentPropsWithRef<T>['ref']) {
+    const {
+      as = 'div',
+      direction = flexOptions?.direction ?? 'row',
+      justify = flexOptions?.justify ?? 'flex-start',
+      align = flexOptions?.align ?? 'stretch',
+      ...rest
+    } = props;
+    const Component = as;
+    return <Component ref={ref} css={flex({ direction, align, justify })} {...rest} />;
+  });
 
-  const Component = as as any;
-
-  return <Component ref={ref} css={flex({ align, direction, justify })} {...rest} />;
-}) as BaseFlexType;
-
-type FlexType = typeof BaseFlex & {
-  Center: typeof BaseFlex;
-  CenterVertical: typeof BaseFlex;
-  CenterHorizontal: typeof BaseFlex;
+type FlexType = FlexComponentType & {
+  Center: FlexComponentType;
+  CenterVertical: FlexComponentType;
+  CenterHorizontal: FlexComponentType;
 };
 
-export const Flex = BaseFlex as FlexType;
-
-Flex.Center = forwardRef<HTMLElement, FlexProps<keyof JSX.IntrinsicElements>>(function Center(props, ref) {
-  return <BaseFlex align="center" justify="center" {...props} ref={ref} />;
-});
-
-Flex.CenterVertical = forwardRef<HTMLElement, FlexProps<keyof JSX.IntrinsicElements>>(function CenterVertical(
-  props,
-  ref
-) {
-  return <BaseFlex align="center" {...props} ref={ref} />;
-});
-
-Flex.CenterHorizontal = forwardRef<HTMLElement, FlexProps<keyof JSX.IntrinsicElements>>(function CenterHorizontal(
-  props,
-  ref
-) {
-  return <BaseFlex justify="center" {...props} ref={ref} />;
-});
+export const Flex = createFlexComponent() as FlexType;
+Flex.Center = createFlexComponent({ align: 'center', justify: 'center' });
+Flex.CenterVertical = createFlexComponent({ align: 'center' });
+Flex.CenterHorizontal = createFlexComponent({ justify: 'center' });

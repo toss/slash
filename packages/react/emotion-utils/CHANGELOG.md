@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.7](https://github.com/toss/slash/compare/@toss/emotion-utils@1.1.6...@toss/emotion-utils@1.1.7) (2023-03-13)
+
+**Note:** Version bump only for package @toss/emotion-utils
+
+
+
+
+
 ## [1.1.6](https://github.com/toss/slash/compare/@toss/emotion-utils@1.1.5...@toss/emotion-utils@1.1.6) (2023-02-27)
 
 **Note:** Version bump only for package @toss/emotion-utils

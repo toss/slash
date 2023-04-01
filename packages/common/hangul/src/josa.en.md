@@ -4,14 +4,14 @@ title: josa
 
 # josa
 
-Add [postpositions (josa)](https://en.wikipedia.org/wiki/Korean_postpositions) to a hangul string. Postpositions include `'이/가'`, `'을/를'`, `'은/는'`, `'으로/로'`, `'와/과'`, `'이나/나'`, `'이에/에'`, and `'이란/란'`.
+Add [postpositions (josa)](https://en.wikipedia.org/wiki/Korean_postpositions) to a hangul string. Postpositions include `'이/가'`, `'을/를'`, `'은/는'`, `'으로/로'`, `'와/과'`, `'이나/나'`, `'이에/에'`, `'이란/란'`, `'아/야'` and `'이랑/랑'`.
 
 ```typescript
 function josa(
   // The hangul string to add postpositions
   word: string,
   // The postposition to add
-  josa: '이/가' | '을/를' | '은/는' | '으로/로' | '와/과' | '이나/나' | '이에/에' | '이란/란'
+  josa: '이/가' | '을/를' | '은/는' | '으로/로' | '와/과' | '이나/나' | '이에/에' | '이란/란' | '아/야' | '이랑/랑'
 ): string;
 ```
 
