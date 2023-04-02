@@ -4,20 +4,20 @@ title: AsyncBoundaryProvider
 
 # AsyncBoundaryProvider
 
-`AsyncBoundary` 컴포넌트를 사용하면,
-Error Reset를 하는 부분과 실제 Suspense + ErrorBoundary를 사용하는 부분이 떨어져 있어도
-`AsyncBoundaryProvider` 를 이용하여 Error Reset을 할 수 있습니다.
+With the `AsyncBoundary` component,
+you can use the `AsyncBoundaryProvider` to perform an error reset, even if the part that performs the error reset is separated from the part that actually uses the Suspense + ErrorBoundary.
+`AsyncBoundaryProvider` to perform the error reset, even if the part that performs the error reset is separated from the part that uses the actual Suspense + ErrorBoundary.
 
 ## Examples
 
 ```jsx
 <AsyncBoundaryProvider>
-  <DataController /*  <-- error reset 해야 하는 부분 */ />
+  <DataController /*  <-- Where to reset an error */ />
   <Spacing size={40} />
-  <AsyncBoundary /* <-- suspense + error boundary로 감싸져야 하는 부분 */
-    pendingFallback={<TableSkeleton title="상세내역" row={10} />}
+  <AsyncBoundary /* <-- What should be enclosed by the suspense + error boundary */
+    pendingFallback={<TableSkeleton title="Details" row={10} />}
     errorFallback={({ error, reset }) => (
-      <ErrorAlert theme="yellow" error={error} message="다시 시도해주세요." onResetError={reset} />
+      <ErrorAlert theme="yellow" error={error} message="Please try again." onResetError={reset} />
     )}
   >
     <DataViewer />
