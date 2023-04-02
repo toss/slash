@@ -45,10 +45,10 @@ useQueryParams<T extends { [key: string]: string } = { [key: string]: string }>(
 #### Example
 
 ```typescript
-// 한 개
+// One
 const { foo } = useQueryParams<{ foo: string }>();
 
-// 다수
+// Multiple
 const { foo, toss } = useQueryParams<{ foo: string; toss: string }>();
 ```
 
