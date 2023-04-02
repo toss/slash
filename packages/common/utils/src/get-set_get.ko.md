@@ -3,6 +3,8 @@ hide_title: true
 sidebar_label: get
 ---
 
+# get
+
 객체의 특정 경로에 있는 값을 반환합니다.
 
 ```typescript
