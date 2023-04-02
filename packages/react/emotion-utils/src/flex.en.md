@@ -4,7 +4,7 @@ title: flex
 
 # flex
 
-flex 스타일링을 위한 유틸리티
+Utilities for flex styling
 
 ```ts
 function flex(options: FlexOptions): SerializedStyles;

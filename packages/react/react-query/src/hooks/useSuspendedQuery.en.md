@@ -4,9 +4,9 @@ title: useSuspendedQuery
 
 # useSuspendedQuery
 
-기본적으로 suspense를 default로 이용하는 useQuery입니다.
+This is basically a useQuery with suspense by default.
 
-기본적인 API는 [react-query](https://tanstack.com/query/v4/?from=reactQueryV3&original=https://react-query-v3.tanstack.com/) 와 동일합니다.
+The basic API is the same as [react-query](https://tanstack.com/query/v4/?from=reactQueryV3&original=https://react-query-v3.tanstack.com/).
 
 ```typescript
 function useSuspendedQuery(
@@ -16,9 +16,9 @@ function useSuspendedQuery(
 ): SuspendedUseQueryResultOnSuccess<TData> | SuspendedUseQueryResultOnIdle<undefined>;
 ```
 
-react-query useQuery의 반환값과 대부분 동일하나 data가 non-nullable입니다. 추가적으로 isLoading, isError, isFetching이 존재하지 않습니다.
+It is mostly the same as the return value of react-query useQuery, but the data is non-nullable. Additionally, isLoading, isError, and isFetching do not exist.
 
-그러나 useSuspendedQuery의 enabled(기본 값은 true)가 false일 경우 data에 undefined가 올 수 있습니다.
+However, if useSuspendedQuery's enabled (which defaults to true) is false, data can have undefined in it.
 
 ## Examples
 
