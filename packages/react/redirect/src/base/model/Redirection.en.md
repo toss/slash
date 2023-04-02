@@ -4,11 +4,11 @@ title: Redirection
 
 # Redirection
 
-Redirection을 정의하는 프로토콜입니다.
+The protocol that defines redirection.
 
-함께 제공하는 RedirectionErrorBoundary, isRedirection type guard 등으로 받아서 사용할 수 있습니다.
+It comes with a RedirectionErrorBoundary, isRedirection type guard, and more.
 
-React에서는 RedirectionBoundary를 사용하여 더 쉽게 사용할 수 있습니다.
+In React, we use RedirectionBoundary to make it easier to use.
 
 ```ts
 throw Redirection.of({ destination: '/issue/introduction/under-fourteen' });
