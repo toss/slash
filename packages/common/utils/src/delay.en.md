@@ -10,6 +10,6 @@ function delay(milliseconds: number): Promise<void>;
 
 ```typescript
 await delay(3000);
-// 3초 후
+// After 3 seconds
 doSomething();
 ```
