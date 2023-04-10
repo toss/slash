@@ -4,28 +4,28 @@ title: ImpressionArea
 
 # ImpressionArea
 
-브라우저 뷰포트에 보여지거나 사라지는 시점에 이벤트를 발생시키는 컴포넌트입니다.
-[IntersectionObserver](https://developer.mozilla.org/ko/docs/Web/API/Intersection_Observer_API) API를 사용하여 효율적으로 동작합니다.
+A component that fires an event when it appears or disappears in the browser viewport.
+It uses the [IntersectionObserver](https://developer.mozilla.org/ko/docs/Web/API/Intersection_Observer_API) API to work efficiently.
 
-ImpressionArea는 추가적인 div를 render합니다. (div가 없어야 하는 경우 `useImpressionRef` Hook을 사용하세요.)
+ImpressionArea renders an additional div. (If you don't need a div, use the `useImpressionRef` Hook).
 
 ```jsx
 <ImpressionArea
-  // 요소가 브라우저 뷰포트 진입시 호출되는 callback
+  // callback called when the element enters the browser viewport
   onImpressionStart={() => {}}
-  // 요소가 브라우저 뷰포트에서 나왔을 때 호출되는 callback
+  // callback called when the element exits the browser viewport
   onImpressionEnd={() => {}}
-  // 실제 요소가 차지하는 것 대비 얼마나 margin을 줄 것인지 지정 (`string`)
-  // [MDN](https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserver/rootMargin) 을 참고하세요.
+  // Specify how much margin to give compared to what the actual element occupies (`string`)
+  // See [MDN](https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserver/rootMargin).
   rootMargin={rootMargin}
-  // 몇 퍼센트 이상 보여졌을 때 진입한 것인지 지정, 0~1까지의 숫자. (`number`)
+  // Specifies what percentage of the time the entry was visible, a number from 0 to 1. (`number`)
   // @default 0
   areaThreshold={areaThreshold}
-  // 몇 밀리세컨드 이상 화면에 진입해 있을 때 impression 이벤트를 호출할지 지정, ms 단위. (`number`)
+  // Specifies whether to call the impression event when the screen is entered for more than a few milliseconds, in ms. (`number`)
   // @default 0
   timeThreshold={timeThreshold}
 >
-  내가 보여지면 onImpressionStart를 호출해줘
+  Call onImpressionStart when you see me
 </ImpressionArea>
 ```
 
@@ -39,23 +39,23 @@ ImpressionArea는 추가적인 div를 render합니다. (div가 없어야 하는 
 
 ## Tests
 
-`@toss/impression-area/testing`을 이용하여 테스트할 수 있습니다.
+You can test it using `@toss/impression-area/testing`.
 
 ```tsx
 import { mockImpression } from '@toss/impression-area/testing';
 
 describe('ImpressionArea', () => {
-  it('사용자에게 보여지면 onImpressionStart가 호출되고, 가려지면 onImpressionEnd가 호출된다.', async () => {
+  it('When visible to the user, onImpressionStart is called; when hidden, onImpressionEnd is called', async () => {
     const onImpressionStart = jest.fn();
     const onImpressionEnd = jest.fn();
 
     render(
       <ImpressionArea onImpressionEnd={onImpressionEnd} onImpressionStart={onImpressionStart}>
-        안녕하세요
+        Hello
       </ImpressionArea>
     );
 
-    const div = screen.getByText('안녕하세요');
+    const div = screen.getByText('Hello');
 
     mockImpression.view(div);
 

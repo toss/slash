@@ -4,7 +4,7 @@ title: SafeArea
 
 # SafeArea
 
-SafeArea를 선언적으로 사용할 수 있는 컴포넌트 입니다.
+Components that allow you to use SafeArea declaratively.
 
 ## Examples
 

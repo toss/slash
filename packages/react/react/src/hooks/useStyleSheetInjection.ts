@@ -1,10 +1,6 @@
 import { useIsomorphicLayoutEffect } from './useIsomorphicLayoutEffect';
 
-/**
- * @description
- * css 문자열을 inject 할 수 있는 hook입니다.
- * style 태그 형태가 head 태그에 appendChild로 들어갑니다.
- */
+/** @tossdocs-ignore */
 export function useStyleSheetInjection(cssText: string) {
   useIsomorphicLayoutEffect(() => {
     const style = document.createElement('style');
