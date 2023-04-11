@@ -1,3 +1,5 @@
+# queryString
+
 ## queryString & QS
 
 queryString과 관련된 유틸리티 함수를 모아놓은 모듈입니다. `QS`는 세 유틸리티 함수들을 묶어서 export한 객체입니다.

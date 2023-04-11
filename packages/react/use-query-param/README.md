@@ -1,8 +1,8 @@
 # useQueryParam
 
-@toss/use-query-param는 쿼리 파라미터 값을 가져오는데 도움이 되는 라이브러리입니다.
+`@toss/use-query-param` is a library that helps you get query parameter values.
 
-## 설치
+## Install
 
 ```shell
 yarn add @toss/use-query-param
@@ -16,14 +16,14 @@ yarn add @toss/use-query-param
 useQueryParam(name, option);
 ```
 
-| option   | 설명                             | 필수 여부 |
-| -------- | -------------------------------- | --------- |
-| suspense | suspense를 사용할 때 사용합니다. | x         |
-| parser   | 형변환을 할 때 사용합니다.       | x         |
+| option   | description              | required |
+| -------- | ------------------------ | -------- |
+| suspense | Use when using suspense. | x        |
+| parser   | Used to perform casting. | x        |
 
-`suspense:true`를 추가하지 않을 경우 next/router의 Router가 준비되지 않아 초기에 undefined를 리턴할 수 있습니다.
+If you do not add `suspense:true`, next/router may return undefined initially because the router is not ready.
 
-#### 사용 예시
+#### Example
 
 ```typescript
 const type = useQueryParam('type');
@@ -42,13 +42,13 @@ const type = useQueryParam('type', { suspense: true, parser: Number });
 useQueryParams<T extends { [key: string]: string } = { [key: string]: string }>(): Partial<T>
 ```
 
-#### 사용 예시
+#### Example
 
 ```typescript
-// 한 개
+// One
 const { foo } = useQueryParams<{ foo: string }>();
 
-// 다수
+// Multiple
 const { foo, toss } = useQueryParams<{ foo: string; toss: string }>();
 ```
 

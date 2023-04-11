@@ -4,7 +4,7 @@ title: Spacing
 
 # Spacing
 
-Space를 선언적으로 주는 컴포넌트
+Components that give Space declaratively
 
 ```ts
 function Spacing(props: {

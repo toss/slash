@@ -23,38 +23,12 @@ export function safeScrollTo(element: Element | Window | null, options: ScrollTo
   }
 }
 
-/**
- * @name safeSmoothScrollTo
- * @description smoothScrollTo와 동일한 함수입니다. safe라는 prefix가 추가되었습니다.
- */
 export function safeSmoothScrollTo(element: Element | Window, { top: scrollTargetY }: { top: number }, speed = 2000) {
   smoothScrollTo(element, { top: scrollTargetY }, { speed });
 }
 
 type ScrollConfig = { speed: number } | { duration: number };
 
-/**
- * @name smoothScrollTo
- * @description Smooth하게 Scroll을 합니다.
- *
- * ```typescript
- * function smoothScrollTo(
- *   element: Element | Window,
- *   scrollTo: { top: number },
- *   // @default { speed: 2000 }
- *   config: {
- *     // 스크롤을 0.1s < scroll delta / speed < 0.8s 동안 실행합니다. 예를들면 1000px, speed = 2000 인 경우, 스크롤은 0.5s 동안 실행됩니다.
- *     speed: number
- *   } | {
- *     // 스크롤을 duration (in ms) 동안 실행합니다.
- *     duration: number
- *   };
- * )
- * ```
- *
- * @example
- * smoothScrollTo(window, { top: 2000 }, { speed: 1000 })
- */
 export async function smoothScrollTo(
   element: Element | Window,
   scrollTo: { top: number },

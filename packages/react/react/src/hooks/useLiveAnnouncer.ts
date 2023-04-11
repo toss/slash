@@ -39,16 +39,7 @@ interface AnnounceOptions {
   duration?: number;
 }
 
-/**
- * @description
- * 스크린리더 사용자에게 메시지를 표시합니다.
- *
- * @example
- * const { announce, clear } = useLiveAnnouncer();
- *
- * announce('안녕 세상!');
- * clear();
- */
+/** @tossdocs-ignore */
 export function useLiveAnnouncer() {
   const previousTimeout = useRef<number>();
 

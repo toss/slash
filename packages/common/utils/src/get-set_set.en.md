@@ -3,6 +3,8 @@ hide_title: true
 sidebar_label: set
 ---
 
+# set
+
 Finds the value in `obj` by `path` and replaces it with `value`.
 
 ```typescript

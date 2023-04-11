@@ -4,7 +4,7 @@ title: mediaQuery
 
 # mediaQuery
 
-Media query를 쉽게 작성할 수 있는 유틸리티 입니다.
+A utility that makes it easy to write media queries.
 
 ## Examples
 

@@ -4,8 +4,8 @@ title: AsyncBoundary
 
 # AsyncBoundary
 
-비동기 `Suspense` 컴포넌트의 로딩 상태와 `Error` 상태를 동시에 처리하는 컴포넌트입니다.
-`ref` 가 제공하는 `reset()` 함수로 `Error` 상태를 초기화할 수 있습니다.
+This component handles the loading state of the asynchronous `Suspense` component and the `Error` state simultaneously.
+The `Error` state can be initialized with the `reset()` function provided by `ref`.
 
 ## Examples
 
@@ -14,15 +14,15 @@ const ref = useRef<{ reset: () => void }>();
 
 <AsyncBoundary
   ref={ref}
-  // 로딩 중일 때 (Suspense 상태가 발생했을 때) 렌더할 컴포넌트
-  pendingFallback={<div>로딩 중입니다.</div>}
-  // 에러가 발생했을 때 렌더할 컴포넌트. 첫 번째 인자로는 발생한 에러가 전달됩니다.
-  rejectedFallback={error => <div>에러가 발생했습니다. {error.message}</div>}
+  // Components to render when loading (when the Suspense state occurs)
+  pendingFallback={<div>Loading.</div>}
+  // The component to render when an error occurs. The first argument is passed the error that occurred.
+  rejectedFallback={error => <div>An error occurred. {error.message}</div>}
 >
-  <Suspense_일으키는_컴포넌트 />
+  <Suspense_Creating_Components />
 </AsyncBoundary>;
 
-// AsyncBoundary가 catch한 에러를 clear하기
+// Clearing an error caught by an AsyncBoundary
 ref.current?.reset();
 ```
 
