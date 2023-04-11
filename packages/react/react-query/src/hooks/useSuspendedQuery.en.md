@@ -16,7 +16,7 @@ function useSuspendedQuery(
 ): SuspendedUseQueryResultOnSuccess<TData> | SuspendedUseQueryResultOnIdle<undefined>;
 ```
 
-It is mostly the same as the return value of react-query useQuery, but the data is non-nullable. Additionally, isLoading, isError, and isFetching do not exist.
+It is mostly the same as the return value of react-query useQuery, but the data is non-nullable. Additionally, error, isLoading, isError, and isFetching do not exist.
 
 However, if useSuspendedQuery's enabled (which defaults to true) is false, data can have undefined in it.
 
