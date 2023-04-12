@@ -1,6 +1,6 @@
 {
   "name": "@toss/utils",
-  "version": "1.4.1",
+  "version": "1.4.2",
   "sideEffects": false,
   "exports": {
     ".": {

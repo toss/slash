@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.8](https://github.com/toss/slash/compare/@toss/lottie@1.1.7...@toss/lottie@1.1.8) (2023-04-12)
+
+**Note:** Version bump only for package @toss/lottie
+
+
+
+
+
 ## [1.1.7](https://github.com/toss/slash/compare/@toss/lottie@1.1.6...@toss/lottie@1.1.7) (2023-03-13)
 
 **Note:** Version bump only for package @toss/lottie

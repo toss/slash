@@ -1,6 +1,6 @@
 {
   "name": "@toss/react-query",
-  "version": "1.1.6",
+  "version": "1.1.7",
   "types": "./dist/index.d.ts",
   "tsd": {
     "directory": "./test-d"

@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.2](https://github.com/toss/slash/compare/@toss/a11y@1.2.1...@toss/a11y@1.2.2) (2023-04-12)
+
+**Note:** Version bump only for package @toss/a11y
+
+
+
+
+
 ## [1.2.1](https://github.com/toss/slash/compare/@toss/a11y@1.2.0...@toss/a11y@1.2.1) (2023-03-13)
 
 **Note:** Version bump only for package @toss/a11y
