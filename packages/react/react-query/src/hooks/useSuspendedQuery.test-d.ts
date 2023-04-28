@@ -4,6 +4,7 @@ import { useSuspendedQuery } from '../../dist/hooks/useSuspendedQuery';
 
 const queryKey = ['key'] as const;
 const queryFn = async () => 'response' as const;
+const boolean = Math.random() > 0.5;
 
 type AwaitedQueryFnReturn = Awaited<ReturnType<typeof queryFn>>;
 
@@ -16,7 +17,7 @@ expectType<AwaitedQueryFnReturn>(
 );
 expectType<AwaitedQueryFnReturn | undefined>(
   useSuspendedQuery(queryKey, queryFn, {
-    enabled: Math.random() > 0.5,
+    enabled: boolean,
   }).data
 );
 expectType<undefined>(
@@ -35,7 +36,7 @@ expectType<AwaitedQueryFnReturn>(
 expectType<AwaitedQueryFnReturn | undefined>(
   useSuspendedQuery(queryKey, {
     queryFn,
-    enabled: Math.random() > 0.5,
+    enabled: boolean,
   }).data
 );
 expectType<undefined>(
@@ -57,7 +58,7 @@ expectType<AwaitedQueryFnReturn | undefined>(
   useSuspendedQuery({
     queryKey,
     queryFn,
-    enabled: Math.random() > 0.5,
+    enabled: boolean,
   }).data
 );
 expectType<undefined>(
