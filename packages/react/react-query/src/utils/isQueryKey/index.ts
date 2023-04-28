@@ -1,3 +1,4 @@
+/** @tossdocs-ignore */
 import { QueryKey } from 'react-query';
 
 export function isQueryKey(value: any): value is QueryKey {

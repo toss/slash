@@ -1,3 +1,4 @@
+/** @tossdocs-ignore */
 import { QueryFunction, QueryKey, QueryOptions } from 'react-query';
 import { isQueryKey } from '../';
 
