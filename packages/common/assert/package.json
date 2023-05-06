@@ -1,6 +1,6 @@
 {
   "name": "@toss/assert",
-  "version": "1.1.7",
+  "version": "1.1.8",
   "sideEffects": false,
   "exports": {
     ".": {
@@ -21,7 +21,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@toss/utils": "workspace:^1.4.1"
+    "@toss/utils": "workspace:^1.4.2"
   },
   "devDependencies": {
     "@babel/core": "^7",

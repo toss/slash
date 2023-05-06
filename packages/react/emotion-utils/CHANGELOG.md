@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.8](https://github.com/toss/slash/compare/@toss/emotion-utils@1.1.7...@toss/emotion-utils@1.1.8) (2023-04-12)
+
+
+### Bug Fixes
+
+* **emotion-utils:** Allows 'as' prop in Flex and Stack to receive all elements ([#221](https://github.com/toss/slash/issues/221)) ([7989e6a](https://github.com/toss/slash/commit/7989e6aa0b4b0f81bf11bbb5d601f68ec766e2d0))
+
+
+
+
+
 ## [1.1.7](https://github.com/toss/slash/compare/@toss/emotion-utils@1.1.6...@toss/emotion-utils@1.1.7) (2023-03-13)
 
 **Note:** Version bump only for package @toss/emotion-utils

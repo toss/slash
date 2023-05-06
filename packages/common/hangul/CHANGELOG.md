@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.3.0](https://github.com/toss/slash/compare/@toss/hangul@1.2.0...@toss/hangul@1.3.0) (2023-04-12)
+
+
+### Features
+
+* **hangul:** add 접속조사(이랑/랑) to josa ([#227](https://github.com/toss/slash/issues/227)) ([91794bc](https://github.com/toss/slash/commit/91794bc5d91fab887323c83897ffe19e7cbe176e))
+* add 호격조사(아/야) to josaOption ([#225](https://github.com/toss/slash/issues/225)) ([37b2de4](https://github.com/toss/slash/commit/37b2de444c9ec13248da2487b8265ae92aee1314))
+
+
+
+
+
 # [1.2.0](https://github.com/toss/slash/compare/@toss/hangul@1.1.5...@toss/hangul@1.2.0) (2023-02-27)
 
 
