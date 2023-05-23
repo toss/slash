@@ -10216,6 +10216,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/react", "npm:18.0.21"],\
             ["@types/react-dom", "npm:18.0.6"],\
             ["@types/testing-library__jest-dom", "npm:5.14.5"],\
+            ["@yarnpkg/pnpify", "npm:4.0.0-rc.27"],\
             ["babel-jest", "virtual:785204e63ba96625a23f896ee431c9a36baff7a533742c7d2c1d3e8c51b41da4d9b22d61afa2e1bb44d0338b2a9e895a7c77e29d79f3a357a12dae28feb7f916#npm:29.1.2"],\
             ["concurrently", "npm:6.5.1"],\
             ["jest", "virtual:01ae7c33d4655a48cbb29902912466a761e01d57e32af25620c31e36065eb1601cc4f6394afcb6b2f9c9f1b941b9fbeecba9aa1bca8ca304ae87cee07a6864e9#npm:29.1.2"],\
@@ -10257,6 +10258,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/react", "npm:18.0.21"],\
             ["@types/react-dom", "npm:18.0.6"],\
             ["@types/testing-library__jest-dom", "npm:5.14.5"],\
+            ["@yarnpkg/pnpify", "npm:4.0.0-rc.27"],\
             ["babel-jest", "virtual:785204e63ba96625a23f896ee431c9a36baff7a533742c7d2c1d3e8c51b41da4d9b22d61afa2e1bb44d0338b2a9e895a7c77e29d79f3a357a12dae28feb7f916#npm:29.1.2"],\
             ["concurrently", "npm:6.5.1"],\
             ["jest", "virtual:01ae7c33d4655a48cbb29902912466a761e01d57e32af25620c31e36065eb1601cc4f6394afcb6b2f9c9f1b941b9fbeecba9aa1bca8ca304ae87cee07a6864e9#npm:29.1.2"],\
