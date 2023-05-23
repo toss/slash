@@ -57,7 +57,7 @@ export const useFunnel = <Steps extends NonEmptyArray<string>>(
       Object.assign(
         function RouteFunnel(props: RouteFunnelProps<Steps>) {
           // eslint-disable-next-line react-hooks/rules-of-hooks
-          const step = useQueryParam<Steps[number]>(stepQueryKey) ?? options?.initialStep;
+          const step = useQueryParam(stepQueryKey) ?? options?.initialStep;
 
           assert(
             step != null,
