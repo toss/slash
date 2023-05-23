@@ -10225,6 +10225,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:62cb29918b2e63dff97923d985a18238631a18b918521fd9ac48de2be213715676e8b999d7ab4431ea536d1917af1465d5695ceae059c69bf4c14df5968dd6a1#npm:18.2.0"],\
             ["rollup", "npm:2.79.1"],\
+            ["tsd", "npm:0.24.1"],\
             ["typescript", "patch:typescript@npm%3A4.7.4#~builtin<compat/typescript>::version=4.7.4&hash=a1c5e5"]\
           ],\
           "packagePeers": [\
@@ -10265,6 +10266,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:62cb29918b2e63dff97923d985a18238631a18b918521fd9ac48de2be213715676e8b999d7ab4431ea536d1917af1465d5695ceae059c69bf4c14df5968dd6a1#npm:18.2.0"],\
             ["rollup", "npm:2.79.1"],\
+            ["tsd", "npm:0.24.1"],\
             ["typescript", "patch:typescript@npm%3A4.7.4#~builtin<compat/typescript>::version=4.7.4&hash=a1c5e5"]\
           ],\
           "linkType": "SOFT"\

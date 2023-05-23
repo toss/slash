@@ -2,6 +2,10 @@
   "name": "@toss/use-query-param",
   "version": "1.1.6",
   "sideEffects": false,
+  "types": "./dist/index.d.ts",
+  "tsd": {
+    "directory": "./test-d"
+  },
   "exports": {
     ".": {
       "require": "./src/index.ts",
@@ -16,7 +20,8 @@
   ],
   "scripts": {
     "build": "rm -rf dist esm && tsc -p tsconfig.build.json --declaration --emitDeclarationOnly --declarationDir dist && rollup -c rollup.config.js",
-    "prepack": "yarn build",
+    "prepack": "yarn build && yarn tsd",
+    "tsd": "pnpify tsd",
     "test": "jest",
     "typecheck": "tsc --noEmit"
   },
@@ -45,6 +50,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "rollup": "^2.77.0",
+    "tsd": "^0.24.1",
     "typescript": "4.8.3"
   },
   "peerDependencies": {
