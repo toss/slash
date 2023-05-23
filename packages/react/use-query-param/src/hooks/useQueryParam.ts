@@ -11,7 +11,11 @@ export function useQueryParam<T = string>(name: string, options: Options<T>): T 
 export function useQueryParam<T = string>(name: string, options?: Options<T>) {
   const router = useNextRouter({ suspense: options?.suspense });
 
-  const value = router.query[name] as string | undefined;
+  const value = router.query[name];
+
+  if (Array.isArray(value)) {
+    throw new Error(`QueryParam of ${name} is Array, can't be returned by useQueryParam`);
+  }
 
   if (value == null || options?.parser == null) {
     return value;
