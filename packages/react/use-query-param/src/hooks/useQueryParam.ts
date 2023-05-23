@@ -6,7 +6,7 @@ interface Options<T> {
   suspense?: boolean;
 }
 
-export function useQueryParam<T = string>(name: string): T | undefined;
+export function useQueryParam(name: string): string | undefined;
 export function useQueryParam<T = string>(name: string, options: Options<T>): T | undefined;
 export function useQueryParam<T = string>(name: string, options?: Options<T>) {
   const router = useNextRouter({ suspense: options?.suspense });
