@@ -35,12 +35,7 @@ describe('useQueryParam', () => {
 
     const queryParam1 = renderHook(() =>
       useQueryParam('foo', {
-        parser: value => {
-          if (Array.isArray(value) || value == null) {
-            throw new Error('no array, no undefined');
-          }
-          return Number(value);
-        },
+        parser: Number,
       })
     );
     expect(typeof queryParam1.result.current).toBe('number');
