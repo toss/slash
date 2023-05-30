@@ -56,8 +56,8 @@ export const useFunnel = <Steps extends NonEmptyArray<string>>(
     () =>
       Object.assign(
         function RouteFunnel(props: RouteFunnelProps<Steps>) {
-          const step = useQueryParam<Steps[number]>(stepQueryKey, {
-            parse: queryParam => {
+          const step = useQueryParam(stepQueryKey, {
+            parser: queryParam => {
               const step = queryParam ?? options?.initialStep;
               assert(
                 step != null,
