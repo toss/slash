@@ -1,8 +1,8 @@
 import { renderHook, waitFor } from '@testing-library/react';
 import { mocked } from 'jest-mock';
 import Router, { NextRouter, useRouter } from 'next/router';
-import { useQueryParam } from './useQueryParam';
 import { renderWithSuspense } from '../utils';
+import { useQueryParam } from './useQueryParam';
 
 jest.mock('next/router');
 
@@ -33,15 +33,24 @@ describe('useQueryParam', () => {
 
     mockUseRouter.mockReturnValue(router);
 
-    const { result, rerender } = renderHook(({ name, parser }) => useQueryParam(name, { parser }), {
-      initialProps: { name: 'foo', parser: Number as (val: string | string[]) => unknown },
-    });
+    const queryParam1 = renderHook(() =>
+      useQueryParam('foo', {
+        parser: value => {
+          if (Array.isArray(value) || value == null) {
+            throw new Error('no array, no undefined');
+          }
+          return Number(value);
+        },
+      })
+    );
+    expect(typeof queryParam1.result.current).toBe('number');
 
-    expect(typeof result.current).toBe('number');
-
-    rerender({ name: 'bar', parser: value => value === 'true' });
-
-    expect(typeof result.current).toBe('boolean');
+    const queryParam2 = renderHook(() =>
+      useQueryParam('bar', {
+        parser: value => value === 'true',
+      })
+    );
+    expect(typeof queryParam2.result.current).toBe('boolean');
   });
 
   describe('`suspense` 옵션을 사용할 경우', () => {

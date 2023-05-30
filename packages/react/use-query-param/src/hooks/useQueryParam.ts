@@ -3,7 +3,7 @@ import { NextRouter } from 'next/router';
 import { useNextRouter } from './useNextRouter';
 
 interface Options<TParsed, TName extends string> {
-  parse?: (value: NextRouter['query'][TName]) => TParsed;
+  parser?: (value: NextRouter['query'][TName]) => TParsed;
   suspense?: boolean;
 }
 
@@ -17,9 +17,9 @@ export function useQueryParam<TParsed, TName extends string = string>(name: TNam
 
   const value = router.query[name];
 
-  if (value == null || options?.parse == null) {
+  if (value == null || options?.parser == null) {
     return value;
   } else {
-    return options.parse(value);
+    return options.parser(value);
   }
 }
