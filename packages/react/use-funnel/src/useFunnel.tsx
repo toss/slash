@@ -56,22 +56,16 @@ export const useFunnel = <Steps extends NonEmptyArray<string>>(
     () =>
       Object.assign(
         function RouteFunnel(props: RouteFunnelProps<Steps>) {
-          const step = useQueryParam(stepQueryKey, {
-            parser: queryParam => {
-              const step = queryParam ?? options?.initialStep;
-              assert(
-                step != null,
-                `표시할 스텝을 ${stepQueryKey} 쿼리 파라미터에 지정해주세요. 쿼리 파라미터가 없을 때 초기 스텝을 렌더하려면 useFunnel의 두 번째 파라미터 options에 initialStep을 지정해주세요.`
-              );
+          const step = useQueryParam(stepQueryKey) ?? options?.initialStep;
 
-              assert(
-                !Array.isArray(step),
-                `표시할 스텝을 ${stepQueryKey} 쿼리 파라미터에 배열타입으로 지정하면 안됩니다. string타입으로 지정해주세요.`
-              );
-
-              return step;
-            },
-          });
+          assert(
+            step != null,
+            `표시할 스텝을 ${stepQueryKey} 쿼리 파라미터에 지정해주세요. 쿼리 파라미터가 없을 때 초기 스텝을 렌더하려면 useFunnel의 두 번째 파라미터 options에 initialStep을 지정해주세요.`
+          );
+          assert(
+            !Array.isArray(step),
+            `표시할 스텝을 ${stepQueryKey} 쿼리 파라미터에 배열타입으로 지정하면 안됩니다. string타입으로 지정해주세요.`
+          );
 
           return <Funnel<Steps> steps={steps} step={step} {...props} />;
         },
