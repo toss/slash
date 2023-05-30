@@ -2,17 +2,14 @@
 import { NextRouter } from 'next/router';
 import { useNextRouter } from './useNextRouter';
 
-interface Options<TParsed, TName extends string> {
-  parser?: (value: NextRouter['query'][TName]) => TParsed;
+interface Options<TParsed> {
+  parser?: (value: NextRouter['query'][string]) => TParsed;
   suspense?: boolean;
 }
 
 export function useQueryParam(name: string): NextRouter['query'][string];
-export function useQueryParam<TParsed, TName extends string = string>(
-  name: TName,
-  options: Options<TParsed, TName>
-): TParsed;
-export function useQueryParam<TParsed, TName extends string = string>(name: TName, options?: Options<TParsed, TName>) {
+export function useQueryParam<TParsed>(name: string, options: Options<TParsed>): TParsed;
+export function useQueryParam<TParsed>(name: string, options?: Options<TParsed>) {
   const router = useNextRouter({ suspense: options?.suspense });
 
   const value = router.query[name];
