@@ -23,15 +23,3 @@ export function useQueryParam<TParsed, TName extends string = string>(name: TNam
     return options.parse(value);
   }
 }
-
-const Comp = () => {
-  const queryParam = useQueryParam('something');
-  const queryParam = useQueryParam('something', {
-    parse: value => {
-      if (Array.isArray(value) || value == null) {
-        throw new Error('queryParam is not intended');
-      }
-      return value;
-    },
-  });
-};
