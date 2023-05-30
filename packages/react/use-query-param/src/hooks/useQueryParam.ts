@@ -7,7 +7,7 @@ interface Options<TParsed, TName extends string> {
   suspense?: boolean;
 }
 
-export function useQueryParam<TName extends string = string>(name: TName): NextRouter['query'][TName];
+export function useQueryParam(name: string): NextRouter['query'][string];
 export function useQueryParam<TParsed, TName extends string = string>(
   name: TName,
   options: Options<TParsed, TName>
