@@ -24,7 +24,7 @@ describe('useDidUpdate', () => {
       </button>
     );
   }
-  it('If get a rendering only once', () => {
+  it('should not effect when mount', () => {
     const effectFn = jest.fn();
 
     expect(effectFn).not.toHaveBeenCalled();
@@ -33,7 +33,7 @@ describe('useDidUpdate', () => {
     expect(effectFn).not.toHaveBeenCalled();
   });
 
-  it('If rendering several times', () => {
+  it('should effect with dependency changes', () => {
     const effectFn = jest.fn();
 
     expect(effectFn).not.toHaveBeenCalled();
