@@ -19,8 +19,8 @@ function TestComponent() {
   );
 }
 
-describe('forceUpdate를 호출하여 DOM 업데이트 확인', () => {
-  it('forceUpdate함수 실행 시 DOM이 업데이트 되었는가?', () => {
+describe('forceUpdate', () => {
+  it('force-rerenders the component', () => {
     render(<TestComponent />);
 
     expect(screen.getByText('토스')).toBeInTheDocument();
