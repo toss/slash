@@ -20,9 +20,9 @@ describe('useVisibilityEvent', () => {
 describe('useVisibilityEvent for component', () => {
   it('When a user leaves the page (component).', () => {
     function TestComponent() {
-      const [visitable, setVisitable] = useState<string>('visible');
-      const visibleCallbackFunc = (value: VisibilityState) => {
-        setVisitable(value);
+      const [visitable, setVisitable] = useState<VisibilityState>('visible');
+      const visibleCallbackFunc = (visibilit: VisibilityState) => {
+        setVisitable(visibilit);
       };
       useVisibilityEvent(visibleCallbackFunc);
       return <div>{visitable}</div>;
