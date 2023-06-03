@@ -9976,6 +9976,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@rollup/plugin-node-resolve", "virtual:36b3f06c76cf9bc81ee62479546e248512ee1bfc453ae16a09419adac9251dbac705e48393318b5eb9ebdf1aac639cfd21e410885c301a7a1637cd16dcc0955c#npm:14.1.0"],\
             ["@types/rollup", null],\
             ["builtin-modules", "npm:3.3.0"],\
+            ["fs-extra", "npm:11.1.1"],\
             ["rollup", "npm:2.79.1"]\
           ],\
           "packagePeers": [\
@@ -9994,6 +9995,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@rollup/plugin-json", "virtual:36b3f06c76cf9bc81ee62479546e248512ee1bfc453ae16a09419adac9251dbac705e48393318b5eb9ebdf1aac639cfd21e410885c301a7a1637cd16dcc0955c#npm:4.1.0"],\
             ["@rollup/plugin-node-resolve", "virtual:36b3f06c76cf9bc81ee62479546e248512ee1bfc453ae16a09419adac9251dbac705e48393318b5eb9ebdf1aac639cfd21e410885c301a7a1637cd16dcc0955c#npm:14.1.0"],\
             ["builtin-modules", "npm:3.3.0"],\
+            ["fs-extra", "npm:11.1.1"],\
             ["rollup", "npm:2.79.1"]\
           ],\
           "linkType": "SOFT"\
@@ -10066,6 +10068,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@rollup/plugin-babel", "virtual:bcd0c1141064bf940376b9b2c4f8a211deda5f9c27293f215379edb7c7917846a6a1d22044c7c1b3bb8002672fb9461cbd1f53c3889b2fe3b5bfbab9a70f1ac4#npm:5.3.1"],\
             ["@rollup/plugin-commonjs", "virtual:36b3f06c76cf9bc81ee62479546e248512ee1bfc453ae16a09419adac9251dbac705e48393318b5eb9ebdf1aac639cfd21e410885c301a7a1637cd16dcc0955c#npm:22.0.2"],\
             ["@rollup/plugin-node-resolve", "virtual:36b3f06c76cf9bc81ee62479546e248512ee1bfc453ae16a09419adac9251dbac705e48393318b5eb9ebdf1aac639cfd21e410885c301a7a1637cd16dcc0955c#npm:14.1.0"],\
+            ["@toss/rollup-config", "virtual:bcd0c1141064bf940376b9b2c4f8a211deda5f9c27293f215379edb7c7917846a6a1d22044c7c1b3bb8002672fb9461cbd1f53c3889b2fe3b5bfbab9a70f1ac4#workspace:configs/rollup"],\
             ["@tossteam/jest", "virtual:77b9278f6063d24f0826f1238c7d240e6c3d430ba15f429ce398b0875deacf8945d3b28505e564b694919aafcc4d437ae3bca4f1e3b77f986659859e8a894a46#npm:17.187.2"],\
             ["@types/babel__core", "npm:7.1.19"],\
             ["@types/jest", "npm:29.1.2"],\
@@ -18695,6 +18698,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/fs-extra-npm-10.1.0-86573680ed-dc94ab3709.zip/node_modules/fs-extra/",\
           "packageDependencies": [\
             ["fs-extra", "npm:10.1.0"],\
+            ["graceful-fs", "npm:4.2.10"],\
+            ["jsonfile", "npm:6.1.0"],\
+            ["universalify", "npm:2.0.0"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
+        ["npm:11.1.1", {\
+          "packageLocation": "./.yarn/cache/fs-extra-npm-11.1.1-ca44602180-fb883c6824.zip/node_modules/fs-extra/",\
+          "packageDependencies": [\
+            ["fs-extra", "npm:11.1.1"],\
             ["graceful-fs", "npm:4.2.10"],\
             ["jsonfile", "npm:6.1.0"],\
             ["universalify", "npm:2.0.0"]\
