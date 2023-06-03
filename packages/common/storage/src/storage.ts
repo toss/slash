@@ -5,6 +5,8 @@ export interface Storage {
   set(key: string, value: string): void;
 
   remove(key: string): void;
+
+  clear(): void;
 }
 
 class MemoStorage implements Storage {
@@ -20,6 +22,10 @@ class MemoStorage implements Storage {
 
   public remove(key: string) {
     this.storage.delete(key);
+  }
+
+  public clear() {
+    this.storage.clear();
   }
 }
 
@@ -48,6 +54,10 @@ class LocalStorage implements Storage {
   public remove(key: string) {
     localStorage.removeItem(key);
   }
+
+  public clear() {
+    localStorage.clear();
+  }
 }
 
 class SessionStorage implements Storage {
@@ -74,6 +84,10 @@ class SessionStorage implements Storage {
 
   public remove(key: string) {
     sessionStorage.removeItem(key);
+  }
+
+  public clear() {
+    sessionStorage.clear();
   }
 }
 
