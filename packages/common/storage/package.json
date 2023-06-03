@@ -13,7 +13,7 @@
     "esm"
   ],
   "scripts": {
-    "build": "tsc --emitDeclarationOnly --outDir types && rollup -c && rm -rf types",
+    "build": "rm -rf dist esm typed && tsc -p tsconfig.build.json --declaration --emitDeclarationOnly --declarationDir dist && rollup -c",
     "prepack": "yarn build",
     "test": "jest",
     "typecheck": "tsc --noEmit"
@@ -26,6 +26,7 @@
     "@rollup/plugin-babel": "^5.3.1",
     "@rollup/plugin-commonjs": "^22.0.2",
     "@rollup/plugin-node-resolve": "^14.1.0",
+    "@toss/rollup-config": "workspace:^0.1.4",
     "@tossteam/jest": "^17",
     "@types/babel__core": "^7",
     "@types/jest": "^28.1.8",
@@ -42,24 +43,14 @@
     "access": "public",
     "exports": {
       ".": {
-        "require": {
-          "types": "./dist/index.d.ts",
-          "default": "./dist/index.js"
-        },
-        "import": {
-          "types": "./esm/index.d.mts",
-          "default": "./esm/index.mjs"
-        }
+        "require": "./dist/index.js",
+        "import": "./esm/index.mjs",
+        "types": "./dist/index.d.ts"
       },
       "./typed": {
-        "require": {
-          "types": "./dist/typed/index.d.ts",
-          "default": "./dist/typed/index.js"
-        },
-        "import": {
-          "types": "./esm/typed/index.d.mts",
-          "default": "./esm/typed/index.mjs"
-        }
+        "require": "./typed/dist/index.js",
+        "import": "./typed/esm/index.mjs",
+        "types": "./typed/dist/index.d.ts"
       },
       "./package.json": "./package.json"
     },
