@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 const path = require('path');
+const fs = require('fs-extra');
 const babel = require('@rollup/plugin-babel').default;
 const commonjs = require('@rollup/plugin-commonjs');
 const json = require('@rollup/plugin-json');
@@ -24,6 +25,12 @@ exports.generateRollupConfig = function generateRollupConfig({ packageDir }) {
   };
 
   const extensions = ['.js', '.jsx', '.ts', '.tsx'];
+
+  entrypoints.forEach(entrypoint => {
+    if (entrypoint !== '.') {
+      fs.move(`dist/${entrypoint}`, `${entrypoint}/dist`);
+    }
+  });
 
   function buildJS(input, output, format) {
     const isESMFormat = format === 'es';
