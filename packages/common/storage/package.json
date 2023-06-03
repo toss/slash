@@ -10,7 +10,8 @@
   "main": "./src/index.ts",
   "files": [
     "dist",
-    "esm"
+    "esm",
+    "typed"
   ],
   "scripts": {
     "build": "rm -rf dist esm typed && tsc -p tsconfig.build.json --declaration --emitDeclarationOnly --declarationDir dist && rollup -c",
