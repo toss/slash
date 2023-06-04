@@ -5,11 +5,11 @@ Call the callback function when the document's visibilitychange event occurs.
 ## Example
 
 ```tsx
-type VisibilityState = 'hidden' | 'visible';
+type VisibilityState = Document['visibilityState'];
 
 function MyComponent() {
-  const visibleCallbackFunc = (visibilit: VisibilityState) => {
-    alert(visibilit);
+  const visibleCallbackFunc = (visibilityState: VisibilityState) => {
+    alert(visibilityState);
   };
 
   useVisibilityEvent(visibleCallbackFunc);
