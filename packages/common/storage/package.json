@@ -10,7 +10,8 @@
   "main": "./src/index.ts",
   "files": [
     "dist",
-    "esm"
+    "esm",
+    "typed.d.ts"
   ],
   "scripts": {
     "build": "tsc --emitDeclarationOnly --outDir types && rollup -c && rm -rf types",
