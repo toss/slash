@@ -5,12 +5,12 @@ import { useDidUpdate } from './useDidUpdate';
 
 const TOSS_TEXT = 'TOSS';
 
-interface ITestComponentProps {
+interface TestComponentProps {
   effectFn: () => void;
 }
 
 describe('useDidUpdate', () => {
-  function TestingComponent({ effectFn }: ITestComponentProps) {
+  function TestingComponent({ effectFn }: TestComponentProps) {
     const [count, setCount] = useState<number>(0);
     useDidUpdate(effectFn, [count]);
 
