@@ -12,6 +12,22 @@ describe('useDebounce', () => {
   const timeBeforeCompletion = 490;
   const remainingTime = 10;
 
+  it('Debounce is designed to only execute once.', () => {
+    const callback = jest.fn();
+
+    const { result } = renderHook(() => useDebounce(callback, completionTime));
+
+    result.current();
+
+    expect(callback).not.toBeCalled();
+
+    jest.advanceTimersByTime(completionTime);
+    jest.advanceTimersByTime(completionTime);
+    jest.advanceTimersByTime(completionTime);
+
+    expect(callback).toBeCalledTimes(1);
+  });
+
   it('The function will not be executed until the specified time has elapsed', () => {
     const callback = jest.fn();
 
