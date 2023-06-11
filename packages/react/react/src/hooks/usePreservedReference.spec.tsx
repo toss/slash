@@ -16,7 +16,6 @@ describe('usePreservedReference', () => {
     const [reference, setReference] = useState<TossObject>(tossObject);
     const ref = usePreservedReference<TossObject>(reference, areValuesEqual);
 
-    // 마운트 시 한번만 실행되는 코드
     const oneUseEffect = useCallbackOnce(() => {
       setReference(object);
     }, []);
