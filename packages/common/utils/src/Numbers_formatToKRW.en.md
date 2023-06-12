@@ -3,7 +3,7 @@ hide_title: true
 sidebar_label: formatToKRW
 ---
 
-# formatToKoreanNumber
+# formatToKRW
 
 Converts given number to Korean expression.
 
