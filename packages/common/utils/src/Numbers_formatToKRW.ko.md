@@ -3,7 +3,7 @@ hide_title: true
 sidebar_label: formatToKRW
 ---
 
-# formatToKoreanNumber
+# formatToKRW
 
 주어진 수를 한국어 표기로 변환합니다.
 
