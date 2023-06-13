@@ -6091,9 +6091,9 @@ __metadata:
     rollup: ^2.77.0
     typescript: 4.8.3
   peerDependencies:
-    next: ">=11"
-    react: ^16.0.0 || ^17.0.0
-    react-dom: ^16.0.0 || ^17.0.0
+    next: ^11.1 || ^12 || ^13
+    react: ^16.8 || ^17 || ^18
+    react-dom: ^16.8 || ^17 || ^18
     react-query: ^3
   languageName: unknown
   linkType: soft
@@ -6195,7 +6195,7 @@ __metadata:
     rollup: ^2.77.0
     typescript: 4.8.3
   peerDependencies:
-    next: ^11.1 || ^12
+    next: ^11.1 || ^12 || ^13
     react: ^16.8 || ^17 || ^18
     react-dom: ^16.8 || ^17 || ^18
   languageName: unknown
