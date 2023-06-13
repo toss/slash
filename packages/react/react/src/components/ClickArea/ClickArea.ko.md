@@ -4,7 +4,7 @@ title: ClickArea
 
 # ClickArea
 
-Clickable한 영역에 사용합니다. 영역이 `div`로 감싸지며, 클릭 시 살짝 어두워집니다.
+Clickable한 영역에 사용합니다. 영역이 `anchor`로 감싸지며, 클릭 시 살짝 어두워집니다.
 
 ```tsx
 <ClickArea

@@ -4,7 +4,7 @@ title: ClickArea
 
 # ClickArea
 
-Make a clickable area. The area is wrapped in a `div`, and becomes a little darker when clicked.
+Make a clickable area. The area is wrapped in a `anchor`, and becomes a little darker when clicked.
 
 ```tsx
 <ClickArea
