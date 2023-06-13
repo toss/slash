@@ -3,9 +3,9 @@ hide_title: true
 sidebar_label: formatToKRW
 ---
 
-# formatToKoreanNumber
+# formatToKRW
 
-주어진 수를 한국어 표기로 변환합니다.
+주어진 숫자를 한국 원화 형식으로 포맷합니다.
 
 ```typescript
 function formatToKRW(
