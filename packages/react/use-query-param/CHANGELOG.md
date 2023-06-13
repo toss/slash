@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.7](https://github.com/toss/slash/compare/@toss/use-query-param@1.1.6...@toss/use-query-param@1.1.7) (2023-06-13)
+
+
+### Bug Fixes
+
+* **use-query-param, use-funnel:** update peerDependencies ([#255](https://github.com/toss/slash/issues/255)) ([1d0c958](https://github.com/toss/slash/commit/1d0c9580769c89c97f64de936f28a6038e829c4d))
+
+
+
+
+
 ## [1.1.6](https://github.com/toss/slash/compare/@toss/use-query-param@1.1.5...@toss/use-query-param@1.1.6) (2023-04-12)
 
 **Note:** Version bump only for package @toss/use-query-param
