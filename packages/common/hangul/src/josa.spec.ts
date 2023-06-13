@@ -41,6 +41,13 @@ describe('Hangul', () => {
       expect(josa('고기', '이랑/랑')).toBe('고기랑');
       expect(josa('과일', '이랑/랑')).toBe('과일이랑');
     });
+    test('서술격조사와 종결어미', () => {
+      expect(josa('사과', '이에요/예요')).toBe('사과예요');
+      expect(josa('책', '이에요/예요')).toBe('책이에요');
+    });
+    test('서술격조사와 종결어미, "이" 로 끝나는 단어 예외처리', () => {
+      expect(josa('때밀이', '이에요/예요')).toBe('때밀이예요');
+    });
   });
 
   describe('josa.pick', () => {
@@ -82,6 +89,13 @@ describe('Hangul', () => {
     test('접속조사', () => {
       expect(josa.pick('고기', '이랑/랑')).toBe('랑');
       expect(josa.pick('과일', '이랑/랑')).toBe('이랑');
+    });
+    test('서술격조사와 종결어미', () => {
+      expect(josa.pick('사과', '이에요/예요')).toBe('예요');
+      expect(josa.pick('책', '이에요/예요')).toBe('이에요');
+    });
+    test('서술격조사와 종결어미, "이" 로 끝나는 단어 예외처리', () => {
+      expect(josa.pick('때밀이', '이에요/예요')).toBe('예요');
     });
   });
 });
