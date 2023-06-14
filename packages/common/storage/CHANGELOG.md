@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.3.0](https://github.com/toss/slash/compare/@toss/storage@1.2.0...@toss/storage@1.3.0) (2023-06-13)
+
+
+### Bug Fixes
+
+* **@toss/storage:** Add typed.d.ts file for subpath module ([#251](https://github.com/toss/slash/issues/251)) ([33116bf](https://github.com/toss/slash/commit/33116bf359548ff9515161b608a267b62424aa49))
+
+
+### Features
+
+* **@toss/storage:** add clear method ([#233](https://github.com/toss/slash/issues/233)) ([4b66f22](https://github.com/toss/slash/commit/4b66f225f8b41315e5e6a2fa54a7886c83343539))
+
+
+
+
+
 # [1.2.0](https://github.com/toss/slash/compare/@toss/storage@1.1.1...@toss/storage@1.2.0) (2023-02-27)
 
 
