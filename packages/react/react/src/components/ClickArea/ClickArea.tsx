@@ -1,7 +1,7 @@
 /** @tossdocs-ignore */
 /** @jsxImportSource react */
+import { noop } from '@toss/utils';
 import classnames from 'classnames';
-import { PureComponent } from 'react';
 import Style, { generateClassNames } from '../../utils/Style';
 
 interface Props {
@@ -14,30 +14,22 @@ interface Props {
   enabled?: boolean;
 }
 
-export class ClickArea extends PureComponent<Props> {
-  public render() {
-    const { className, children, enabled = true, onClick, ...rest } = this.props;
-
-    return (
-      <Style css={css}>
-        <a
-          role="button"
-          className={classnames(className, CLASSNAMES.clickArea, { [CLASSNAMES.enabled]: enabled })}
-          {...rest}
-          onTouchStart={this.dummyhandleTouchStart}
-          onClick={enabled ? onClick : undefined}
-        >
-          {children}
-        </a>
-      </Style>
-    );
-  }
-
-  private dummyhandleTouchStart = () => {
-    // iOS에서 :active 선택자가 작동하지 않아 사용하는 Hack
-    // 참조: https://stackoverflow.com/questions/3885018/active-pseudo-class-doesnt-work-in-mobile-safari
-  };
-}
+export const ClickArea = ({ className, children, onClick, enabled = true }: Props) => {
+  return (
+    <Style css={css}>
+      <a
+        role="button"
+        className={classnames(className, CLASSNAMES.clickArea, { [CLASSNAMES.enabled]: enabled })}
+        // iOS에서 :active 선택자가 작동하지 않아 사용하는 Hack
+        // 참조: https://stackoverflow.com/questions/3885018/active-pseudo-class-doesnt-work-in-mobile-safari
+        onTouchStart={noop}
+        onClick={enabled ? onClick : undefined}
+      >
+        {children}
+      </a>
+    </Style>
+  );
+};
 
 const CLASSNAMES = generateClassNames({
   clickArea: 'click-area',

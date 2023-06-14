@@ -12,7 +12,8 @@ type JosaOption =
   | '이에/에'
   | '이란/란'
   | '아/야'
-  | '이랑/랑';
+  | '이랑/랑'
+  | '이에요/예요';
 
 export function josa(word: string, josa: JosaOption): string {
   if (word.length === 0) {
@@ -32,6 +33,12 @@ function josaPicker(word: string, josa: JosaOption): string {
 
   if (josa === '와/과' || (has받침 && is종성ㄹ && josa === '으로/로')) {
     index = index === 0 ? 1 : 0;
+  }
+
+  const isEndsWith이 = word[word.length - 1] === '이';
+
+  if (josa === '이에요/예요' && isEndsWith이) {
+    index = 1;
   }
 
   return josa.split('/')[index]!;
