@@ -15,9 +15,10 @@ type JosaOption =
   | '이랑/랑'
   | '이에요/예요'
   | '으로서/로서'
-  | '으로써/로써';
+  | '으로써/로써'
+  | '으로부터/로부터';
 
-const 로_조사: JosaOption[] = ['으로/로', '으로서/로서', '으로써/로써'];
+const 로_조사: JosaOption[] = ['으로/로', '으로서/로서', '으로써/로써', '으로부터/로부터'];
 
 export function josa(word: string, josa: JosaOption): string {
   if (word.length === 0) {
