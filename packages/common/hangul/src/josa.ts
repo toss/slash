@@ -14,7 +14,10 @@ type JosaOption =
   | '아/야'
   | '이랑/랑'
   | '이에요/예요'
-  | '으로서/로서';
+  | '으로서/로서'
+  | '으로써/로써';
+
+const 로_조사: JosaOption[] = ['으로/로', '으로서/로서', '으로써/로써'];
 
 export function josa(word: string, josa: JosaOption): string {
   if (word.length === 0) {
@@ -32,7 +35,9 @@ function josaPicker(word: string, josa: JosaOption): string {
 
   const is종성ㄹ = disassembleCompleteHangulCharacter(word[word.length - 1]!)?.last === 'ㄹ';
 
-  if (josa === '와/과' || (has받침 && is종성ㄹ && josa === '으로/로')) {
+  const isCaseOf로 = has받침 && is종성ㄹ && 로_조사.includes(josa);
+
+  if (josa === '와/과' || isCaseOf로) {
     index = index === 0 ? 1 : 0;
   }
 
