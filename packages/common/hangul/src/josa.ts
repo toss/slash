@@ -13,7 +13,8 @@ type JosaOption =
   | '이란/란'
   | '아/야'
   | '이랑/랑'
-  | '이에요/예요';
+  | '이에요/예요'
+  | '으로서/로서';
 
 export function josa(word: string, josa: JosaOption): string {
   if (word.length === 0) {
