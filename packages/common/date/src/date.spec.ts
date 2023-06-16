@@ -1,7 +1,7 @@
 import { getDateDistance, getDateDistanceText, parseYYYYMMDD, TimeUnits } from './index';
 
 describe('parseYYYYMMDD', () => {
-  test('"2020-04-23"은 2019년 4월 23일로 파싱한다.', () => {
+  test('"2020-04-23"은 2020년 4월 23일로 파싱한다.', () => {
     const date = parseYYYYMMDD('2020-04-23');
 
     expect(date.getFullYear()).toEqual(2020);
