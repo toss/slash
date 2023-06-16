@@ -54,7 +54,7 @@ describe('ErrorBoundaryGroup', () => {
 });
 
 describe('useErrorBoundaryGroup', () => {
-  it("useErrorBoundaryGroup's returning object is same with object returned in previous render", () => {
+  it('returning object is same with object returned in previous render', () => {
     const { result, rerender } = renderHook(useErrorBoundaryGroup, {
       wrapper: ({ children }) => <ErrorBoundaryGroup>{children}</ErrorBoundaryGroup>,
     });
@@ -64,5 +64,15 @@ describe('useErrorBoundaryGroup', () => {
     const next = result.current;
 
     expect(prev).toBe(next);
+  });
+
+  it('should throw error without ErrorBoundaryGroup in parent', () => {
+    const WithoutErrorBoundaryGroup = () => {
+      useErrorBoundaryGroup();
+      return <></>;
+    };
+    expect(() => render(<WithoutErrorBoundaryGroup />)).toThrowError(
+      'useErrorBoundaryGroup: ErrorBoundaryGroup is required in parent'
+    );
   });
 });

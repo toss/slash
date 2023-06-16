@@ -55,6 +55,9 @@ export const ErrorBoundaryGroup = ({
   return <ErrorBoundaryGroupContext.Provider value={value}>{children}</ErrorBoundaryGroupContext.Provider>;
 };
 
+/**
+ * useErrorBoundaryGroup need ErrorBoundaryGroup in parent. if no ErrorBoundaryGroup, this hook will throw Error to prevent that case.
+ */
 export const useErrorBoundaryGroup = () => {
   const group = useContext(ErrorBoundaryGroupContext);
 
