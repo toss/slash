@@ -6201,7 +6201,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@toss/utility-types@workspace:packages/common/utility-types":
+"@toss/utility-types@workspace:^1.1.2, @toss/utility-types@workspace:packages/common/utility-types":
   version: 0.0.0-use.local
   resolution: "@toss/utility-types@workspace:packages/common/utility-types"
   dependencies:
@@ -6234,6 +6234,7 @@ __metadata:
     "@rollup/plugin-json": ^4.1.0
     "@rollup/plugin-node-resolve": ^13.3.0
     "@toss/rollup-config": "workspace:^0.1.4"
+    "@toss/utility-types": "workspace:^1.1.2"
     "@tossteam/jest": ^17
     "@types/babel__core": ^7
     "@types/babel__preset-env": ^7
