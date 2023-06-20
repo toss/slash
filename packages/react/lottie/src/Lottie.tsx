@@ -108,7 +108,7 @@ export const Lottie = forwardRef(function Lottie(
   const containerRef = useRef<HTMLDivElement>(null);
   const animationChainRef = useRef<AnimationChain | null>(null);
 
-  const [isVisible, handleImpressionStart] = useBooleanState(false);
+  const { bool: isVisible, setTrue: handleImpressionStart } = useBooleanState(false);
 
   const isFirstPlayRef = useRef<boolean>(true);
 
