@@ -1,6 +1,6 @@
 ## useActionObserver
 
-The useActionObserver hook is a Hook that associates the "ref" that it returns with a specific Element, causing the "onAction" function to be called when that Element is exposed to the "Viewport" a "threshold" amount of times while subscribing to the "IntersectionObserver".
+The useActionObserver hook returns a "ref" that can be connected to a specific element. When the element subscribes to the Intersection Observer and is exposed to the "Viewport" by a certain "threshold", the hook calls the "onAction" function.
 
 The useActionObserver hook optionally takes in the basic options for "IntersectionObserver" (threshold, rootMargin, root), and you can use repetitionCount to specify how many times you want to call onAction.
 

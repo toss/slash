@@ -1,6 +1,6 @@
 ## useActionObserver
 
-useActionObserver hook은 해당 hook이 반환하는 "ref"를 특정 Element에 연결하여, 해당 Element가 "IntersectionObserver" 구독하면서 "Viewport"에 "threshold"만큼 노출되면 "onAction" 함수를 호출하게 만드는 Hook입니다.
+useActionObserver hook은 반환하는 "ref"를 특정 Element에 연결하여, 해당 Element가 Intersection Observer 구독하면서, "Viewport"에 "threshold"만큼 노출되면 "onAction" 함수를 호출하는 hook입니다.
 
 useActionObserver hook은 "IntersectionObserver"의 기본적인 옵션(threshold, rootMargin, root)을 옵셔널하게 받아오며, repetitionCount를 활용하여 onAction을 얼마나 반복 호출할 것인지를 지정할 수 있습니다.
 
