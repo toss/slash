@@ -22,26 +22,26 @@ describe('Test Portal Component', () => {
   it('부모 컴포넌트 DOM 계층 구조 바깥에 추가한 DOM Node의 id와 같다면, 해당 Node의 자식으로 렌더링된다.', () => {
     render(<TestComponent id="outer" />);
 
-    const rootNode = document.body.querySelector('#root');
-    const outerNode = document.body.querySelector('#outer');
+    const root = document.body.querySelector('#root');
+    const outerPortal = document.body.querySelector('#outer');
 
-    const rootChildrenNode = rootNode?.querySelector('#child');
-    const outerChildrenNode = outerNode?.querySelector('#child');
+    const rootChildren = root?.querySelector('#child');
+    const outerPortalChildren = outerPortal?.querySelector('#child');
 
-    expect(rootChildrenNode).not.toBeInTheDocument();
-    expect(outerChildrenNode).toBeInTheDocument();
+    expect(rootChildren).not.toBeInTheDocument();
+    expect(outerPortalChildren).toBeInTheDocument();
   });
 
   it('부모 컴포넌트 DOM 계층 구조 바깥에 추가한 DOM Node의 id와 다르다면, 해당 Node의 자식으로 렌더링되지 않고 부모 컴포넌트의 자식으로 렌더링된다.', () => {
     render(<TestComponent id="etc" />);
 
-    const rootNode = document.body.querySelector('#root');
-    const outerNode = document.body.querySelector('#outer');
+    const root = document.body.querySelector('#root');
+    const outerPortal = document.body.querySelector('#outer');
 
-    const rootChildrenNode = rootNode?.querySelector('#child');
-    const outerChildrenNode = outerNode?.querySelector('#child');
+    const rootChildren = root?.querySelector('#child');
+    const outerPortalChildren = outerPortal?.querySelector('#child');
 
-    expect(rootChildrenNode).toBeInTheDocument();
-    expect(outerChildrenNode).not.toBeInTheDocument();
+    expect(rootChildren).toBeInTheDocument();
+    expect(outerPortalChildren).not.toBeInTheDocument();
   });
 });
