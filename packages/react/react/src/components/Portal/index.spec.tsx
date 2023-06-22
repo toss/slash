@@ -14,7 +14,6 @@ const TestComponent = ({ id }: { id: string }) => {
 beforeAll(() => {
   const tempDiv = document.createElement('div');
   tempDiv.setAttribute('id', 'outer');
-  tempDiv.setAttribute('id', 'outer');
 
   document.body.appendChild(tempDiv);
 });
