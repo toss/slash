@@ -5861,6 +5861,7 @@ __metadata:
     "@types/lodash.debounce": ^4
     "@types/lodash.throttle": ^4.1.6
     "@types/react": ^18.0.21
+    "@types/react-dom": ^18.2.6
     "@types/testing-library__jest-dom": ^5.9.5
     "@types/testing-library__react-hooks": ^3.2.0
     "@types/webpack": ^4
@@ -6905,6 +6906,15 @@ __metadata:
   dependencies:
     "@types/react": "*"
   checksum: db571047af1a567631758700b9f7d143e566df939cfe5fbf7535347cc0c726a1cdbb5e3f8566d076e54cf708b6c1166689de194a9ba09ee35efc9e1d45911685
+  languageName: node
+  linkType: hard
+
+"@types/react-dom@npm:^18.2.6":
+  version: 18.2.6
+  resolution: "@types/react-dom@npm:18.2.6"
+  dependencies:
+    "@types/react": "*"
+  checksum: b56e42efab121a3a8013d2eb8c1688e6028a25ea6d33c4362d2846f0af3760b164b4d7c34846614024cfb8956cca70dd1743487f152e32ff89a00fe6fbd2be54
   languageName: node
   linkType: hard
 
@@ -12966,6 +12976,7 @@ __metadata:
     "@emotion/eslint-plugin": ^11.10.0
     "@types/jest": ^29.2.0
     "@types/node": ^18.8.3
+    "@types/react-dom": ^18.2.6
     "@typescript-eslint/eslint-plugin": ^5.39.0
     "@typescript-eslint/parser": ^5.39.0
     eslint: ^7
