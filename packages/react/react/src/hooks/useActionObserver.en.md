@@ -18,7 +18,7 @@ function useActionObserver<E extends HTMLElement = HTMLElement>({
   threshold,
   rootMargin,
   repetitionCount,
-  root = null,
+  root,
 }: UseActionObserverProps): EffectRef<E>;
 ```
 

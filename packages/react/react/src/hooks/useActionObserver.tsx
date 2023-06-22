@@ -12,10 +12,10 @@ interface UseActionObserverProps {
 /** @tossdocs-ignore */
 export function useActionObserver<E extends HTMLElement = HTMLElement>({
   onAction,
+  repetitionCount,
   threshold,
   rootMargin,
-  repetitionCount,
-  root = null,
+  root,
 }: UseActionObserverProps) {
   const actionCallback = usePreservedCallback(onAction);
   const ref = useRefEffect<E>(
@@ -29,9 +29,11 @@ export function useActionObserver<E extends HTMLElement = HTMLElement>({
             return;
           }
 
-          if (entry.isIntersecting) {
-            callCount++;
-            actionCallback();
+          if (entry != null) {
+            if (entry.isIntersecting) {
+              callCount++;
+              actionCallback();
+            }
           }
         },
         {
