@@ -12,7 +12,6 @@ const TestComponent = ({ id }: { id: string }) => {
 };
 
 beforeAll(() => {
-  // 외부 DON Node 추가
   const tempDiv = document.createElement('div');
   tempDiv.setAttribute('id', 'outer');
   tempDiv.setAttribute('id', 'outer');
@@ -20,7 +19,7 @@ beforeAll(() => {
   document.body.appendChild(tempDiv);
 });
 
-describe('Portal', () => {
+describe('Test Portal Component', () => {
   it('부모 컴포넌트 DOM 계층 구조 바깥에 추가한 DOM Node의 id와 같다면, 해당 Node의 자식으로 렌더링된다.', () => {
     render(<TestComponent id="outer" />);
 
