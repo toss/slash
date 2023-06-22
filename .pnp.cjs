@@ -189,7 +189,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@emotion/eslint-plugin", "virtual:01ae7c33d4655a48cbb29902912466a761e01d57e32af25620c31e36065eb1601cc4f6394afcb6b2f9c9f1b941b9fbeecba9aa1bca8ca304ae87cee07a6864e9#npm:11.10.0"],\
             ["@types/jest", "npm:29.1.2"],\
             ["@types/node", "npm:18.8.3"],\
-            ["@types/react-dom", "npm:18.2.6"],\
             ["@typescript-eslint/eslint-plugin", "virtual:01ae7c33d4655a48cbb29902912466a761e01d57e32af25620c31e36065eb1601cc4f6394afcb6b2f9c9f1b941b9fbeecba9aa1bca8ca304ae87cee07a6864e9#npm:5.39.0"],\
             ["@typescript-eslint/parser", "virtual:01ae7c33d4655a48cbb29902912466a761e01d57e32af25620c31e36065eb1601cc4f6394afcb6b2f9c9f1b941b9fbeecba9aa1bca8ca304ae87cee07a6864e9#npm:5.39.0"],\
             ["eslint", "npm:7.32.0"],\
@@ -18701,7 +18700,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@emotion/eslint-plugin", "virtual:01ae7c33d4655a48cbb29902912466a761e01d57e32af25620c31e36065eb1601cc4f6394afcb6b2f9c9f1b941b9fbeecba9aa1bca8ca304ae87cee07a6864e9#npm:11.10.0"],\
             ["@types/jest", "npm:29.1.2"],\
             ["@types/node", "npm:18.8.3"],\
-            ["@types/react-dom", "npm:18.2.6"],\
             ["@typescript-eslint/eslint-plugin", "virtual:01ae7c33d4655a48cbb29902912466a761e01d57e32af25620c31e36065eb1601cc4f6394afcb6b2f9c9f1b941b9fbeecba9aa1bca8ca304ae87cee07a6864e9#npm:5.39.0"],\
             ["@typescript-eslint/parser", "virtual:01ae7c33d4655a48cbb29902912466a761e01d57e32af25620c31e36065eb1601cc4f6394afcb6b2f9c9f1b941b9fbeecba9aa1bca8ca304ae87cee07a6864e9#npm:5.39.0"],\
             ["eslint", "npm:7.32.0"],\
