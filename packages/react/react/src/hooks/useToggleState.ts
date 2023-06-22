@@ -4,7 +4,7 @@ export function useToggleState(defaultValue = false): readonly [boolean, () => v
   const [bool, setBool] = useState(defaultValue);
 
   const toggle = useCallback(() => {
-    setBool(b => !b);
+    setBool(prevBool => !prevBool);
   }, []);
 
   return [bool, toggle] as const;
