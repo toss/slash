@@ -14,7 +14,7 @@ const TestComponent = () => {
 
 describe('useToggleState', () => {
   describe('Return Value Type Check ', () => {
-    const { result } = renderHook(useToggleState);
+    const { result } = renderHook(() => useToggleState());
 
     const [bool, toggle] = result.current;
 
