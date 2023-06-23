@@ -6,7 +6,7 @@ const TestComponent = () => {
 
   return (
     <div>
-      <div role={'textbox'}>{`${bool}`}</div>
+      <p role={'paragraph'}>{`${bool}`}</p>
       <button onClick={toggle}>button</button>
     </div>
   );
@@ -55,21 +55,21 @@ describe('useToggleState', () => {
       render(<TestComponent />);
 
       const button = screen.getByRole('button');
-      const textBox = screen.getByRole('textbox');
+      const paragraph = screen.getByRole('paragraph');
 
-      expect(textBox).toHaveTextContent('false');
-
-      fireEvent.click(button);
-
-      expect(textBox).toHaveTextContent('true');
+      expect(paragraph).toHaveTextContent('false');
 
       fireEvent.click(button);
 
-      expect(textBox).toHaveTextContent('false');
+      expect(paragraph).toHaveTextContent('true');
 
       fireEvent.click(button);
 
-      expect(textBox).toHaveTextContent('true');
+      expect(paragraph).toHaveTextContent('false');
+
+      fireEvent.click(button);
+
+      expect(paragraph).toHaveTextContent('true');
     });
   });
 });
