@@ -1,7 +1,7 @@
 import { getDateDistance, getDateDistanceText, parseYYYYMMDD, TimeUnits } from './index';
 
 describe('parseYYYYMMDD', () => {
-  test('"2020-04-23"은 2020년 4월 23일로 파싱한다.', () => {
+  test('"2020-04-23" parsing to "2020년 4월 23일".', () => {
     const date = parseYYYYMMDD('2020-04-23');
 
     expect(date.getFullYear()).toEqual(2020);
@@ -9,24 +9,24 @@ describe('parseYYYYMMDD', () => {
     expect(date.getDate()).toEqual(23);
   });
 
-  test('"2020-13-02"는 에러를 던진다.', () => {
+  test('"2020-13-02" is throw error.', () => {
     expect(() => parseYYYYMMDD('2020-13-02')).toThrow('Invalid date format');
   });
 
-  test('"2020-01-32"는 에러를 던진다.', () => {
+  test('"2020-01-32" is throw error.', () => {
     expect(() => parseYYYYMMDD('2020-01-32')).toThrow('Invalid date format');
   });
 });
 
 describe('getDateDistance', () => {
-  test('두 Date 간의 차이를 일, 시, 분, 초로 반환한다.', () => {
+  test('Returns the difference between two Dates in "일, 시, 분, 초".', () => {
     const startDate = new Date('2020-07-01 12:00:00');
     const endDate = new Date('2020-07-02 13:01:01');
 
     expect(getDateDistance(startDate, endDate)).toEqual({ days: 1, hours: 1, minutes: 1, seconds: 1 });
   });
 
-  test('endDate가 더 이를 경우 전부 0을 반환한다.', () => {
+  test('If "endDate" is faster than "startDate" returns all 0.', () => {
     const startDate = new Date('2020-07-02 13:01:01');
     const endDate = new Date('2020-07-01 12:00:00');
 
@@ -35,8 +35,8 @@ describe('getDateDistance', () => {
 });
 
 describe('getDateDistanceText', () => {
-  describe('구분자', () => {
-    it(`기본값이 공백 ' ' 이고 '1일 1시간 1분 1초' 가 나옵니다.`, () => {
+  describe('Delimiter', () => {
+    it(`Default value is empty string ' ' and returns '1일 1시간 1분 1초'.`, () => {
       expect(
         getDateDistanceText({
           days: 1,
@@ -47,7 +47,7 @@ describe('getDateDistanceText', () => {
       ).toEqual('1일 1시간 1분 1초');
     });
 
-    it(`'.' 이라면 '1일.1시간.1분.1초' 가 나옵니다.`, () => {
+    it(`If Delimiter is '.', returns '1일.1시간.1분.1초'.`, () => {
       expect(
         getDateDistanceText(
           {
@@ -64,7 +64,7 @@ describe('getDateDistanceText', () => {
     });
   });
 
-  describe('아무 조건이 없다면 0인 값들의 단위들은 보여주지 않습니다.', () => {
+  describe('If there is no any condition, unit with 0 value is not showing in return value.', () => {
     const conditionOption = {};
     it(`'1일 1시간 1분 1초' -> '1일 1시간 1분 1초'`, () => {
       expect(
@@ -95,7 +95,7 @@ describe('getDateDistanceText', () => {
     });
   });
 
-  describe(`'일', '시간' 단위의 값이 있다면 '일', '시간' 단위만 보여지고, 두 값이 없다면 '분', '초' 단위만 보여준다.`, () => {
+  describe(`If there are values of "day" and "hour" units, only "day" and "hour" units are shown, and if there are no two values, only "minute" and "second" units are shown.`, () => {
     const conditionOptions = {
       days: (t: TimeUnits) => t.days > 0,
       hours: (t: TimeUnits) => t.hours > 0,
@@ -174,8 +174,8 @@ describe('getDateDistanceText', () => {
     });
   });
 
-  describe(`특정 단위만 보여주고 싶지 않을 때`, () => {
-    it(`'일' 단위는 보여지지 않는다.`, () => {
+  describe('When don`t wants show specific units', () => {
+    it("When don`t wants show '일' unit.", () => {
       expect(
         getDateDistanceText(
           {
@@ -191,7 +191,7 @@ describe('getDateDistanceText', () => {
       ).toEqual('1시간 1분 1초');
     });
 
-    it(`'시간' 단위는 보여지지 않는다.`, () => {
+    it("When don`t wants show '시간' unit.", () => {
       expect(
         getDateDistanceText(
           {
@@ -207,7 +207,7 @@ describe('getDateDistanceText', () => {
       ).toEqual('1일 1분 1초');
     });
 
-    it(`'분' 단위는 보여지지 않는다.`, () => {
+    it("When don`t wants show '분' unit.", () => {
       expect(
         getDateDistanceText(
           {
@@ -223,7 +223,7 @@ describe('getDateDistanceText', () => {
       ).toEqual('1일 1시간 1초');
     });
 
-    it(`'초' 단위는 보여지지 않는다.`, () => {
+    it("When don`t wants show '초' unit.", () => {
       expect(
         getDateDistanceText(
           {
