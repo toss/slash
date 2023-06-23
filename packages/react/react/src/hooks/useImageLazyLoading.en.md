@@ -10,7 +10,7 @@ It uses the [IntersectionObserver](https://developer.mozilla.org/ko/docs/Web/API
 const Example = () => {
   const imgRef = useImageLazyLoading({
     // Callback called when the target element enters the Viewport (or the element specified as root)
-    onLazyAction: () => {},
+    onAction: () => {},
 
     // You can specify an element to use instead of the Viewport to examine the visibility of the target element.
     root,

@@ -7,7 +7,7 @@ interface DataSet {
 }
 
 interface Props {
-  onLazyAction?: () => void;
+  onAction?: () => void;
   threshold?: number | number[];
   root?: Document | Element | null;
   rootMargin?: string;
@@ -17,7 +17,7 @@ type ImageElement = HTMLImageElement & DataSet;
 
 /** @tossdocs-ignore */
 export function useImageLazyLoading<Element extends HTMLElement>({
-  onLazyAction,
+  onAction,
   root = null,
   rootMargin = '0px 0px 0px 0px',
   threshold = [0],
@@ -27,14 +27,18 @@ export function useImageLazyLoading<Element extends HTMLElement>({
       return;
     }
 
+    if (!element.dataset.src) {
+      throw new Error('Add the image url to the "data-src" attribute of the "img" tag');
+    }
+
     const insertImageSrc = ([entry]: IntersectionObserverEntry[], observer: IntersectionObserver) => {
       if (entry) {
         if (entry.isIntersecting) {
           const imgElement = entry.target as ImageElement;
           imgElement.src = imgElement.dataset.src;
 
-          if (onLazyAction) {
-            onLazyAction();
+          if (onAction) {
+            onAction();
           }
 
           observer.unobserve(entry.target);

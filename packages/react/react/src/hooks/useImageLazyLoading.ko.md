@@ -9,7 +9,7 @@
 const Example = () => {
   const imgRef = useImageLazyLoading({
     // 타겟 요소가 Viewport(또는 root로 지정한 요소) 진입 시 호출되는 callback
-    onLazyAction: () => {},
+    onAction: () => {},
 
     // 타겟 요소의 가시성을 검사하기 위해 Viewport 대신 사용할 요소를 지정할 수 있습니다.
     root,
