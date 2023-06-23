@@ -8,6 +8,7 @@ export * from './useDebounce';
 export * from './useDidUpdate';
 export * from './useForceUpdate';
 export * from './useHotjarTracker';
+export * from './useImageLazyLoading';
 export * from './useInputState';
 export * from './useInterval';
 export * from './useIsMounted';
