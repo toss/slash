@@ -11,14 +11,7 @@ export function Portal({ id, children }: Props): JSX.Element {
   const isMount = useIsMounted();
 
   /**
-   * @description Code to resolve the "window is not defined" in Next.js
-   */
-  if (typeof window === 'undefined') {
-    return <></>;
-  }
-
-  /**
-   * @description Code to resolve "Hydration Error" in Next.js
+   * With this code, it is possible to solve the "window is not defined" and "Hydration Error" that can occur in SSR.
    */
   if (!isMount) {
     return <></>;
