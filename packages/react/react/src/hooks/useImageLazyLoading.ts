@@ -28,15 +28,17 @@ export function useImageLazyLoading<Element extends HTMLElement>({
     }
 
     const insertImageSrc = ([entry]: IntersectionObserverEntry[], observer: IntersectionObserver) => {
-      if (entry.isIntersecting) {
-        const imgElement = entry.target as ImageElement;
-        imgElement.src = imgElement.dataset.src;
+      if (entry) {
+        if (entry.isIntersecting) {
+          const imgElement = entry.target as ImageElement;
+          imgElement.src = imgElement.dataset.src;
 
-        if (onLazyAction) {
-          onLazyAction();
+          if (onLazyAction) {
+            onLazyAction();
+          }
+
+          observer.unobserve(entry.target);
         }
-
-        observer.unobserve(entry.target);
       }
     };
 
