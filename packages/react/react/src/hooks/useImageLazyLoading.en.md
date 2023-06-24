@@ -39,7 +39,7 @@ const Example = () => {
     root,
 
     // Margin can be used to expand or contract the scope of the root element. (string)
-    // [MDN](https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserver/rootMargin) 을 참고하세요.
+    // See [MDN](https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserver/rootMargin)
     rootMargin,
 
     // Shows how much visibility the element needs, as a percentage, for the observer to run. (number[] | number)

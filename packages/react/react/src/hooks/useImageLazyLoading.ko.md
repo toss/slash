@@ -39,7 +39,7 @@ const Example = () => {
     root,
 
     // Margin을 이용해 root 요소의 범위를 확장하거나 축소할 수 있습니다. (string)
-    // [MDN](https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserver/rootMargin) 을 참고하세요.
+    // [MDN](https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserver/rootMargin)을 참고하세요.
     rootMargin,
 
     // Observer가 실행되기 위해 요소의 가시성이 얼마나 필요한지 백분율로 표시합니다. (number[] | number)
