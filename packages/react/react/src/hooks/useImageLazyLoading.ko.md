@@ -29,7 +29,7 @@ function useImageLazyLoading<Element extends HTMLElement>({
 ```jsx
 const Example = () => {
   const imgRef = useImageLazyLoading({
-    // lazy load할 이미지의 "src"
+    // lazy load할 이미지 소스의 URL 값
     src: 'image src'
 
     // 타겟 요소가 Viewport(또는 root로 지정한 요소) 진입 시 호출되는 callback

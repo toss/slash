@@ -29,7 +29,7 @@ function useImageLazyLoading<Element extends HTMLElement>({
 ```tsx
 const Example = () => {
   const imgRef = useImageLazyLoading({
-    // "src" of the image to lazily load
+    // URL value of the image source to lazy load
     src: 'image src'
 
     // Callback called when the target element enters the Viewport (or the element specified as root)

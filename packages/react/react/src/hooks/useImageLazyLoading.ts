@@ -22,7 +22,8 @@ export function useImageLazyLoading<Element extends HTMLElement>({
     }
 
     if (element.getAttribute('src')) {
-      console.error('If the "src" attribute is present in the "img" tag, lazy load is not applied. ');
+      console.warn('If the "src" attribute is initially in an "img" tag, lazy load is not applied.');
+      return;
     }
 
     const insertImageSrc = ([entry]: IntersectionObserverEntry[], observer: IntersectionObserver) => {
@@ -31,6 +32,7 @@ export function useImageLazyLoading<Element extends HTMLElement>({
           const imgElement = entry.target as HTMLImageElement;
           imgElement.src = src;
 
+          // Execute additional actions when the target element is exposed in the Viewport (or the element you specified as root)
           if (onAction) {
             onAction();
           }
