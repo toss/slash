@@ -15,7 +15,13 @@ function useImageLazyLoading<Element extends HTMLElement>({
   threshold,
   root,
   onAction,
-}: Props): EffectRef<Element>;
+}: {
+  src: string;
+  threshold?: number | number[];
+  root?: Document | Element | null;
+  rootMargin?: string;
+  onAction?: () => void;
+}): EffectRef<Element>;
 ```
 
 ## Example
