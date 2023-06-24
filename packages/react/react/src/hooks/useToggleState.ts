@@ -1,5 +1,6 @@
 import { useCallback, useState } from 'react';
 
+/** @tossdocs-ignore */
 export function useToggleState(defaultValue = false): readonly [boolean, () => void] {
   const [bool, setBool] = useState(defaultValue);
 
