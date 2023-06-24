@@ -1,46 +1,41 @@
 import { useRefEffect } from './useRefEffect';
 
-interface DataSet {
-  dataset: {
-    src: string;
-  };
-}
-
 interface Props {
-  onAction?: () => void;
+  src: string;
   threshold?: number | number[];
   root?: Document | Element | null;
   rootMargin?: string;
+  onAction?: () => void;
 }
-
-type ImageElement = HTMLImageElement & DataSet;
 
 /** @tossdocs-ignore */
 export function useImageLazyLoading<Element extends HTMLElement>({
+  src,
+  rootMargin,
+  threshold,
+  root,
   onAction,
-  root = null,
-  rootMargin = '0px 0px 0px 0px',
-  threshold = [0],
 }: Props) {
   const ref = useRefEffect<Element>(element => {
     if (typeof IntersectionObserver === 'undefined') {
       return;
     }
 
-    if (!element.dataset.src) {
-      throw new Error('Add the image url to the "data-src" attribute of the "img" tag');
+    if (element.getAttribute('src')) {
+      console.error('If the "src" attribute is present in the "img" tag, lazy load is not applied. ');
     }
 
     const insertImageSrc = ([entry]: IntersectionObserverEntry[], observer: IntersectionObserver) => {
       if (entry) {
         if (entry.isIntersecting) {
-          const imgElement = entry.target as ImageElement;
-          imgElement.src = imgElement.dataset.src;
+          const imgElement = entry.target as HTMLImageElement;
+          imgElement.src = src;
 
           if (onAction) {
             onAction();
           }
 
+          // Once the image has been loaded once, unobserve its target element to prevent repeated load.
           observer.unobserve(entry.target);
         }
       }

@@ -59,13 +59,13 @@ function view(element: HTMLElement) {
 }
 
 const TestComponent = () => {
-  const ref1 = useImageLazyLoading({});
-  const ref2 = useImageLazyLoading({});
+  const ref1 = useImageLazyLoading({ src: 'testSrc1' });
+  const ref2 = useImageLazyLoading({ src: 'testSrc2' });
 
   return (
     <>
-      <img ref={ref1} data-src="testSrc1" alt="이미지1" />
-      <img ref={ref2} data-src="testSrc2" alt="이미지2" />
+      <img ref={ref1} alt="이미지1" />
+      <img ref={ref2} alt="이미지2" />
     </>
   );
 };
@@ -79,14 +79,11 @@ afterEach(() => {
 });
 
 describe('useImageLazyLoading', () => {
-  it('When the target element is displayed in the viewport (or root element), the value of data-src in the img tag is inserted into the src.', () => {
+  it('When the target element is visible in the viewport (or root element), the value passed to src in the useImageLazyLoading hook is added to the src attribute of the img tag.', () => {
     const { getByAltText } = render(<TestComponent />);
 
     const img1 = getByAltText('이미지1');
     const img2 = getByAltText('이미지2');
-
-    expect(img1).toHaveAttribute('data-src', 'testSrc1');
-    expect(img2).toHaveAttribute('data-src', 'testSrc2');
 
     expect(img1).not.toHaveAttribute('src', 'testSrc1');
     expect(img2).not.toHaveAttribute('src', 'testSrc2');

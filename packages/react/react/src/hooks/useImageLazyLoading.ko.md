@@ -1,13 +1,31 @@
 # useImageLazyLoading
 
-`ref` 가 주어진 요소가 브라우저 Viewport(또는 root로 지정한 요소)에 보여질 때 이미지를 Lazy Load하는 훅입니다.
+`ref` 가 주어진 요소가 브라우저 Viewport(또는 root로 지정한 요소)에 보여질 때 이미지를 로드하는 훅입니다.
+
+이미지 Lazy Load를 적용함으로써, 사용자는 페이지 진입 시에 한번에 모든 이미지 리소스를 로드할 필요가 없어져 사용자 경험을 향상시킵니다.
+
 [IntersectionObserver](https://developer.mozilla.org/ko/docs/Web/API/Intersection_Observer_API) API를 사용하여 효율적으로 동작합니다.
+
+<br />
+
+```tsx
+function useImageLazyLoading<Element extends HTMLElement>({
+  src,
+  rootMargin,
+  threshold,
+  root,
+  onAction,
+}: Props): EffectRef<Element>;
+```
 
 ## Example
 
 ```jsx
 const Example = () => {
   const imgRef = useImageLazyLoading({
+    // lazy load할 이미지의 "src"
+    src: 'image src'
+
     // 타겟 요소가 Viewport(또는 root로 지정한 요소) 진입 시 호출되는 callback
     onAction: () => {},
 
@@ -24,7 +42,7 @@ const Example = () => {
   });
 
   return (
-    <img ref={imgRef} data-src={imgSrc}>
+    <img ref={imgRef} alt="image1">
   );
 };
 ```
