@@ -1,8 +1,9 @@
 import { render } from '@testing-library/react';
+import { noop } from '@toss/utils';
 import { useImageLazyLoading } from './useImageLazyLoading';
 
 /**
- * @description This is the Intersection Observer Setup Code referring to "impression-area" in "@toss/react".
+ * This is the Intersection Observer Setup Code referring to "impression-area" in "@toss/react".
  */
 const defaultIntersectionObserver = window.IntersectionObserver;
 const handlers = new Map<HTMLElement, (entries: IntersectionObserverEntry[], observer: IntersectionObserver) => void>();
@@ -30,8 +31,8 @@ function cleanup() {
   handlers.clear();
 }
 
-function view(element: HTMLElement) {
-  const observer = new window.IntersectionObserver(() => {});
+const mockIntersect = ({ type, element }: { element: HTMLElement; type: 'view' | 'hide' }) => {
+  const observer = new window.IntersectionObserver(noop);
   let current: HTMLElement | null = element;
 
   while (current != null) {
@@ -41,8 +42,8 @@ function view(element: HTMLElement) {
       handler(
         [
           {
-            isIntersecting: true,
-            intersectionRatio: 1,
+            isIntersecting: type === 'view' ? true : false,
+            intersectionRatio: type === 'view' ? 1 : 0,
             boundingClientRect: {} as any,
             intersectionRect: {} as any,
             rootBounds: {} as any,
@@ -56,11 +57,11 @@ function view(element: HTMLElement) {
 
     current = current.parentElement;
   }
-}
+};
 
 const TestComponent = ({ onAction }: { onAction?: () => void }) => {
   const imgRef1 = useImageLazyLoading({ src: 'testSrc1' });
-  const imgRef2 = useImageLazyLoading({ src: 'testSrc2', onAction: onAction });
+  const imgRef2 = useImageLazyLoading({ src: 'testSrc2', onAction });
 
   return (
     <>
@@ -95,12 +96,18 @@ describe('useImageLazyLoading', () => {
     const img1 = getByAltText('img1');
     const img2 = getByAltText('img2');
 
-    view(img1);
+    mockIntersect({
+      type: 'view',
+      element: img1,
+    });
 
     expect(img1).toHaveAttribute('src', 'testSrc1');
     expect(img2).not.toHaveAttribute('src', 'testSrc2');
 
-    view(img2);
+    mockIntersect({
+      type: 'view',
+      element: img2,
+    });
 
     expect(img1).toHaveAttribute('src', 'testSrc1');
     expect(img2).toHaveAttribute('src', 'testSrc2');
@@ -113,12 +120,48 @@ describe('useImageLazyLoading', () => {
     const img1 = getByAltText('img1');
     const img2 = getByAltText('img2');
 
-    view(img1);
+    mockIntersect({
+      type: 'view',
+      element: img1,
+    });
 
-    expect(mockAction).not.toHaveBeenCalled();
+    expect(mockAction).toHaveBeenCalledTimes(0);
 
-    view(img2);
+    mockIntersect({
+      type: 'view',
+      element: img2,
+    });
 
-    expect(mockAction).toHaveBeenCalled();
+    expect(mockAction).toHaveBeenCalledTimes(1);
+  });
+
+  it('Once a target element is exposed to the Viewport (or whatever element you specify as root), it is no longer observed.', () => {
+    const mockAction = jest.fn();
+    const { getByAltText } = render(<TestComponent onAction={mockAction} />);
+
+    const img2 = getByAltText('img2');
+
+    expect(mockAction).toHaveBeenCalledTimes(0);
+
+    mockIntersect({
+      type: 'view',
+      element: img2,
+    });
+
+    expect(mockAction).toHaveBeenCalledTimes(1);
+
+    mockIntersect({
+      type: 'hide',
+      element: img2,
+    });
+
+    expect(mockAction).toHaveBeenCalledTimes(1);
+
+    mockIntersect({
+      type: 'view',
+      element: img2,
+    });
+
+    expect(mockAction).toHaveBeenCalledTimes(1);
   });
 });

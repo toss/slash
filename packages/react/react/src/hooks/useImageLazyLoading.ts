@@ -21,12 +21,13 @@ export function useImageLazyLoading<Element extends HTMLImageElement>({
       return;
     }
 
-    if (src == null) {
-      throw new Error("The 'useImageLazyLoading' hook requires the 'src' prop to be a required value.");
-    }
-
     if (element.tagName !== 'IMG') {
       throw new Error("The target element can only be an 'img' tag.");
+    }
+
+    // Checks if undefined or null.
+    if (src == null) {
+      throw new Error("The 'useImageLazyLoading' hook requires the 'src' prop to be a required value.");
     }
 
     if (element.getAttribute('src')) {
@@ -41,6 +42,7 @@ export function useImageLazyLoading<Element extends HTMLImageElement>({
           imgElement.src = src;
 
           // Execute additional actions when the target element is exposed in the Viewport (or the element you specified as root)
+          // For example, logging processing.
           if (onAction) {
             onAction();
           }
