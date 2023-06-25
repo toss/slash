@@ -9,7 +9,7 @@ interface Props {
 }
 
 /** @tossdocs-ignore */
-export function useImageLazyLoading<Element extends HTMLElement>({
+export function useImageLazyLoading<Element extends HTMLImageElement>({
   src,
   rootMargin,
   threshold,
@@ -19,6 +19,14 @@ export function useImageLazyLoading<Element extends HTMLElement>({
   const ref = useRefEffect<Element>(element => {
     if (typeof IntersectionObserver === 'undefined') {
       return;
+    }
+
+    if (src == null) {
+      throw new Error("The 'useImageLazyLoading' hook requires the 'src' prop to be a required value.");
+    }
+
+    if (element.tagName !== 'IMG') {
+      throw new Error("The target element can only be an 'img' tag.");
     }
 
     if (element.getAttribute('src')) {
