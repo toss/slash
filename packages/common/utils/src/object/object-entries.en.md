@@ -5,7 +5,7 @@ sidebar_label: objectEntries
 
 # objectEntries
 
-A utility function which behaves identical to [Object.entries()](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Object/entries). It strictly infers the `key` type of an object.
+A utility function which behaves identical to [Object.entries()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/entries). It strictly infers the `key` type of an object.
 
 ## Example
 
