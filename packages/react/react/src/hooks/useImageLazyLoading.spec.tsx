@@ -1,4 +1,4 @@
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { noop } from '@toss/utils';
 import { useImageLazyLoading } from './useImageLazyLoading';
 
@@ -81,20 +81,20 @@ afterEach(() => {
 
 describe('useImageLazyLoading', () => {
   it('Initially, Img tags do not contain the URL value of the image source in the src attribute.', () => {
-    const { getByAltText } = render(<TestComponent />);
+    render(<TestComponent />);
 
-    const img1 = getByAltText('img1');
-    const img2 = getByAltText('img2');
+    const img1 = screen.getByAltText('img1');
+    const img2 = screen.getByAltText('img2');
 
     expect(img1).not.toHaveAttribute('src', 'testSrc1');
     expect(img2).not.toHaveAttribute('src', 'testSrc2');
   });
 
   it('When the target element is visible in the viewport (or the element you specified as root), the value passed to src in the useImageLazyLoading hook is added to the src attribute of the img tag.', () => {
-    const { getByAltText } = render(<TestComponent />);
+    render(<TestComponent />);
 
-    const img1 = getByAltText('img1');
-    const img2 = getByAltText('img2');
+    const img1 = screen.getByAltText('img1');
+    const img2 = screen.getByAltText('img2');
 
     mockIntersect({
       type: 'view',
@@ -115,10 +115,10 @@ describe('useImageLazyLoading', () => {
 
   it('When the target element is visible in the viewport (or the element you specified as root), If you provided onAction props, the onAction is executed.', () => {
     const mockAction = jest.fn();
-    const { getByAltText } = render(<TestComponent onAction={mockAction} />);
+    render(<TestComponent onAction={mockAction} />);
 
-    const img1 = getByAltText('img1');
-    const img2 = getByAltText('img2');
+    const img1 = screen.getByAltText('img1');
+    const img2 = screen.getByAltText('img2');
 
     mockIntersect({
       type: 'view',
@@ -137,9 +137,9 @@ describe('useImageLazyLoading', () => {
 
   it('Once a target element is exposed to the Viewport (or whatever element you specify as root), it is no longer observed.', () => {
     const mockAction = jest.fn();
-    const { getByAltText } = render(<TestComponent onAction={mockAction} />);
+    render(<TestComponent onAction={mockAction} />);
 
-    const img2 = getByAltText('img2');
+    const img2 = screen.getByAltText('img2');
 
     expect(mockAction).toHaveBeenCalledTimes(0);
 
