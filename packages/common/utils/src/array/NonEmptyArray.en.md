@@ -6,7 +6,7 @@ A type which indicates that an array is not empty.
 type NonEmptyArray<T> = [T, ...T[]];
 ```
 
-- You can use this to create a function like [isNonEmptyArray](https://slash.page/ko/libraries/common/utils/src/array/isnonemptyarray.i18n/) that checks if an array has at least one element.
+- You can use this to create a function like [isNonEmptyArray](https://slash.page/libraries/common/utils/src/array/isnonemptyarray.i18n/) that checks if an array has at least one element.
 
 # Example
 
