@@ -5,7 +5,7 @@ sidebar_label: objectValues
 
 # objectValues
 
-A function which behaves identical to [Object.values()](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Object/values).
+A function which behaves identical to [Object.values()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/values).
 
 ## Example
 

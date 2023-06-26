@@ -1,6 +1,6 @@
 # arrayIncludes
 
-A utility function to help removing type assertions when using [Array.prototype.includes()](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/includes).
+A utility function to help removing type assertions when using [Array.prototype.includes()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/includes).
 
 ## Example
 
