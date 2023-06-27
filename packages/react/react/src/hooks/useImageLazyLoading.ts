@@ -27,7 +27,7 @@ export function useImageLazyLoading<Element extends HTMLImageElement>({
 
     // Checks if undefined or null.
     if (src == null) {
-      throw new Error("The 'useImageLazyLoading' hook requires the 'src' prop to be a required value.");
+      throw new Error('The useImageLazyLoading hook requires the src property as a required value.');
     }
 
     if (element.getAttribute('src')) {
