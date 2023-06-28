@@ -9,7 +9,7 @@ It uses the [IntersectionObserver](https://developer.mozilla.org/ko/docs/Web/API
 <br />
 
 ```tsx
-function useLazyImage<Element extends HTMLImageElement>({
+function useLazyImage({
   src,
   rootMargin,
   threshold,

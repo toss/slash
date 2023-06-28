@@ -9,7 +9,7 @@
 <br />
 
 ```tsx
-function useLazyImage<Element extends HTMLImageElement>({
+function useLazyImage({
   src,
   rootMargin,
   threshold,

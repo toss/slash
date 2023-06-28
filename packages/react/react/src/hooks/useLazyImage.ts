@@ -1,4 +1,4 @@
-import { EffectRef, useRefEffect } from './useRefEffect';
+import { useRefEffect } from './useRefEffect';
 
 interface Props {
   src: string;
@@ -9,7 +9,7 @@ interface Props {
 }
 
 /** @tossdocs-ignore */
-export function useLazyImage({ src, rootMargin, threshold, root, onInView }: Props): EffectRef<HTMLImageElement> {
+export function useLazyImage({ src, rootMargin, threshold, root, onInView }: Props) {
   const ref = useRefEffect<HTMLImageElement>(element => {
     if (typeof IntersectionObserver === 'undefined') {
       element.src = src;
