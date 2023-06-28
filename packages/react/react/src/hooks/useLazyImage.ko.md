@@ -1,4 +1,4 @@
-# useImageLazyLoading
+# useLazyImage
 
 `ref` 가 주어진 요소가 브라우저 Viewport(또는 root로 지정한 요소)에 보여질 때 이미지를 로드하는 훅입니다.
 
@@ -9,39 +9,39 @@
 <br />
 
 ```tsx
-function useImageLazyLoading<Element extends HTMLImageElement>({
+function useLazyImage<Element extends HTMLImageElement>({
   src,
   rootMargin,
   threshold,
   root,
-  onAction,
+  onInView,
 }: {
   src: string;
   threshold?: number | number[];
   root?: Document | Element | null;
   rootMargin?: string;
-  onAction?: () => void;
-}): EffectRef<Element>;
+  onInView?: () => void;
+}): EffectRef<HTMLImageElement>;
 ```
 
 ## Example
 
 ```jsx
 const Example = () => {
-  const imgRef = useImageLazyLoading({
+  const imgRef = useLazyImage({
     /**
      * lazy load할 이미지 소스의 URL 값입니다.
      * type: string
      * required
      */
-    src: 'image URL src'
+    src: 'Image URL src'
 
     /**
      * 타겟 요소가 Viewport(또는 root로 지정한 요소) 노출 될 때 호출되는 callback Function입니다.
      * type: () => void
      * optional
      */
-    onAction,
+    onInView,
 
     /**
      * 타겟 요소의 가시성을 검사하기 위해 Viewport 대신 사용할 요소를 지정할 수 있습니다.
@@ -52,6 +52,7 @@ const Example = () => {
 
     /**
      * Margin을 이용해 root 요소의 범위를 확장하거나 축소할 수 있습니다.
+     * 해당 값은 root 요소를 특정해야만 정상 동작합니다. root가 null일 경우에는 작동하지 않습니다.
      * type: string
      * optional
      */

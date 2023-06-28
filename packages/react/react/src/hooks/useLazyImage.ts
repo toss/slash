@@ -1,33 +1,19 @@
-import { useRefEffect } from './useRefEffect';
+import { EffectRef, useRefEffect } from './useRefEffect';
 
 interface Props {
   src: string;
   threshold?: number | number[];
   root?: Document | Element | null;
   rootMargin?: string;
-  onAction?: () => void;
+  onInView?: () => void;
 }
 
 /** @tossdocs-ignore */
-export function useImageLazyLoading<Element extends HTMLImageElement>({
-  src,
-  rootMargin,
-  threshold,
-  root,
-  onAction,
-}: Props) {
-  const ref = useRefEffect<Element>(element => {
+export function useLazyImage({ src, rootMargin, threshold, root, onInView }: Props): EffectRef<HTMLImageElement> {
+  const ref = useRefEffect<HTMLImageElement>(element => {
     if (typeof IntersectionObserver === 'undefined') {
+      element.src = src;
       return;
-    }
-
-    if (element.tagName !== 'IMG') {
-      throw new Error("The target element can only be an 'img' tag.");
-    }
-
-    // Checks if undefined or null.
-    if (src == null) {
-      throw new Error('The useImageLazyLoading hook requires the src property as a required value.');
     }
 
     if (element.getAttribute('src')) {
@@ -43,8 +29,8 @@ export function useImageLazyLoading<Element extends HTMLImageElement>({
 
           // Execute additional actions when the target element is exposed in the Viewport (or the element you specified as root)
           // For example, logging processing.
-          if (onAction) {
-            onAction();
+          if (onInView) {
+            onInView();
           }
 
           // Once the image has been loaded once, unobserve its target element to prevent repeated load.

@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import { noop } from '@toss/utils';
-import { useImageLazyLoading } from './useImageLazyLoading';
+import { useLazyImage } from './useLazyImage';
 
 /**
  * This is the Intersection Observer Setup Code referring to "impression-area" in "@toss/react".
@@ -59,9 +59,9 @@ const mockIntersect = ({ type, element }: { element: HTMLElement; type: 'view' |
   }
 };
 
-const TestComponent = ({ onAction }: { onAction?: () => void }) => {
-  const imgRef1 = useImageLazyLoading({ src: 'testSrc1' });
-  const imgRef2 = useImageLazyLoading({ src: 'testSrc2', onAction });
+const TestComponent = ({ onInView }: { onInView?: () => void }) => {
+  const imgRef1 = useLazyImage({ src: 'testSrc1' });
+  const imgRef2 = useLazyImage({ src: 'testSrc2', onInView });
 
   return (
     <>
@@ -113,9 +113,9 @@ describe('useImageLazyLoading', () => {
     expect(img2).toHaveAttribute('src', 'testSrc2');
   });
 
-  it('When the target element is visible in the viewport (or the element you specified as root), If you provided onAction props, the onAction is executed.', () => {
+  it('When the target element is visible in the viewport (or the element you specified as root), If you provided onInView props, the onInView is executed.', () => {
     const mockAction = jest.fn();
-    render(<TestComponent onAction={mockAction} />);
+    render(<TestComponent onInView={mockAction} />);
 
     const img1 = screen.getByAltText('img1');
     const img2 = screen.getByAltText('img2');
@@ -137,7 +137,7 @@ describe('useImageLazyLoading', () => {
 
   it('Once a target element is exposed to the Viewport (or whatever element you specify as root), it is no longer observed.', () => {
     const mockAction = jest.fn();
-    render(<TestComponent onAction={mockAction} />);
+    render(<TestComponent onInView={mockAction} />);
 
     const img2 = screen.getByAltText('img2');
 

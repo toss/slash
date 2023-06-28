@@ -1,4 +1,4 @@
-# useImageLazyLoading
+# useLazyImage
 
 A hook that loads an image when the element given by `ref` is visible in the browser viewport (or the element you specify as root).
 
@@ -9,26 +9,26 @@ It uses the [IntersectionObserver](https://developer.mozilla.org/ko/docs/Web/API
 <br />
 
 ```tsx
-function useImageLazyLoading<Element extends HTMLImageElement>({
+function useLazyImage<Element extends HTMLImageElement>({
   src,
   rootMargin,
   threshold,
   root,
-  onAction,
+  onInView,
 }: {
   src: string;
   threshold?: number | number[];
   root?: Document | Element | null;
   rootMargin?: string;
-  onAction?: () => void;
-}): EffectRef<Element>;
+  onInView?: () => void;
+}): EffectRef<HTMLImageElement>;
 ```
 
 ## Example
 
 ```tsx
 const Example = () => {
-  const imgRef = useImageLazyLoading({
+  const imgRef = useLazyImage({
     /**
      * URL value of the image source to lazy load
      * type: string
@@ -41,7 +41,7 @@ const Example = () => {
      * type: () => void
      * optional
      */
-    onAction,
+    onInView,
 
     /**
      * You can specify an element to use instead of the Viewport to examine the visibility of the target element.
@@ -52,6 +52,7 @@ const Example = () => {
 
     /**
      * Margin can be used to expand or contract the scope of the root element.
+     * This value only works if you specify the root element; it doesn't work if root is null.
      * type: string
      * optional
      */
