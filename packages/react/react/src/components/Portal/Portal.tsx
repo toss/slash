@@ -7,7 +7,7 @@ interface Props {
 }
 
 /** @tossdocs-ignore */
-export function Portal({ id, children }: Props): JSX.Element {
+export function Portal({ id, children }: Props) {
   const isMount = useIsMounted();
 
   /**
@@ -17,6 +17,6 @@ export function Portal({ id, children }: Props): JSX.Element {
     return <></>;
   }
 
-  const portalElement = document.getElementById(`${id}`);
+  const portalElement = document.getElementById(id);
   return portalElement ? ReactDOM.createPortal(children, portalElement) : <>{children}</>;
 }
