@@ -1,7 +1,7 @@
 import { getDateDistance, getDateDistanceText, parseYYYYMMDD, TimeUnits } from './index';
 
 describe('parseYYYYMMDD', () => {
-  test('"2020-04-23" parsing to "2020년 4월 23일".', () => {
+  it('"2020-04-23" parsing to "2020년 4월 23일".', () => {
     const date = parseYYYYMMDD('2020-04-23');
 
     expect(date.getFullYear()).toEqual(2020);
@@ -9,24 +9,24 @@ describe('parseYYYYMMDD', () => {
     expect(date.getDate()).toEqual(23);
   });
 
-  test('"2020-13-02" is throw error.', () => {
+  it('"2020-13-02" is throw error.', () => {
     expect(() => parseYYYYMMDD('2020-13-02')).toThrow('Invalid date format');
   });
 
-  test('"2020-01-32" is throw error.', () => {
+  it('"2020-01-32" is throw error.', () => {
     expect(() => parseYYYYMMDD('2020-01-32')).toThrow('Invalid date format');
   });
 });
 
 describe('getDateDistance', () => {
-  test('Returns the difference between two Dates in "일, 시, 분, 초".', () => {
+  it('Returns the difference between two Dates in "일, 시, 분, 초".', () => {
     const startDate = new Date('2020-07-01 12:00:00');
     const endDate = new Date('2020-07-02 13:01:01');
 
     expect(getDateDistance(startDate, endDate)).toEqual({ days: 1, hours: 1, minutes: 1, seconds: 1 });
   });
 
-  test('If "endDate" is faster than "startDate" returns all 0.', () => {
+  it('If "endDate" is faster than "startDate" returns all 0.', () => {
     const startDate = new Date('2020-07-02 13:01:01');
     const endDate = new Date('2020-07-01 12:00:00');
 
