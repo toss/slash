@@ -1,43 +1,112 @@
 import { render } from '@testing-library/react';
+import { useRef } from 'react';
 import { Portal } from './Portal';
 
-const TestComponent = ({ id }: { id: string }) => {
+const DefaultTestComponent = () => {
   return (
-    <>
-      <div id="parent">
-        <Portal id={id}>
-          <div id="child">Example Portal</div>
+    <div id="parent">
+      <Portal>
+        <p className="child">Default Portal</p>
+      </Portal>
+    </div>
+  );
+};
+
+const ContainerTestComponent = () => {
+  const ref = useRef<HTMLDivElement | null>(null);
+
+  return (
+    <div id="parent">
+      <Portal containerRef={ref}>
+        <p className="child">Default Portal</p>
+      </Portal>
+
+      <div id="outer" ref={ref}></div>
+    </div>
+  );
+};
+
+const NestedTestComponent = () => {
+  const ref = useRef<HTMLDivElement | null>(null);
+
+  return (
+    <div id="parent">
+      <Portal>
+        <p className="child">Default Portal</p>
+        <Portal>
+          <p className="nested-child-1">Nested Portal1</p>
+          <Portal containerRef={ref}>
+            <p className="nested-child-2">Nested Portal2</p>
+          </Portal>
         </Portal>
-      </div>
-      <div id="outer"></div>
-    </>
+      </Portal>
+
+      <div id="outer" ref={ref}></div>
+    </div>
   );
 };
 
 describe('Portal', () => {
-  it("If the ID passed as a property to the Portal Component matches the ID of a DOM element outside of the parent component's hierarchy, the Portal Component's child component is rendered to that external DOM element.", () => {
-    const { container } = render(<TestComponent id="outer" />);
+  describe('DefaultTest', () => {
+    it("The Portal Component will render the portal node in 'document.body' by default unless you pass in the 'containerRef' prop. The id value for that portal node defaults to 'portal'.", () => {
+      const { container } = render(<DefaultTestComponent />);
 
-    const parent = container.querySelector('#parent');
-    const outer = container.querySelector('#outer');
+      const parentNode = container.querySelector('#parent');
+      const parentPortal = parentNode?.querySelector('.portal');
 
-    const parentChildren = parent?.querySelector('#child');
-    const outerChildren = outer?.querySelector('#child');
+      expect(parentPortal).toBeNull();
 
-    expect(parentChildren).not.toBeInTheDocument();
-    expect(outerChildren).toBeInTheDocument();
+      const documentPortal = document.querySelector('.portal');
+      const documentPortalChild = documentPortal?.querySelector('.child');
+
+      expect(documentPortalChild).toBeInTheDocument();
+    });
   });
 
-  it("If the ID passed as a property to the Portal Component does not match the ID of a DOM element outside of the parent component's hierarchy, the Portal Component's child component is rendered to the parent component.", () => {
-    const { container } = render(<TestComponent id="etc" />);
+  describe('ContainerTest', () => {
+    it("By passing in the Portal Component's 'containerRef' prop, you can render to any other DOM node you want instead of the 'document.body'.", () => {
+      const { container } = render(<ContainerTestComponent />);
 
-    const parent = container.querySelector('#parent');
-    const outer = container.querySelector('#outer');
+      const outerNode = container.querySelector('#outer');
+      const outerInnerPortal = outerNode?.querySelector('.portal');
+      const outerInnerChild = outerInnerPortal?.querySelector('.child');
 
-    const parentChildren = parent?.querySelector('#child');
-    const outerChildren = outer?.querySelector('#child');
+      expect(outerInnerChild).toBeInTheDocument();
+    });
+  });
 
-    expect(parentChildren).toBeInTheDocument();
-    expect(outerChildren).not.toBeInTheDocument();
+  describe('NestedTest', () => {
+    it('Nesting multiple Portal Components creates a nested Portal DOM hierarchy.', () => {
+      const { container } = render(<NestedTestComponent />);
+
+      const parentNode = container.querySelector('#parent');
+      const parentPortal = parentNode?.querySelector('.portal');
+
+      expect(parentPortal).toBeNull();
+
+      const documentPortal = document.querySelector('.portal');
+      const documentPortalChild = documentPortal?.querySelector('.child');
+
+      expect(documentPortalChild).toBeInTheDocument();
+
+      const nestedPortal1 = documentPortal?.querySelector('.portal');
+      const nestedChild1 = nestedPortal1?.querySelector('.nested-child-1');
+
+      expect(nestedChild1).toBeInTheDocument();
+
+      const nestedPortal2 = nestedPortal1?.querySelector('.portal');
+      const nestedChild2 = nestedPortal2?.querySelector('.nested-child-2');
+
+      expect(nestedChild2).toBeInTheDocument();
+    });
+
+    it('If a nested Portal Component has a containerRef, it will still be rendered to the parent Portal Component.', () => {
+      const { container } = render(<NestedTestComponent />);
+
+      const outerNode = container.querySelector('#outer');
+      const outerPortal = outerNode?.querySelector('.portal');
+
+      expect(outerPortal).toBeNull();
+    });
   });
 });
