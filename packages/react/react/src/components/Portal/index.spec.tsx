@@ -15,7 +15,7 @@ const TestComponent = ({ id }: { id: string }) => {
 };
 
 describe('Portal', () => {
-  it("If the ID of a DOM Node added outside of the parent component's DOM hierarchy is the same as the ID added with the Portal Component props, the Portal Component's Children are rendered as children of the external DOM Node.", () => {
+  it("If the ID passed as a property to the Portal Component matches the ID of a DOM element outside of the parent component's hierarchy, the Portal Component's child component is rendered to that external DOM element.", () => {
     const { container } = render(<TestComponent id="outer" />);
 
     const parent = container.querySelector('#parent');
@@ -28,7 +28,7 @@ describe('Portal', () => {
     expect(outerChildren).toBeInTheDocument();
   });
 
-  it("If the ID of a DOM Node added outside of the parent component's DOM hierarchy is different from the ID added with the Portal Component props, the Portal Component's Children are rendered as children of the parent component.", () => {
+  it("If the ID passed as a property to the Portal Component does not match the ID of a DOM element outside of the parent component's hierarchy, the Portal Component's child component is rendered to the parent component.", () => {
     const { container } = render(<TestComponent id="etc" />);
 
     const parent = container.querySelector('#parent');

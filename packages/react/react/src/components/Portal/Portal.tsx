@@ -8,12 +8,12 @@ interface Props {
 
 /** @tossdocs-ignore */
 export function Portal({ id, children }: Props) {
-  const isMount = useIsMounted();
+  const isMounted = useIsMounted();
 
   /**
    * With this code, it is possible to solve the "window is not defined" and "Hydration Error" that can occur in SSR.
    */
-  if (!isMount) {
+  if (!isMounted) {
     return <></>;
   }
 
