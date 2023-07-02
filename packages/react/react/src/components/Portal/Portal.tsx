@@ -4,6 +4,7 @@ import { useIsMounted } from '../../hooks/useIsMounted';
 
 interface PortalProps {
   children: React.ReactNode;
+  className?: string;
   containerRef?: React.RefObject<HTMLElement | null>;
 }
 
@@ -11,20 +12,25 @@ const portalContext = createContext<{ parentPortal: HTMLElement | null }>({
   parentPortal: null,
 });
 
-function RenderPortal({ containerRef, children }: PortalProps) {
+const PORTAL_DEFAULT_CLASS = 'portal';
+
+function RenderPortal({ children, className, containerRef }: PortalProps) {
   const { parentPortal } = useContext(portalContext);
 
   const getPortalNode = useCallback((mountNode: HTMLElement) => {
     const portalNode = mountNode.ownerDocument.createElement('div');
-    portalNode.classList.add('portal');
+    portalNode.classList.add(className || PORTAL_DEFAULT_CLASS);
 
     return portalNode;
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  /**
+   * This is the mount node to render portal nodes.
+   * The mountNode has the value "containerRef.current" if it has a "containerRef", or the parent portal node if it is a nested portal.
+   * By default, it has "document.body".
+   */
   const mountNode = useMemo(() => {
-    /**
-     * If a nested Portal Component has a containerRef, it will still be rendered to the parent Portal Component.
-     */
     if (parentPortal) {
       return parentPortal;
     }
@@ -43,6 +49,9 @@ function RenderPortal({ containerRef, children }: PortalProps) {
   useLayoutEffect(() => {
     mountNode.appendChild(portalNode);
 
+    /**
+     * "portalNode" is removed from "mountNode" on unmount.
+     */
     return () => {
       if (mountNode.contains(portalNode)) {
         mountNode.removeChild(portalNode);
@@ -62,7 +71,7 @@ function RenderPortal({ containerRef, children }: PortalProps) {
 }
 
 /** @tossdocs-ignore */
-export function Portal({ containerRef, children }: PortalProps) {
+export function Portal({ children, ...restProps }: PortalProps) {
   const isMounted = useIsMounted();
 
   /**
@@ -72,5 +81,5 @@ export function Portal({ containerRef, children }: PortalProps) {
     return <></>;
   }
 
-  return <RenderPortal containerRef={containerRef}>{children}</RenderPortal>;
+  return <RenderPortal {...restProps}>{children}</RenderPortal>;
 }
