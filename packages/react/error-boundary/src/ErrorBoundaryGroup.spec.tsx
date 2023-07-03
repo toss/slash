@@ -54,7 +54,7 @@ describe('ErrorBoundaryGroup', () => {
 });
 
 describe('useErrorBoundaryGroup', () => {
-  it('returning object is same with object returned in previous render', () => {
+  it('returns the same object across renders', () => {
     const { result, rerender } = renderHook(useErrorBoundaryGroup, {
       wrapper: ({ children }) => <ErrorBoundaryGroup>{children}</ErrorBoundaryGroup>,
     });
