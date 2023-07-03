@@ -23,7 +23,8 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.14.8",
-    "date-fns": "^2.25.0"
+    "date-fns": "^2.25.0",
+    "@toss/utility-types": "workspace:^1.1.3"
   },
   "devDependencies": {
     "@babel/core": "^7",
@@ -37,7 +38,6 @@
     "@rollup/plugin-json": "^4.1.0",
     "@rollup/plugin-node-resolve": "^13.3.0",
     "@toss/rollup-config": "workspace:^0.1.4",
-    "@toss/utility-types": "workspace:^1.1.2",
     "@tossteam/jest": "^17",
     "@types/babel__core": "^7",
     "@types/babel__preset-env": "^7",
