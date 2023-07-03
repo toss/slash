@@ -1,5 +1,5 @@
 /** @tossdocs-ignore */
-import { isIE } from '.';
+import { isIE } from './device';
 
 async function writeText(text: string): Promise<boolean> {
   if (isIE()) {

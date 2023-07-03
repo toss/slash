@@ -5,7 +5,7 @@ sidebar_label: objectKeys
 
 # objectKeys
 
-A utility function which behaves identical to [Object.keys()](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Object/keys). It strictly infers the `key` type of an object.
+A utility function which behaves identical to [Object.keys()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys). It strictly infers the `key` type of an object.
 
 ## Example
 
