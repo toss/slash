@@ -1,6 +1,7 @@
 /** @tossdocs-ignore */
+import { useIsMounted } from '@toss/react';
 import { ComponentType, createContext, ReactNode, useContext, useEffect, useMemo, useRef } from 'react';
-import { useIsMounted, useKey } from './hooks';
+import { useKey } from './hooks';
 import { ComponentPropsWithoutChildren } from './types';
 
 export const ErrorBoundaryGroupContext = createContext({ resetKey: {}, reset: () => {} });
