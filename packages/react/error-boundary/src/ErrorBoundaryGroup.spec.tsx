@@ -72,7 +72,7 @@ describe('useErrorBoundaryGroup', () => {
       return <></>;
     };
     expect(() => render(<WithoutErrorBoundaryGroup />)).toThrowError(
-      'useErrorBoundaryGroup: ErrorBoundaryGroup is required in parent'
+      'useErrorBoundaryGroup must be used within an ErrorBoundaryGroup'
     );
   });
 });
