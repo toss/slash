@@ -1,38 +1,70 @@
-import { useState } from 'react';
-import { useRefEffect } from './useRefEffect';
+import { noop } from '@toss/utils';
+import { useCallback, useEffect, useRef, useState } from 'react';
+import { usePreservedCallback } from './usePreservedCallback';
 
 interface Props {
   src: string;
   threshold?: number | number[];
   root?: Document | Element | null;
   rootMargin?: string;
+  onLoadComplete?: () => void;
   onInView?: () => void;
 }
 
 /** @tossdocs-ignore */
-export function useLazyImage({ src, rootMargin, threshold, root, onInView }: Props) {
-  const [isLoading, setIsLoading] = useState<boolean>(true);
+export function useLazyImage({
+  src,
+  rootMargin,
+  threshold,
+  root,
+  onLoadComplete: _onLoadComplete,
+  onInView: _onInView,
+}: Props) {
+  const ref = useRef<HTMLImageElement>(null);
 
-  const ref = useRefEffect<HTMLImageElement>(element => {
-    if (typeof IntersectionObserver === 'undefined') {
+  const onInView = usePreservedCallback(_onInView ?? noop);
+  const onLoadComplete = usePreservedCallback(_onLoadComplete ?? noop);
+
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+
+  const onLoadImage = useCallback(
+    (element: HTMLImageElement) => {
+      setIsLoading(true);
+
+      element.onload = () => {
+        setIsLoading(false);
+
+        if (onLoadComplete) {
+          onLoadComplete();
+        }
+      };
+    },
+    [onLoadComplete]
+  );
+
+  const insertImageSrc = useCallback(
+    (element: HTMLImageElement) => {
       element.src = src;
-      return;
-    }
 
-    if (element.getAttribute('src')) {
-      console.warn('If the "src" attribute is initially in an "img" tag, lazy load is not applied.');
-      return;
-    }
+      if (element.complete) {
+        if (onLoadComplete) {
+          onLoadComplete();
+        }
+        return;
+      }
 
-    const insertImageSrc = ([entry]: IntersectionObserverEntry[], observer: IntersectionObserver) => {
+      onLoadImage(element);
+    },
+    [src, onLoadComplete, onLoadImage]
+  );
+
+  const intersectionAction = useCallback(
+    ([entry]: IntersectionObserverEntry[], observer: IntersectionObserver) => {
       if (entry) {
         if (entry.isIntersecting) {
-          const imgElement = entry.target as HTMLImageElement;
-          imgElement.src = src;
+          const targetImgElement = entry.target as HTMLImageElement;
 
-          imgElement.onload = () => {
-            setIsLoading(false);
-          };
+          insertImageSrc(targetImgElement);
 
           /**
            * Execute additional actions when the target element is exposed in the Viewport (or the element you specified as root)
@@ -45,23 +77,42 @@ export function useLazyImage({ src, rootMargin, threshold, root, onInView }: Pro
           /**
            * Once the image has been loaded once, unobserve its target element to prevent repeated load.
            */
-          observer.unobserve(entry.target);
+          observer.unobserve(targetImgElement);
         }
       }
-    };
+    },
+    [insertImageSrc, onInView]
+  );
 
-    const observer = new IntersectionObserver(insertImageSrc, {
+  useEffect(() => {
+    const imgElement = ref.current;
+
+    if (!imgElement) {
+      return;
+    }
+
+    if (typeof IntersectionObserver === 'undefined') {
+      insertImageSrc(imgElement);
+      return;
+    }
+
+    if (imgElement.getAttribute('src')) {
+      console.warn('If the "src" attribute is initially in an "img" tag, lazy load is not applied.');
+      return;
+    }
+
+    const observer = new IntersectionObserver(intersectionAction, {
       root,
       rootMargin,
       threshold,
     });
 
-    observer.observe(element);
+    observer?.observe(imgElement);
 
     return () => {
-      observer.unobserve(element);
+      observer?.unobserve(imgElement);
     };
-  }, []);
+  }, [root, threshold, rootMargin, insertImageSrc, intersectionAction]);
 
   return { ref, isLoading } as const;
 }

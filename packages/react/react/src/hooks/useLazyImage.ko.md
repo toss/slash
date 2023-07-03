@@ -16,15 +16,17 @@ function useLazyImage({
   rootMargin,
   threshold,
   root,
+  onLoad,
   onInView,
 }: {
   src: string;
   threshold?: number | number[];
   root?: Document | Element | null;
   rootMargin?: string;
+  onLoad?: () => void;
   onInView?: () => void;
 }): {
-  readonly ref: EffectRef<HTMLImageElement>;
+  readonly ref: React.RefObject<HTMLImageElement>;
   readonly isLoading: boolean;
 };
 ```
@@ -47,6 +49,13 @@ const Example = () => {
      * optional
      */
     onInView,
+
+    /**
+     * 이미지가 로드가 완료되면 호출되는 콜백 함수입니다.
+     * type: () => void
+     * optional
+     */
+    onLoadComplete,
 
     /**
      * 타겟 요소의 가시성을 검사하기 위해 Viewport 대신 사용할 요소를 지정할 수 있습니다.

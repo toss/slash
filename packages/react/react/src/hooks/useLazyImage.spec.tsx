@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import { noop } from '@toss/utils';
 import { useLazyImage } from './useLazyImage';
 
@@ -90,52 +90,60 @@ describe('useImageLazyLoading', () => {
     expect(img2).not.toHaveAttribute('src', 'testSrc2');
   });
 
-  it('When the target element is visible in the viewport (or the element you specified as root), the value passed to src in the useImageLazyLoading hook is added to the src attribute of the img tag.', () => {
+  it('When the target element is visible in the viewport (or the element you specified as root), the value passed to src in the useImageLazyLoading hook is added to the src attribute of the img tag.', async () => {
     render(<TestComponent />);
 
     const img1 = screen.getByAltText('img1');
     const img2 = screen.getByAltText('img2');
 
-    mockIntersect({
-      type: 'view',
-      element: img1,
+    await waitFor(() => {
+      mockIntersect({
+        type: 'view',
+        element: img1,
+      });
     });
 
     expect(img1).toHaveAttribute('src', 'testSrc1');
     expect(img2).not.toHaveAttribute('src', 'testSrc2');
 
-    mockIntersect({
-      type: 'view',
-      element: img2,
+    await waitFor(() => {
+      mockIntersect({
+        type: 'view',
+        element: img2,
+      });
     });
 
     expect(img1).toHaveAttribute('src', 'testSrc1');
     expect(img2).toHaveAttribute('src', 'testSrc2');
   });
 
-  it('When the target element is visible in the viewport (or the element you specified as root), If you provided onInView props, the onInView is executed.', () => {
+  it('When the target element is visible in the viewport (or the element you specified as root), If you provided onInView props, the onInView is executed.', async () => {
     const mockAction = jest.fn();
     render(<TestComponent onInView={mockAction} />);
 
     const img1 = screen.getByAltText('img1');
     const img2 = screen.getByAltText('img2');
 
-    mockIntersect({
-      type: 'view',
-      element: img1,
+    await waitFor(() => {
+      mockIntersect({
+        type: 'view',
+        element: img1,
+      });
     });
 
     expect(mockAction).toHaveBeenCalledTimes(0);
 
-    mockIntersect({
-      type: 'view',
-      element: img2,
+    await waitFor(() => {
+      mockIntersect({
+        type: 'view',
+        element: img2,
+      });
     });
 
     expect(mockAction).toHaveBeenCalledTimes(1);
   });
 
-  it('Once a target element is exposed to the Viewport (or whatever element you specify as root), it is no longer observed.', () => {
+  it('Once a target element is exposed to the Viewport (or whatever element you specify as root), it is no longer observed.', async () => {
     const mockAction = jest.fn();
     render(<TestComponent onInView={mockAction} />);
 
@@ -143,23 +151,29 @@ describe('useImageLazyLoading', () => {
 
     expect(mockAction).toHaveBeenCalledTimes(0);
 
-    mockIntersect({
-      type: 'view',
-      element: img2,
+    await waitFor(() => {
+      mockIntersect({
+        type: 'view',
+        element: img2,
+      });
     });
 
     expect(mockAction).toHaveBeenCalledTimes(1);
 
-    mockIntersect({
-      type: 'hide',
-      element: img2,
+    await waitFor(() => {
+      mockIntersect({
+        type: 'hide',
+        element: img2,
+      });
     });
 
     expect(mockAction).toHaveBeenCalledTimes(1);
 
-    mockIntersect({
-      type: 'view',
-      element: img2,
+    await waitFor(() => {
+      mockIntersect({
+        type: 'view',
+        element: img2,
+      });
     });
 
     expect(mockAction).toHaveBeenCalledTimes(1);

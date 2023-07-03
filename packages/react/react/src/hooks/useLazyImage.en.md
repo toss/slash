@@ -16,15 +16,17 @@ function useLazyImage({
   rootMargin,
   threshold,
   root,
+  onLoad,
   onInView,
 }: {
   src: string;
   threshold?: number | number[];
   root?: Document | Element | null;
   rootMargin?: string;
+  onLoad?: () => void;
   onInView?: () => void;
 }): {
-  readonly ref: EffectRef<HTMLImageElement>;
+  readonly ref: React.RefObject<HTMLImageElement>;
   readonly isLoading: boolean;
 };
 ```
@@ -47,6 +49,13 @@ const Example = () => {
      * optional
      */
     onInView,
+
+    /**
+     * A callback function that is called when the image has finished loading.
+     * type: () => void
+     * optional
+     */
+    onLoadComplete,
 
     /**
      * You can specify an element to use instead of the Viewport to examine the visibility of the target element.
