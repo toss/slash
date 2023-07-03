@@ -60,8 +60,8 @@ const mockIntersect = ({ type, element }: { element: HTMLElement; type: 'view' |
 };
 
 const TestComponent = ({ onInView }: { onInView?: () => void }) => {
-  const imgRef1 = useLazyImage({ src: 'testSrc1' });
-  const imgRef2 = useLazyImage({ src: 'testSrc2', onInView });
+  const { ref: imgRef1 } = useLazyImage({ src: 'testSrc1' });
+  const { ref: imgRef2 } = useLazyImage({ src: 'testSrc2', onInView });
 
   return (
     <>

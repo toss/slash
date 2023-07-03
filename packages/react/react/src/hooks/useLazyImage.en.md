@@ -1,6 +1,8 @@
 # useLazyImage
 
-A hook that loads an image when the element given by `ref` is visible in the browser viewport (or the element you specify as root).
+A hook that loads an image when the image tag given by `ref` is visible in the browser viewport (or the element specified by root).
+
+Given as a return value, `isLoading` allows you to verify that the image has finished loading.
 
 By applying Image Lazy Load, users no longer need to load all image resources at once when entering the page, improving their user experience.
 
@@ -21,14 +23,17 @@ function useLazyImage({
   root?: Document | Element | null;
   rootMargin?: string;
   onInView?: () => void;
-}): EffectRef<HTMLImageElement>;
+}): {
+  readonly ref: EffectRef<HTMLImageElement>;
+  readonly isLoading: boolean;
+};
 ```
 
 ## Example
 
 ```tsx
 const Example = () => {
-  const imgRef = useLazyImage({
+  const { ref: imgRef, isLoading } = useLazyImage({
     /**
      * URL value of the image source to lazy load
      * type: string
@@ -67,7 +72,15 @@ const Example = () => {
   });
 
   return (
-    <img ref={imgRef} alt="이미지1">
+    <div>
+      {isLoading && <div>image is being loading...</div>}
+      <img
+        ref={imgRef}
+        width={400}
+        height={400}
+        style={{ opacity: isLoading ? 0 : 1, transition: 'opacity 0.2s' }}
+      />
+    </div>
   );
 };
 ```

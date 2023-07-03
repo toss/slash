@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { useRefEffect } from './useRefEffect';
 
 interface Props {
@@ -10,6 +11,8 @@ interface Props {
 
 /** @tossdocs-ignore */
 export function useLazyImage({ src, rootMargin, threshold, root, onInView }: Props) {
+  const [isLoading, setIsLoading] = useState<boolean>(true);
+
   const ref = useRefEffect<HTMLImageElement>(element => {
     if (typeof IntersectionObserver === 'undefined') {
       element.src = src;
@@ -27,13 +30,21 @@ export function useLazyImage({ src, rootMargin, threshold, root, onInView }: Pro
           const imgElement = entry.target as HTMLImageElement;
           imgElement.src = src;
 
-          // Execute additional actions when the target element is exposed in the Viewport (or the element you specified as root)
-          // For example, logging processing.
+          imgElement.onload = () => {
+            setIsLoading(false);
+          };
+
+          /**
+           * Execute additional actions when the target element is exposed in the Viewport (or the element you specified as root)
+           * For example, logging processing
+           */
           if (onInView) {
             onInView();
           }
 
-          // Once the image has been loaded once, unobserve its target element to prevent repeated load.
+          /**
+           * Once the image has been loaded once, unobserve its target element to prevent repeated load.
+           */
           observer.unobserve(entry.target);
         }
       }
@@ -52,5 +63,5 @@ export function useLazyImage({ src, rootMargin, threshold, root, onInView }: Pro
     };
   }, []);
 
-  return ref;
+  return { ref, isLoading } as const;
 }

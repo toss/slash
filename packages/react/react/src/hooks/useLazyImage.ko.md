@@ -1,6 +1,8 @@
 # useLazyImage
 
-`ref` 가 주어진 요소가 브라우저 Viewport(또는 root로 지정한 요소)에 보여질 때 이미지를 로드하는 훅입니다.
+`ref` 가 주어진 이미지 태그가 브라우저 Viewport(또는 root로 지정한 요소)에 보여질 때 이미지를 로드하는 훅입니다.
+
+반환 값으로 주어지는 `isLoading`를 통해 이미지의 로드가 완료되었는지 확인할 수 있습니다.
 
 이미지 Lazy Load를 적용함으로써, 사용자는 페이지 진입 시에 한번에 모든 이미지 리소스를 로드할 필요가 없어져 사용자 경험을 향상시킵니다.
 
@@ -21,14 +23,17 @@ function useLazyImage({
   root?: Document | Element | null;
   rootMargin?: string;
   onInView?: () => void;
-}): EffectRef<HTMLImageElement>;
+}): {
+  readonly ref: EffectRef<HTMLImageElement>;
+  readonly isLoading: boolean;
+};
 ```
 
 ## Example
 
 ```jsx
 const Example = () => {
-  const imgRef = useLazyImage({
+  const { ref: imgRef, isLoading } = useLazyImage({
     /**
      * lazy load할 이미지 소스의 URL 값입니다.
      * type: string
@@ -67,7 +72,15 @@ const Example = () => {
   });
 
   return (
-    <img ref={imgRef} alt="image1">
+    <div>
+      {isLoading && <div>image is being loading...</div>}
+      <img
+        ref={imgRef}
+        width={400}
+        height={400}
+        style={{ opacity: isLoading ? 0 : 1, transition: 'opacity 0.2s' }}
+      />
+    </div>
   );
 };
 ```
