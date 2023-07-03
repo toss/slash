@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.7](https://github.com/toss/slash/compare/@toss/date@1.1.6...@toss/date@1.1.7) (2023-07-03)
+
+**Note:** Version bump only for package @toss/date
+
+
+
+
+
 ## [1.1.6](https://github.com/toss/slash/compare/@toss/date@1.1.5...@toss/date@1.1.6) (2023-02-27)
 
 **Note:** Version bump only for package @toss/date
