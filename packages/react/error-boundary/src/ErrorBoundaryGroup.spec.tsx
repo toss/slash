@@ -66,7 +66,7 @@ describe('useErrorBoundaryGroup', () => {
     expect(prev).toBe(next);
   });
 
-  it('should throw error without ErrorBoundaryGroup in parent', () => {
+  it('should throw an error when it is used outside ErrorBoundaryGroup', () => {
     const WithoutErrorBoundaryGroup = () => {
       useErrorBoundaryGroup();
       return <></>;
