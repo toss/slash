@@ -1,6 +1,6 @@
 {
   "name": "@toss/impression-area",
-  "version": "1.2.9",
+  "version": "1.2.10",
   "sideEffects": false,
   "exports": {
     ".": "./src/index.ts",
@@ -19,8 +19,8 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@toss/react": "workspace:^1.4.0",
-    "@toss/utils": "workspace:^1.4.3",
+    "@toss/react": "workspace:^1.5.0",
+    "@toss/utils": "workspace:^1.4.4",
     "@types/react": "^18.0.21",
     "lodash.debounce": "^4.0.8"
   },

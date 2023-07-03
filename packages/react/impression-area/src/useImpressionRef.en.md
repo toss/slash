@@ -5,7 +5,7 @@ title: useImpressionRef
 # useImpressionRef
 
 Hook that fires an event when the element given by `ref` appears or disappears in the browser viewport.
-It works efficiently by using the [IntersectionObserver](https://developer.mozilla.org/ko/docs/Web/API/Intersection_Observer_API) API.
+It works efficiently by using the [IntersectionObserver](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API) API.
 
 To use it as a component, use `ImpressionArea`.
 
