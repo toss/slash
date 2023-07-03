@@ -33,10 +33,7 @@ export function useLazyImage({
 
       element.onload = () => {
         setIsLoading(false);
-
-        if (onLoadComplete) {
-          onLoadComplete();
-        }
+        onLoadComplete();
       };
     },
     [onLoadComplete]
@@ -47,12 +44,9 @@ export function useLazyImage({
       element.src = src;
 
       if (element.complete) {
-        if (onLoadComplete) {
-          onLoadComplete();
-        }
+        onLoadComplete();
         return;
       }
-
       onLoadImage(element);
     },
     [src, onLoadComplete, onLoadImage]
@@ -70,9 +64,7 @@ export function useLazyImage({
            * Execute additional actions when the target element is exposed in the Viewport (or the element you specified as root)
            * For example, logging processing
            */
-          if (onInView) {
-            onInView();
-          }
+          onInView();
 
           /**
            * Once the image has been loaded once, unobserve its target element to prevent repeated load.
