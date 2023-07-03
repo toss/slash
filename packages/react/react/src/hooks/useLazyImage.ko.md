@@ -31,7 +31,7 @@ function useLazyImage({
 
 ## Example
 
-```jsx
+```tsx
 const Example = () => {
   const { ref: imgRef, isLoading } = useLazyImage({
     /**
