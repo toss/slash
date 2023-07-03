@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.5.0](https://github.com/toss/slash/compare/@toss/react@1.4.0...@toss/react@1.5.0) (2023-07-03)
+
+
+### Features
+
+* **@toss/react:** Add useToggleState Hook  ([#273](https://github.com/toss/slash/issues/273)) ([846c7d1](https://github.com/toss/slash/commit/846c7d15720be05647c0af33685c3d8b2989fc64))
+
+
+
+
+
 # [1.4.0](https://github.com/toss/slash/compare/@toss/react@1.3.8...@toss/react@1.4.0) (2023-06-13)
 
 
