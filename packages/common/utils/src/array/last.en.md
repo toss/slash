@@ -8,7 +8,7 @@ function last<T>(arr: T[]): T | undefined;
 ```
 
 - If an array is a normal array (`T[]`), `last` returns a nullable value, since it can be empty.
-- If an array is checked not to be empty by [isNonEmptyArray](https://slash.page/ko/libraries/common/utils/src/array/isnonemptyarray.i18n), `last` returns a non-nullable value.
+- If an array is checked not to be empty by [isNonEmptyArray](https://slash.page/libraries/common/utils/src/array/isnonemptyarray.i18n), `last` returns a non-nullable value.
 
 ## Example
 

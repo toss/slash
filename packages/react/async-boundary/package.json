@@ -1,6 +1,6 @@
 {
   "name": "@toss/async-boundary",
-  "version": "1.4.2",
+  "version": "1.4.3",
   "sideEffects": false,
   "exports": {
     ".": {
@@ -21,7 +21,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@toss/error-boundary": "workspace:^1.4.2"
+    "@toss/error-boundary": "workspace:^1.4.3"
   },
   "devDependencies": {
     "@babel/core": "^7",
