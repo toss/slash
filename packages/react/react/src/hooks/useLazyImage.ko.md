@@ -44,7 +44,7 @@ const Example = () => {
     src: 'Image URL src'
 
     /**
-     * 타겟 요소가 Viewport(또는 root로 지정한 요소) 노출 될 때 호출되는 callback Function입니다.
+     * 타겟 요소가 Viewport(또는 root로 지정한 요소) 노출 될 때 호출되는 콜백 함수입니다.
      * type: () => void
      * optional
      */

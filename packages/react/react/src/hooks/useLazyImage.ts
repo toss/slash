@@ -98,6 +98,7 @@ export function useLazyImage({
 
     if (imgElement.getAttribute('src')) {
       console.warn('If the "src" attribute is initially in an "img" tag, lazy load is not applied.');
+      onLoadImage(imgElement);
       return;
     }
 
@@ -112,7 +113,7 @@ export function useLazyImage({
     return () => {
       observer?.unobserve(imgElement);
     };
-  }, [root, threshold, rootMargin, insertImageSrc, intersectionAction]);
+  }, [root, threshold, rootMargin, onLoadImage, insertImageSrc, intersectionAction]);
 
   return { ref, isLoading } as const;
 }
