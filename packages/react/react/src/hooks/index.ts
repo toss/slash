@@ -26,4 +26,5 @@ export * from './useStyleSheetInjection';
 export * from './useThrottle';
 export * from './useTimeout';
 export * from './useTimeoutQueue';
+export * from './useToggleState';
 export * from './useVisibilityEvent';

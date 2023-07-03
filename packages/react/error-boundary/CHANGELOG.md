@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.4](https://github.com/toss/slash/compare/@toss/error-boundary@1.4.3...@toss/error-boundary@1.4.4) (2023-07-03)
+
+
+### Bug Fixes
+
+* **error-boundary:** Make useErrorBoundaryGroup throw when it is not used within an ErrorBoundaryGroup ([#268](https://github.com/toss/slash/issues/268)) ([b682fe4](https://github.com/toss/slash/commit/b682fe400314e8a96f1bd719933f93c9f9ff75c6))
+
+
+
+
+
 ## [1.4.3](https://github.com/toss/slash/compare/@toss/error-boundary@1.4.2...@toss/error-boundary@1.4.3) (2023-06-13)
 
 **Note:** Version bump only for package @toss/error-boundary
