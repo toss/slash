@@ -16,14 +16,14 @@ function useLazyImage({
   rootMargin,
   threshold,
   root,
-  onLoad,
+  onLoadComplete,
   onInView,
 }: {
   src: string;
   threshold?: number | number[];
   root?: Document | Element | null;
   rootMargin?: string;
-  onLoad?: () => void;
+  onLoadComplete?: () => void;
   onInView?: () => void;
 }): {
   readonly ref: React.RefObject<HTMLImageElement>;
