@@ -62,7 +62,7 @@ export const useErrorBoundaryGroup = () => {
   const group = useContext(ErrorBoundaryGroupContext);
 
   if (group === undefined) {
-    throw new Error('useErrorBoundaryGroup: ErrorBoundaryGroup is required in parent');
+    throw new Error('useErrorBoundaryGroup must be used within an ErrorBoundaryGroup');
   }
 
   return useMemo(
