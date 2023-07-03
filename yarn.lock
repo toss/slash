@@ -5647,6 +5647,7 @@ __metadata:
     "@testing-library/jest-dom": ^5.16.4
     "@testing-library/react": ^13.3.0
     "@testing-library/user-event": ^14.4.3
+    "@toss/react": "workspace:^1.4.0"
     "@toss/rollup-config": "workspace:^0.1.4"
     "@toss/utils": "workspace:^1.4.3"
     "@tossteam/jest": ^17
