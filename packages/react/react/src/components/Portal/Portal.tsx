@@ -17,13 +17,15 @@ const PORTAL_DEFAULT_CLASS = 'portal';
 function RenderPortal({ children, className, containerRef }: PortalProps) {
   const { parentPortal } = useContext(portalContext);
 
-  const getPortalNode = useCallback((mountNode: HTMLElement) => {
-    const portalNode = mountNode.ownerDocument.createElement('div');
-    portalNode.classList.add(className || PORTAL_DEFAULT_CLASS);
+  const getPortalNode = useCallback(
+    (mountNode: HTMLElement) => {
+      const portalNode = mountNode.ownerDocument.createElement('div');
+      portalNode.classList.add(className || PORTAL_DEFAULT_CLASS);
 
-    return portalNode;
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+      return portalNode;
+    },
+    [className]
+  );
 
   /**
    * This is the mount node to render portal nodes.
@@ -40,11 +42,9 @@ function RenderPortal({ children, className, containerRef }: PortalProps) {
     }
 
     return document.body;
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [parentPortal, containerRef]);
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  const portalNode = useMemo(() => getPortalNode(mountNode), []);
+  const portalNode = useMemo(() => getPortalNode(mountNode), [getPortalNode, mountNode]);
 
   useLayoutEffect(() => {
     mountNode.appendChild(portalNode);
@@ -57,16 +57,11 @@ function RenderPortal({ children, className, containerRef }: PortalProps) {
         mountNode.removeChild(portalNode);
       }
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [portalNode, mountNode]);
 
-  return portalNode ? (
-    createPortal(
-      <portalContext.Provider value={{ parentPortal: portalNode }}>{children}</portalContext.Provider>,
-      portalNode
-    )
-  ) : (
-    <></>
+  return createPortal(
+    <portalContext.Provider value={{ parentPortal: portalNode }}>{children}</portalContext.Provider>,
+    portalNode
   );
 }
 
