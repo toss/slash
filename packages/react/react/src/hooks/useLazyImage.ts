@@ -100,10 +100,10 @@ export function useLazyImage({
       threshold,
     });
 
-    observer?.observe(imgElement);
+    observer.observe(imgElement);
 
     return () => {
-      observer?.unobserve(imgElement);
+      observer.unobserve(imgElement);
     };
   }, [root, threshold, rootMargin, onLoadImage, insertImageSrc, intersectionAction]);
 
