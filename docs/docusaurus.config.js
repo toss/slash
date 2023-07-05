@@ -45,7 +45,7 @@ module.exports = {
       },
     },
   },
-  themeConfig: {
+  themeConfig: /** @type {import('@docusaurus/preset-classic').ThemeConfig} */ ({
     navbar: {
       title: 'Slash libraries',
       logo: {
@@ -99,6 +99,9 @@ module.exports = {
       theme: lightCodeTheme,
       darkTheme: darkCodeTheme,
     },
+    colorMode: {
+      respectPrefersColorScheme: true,
+    },
     algolia: {
       appId: '5HUNJYWIP5',
       apiKey: '7deeee6b4d09217c1dff5ff279561bf4',
@@ -107,7 +110,7 @@ module.exports = {
       branch: 'main',
       contextualSearch: true,
     },
-  },
+  }),
   plugins: [require.resolve('./scripts/webpack5-compat.js')],
   presets: [
     [
