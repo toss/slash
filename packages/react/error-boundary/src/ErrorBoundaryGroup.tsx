@@ -1,7 +1,6 @@
 /** @tossdocs-ignore */
-import { ComponentType, createContext, ReactNode, useContext, useEffect, useMemo, useRef } from 'react';
+import { createContext, ReactNode, useContext, useEffect, useMemo, useRef } from 'react';
 import { useIsMounted, useKey } from './hooks';
-import { ComponentPropsWithoutChildren } from './types';
 
 export const ErrorBoundaryGroupContext = createContext<{ reset: () => void; resetKey: number } | undefined>(undefined);
 if (process.env.NODE_ENV !== 'production') {
@@ -74,22 +73,4 @@ export const useErrorBoundaryGroup = () => {
     }),
     [group.reset]
   );
-};
-
-export const withErrorBoundaryGroup = <Props extends Record<string, unknown> = Record<string, never>>(
-  Component: ComponentType<Props>,
-  errorBoundaryGroupProps?: ComponentPropsWithoutChildren<typeof ErrorBoundaryGroup>
-) => {
-  const Wrapped = (props: Props) => (
-    <ErrorBoundaryGroup {...errorBoundaryGroupProps}>
-      <Component {...props} />
-    </ErrorBoundaryGroup>
-  );
-
-  if (process.env.NODE_ENV !== 'production') {
-    const name = Component.displayName || Component.name || 'Component';
-    Wrapped.displayName = `withErrorBoundaryGroup(${name})`;
-  }
-
-  return Wrapped;
 };
