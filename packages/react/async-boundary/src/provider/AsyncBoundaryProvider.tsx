@@ -12,11 +12,11 @@ if (process.env.NODE_ENV !== 'production') {
   AsyncBoundaryContext.displayName = 'AsyncBoundaryContext';
 }
 
-interface Props {
+interface AsyncBoundaryProviderProps {
   children: ReactNode;
 }
 
-export function AsyncBoundaryProvider({ children }: Props) {
+export function AsyncBoundaryProvider({ children }: AsyncBoundaryProviderProps) {
   const [resetKey, reset] = useResetError();
 
   return <AsyncBoundaryContext.Provider value={{ resetKey, reset }}>{children}</AsyncBoundaryContext.Provider>;
