@@ -27,7 +27,7 @@ export function useLazyImage({
 
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
-  const onLoadImage = useCallback(
+  const registerLoadEventHandler = useCallback(
     (element: HTMLImageElement) => {
       setIsLoading(true);
 
@@ -47,9 +47,9 @@ export function useLazyImage({
         onLoadComplete();
         return;
       }
-      onLoadImage(element);
+      registerLoadEventHandler(element);
     },
-    [src, onLoadComplete, onLoadImage]
+    [src, onLoadComplete, registerLoadEventHandler]
   );
 
   const intersectionAction = useCallback(
@@ -90,7 +90,7 @@ export function useLazyImage({
 
     if (imgElement.getAttribute('src')) {
       console.warn('If the "src" attribute is initially in an "img" tag, lazy load is not applied.');
-      onLoadImage(imgElement);
+      registerLoadEventHandler(imgElement);
       return;
     }
 
@@ -105,7 +105,7 @@ export function useLazyImage({
     return () => {
       observer.unobserve(imgElement);
     };
-  }, [root, threshold, rootMargin, onLoadImage, insertImageSrc, intersectionAction]);
+  }, [root, threshold, rootMargin, registerLoadEventHandler, insertImageSrc, intersectionAction]);
 
   return { ref, isLoading } as const;
 }
