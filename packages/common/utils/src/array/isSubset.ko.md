@@ -3,7 +3,7 @@
 첫 번째 배열이 두 번째 배열의 부분 집합인지 여부를 검사합니다.
 
 ```typescript
-function isSubset(a: unknown[], b: unknown[]): boolean;
+function isSubset(subSet: Array<string | number>, wholeSet: Array<string | number>): boolean;
 ```
 
 # Examples
