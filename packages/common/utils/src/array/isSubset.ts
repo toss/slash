@@ -1,5 +1,5 @@
 /** @tossdocs-ignore */
 
-export function isSubset(a: unknown[], b: unknown[]): boolean {
-  return a.every(element => b.includes(element));
+export function isSubset(subSet: unknown[], wholeSet: unknown[]): boolean {
+  return subSet.every(element => wholeSet.includes(element));
 }
