@@ -15,6 +15,6 @@
  * isSubset([1,2], [1,2,3]); // true
  * isSubset([1,2,4], [1,2,3]); // false
  */
-export function isSubset(subSet: unknown[], wholeSet: unknown[]): boolean {
+export function isSubset(subSet: Array<string | number>, wholeSet: Array<string | number>): boolean {
   return subSet.every(element => wholeSet.includes(element));
 }
