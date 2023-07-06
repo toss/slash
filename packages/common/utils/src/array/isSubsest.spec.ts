@@ -3,7 +3,7 @@ import { isSubset } from '.';
 describe('isSubset', () => {
   it('should return true if the first array is empty', () => {
     // Given
-    const value1 = [] as unknown[];
+    const value1 = [] as string[];
     const value2 = [1, 2, 3];
 
     // When
