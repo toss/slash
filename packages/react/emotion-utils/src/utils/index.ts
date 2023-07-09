@@ -2,6 +2,7 @@
 export * from './block';
 export * from './ellipsis';
 export * from './height';
+export * from './jsxIntrinsicElements';
 export * from './position';
 export * from './resetAnchor';
 export * from './resetButton';
