@@ -39,6 +39,8 @@ jsxIntrinsicElements.forEach(element => {
   );
 });
 
+const FlexButton = styled(Flex.button)``;
+
 describe('createStyledComponent', () => {
   describe('tag', () => {
     it(`dot(.)으로 태그를 지정할 수 있다.`, () => {
@@ -72,6 +74,13 @@ describe('createStyledComponent', () => {
       render(<Flex.button ref={ref}>Text Message</Flex.button>);
 
       expect(ref.current).not.toBeNull();
+    });
+  });
+
+  describe('override', () => {
+    it(`@emotion/styled를 통해 오버라이드 할 수 있다.`, () => {
+      const { container } = render(<FlexButton disabled>Text Message</FlexButton>);
+      expect(container.querySelector('button')).toBeInTheDocument();
     });
   });
 });
