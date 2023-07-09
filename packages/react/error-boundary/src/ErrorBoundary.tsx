@@ -51,7 +51,6 @@ const initialState: ErrorBoundaryState = {
 
 class BaseErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
   state = initialState;
-  updatedWithError = false;
 
   static getDerivedStateFromError(error: Error) {
     return { error };
@@ -67,31 +66,17 @@ class BaseErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState
     onError?.(error, info);
   }
 
-  resetState() {
-    this.updatedWithError = false;
-    this.setState(initialState);
-  }
-
   resetErrorBoundary = () => {
     this.props.onReset?.();
-    this.resetState();
+    this.setState(initialState);
   };
 
-  componentDidUpdate(prevProps: ErrorBoundaryProps) {
-    const { error } = this.state;
-
-    if (error == null) {
-      return;
-    }
-
-    const { resetKeys } = this.props;
-
-    if (!this.updatedWithError) {
-      this.updatedWithError = true;
-      return;
-    }
-
-    if (isDifferentArray(prevProps.resetKeys, resetKeys)) {
+  componentDidUpdate(prevProps: ErrorBoundaryProps, prevState: ErrorBoundaryState) {
+    if (
+      this.state.error !== null &&
+      prevState.error !== null &&
+      isDifferentArray(prevProps.resetKeys, this.props.resetKeys)
+    ) {
       this.resetErrorBoundary();
     }
   }
