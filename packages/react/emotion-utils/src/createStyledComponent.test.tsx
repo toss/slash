@@ -9,7 +9,7 @@ import { flex, FlexOptions } from './flex';
 import { jsxIntrinsicElements } from './index';
 
 type FlexType = React.ForwardRefExoticComponent<
-  React.ComponentProps<typeof TestStyledComponent> & React.RefAttributes<unknown>
+  React.ComponentProps<typeof FlexStyledComponent> & React.RefAttributes<unknown>
 >;
 type TaggedFlexType = {
   [tag in keyof JSX.IntrinsicElements]: FlexType;
@@ -17,7 +17,7 @@ type TaggedFlexType = {
 
 interface CreateFlex extends FlexType, TaggedFlexType {}
 
-const TestStyledComponent = styled(
+const FlexStyledComponent = styled(
   forwardRef((props: { tag?: keyof JSX.IntrinsicElements } & FlexOptions & AllHTMLAttributes<HTMLElement>, ref) => {
     const { tag = 'div', ...rest } = props;
 
@@ -28,14 +28,14 @@ const TestStyledComponent = styled(
 `;
 
 const FlexBase = forwardRef((props: FlexOptions & AllHTMLAttributes<HTMLElement>, ref) =>
-  createStyledComponent(TestStyledComponent)({ ...props, ref })
+  createStyledComponent(FlexStyledComponent)({ ...props, ref })
 );
 
 const Flex = FlexBase as CreateFlex;
 
 jsxIntrinsicElements.forEach(element => {
   Flex[element] = forwardRef((props: FlexOptions & AllHTMLAttributes<HTMLElement>, ref) =>
-    createStyledComponent(TestStyledComponent, element)[element]({ ...props, ref })
+    createStyledComponent(FlexStyledComponent, element)[element]({ ...props, ref })
   );
 });
 
