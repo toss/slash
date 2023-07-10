@@ -17,6 +17,10 @@ const ref = useImpressionRef({
   // callback called when the element exits the browser viewport
   onImpressionEnd: () => {},
 
+  // You can specify an element to use instead of the Viewport to examine the visibility of the target element.
+  // @default null
+  root={root}
+
   // Specify how much margin to give compared to what the actual element occupies (`string`)
   // See [MDN](https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserver/rootMargin).
   rootMargin,

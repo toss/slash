@@ -15,6 +15,9 @@ ImpressionArea는 추가적인 div를 render합니다. (div가 없어야 하는 
   onImpressionStart={() => {}}
   // 요소가 브라우저 뷰포트에서 나왔을 때 호출되는 callback
   onImpressionEnd={() => {}}
+  // 타겟 요소의 가시성을 검사하기 위해 Viewport 대신 사용할 요소를 지정할 수 있습니다.
+  // @default null
+  root={root}
   // 실제 요소가 차지하는 것 대비 얼마나 margin을 줄 것인지 지정 (`string`)
   // [MDN](https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserver/rootMargin) 을 참고하세요.
   rootMargin={rootMargin}
