@@ -7,13 +7,14 @@ import { ImpressionAreaProps } from './ImpressionArea';
 
 type Options = Pick<
   ImpressionAreaProps,
-  'rootMargin' | 'onImpressionStart' | 'onImpressionEnd' | 'timeThreshold' | 'areaThreshold'
+  'rootMargin' | 'onImpressionStart' | 'onImpressionEnd' | 'timeThreshold' | 'areaThreshold' | 'root'
 >;
 
 export function useImpressionRef<Element extends HTMLElement>({
   onImpressionStart: _onImpressionStart,
   onImpressionEnd: _onImpressionEnd,
   timeThreshold = 0,
+  root,
   rootMargin,
   areaThreshold: impressionRatio = 0,
 }: Options) {
@@ -61,12 +62,13 @@ export function useImpressionRef<Element extends HTMLElement>({
     };
 
     const observer = new IntersectionObserver(handleImpression, {
+      root,
       rootMargin,
       threshold: impressionRatio,
     });
 
     return observer;
-  }, [impressionRatio, onImpressionEnd, onImpressionStart, rootMargin, state, timeThreshold]);
+  }, [impressionRatio, onImpressionEnd, onImpressionStart, root, rootMargin, state, timeThreshold]);
 
   const ref = useRefEffect<Element>(
     element => {
