@@ -8,14 +8,14 @@ interface PortalProps {
   containerRef?: React.RefObject<HTMLElement | null>;
 }
 
-const portalContext = createContext<{ parentPortal: HTMLElement | null }>({
+const PortalContext = createContext<{ parentPortal: HTMLElement | null }>({
   parentPortal: null,
 });
 
 const PORTAL_DEFAULT_CLASS = 'portal';
 
 function RenderPortal({ children, className = PORTAL_DEFAULT_CLASS, containerRef }: PortalProps) {
-  const { parentPortal } = useContext(portalContext);
+  const { parentPortal } = useContext(PortalContext);
 
   const getPortalNode = useCallback(
     (mountNode: HTMLElement) => {
@@ -60,7 +60,7 @@ function RenderPortal({ children, className = PORTAL_DEFAULT_CLASS, containerRef
   }, [portalNode, mountNode]);
 
   return createPortal(
-    <portalContext.Provider value={{ parentPortal: portalNode }}>{children}</portalContext.Provider>,
+    <PortalContext.Provider value={{ parentPortal: portalNode }}>{children}</PortalContext.Provider>,
     portalNode
   );
 }
