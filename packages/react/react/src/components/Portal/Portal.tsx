@@ -14,13 +14,13 @@ const portalContext = createContext<{ parentPortal: HTMLElement | null }>({
 
 const PORTAL_DEFAULT_CLASS = 'portal';
 
-function RenderPortal({ children, className, containerRef }: PortalProps) {
+function RenderPortal({ children, className = PORTAL_DEFAULT_CLASS, containerRef }: PortalProps) {
   const { parentPortal } = useContext(portalContext);
 
   const getPortalNode = useCallback(
     (mountNode: HTMLElement) => {
       const portalNode = mountNode.ownerDocument.createElement('div');
-      portalNode.classList.add(className || PORTAL_DEFAULT_CLASS);
+      portalNode.classList.add(className);
 
       return portalNode;
     },
