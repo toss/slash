@@ -17,7 +17,7 @@ function Portal({
   children,
   containerRef,
 }: {
-  children: React.ReactNode;=
+  children: React.ReactNode;
   containerRef?: React.RefObject<HTMLElement | null>;
 }): JSX.Element;
 ```
