@@ -116,34 +116,34 @@ describe('Container Portal Test', () => {
 
     expect(outerInnerPortal).not.toBeInTheDocument();
   });
+});
 
-  describe('Nested Portal Test', () => {
-    it('should create a nested Portal DOM hierarchy when nesting multiple Portal Components', () => {
-      render(<NestedTestComponent />);
+describe('Nested Portal Test', () => {
+  it('should create a nested Portal DOM hierarchy when nesting multiple Portal Components', () => {
+    render(<NestedTestComponent />);
 
-      const documentPortal = document.querySelector('.portal');
-      const documentPortalChild = documentPortal?.querySelector('.child');
+    const documentPortal = document.querySelector('.portal');
+    const documentPortalChild = documentPortal?.querySelector('.child');
 
-      expect(documentPortalChild).toBeInTheDocument();
+    expect(documentPortalChild).toBeInTheDocument();
 
-      const nestedPortal1 = documentPortal?.querySelector('.portal');
-      const nestedChild1 = nestedPortal1?.querySelector('.nested-child-1');
+    const nestedPortal1 = documentPortal?.querySelector('.portal');
+    const nestedChild1 = nestedPortal1?.querySelector('.nested-child-1');
 
-      expect(nestedChild1).toBeInTheDocument();
+    expect(nestedChild1).toBeInTheDocument();
 
-      const nestedPortal2 = nestedPortal1?.querySelector('.portal');
-      const nestedChild2 = nestedPortal2?.querySelector('.nested-child-2');
+    const nestedPortal2 = nestedPortal1?.querySelector('.portal');
+    const nestedChild2 = nestedPortal2?.querySelector('.nested-child-2');
 
-      expect(nestedChild2).toBeInTheDocument();
-    });
+    expect(nestedChild2).toBeInTheDocument();
+  });
 
-    it("should render a nested Portal Component to the parent Portal Node if the nested Portal Component has a 'containerRef' prop", () => {
-      const { container } = render(<NestedTestComponent />);
+  it("should render a nested Portal Component to the parent Portal Node if the nested Portal Component has a 'containerRef' prop", () => {
+    const { container } = render(<NestedTestComponent />);
 
-      const outerNode = container.querySelector('#outer');
-      const outerPortal = outerNode?.querySelector('.portal');
+    const outerNode = container.querySelector('#outer');
+    const outerPortal = outerNode?.querySelector('.portal');
 
-      expect(outerPortal).toBeNull();
-    });
+    expect(outerPortal).toBeNull();
   });
 });
