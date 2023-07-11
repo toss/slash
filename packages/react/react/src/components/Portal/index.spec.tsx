@@ -50,77 +50,75 @@ const NestedTestComponent = () => {
   );
 };
 
-describe('Portal', () => {
-  describe('DefaultTest', () => {
-    it("The Portal Component will render the portal node in 'document.body' by default unless you pass in the 'containerRef' prop.", () => {
-      const { container } = render(<DefaultTestComponent />);
+describe('Default Portal Test', () => {
+  it("should render the portal node in 'document.body' by default", () => {
+    const { container } = render(<DefaultTestComponent />);
 
-      const parentNode = container.querySelector('#parent');
-      const parentPortal = parentNode?.querySelector('.portal');
+    const parentNode = container.querySelector('#parent');
+    const parentPortal = parentNode?.querySelector('.portal');
 
-      expect(parentPortal).toBeNull();
+    expect(parentPortal).toBeNull();
 
-      const documentPortal = document.querySelector('.portal');
-      const documentPortalChild = documentPortal?.querySelector('.child');
+    const documentPortal = document.querySelector('.portal');
+    const documentPortalChild = documentPortal?.querySelector('.child');
 
-      expect(documentPortalChild).toBeInTheDocument();
-    });
-
-    it('Changes to a specific State are also reflected in the Portal Nodes that reference that State.', () => {
-      render(<DefaultTestComponent />);
-
-      const documentPortal = document.querySelector('.portal');
-      const documentPortalChild = documentPortal?.querySelector('.child');
-
-      expect(documentPortalChild).toBeInTheDocument();
-
-      const button = screen.getByRole('button');
-
-      fireEvent.click(button);
-
-      expect(documentPortalChild).toHaveTextContent('1');
-
-      fireEvent.click(button);
-
-      expect(documentPortalChild).toHaveTextContent('2');
-    });
-
-    it('On unmount, the Portal Node is removed.', () => {
-      const { unmount } = render(<DefaultTestComponent />);
-
-      const documentPortal = document.querySelector('.portal');
-
-      unmount();
-
-      expect(documentPortal).not.toBeInTheDocument();
-    });
+    expect(documentPortalChild).toBeInTheDocument();
   });
 
-  describe('ContainerTest', () => {
-    it("By passing in the Portal Component's 'containerRef' prop, you can render to any other DOM node you want instead of the 'document.body'.", () => {
-      const { container } = render(<ContainerTestComponent />);
+  it('State changes should be reflected in Portal Nodes', () => {
+    render(<DefaultTestComponent />);
 
-      const outerNode = container.querySelector('#outer');
-      const outerInnerPortal = outerNode?.querySelector('.portal');
-      const outerInnerChild = outerInnerPortal?.querySelector('.child');
+    const documentPortal = document.querySelector('.portal');
+    const documentPortalChild = documentPortal?.querySelector('.child');
 
-      expect(outerInnerChild).toBeInTheDocument();
-    });
+    expect(documentPortalChild).toBeInTheDocument();
 
-    it('On unmount, the Portal Node is removed.', () => {
-      const { container, unmount } = render(<ContainerTestComponent />);
+    const button = screen.getByRole('button');
 
-      const outerNode = container.querySelector('#outer');
-      const outerInnerPortal = outerNode?.querySelector('.portal');
+    fireEvent.click(button);
 
-      unmount();
+    expect(documentPortalChild).toHaveTextContent('1');
 
-      expect(outerInnerPortal).not.toBeInTheDocument();
-    });
+    fireEvent.click(button);
+
+    expect(documentPortalChild).toHaveTextContent('2');
   });
 
-  describe('NestedTest', () => {
-    it('Nesting multiple Portal Components creates a nested Portal DOM hierarchy.', () => {
+  it('should remove the Portal Node on unmount.', () => {
+    const { unmount } = render(<DefaultTestComponent />);
+
+    const documentPortal = document.querySelector('.portal');
+
+    unmount();
+
+    expect(documentPortal).not.toBeInTheDocument();
+  });
+});
+
+describe('Container Portal Test', () => {
+  it("should render to any other DOM node you want instead of the 'document.body' by passing in the 'containerRef' prop", () => {
+    const { container } = render(<ContainerTestComponent />);
+
+    const outerNode = container.querySelector('#outer');
+    const outerInnerPortal = outerNode?.querySelector('.portal');
+    const outerInnerChild = outerInnerPortal?.querySelector('.child');
+
+    expect(outerInnerChild).toBeInTheDocument();
+  });
+
+  it('should remove the Portal Node on unmount', () => {
+    const { container, unmount } = render(<ContainerTestComponent />);
+
+    const outerNode = container.querySelector('#outer');
+    const outerInnerPortal = outerNode?.querySelector('.portal');
+
+    unmount();
+
+    expect(outerInnerPortal).not.toBeInTheDocument();
+  });
+
+  describe('Nested Portal Test', () => {
+    it('should create a nested Portal DOM hierarchy when nesting multiple Portal Components', () => {
       render(<NestedTestComponent />);
 
       const documentPortal = document.querySelector('.portal');
@@ -139,7 +137,7 @@ describe('Portal', () => {
       expect(nestedChild2).toBeInTheDocument();
     });
 
-    it("If a nested Portal Component has a 'containerRef', it will still be rendered to the parent Portal Node.", () => {
+    it("should render a nested Portal Component to the parent Portal Node if the nested Portal Component has a 'containerRef' prop", () => {
       const { container } = render(<NestedTestComponent />);
 
       const outerNode = container.querySelector('#outer');
