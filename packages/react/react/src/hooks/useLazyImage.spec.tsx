@@ -79,8 +79,8 @@ afterEach(() => {
   cleanup();
 });
 
-describe('useImageLazyLoading', () => {
-  it('Initially, Img tags do not contain the URL value of the image source in the src attribute.', () => {
+describe('useLazyImage', () => {
+  it('Img tags do not contain the URL value of the image source in the src attribute initially', () => {
     render(<TestComponent />);
 
     const img1 = screen.getByAltText('img1');
@@ -90,7 +90,7 @@ describe('useImageLazyLoading', () => {
     expect(img2).not.toHaveAttribute('src', 'testSrc2');
   });
 
-  it('When the target element is visible in the viewport (or the element you specified as root), the value passed to src in the useImageLazyLoading hook is added to the src attribute of the img tag.', async () => {
+  it('src is appended to the img tag when the target element is displayed in the viewport(or the element you specified as root)', async () => {
     render(<TestComponent />);
 
     const img1 = screen.getByAltText('img1');
@@ -117,7 +117,7 @@ describe('useImageLazyLoading', () => {
     expect(img2).toHaveAttribute('src', 'testSrc2');
   });
 
-  it('When the target element is visible in the viewport (or the element you specified as root), If you provided onInView props, the onInView is executed.', async () => {
+  it('onInView is executed when the target element is visible in the viewport(or the element you specified as root)', async () => {
     const mockAction = jest.fn();
     render(<TestComponent onInView={mockAction} />);
 
@@ -143,7 +143,7 @@ describe('useImageLazyLoading', () => {
     expect(mockAction).toHaveBeenCalledTimes(1);
   });
 
-  it('Once a target element is exposed to the Viewport (or whatever element you specify as root), it is no longer observed.', async () => {
+  it('Target element is no longer observed once it is exposed to the viewport(or the element you specified as root)', async () => {
     const mockAction = jest.fn();
     render(<TestComponent onInView={mockAction} />);
 
