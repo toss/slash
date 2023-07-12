@@ -45,13 +45,13 @@ const Example = () => {
   const ref = useRef<HTMLDivElement | null>(null);
 
   return (
-    <>
+    <div>
       <Portal containerRef={ref}>
         <p>Example Portal</p>
       </Portal>
 
       <div id="outer" ref={ref} />
-    </>
+    </div>
   );
 };
 ```

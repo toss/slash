@@ -57,11 +57,11 @@ const NestedTestComponent = () => {
 };
 
 describe('Default Portal Test', () => {
-  it("should render the portal node in 'document.body' by default", () => {
+  it("should render the portalElement in 'document.body' by default", () => {
     const { container } = render(<DefaultTestComponent />);
 
-    const parentNode = container.querySelector('#parent');
-    const parentPortal = parentNode?.querySelector('.portal');
+    const parentElement = container.querySelector('#parent');
+    const parentPortal = parentElement?.querySelector('.portal');
 
     expect(parentPortal).toBeNull();
 
@@ -101,7 +101,7 @@ describe('Default Portal Test', () => {
     expect(getChildElement()).not.toBeInTheDocument();
   });
 
-  it('should remove the Portal Node on unmount.', () => {
+  it('should remove the portalElement on unmount.', () => {
     const { unmount } = render(<DefaultTestComponent />);
 
     const documentPortal = document.querySelector('.portal');
@@ -113,21 +113,21 @@ describe('Default Portal Test', () => {
 });
 
 describe('Container Portal Test', () => {
-  it("should render to any other DOM node you want instead of the 'document.body' by passing in the 'containerRef' prop", () => {
+  it("should render to any other DOM element you want instead of the 'document.body' by passing in the 'containerRef' prop", () => {
     const { container } = render(<ContainerTestComponent />);
 
-    const outerNode = container.querySelector('#outer');
-    const outerInnerPortal = outerNode?.querySelector('.portal');
+    const outerElement = container.querySelector('#outer');
+    const outerInnerPortal = outerElement?.querySelector('.portal');
     const outerInnerChild = outerInnerPortal?.querySelector('.child');
 
     expect(outerInnerChild).toBeInTheDocument();
   });
 
-  it('should remove the Portal Node on unmount', () => {
+  it('should remove the portalElement on unmount', () => {
     const { container, unmount } = render(<ContainerTestComponent />);
 
-    const outerNode = container.querySelector('#outer');
-    const outerInnerPortal = outerNode?.querySelector('.portal');
+    const outerElement = container.querySelector('#outer');
+    const outerInnerPortal = outerElement?.querySelector('.portal');
 
     unmount();
 
@@ -155,11 +155,11 @@ describe('Nested Portal Test', () => {
     expect(nestedChild2).toBeInTheDocument();
   });
 
-  it("should render a nested Portal Component to the parent Portal Node if the nested Portal Component has a 'containerRef' prop", () => {
+  it("should render a nested Portal Component to the parent portalElement if the nested Portal Component has a 'containerRef' prop", () => {
     const { container } = render(<NestedTestComponent />);
 
-    const outerNode = container.querySelector('#outer');
-    const outerPortal = outerNode?.querySelector('.portal');
+    const outerElement = container.querySelector('#outer');
+    const outerPortal = outerElement?.querySelector('.portal');
 
     expect(outerPortal).toBeNull();
   });

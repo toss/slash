@@ -8,52 +8,52 @@ interface PortalProps {
   containerRef?: React.RefObject<HTMLElement>;
 }
 
-const PortalContext = createContext<{ parentPortalNode: HTMLElement | null }>({
-  parentPortalNode: null,
+const PortalContext = createContext<{ parentPortalElement: HTMLElement | null }>({
+  parentPortalElement: null,
 });
 
 const PORTAL_DEFAULT_CLASS = 'portal';
 
 function RenderPortal({ children, className = PORTAL_DEFAULT_CLASS, containerRef }: PortalProps) {
-  const { parentPortalNode } = useContext(PortalContext);
+  const { parentPortalElement } = useContext(PortalContext);
 
-  const createPortalNode = useCallback(
-    (mountNode: HTMLElement) => {
-      const portalNode = mountNode.ownerDocument.createElement('div');
-      portalNode.classList.add(className);
+  const createPortalElement = useCallback(
+    (mountElement: HTMLElement) => {
+      const portalElement = mountElement.ownerDocument.createElement('div');
+      portalElement.classList.add(className);
 
-      return portalNode;
+      return portalElement;
     },
     [className]
   );
 
   /**
-   * This is the mount node to render portal nodes.
-   * The mountNode has the value "containerRef.current" if it has a "containerRef", or the parent portal node if it is a nested portal.
+   * This is the mountElement to render portalElement.
+   * The mountElement has the value "containerRef.current" if it has a "containerRef", or the parent portalElement if it is a nested portal.
    * By default, it has "document.body".
    */
-  const mountNode = useMemo(() => {
-    return parentPortalNode || containerRef?.current || document.body;
-  }, [parentPortalNode, containerRef]);
+  const mountElement = useMemo(() => {
+    return parentPortalElement || containerRef?.current || document.body;
+  }, [parentPortalElement, containerRef]);
 
-  const portalNode = useMemo(() => {
-    return createPortalNode(mountNode);
-  }, [createPortalNode, mountNode]);
+  const portalElement = useMemo(() => {
+    return createPortalElement(mountElement);
+  }, [createPortalElement, mountElement]);
 
   useLayoutEffect(() => {
-    mountNode.appendChild(portalNode);
+    mountElement.appendChild(portalElement);
 
-    // "portalNode" is removed from "mountNode" on unmount.
+    // "portalElement" is removed from "mountElement" on unmount.
     return () => {
-      if (mountNode.contains(portalNode)) {
-        mountNode.removeChild(portalNode);
+      if (mountElement.contains(portalElement)) {
+        mountElement.removeChild(portalElement);
       }
     };
-  }, [portalNode, mountNode]);
+  }, [portalElement, mountElement]);
 
   return createPortal(
-    <PortalContext.Provider value={{ parentPortalNode: portalNode }}>{children}</PortalContext.Provider>,
-    portalNode
+    <PortalContext.Provider value={{ parentPortalElement: portalElement }}>{children}</PortalContext.Provider>,
+    portalElement
   );
 }
 
