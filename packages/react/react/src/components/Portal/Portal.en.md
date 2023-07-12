@@ -1,12 +1,12 @@
 # Portal
 
-The Portal component uses `React.createPortal` to render the child component on a DOM node outside of the parent component's DOM hierarchy.
+The Portal Component uses `React.createPortal` to render the Child Component on a DOM Element outside of the Parent Component's DOM hierarchy.
 
-The Portal Component renders a Portal Node in `document.body` by default. However, if you pass in the Portal Component's `containerRef` prop, you can render the Portal Node in a `different DOM Node` than `document.body`.
+The Portal Component renders a Child Component in `document.body` by default. However, if you pass in the Portal Component's `containerRef` prop, you can render the Child Component in a `different DOM Element` than `document.body`.
 
-Additionally, it supports `nested portal functionality`. Nesting multiple portal components creates `a nested portal DOM hierarchy`.
+Additionally, it supports `nested portal functionality`. Nesting multiple Portal Components creates `a nested portal DOM hierarchy`.
 
-The Portal component is ideal for use with features like `Modal`, `Dialog`, and `Tooltip`.
+The Portal Component is ideal for use with features like `Modal`, `Dialog`, and `Tooltip`.
 
 [React CreatePortal](https://react.dev/reference/react-dom/createPortal#rendering-a-modal-dialog-with-a-portal) Please refer to the following articles
 
