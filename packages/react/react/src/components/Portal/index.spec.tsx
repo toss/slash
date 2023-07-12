@@ -3,14 +3,20 @@ import { useRef, useState } from 'react';
 import { Portal } from './Portal';
 
 const DefaultTestComponent = () => {
+  const [isOpen, setIsOpen] = useState(true);
   const [number, setNumber] = useState(0);
 
   return (
     <div id="parent">
+      <button onClick={() => setIsOpen(!isOpen)}>Toggle</button>
       <button onClick={() => setNumber(number + 1)}>+</button>
 
       <Portal>
-        <p className="child">{`${number}`}</p>
+        {isOpen && (
+          <div className="child">
+            <p>{`${number}`}</p>
+          </div>
+        )}
       </Portal>
     </div>
   );
@@ -22,7 +28,7 @@ const ContainerTestComponent = () => {
   return (
     <div id="parent">
       <Portal containerRef={ref}>
-        <p className="child">Container Portal</p>
+        <p className="child">Child</p>
       </Portal>
 
       <div id="outer" ref={ref}></div>
@@ -36,11 +42,11 @@ const NestedTestComponent = () => {
   return (
     <div id="parent">
       <Portal>
-        <p className="child">Default Portal</p>
+        <p className="child">Child</p>
         <Portal>
-          <p className="nested-child-1">Nested Portal1</p>
+          <p className="nested-child-1">Nested Child1</p>
           <Portal containerRef={ref}>
-            <p className="nested-child-2">Nested Portal2</p>
+            <p className="nested-child-2">Nested Child2</p>
           </Portal>
         </Portal>
       </Portal>
@@ -65,23 +71,34 @@ describe('Default Portal Test', () => {
     expect(documentPortalChild).toBeInTheDocument();
   });
 
-  it('State changes should be reflected in Portal Nodes', () => {
+  it('should render children of the Portal component based on multiple states', () => {
     render(<DefaultTestComponent />);
 
     const documentPortal = document.querySelector('.portal');
-    const documentPortalChild = documentPortal?.querySelector('.child');
+    const toggleButton = screen.getByRole('button', { name: 'Toggle' });
+    const plusButton = screen.getByRole('button', { name: '+' });
 
-    expect(documentPortalChild).toBeInTheDocument();
+    const getChildElement = () => documentPortal?.querySelector('.child');
 
-    const button = screen.getByRole('button');
+    fireEvent.click(plusButton);
 
-    fireEvent.click(button);
+    expect(getChildElement()).toBeInTheDocument();
+    expect(getChildElement()).toHaveTextContent('1');
 
-    expect(documentPortalChild).toHaveTextContent('1');
+    fireEvent.click(toggleButton);
+    fireEvent.click(plusButton);
 
-    fireEvent.click(button);
+    expect(getChildElement()).not.toBeInTheDocument();
 
-    expect(documentPortalChild).toHaveTextContent('2');
+    fireEvent.click(toggleButton);
+    fireEvent.click(plusButton);
+
+    expect(getChildElement()).toBeInTheDocument();
+    expect(getChildElement()).toHaveTextContent('3');
+
+    fireEvent.click(toggleButton);
+
+    expect(getChildElement()).not.toBeInTheDocument();
   });
 
   it('should remove the Portal Node on unmount.', () => {

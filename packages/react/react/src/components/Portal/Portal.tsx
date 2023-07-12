@@ -5,19 +5,19 @@ import { useIsMounted } from '../../hooks/useIsMounted';
 interface PortalProps {
   children: React.ReactNode;
   className?: string;
-  containerRef?: React.RefObject<HTMLElement | null>;
+  containerRef?: React.RefObject<HTMLElement>;
 }
 
-const PortalContext = createContext<{ parentPortal: HTMLElement | null }>({
-  parentPortal: null,
+const PortalContext = createContext<{ parentPortalNode: HTMLElement | null }>({
+  parentPortalNode: null,
 });
 
 const PORTAL_DEFAULT_CLASS = 'portal';
 
 function RenderPortal({ children, className = PORTAL_DEFAULT_CLASS, containerRef }: PortalProps) {
-  const { parentPortal } = useContext(PortalContext);
+  const { parentPortalNode } = useContext(PortalContext);
 
-  const getPortalNode = useCallback(
+  const createPortalNode = useCallback(
     (mountNode: HTMLElement) => {
       const portalNode = mountNode.ownerDocument.createElement('div');
       portalNode.classList.add(className);
@@ -33,25 +33,17 @@ function RenderPortal({ children, className = PORTAL_DEFAULT_CLASS, containerRef
    * By default, it has "document.body".
    */
   const mountNode = useMemo(() => {
-    if (parentPortal) {
-      return parentPortal;
-    }
+    return parentPortalNode || containerRef?.current || document.body;
+  }, [parentPortalNode, containerRef]);
 
-    if (containerRef?.current) {
-      return containerRef.current;
-    }
-
-    return document.body;
-  }, [parentPortal, containerRef]);
-
-  const portalNode = useMemo(() => getPortalNode(mountNode), [getPortalNode, mountNode]);
+  const portalNode = useMemo(() => {
+    return createPortalNode(mountNode);
+  }, [createPortalNode, mountNode]);
 
   useLayoutEffect(() => {
     mountNode.appendChild(portalNode);
 
-    /**
-     * "portalNode" is removed from "mountNode" on unmount.
-     */
+    // "portalNode" is removed from "mountNode" on unmount.
     return () => {
       if (mountNode.contains(portalNode)) {
         mountNode.removeChild(portalNode);
@@ -60,7 +52,7 @@ function RenderPortal({ children, className = PORTAL_DEFAULT_CLASS, containerRef
   }, [portalNode, mountNode]);
 
   return createPortal(
-    <PortalContext.Provider value={{ parentPortal: portalNode }}>{children}</PortalContext.Provider>,
+    <PortalContext.Provider value={{ parentPortalNode: portalNode }}>{children}</PortalContext.Provider>,
     portalNode
   );
 }
@@ -69,9 +61,7 @@ function RenderPortal({ children, className = PORTAL_DEFAULT_CLASS, containerRef
 export function Portal({ children, ...restProps }: PortalProps) {
   const isMounted = useIsMounted();
 
-  /**
-   * With this code, it is possible to solve the "window is not defined" and "Hydration Error" that can occur in SSR.
-   */
+  // With this code, it is possible to solve the "window is not defined" and "Hydration Error" that can occur in SSR.
   if (!isMounted) {
     return <></>;
   }
