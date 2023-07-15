@@ -1,12 +1,10 @@
 /** @tossdocs-ignore */
-import { isServer } from './isServer';
+import { getOSByUserAgent } from './getOSByUserAgent';
 
 export function isMobileWeb() {
-  if (isServer()) {
-    return false;
-  }
+  const userAgent = getOSByUserAgent();
 
-  if (navigator.userAgent.match(/ipad|iphone/i) !== null || navigator.userAgent.match(/Android/i) !== null) {
+  if (userAgent === 'ios' || userAgent === 'android') {
     return true;
   }
   return false;
