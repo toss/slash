@@ -33,11 +33,11 @@ export function useImageLoad(options?: Options) {
   );
 
   const ref = useCallback(
-    (node: HTMLImageElement) => {
-      if (!node) {
+    (imgElement: HTMLImageElement) => {
+      if (!imgElement) {
         return;
       }
-      registerLoadEventHandler(node);
+      registerLoadEventHandler(imgElement);
     },
     [registerLoadEventHandler]
   );
