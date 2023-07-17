@@ -1,6 +1,6 @@
 # useImageLoad
 
-The useImageLoad hook allows you to determine whether an image resource has been successfully loaded with the return value 'isLoaded' for the image tag provided with the 'src' attribute.
+The useImageLoad hook allows you to check whether an image resource has been successfully loaded with the return value 'isLoaded' for an image tag provided with 'ref'.
 You can optionally add callback functions 'onLoadStart', 'onLoadComplete' to run when the image starts loading and when it finishes.
 
 <br />

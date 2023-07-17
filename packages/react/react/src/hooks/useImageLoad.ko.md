@@ -1,6 +1,6 @@
 # useImageLoad
 
-useImageLoad 훅을 사용하면 'src' 속성과 함께 제공된 이미지 태그에 대해 반환값 'isLoaded'를 사용하여 이미지 리소스가 성공적으로 로드되었는지 여부를 확인할 수 있습니다.
+useImageLoad 훅을 사용하면 'ref'와 함께 제공된 이미지 태그에 대해 반환값 'isLoaded'를 사용하여 이미지 리소스가 성공적으로 로드되었는지 확인할 수 있습니다.
 이미지를 로드 시작 할 때, 완료될 때 실행하는 콜백 함수 'onLoadStart', 'onLoadComplete'를 옵션으로 추가할 수 있습니다.
 
 <br />
