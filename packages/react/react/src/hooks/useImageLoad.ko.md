@@ -22,14 +22,22 @@ import { useImageLoad } from '@toss/react';
 const Example = () => {
   const { ref, isLoaded } = useImageLoad({
     onLoadStart: () => {
-      console.log('load start');
+      console.log('Load Start');
     },
     onLoadComplete: () => {
-      console.log('load complete');
+      console.log('Load Complete');
     },
   });
 
-  return <img ref={ref} width={400} height={400} style={{ opacity: isLoaded ? 1 : 0, transition: 'opacity 0.5s' }} />;
+  return (
+    <img
+      ref={ref}
+      src={imageUrl}
+      width={400}
+      height={400}
+      style={{ opacity: isLoaded ? 1 : 0, transition: 'opacity 0.5s' }}
+    />
+  );
 };
 ```
 
@@ -46,10 +54,10 @@ const Example = () => {
   const [inView, appear] = useBooleanState(false);
   const { ref, isLoaded } = useImageLoad({
     onLoadStart: () => {
-      console.log('load start');
+      console.log('Load Start');
     },
     onLoadComplete: () => {
-      console.log('load complete');
+      console.log('Load Complete');
     },
   });
 
@@ -62,7 +70,7 @@ const Example = () => {
             ref={ref}
             width={400}
             height={400}
-            src={png1}
+            src={imageUrl}
             style={{
               opacity: isLoaded ? 1 : 0,
               transition: 'opacity 0.5s',
