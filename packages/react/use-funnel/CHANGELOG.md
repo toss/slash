@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.6](https://github.com/toss/slash/compare/@toss/use-funnel@1.2.5...@toss/use-funnel@1.2.6) (2023-07-03)
+
+**Note:** Version bump only for package @toss/use-funnel
+
+
+
+
+
+## [1.2.5](https://github.com/toss/slash/compare/@toss/use-funnel@1.2.4...@toss/use-funnel@1.2.5) (2023-06-13)
+
+
+### Bug Fixes
+
+* **use-query-param, use-funnel:** update peerDependencies ([#255](https://github.com/toss/slash/issues/255)) ([1d0c958](https://github.com/toss/slash/commit/1d0c9580769c89c97f64de936f28a6038e829c4d))
+
+
+
+
+
 ## [1.2.4](https://github.com/toss/slash/compare/@toss/use-funnel@1.2.3...@toss/use-funnel@1.2.4) (2023-04-12)
 
 **Note:** Version bump only for package @toss/use-funnel

@@ -1,6 +1,6 @@
 {
   "name": "@toss/emotion-utils",
-  "version": "1.1.8",
+  "version": "1.1.10",
   "sideEffects": false,
   "exports": {
     ".": {
@@ -23,7 +23,7 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.14.8",
-    "@toss/utils": "workspace:^1.4.2",
+    "@toss/utils": "workspace:^1.4.4",
     "csstype": "^3.0.9"
   },
   "devDependencies": {

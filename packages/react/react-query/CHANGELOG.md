@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.8](https://github.com/toss/slash/compare/@toss/react-query@1.1.7...@toss/react-query@1.1.8) (2023-06-13)
+
+
+### Bug Fixes
+
+* **react-query:** fix useSuspendedQuery to receive various argument formats like original react-query v3 ([#234](https://github.com/toss/slash/issues/234)) ([1ea226f](https://github.com/toss/slash/commit/1ea226ff8154daa2f25e06cf59396ce85a0e3ed0))
+
+
+
+
+
 ## [1.1.7](https://github.com/toss/slash/compare/@toss/react-query@1.1.6...@toss/react-query@1.1.7) (2023-04-12)
 
 **Note:** Version bump only for package @toss/react-query

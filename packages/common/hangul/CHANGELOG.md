@@ -3,6 +3,34 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.5.0](https://github.com/toss/slash/compare/@toss/hangul@1.4.0...@toss/hangul@1.5.0) (2023-07-03)
+
+
+### Bug Fixes
+
+* Delete not josa option '이에' ([#260](https://github.com/toss/slash/issues/260)) ([a835b72](https://github.com/toss/slash/commit/a835b72b69ae95ab28fae267e70b7472b127a120))
+
+
+### Features
+
+* **@toss/hangul:** add josa option with `으로써/로써` and `으로부터/로부터` ([#265](https://github.com/toss/slash/issues/265)) ([b03a497](https://github.com/toss/slash/commit/b03a497ccd1c26a134c27ec7ffbfb4ee4513fa10))
+* add josa option with (으로서/로서) ([#261](https://github.com/toss/slash/issues/261)) ([6bb1eb5](https://github.com/toss/slash/commit/6bb1eb5856c4ba231a9d418d2f477721be4aae63))
+
+
+
+
+
+# [1.4.0](https://github.com/toss/slash/compare/@toss/hangul@1.3.0...@toss/hangul@1.4.0) (2023-06-13)
+
+
+### Features
+
+* **hangul:** add 서술격조사와 종결어미(이에요/예요) to josa ([#256](https://github.com/toss/slash/issues/256)) ([d76ea0f](https://github.com/toss/slash/commit/d76ea0f9a5b477d1fabaa0975b84490a25dc5bbc))
+
+
+
+
+
 # [1.3.0](https://github.com/toss/slash/compare/@toss/hangul@1.2.0...@toss/hangul@1.3.0) (2023-04-12)
 
 

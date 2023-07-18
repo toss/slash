@@ -5,7 +5,7 @@ title: ImpressionArea
 # ImpressionArea
 
 A component that fires an event when it appears or disappears in the browser viewport.
-It uses the [IntersectionObserver](https://developer.mozilla.org/ko/docs/Web/API/Intersection_Observer_API) API to work efficiently.
+It uses the [IntersectionObserver](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API) API to work efficiently.
 
 ImpressionArea renders an additional div. (If you don't need a div, use the `useImpressionRef` Hook).
 
@@ -15,6 +15,9 @@ ImpressionArea renders an additional div. (If you don't need a div, use the `use
   onImpressionStart={() => {}}
   // callback called when the element exits the browser viewport
   onImpressionEnd={() => {}}
+  // You can specify an element to use instead of the Viewport to examine the visibility of the target element.
+  // @default null
+  root={root}
   // Specify how much margin to give compared to what the actual element occupies (`string`)
   // See [MDN](https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserver/rootMargin).
   rootMargin={rootMargin}

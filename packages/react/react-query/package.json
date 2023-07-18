@@ -1,9 +1,9 @@
 {
   "name": "@toss/react-query",
-  "version": "1.1.7",
+  "version": "1.1.8",
   "types": "./dist/index.d.ts",
   "tsd": {
-    "directory": "./test-d"
+    "directory": "./src"
   },
   "sideEffects": false,
   "exports": {
@@ -20,10 +20,10 @@
   ],
   "scripts": {
     "build": "rm -rf dist esm && tsc -p tsconfig.build.json --declaration --emitDeclarationOnly --declarationDir dist && rollup -c rollup.config.js",
-    "prepack": "yarn build && yarn tsd",
-    "tsd": "pnpify tsd",
+    "prepack": "yarn build && yarn test:tsd",
     "test": "echo \"no test specified.\"",
-    "typecheck": "tsc --noEmit"
+    "test:tsd": "pnpify tsd -t ./dist/index.d.ts",
+    "typecheck": "tsc -p tsconfig.build.json --noEmit"
   },
   "devDependencies": {
     "@babel/core": "^7",

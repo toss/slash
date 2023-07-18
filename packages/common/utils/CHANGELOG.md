@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.4](https://github.com/toss/slash/compare/@toss/utils@1.4.3...@toss/utils@1.4.4) (2023-07-03)
+
+
+### Bug Fixes
+
+* **@toss/utils:** Fix circular dependency warning ([#270](https://github.com/toss/slash/issues/270)) ([6c3ef2f](https://github.com/toss/slash/commit/6c3ef2f095c547a6d016c5fedca67f5235c1ee0b))
+
+
+
+
+
+## [1.4.3](https://github.com/toss/slash/compare/@toss/utils@1.4.2...@toss/utils@1.4.3) (2023-06-13)
+
+
+### Bug Fixes
+
+* **utils:** fix typo ([#258](https://github.com/toss/slash/issues/258)) ([132ccb0](https://github.com/toss/slash/commit/132ccb0a670a7edf2f2a1d245f9ac9ae4e8a383b))
+
+
+
+
+
 ## [1.4.2](https://github.com/toss/slash/compare/@toss/utils@1.4.1...@toss/utils@1.4.2) (2023-04-12)
 
 **Note:** Version bump only for package @toss/utils
