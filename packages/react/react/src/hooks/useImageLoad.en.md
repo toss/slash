@@ -63,9 +63,10 @@ const Example = () => {
 
   return (
     <ImpressionArea onImpressionStart={appear}>
+      {/* The "Box" and "Skeleton" components are example code. */}
       {inView && (
         <Box>
-          {!isLoaded && <Skeleton>Loading...</Skeleton>}
+          {!isLoaded && <Skeleton />}
           <img
             ref={ref}
             width={400}
