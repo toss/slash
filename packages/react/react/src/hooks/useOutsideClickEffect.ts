@@ -4,8 +4,8 @@ import { useCallback, useEffect, useRef } from 'react';
 type OneOrMore<T> = T | T[];
 
 /** @tossdocs-ignore */
-export function useOutsideClickEffect(container: OneOrMore<HTMLElement | null>, callback: () => void) {
-  const containers = useRef<HTMLElement[]>([]);
+export function useOutsideClickEffect(container: OneOrMore<React.RefObject<HTMLElement> | null>, callback: () => void) {
+  const containers = useRef<Array<React.RefObject<HTMLElement>>>([]);
 
   useEffect(() => {
     containers.current = (Array.isArray(container) ? container : [container]).filter(isNotNil);
@@ -21,7 +21,7 @@ export function useOutsideClickEffect(container: OneOrMore<HTMLElement | null>, 
         return;
       }
 
-      if (containers.current.some(x => x.contains(target as Node))) {
+      if (containers.current.some(x => x.current?.contains(target as Node))) {
         return;
       }
 
