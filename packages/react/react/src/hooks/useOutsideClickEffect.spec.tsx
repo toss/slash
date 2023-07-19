@@ -21,7 +21,7 @@ describe('useOutsideClickEffect', () => {
 
       const updateContainer = useCallback((elem: HTMLDivElement | null) => {
         if (elem != null) {
-          setContainers(containers => [...containers, { current: elem }]);
+          setContainers(prev => [...prev, { current: elem }]);
         }
       }, []);
 
