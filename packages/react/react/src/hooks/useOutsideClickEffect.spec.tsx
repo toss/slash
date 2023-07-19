@@ -16,12 +16,12 @@ describe('useOutsideClickEffect', () => {
 
   function prepare({ containerCount = 1, onEffect = jest.fn() }: PrepareParams = {}) {
     function Test() {
-      const [containers, setContainers] = useState<HTMLDivElement[]>([]);
+      const [containers, setContainers] = useState<Array<React.RefObject<HTMLElement>>>([]);
       useOutsideClickEffect(containers, onEffect);
 
       const updateContainer = useCallback((elem: HTMLDivElement | null) => {
         if (elem != null) {
-          setContainers(prev => [...prev, elem]);
+          setContainers(containers => [...containers, { current: elem }]);
         }
       }, []);
 
