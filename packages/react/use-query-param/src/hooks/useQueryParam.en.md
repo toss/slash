@@ -21,7 +21,7 @@ const valueWithDefault = useQueryParam<'a' | 'b'>('type') ?? 'a';
 
 const parsedValue = useQueryParam('type', Number) ?? 0;
 
-const valueWithRequired = useQueryParam('type', { required: true }); // string
+const valueWithRequired = useQueryParam('type', { required: true }); // NonNullable
 ```
 
 ## References
