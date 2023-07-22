@@ -20,6 +20,8 @@ const value = useQueryParam<'a' | 'b' | 'c'>('type');
 const valueWithDefault = useQueryParam<'a' | 'b'>('type') ?? 'a';
 
 const parsedValue = useQueryParam('type', Number) ?? 0;
+
+const valueWithRequired = useQueryParam('type', { required: true }); // string
 ```
 
 ## References
