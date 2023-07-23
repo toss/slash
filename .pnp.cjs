@@ -10137,6 +10137,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@toss/use-loading", "workspace:packages/react/use-loading"],\
             ["@babel/core", "npm:7.19.3"],\
             ["@testing-library/react", "virtual:62cb29918b2e63dff97923d985a18238631a18b918521fd9ac48de2be213715676e8b999d7ab4431ea536d1917af1465d5695ceae059c69bf4c14df5968dd6a1#npm:13.4.0"],\
+            ["@toss/react", "virtual:b5b5dfb1662b30d0d5b62f084f8b8fddd0eee56dd8737572197395ab6309e644fa76525392b1d0250ce3c07c5eeeb90901439953af682fc76f8ab38f71b8b09d#workspace:packages/react/react"],\
             ["@toss/rollup-config", "virtual:bcd0c1141064bf940376b9b2c4f8a211deda5f9c27293f215379edb7c7917846a6a1d22044c7c1b3bb8002672fb9461cbd1f53c3889b2fe3b5bfbab9a70f1ac4#workspace:configs/rollup"],\
             ["@tossteam/jest", "virtual:28eef7b64459c6407253c5ed756ca2415d0777dbb81d0a9fb624f3fb48f6b40995056551769991561cf82183fd85bdeb97dea6a0cec5339b508bb55dc7c6b35b#npm:17.187.2"],\
             ["@types/babel__core", "npm:7.1.19"],\

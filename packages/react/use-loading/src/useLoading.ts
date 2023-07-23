@@ -1,5 +1,6 @@
 /** @tossdocs-ignore */
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { useIsMountedRef } from '@toss/react';
+import { useCallback, useMemo, useState } from 'react';
 
 export function useLoading(): [boolean, <T>(promise: Promise<T>) => Promise<T>] {
   const [loading, setLoading] = useState(false);
@@ -21,17 +22,4 @@ export function useLoading(): [boolean, <T>(promise: Promise<T>) => Promise<T>] 
   );
 
   return useMemo(() => [loading, startTransition], [loading, startTransition]);
-}
-
-function useIsMountedRef() {
-  const ref = useRef({ isMounted: true }).current;
-
-  useEffect(() => {
-    ref.isMounted = true;
-    return () => {
-      ref.isMounted = false;
-    };
-  }, [ref]);
-
-  return ref;
 }

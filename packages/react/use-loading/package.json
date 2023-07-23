@@ -20,6 +20,9 @@
     "test": "jest",
     "typecheck": "tsc --noEmit"
   },
+  "dependencies": {
+    "@toss/react": "workspace:^1.5.0"
+  },
   "devDependencies": {
     "@babel/core": "^7",
     "@testing-library/react": "^13.3.0",

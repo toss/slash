@@ -6105,6 +6105,7 @@ __metadata:
   dependencies:
     "@babel/core": ^7
     "@testing-library/react": ^13.3.0
+    "@toss/react": "workspace:^1.5.0"
     "@toss/rollup-config": "workspace:^0.1.4"
     "@tossteam/jest": ^17
     "@types/babel__core": ^7
