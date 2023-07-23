@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.5.0](https://github.com/toss/slash/compare/@toss/react@1.4.0...@toss/react@1.5.0) (2023-07-03)
+
+
+### Features
+
+* **@toss/react:** Add useToggleState Hook  ([#273](https://github.com/toss/slash/issues/273)) ([846c7d1](https://github.com/toss/slash/commit/846c7d15720be05647c0af33685c3d8b2989fc64))
+
+
+
+
+
+# [1.4.0](https://github.com/toss/slash/compare/@toss/react@1.3.8...@toss/react@1.4.0) (2023-06-13)
+
+
+### Features
+
+* **@toss/storage:** add clear method ([#233](https://github.com/toss/slash/issues/233)) ([4b66f22](https://github.com/toss/slash/commit/4b66f225f8b41315e5e6a2fa54a7886c83343539))
+
+
+
+
+
 ## [1.3.8](https://github.com/toss/slash/compare/@toss/react@1.3.7...@toss/react@1.3.8) (2023-04-12)
 
 **Note:** Version bump only for package @toss/react

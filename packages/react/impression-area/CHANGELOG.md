@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.10](https://github.com/toss/slash/compare/@toss/impression-area@1.2.9...@toss/impression-area@1.2.10) (2023-07-03)
+
+**Note:** Version bump only for package @toss/impression-area
+
+
+
+
+
+## [1.2.9](https://github.com/toss/slash/compare/@toss/impression-area@1.2.8...@toss/impression-area@1.2.9) (2023-06-13)
+
+**Note:** Version bump only for package @toss/impression-area
+
+
+
+
+
 ## [1.2.8](https://github.com/toss/slash/compare/@toss/impression-area@1.2.7...@toss/impression-area@1.2.8) (2023-04-12)
 
 **Note:** Version bump only for package @toss/impression-area

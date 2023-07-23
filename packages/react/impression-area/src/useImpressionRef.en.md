@@ -5,7 +5,7 @@ title: useImpressionRef
 # useImpressionRef
 
 Hook that fires an event when the element given by `ref` appears or disappears in the browser viewport.
-It works efficiently by using the [IntersectionObserver](https://developer.mozilla.org/ko/docs/Web/API/Intersection_Observer_API) API.
+It works efficiently by using the [IntersectionObserver](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API) API.
 
 To use it as a component, use `ImpressionArea`.
 
@@ -16,6 +16,10 @@ const ref = useImpressionRef({
 
   // callback called when the element exits the browser viewport
   onImpressionEnd: () => {},
+
+  // You can specify an element to use instead of the Viewport to examine the visibility of the target element.
+  // @default null
+  root={root}
 
   // Specify how much margin to give compared to what the actual element occupies (`string`)
   // See [MDN](https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserver/rootMargin).

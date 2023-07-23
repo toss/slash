@@ -8,14 +8,6 @@ This is basically a useQuery with suspense by default.
 
 The basic API is the same as [react-query](https://tanstack.com/query/v4/?from=reactQueryV3&original=https://react-query-v3.tanstack.com/).
 
-```typescript
-function useSuspendedQuery(
-  queryKey: TQueryKey,
-  queryFn: QueryFunction<TQueryFnData, TQueryKey>,
-  options?: SuspendedUseQueryOptions<TQueryFnData, TError, TData, TQueryKey>
-): SuspendedUseQueryResultOnSuccess<TData> | SuspendedUseQueryResultOnIdle<undefined>;
-```
-
 It is mostly the same as the return value of react-query useQuery, but the data is non-nullable. Additionally, error, isLoading, isError, and isFetching do not exist.
 
 However, if useSuspendedQuery's enabled (which defaults to true) is false, data can have undefined in it.
@@ -24,10 +16,22 @@ However, if useSuspendedQuery's enabled (which defaults to true) is false, data 
 
 ```typescript
 // data: number
-const { data } = useSuspendedQuery(['key'], () => 1);
+const { data } = useSuspendedQuery({
+  queryKey: ['key'],
+  queryFn: () => 1,
+});
+
+// data: number | undefined
+const { data } = useSuspendedQuery({
+  queryKey: ['key'],
+  queryFn: () => 1,
+  enabled: Math.random() > 0.5,
+});
 
 // data: undefined
-const { data } = useSuspendedQuery(['key'], () => 1, {
+const { data } = useSuspendedQuery({
+  queryKey: ['key'],
+  queryFn: () => 1,
   enabled: false,
 });
 ```

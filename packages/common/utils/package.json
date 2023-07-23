@@ -1,6 +1,6 @@
 {
   "name": "@toss/utils",
-  "version": "1.4.2",
+  "version": "1.4.4",
   "sideEffects": false,
   "exports": {
     ".": {
@@ -44,7 +44,6 @@
     "@types/node": "^14.0.23",
     "babel-jest": "^29.0.1",
     "builtin-modules": "^3.1.0",
-    "date-fns": "^2.25.0",
     "hangul-js": "^0.2.6",
     "jest": "^29.0.1",
     "jest-environment-jsdom": "^28.1.1",
