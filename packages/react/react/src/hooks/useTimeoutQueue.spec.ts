@@ -31,14 +31,14 @@ describe('useTimeoutQueue는', () => {
   });
 
   it('실행되지 않은 Task는 안전하게 clear 된다.', () => {
-    const TEST_INTERVAL_ID = 3302;
+    const TEST_TIMEOUT_ID = 3302;
 
-    const setIntervalMock: any = () => {
-      return TEST_INTERVAL_ID;
+    const setTimeoutMock: any = () => {
+      return TEST_TIMEOUT_ID;
     };
-    jest.spyOn(window, 'setTimeout').mockImplementation(setIntervalMock);
+    jest.spyOn(window, 'setTimeout').mockImplementation(setTimeoutMock);
 
-    const clearIntervalMock = jest.spyOn(window, 'clearTimeout');
+    const clearTimeoutMock = jest.spyOn(window, 'clearTimeout');
 
     const { result, unmount } = renderHook(useTimeoutQueue);
     const timeouts = result.current;
@@ -48,7 +48,7 @@ describe('useTimeoutQueue는', () => {
 
     unmount();
 
-    expect(clearIntervalMock).toBeCalledTimes(1);
-    expect(clearIntervalMock).toBeCalledWith(TEST_INTERVAL_ID);
+    expect(clearTimeoutMock).toBeCalledTimes(1);
+    expect(clearTimeoutMock).toBeCalledWith(TEST_TIMEOUT_ID);
   });
 });
