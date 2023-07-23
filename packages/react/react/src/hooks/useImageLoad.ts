@@ -3,8 +3,8 @@ import { useCallback, useState } from 'react';
 import { usePreservedCallback } from './usePreservedCallback';
 
 interface Options {
-  onLoadComplete?: () => void;
   onLoadStart?: () => void;
+  onLoadComplete?: () => void;
 }
 
 /** @tossdocs-ignore */
