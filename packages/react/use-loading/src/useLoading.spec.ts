@@ -79,7 +79,7 @@ describe('useLoading', () => {
       });
     });
   });
-  describe('(arg1: Arg1, arg2: Arg2) => Promise<Data> (type inference 테스트)', () => {
+  describe('(arg1: Arg1, arg2: Arg2) => Promise<Data> (type inference test)', () => {
     it(`should false, when startTransition's promise is resolved`, async () => {
       const mockedAPI = async (arg1: number, arg2: string) => ({ result: `${arg1}-${arg2}` });
       const { result } = renderHook(() => useLoading());
