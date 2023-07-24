@@ -1,4 +1,5 @@
 /** @tossdocs-ignore */
+import deepEqual from 'fast-deep-equal';
 
 /**
  * @name isSubset
@@ -13,8 +14,9 @@
  * @example
  * isSubset([], [1,2,3]); // true
  * isSubset([1,2], [1,2,3]); // true
+ * isSubset([{a: 1}, {c: 3}], [{a: 1}, {b: 2}, {c: 3}]) // true
  * isSubset([1,2,4], [1,2,3]); // false
  */
-export function isSubset(subSet: Array<string | number>, wholeSet: Array<string | number>): boolean {
-  return subSet.every(element => wholeSet.includes(element));
+export function isSubset(subSet: unknown[], wholeSet: unknown[]): boolean {
+  return subSet.every(element => wholeSet.some(wholeSetElement => deepEqual(wholeSetElement, element)));
 }
