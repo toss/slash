@@ -19,7 +19,7 @@ import { ComponentPropsWithoutChildren } from './types/index';
 
 type RenderFallbackProps<ErrorType extends Error = Error> = {
   error: ErrorType;
-  reset: (...args: unknown[]) => void;
+  reset: () => void;
 };
 
 type RenderFallbackType = <ErrorType extends Error>(props: RenderFallbackProps<ErrorType>) => ReactNode;
