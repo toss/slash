@@ -126,7 +126,7 @@ if (process.env.NODE_ENV !== 'production') {
   ErrorBoundary.displayName = 'ErrorBoundary';
 }
 
-export function useErrorBoundary<ErrorType extends Error>() {
+export const useErrorBoundary = <ErrorType extends Error>() => {
   const [error, setError] = useState<ErrorType | null>(null);
 
   if (error != null) {
@@ -134,7 +134,7 @@ export function useErrorBoundary<ErrorType extends Error>() {
   }
 
   return setError;
-}
+};
 
 export const withErrorBoundary = <Props extends Record<string, unknown> = Record<string, never>>(
   Component: ComponentType<Props>,
