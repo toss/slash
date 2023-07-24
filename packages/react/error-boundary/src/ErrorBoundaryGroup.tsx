@@ -1,6 +1,7 @@
 /** @tossdocs-ignore */
+import { useIsMounted } from '@toss/react';
 import { createContext, ReactNode, useContext, useEffect, useMemo, useRef } from 'react';
-import { useIsMounted, useKey } from './hooks';
+import { useKey } from './hooks';
 
 export const ErrorBoundaryGroupContext = createContext<{ reset: () => void; resetKey: number } | undefined>(undefined);
 if (process.env.NODE_ENV !== 'production') {
