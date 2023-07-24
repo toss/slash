@@ -10316,6 +10316,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["babel-jest", "virtual:785204e63ba96625a23f896ee431c9a36baff7a533742c7d2c1d3e8c51b41da4d9b22d61afa2e1bb44d0338b2a9e895a7c77e29d79f3a357a12dae28feb7f916#npm:29.1.2"],\
             ["builtin-modules", "npm:3.3.0"],\
             ["date-fns", "npm:2.29.3"],\
+            ["fast-deep-equal", "npm:3.1.3"],\
             ["hangul-js", "npm:0.2.6"],\
             ["jest", "virtual:01ae7c33d4655a48cbb29902912466a761e01d57e32af25620c31e36065eb1601cc4f6394afcb6b2f9c9f1b941b9fbeecba9aa1bca8ca304ae87cee07a6864e9#npm:29.1.2"],\
             ["jest-environment-jsdom", "npm:29.1.2"],\
