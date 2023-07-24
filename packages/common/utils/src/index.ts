@@ -6,6 +6,7 @@ export * from './batchRequestsOf';
 export * from './chunk';
 export * from './clamp';
 export * from './clipboard';
+export * from './copyToClipboard';
 export * from './createMapByKey';
 export * from './delay';
 export * from './device/index';
