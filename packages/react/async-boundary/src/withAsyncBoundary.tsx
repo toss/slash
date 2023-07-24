@@ -2,7 +2,7 @@
 import { ComponentProps, ComponentType } from 'react';
 import AsyncBoundary from './AsyncBoundary';
 
-export default function withAsyncBoundary<Props extends Record<string, unknown> = Record<string, never>>(
+function withAsyncBoundary<Props extends Record<string, unknown> = Record<string, never>>(
   Component: ComponentType<Props>,
   asyncBoundaryProps: ComponentProps<typeof AsyncBoundary>
 ) {
@@ -19,3 +19,7 @@ export default function withAsyncBoundary<Props extends Record<string, unknown> 
 
   return Wrapped;
 }
+
+export { withAsyncBoundary };
+
+export default withAsyncBoundary;

@@ -19,4 +19,6 @@ const AsyncBoundary = forwardRef<ComponentRef<typeof ErrorBoundary>, Props>(
   )
 );
 
+export { AsyncBoundary };
+
 export default AsyncBoundary;
