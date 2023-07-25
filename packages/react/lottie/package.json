@@ -26,7 +26,8 @@
     "@toss/react": "workspace:^1.5.0",
     "@toss/utils": "workspace:^1.4.4",
     "lodash.debounce": "^4.0.8",
-    "lottie-web": "^5.5.9"
+    "lottie-web": "^5.5.9",
+    "suspend-react": "^0.1.3"
   },
   "devDependencies": {
     "@babel/core": "^7",
