@@ -71,7 +71,7 @@ interface SRCProps extends CommonProps {
   json?: undefined;
 }
 
-type Props = JSONProps | SRCProps;
+export type BaseLottieProps = JSONProps | SRCProps;
 
 interface LottieRef {
   start: () => void;
@@ -80,7 +80,7 @@ interface LottieRef {
   pause: () => void;
 }
 
-export const Lottie = forwardRef(function Lottie(
+export const BaseLottie = forwardRef(function Lottie(
   {
     className,
     src,
@@ -97,7 +97,7 @@ export const Lottie = forwardRef(function Lottie(
     onPlay: _onPlay,
     onLoopComplete: _onLoopComplete,
     onComplete: _onComplete,
-  }: Props,
+  }: BaseLottieProps,
   lottieRef: Ref<LottieRef>
 ) {
   const onPlay = usePreservedCallback(_onPlay ?? noop);
