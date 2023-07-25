@@ -36,7 +36,6 @@ export function useOverlay({ exitOnUnmount = true }: Options = {}) {
         mount(
           id,
           <OverlayController
-            // NOTE: state should be reset every time we open an overlay
             key={Date.now()}
             ref={overlayRef}
             overlayElement={overlayElement}
@@ -48,9 +47,6 @@ export function useOverlay({ exitOnUnmount = true }: Options = {}) {
       },
       close: () => {
         overlayRef.current?.close();
-      },
-      exit: () => {
-        unmount(id);
       },
     }),
     [id, mount, unmount]
