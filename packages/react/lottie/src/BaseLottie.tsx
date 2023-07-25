@@ -1,11 +1,11 @@
 import { ImpressionArea } from '@toss/impression-area';
-import { useBooleanState, useCombinedRefs } from '@toss/react';
+import { useBooleanState, useCombinedRefs, usePreservedCallback } from '@toss/react';
+import { noop } from '@toss/utils';
 import { forwardRef, Ref, useCallback, useEffect, useImperativeHandle, useRef, useState } from 'react';
 import { AnimationChain } from './AnimationChain';
 import { LoopType } from './AnimationPlayer';
 import { Asset } from './Asset';
 import { importLottie } from './importLottie';
-import { LottieRef } from './LottieRef';
 
 interface CommonProps {
   className?: string;
@@ -61,21 +61,26 @@ interface CommonProps {
   alt?: string;
 }
 
-// ts-prune-ignore-next
-export interface JSONProps extends CommonProps {
+interface JSONProps extends CommonProps {
   json: string;
   src?: undefined;
 }
 
-// ts-prune-ignore-next
-export interface SRCProps extends CommonProps {
+interface SRCProps extends CommonProps {
   src: string | string[];
   json?: undefined;
 }
 
-export type BaseLottieProps = JSONProps | SRCProps;
+type Props = JSONProps | SRCProps;
 
-export const BaseLottie = forwardRef(function BaseLottie(
+interface LottieRef {
+  start: () => void;
+  stop: () => void;
+  play: () => void;
+  pause: () => void;
+}
+
+export const Lottie = forwardRef(function Lottie(
   {
     className,
     src,
@@ -89,12 +94,16 @@ export const BaseLottie = forwardRef(function BaseLottie(
     width,
     height,
     alt,
-    onPlay,
-    onLoopComplete,
-    onComplete,
-  }: BaseLottieProps,
+    onPlay: _onPlay,
+    onLoopComplete: _onLoopComplete,
+    onComplete: _onComplete,
+  }: Props,
   lottieRef: Ref<LottieRef>
 ) {
+  const onPlay = usePreservedCallback(_onPlay ?? noop);
+  const onLoopComplete = usePreservedCallback(_onLoopComplete ?? noop);
+  const onComplete = usePreservedCallback(_onComplete ?? noop);
+
   const containerRef = useRef<HTMLDivElement>(null);
   const animationChainRef = useRef<AnimationChain | null>(null);
 
