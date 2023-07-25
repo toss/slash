@@ -1,5 +1,5 @@
 import { render, waitFor } from '@testing-library/react';
-import { ErrorBoundary } from '@toss/error-boundary';
+import { ErrorBoundary } from '@tossteam/error-boundary';
 import { Redirection } from '..';
 import { RedirectionBoundary } from './index';
 
@@ -36,7 +36,7 @@ describe('RedirectionBoundary', () => {
 
     render(
       <RedirectionBoundary onRedirect={onRedirectBoundary}>
-        <Throwable error={Redirection.of({ destination: '/unicorn-land', onRedirect })} />
+        <Throwable error={Redirection.of({ destination: '/unicorn-land' })} />
       </RedirectionBoundary>
     );
 
@@ -48,24 +48,24 @@ describe('RedirectionBoundary', () => {
     const onRedirect = jest.fn(() => null);
 
     render(
-      <RedirectionBoundary>
-        <Throwable error={Redirection.of({ destination: '/unicorn-land', onRedirect })} />
+      <RedirectionBoundary onRedirect={onRedirect}>
+        <Throwable error={Redirection.of({ destination: '/unicorn-land' })} />
       </RedirectionBoundary>
     );
 
     waitFor(() => expect(onRedirect).toBeCalled());
   });
 
-  it(`throw 된 RedirectionBoundary에 onRedirect 값이 없고 throw 된 Redirection의 onRedirect도 없으면 onRedirectFallback을 호출한다`, async () => {
-    const onRedirectFallback = jest.fn(() => null);
+  it(`throw 된 RedirectionBoundary에 onRedirect 값이 없고 throw 된 Redirection의 onRedirect도 없으면 onRedirect을 호출한다`, async () => {
+    const onRedirect = jest.fn(() => null);
 
     render(
-      <RedirectionBoundary onRedirectFallback={onRedirectFallback}>
+      <RedirectionBoundary onRedirect={onRedirect}>
         <Throwable error={Redirection.of({ destination: '/unicorn-land' })} />
       </RedirectionBoundary>
     );
 
-    await waitFor(() => expect(onRedirectFallback).toBeCalled());
+    await waitFor(() => expect(onRedirect).toBeCalled());
   });
 });
 
