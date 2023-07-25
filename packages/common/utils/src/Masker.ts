@@ -25,11 +25,6 @@ function maskName(name: string) {
   }
 }
 
-/**
- * 앞뒤로 N자만큼 노출하고 그 외에는 *로 변경합니다. 띄어쓰기는 무시합니다.
- * mask('hello', 1) -> h***o
- * mask('hello world', 2) -> he*** ***ld
- */
 function maskExceptForEdge(text: string, edgeSize: number) {
   return (
     text.slice(0, edgeSize) +
