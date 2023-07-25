@@ -1,5 +1,5 @@
-import { assert } from '@tossteam/assert';
-import { ErrorBoundary } from '@tossteam/error-boundary';
+import { assert } from '@toss/assert';
+import { ErrorBoundary } from '@toss/error-boundary';
 import { ReactNode } from 'react';
 import { isRedirection, Redirection } from '../model/Redirection';
 
