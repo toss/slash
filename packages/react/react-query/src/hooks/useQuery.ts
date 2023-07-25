@@ -1,25 +1,9 @@
+/** @tossdocs-ignore */
 import { QueryFunction, QueryKey, useQuery as useQuery_Original, UseQueryOptions, UseQueryResult } from 'react-query';
 
 export type InvalidQueryResult = undefined | void;
 export type InvalidQueryResultWarning = 'queryFn은 undefined를 반환할 수 없습니다.';
 
-/**
- * @name useQuery
- *
- * @description
- * react-query의 `useQuery`와 동일하게 동작하지만, `queryFn`의 반환값이 `undefined`일 경우 타입 에러를 발생시킵니다.
- *
- * @example
- * // undefined를 반환하는 경우에는 에러가 발생합니다.
- * useQuery(['key'], () => undefined);
- * useQuery(['key'], async () => undefined);
- *
- * // null이나 다른 값을 반환할 수 있습니다.
- * useQuery(['key'], () => null);
- * useQuery(['key'], async () => null);
- * useQuery(['key'], () => ({ foo: 'bar' }));
- * useQuery(['key'], async () => ({ foo: 'bar' }));
- */
 export function useQuery<
   TQueryFnData = unknown,
   TError = unknown,

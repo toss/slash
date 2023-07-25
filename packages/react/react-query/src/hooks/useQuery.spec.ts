@@ -1,3 +1,4 @@
+/** @tossdocs-ignore */
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 import { useQuery as useTossQuery } from './useQuery';
 
