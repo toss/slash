@@ -6,7 +6,8 @@ import { useQueryParam } from '@toss/use-query-param';
 import { QS } from '@toss/utils';
 import deepEqual from 'fast-deep-equal';
 import { useRouter } from 'next/router.js';
-import { useCallback, useEffect, useMemo, useRef } from 'react';
+import { SetStateAction, useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { useQuery } from 'react-query';
 import { Funnel, FunnelProps, Step, StepProps } from './Funnel';
 import { NonEmptyArray } from './models';
 
