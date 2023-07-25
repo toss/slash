@@ -61,12 +61,12 @@ interface CommonProps {
   alt?: string;
 }
 
-interface JSONProps extends CommonProps {
+export interface JSONProps extends CommonProps {
   json: string;
   src?: undefined;
 }
 
-interface SRCProps extends CommonProps {
+export interface SRCProps extends CommonProps {
   src: string | string[];
   json?: undefined;
 }
