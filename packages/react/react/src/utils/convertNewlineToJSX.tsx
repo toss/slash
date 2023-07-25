@@ -2,7 +2,7 @@
 import { Fragment } from 'react';
 
 /** @tossdocs-ignore */
-export default function convertNewlineToJSX(str: string) {
+export function convertNewlineToJSX(str: string) {
   const chunks = str.replace(/\\n/g, '\n').split('\n');
 
   return chunks.map((line, index) => (

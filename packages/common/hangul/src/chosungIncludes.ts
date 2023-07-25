@@ -1,6 +1,5 @@
-/** @tossdocs-ignore */
 import { HANGUL_CHARACTERS_BY_FIRST_INDEX } from './constants';
-import { disassembleHangulToGroups } from './disassembleHangulToGroups';
+import { disassembleHangulToGroups } from './disassemble';
 import { getFirstConsonants } from './utils';
 
 export function chosungIncludes(x: string, y: string) {

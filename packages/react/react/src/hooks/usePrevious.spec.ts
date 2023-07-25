@@ -15,4 +15,14 @@ describe('usePrevious', () => {
     rerender({ value: 2 });
     expect(result.current).toBe(1);
   });
+  it('should return the default value on first render', () => {
+    const { result, rerender } = renderHook(({ value }) => usePrevious(value, { defaultValue: 0 }), {
+      initialProps: { value: 1 },
+    });
+
+    expect(result.current).toBe(0);
+
+    rerender({ value: 2 });
+    expect(result.current).toBe(1);
+  });
 });
