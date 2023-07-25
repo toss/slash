@@ -6,7 +6,6 @@ import { useImpressionRef } from './useImpressionRef';
 export interface ImpressionAreaProps {
   onImpressionStart?: () => void;
   onImpressionEnd?: () => void;
-  root?: Document | Element | null;
   rootMargin?: string;
   /**
    * 몇 퍼센트 이상 화면에 표시되면 "보인다"고 생각할지 결정합니다.
@@ -31,7 +30,6 @@ export interface ImpressionAreaProps {
 export const ImpressionArea = forwardRef(
   (
     {
-      root,
       rootMargin,
       areaThreshold,
       timeThreshold,
@@ -49,7 +47,6 @@ export const ImpressionArea = forwardRef(
       onImpressionEnd,
       areaThreshold,
       timeThreshold,
-      root,
       rootMargin,
     });
 
