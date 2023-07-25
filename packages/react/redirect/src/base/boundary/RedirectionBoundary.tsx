@@ -1,17 +1,14 @@
-/** @tossdocs-ignore */
 import { assert } from '@toss/assert';
 import { ErrorBoundary } from '@toss/error-boundary';
 import { ReactNode } from 'react';
-import { BaseRedirectionOptions, isRedirection, Redirection } from '../model/Redirection';
+import { isRedirection, Redirection } from '../model/Redirection';
 
 export function RedirectionBoundary({
   children,
   onRedirect,
-  onRedirectFallback,
 }: {
   children: ReactNode;
   onRedirect?: (r: Redirection) => void;
-  onRedirectFallback?: (options: BaseRedirectionOptions) => void;
 }) {
   return (
     <ErrorBoundary
@@ -19,20 +16,12 @@ export function RedirectionBoundary({
       onError={async redirection => {
         assert(isRedirection(redirection));
 
-        if (onRedirect) {
-          onRedirect(redirection);
+        if (typeof onRedirect !== 'function') {
+          console.debug('onRedirect is not defined');
           return;
         }
 
-        try {
-          await redirection.redirect();
-        } catch (e: any) {
-          if (onRedirectFallback == null) {
-            console.warn(e);
-            return;
-          }
-          onRedirectFallback?.(redirection.options);
-        }
+        onRedirect(redirection);
       }}
       renderFallback={() => null}
     >
