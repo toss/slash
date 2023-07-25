@@ -8,6 +8,7 @@ interface Props {
    * e.g.) 200ms 일 때, 200ms 안에 발생한 이벤트를 무시하고 마지막에 한번만 방출합니다.
    */
   wait: Parameters<typeof useDebounce>[1];
+  options?: Parameters<typeof useDebounce>[2];
   children: ReactElement;
   /**
    * @default 'onClick'
@@ -17,13 +18,17 @@ interface Props {
   capture?: string;
 }
 
-export function DebounceClick({ capture = 'onClick', children, wait }: Props) {
+export function DebounceClick({ capture = 'onClick', options, children, wait }: Props) {
   const child = Children.only(children);
-  const debouncedCallback = useDebounce((...args: any[]) => {
-    if (child.props && typeof child.props[capture] === 'function') {
-      return child.props[capture](...args);
-    }
-  }, wait);
+  const debouncedCallback = useDebounce(
+    (...args: any[]) => {
+      if (child.props && typeof child.props[capture] === 'function') {
+        return child.props[capture](...args);
+      }
+    },
+    wait,
+    options
+  );
 
   return cloneElement(child, {
     [capture]: debouncedCallback,
