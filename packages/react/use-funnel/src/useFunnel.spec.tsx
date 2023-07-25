@@ -2,13 +2,23 @@ import { screen } from '@testing-library/dom';
 import { render, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import mockRouter from 'next-router-mock';
-import { Suspense } from 'react';
+import { ReactNode, Suspense } from 'react';
 import ReactDOMServer from 'react-dom/server';
+import { QueryClient, QueryClientProvider } from 'react-query';
 import { useFunnel } from './useFunnel';
 
 jest.mock('next/router', () => require('next-router-mock'));
 
 const 퍼널스텝리스트 = ['test1', 'test2'] as const;
+const queryClient = new QueryClient();
+
+function renderWithTestAppContext(node: ReactNode) {
+  return render(
+    <QueryClientProvider client={queryClient}>
+      <Suspense fallback={null}>{node}</Suspense>
+    </QueryClientProvider>
+  );
+}
 
 describe('useFunnel이 정상적으로 동작하는 테스트', () => {
   it('Query Param의 funnel-step이 test1일 때, test1 스텝이 렌더된다.', async () => {
@@ -25,7 +35,7 @@ describe('useFunnel이 정상적으로 동작하는 테스트', () => {
     }
 
     mockRouter.setCurrentUrl(`?funnel-step=test1`);
-    render(<TestComponent />);
+    renderWithTestAppContext(<TestComponent />);
 
     expect(mockRouter.query['funnel-step']).toBe('test1');
     expect(await screen.findByText('Test1')).toBeInTheDocument();
@@ -49,7 +59,7 @@ describe('useFunnel이 정상적으로 동작하는 테스트', () => {
     }
 
     mockRouter.setCurrentUrl(`?funnel-step=test1`);
-    render(<TestComponent />);
+    renderWithTestAppContext(<TestComponent />);
 
     const button = await screen.findByRole('button', { name: 'next' });
     await userEvent.click(button);
@@ -83,7 +93,7 @@ describe('useFunnel이 정상적으로 동작하는 테스트', () => {
     }
 
     mockRouter.setCurrentUrl(`?funnel-step=test1`);
-    render(<TestComponent />);
+    renderWithTestAppContext(<TestComponent />);
 
     const button = await screen.findByRole('button', { name: 'next' });
     await userEvent.click(button);
@@ -110,7 +120,7 @@ describe('useFunnel이 정상적으로 동작하는 테스트', () => {
     }
 
     mockRouter.setCurrentUrl(`?funnel-step=test1&test=test&merong=merong`);
-    render(<TestComponent />);
+    renderWithTestAppContext(<TestComponent />);
 
     const button = await screen.findByRole('button', { name: 'next' });
     await userEvent.click(button);
@@ -134,14 +144,16 @@ describe('useFunnel이 정상적으로 동작하는 테스트', () => {
     }
 
     mockRouter.setCurrentUrl('');
-    render(<TestComponent />);
+    renderWithTestAppContext(<TestComponent />);
 
     // SSR에서 에러가 생기는지 여부 확인
     expect(() =>
       ReactDOMServer.renderToString(
-        <Suspense fallback={null}>
-          <TestComponent />
-        </Suspense>
+        <QueryClientProvider client={queryClient}>
+          <Suspense fallback={null}>
+            <TestComponent />
+          </Suspense>
+        </QueryClientProvider>
       )
     ).not.toThrow();
     expect(await screen.findByText('Test1')).toBeInTheDocument();
@@ -166,7 +178,7 @@ describe('useFunnel이 정상적으로 동작하는 테스트', () => {
     }
 
     mockRouter.setCurrentUrl(`?${CUSTOM_QUERY_KEY}=test1`);
-    render(<TestComponent />);
+    renderWithTestAppContext(<TestComponent />);
 
     const button = await screen.findByRole('button', { name: 'next' });
     await userEvent.click(button);
@@ -209,7 +221,7 @@ describe('useFunnel.withState', () => {
       );
     }
 
-    render(<FunnelPage />);
+    renderWithTestAppContext(<FunnelPage />);
 
     await userEvent.click(await screen.findByRole('button', { name: '확인' }));
 
