@@ -2,7 +2,7 @@
 import { QueryFunction, QueryKey, useQuery as useQuery_Original, UseQueryOptions, UseQueryResult } from 'react-query';
 
 export type InvalidQueryResult = undefined | void;
-export type InvalidQueryResultWarning = 'queryFn은 undefined를 반환할 수 없습니다.';
+export type InvalidQueryResultWarning = 'queryFn cannot return undefined.';
 
 export function useQuery<
   TQueryFnData = unknown,
