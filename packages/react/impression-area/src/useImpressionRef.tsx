@@ -7,13 +7,14 @@ import { ImpressionAreaProps } from './ImpressionArea';
 
 type Options = Pick<
   ImpressionAreaProps,
-  'rootMargin' | 'onImpressionStart' | 'onImpressionEnd' | 'timeThreshold' | 'areaThreshold'
+  'rootMargin' | 'onImpressionStart' | 'onImpressionEnd' | 'timeThreshold' | 'areaThreshold' | 'root'
 >;
 
 export function useImpressionRef<Element extends HTMLElement>({
   onImpressionStart: _onImpressionStart,
   onImpressionEnd: _onImpressionEnd,
   timeThreshold = 0,
+  root,
   rootMargin,
   areaThreshold: intersectThreshold = 0,
 }: Options) {
@@ -42,6 +43,7 @@ export function useImpressionRef<Element extends HTMLElement>({
       setDebouncedIsImpressed(isIntersecting);
     },
     {
+      root,
       rootMargin,
       threshold: intersectThreshold,
     }
