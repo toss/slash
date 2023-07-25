@@ -1,25 +1,25 @@
+/** @tossdocs-ignore */
 import { disassembleCompleteHangulCharacter } from './disassembleCompleteHangulCharacter';
 import { hasBatchim } from './utils';
 
-type JosaOption = '이/가' | '을/를' | '은/는' | '으로/로' | '와/과' | '이나/나' | '이에/예';
+type JosaOption =
+  | '이/가'
+  | '을/를'
+  | '은/는'
+  | '으로/로'
+  | '와/과'
+  | '이나/나'
+  | '이란/란'
+  | '아/야'
+  | '이랑/랑'
+  | '이에요/예요'
+  | '이에/예'
+  | '으로서/로서'
+  | '으로써/로써'
+  | '으로부터/로부터';
 
-/**
- * @name josa
- * @description
- * 한글 문자열에 `'이/가'`, `'을/를'`, `'은/는'`, `'으로/로'`, `'와/과'`, `'이나/나'`, `'이에/예'` 와 같은 조사를 붙여줍니다.
- * ```typescript
- * josa(
- *   // 조사를 붙일 한글 문자열
- *   word: string,
- *   // 붙일 조사
- *   josa: '이/가' | '을/를' | '은/는' | '으로/로' | '와/과' | '이나/나' | '이에/예'
- * ): string
- * @example
- * josa('샴푸', '이/가')  // '샴푸가'
- * josa('칫솔', '이/가')  // '칫솔이'
- * josa('바깥', '으로/로') // '바깥으로'
- * josa('내부', '으로/로') // '내부로'
- */
+const 로_조사: JosaOption[] = ['으로/로', '으로서/로서', '으로써/로써', '으로부터/로부터'];
+
 export function josa(word: string, josa: JosaOption): string {
   if (word.length === 0) {
     return word;
@@ -36,8 +36,16 @@ function josaPicker(word: string, josa: JosaOption): string {
 
   const is종성ㄹ = disassembleCompleteHangulCharacter(word[word.length - 1]!)?.last === 'ㄹ';
 
-  if (josa === '와/과' || (has받침 && is종성ㄹ && josa === '으로/로')) {
+  const isCaseOf로 = has받침 && is종성ㄹ && 로_조사.includes(josa);
+
+  if (josa === '와/과' || isCaseOf로) {
     index = index === 0 ? 1 : 0;
+  }
+
+  const isEndsWith이 = word[word.length - 1] === '이';
+
+  if (josa === '이에요/예요' && isEndsWith이) {
+    index = 1;
   }
 
   return josa.split('/')[index]!;
