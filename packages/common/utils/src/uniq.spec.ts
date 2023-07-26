@@ -9,7 +9,7 @@ describe('uniq', () => {
   });
 
   it('should return an empty array if an empty array is passed as an argument', () => {
-    expect([]).toEqual([]);
+    expect(uniq([])).toEqual([]);
   });
 
   it('should remove duplicate values from a array', () => {
