@@ -23,6 +23,7 @@ export function AnimationChain(
   animationInfos: AnimationData[],
   options: {
     container: HTMLElement;
+    shouldShowFirstFrameBeforeStart?: boolean;
     loop?: LoopType;
     interval?: number;
     lottie: typeof lottie;
