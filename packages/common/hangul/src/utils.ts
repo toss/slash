@@ -1,6 +1,6 @@
 /** @tossdocs-ignore */
+import { disassembleHangulToGroups } from './disassemble';
 import { disassembleCompleteHangulCharacter } from './disassembleCompleteHangulCharacter';
-import { disassembleHangulToGroups } from './disassembleHangulToGroups';
 
 /**
  * @name hasBatchim

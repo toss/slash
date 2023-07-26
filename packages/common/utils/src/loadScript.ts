@@ -24,4 +24,6 @@ function loadScript(source: string) {
   });
 }
 
+export { loadScript };
+
 export default loadScript;
