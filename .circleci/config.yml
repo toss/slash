@@ -21,12 +21,6 @@ commands:
 
             corepack enable --install-directory $COREPACK_PATH
             yarn install --immutable --immutable-cache
-  export_published_version:
-    description: Export Published Version Environment Variable
-    steps:
-      - run:
-          name: Export PUBLISHED_VERSION
-          command: echo "export PUBLISHED_VERSION=$(node -p "require('./lerna.json').version")" >> $BASH_ENV
   export_commit_message:
     description: Export Commit Message
     steps:

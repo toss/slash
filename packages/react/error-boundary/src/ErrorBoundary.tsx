@@ -15,7 +15,7 @@ import {
   useState,
 } from 'react';
 import { ErrorBoundaryGroupContext } from './ErrorBoundaryGroup';
-import { ComponentPropsWithoutChildren } from './types';
+import { ComponentPropsWithoutChildren } from './types/index';
 
 type RenderFallbackProps<ErrorType extends Error = Error> = {
   error: ErrorType;
@@ -25,31 +25,29 @@ type RenderFallbackProps<ErrorType extends Error = Error> = {
 type RenderFallbackType = <ErrorType extends Error>(props: RenderFallbackProps<ErrorType>) => ReactNode;
 type IgnoreErrorType = <ErrorType extends Error = Error>(error: ErrorType) => boolean;
 
-type ErrorBoundaryProps<ErrorType extends Error = Error> = PropsWithRef<
-  PropsWithChildren<{
-    /**
-     * @description 발생할 수 있는 error에 대한 기준값으로 이 값이 변경되면 error를 초기화합니다.
-     */
-    resetKeys?: unknown[];
-    onReset?(): void;
-    renderFallback: RenderFallbackType;
-    onError?(error: ErrorType, info: ErrorInfo): void;
-    /**
-     * @description 이 ErrorBoundary Context에서 처리하지 않고 throw해줄 error의 조건을 명시할 callback
-     */
-    ignoreError?: IgnoreErrorType;
-  }>
->;
+type Props<ErrorType extends Error = Error> = {
+  /*
+   * @description 발생할 수 있는 error에 대한 기준값으로 이 값이 변경되면 error를 초기화합니다.
+   */
+  resetKeys?: unknown[];
+  onReset?(): void;
+  renderFallback: RenderFallbackType;
+  onError?(error: ErrorType, info: ErrorInfo): void;
+  /*
+   * @description 이 ErrorBoundary Context에서 처리하지 않고 throw해줄 error의 조건을 명시할 callback
+   */
+  ignoreError?: IgnoreErrorType;
+};
 
-interface ErrorBoundaryState<ErrorType extends Error = Error> {
+interface State<ErrorType extends Error = Error> {
   error: ErrorType | null;
 }
 
-const initialState: ErrorBoundaryState = {
+const initialState: State = {
   error: null,
 };
 
-class BaseErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
+class BaseErrorBoundary extends Component<PropsWithRef<PropsWithChildren<Props>>, State> {
   state = initialState;
 
   static getDerivedStateFromError(error: Error) {
@@ -71,12 +69,12 @@ class BaseErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState
     this.setState(initialState);
   };
 
-  componentDidUpdate(prevProps: ErrorBoundaryProps, prevState: ErrorBoundaryState) {
-    if (
-      this.state.error !== null &&
-      prevState.error !== null &&
-      isDifferentArray(prevProps.resetKeys, this.props.resetKeys)
-    ) {
+  componentDidUpdate(prevProps: Props) {
+    if (this.state.error == null) {
+      return;
+    }
+
+    if (isDifferentArray(prevProps.resetKeys, this.props.resetKeys)) {
       this.resetErrorBoundary();
     }
   }
