@@ -5,20 +5,27 @@
 ### Example 1
 
 ```ts
-const ref = useRef<HTMLElement>(null);
+const [wrapperEl, setWrapperEl] = useState(null);
 
-useOutsideClickEffect(ref, () => {
+useOutsideClickEffect(wrapperEl, () => {
   console.log('outside clicked!');
 });
+return <div ref={setWrapperEl}></div>;
 ```
 
 ### Example 2
 
 ```ts
-const ref1 = useRef<HTMLElement>(null);
-const ref2 = useRef<HTMLElement>(null);
+const [wrapperEl, setWrapperEl] = useState(null);
+const [wrapperEl2, setWrapperEl2] = useState(null);
 
-useOutsideClickEffect([ref1, ref2], () => {
+useOutsideClickEffect([wrapperEl, wrapperEl2], () => {
   console.log('outside clicked!');
 });
+return (
+  <div>
+    <div ref={setWrapperEl}></div>
+    <div ref={setWrapperEl2}></div>
+  </div>
+);
 ```
