@@ -11,17 +11,9 @@ const deleteWindow = () => {
   });
 };
 
-const initViewportSize = () => {
+describe('getViewportSize', () => {
   // jest sets innerWidth 1024 and innerHeight 768 as the default values for the jsdom to be tested.
   // https://github.com/jsdom/jsdom/blob/0cba358253fd5530af0685ac48c2535992464d06/lib/jsdom/browser/Window.js#L587-L588
-  setViewportSize(1024, 768);
-};
-
-beforeEach(() => {
-  initViewportSize();
-});
-
-describe('getViewportSize', () => {
   it("Jest's viewport default settings should return width 1024 and height 768", () => {
     const { width, height } = getViewportSize();
 
