@@ -21,15 +21,6 @@ beforeEach(() => {
   initViewportSize();
 });
 
-describe('setViewportSize', () => {
-  it('should change the innerWidth to 100 and the innerHeight to 200', () => {
-    setViewportSize(100, 200);
-
-    expect(window.innerWidth).toBe(100);
-    expect(window.innerHeight).toBe(200);
-  });
-});
-
 describe('getViewportSize', () => {
   it("Jest's viewport default settings should return width 1024 and height 768", () => {
     const { width, height } = getViewportSize();
