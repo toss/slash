@@ -19,8 +19,8 @@ describe('usePreservedReference', () => {
 
       rerender({ value: { toss: '토스' } });
 
-      expect(tossObject).toBe(result.current);
-      expect(tossObject).toEqual(result.current);
+      expect(result.current).toBe(tossObject);
+      expect(result.current).toEqual(tossObject);
     });
     it('changed to a different value', () => {
       const tossObject: TossObject = { toss: '토스' };
@@ -30,8 +30,8 @@ describe('usePreservedReference', () => {
 
       rerender({ value: { toss: 'toss' } });
 
-      expect(tossObject).not.toBe(result.current);
-      expect(tossObject).not.toEqual(result.current);
+      expect(result.current).not.toBe(tossObject);
+      expect(result.current).not.toEqual(tossObject);
     });
   });
   describe('with Custom Callback Function', () => {
@@ -44,7 +44,7 @@ describe('usePreservedReference', () => {
 
       rerender({ value: { toss: '토스' } });
 
-      expect(tossObject).toBe(result.current);
+      expect(result.current).toBe(tossObject);
     });
     it('changed to a different value', () => {
       const tossObject: TossObject = { toss: '토스' };
@@ -55,7 +55,7 @@ describe('usePreservedReference', () => {
 
       rerender({ value: { toss: '토스' } });
 
-      expect(tossObject).not.toBe(result.current);
+      expect(result.current).not.toBe(tossObject);
     });
   });
 });
