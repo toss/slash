@@ -6,29 +6,18 @@ export const useDeviceInfo = ()=> {
   const [isIOS, setIsIOS] = React.useState<boolean>(false);
   const [isAOS, setIsAOS] = React.useState<boolean>(false);
 
-  const checkIsIOS = () => {
-    const isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
-    setIsIOS(isIOS);
-  };
-
-  const checkIsAOS = () => {
-    const isAOS = /Android/i.test(navigator.userAgent);
-    setIsAOS(isAOS);
-  };
-  const checkIsMobile = () => {
-    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-    setIsMobile(isMobile);
-    if (isMobile) {
-      checkIsIOS();
-      checkIsAOS();
-    }
-  };
-
   React.useEffect(() => {
     if (typeof window === "undefined") {
       return;
     }
-    checkIsMobile();
+    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+    setIsMobile(isMobile);
+    if (isMobile) {
+      const isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
+      setIsIOS(isIOS);
+      const isAOS = /Android/i.test(navigator.userAgent);
+      setIsAOS(isAOS);
+    }
   }, []);
 
   return {
