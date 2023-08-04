@@ -7,27 +7,31 @@ export interface FlexOptions {
   align?: CSSProperties['alignItems'];
   justify?: CSSProperties['justifyContent'];
   direction?: CSSProperties['flexDirection'];
+  gap?: CSSProperties['gap'];
 }
 
 export function flex(options: FlexOptions): SerializedStyles;
 export function flex(
   align: CSSProperties['alignItems'],
   justify?: CSSProperties['justifyContent'],
-  direction?: CSSProperties['flexDirection']
+  direction?: CSSProperties['flexDirection'],
+  gap?: CSSProperties['gap']
 ): SerializedStyles;
 export function flex(
   alignOrFlexOptions: FlexOptions | CSSProperties['alignItems'],
   justify = 'flex-start',
-  direction = 'row'
+  direction = 'row',
+  gap = 0
 ) {
   if (typeof alignOrFlexOptions === 'object') {
-    const { align = 'stretch', direction = 'row', justify = 'flex-start' } = alignOrFlexOptions;
+    const { align = 'stretch', direction = 'row', justify = 'flex-start', gap = 0 } = alignOrFlexOptions;
 
     return css`
       align-items: ${align};
       display: flex;
       flex-direction: ${direction};
       justify-content: ${justify};
+      gap: ${gap};
     `;
   }
 
@@ -36,6 +40,7 @@ export function flex(
     display: flex;
     flex-direction: ${direction};
     justify-content: ${justify};
+    gap: ${gap};
   `;
 }
 
@@ -54,10 +59,11 @@ const createFlexComponent = (flexOptions?: FlexOptions): FlexComponentType =>
       direction = flexOptions?.direction ?? 'row',
       justify = flexOptions?.justify ?? 'flex-start',
       align = flexOptions?.align ?? 'stretch',
+      gap = flexOptions?.gap ?? 0,
       ...rest
     } = props;
     const Component = as;
-    return <Component ref={ref} css={flex({ direction, align, justify })} {...rest} />;
+    return <Component ref={ref} css={flex({ direction, align, justify, gap })} {...rest} />;
   });
 
 type FlexType = FlexComponentType & {
