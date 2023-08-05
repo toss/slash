@@ -4940,7 +4940,6 @@ __metadata:
     "@emotion/react": ^11.9.3
     "@testing-library/jest-dom": ^5.16.4
     "@testing-library/react": ^13.3.0
-    "@toss/react": "workspace:^1.5.0"
     "@toss/rollup-config": "workspace:^0.1.4"
     "@toss/utils": "workspace:^1.4.4"
     "@tossteam/jest": ^17
