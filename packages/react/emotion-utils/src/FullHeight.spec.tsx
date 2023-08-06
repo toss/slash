@@ -5,11 +5,13 @@ const setInnerHeight = (height: number) => {
   Object.defineProperty(window, 'innerHeight', { writable: true, configurable: true, value: height });
 };
 
+const CHILDREN_TEXT = 'FullHeight';
+
 describe('FullHeight', () => {
   it('should have height 768px', () => {
-    render(<FullHeight>FullHeight</FullHeight>);
+    render(<FullHeight>{CHILDREN_TEXT}</FullHeight>);
 
-    const fullHeightBox = screen.getByText('FullHeight');
+    const fullHeightBox = screen.getByText(CHILDREN_TEXT);
 
     expect(window.innerHeight).toBe(768);
 
@@ -19,9 +21,9 @@ describe('FullHeight', () => {
 
   it('should have height 1024px', () => {
     setInnerHeight(1024);
-    render(<FullHeight>FullHeight</FullHeight>);
+    render(<FullHeight>{CHILDREN_TEXT}</FullHeight>);
 
-    const fullHeightBox = screen.getByText('FullHeight');
+    const fullHeightBox = screen.getByText(CHILDREN_TEXT);
 
     expect(window.innerHeight).toBe(1024);
 
