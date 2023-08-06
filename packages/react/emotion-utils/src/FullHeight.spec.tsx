@@ -8,7 +8,7 @@ const setInnerHeight = (height: number) => {
 const CHILDREN_TEXT = 'FullHeight';
 
 describe('FullHeight', () => {
-  it('should have height 768px', () => {
+  it('should have a default height of 768px(jsdom default value)', () => {
     render(<FullHeight>{CHILDREN_TEXT}</FullHeight>);
 
     const fullHeightBox = screen.getByText(CHILDREN_TEXT);
@@ -19,7 +19,7 @@ describe('FullHeight', () => {
     expect(fullHeightBox).toHaveStyle('height: 768px');
   });
 
-  it('should have height 1024px', () => {
+  it('should have a height of 1024px(setup value)', () => {
     setInnerHeight(1024);
     render(<FullHeight>{CHILDREN_TEXT}</FullHeight>);
 
