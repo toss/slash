@@ -8,10 +8,10 @@ export type DateFnsDateType = number | Date;
 
 export const kstFormat = (date: DateFnsDateType, format: string) => _format(date, format, { locale });
 
-export const roundUpHoursInDays = (hours: number) => {
+export function roundUpHoursInDays(hours: number) {
   const remainder = hours % 24;
   return remainder === 0 ? hours : hours + 24 - (hours % 24);
-};
+}
 
 export function parseYYYYMMDD(yyyyMMdd: string) {
   const date = new Date(yyyyMMdd);
