@@ -4,12 +4,18 @@ This hook provides a convenient way to use window.setTimeout.
 
 ## Example
 
-```ts
-useTimeout(() => {
-  setTitle(`I'm looking for a product`);
-}, 2000);
+```tsx
+function Example() {
+  const [title, setTitle] = useState('');
 
-useTimeout(() => {
-  setTitle(`Almost done`);
-}, 4000);
+  useTimeout(() => {
+    setTitle(`I'm looking for a product`);
+  }, 2000);
+
+  useTimeout(() => {
+    setTitle(`Almost done`);
+  }, 4000);
+
+  return <h1>{title}</h1>;
+}
 ```
