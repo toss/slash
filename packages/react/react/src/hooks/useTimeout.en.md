@@ -16,6 +16,6 @@ function Example() {
     setTitle(`Almost done`);
   }, 4000);
 
-  return <h1>{title}</h1>;
+  return <div>{title}</div>;
 }
 ```

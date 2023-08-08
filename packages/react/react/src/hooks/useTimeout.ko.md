@@ -16,6 +16,6 @@ function Example() {
     setTitle(`거의 다 끝났어요`);
   }, 4000);
 
-  return <h1>{title}</h1>;
+  return <div>{title}</div>;
 }
 ```
