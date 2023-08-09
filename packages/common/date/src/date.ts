@@ -6,7 +6,9 @@ import locale from 'date-fns/locale/ko/index.js';
 // eslint-disable-next-line import/no-duplicates
 export type DateFnsDateType = number | Date;
 
-export const kstFormat = (date: DateFnsDateType, format: string) => _format(date, format, { locale });
+export function kstFormat(date: DateFnsDateType, format: string) {
+  _format(date, format, { locale });
+}
 
 export function roundUpHoursInDays(hours: number) {
   const remainder = hours % 24;
