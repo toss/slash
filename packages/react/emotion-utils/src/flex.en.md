@@ -17,8 +17,6 @@ function flex(
 
 ## Examples
 
-### util
-
 ```ts
 const MyButton = styled.button`
   width: 50px;
@@ -48,8 +46,6 @@ const MyButton4 = styled.button`
   ${flex.center('column')}
 `;
 ```
-
-### component
 
 ```jsx
 function ComponentA() {
