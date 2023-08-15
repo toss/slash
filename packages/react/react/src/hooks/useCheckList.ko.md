@@ -1,6 +1,6 @@
 # useCheckList
 
-체크리스트에 사용할 hook - checked 관련 control을 제공한다.
+체크리스트에 사용할 hook - checked 관련 control을 제공합니다.
 
 ```ts
 function useCheckList<T extends Item>(
@@ -36,4 +36,4 @@ useEffect(() => {
 
 ## Warning
 
-리스트의 아이템이 많은 경우 perf 가 떨어질 수 있다.
+리스트의 아이템이 많은 경우 perf 가 떨어질 수 있습니다.
