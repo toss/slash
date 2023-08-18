@@ -5399,7 +5399,6 @@ __metadata:
     "@toss/react": "workspace:^1.5.0"
     "@toss/rollup-config": "workspace:^0.1.4"
     "@toss/storage": "workspace:^1.3.0"
-    "@toss/use-query-param": "workspace:^1.1.7"
     "@toss/utils": "workspace:^1.4.4"
     "@tossteam/jest": ^17
     "@types/babel__core": ^7
@@ -5416,7 +5415,6 @@ __metadata:
     jest: ^29.0.1
     jest-environment-jsdom: ^29
     jest-localstorage-mock: ^2.4.21
-    next: 12.1.1
     next-router-mock: ^0.6.7
     react: ^18.2.0
     react-dom: ^18.2.0
@@ -5424,7 +5422,6 @@ __metadata:
     rollup: ^2.77.0
     typescript: 4.8.3
   peerDependencies:
-    next: ^11.1 || ^12 || ^13
     react: ^16.8 || ^17 || ^18
     react-dom: ^16.8 || ^17 || ^18
     react-query: ^3
@@ -5498,7 +5495,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@toss/use-query-param@workspace:^1.1.7, @toss/use-query-param@workspace:packages/react/use-query-param":
+"@toss/use-query-param@workspace:packages/react/use-query-param":
   version: 0.0.0-use.local
   resolution: "@toss/use-query-param@workspace:packages/react/use-query-param"
   dependencies:

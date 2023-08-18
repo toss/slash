@@ -2,14 +2,13 @@
 
 import { assert } from '@toss/assert';
 import { safeSessionStorage } from '@toss/storage';
-import { useQueryParam } from '@toss/use-query-param';
 import { QS } from '@toss/utils';
 import deepEqual from 'fast-deep-equal';
-import { useRouter } from 'next/router.js';
 import { SetStateAction, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { useQuery } from 'react-query';
 import { Funnel, FunnelProps, Step, StepProps } from './Funnel';
 import { NonEmptyArray } from './models';
+import { useRouter } from './RouterContext';
 
 interface SetStepOptions {
   stepChangeType?: 'push' | 'replace';
@@ -40,14 +39,14 @@ export const useFunnel = <Steps extends NonEmptyArray<string>>(
   withState: <StateExcludeStep extends Record<string, unknown> & { step?: never }>(
     initialState: StateExcludeStep
   ) => [
-      FunnelComponent<Steps>,
-      StateExcludeStep,
-      (
-        next:
-          | Partial<StateExcludeStep & { step: Steps[number] }>
-          | ((next: Partial<StateExcludeStep & { step: Steps[number] }>) => StateExcludeStep & { step: Steps[number] })
-      ) => void
-    ];
+    FunnelComponent<Steps>,
+    StateExcludeStep,
+    (
+      next:
+        | Partial<StateExcludeStep & { step: Steps[number] }>
+        | ((next: Partial<StateExcludeStep & { step: Steps[number] }>) => StateExcludeStep & { step: Steps[number] })
+    ) => void
+  ];
 } => {
   const router = useRouter();
   const stepQueryKey = options?.stepQueryKey ?? DEFAULT_STEP_QUERY_KEY;
@@ -58,8 +57,7 @@ export const useFunnel = <Steps extends NonEmptyArray<string>>(
     () =>
       Object.assign(
         function RouteFunnel(props: RouteFunnelProps<Steps>) {
-          // eslint-disable-next-line react-hooks/rules-of-hooks
-          const step = useQueryParam<Steps[number]>(stepQueryKey) ?? options?.initialStep;
+          const step = router.query[stepQueryKey]?.toString() ?? options?.initialStep;
 
           assert(
             step != null,
@@ -73,7 +71,7 @@ export const useFunnel = <Steps extends NonEmptyArray<string>>(
         }
       ),
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    []
+    [router.query]
   );
 
   const setStep = useCallback(
@@ -164,14 +162,14 @@ export const useFunnel = <Steps extends NonEmptyArray<string>>(
     withState: <StateExcludeStep extends Record<string, unknown> & { step?: never }>(
       initialState: StateExcludeStep
     ) => [
-        FunnelComponent<Steps>,
-        StateExcludeStep,
-        (
-          next:
-            | Partial<StateExcludeStep & { step: Steps[number] }>
-            | ((next: Partial<StateExcludeStep & { step: Steps[number] }>) => StateExcludeStep & { step: Steps[number] })
-        ) => void
-      ];
+      FunnelComponent<Steps>,
+      StateExcludeStep,
+      (
+        next:
+          | Partial<StateExcludeStep & { step: Steps[number] }>
+          | ((next: Partial<StateExcludeStep & { step: Steps[number] }>) => StateExcludeStep & { step: Steps[number] })
+      ) => void
+    ];
   };
 };
 

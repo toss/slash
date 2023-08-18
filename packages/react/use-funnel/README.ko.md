@@ -15,6 +15,41 @@
 
 ## 초기 설정
 
+useFunnel을 사용할 컴포넌트의 상위에서 RouterProvider를 사용해 router를 주입해주세요.
+```javascript
+import { RouterProvider } from '@toss/use-funnel';
+import { useRouter } from 'next/router';
+
+const FunnelPage = () => {
+  const router = useRouter();
+  return (
+    <RouterProvider router={router}>
+      <TestFunnels />
+    </RouterProvider>
+  );
+};
+
+const TestFunnels = () => {
+  const [퍼널, setStep] = useFunnel(['이름입력', '주민번호입력', '완료'] as const)
+
+  return (
+    <퍼널>
+      <퍼널.Step name="이름입력">
+        <이름입력스텝 /> // ?funnel-step=이름입력 스텝일 때 렌더
+      </퍼널.Step>
+      <퍼널.Step name="주민번호입력">
+        <주민번호입력스텝 /> // ?funnel-step=주민번호입력 스텝일 때 렌더
+      </퍼널.Step>
+      <퍼널.Step name="완료">
+        <퍼널완료스텝 /> // ?funnel-step=완료 스텝일 때 렌더
+      </퍼널.Step>
+    </퍼널>
+  )
+}
+
+
+```
+
 useFunnel을 사용하여 사용할 퍼널 스텝 리스트를 입력해주세요.
 
 ```javascript
@@ -39,7 +74,6 @@ useFunnel은 전달받은 스텝 리스트로 타이핑된 2개의 아이템이 
 정의된 각 퍼널 스텝은 `funnel-step`이라는 이름의 쿼리 파라미터와 스텝의 이름이 매칭될 경우 렌더링됩니다.
 
 ```javascript
-
 const [퍼널, setStep] = useFunnel(['이름입력', '주민번호입력', '완료'] as const)
 
 return (

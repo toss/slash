@@ -6,17 +6,18 @@ import { ReactNode, Suspense } from 'react';
 import ReactDOMServer from 'react-dom/server';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { useFunnel } from './useFunnel';
-
-jest.mock('next/router', () => require('next-router-mock'));
+import { RouterProvider } from './RouterContext';
 
 const 퍼널스텝리스트 = ['test1', 'test2'] as const;
 const queryClient = new QueryClient();
 
 function renderWithTestAppContext(node: ReactNode) {
   return render(
-    <QueryClientProvider client={queryClient}>
-      <Suspense fallback={null}>{node}</Suspense>
-    </QueryClientProvider>
+    <RouterProvider router={mockRouter}>
+      <QueryClientProvider client={queryClient}>
+        <Suspense fallback={null}>{node}</Suspense>
+      </QueryClientProvider>
+    </RouterProvider>
   );
 }
 

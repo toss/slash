@@ -164,7 +164,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       ["@toss/use-funnel", ["workspace:packages/react/use-funnel"]],\
       ["@toss/use-loading", ["workspace:packages/react/use-loading"]],\
       ["@toss/use-overlay", ["workspace:packages/react/use-overlay"]],\
-      ["@toss/use-query-param", ["virtual:f6f04cf8049b336fe9077f5cdeccd69700881bd0ab0d34b6b3879d0cc74d55c0a524e5afdef6f46cf27faeec9176afe77367e6cf342fc58f394c0a51e51c18b1#workspace:packages/react/use-query-param", "workspace:packages/react/use-query-param"]],\
+      ["@toss/use-query-param", ["workspace:packages/react/use-query-param"]],\
       ["@toss/utility-types", ["workspace:packages/common/utility-types"]],\
       ["@toss/utils", ["workspace:packages/common/utils"]],\
       ["@toss/validators", ["workspace:packages/common/validators"]],\
@@ -9580,7 +9580,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@toss/react", "virtual:b5b5dfb1662b30d0d5b62f084f8b8fddd0eee56dd8737572197395ab6309e644fa76525392b1d0250ce3c07c5eeeb90901439953af682fc76f8ab38f71b8b09d#workspace:packages/react/react"],\
             ["@toss/rollup-config", "virtual:bcd0c1141064bf940376b9b2c4f8a211deda5f9c27293f215379edb7c7917846a6a1d22044c7c1b3bb8002672fb9461cbd1f53c3889b2fe3b5bfbab9a70f1ac4#workspace:configs/rollup"],\
             ["@toss/storage", "workspace:packages/common/storage"],\
-            ["@toss/use-query-param", "virtual:f6f04cf8049b336fe9077f5cdeccd69700881bd0ab0d34b6b3879d0cc74d55c0a524e5afdef6f46cf27faeec9176afe77367e6cf342fc58f394c0a51e51c18b1#workspace:packages/react/use-query-param"],\
             ["@toss/utils", "workspace:packages/common/utils"],\
             ["@tossteam/jest", "virtual:bcd0c1141064bf940376b9b2c4f8a211deda5f9c27293f215379edb7c7917846a6a1d22044c7c1b3bb8002672fb9461cbd1f53c3889b2fe3b5bfbab9a70f1ac4#npm:17.187.2"],\
             ["@types/babel__core", "npm:7.1.19"],\
@@ -9597,7 +9596,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["jest", "virtual:01ae7c33d4655a48cbb29902912466a761e01d57e32af25620c31e36065eb1601cc4f6394afcb6b2f9c9f1b941b9fbeecba9aa1bca8ca304ae87cee07a6864e9#npm:29.1.2"],\
             ["jest-environment-jsdom", "npm:29.1.2"],\
             ["jest-localstorage-mock", "npm:2.4.22"],\
-            ["next", "virtual:f6f04cf8049b336fe9077f5cdeccd69700881bd0ab0d34b6b3879d0cc74d55c0a524e5afdef6f46cf27faeec9176afe77367e6cf342fc58f394c0a51e51c18b1#npm:12.1.1"],\
             ["next-router-mock", "virtual:f6f04cf8049b336fe9077f5cdeccd69700881bd0ab0d34b6b3879d0cc74d55c0a524e5afdef6f46cf27faeec9176afe77367e6cf342fc58f394c0a51e51c18b1#npm:0.6.10"],\
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:62cb29918b2e63dff97923d985a18238631a18b918521fd9ac48de2be213715676e8b999d7ab4431ea536d1917af1465d5695ceae059c69bf4c14df5968dd6a1#npm:18.2.0"],\
@@ -9676,47 +9674,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@toss/use-query-param", [\
-        ["virtual:f6f04cf8049b336fe9077f5cdeccd69700881bd0ab0d34b6b3879d0cc74d55c0a524e5afdef6f46cf27faeec9176afe77367e6cf342fc58f394c0a51e51c18b1#workspace:packages/react/use-query-param", {\
-          "packageLocation": "./.yarn/__virtual__/@toss-use-query-param-virtual-dd7cbd2863/1/packages/react/use-query-param/",\
-          "packageDependencies": [\
-            ["@toss/use-query-param", "virtual:f6f04cf8049b336fe9077f5cdeccd69700881bd0ab0d34b6b3879d0cc74d55c0a524e5afdef6f46cf27faeec9176afe77367e6cf342fc58f394c0a51e51c18b1#workspace:packages/react/use-query-param"],\
-            ["@babel/core", "npm:7.19.3"],\
-            ["@babel/preset-env", "virtual:bcd0c1141064bf940376b9b2c4f8a211deda5f9c27293f215379edb7c7917846a6a1d22044c7c1b3bb8002672fb9461cbd1f53c3889b2fe3b5bfbab9a70f1ac4#npm:7.19.3"],\
-            ["@babel/preset-typescript", "virtual:bcd0c1141064bf940376b9b2c4f8a211deda5f9c27293f215379edb7c7917846a6a1d22044c7c1b3bb8002672fb9461cbd1f53c3889b2fe3b5bfbab9a70f1ac4#npm:7.18.6"],\
-            ["@babel/runtime", "npm:7.19.0"],\
-            ["@testing-library/jest-dom", "npm:5.16.5"],\
-            ["@testing-library/react", "virtual:62cb29918b2e63dff97923d985a18238631a18b918521fd9ac48de2be213715676e8b999d7ab4431ea536d1917af1465d5695ceae059c69bf4c14df5968dd6a1#npm:13.4.0"],\
-            ["@toss/rollup-config", "virtual:bcd0c1141064bf940376b9b2c4f8a211deda5f9c27293f215379edb7c7917846a6a1d22044c7c1b3bb8002672fb9461cbd1f53c3889b2fe3b5bfbab9a70f1ac4#workspace:configs/rollup"],\
-            ["@tossteam/jest", "virtual:bcd0c1141064bf940376b9b2c4f8a211deda5f9c27293f215379edb7c7917846a6a1d22044c7c1b3bb8002672fb9461cbd1f53c3889b2fe3b5bfbab9a70f1ac4#npm:17.187.2"],\
-            ["@types/babel__core", "npm:7.1.19"],\
-            ["@types/babel__preset-env", "npm:7.9.2"],\
-            ["@types/concurrently", "npm:6.4.0"],\
-            ["@types/jest", "npm:29.1.2"],\
-            ["@types/next", null],\
-            ["@types/react", "npm:18.0.21"],\
-            ["@types/react-dom", "npm:18.0.6"],\
-            ["@types/testing-library__jest-dom", "npm:5.14.5"],\
-            ["babel-jest", "virtual:785204e63ba96625a23f896ee431c9a36baff7a533742c7d2c1d3e8c51b41da4d9b22d61afa2e1bb44d0338b2a9e895a7c77e29d79f3a357a12dae28feb7f916#npm:29.1.2"],\
-            ["concurrently", "npm:6.5.1"],\
-            ["jest", "virtual:01ae7c33d4655a48cbb29902912466a761e01d57e32af25620c31e36065eb1601cc4f6394afcb6b2f9c9f1b941b9fbeecba9aa1bca8ca304ae87cee07a6864e9#npm:29.1.2"],\
-            ["jest-environment-jsdom", "npm:29.1.2"],\
-            ["jest-mock", "npm:27.5.1"],\
-            ["next", "virtual:f6f04cf8049b336fe9077f5cdeccd69700881bd0ab0d34b6b3879d0cc74d55c0a524e5afdef6f46cf27faeec9176afe77367e6cf342fc58f394c0a51e51c18b1#npm:12.1.1"],\
-            ["react", "npm:18.2.0"],\
-            ["react-dom", "virtual:62cb29918b2e63dff97923d985a18238631a18b918521fd9ac48de2be213715676e8b999d7ab4431ea536d1917af1465d5695ceae059c69bf4c14df5968dd6a1#npm:18.2.0"],\
-            ["rollup", "npm:2.79.1"],\
-            ["typescript", "patch:typescript@npm%3A4.7.4#~builtin<compat/typescript>::version=4.7.4&hash=a1c5e5"]\
-          ],\
-          "packagePeers": [\
-            "@types/next",\
-            "@types/react-dom",\
-            "@types/react",\
-            "next",\
-            "react-dom",\
-            "react"\
-          ],\
-          "linkType": "SOFT"\
-        }],\
         ["workspace:packages/react/use-query-param", {\
           "packageLocation": "./packages/react/use-query-param/",\
           "packageDependencies": [\
@@ -9741,7 +9698,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["jest", "virtual:01ae7c33d4655a48cbb29902912466a761e01d57e32af25620c31e36065eb1601cc4f6394afcb6b2f9c9f1b941b9fbeecba9aa1bca8ca304ae87cee07a6864e9#npm:29.1.2"],\
             ["jest-environment-jsdom", "npm:29.1.2"],\
             ["jest-mock", "npm:27.5.1"],\
-            ["next", "virtual:f6f04cf8049b336fe9077f5cdeccd69700881bd0ab0d34b6b3879d0cc74d55c0a524e5afdef6f46cf27faeec9176afe77367e6cf342fc58f394c0a51e51c18b1#npm:12.1.1"],\
+            ["next", "virtual:e9eb1d54f9fe7e0be78d794b90a35a0c1fc17a984d1e9fb9fcca059f0ebadc07d835815756c5a334a787c584bb03a1874e032d5d8dbf653e3df70c106b7592ec#npm:12.1.1"],\
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:62cb29918b2e63dff97923d985a18238631a18b918521fd9ac48de2be213715676e8b999d7ab4431ea536d1917af1465d5695ceae059c69bf4c14df5968dd6a1#npm:18.2.0"],\
             ["rollup", "npm:2.79.1"],\
@@ -22989,10 +22946,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],\
           "linkType": "HARD"\
         }],\
-        ["virtual:f6f04cf8049b336fe9077f5cdeccd69700881bd0ab0d34b6b3879d0cc74d55c0a524e5afdef6f46cf27faeec9176afe77367e6cf342fc58f394c0a51e51c18b1#npm:12.1.1", {\
-          "packageLocation": "./.yarn/__virtual__/next-virtual-dd115039b9/0/cache/next-npm-12.1.1-53b3560094-2ace9622e6.zip/node_modules/next/",\
+        ["virtual:e9eb1d54f9fe7e0be78d794b90a35a0c1fc17a984d1e9fb9fcca059f0ebadc07d835815756c5a334a787c584bb03a1874e032d5d8dbf653e3df70c106b7592ec#npm:12.1.1", {\
+          "packageLocation": "./.yarn/__virtual__/next-virtual-6a9227d17f/0/cache/next-npm-12.1.1-53b3560094-2ace9622e6.zip/node_modules/next/",\
           "packageDependencies": [\
-            ["next", "virtual:f6f04cf8049b336fe9077f5cdeccd69700881bd0ab0d34b6b3879d0cc74d55c0a524e5afdef6f46cf27faeec9176afe77367e6cf342fc58f394c0a51e51c18b1#npm:12.1.1"],\
+            ["next", "virtual:e9eb1d54f9fe7e0be78d794b90a35a0c1fc17a984d1e9fb9fcca059f0ebadc07d835815756c5a334a787c584bb03a1874e032d5d8dbf653e3df70c106b7592ec#npm:12.1.1"],\
             ["@next/env", "npm:12.1.1"],\
             ["@next/swc-android-arm-eabi", "npm:12.1.1"],\
             ["@next/swc-android-arm64", "npm:12.1.1"],\
@@ -23050,7 +23007,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["next-router-mock", "virtual:f6f04cf8049b336fe9077f5cdeccd69700881bd0ab0d34b6b3879d0cc74d55c0a524e5afdef6f46cf27faeec9176afe77367e6cf342fc58f394c0a51e51c18b1#npm:0.6.10"],\
             ["@types/next", null],\
             ["@types/react", "npm:18.0.21"],\
-            ["next", "virtual:f6f04cf8049b336fe9077f5cdeccd69700881bd0ab0d34b6b3879d0cc74d55c0a524e5afdef6f46cf27faeec9176afe77367e6cf342fc58f394c0a51e51c18b1#npm:12.1.1"],\
+            ["next", null],\
             ["react", "npm:18.2.0"]\
           ],\
           "packagePeers": [\
