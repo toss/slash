@@ -10,7 +10,7 @@ import {
 import { parseQueryArgs } from '../utils';
 
 export interface BaseSuspendedUseInfiniteQueryResult<TData = unknown>
-  extends Omit<UseInfiniteQueryResult<TData>, 'error' | 'isLoading' | 'isError' | 'isFetching'> {
+  extends Omit<UseInfiniteQueryResult<TData>, 'error' | 'isLoading' | 'isError' | 'isFetching' | 'status'> {
   status: 'success' | 'idle';
 }
 
