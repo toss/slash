@@ -29,7 +29,7 @@ export interface StepProps<Steps extends NonEmptyArray<string>> {
   children: ReactNode;
 }
 
-export const Step = <T extends NonEmptyArray<string>>({ onEnter, children }: StepProps<T>) => {
+export const Step = <Steps extends NonEmptyArray<string>>({ onEnter, children }: StepProps<Steps>) => {
   useEffect(() => {
     onEnter?.();
   }, [onEnter]);
