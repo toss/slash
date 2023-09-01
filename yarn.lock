@@ -4961,8 +4961,8 @@ __metadata:
     typescript: 4.8.3
   peerDependencies:
     "@emotion/react": "*"
-    react: ">= 16 || ^18"
-    react-dom: ">= 16 || ^18"
+    react: ^16 || ^17 || ^18
+    react-dom: ^16 || ^17 || ^18
   languageName: unknown
   linkType: soft
 
@@ -5030,8 +5030,8 @@ __metadata:
     typescript: 4.8.3
   peerDependencies:
     framer-motion: "*"
-    react: ">=16.8.0 || ^17.0.0 || ^18"
-    react-dom: ">=16.8.0 || ^17.0.0 || ^18"
+    react: ^16.8.0 || ^17.0.0 || ^18
+    react-dom: ^16.8.0 || ^17.0.0 || ^18
   languageName: unknown
   linkType: soft
 
@@ -5163,7 +5163,7 @@ __metadata:
     tsd: ^0.24.1
     typescript: 4.8.3
   peerDependencies:
-    react: ">=16.8.0 || ^17.0.0 || ^18"
+    react: ^16.8.0 || ^17.0.0 || ^18
     react-query: "*"
   languageName: unknown
   linkType: soft
