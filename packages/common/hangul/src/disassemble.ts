@@ -1,3 +1,4 @@
+/** @tossdocs-ignore */
 import { DISASSEMBLED_CONSONANTS_BY_CONSONANT, DISASSEMBLED_VOWELS_BY_VOWEL } from './constants';
 import { disassembleCompleteHangulCharacter } from './disassembleCompleteHangulCharacter';
 
