@@ -14,7 +14,7 @@ function MyComponent() {
     setState(x => x + 1);
   }, []);
 
-  useVisibilityEvent(() => {
+  useDocumentVisibilityChange(() => {
     refresh();
   });
 }
@@ -47,4 +47,4 @@ The default storage is `safeLocalStorage` (storage that safely uses `window.loca
 ## To Refresh
 
 - The third `refresh` function returned by `useStorageState` allows you to synchronize the value with the original storage.
-- It can be used in conjunction with `useVisibilityEvent`, etc.
+- It can be used in conjunction with `useDocumentVisibilityChange`, etc.

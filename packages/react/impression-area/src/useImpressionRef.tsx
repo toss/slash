@@ -1,5 +1,5 @@
 /** @tossdocs-ignore */
-import { usePreservedCallback, useRefEffect } from '@toss/react';
+import { usePreservedCallback, useRefEffect, useDocumentVisibilityChange } from '@toss/react';
 import { noop } from '@toss/utils';
 import debounce from 'lodash.debounce';
 import { useCallback, useEffect, useMemo, useRef } from 'react';
@@ -58,22 +58,6 @@ export function useImpressionRef<Element extends HTMLElement>({
   });
 
   return intersectionObserverRef;
-}
-
-function useDocumentVisibilityChange(_callback: (isVisible: boolean) => void) {
-  const callback = usePreservedCallback(_callback);
-
-  useEffect(() => {
-    const handleVisibilityChange = () => {
-      callback(document.visibilityState === 'visible');
-    };
-
-    document.addEventListener('visibilitychange', handleVisibilityChange);
-
-    return () => {
-      document.removeEventListener('visibilitychange', handleVisibilityChange);
-    };
-  }, [callback]);
 }
 
 function useIntersectionObserver<Element extends HTMLElement>(

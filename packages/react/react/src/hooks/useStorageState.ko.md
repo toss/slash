@@ -14,7 +14,7 @@ function MyComponent() {
     setState(x => x + 1);
   }, []);
 
-  useVisibilityEvent(() => {
+  useDocumentVisibilityChange(() => {
     refresh();
   });
 }
@@ -47,4 +47,4 @@ function useStorageState<T>(
 ## refresh 하기
 
 - `useStorageState`가 반환하는 세 번째 `refresh` 함수로 원래 스토리지와 값을 동기화할 수 있습니다.
-- `useVisibilityEvent` 등과 함께 사용할 수 있습니다.
+- `useDocumentVisibilityChange` 등과 함께 사용할 수 있습니다.

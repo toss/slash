@@ -1,6 +1,6 @@
 import { generateStorage } from '@toss/storage';
 import { useMemo, useState } from 'react';
-import { useVisibilityEvent } from './useVisibilityEvent';
+import { useDocumentVisibilityChange } from './useDocumentVisibilityChange';
 
 const storage = generateStorage();
 
@@ -8,8 +8,8 @@ const storage = generateStorage();
 export function useLocalStorageChangeDetector(key: string) {
   const [value, setValue] = useState(storage.get(key));
 
-  useVisibilityEvent(state => {
-    if (state !== 'visible') {
+  useDocumentVisibilityChange(isVisible => {
+    if (!isVisible) {
       return;
     }
 
