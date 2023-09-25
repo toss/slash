@@ -11,7 +11,7 @@ In Korean services, there are cases where we have to handle Hangul characters in
 ## Function list
 
 - [chosungIncludes](https://slash.page/libraries/common/hangul/src/chosungIncludes.i18n)
-- [disassembleHangul](https://slash.page/libraries/common/hangul/src/disassembleHangul.i18n)
-- [disassembleHangulToGroups](https://slash.page/libraries/common/hangul/src/disassembleHangulToGroups.i18n)
+- [disassembleHangul](https://slash.page/libraries/common/hangul/src/disassemble.i18n)
+- [disassembleHangulToGroups](https://slash.page/libraries/common/hangul/src/disassemble.i18n)
 - [hangulIncludes](https://slash.page/libraries/common/hangul/src/hangulIncludes.i18n)
 - [josa](https://slash.page/libraries/common/hangul/src/josa.i18n)
