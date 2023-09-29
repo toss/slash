@@ -82,10 +82,10 @@ const KyoboLifeFunnel = () => {
   return (
     <Funnel>
       <Funnel.Step name="아파트여부">
-        <아파트여부스텝 지역선택으로가기={() => setState(prev => ({...prev, step: '지역선택', isApartment: true})} />
+        <아파트여부스텝 지역선택으로가기={() => setState(prev => ({...prev, step: '지역선택', isApartment: true}))} />
       </Funnel.Step>
       <Funnel.Step name="지역선택">
-        <지역선택스텝 지역선택완료={(지역정보) => setState(prev => ({...prev, step: '완료', region: 지역정보})} />
+        <지역선택스텝 지역선택완료={(지역정보) => setState(prev => ({...prev, step: '완료', region: 지역정보}))} />
       </Funnel.Step>
       <Funnel.Step name="완료">
         <완료스텝 신청={() => 상담신청(state)} />
