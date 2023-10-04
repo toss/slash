@@ -1,5 +1,4 @@
 {
-  "$schema": "https://raw.githubusercontent.com/lerna-lite/lerna-lite/main/packages/cli/schemas/lerna-schema.json",
   "version": "independent",
   "npmClient": "yarn",
   "useWorkspaces": true,
@@ -12,6 +11,5 @@
       "graphType": "all",
       "registry": "https://registry.npmjs.org/"
     }
-  },
-  "ignoreChanges": ["**/jest.setup.ts", "**/*.test.*", "**/*.spec.*", "**/*.stories.*", "**/__storybook__/*", "**/*.md"]
+  }
 }
