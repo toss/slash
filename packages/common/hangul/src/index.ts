@@ -1,6 +1,6 @@
 /** @tossdocs-ignore */
-export * from './chosungIncludes';
-export * from './disassembleHangul';
-export * from './disassembleHangulToGroups';
+export * from './disassemble';
 export * from './hangulIncludes';
+export * from './chosungIncludes';
 export * from './josa';
+export * from './utils';

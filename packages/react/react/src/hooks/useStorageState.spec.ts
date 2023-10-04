@@ -141,7 +141,7 @@ function createMockStorage() {
   };
 }
 
-function createFixture<T extends Serializable>({ defaultValue }: { defaultValue?: T } = {}) {
+function createFixture<T>({ defaultValue }: { defaultValue?: Serializable<T> } = {}) {
   const key = '@@test-key';
   const storage = createMockStorage();
   const render = () => renderHook(() => useStorageState<T>(key, { storage, defaultValue }));

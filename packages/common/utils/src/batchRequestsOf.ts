@@ -1,4 +1,6 @@
 /** @tossdocs-ignore */
+import { noop } from './noop';
+
 export function batchRequestsOf<F extends (...args: any[]) => any>(func: F) {
   const promiseByKey = new Map<string, Promise<ReturnType<F>>>();
 
@@ -11,7 +13,7 @@ export function batchRequestsOf<F extends (...args: any[]) => any>(func: F) {
       const promise = func(...args);
       promise.then(() => {
         promiseByKey.delete(key);
-      });
+      }, noop);
       promiseByKey.set(key, promise);
 
       return promise;

@@ -3,7 +3,7 @@ import { QueryFunction, QueryKey, useQuery, UseQueryOptions, UseQueryResult } fr
 import { parseQueryArgs } from '../utils';
 
 export interface BaseSuspendedUseQueryResult<TData>
-  extends Omit<UseQueryResult, 'error' | 'isLoading' | 'isError' | 'isFetching'> {
+  extends Omit<UseQueryResult, 'data' | 'status' | 'error' | 'isLoading' | 'isError' | 'isFetching'> {
   data: TData;
   status: 'success' | 'idle';
 }
@@ -24,7 +24,7 @@ export type SuspendedUseQueryOptions<
   TError = unknown,
   TData = TQueryFnData,
   TQueryKey extends QueryKey = QueryKey
-> = Omit<UseQueryOptions<TQueryFnData, TError, TData, TQueryKey>, 'suspense'>;
+> = Omit<UseQueryOptions<TQueryFnData, TError, TData, TQueryKey>, 'suspense' | 'networkMode'>;
 
 // arg1: queryKey, arg2: queryFn, arg3: options
 export function useSuspendedQuery<
@@ -174,5 +174,6 @@ export function useSuspendedQuery<
   return useQuery({
     ...parseQueryArgs(arg1, arg2, arg3),
     suspense: true,
+    networkMode: 'always',
   }) as BaseSuspendedUseQueryResult<TData>;
 }
