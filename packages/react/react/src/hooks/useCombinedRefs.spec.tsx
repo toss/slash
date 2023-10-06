@@ -8,7 +8,7 @@ describe('useCombinedRefs', () => {
     const refs: Array<HTMLDivElement | null> = [];
     const callbackRef = jest.fn();
 
-    function TestComponent() {
+    const TestComponent = () => {
       const ref1 = useRef<HTMLDivElement>(null);
       const ref2 = useRef<HTMLDivElement>(null);
       const ref3 = useCallback((element: HTMLDivElement | null) => {
@@ -29,7 +29,7 @@ describe('useCombinedRefs', () => {
           </button>
         </>
       );
-    }
+    };
 
     render(<TestComponent />);
 
