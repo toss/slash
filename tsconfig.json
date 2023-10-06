@@ -35,7 +35,7 @@
     "removeComments": false,
     "sourceMap": true,
 
-    /* Completeness*/
+    /* Completeness */
     "allowJs": false,
     "skipLibCheck": true
   },

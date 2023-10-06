@@ -6,7 +6,7 @@ title: useImpressionRef
 
 `ref` 가 주어진 요소가 화면에 노출되거나 숨겨지는 시점에 이벤트를 발생시키는 Hook입니다.
 "화면에 노출된다"는 문서가 포그라운드면서 뷰포트에 진입한 상태를 의미합니다.
-[IntersectionObserver](https://developer.mozilla.org/ko/docs/Web/API/Intersection_Observer_API) API를 사용하여 효율적으로 동작합니다.
+[IntersectionObserver](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API) API를 사용하여 효율적으로 동작합니다.
 
 컴포넌트로 사용하려면 `ImpressionArea`를 사용하세요.
 
