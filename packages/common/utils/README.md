@@ -7,11 +7,11 @@ $ npm install @toss/utils
 ```
 
 ```shell
-$ yarn add @toss/utils
+$ pnpm add @toss/utils
 ```
 
 ```shell
-$ pnpm add @toss/utils
+$ yarn add @toss/utils
 ```
 
 ## Features
