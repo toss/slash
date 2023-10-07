@@ -5,7 +5,15 @@
 ## Install
 
 ```shell
+npm install @toss/use-query-param
+```
+
+```shell
 yarn add @toss/use-query-param
+```
+
+```shell
+pnpm add @toss/use-query-param
 ```
 
 ## API

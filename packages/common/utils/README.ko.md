@@ -3,7 +3,15 @@
 @toss/utils 라이브러리는 React, Node.js, Vanilla JS 등 어떤 JavaScript 프로젝트에서도 사용할 수 있는 다양한 유틸리티 함수가 모여 있는 패키지입니다.
 
 ```shell
+$ npm install @toss/utils
+```
+
+```shell
 $ yarn add @toss/utils
+```
+
+```shell
+$ pnpm add @toss/utils
 ```
 
 ### 특징
