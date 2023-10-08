@@ -13,7 +13,7 @@ interface Options {
 export function useOverlay({ exitOnUnmount = true }: Options = {}) {
   const context = useContext(OverlayContext);
 
-  if (context == null) {
+  if (!context) {
     throw new Error('useOverlay is only available within OverlayProvider.');
   }
 
