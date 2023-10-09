@@ -17,19 +17,21 @@ function TestComponent() {
 
 describe('useOverlay', () => {
   it('should unmount overlay when exit function is called', async () => {
+    const user = userEvent.setup();
+
     renderWithContext(<TestComponent />);
 
     const openButton = screen.getByText('open');
     const closeButton = screen.getByText('close');
     const exitButton = screen.getByText('exit');
 
-    await userEvent.click(openButton);
+    await user.click(openButton);
     expect(screen.getByText('toss')).toBeInTheDocument();
 
-    await userEvent.click(closeButton);
+    await user.click(closeButton);
     expect(screen.getByText('toss')).toBeInTheDocument();
 
-    await userEvent.click(exitButton);
+    await user.click(exitButton);
     expect(screen.queryByText('toss')).not.toBeInTheDocument();
   });
 });
