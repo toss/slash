@@ -72,4 +72,7 @@ const openFooConfirmDialog = () => {
 };
 
 await openFooConfirmDialog();
+
+// After ConfirmDialog's confirmButton is pressed, or onClose is called
+console.log('dialog closed');
 ```

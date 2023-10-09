@@ -70,4 +70,7 @@ const openFooConfirmDialog = () => {
 };
 
 await openFooConfirmDialog();
+
+// ConfirmDialog의 confirmButton을 누르거나 onClose가 호출된 후
+console.log('dialog closed');
 ```
