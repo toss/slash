@@ -18,14 +18,14 @@ export const OverlayController = forwardRef(function OverlayController(
 ) {
   const [isOpenOverlay, setIsOpenOverlay] = useState(false);
 
-  const handleCloseOverlay = useCallback(() => setIsOpenOverlay(false), []);
+  const handleOverlayClose = useCallback(() => setIsOpenOverlay(false), []);
 
   useImperativeHandle(
     ref,
     () => {
-      return { close: handleCloseOverlay };
+      return { close: handleOverlayClose };
     },
-    [handleCloseOverlay]
+    [handleOverlayClose]
   );
 
   useEffect(() => {
@@ -35,5 +35,5 @@ export const OverlayController = forwardRef(function OverlayController(
     });
   }, []);
 
-  return <OverlayElement isOpen={isOpenOverlay} close={handleCloseOverlay} exit={onExit} />;
+  return <OverlayElement isOpen={isOpenOverlay} close={handleOverlayClose} exit={onExit} />;
 });
