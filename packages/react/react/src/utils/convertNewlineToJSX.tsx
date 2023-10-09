@@ -1,14 +1,14 @@
 /** @jsxImportSource react */
-import { Fragment } from 'react';
+import React from 'react';
 
 /** @tossdocs-ignore */
 export function convertNewlineToJSX(str: string) {
   const chunks = str.replace(/\\n/g, '\n').split('\n');
 
   return chunks.map((line, index) => (
-    <Fragment key={index}>
-      {index > 0 ? <br /> : ''}
+    <React.Fragment key={index}>
+      {index > 0 && <br />}
       {line}
-    </Fragment>
+    </React.Fragment>
   ));
 }
