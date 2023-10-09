@@ -1,3 +1,4 @@
+import { noop } from '@toss/utils';
 import { DependencyList, useCallback, useRef } from 'react';
 import { usePreservedCallback } from './usePreservedCallback';
 
@@ -32,8 +33,4 @@ export function useRefEffect<E extends HTMLElement = HTMLElement>(
   );
 
   return effect;
-}
-
-function noop() {
-  // noop
 }
