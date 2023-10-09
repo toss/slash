@@ -3,6 +3,14 @@
 `@toss/utils` is a package of utility functions which can be used in any environment, including React, Node.js, and Vanilla JS.
 
 ```shell
+$ npm install @toss/utils
+```
+
+```shell
+$ pnpm add @toss/utils
+```
+
+```shell
 $ yarn add @toss/utils
 ```
 

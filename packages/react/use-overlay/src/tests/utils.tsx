@@ -10,7 +10,7 @@ export function renderWithContext<
   return render<Q, C>(ui, {
     ...options,
     wrapper: ({ children }) => {
-      const Wrapper = options.wrapper ?? (Fragment as any);
+      const Wrapper = options.wrapper ?? Fragment;
 
       return (
         <Wrapper>
