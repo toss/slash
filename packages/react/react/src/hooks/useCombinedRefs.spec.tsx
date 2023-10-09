@@ -5,6 +5,7 @@ import { useCombinedRefs } from './useCombinedRefs';
 
 describe('useCombinedRefs', () => {
   it('여러 개의 ref를 하나로 합칠 수 있다.', async () => {
+    const user = userEvent.setup();
     const refs: Array<HTMLDivElement | null> = [];
     const callbackRef = jest.fn();
 
@@ -33,7 +34,7 @@ describe('useCombinedRefs', () => {
 
     render(<TestComponent />);
 
-    await userEvent.click(await screen.findByRole('button', { name: 'ref 저장하기' }));
+    await user.click(await screen.findByRole('button', { name: 'ref 저장하기' }));
 
     expect(refs.length).toEqual(3);
 
