@@ -1,4 +1,5 @@
 import { ImpressionArea } from '@toss/impression-area';
+import { LottieRef } from '@toss/lottie';
 import { useBooleanState, useCombinedRefs, usePreservedCallback } from '@toss/react';
 import { noop } from '@toss/utils';
 import { forwardRef, Ref, useCallback, useEffect, useImperativeHandle, useRef, useState } from 'react';
@@ -73,13 +74,6 @@ export interface SRCProps extends CommonProps {
 
 export type BaseLottieProps = JSONProps | SRCProps;
 
-interface LottieRef {
-  start: () => void;
-  stop: () => void;
-  play: () => void;
-  pause: () => void;
-}
-
 export const BaseLottie = forwardRef(function Lottie(
   {
     className,
@@ -122,8 +116,8 @@ export const BaseLottie = forwardRef(function Lottie(
       typeof json === 'string'
         ? [{ json, assets }]
         : typeof src === 'string'
-          ? [{ url: src, assets }]
-          : src!.map(url => ({ url, assets }));
+        ? [{ url: src, assets }]
+        : src!.map(url => ({ url, assets }));
 
     const chain = AnimationChain(animationData, {
       loop,
