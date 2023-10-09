@@ -5,6 +5,7 @@ import { ErrorBoundaryGroup, useErrorBoundaryGroup } from './ErrorBoundaryGroup'
 
 describe('ErrorBoundaryGroup', () => {
   it('can reset errors in the group', async () => {
+    const user = userEvent.setup();
     const state = { hasError: true };
 
     function ErrorComponent() {
@@ -44,8 +45,6 @@ describe('ErrorBoundaryGroup', () => {
     );
 
     expect(screen.getByText(`An error occurred: This is an error`)).toBeInTheDocument();
-
-    const user = await userEvent.setup();
 
     await user.click(screen.getByRole('button', { name: `Reset` }));
 

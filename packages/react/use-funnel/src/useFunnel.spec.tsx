@@ -42,6 +42,8 @@ describe('useFunnel이 정상적으로 동작하는 테스트', () => {
   });
 
   it('test1에서 setStep을 클릭하여 test2 스텝으로 넘어간다.', async () => {
+    const user = userEvent.setup();
+
     function TestComponent() {
       const [테스트퍼널, setStep] = useFunnel(퍼널스텝리스트);
 
@@ -62,13 +64,14 @@ describe('useFunnel이 정상적으로 동작하는 테스트', () => {
     renderWithTestAppContext(<TestComponent />);
 
     const button = await screen.findByRole('button', { name: 'next' });
-    await userEvent.click(button);
+    await user.click(button);
 
     expect(mockRouter.query['funnel-step']).toBe('test2');
     expect(await screen.findByText('Test2')).toBeInTheDocument();
   });
 
   it('test1에서 setStep을 클릭하여 test2 스텝으로 넘어갈 때, test2에 걸린 onEnter와 useFunnel에 걸어 놓은 onStepChange가 호출된다.', async () => {
+    const user = userEvent.setup();
     const handleStepChange = jest.fn((name: typeof 퍼널스텝리스트[number]) => {
       return name;
     });
@@ -96,13 +99,15 @@ describe('useFunnel이 정상적으로 동작하는 테스트', () => {
     renderWithTestAppContext(<TestComponent />);
 
     const button = await screen.findByRole('button', { name: 'next' });
-    await userEvent.click(button);
+    await user.click(button);
 
     await waitFor(() => expect(handleStepChange).toBeCalledWith('test2'));
     await waitFor(() => expect(handleTest2Enter).toBeCalled());
   });
 
   it("setStep('test2', { preserveQuery: true }) 시 funnel-step는 test2로, 그 외의 쿼리들은 유지된다.", async () => {
+    const user = userEvent.setup();
+
     function TestComponent() {
       const [테스트퍼널, setStep] = useFunnel(퍼널스텝리스트);
 
@@ -123,7 +128,7 @@ describe('useFunnel이 정상적으로 동작하는 테스트', () => {
     renderWithTestAppContext(<TestComponent />);
 
     const button = await screen.findByRole('button', { name: 'next' });
-    await userEvent.click(button);
+    await user.click(button);
 
     expect(mockRouter.query['funnel-step']).toBe('test2');
     expect(mockRouter.query['test']).toBe('test');
@@ -160,7 +165,9 @@ describe('useFunnel이 정상적으로 동작하는 테스트', () => {
   });
 
   it('options에 stepQueryKey가 kkk이면, 현재 스텝을 나타내는 query key는 kkk이고 setStep 시 kkk가 변경된다.', async () => {
+    const user = userEvent.setup();
     const CUSTOM_QUERY_KEY = 'kkk';
+
     function TestComponent() {
       const [테스트퍼널, setStep] = useFunnel(퍼널스텝리스트, { initialStep: 'test1', stepQueryKey: CUSTOM_QUERY_KEY });
 
@@ -181,7 +188,7 @@ describe('useFunnel이 정상적으로 동작하는 테스트', () => {
     renderWithTestAppContext(<TestComponent />);
 
     const button = await screen.findByRole('button', { name: 'next' });
-    await userEvent.click(button);
+    await user.click(button);
 
     expect(mockRouter.query[CUSTOM_QUERY_KEY]).toBe('test2');
   });
@@ -189,6 +196,8 @@ describe('useFunnel이 정상적으로 동작하는 테스트', () => {
 
 describe('useFunnel.withState', () => {
   it('퍼널 스텝과 퍼널 상태를 동시에 갱신할 수 있다: 퍼널 스텝을 변경할 때 퍼널 상태 갱신이 완료될 때까지 지연할 수 있다', async () => {
+    const user = userEvent.setup();
+
     mockRouter.setCurrentUrl(`?funnel-step=시작`);
 
     function FunnelPage() {
@@ -223,7 +232,7 @@ describe('useFunnel.withState', () => {
 
     renderWithTestAppContext(<FunnelPage />);
 
-    await userEvent.click(await screen.findByRole('button', { name: '확인' }));
+    await user.click(await screen.findByRole('button', { name: '확인' }));
 
     expect(await screen.findByText('1')).toBeInTheDocument();
   });
