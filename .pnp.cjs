@@ -9850,6 +9850,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/lodash.debounce", "npm:4.0.7"],\
             ["@types/lodash.throttle", "npm:4.1.7"],\
             ["@types/react", "npm:18.0.21"],\
+            ["@types/react-test-renderer", "npm:18.0.3"],\
             ["@types/testing-library__jest-dom", "npm:5.14.5"],\
             ["@types/testing-library__react-hooks", "npm:3.4.1"],\
             ["@types/webpack", "npm:4.41.32"],\
@@ -9902,6 +9903,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/lodash.debounce", "npm:4.0.7"],\
             ["@types/lodash.throttle", "npm:4.1.7"],\
             ["@types/react", "npm:18.0.21"],\
+            ["@types/react-test-renderer", "npm:18.0.3"],\
             ["@types/testing-library__jest-dom", "npm:5.14.5"],\
             ["@types/testing-library__react-hooks", "npm:3.4.1"],\
             ["@types/webpack", "npm:4.41.32"],\
@@ -11497,6 +11499,14 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/@types-react-test-renderer-npm-18.0.0-159e9589e1-6afc938a1d.zip/node_modules/@types/react-test-renderer/",\
           "packageDependencies": [\
             ["@types/react-test-renderer", "npm:18.0.0"],\
+            ["@types/react", "npm:18.0.21"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
+        ["npm:18.0.3", {\
+          "packageLocation": "./.yarn/cache/@types-react-test-renderer-npm-18.0.3-6663fa05ca-6834c7c998.zip/node_modules/@types/react-test-renderer/",\
+          "packageDependencies": [\
+            ["@types/react-test-renderer", "npm:18.0.3"],\
             ["@types/react", "npm:18.0.21"]\
           ],\
           "linkType": "HARD"\
