@@ -8,12 +8,12 @@ function useCombinedRefs<T>(...refs: Array<Ref<T> | CallbackRef<T>>): Ref<T>;
 
 ## Example
 
-````ts
-const SomeComponent = forwardRef((props, parentRef) => {
-  const myRef = useRef(null);
+```tsx
+const Example = forwardRef<HTMLDivElement, Props>((props, parentRef) => {
+  const myRef = useRef<HTMLDivElement>(null);
   const ref = useCombinedRefs(myRef, parentRef);
 
-  // 하단 div가 업데이트되면 myRef와 parentRef 모두가 업데이트됨
+  // 하단 div가 업데이트되면 "myRef"와 "parentRef" 모두가 업데이트 됩니다.
   return <div ref={ref} />;
-})```
-````
+});
+```

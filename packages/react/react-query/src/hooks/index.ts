@@ -1,3 +1,4 @@
 /** @tossdocs-ignore */
-export * from './useSuspendedInfiniteQuery';
+export * from './useQuery';
 export * from './useSuspendedQuery';
+export * from './useSuspendedInfiniteQuery';

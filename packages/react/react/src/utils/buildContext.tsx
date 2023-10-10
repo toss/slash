@@ -1,3 +1,4 @@
+/** @tossdocs-ignore */
 import { createContext, ReactNode, useContext, useMemo } from 'react';
 
 type ProviderProps<ContextValuesType> = (ContextValuesType & { children: ReactNode }) | { children: ReactNode };

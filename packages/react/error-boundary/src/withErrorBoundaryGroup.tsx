@@ -1,3 +1,4 @@
+/** @tossdocs-ignore */
 import { ComponentType } from 'react';
 import { ErrorBoundaryGroup } from './ErrorBoundaryGroup';
 import { ComponentPropsWithoutChildren } from './types';
