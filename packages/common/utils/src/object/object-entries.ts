@@ -1,8 +1,4 @@
 /** @tossdocs-ignore */
-import { ObjectKeys } from './object-keys.js';
-
-export function objectEntries<Type extends Record<PropertyKey, unknown>>(
-  obj: Type
-): Array<[ObjectKeys<Type>, Type[ObjectKeys<Type>]]> {
-  return Object.entries(obj) as Array<[ObjectKeys<Type>, Type[ObjectKeys<Type>]]>;
+export function objectEntries<T extends Record<PropertyKey, T[keyof T]>>(obj: T): Array<[keyof T, T[keyof T]]> {
+  return Object.entries(obj);
 }

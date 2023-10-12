@@ -1,12 +1,12 @@
 /** @tossdocs-ignore */
-import { ObjectKeys, objectKeys } from './object-keys';
+import { objectKeys } from './object-keys';
 import { ElementType } from './types';
 
-export function omit<ObjectType extends Record<PropertyKey, any>, KeyTypes extends Array<ObjectKeys<ObjectType>>>(
-  obj: ObjectType,
-  keys: KeyTypes
-) {
+export function omit<T extends Record<PropertyKey, T[keyof T]>, K extends Array<keyof T>>(
+  obj: T,
+  keys: K
+): Omit<T, ElementType<K>> {
   return objectKeys(obj)
-    .filter((k): k is Exclude<ObjectKeys<ObjectType>, ElementType<KeyTypes>> => !keys.includes(k))
-    .reduce((acc, key) => ((acc[key] = obj[key]), acc), {} as Omit<ObjectType, ElementType<KeyTypes>>);
+    .filter((k): k is Exclude<keyof T, ElementType<K>> => !keys.includes(k))
+    .reduce((acc, key) => ((acc[key] = obj[key]), acc), {} as Omit<T, ElementType<K>>);
 }
