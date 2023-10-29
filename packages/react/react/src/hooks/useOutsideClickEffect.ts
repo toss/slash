@@ -1,4 +1,4 @@
-import { isNotNil } from '@toss/utils';
+import { isMobileWeb, isNotNil } from '@toss/utils';
 import { useCallback, useEffect, useRef } from 'react';
 
 type OneOrMore<T> = T | T[];
@@ -31,12 +31,18 @@ export function useOutsideClickEffect(container: OneOrMore<HTMLElement | null>, 
   );
 
   useEffect(() => {
-    document.addEventListener('click', handleDocumentClick);
-    document.addEventListener('touchstart', handleDocumentClick);
+    if (isMobileWeb()) {
+      document.addEventListener('touchstart', handleDocumentClick);
+    } else {
+      document.addEventListener('click', handleDocumentClick);
+    }
 
     return () => {
-      document.removeEventListener('click', handleDocumentClick);
-      document.removeEventListener('touchstart', handleDocumentClick);
+      if (isMobileWeb()) {
+        document.removeEventListener('touchstart', handleDocumentClick);
+      } else {
+        document.removeEventListener('click', handleDocumentClick);
+      }
     };
   });
 }
