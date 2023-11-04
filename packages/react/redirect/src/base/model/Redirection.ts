@@ -1,3 +1,4 @@
+/** @tossdocs-ignore */
 export interface BaseRedirectionOptions {
   destination: string;
   external?: boolean;

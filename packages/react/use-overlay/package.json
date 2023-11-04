@@ -1,6 +1,6 @@
 {
   "name": "@toss/use-overlay",
-  "version": "1.3.6",
+  "version": "1.3.7",
   "sideEffects": false,
   "exports": {
     ".": {
@@ -20,9 +20,6 @@
     "test": "jest",
     "typecheck": "tsc --noEmit"
   },
-  "dependencies": {
-    "@types/react": "^18.0.21"
-  },
   "devDependencies": {
     "@babel/core": "^7",
     "@babel/preset-env": "^7.16.11",
@@ -34,13 +31,14 @@
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^14.2.0",
-    "@toss/react": "workspace:^1.5.0",
+    "@toss/react": "workspace:^1.6.0",
     "@toss/rollup-config": "workspace:^0.1.4",
-    "@toss/utils": "workspace:^1.4.4",
+    "@toss/utils": "workspace:^1.4.5",
     "@tossteam/jest": "^17",
     "@types/babel__preset-env": "^7",
     "@types/jest": "^28.1.8",
     "@types/node": "^14.14.41",
+    "@types/react": "^18.0.21",
     "@types/react-dom": "^18.0.6",
     "@types/testing-library__jest-dom": "^5.14.2",
     "babel-jest": "^29",
