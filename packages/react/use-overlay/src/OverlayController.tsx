@@ -1,5 +1,5 @@
 /** @tossdocs-ignore */
-import { Ref, useImperativeHandle, forwardRef, useEffect, useState, useCallback } from 'react';
+import { forwardRef, Ref, useCallback, useEffect, useImperativeHandle, useState } from 'react';
 
 import { CreateOverlayElement } from './types';
 
@@ -16,24 +16,24 @@ export const OverlayController = forwardRef(function OverlayController(
   { overlayElement: OverlayElement, onExit }: Props,
   ref: Ref<OverlayControlRef>
 ) {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpenOverlay, setIsOpenOverlay] = useState(false);
 
-  const handleClose = useCallback(() => setIsOpen(false), []);
+  const handleOverlayClose = useCallback(() => setIsOpenOverlay(false), []);
 
   useImperativeHandle(
     ref,
     () => {
-      return { close: handleClose };
+      return { close: handleOverlayClose };
     },
-    [handleClose]
+    [handleOverlayClose]
   );
 
   useEffect(() => {
     // NOTE: requestAnimationFrame이 없으면 가끔 Open 애니메이션이 실행되지 않는다.
     requestAnimationFrame(() => {
-      setIsOpen(true);
+      setIsOpenOverlay(true);
     });
   }, []);
 
-  return <OverlayElement isOpen={isOpen} close={handleClose} exit={onExit} />;
+  return <OverlayElement isOpen={isOpenOverlay} close={handleOverlayClose} exit={onExit} />;
 });
