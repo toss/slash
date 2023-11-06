@@ -9,7 +9,8 @@ describe('convertNewlineToJSX', () => {
     render(<>{result}</>);
     screen.debug();
 
-    expect(screen.getByText('There was a problem trying to sign in.<br/>please try again.')).toBeInTheDocument();
+    expect(screen.getByText('There was a problem trying to sign in.')).toBeInTheDocument();
+    expect(screen.getByText('please try again.')).toBeInTheDocument();
   });
 
   it('should handle zero newline characters', () => {
@@ -23,14 +24,15 @@ describe('convertNewlineToJSX', () => {
   });
 
   it('should handle multiple newline characters', () => {
-    const input = 'There was a problem \ntrying to\n sign in. please\ntry again.';
+    const input = 'There was a problem\ntrying to\nsign in. please\ntry again.';
     const result = convertNewlineToJSX(input);
 
     render(<>{result}</>);
     screen.debug();
 
-    expect(
-      screen.getByText('There was a problem <br/>trying to<br/> sign in. please<br/>try again.')
-    ).toBeInTheDocument();
+    expect(screen.getByText('There was a problem')).toBeInTheDocument();
+    expect(screen.getByText('trying to')).toBeInTheDocument();
+    expect(screen.getByText('sign in. please')).toBeInTheDocument();
+    expect(screen.getByText('try again.')).toBeInTheDocument();
   });
 });
