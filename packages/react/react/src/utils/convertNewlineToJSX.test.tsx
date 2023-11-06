@@ -1,22 +1,36 @@
-import React from 'react';
-import { create } from 'react-test-renderer';
+import { render, screen } from '@testing-library/react';
 import { convertNewlineToJSX } from './convertNewlineToJSX';
 
 describe('convertNewlineToJSX', () => {
-  it('should converts newline characters into <br /> JSX elements', () => {
+  it('should handle one newline characters', () => {
     const input = 'There was a problem trying to sign in.\nplease try again.';
-    const output = [
-      <React.Fragment key={0}>There was a problem trying to sign in.</React.Fragment>,
-      <React.Fragment key={1}>
-        <br />
-        please try again.
-      </React.Fragment>,
-    ];
-
     const result = convertNewlineToJSX(input);
 
-    result.forEach((element, index) => {
-      expect(create(element).toJSON()).toEqual(create(output[index]).toJSON());
-    });
+    render(<>{result}</>);
+    screen.debug();
+
+    expect(screen.getByText('There was a problem trying to sign in.<br/>please try again.')).toBeInTheDocument();
+  });
+
+  it('should handle zero newline characters', () => {
+    const input = 'There was a problem trying to sign in. please try again.';
+    const result = convertNewlineToJSX(input);
+
+    render(<>{result}</>);
+    screen.debug();
+
+    expect(screen.getByText('There was a problem trying to sign in. please try again.')).toBeInTheDocument();
+  });
+
+  it('should handle multiple newline characters', () => {
+    const input = 'There was a problem \ntrying to\n sign in. please\ntry again.';
+    const result = convertNewlineToJSX(input);
+
+    render(<>{result}</>);
+    screen.debug();
+
+    expect(
+      screen.getByText('There was a problem <br/>trying to<br/> sign in. please<br/>try again.')
+    ).toBeInTheDocument();
   });
 });
