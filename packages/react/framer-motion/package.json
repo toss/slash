@@ -1,6 +1,6 @@
 {
   "name": "@toss/framer-motion",
-  "version": "1.1.6",
+  "version": "1.1.7",
   "sideEffects": false,
   "exports": {
     ".": {
@@ -43,8 +43,8 @@
   },
   "peerDependencies": {
     "framer-motion": "*",
-    "react": ">=16.8.0 || ^17.0.0 || ^18",
-    "react-dom": ">=16.8.0 || ^17.0.0 || ^18"
+    "react": "^16.8.0 || ^17.0.0 || ^18",
+    "react-dom": "^16.8.0 || ^17.0.0 || ^18"
   },
   "publishConfig": {
     "access": "public",

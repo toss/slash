@@ -42,13 +42,14 @@ describe('useOutsideClickEffect', () => {
   }
 
   it('컨테이너 바깥에 위치한 DOM에서 이벤트가 발생하면 콜백이 호출된다.', async () => {
+    const user = userEvent.setup();
     const onEffect = jest.fn();
     prepare({ onEffect });
 
-    userEvent.click(screen.getByTestId('container-0'));
+    await user.click(screen.getByTestId('container-0'));
     expect(onEffect).not.toHaveBeenCalled();
 
-    userEvent.click(screen.getByTestId('outside'));
+    await user.click(screen.getByTestId('outside'));
 
     await waitFor(() => {
       expect(onEffect).toHaveBeenCalled();
@@ -61,31 +62,34 @@ describe('useOutsideClickEffect', () => {
     });
   });
 
-  it('컨테이너 안쪽에 위치한 DOM에서 이벤트가 발생하면 콜백이 호출되지 않는다.', () => {
+  it('컨테이너 안쪽에 위치한 DOM에서 이벤트가 발생하면 콜백이 호출되지 않는다.', async () => {
+    const user = userEvent.setup();
     const onEffect = jest.fn();
     prepare({ onEffect });
 
-    userEvent.click(screen.getByTestId('inside-0'));
+    await user.click(screen.getByTestId('inside-0'));
     expect(onEffect).not.toHaveBeenCalled();
   });
 
   it('컨테이너를 여러개 지정할 수 있다.', async () => {
+    const user = userEvent.setup();
     const onEffect = jest.fn();
     prepare({ containerCount: 3, onEffect });
 
-    userEvent.click(screen.getByTestId('container-0'));
+    await user.click(screen.getByTestId('container-0'));
     expect(onEffect).not.toHaveBeenCalled();
 
-    userEvent.click(screen.getByTestId('container-1'));
+    await user.click(screen.getByTestId('container-1'));
     expect(onEffect).not.toHaveBeenCalled();
 
-    userEvent.click(screen.getByTestId('container-2'));
+    await user.click(screen.getByTestId('container-2'));
     expect(onEffect).not.toHaveBeenCalled();
 
-    userEvent.click(screen.getByTestId('inside-2'));
+    await user.click(screen.getByTestId('inside-2'));
     expect(onEffect).not.toHaveBeenCalled();
 
-    userEvent.click(screen.getByTestId('outside'));
+    await user.click(screen.getByTestId('outside'));
+
     await waitFor(() => {
       expect(onEffect).toHaveBeenCalled();
     });

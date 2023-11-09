@@ -1,3 +1,4 @@
+/** @tossdocs-ignore */
 import { noop } from './noop';
 
 export function batchRequestsOf<F extends (...args: any[]) => any>(func: F) {
