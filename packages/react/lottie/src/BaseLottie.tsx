@@ -1,5 +1,5 @@
 import { ImpressionArea } from '@toss/impression-area';
-import { LottieRef } from '@toss/lottie';
+import { LottieRef } from './LottieRef';
 import { useBooleanState, useCombinedRefs, usePreservedCallback } from '@toss/react';
 import { noop } from '@toss/utils';
 import { forwardRef, Ref, useCallback, useEffect, useImperativeHandle, useRef, useState } from 'react';
