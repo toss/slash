@@ -11,6 +11,7 @@ export * from './useHotjarTracker';
 export * from './useInputState';
 export * from './useInterval';
 export * from './useIsMounted';
+export * from './useIsMountedRef';
 export * from './useIsomorphicLayoutEffect';
 export * from './useLiveAnnouncer';
 export * from './useLocalStorageChangeDetector';
@@ -27,3 +28,4 @@ export * from './useTimeout';
 export * from './useTimeoutQueue';
 export * from './useToggleState';
 export * from './useVisibilityEvent';
+
