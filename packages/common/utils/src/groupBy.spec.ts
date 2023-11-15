@@ -25,6 +25,24 @@ describe('The groupBy function', () => {
     });
   });
 
+  it('groups items distinguishing between uppercase and lowercase', () => {
+    const caseSensitiveInput = [
+      { name: 'apple', value: 1 },
+      { name: 'apple', value: 2 },
+      { name: 'Apple', value: 3 },
+      { name: 'banana', value: 4 },
+    ];
+
+    expect(groupBy(caseSensitiveInput, item => item.name)).toEqual({
+      apple: [
+        { name: 'apple', value: 1 },
+        { name: 'apple', value: 2 },
+      ],
+      Apple: [{ name: 'Apple', value: 3 }],
+      banana: [{ name: 'banana', value: 4 }],
+    });
+  });
+
   it('returns an empty object when given an empty array', () => {
     expect(groupBy([], ({ someKey }) => someKey)).toEqual({});
   });
