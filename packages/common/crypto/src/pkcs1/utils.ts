@@ -38,25 +38,22 @@ export function rsaep(n: BigNumber, e: BigNumber, m: BigNumber): BigNumber {
   return powerMod(m, e, n);
 }
 
-function powerMod(n: BigNumber, p: BigNumber, m: BigNumber): BigNumber {
+export function powerMod(n: BigNumber, p: BigNumber, m: BigNumber): BigNumber {
   // p === 1
   if (p.eq(new BigNumber(1))) {
     return n;
   }
 
-  // p % 2 === 0
-  if (p.mod(new BigNumber(2)).eq(new BigNumber(0))) {
-    // const t = power_mod(n, p >> 1n, m);
-    const t = powerMod(n, p.shrn(1), m);
-
-    return t.mul(t).mod(m); // (t * t) % m;
-  }
-
   // const t = power_mod(n, p >> 1n, m);
   const t = powerMod(n, p.shrn(1), m);
+  const squared = t.mul(t).mod(m); // (t * t) % m;
 
-  // return (t * t * n) % m;
-  return t.mul(t).mul(n).mod(m);
+  // p % 2 === 0
+  if (p.mod(new BigNumber(2)).eq(new BigNumber(0))) {
+    return squared;
+  }
+
+  return squared.mul(n).mod(m); // (t * t * n) % m;
 }
 
 export function i2osp(x: BigNumber, length: number): Uint8Array {
