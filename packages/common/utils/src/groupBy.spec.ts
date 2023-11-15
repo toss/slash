@@ -1,6 +1,6 @@
 import { groupBy } from './groupBy';
 
-describe('groupBy 함수는', () => {
+describe('The groupBy function', () => {
   const input = [
     { groupName: '부엉이', value: 1 },
     { groupName: '다람쥐', value: 2 },
@@ -10,7 +10,7 @@ describe('groupBy 함수는', () => {
     { groupName: '부엉이', value: 6 },
   ];
 
-  it('createKey의 return value를 이용해서 item을 묶는다', () => {
+  it('groups items using the return value of createKey', () => {
     expect(groupBy(input, ({ groupName }) => groupName)).toEqual({
       부엉이: [
         { groupName: '부엉이', value: 1 },
@@ -25,7 +25,7 @@ describe('groupBy 함수는', () => {
     });
   });
 
-  it('빈 Array를 넣었을 땐 빈 object를 return한다.', () => {
+  it('returns an empty object when given an empty array', () => {
     expect(groupBy([], ({ someKey }) => someKey)).toEqual({});
   });
 });
