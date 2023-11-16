@@ -70,7 +70,7 @@ describe('getDateDistanceText', () => {
 
   describe('If there is no any condition, unit with 0 value is not showing in return value.', () => {
     const conditionOption = {};
-    it(`should returns '1일 1시간 1분 1초' when all time value is 1`, () => {
+    it(`should return '1일 1시간 1분 1초' when all time value is 1`, () => {
       expect(
         getDateDistanceText(
           {
