@@ -10,7 +10,7 @@ describe('The groupBy function', () => {
     { groupName: '부엉이', value: 6 },
   ];
 
-  it('groups items using the return value of createKey', () => {
+  it('should group items using the return value of createKey', () => {
     expect(groupBy(input, ({ groupName }) => groupName)).toEqual({
       부엉이: [
         { groupName: '부엉이', value: 1 },
@@ -25,7 +25,7 @@ describe('The groupBy function', () => {
     });
   });
 
-  it('groups items distinguishing between uppercase and lowercase', () => {
+  it('should group items distinguishing between uppercase and lowercase', () => {
     const caseSensitiveInput = [
       { name: 'apple', value: 1 },
       { name: 'apple', value: 2 },
@@ -43,7 +43,7 @@ describe('The groupBy function', () => {
     });
   });
 
-  it('returns an empty object when given an empty array', () => {
+  it('should return an empty object when given an empty array', () => {
     expect(groupBy([], ({ someKey }) => someKey)).toEqual({});
   });
 });
