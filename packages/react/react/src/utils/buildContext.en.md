@@ -13,10 +13,10 @@ This is a helper function that reduces repetitive code when defining React Conte
 ## Examples
 
 ```tsx
-const [Provider, useContext] = buildContext('TestContext', null);
+const [Provider, useContext] = buildContext<{ title: string }>('TestContext', null);
 
 function Inner() {
-  const context = useContext < { title: string } > 'Inner';
+  const context = useContext();
 
   return <h1>{context.title}</h1>;
 }
