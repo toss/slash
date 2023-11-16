@@ -9,7 +9,7 @@ import { useRouter } from 'next/router.js';
 import { SetStateAction, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { useQuery } from 'react-query';
 import { Funnel, FunnelProps, Step, StepProps } from './Funnel';
-import { NonEmptyArray } from './models';
+import { StepsType } from './models';
 
 interface SetStepOptions {
   stepChangeType?: 'push' | 'replace';
@@ -17,15 +17,15 @@ interface SetStepOptions {
   query?: Record<string, any>;
 }
 
-type RouteFunnelProps<Steps extends NonEmptyArray<string>> = Omit<FunnelProps<Steps>, 'steps' | 'step'>;
+type RouteFunnelProps<Steps extends StepsType> = Omit<FunnelProps<Steps>, 'steps' | 'step'>;
 
-type FunnelComponent<Steps extends NonEmptyArray<string>> = ((props: RouteFunnelProps<Steps>) => JSX.Element) & {
+type FunnelComponent<Steps extends StepsType> = ((props: RouteFunnelProps<Steps>) => JSX.Element) & {
   Step: (props: StepProps<Steps>) => JSX.Element;
 };
 
 const DEFAULT_STEP_QUERY_KEY = 'funnel-step';
 
-export const useFunnel = <Steps extends NonEmptyArray<string>>(
+export const useFunnel = <Steps extends StepsType>(
   steps: Steps,
   options?: {
     /**
@@ -40,14 +40,14 @@ export const useFunnel = <Steps extends NonEmptyArray<string>>(
   withState: <StateExcludeStep extends Record<string, unknown> & { step?: never }>(
     initialState: StateExcludeStep
   ) => [
-      FunnelComponent<Steps>,
-      StateExcludeStep,
-      (
-        next:
-          | Partial<StateExcludeStep & { step: Steps[number] }>
-          | ((next: Partial<StateExcludeStep & { step: Steps[number] }>) => StateExcludeStep & { step: Steps[number] })
-      ) => void
-    ];
+    FunnelComponent<Steps>,
+    StateExcludeStep,
+    (
+      next:
+        | Partial<StateExcludeStep & { step: Steps[number] }>
+        | ((next: Partial<StateExcludeStep & { step: Steps[number] }>) => StateExcludeStep & { step: Steps[number] })
+    ) => void
+  ];
 } => {
   const router = useRouter();
   const stepQueryKey = options?.stepQueryKey ?? DEFAULT_STEP_QUERY_KEY;
@@ -164,14 +164,14 @@ export const useFunnel = <Steps extends NonEmptyArray<string>>(
     withState: <StateExcludeStep extends Record<string, unknown> & { step?: never }>(
       initialState: StateExcludeStep
     ) => [
-        FunnelComponent<Steps>,
-        StateExcludeStep,
-        (
-          next:
-            | Partial<StateExcludeStep & { step: Steps[number] }>
-            | ((next: Partial<StateExcludeStep & { step: Steps[number] }>) => StateExcludeStep & { step: Steps[number] })
-        ) => void
-      ];
+      FunnelComponent<Steps>,
+      StateExcludeStep,
+      (
+        next:
+          | Partial<StateExcludeStep & { step: Steps[number] }>
+          | ((next: Partial<StateExcludeStep & { step: Steps[number] }>) => StateExcludeStep & { step: Steps[number] })
+      ) => void
+    ];
   };
 };
 
