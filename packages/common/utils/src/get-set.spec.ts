@@ -29,8 +29,7 @@ describe('set function', () => {
   it('correctly adds a new property at a multi-level path', () => {
     expect(set({ a: { b: { c: 'c' } } }, 'a.b.e', 'e')).toStrictEqual({ a: { b: { c: 'c', e: 'e' } } });
   });
-  it('handles incorrect path formats gracefully', () => {
-    // Assuming the function does not modify the object in case of an incorrect path
+  it('assuming the function does not modify the object in case of an incorrect path', () => {
     const obj = { a: { b: { c: 'd' } } };
     expect(set(obj, 'a..b', 'e')).toStrictEqual(obj);
   });
