@@ -76,4 +76,4 @@ ErrorBoundaryGroup solves this annoyance declaratively.
 ## References
 
 - [ErrorBoundaryGroup Pull Request](https://github.com/toss/slash/pull/157)
-- [@suspensive/react's ErrorBoundaryGroup](https://docs.suspensive.org/docs/react/src/ErrorBoundaryGroup.i18n)
+- [@suspensive/react's ErrorBoundaryGroup](https://suspensive.org/docs/react/ErrorBoundaryGroup)
