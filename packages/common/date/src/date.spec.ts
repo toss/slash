@@ -1,4 +1,11 @@
-import { getDateDistance, getDateDistanceText, parseYYYYMMDD, roundUpHoursInDays, TimeUnits } from './index';
+import {
+  getDateDistance,
+  getDateDistanceText,
+  isEqualOrBefore,
+  parseYYYYMMDD,
+  roundUpHoursInDays,
+  TimeUnits,
+} from './index';
 
 describe('roundUpHoursInDays', () => {
   it('should be raised to 24 hours, if less than 24 hours', () => {
@@ -63,6 +70,29 @@ describe('getDateDistance', () => {
     const endDate = new Date('2020-07-01 12:00:00');
 
     expect(getDateDistance(startDate, endDate)).toEqual({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+  });
+});
+
+describe('isEqualOrBefore', () => {
+  it('should return true when the dates are equal', () => {
+    const date1 = new Date(2022, 8, 10);
+    const date2 = new Date(2022, 8, 10);
+
+    expect(isEqualOrBefore(date1, date2)).toBe(true);
+  });
+
+  it('should return true when the first date is before the second date', () => {
+    const date1 = new Date(2022, 8, 10);
+    const date2 = new Date(2022, 9, 10);
+
+    expect(isEqualOrBefore(date1, date2)).toBe(true);
+  });
+
+  it('should return false when the first date is after the second date', () => {
+    const date1 = new Date(2022, 9, 10);
+    const date2 = new Date(2022, 8, 10);
+
+    expect(isEqualOrBefore(date1, date2)).toBe(false);
   });
 });
 
