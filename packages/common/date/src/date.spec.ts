@@ -1,4 +1,32 @@
-import { getDateDistance, getDateDistanceText, parseYYYYMMDD, TimeUnits } from './index';
+import { getDateDistance, getDateDistanceText, parseYYYYMMDD, roundUpHoursInDays, TimeUnits } from './index';
+
+describe('roundUpHoursInDays', () => {
+  it('should be raised to 24 hours, if less than 24 hours', () => {
+    expect(roundUpHoursInDays(1)).toBe(24);
+    expect(roundUpHoursInDays(23)).toBe(24);
+  });
+
+  it('should remain the same, 24 hour unit time', () => {
+    expect(roundUpHoursInDays(24)).toBe(24);
+    expect(roundUpHoursInDays(48)).toBe(48);
+  });
+
+  it('should be rounded up to the next 24-hour unit if more than 24 hours', () => {
+    expect(roundUpHoursInDays(25)).toBe(48);
+    expect(roundUpHoursInDays(47)).toBe(48);
+    expect(roundUpHoursInDays(49)).toBe(72);
+    expect(roundUpHoursInDays(63)).toBe(72);
+  });
+
+  it('should be maintained as 0 hours', () => {
+    expect(roundUpHoursInDays(0)).toBe(0);
+  });
+
+  it('should handle negative inputs, which may cause unexpected behavior', () => {
+    expect(roundUpHoursInDays(-1)).toBe(24);
+    expect(roundUpHoursInDays(-25)).toBe(0);
+  });
+});
 
 describe('parseYYYYMMDD', () => {
   it('should "2020-04-23" parsed to "April 23, 2020".', () => {
