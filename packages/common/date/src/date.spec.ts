@@ -76,47 +76,47 @@ describe('getDateDistance', () => {
 
 describe('isEqualOrBefore', () => {
   it('should return true when the dates are equal', () => {
-    const date1 = new Date(2022, 8, 10);
-    const date2 = new Date(2022, 8, 10);
+    const firstDate = new Date(2022, 8, 10);
+    const secondDate = new Date(2022, 8, 10);
 
-    expect(isEqualOrBefore(date1, date2)).toBe(true);
+    expect(isEqualOrBefore(firstDate, secondDate)).toBe(true);
   });
 
   it('should return true when the first date is before the second date', () => {
-    const date1 = new Date(2022, 8, 10);
-    const date2 = new Date(2022, 9, 10);
+    const firstDate = new Date(2022, 8, 10);
+    const secondDate = new Date(2022, 9, 10);
 
-    expect(isEqualOrBefore(date1, date2)).toBe(true);
+    expect(isEqualOrBefore(firstDate, secondDate)).toBe(true);
   });
 
   it('should return false when the first date is after the second date', () => {
-    const date1 = new Date(2022, 9, 10);
-    const date2 = new Date(2022, 8, 10);
+    const firstDate = new Date(2022, 9, 10);
+    const secondDate = new Date(2022, 8, 10);
 
-    expect(isEqualOrBefore(date1, date2)).toBe(false);
+    expect(isEqualOrBefore(firstDate, secondDate)).toBe(false);
   });
 });
 
 describe('isEqualOrAfter', () => {
   it('should return true when the dates are equal', () => {
-    const date1 = new Date(2022, 8, 10);
-    const date2 = new Date(2022, 8, 10);
+    const firstDate = new Date(2022, 8, 10);
+    const secondDate = new Date(2022, 8, 10);
 
-    expect(isEqualOrAfter(date1, date2)).toBe(true);
+    expect(isEqualOrAfter(firstDate, secondDate)).toBe(true);
   });
 
   it('should return true when the first date is after the second date', () => {
-    const date1 = new Date(2022, 9, 10);
-    const date2 = new Date(2022, 8, 10);
+    const firstDate = new Date(2022, 9, 10);
+    const secondDate = new Date(2022, 8, 10);
 
-    expect(isEqualOrAfter(date1, date2)).toBe(true);
+    expect(isEqualOrAfter(firstDate, secondDate)).toBe(true);
   });
 
   it('should return false when the first date is before the second date', () => {
-    const date1 = new Date(2022, 8, 10);
-    const date2 = new Date(2022, 9, 10);
+    const firstDate = new Date(2022, 8, 10);
+    const secondDate = new Date(2022, 9, 10);
 
-    expect(isEqualOrAfter(date1, date2)).toBe(false);
+    expect(isEqualOrAfter(firstDate, secondDate)).toBe(false);
   });
 });
 
