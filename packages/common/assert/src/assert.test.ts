@@ -40,7 +40,7 @@ class MyError extends Error {
 }
 
 describe('assert', () => {
-  it('"condition"을 단언할 수 있다.', () => {
+  it('should assert the "condition" if it is true', () => {
     const data = getData('A');
 
     assert(data.type === 'A');
@@ -48,11 +48,18 @@ describe('assert', () => {
     expect(data.a).toEqual('toss');
   });
 
-  it('"condition"을 만족하지 않는 경우 오류를 발생시킨다.', () => {
+  it('should throw an error if the "condition" is not satisfied', () => {
     // eslint-disable-next-line @typescript-eslint/no-inferrable-types
     const value: string = 'string';
 
     expect(() => assert(value === 'not_string')).toThrowError(Error);
     expect(() => assert(value === 'not_string', new MyError('잘못된 문자열'))).toThrowError(MyError);
+  });
+
+  it('should throw an error with a string error message when provided', () => {
+    const value = false;
+    const errorMessage = 'String error message';
+
+    expect(() => assert(value, errorMessage)).toThrowError(new MyError(errorMessage));
   });
 });
