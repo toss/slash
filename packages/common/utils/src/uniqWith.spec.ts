@@ -2,16 +2,17 @@ import { uniqWith } from './uniqWith';
 
 describe('uniqWith', () => {
   it('should remove duplicates from an array based on comparator', () => {
-    const arr = [
+    const inputList = [
       { x: 1, y: 2 },
       { x: 2, y: 1 },
       { x: 1, y: 2 },
     ];
-
-    expect(uniqWith(arr, (x, y) => x.x === y.x && x.y === y.y)).toEqual([
+    const expectedList = [
       { x: 1, y: 2 },
       { x: 2, y: 1 },
-    ]);
+    ];
+
+    expect(uniqWith(inputList, (x, y) => x.x === y.x && x.y === y.y)).toEqual(expectedList);
   });
 
   it('should return same array when no duplicates in array', () => {
