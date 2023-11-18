@@ -19,7 +19,7 @@ import { disassembleCompleteHangulCharacter } from './disassembleCompleteHangulC
 export function hasBatchim(str: string) {
   const lastChar = str[str.length - 1]!;
   const disassembled = disassembleCompleteHangulCharacter(lastChar);
-  return disassembled != null && disassembled.last !== '';
+  return disassembled !== undefined && disassembled.last !== '';
 }
 
 /**
