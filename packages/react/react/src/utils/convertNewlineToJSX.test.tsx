@@ -8,7 +8,6 @@ describe('convertNewlineToJSX', () => {
     const result = convertNewlineToJSX(input);
 
     render(<React.Fragment>{result}</React.Fragment>);
-    screen.debug();
 
     expect(screen.getByText('There was a problem trying to sign in.')).toBeInTheDocument();
     expect(screen.getByText('please try again.')).toBeInTheDocument();
@@ -19,7 +18,6 @@ describe('convertNewlineToJSX', () => {
     const result = convertNewlineToJSX(input);
 
     render(<React.Fragment>{result}</React.Fragment>);
-    screen.debug();
 
     expect(screen.getByText('There was a problem trying to sign in. please try again.')).toBeInTheDocument();
   });
@@ -29,7 +27,6 @@ describe('convertNewlineToJSX', () => {
     const result = convertNewlineToJSX(input);
 
     render(<React.Fragment>{result}</React.Fragment>);
-    screen.debug();
 
     expect(screen.getByText('There was a problem')).toBeInTheDocument();
     expect(screen.getByText('trying to')).toBeInTheDocument();
