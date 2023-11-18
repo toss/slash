@@ -20,7 +20,7 @@ beforeAll(() => {
 });
 
 describe('DebounceClick', () => {
-  it('should debounce "onClick" event passed to child element by default', async () => {
+  it('should debounce "onClick" event prop passed to child element by default', async () => {
     const user = userEvent.setup({ delay: null });
     const mockFn = jest.fn();
 
@@ -31,6 +31,7 @@ describe('DebounceClick', () => {
     );
 
     const button = screen.getByRole('button');
+
     await user.click(button);
 
     jest.advanceTimersByTime(BEFORE_COMPLETION_TIME);
@@ -39,8 +40,6 @@ describe('DebounceClick', () => {
     jest.advanceTimersByTime(REMAINING_TIME);
     expect(mockFn).toBeCalledTimes(1);
 
-    await user.click(button);
-    await user.click(button);
     await user.click(button);
 
     jest.advanceTimersByTime(BEFORE_COMPLETION_TIME);
@@ -61,6 +60,7 @@ describe('DebounceClick', () => {
     );
 
     const button = screen.getByRole('button');
+
     await user.click(button);
 
     jest.advanceTimersByTime(BEFORE_COMPLETION_TIME);
@@ -69,8 +69,6 @@ describe('DebounceClick', () => {
     jest.advanceTimersByTime(REMAINING_TIME);
     expect(mockFn).toBeCalledTimes(1);
 
-    await user.click(button);
-    await user.click(button);
     await user.click(button);
 
     jest.advanceTimersByTime(BEFORE_COMPLETION_TIME);
