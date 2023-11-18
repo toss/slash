@@ -1,12 +1,13 @@
 import { render, screen } from '@testing-library/react';
+import React from 'react';
 import { convertNewlineToJSX } from './convertNewlineToJSX';
 
 describe('convertNewlineToJSX', () => {
-  it('should handle one newline characters', () => {
+  it('should handle one newline character', () => {
     const input = 'There was a problem trying to sign in.\nplease try again.';
     const result = convertNewlineToJSX(input);
 
-    render(<>{result}</>);
+    render(<React.Fragment>{result}</React.Fragment>);
     screen.debug();
 
     expect(screen.getByText('There was a problem trying to sign in.')).toBeInTheDocument();
@@ -17,7 +18,7 @@ describe('convertNewlineToJSX', () => {
     const input = 'There was a problem trying to sign in. please try again.';
     const result = convertNewlineToJSX(input);
 
-    render(<>{result}</>);
+    render(<React.Fragment>{result}</React.Fragment>);
     screen.debug();
 
     expect(screen.getByText('There was a problem trying to sign in. please try again.')).toBeInTheDocument();
@@ -27,7 +28,7 @@ describe('convertNewlineToJSX', () => {
     const input = 'There was a problem\ntrying to\nsign in. please\ntry again.';
     const result = convertNewlineToJSX(input);
 
-    render(<>{result}</>);
+    render(<React.Fragment>{result}</React.Fragment>);
     screen.debug();
 
     expect(screen.getByText('There was a problem')).toBeInTheDocument();
