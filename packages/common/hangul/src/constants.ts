@@ -1,6 +1,8 @@
 /** @tossdocs-ignore */
 export const COMPLETE_HANGUL_START_CHARCODE = '가'.charCodeAt(0);
 export const COMPLETE_HANGUL_END_CHARCODE = '힣'.charCodeAt(0);
+export const NUMBER_OF_JONGSUNG = 28;
+export const NUMBER_OF_JUNGSUNG = 21;
 
 /**
  * ㄱ -> 'ㄱ'
