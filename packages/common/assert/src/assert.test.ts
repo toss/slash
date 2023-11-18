@@ -56,7 +56,7 @@ describe('assert', () => {
     expect(() => assert(value === 'not_string', new MyError('잘못된 문자열'))).toThrowError(MyError);
   });
 
-  it('should throw an error with a string error message when provided', () => {
+  it('should throw an error when provided string error message', () => {
     const value = false;
     const errorMessage = 'String error message';
 
