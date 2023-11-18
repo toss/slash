@@ -90,8 +90,14 @@ export const HANGUL_CHARACTERS_BY_FIRST_INDEX = [
   'ㅎ',
 ];
 
+/**
+ * 중성으로 올 수 있는 한글 글자
+ */
 export const HANGUL_CHARACTERS_BY_MIDDLE_INDEX = Object.values(DISASSEMBLED_VOWELS_BY_VOWEL) as string[];
 
+/**
+ * 종성으로 올 수 있는 한글 글자
+ */
 export const HANGUL_CHARACTERS_BY_LAST_INDEX = [
   '',
   'ㄱ',
