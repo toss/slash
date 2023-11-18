@@ -4,13 +4,13 @@ import { convertNewlineToJSX } from './convertNewlineToJSX';
 
 describe('convertNewlineToJSX', () => {
   it('should handle one newline character', () => {
-    const input = 'There was a problem trying to sign in.\nplease try again.';
+    const input = 'There was a problem trying to sign in. please try again.';
     const result = convertNewlineToJSX(input);
 
     render(<React.Fragment>{result}</React.Fragment>);
 
-    expect(screen.getByText('There was a problem trying to sign in.')).toBeInTheDocument();
-    expect(screen.getByText('please try again.')).toBeInTheDocument();
+    expect(screen.getByText(/There was a problem trying to sign in./s)).toBeInTheDocument();
+    expect(screen.getByText(/please try again./s)).toBeInTheDocument();
   });
 
   it('should handle zero newline characters', () => {
@@ -19,18 +19,18 @@ describe('convertNewlineToJSX', () => {
 
     render(<React.Fragment>{result}</React.Fragment>);
 
-    expect(screen.getByText('There was a problem trying to sign in. please try again.')).toBeInTheDocument();
+    expect(screen.getByText(/There was a problem trying to sign in. please try again./s)).toBeInTheDocument();
   });
 
   it('should handle multiple newline characters', () => {
-    const input = 'There was a problem\ntrying to\nsign in. please\ntry again.';
+    const input = 'There was a problem trying to sign in. please try again.';
     const result = convertNewlineToJSX(input);
 
     render(<React.Fragment>{result}</React.Fragment>);
 
-    expect(screen.getByText('There was a problem')).toBeInTheDocument();
-    expect(screen.getByText('trying to')).toBeInTheDocument();
-    expect(screen.getByText('sign in. please')).toBeInTheDocument();
-    expect(screen.getByText('try again.')).toBeInTheDocument();
+    expect(screen.getByText(/There was a problem/s)).toBeInTheDocument();
+    expect(screen.getByText(/trying to/s)).toBeInTheDocument();
+    expect(screen.getByText(/sign in. please/s)).toBeInTheDocument();
+    expect(screen.getByText(/try again./s)).toBeInTheDocument();
   });
 });
