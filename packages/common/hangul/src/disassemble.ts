@@ -15,21 +15,21 @@ export function disassembleHangulToGroups(str: string) {
   for (const letter of str) {
     const disassembledComplete = disassembleCompleteHangulCharacter(letter);
 
-    if (disassembledComplete !== undefined) {
+    if (disassembledComplete != null) {
       result.push([...disassembledComplete.first, ...disassembledComplete.middle, ...disassembledComplete.last]);
       continue;
     }
 
     const disassembledConsonant = DISASSEMBLED_CONSONANTS_BY_CONSONANT[letter];
 
-    if (disassembledConsonant !== undefined) {
+    if (disassembledConsonant != null) {
       result.push([...disassembledConsonant]);
       continue;
     }
 
     const disassembledVowel = DISASSEMBLED_VOWELS_BY_VOWEL[letter];
 
-    if (disassembledVowel !== undefined) {
+    if (disassembledVowel != null) {
       result.push([...disassembledVowel]);
       continue;
     }
