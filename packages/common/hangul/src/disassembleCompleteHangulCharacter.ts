@@ -1,10 +1,12 @@
 /** @tossdocs-ignore */
 import {
-  COMPLETE_HANGUL_START_CHARCODE,
   COMPLETE_HANGUL_END_CHARCODE,
+  COMPLETE_HANGUL_START_CHARCODE,
   HANGUL_CHARACTERS_BY_FIRST_INDEX,
   HANGUL_CHARACTERS_BY_LAST_INDEX,
   HANGUL_CHARACTERS_BY_MIDDLE_INDEX,
+  NUMBER_OF_JONGSUNG,
+  NUMBER_OF_JUNGSUNG,
 } from './constants';
 
 export function disassembleCompleteHangulCharacter(
@@ -20,9 +22,9 @@ export function disassembleCompleteHangulCharacter(
 
   const hangulCode = charCode - COMPLETE_HANGUL_START_CHARCODE;
 
-  const lastIndex = hangulCode % 28;
-  const middleIndex = ((hangulCode - lastIndex) / 28) % 21;
-  const firstIndex = Math.floor((hangulCode - lastIndex) / 28 / 21);
+  const lastIndex = hangulCode % NUMBER_OF_JONGSUNG;
+  const middleIndex = ((hangulCode - lastIndex) / NUMBER_OF_JONGSUNG) % NUMBER_OF_JUNGSUNG;
+  const firstIndex = Math.floor((hangulCode - lastIndex) / NUMBER_OF_JONGSUNG / NUMBER_OF_JUNGSUNG);
 
   return {
     first: HANGUL_CHARACTERS_BY_FIRST_INDEX[firstIndex]!,
