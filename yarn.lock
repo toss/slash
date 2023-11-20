@@ -5442,8 +5442,8 @@ __metadata:
     "@testing-library/dom": ^8.13.0
     "@testing-library/jest-dom": ^5.16.4
     "@testing-library/react": ^13.3.0
-    "@toss/rollup-config": "workspace:^0.1.4"
-    "@toss/utils": "workspace:^1.4.5"
+    "@toss/rollup-config": "workspace:^0.1.5"
+    "@toss/utils": "workspace:^1.4.6"
     "@tossteam/jest": ^17
     "@types/jest": ^28.1.8
     "@types/node": ^14.14.41
@@ -5463,7 +5463,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@toss/assert@workspace:^1.1.11, @toss/assert@workspace:packages/common/assert":
+"@toss/assert@workspace:^1.1.12, @toss/assert@workspace:packages/common/assert":
   version: 0.0.0-use.local
   resolution: "@toss/assert@workspace:packages/common/assert"
   dependencies:
@@ -5471,8 +5471,8 @@ __metadata:
     "@babel/preset-env": ^7.16.4
     "@babel/preset-typescript": ^7.18.6
     "@babel/runtime": ^7.16.3
-    "@toss/rollup-config": "workspace:^0.1.4"
-    "@toss/utils": "workspace:^1.4.5"
+    "@toss/rollup-config": "workspace:^0.1.5"
+    "@toss/utils": "workspace:^1.4.6"
     "@tossteam/jest": ^17
     "@types/babel__core": ^7
     "@types/babel__preset-env": ^7
@@ -5497,8 +5497,8 @@ __metadata:
     "@babel/runtime": ^7.16.5
     "@testing-library/jest-dom": ^5.16.4
     "@testing-library/react": ^13.3.0
-    "@toss/error-boundary": "workspace:^1.4.5"
-    "@toss/rollup-config": "workspace:^0.1.4"
+    "@toss/error-boundary": "workspace:^1.4.6"
+    "@toss/rollup-config": "workspace:^0.1.5"
     "@tossteam/jest": ^17
     "@types/babel__core": ^7
     "@types/babel__preset-env": ^7
@@ -5526,8 +5526,8 @@ __metadata:
   dependencies:
     "@babel/core": ^7
     "@babel/runtime": ^7.13.10
-    "@toss/react": "workspace:^1.6.0"
-    "@toss/rollup-config": "workspace:^0.1.4"
+    "@toss/react": "workspace:^1.6.1"
+    "@toss/rollup-config": "workspace:^0.1.5"
     "@tossteam/jest": ^17
     "@types/jest": ^28.1.8
     "@types/node": ^14.14.41
@@ -5560,7 +5560,7 @@ __metadata:
     "@rollup/plugin-babel": ^5.3.1
     "@rollup/plugin-commonjs": ^22.0.1
     "@rollup/plugin-node-resolve": ^13.3.0
-    "@toss/rollup-config": "workspace:^0.1.4"
+    "@toss/rollup-config": "workspace:^0.1.5"
     "@tossteam/jest": ^17
     "@types/babel__plugin-transform-runtime": ^7
     "@types/babel__preset-env": ^7
@@ -5585,7 +5585,7 @@ __metadata:
   dependencies:
     "@babel/core": ^7
     "@babel/runtime": ^7.13.10
-    "@toss/rollup-config": "workspace:^0.1.4"
+    "@toss/rollup-config": "workspace:^0.1.5"
     "@tossteam/jest": ^17
     "@types/babel__core": ^7
     "@types/jest": ^28.1.8
@@ -5616,8 +5616,8 @@ __metadata:
     "@emotion/react": ^11.9.3
     "@testing-library/jest-dom": ^5.16.4
     "@testing-library/react": ^13.3.0
-    "@toss/rollup-config": "workspace:^0.1.4"
-    "@toss/utils": "workspace:^1.4.5"
+    "@toss/rollup-config": "workspace:^0.1.5"
+    "@toss/utils": "workspace:^1.4.6"
     "@tossteam/jest": ^17
     "@types/babel__core": ^7
     "@types/jest": ^28.1.8
@@ -5642,7 +5642,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@toss/error-boundary@workspace:^1.4.5, @toss/error-boundary@workspace:packages/react/error-boundary":
+"@toss/error-boundary@workspace:^1.4.6, @toss/error-boundary@workspace:packages/react/error-boundary":
   version: 0.0.0-use.local
   resolution: "@toss/error-boundary@workspace:packages/react/error-boundary"
   dependencies:
@@ -5654,9 +5654,9 @@ __metadata:
     "@testing-library/jest-dom": ^5.16.4
     "@testing-library/react": ^13.3.0
     "@testing-library/user-event": ^14.4.3
-    "@toss/react": "workspace:^1.6.0"
-    "@toss/rollup-config": "workspace:^0.1.4"
-    "@toss/utils": "workspace:^1.4.5"
+    "@toss/react": "workspace:^1.6.1"
+    "@toss/rollup-config": "workspace:^0.1.5"
+    "@toss/utils": "workspace:^1.4.6"
     "@tossteam/jest": ^17
     "@types/babel__core": ^7
     "@types/babel__preset-env": ^7
@@ -5691,7 +5691,7 @@ __metadata:
     "@babel/runtime": ^7.16.5
     "@testing-library/jest-dom": ^5.16.4
     "@testing-library/react": ^13.3.0
-    "@toss/rollup-config": "workspace:^0.1.4"
+    "@toss/rollup-config": "workspace:^0.1.5"
     "@tossteam/jest": ^17
     "@types/babel__core": ^7
     "@types/babel__preset-env": ^7
@@ -5718,7 +5718,7 @@ __metadata:
     "@babel/core": ^7
     "@babel/runtime": ^7.13.10
     "@testing-library/jest-dom": ^5.16.4
-    "@toss/rollup-config": "workspace:^0.1.4"
+    "@toss/rollup-config": "workspace:^0.1.5"
     "@tossteam/jest": ^17
     "@types/jest": ^28.1.8
     "@types/node": ^14.14.41
@@ -5732,7 +5732,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@toss/impression-area@workspace:^1.3.0, @toss/impression-area@workspace:packages/react/impression-area":
+"@toss/impression-area@workspace:^1.3.1, @toss/impression-area@workspace:packages/react/impression-area":
   version: 0.0.0-use.local
   resolution: "@toss/impression-area@workspace:packages/react/impression-area"
   dependencies:
@@ -5740,9 +5740,9 @@ __metadata:
     "@babel/runtime": ^7.13.10
     "@testing-library/jest-dom": ^5.16.4
     "@testing-library/react": ^13.3.0
-    "@toss/react": "workspace:^1.6.0"
-    "@toss/rollup-config": "workspace:^0.1.4"
-    "@toss/utils": "workspace:^1.4.5"
+    "@toss/react": "workspace:^1.6.1"
+    "@toss/rollup-config": "workspace:^0.1.5"
+    "@toss/utils": "workspace:^1.4.6"
     "@tossteam/jest": ^17
     "@types/jest": ^28.1.8
     "@types/lodash.debounce": ^4
@@ -5794,10 +5794,10 @@ __metadata:
   dependencies:
     "@babel/core": ^7
     "@babel/runtime": ^7.13.10
-    "@toss/impression-area": "workspace:^1.3.0"
-    "@toss/react": "workspace:^1.6.0"
-    "@toss/rollup-config": "workspace:^0.1.4"
-    "@toss/utils": "workspace:^1.4.5"
+    "@toss/impression-area": "workspace:^1.3.1"
+    "@toss/react": "workspace:^1.6.1"
+    "@toss/rollup-config": "workspace:^0.1.5"
+    "@toss/utils": "workspace:^1.4.6"
     "@tossteam/jest": ^17
     "@types/jest": ^28.1.8
     "@types/lodash.debounce": ^4
@@ -5825,7 +5825,7 @@ __metadata:
   dependencies:
     "@babel/core": ^7
     "@babel/runtime": ^7.13.10
-    "@toss/rollup-config": "workspace:^0.1.4"
+    "@toss/rollup-config": "workspace:^0.1.5"
     "@tossteam/jest": ^17
     "@types/jest": ^28.1.8
     "@types/node": ^14.14.41
@@ -5844,7 +5844,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@toss/react@workspace:^1.6.0, @toss/react@workspace:packages/react/react":
+"@toss/react@workspace:^1.6.1, @toss/react@workspace:packages/react/react":
   version: 0.0.0-use.local
   resolution: "@toss/react@workspace:packages/react/react"
   dependencies:
@@ -5861,9 +5861,9 @@ __metadata:
     "@testing-library/dom": ^8.13.0
     "@testing-library/react": ^13.3.0
     "@testing-library/user-event": ^14.2.0
-    "@toss/rollup-config": "workspace:^0.1.4"
-    "@toss/storage": "workspace:^1.3.0"
-    "@toss/utils": "workspace:^1.4.5"
+    "@toss/rollup-config": "workspace:^0.1.5"
+    "@toss/storage": "workspace:^1.3.1"
+    "@toss/utils": "workspace:^1.4.6"
     "@tossteam/jest": ^17
     "@types/babel__preset-env": ^7
     "@types/jest": ^28.1.8
@@ -5904,7 +5904,7 @@ __metadata:
     "@babel/runtime": ^7.13.10
     "@testing-library/jest-dom": ^5.16.4
     "@testing-library/react": ^13.3.0
-    "@toss/rollup-config": "workspace:^0.1.4"
+    "@toss/rollup-config": "workspace:^0.1.5"
     "@tossteam/jest": ^17
     "@types/jest": ^28.1.8
     "@types/node": ^14.14.41
@@ -5934,9 +5934,9 @@ __metadata:
     "@babel/runtime": ^7.13.10
     "@testing-library/jest-dom": ^5.16.4
     "@testing-library/react": ^13.3.0
-    "@toss/assert": "workspace:^1.1.11"
-    "@toss/error-boundary": "workspace:^1.4.5"
-    "@toss/rollup-config": "workspace:^0.1.4"
+    "@toss/assert": "workspace:^1.1.12"
+    "@toss/error-boundary": "workspace:^1.4.6"
+    "@toss/rollup-config": "workspace:^0.1.5"
     "@tossteam/jest": ^17
     "@types/jest": ^28.1.8
     "@types/node": ^14.14.41
@@ -5956,7 +5956,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@toss/rollup-config@workspace:^0.1.4, @toss/rollup-config@workspace:configs/rollup":
+"@toss/rollup-config@workspace:^0.1.5, @toss/rollup-config@workspace:configs/rollup":
   version: 0.0.0-use.local
   resolution: "@toss/rollup-config@workspace:configs/rollup"
   dependencies:
@@ -5982,7 +5982,7 @@ __metadata:
     "@babel/runtime": ^7.16.5
     "@testing-library/jest-dom": ^5.16.4
     "@testing-library/react": ^13.3.0
-    "@toss/rollup-config": "workspace:^0.1.4"
+    "@toss/rollup-config": "workspace:^0.1.5"
     "@tossteam/jest": ^17
     "@types/babel__core": ^7
     "@types/babel__preset-env": ^7
@@ -6035,7 +6035,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@toss/storage@workspace:^1.3.0, @toss/storage@workspace:packages/common/storage":
+"@toss/storage@workspace:^1.3.1, @toss/storage@workspace:packages/common/storage":
   version: 0.0.0-use.local
   resolution: "@toss/storage@workspace:packages/common/storage"
   dependencies:
@@ -6072,12 +6072,12 @@ __metadata:
     "@testing-library/react": ^13.3.0
     "@testing-library/react-hooks": ^5.1.0
     "@testing-library/user-event": ^14.1.1
-    "@toss/assert": "workspace:^1.1.11"
-    "@toss/react": "workspace:^1.6.0"
-    "@toss/rollup-config": "workspace:^0.1.4"
-    "@toss/storage": "workspace:^1.3.0"
-    "@toss/use-query-param": "workspace:^1.2.0"
-    "@toss/utils": "workspace:^1.4.5"
+    "@toss/assert": "workspace:^1.1.12"
+    "@toss/react": "workspace:^1.6.1"
+    "@toss/rollup-config": "workspace:^0.1.5"
+    "@toss/storage": "workspace:^1.3.1"
+    "@toss/use-query-param": "workspace:^1.2.1"
+    "@toss/utils": "workspace:^1.4.6"
     "@tossteam/jest": ^17
     "@types/babel__core": ^7
     "@types/babel__preset-env": ^7
@@ -6114,7 +6114,7 @@ __metadata:
   dependencies:
     "@babel/core": ^7
     "@testing-library/react": ^13.3.0
-    "@toss/rollup-config": "workspace:^0.1.4"
+    "@toss/rollup-config": "workspace:^0.1.5"
     "@tossteam/jest": ^17
     "@types/babel__core": ^7
     "@types/jest": ^28.1.8
@@ -6150,9 +6150,9 @@ __metadata:
     "@testing-library/jest-dom": ^5.16.4
     "@testing-library/react": ^13.3.0
     "@testing-library/user-event": ^14.2.0
-    "@toss/react": "workspace:^1.6.0"
-    "@toss/rollup-config": "workspace:^0.1.4"
-    "@toss/utils": "workspace:^1.4.5"
+    "@toss/react": "workspace:^1.6.1"
+    "@toss/rollup-config": "workspace:^0.1.5"
+    "@toss/utils": "workspace:^1.4.6"
     "@tossteam/jest": ^17
     "@types/babel__preset-env": ^7
     "@types/jest": ^28.1.8
@@ -6175,7 +6175,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@toss/use-query-param@workspace:^1.2.0, @toss/use-query-param@workspace:packages/react/use-query-param":
+"@toss/use-query-param@workspace:^1.2.1, @toss/use-query-param@workspace:packages/react/use-query-param":
   version: 0.0.0-use.local
   resolution: "@toss/use-query-param@workspace:packages/react/use-query-param"
   dependencies:
@@ -6185,7 +6185,7 @@ __metadata:
     "@babel/runtime": ^7.16.3
     "@testing-library/jest-dom": ^5.16.4
     "@testing-library/react": ^13.3.0
-    "@toss/rollup-config": "workspace:^0.1.4"
+    "@toss/rollup-config": "workspace:^0.1.5"
     "@tossteam/jest": ^17
     "@types/babel__core": ^7
     "@types/babel__preset-env": ^7
@@ -6228,7 +6228,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@toss/utils@workspace:^1.4.5, @toss/utils@workspace:packages/common/utils":
+"@toss/utils@workspace:^1.4.6, @toss/utils@workspace:packages/common/utils":
   version: 0.0.0-use.local
   resolution: "@toss/utils@workspace:packages/common/utils"
   dependencies:
@@ -6243,7 +6243,7 @@ __metadata:
     "@rollup/plugin-commonjs": ^22.0.1
     "@rollup/plugin-json": ^4.1.0
     "@rollup/plugin-node-resolve": ^13.3.0
-    "@toss/rollup-config": "workspace:^0.1.4"
+    "@toss/rollup-config": "workspace:^0.1.5"
     "@tossteam/jest": ^17
     "@types/babel__core": ^7
     "@types/babel__preset-env": ^7
@@ -6268,8 +6268,8 @@ __metadata:
   dependencies:
     "@babel/core": ^7
     "@babel/runtime": ^7.13.10
-    "@toss/rollup-config": "workspace:^0.1.4"
-    "@toss/utils": "workspace:^1.4.5"
+    "@toss/rollup-config": "workspace:^0.1.5"
+    "@toss/utils": "workspace:^1.4.6"
     "@tossteam/jest": ^17
     "@types/jest": ^28.1.8
     "@types/node": ^14.14.41
@@ -11158,8 +11158,8 @@ __metadata:
     "@docusaurus/types": ^2.1.0
     "@mdx-js/react": ^1.6.21
     "@svgr/webpack": ^5.5.0
-    "@toss/react": "workspace:^1.6.0"
-    "@toss/utils": "workspace:^1.4.5"
+    "@toss/react": "workspace:^1.6.1"
+    "@toss/utils": "workspace:^1.4.6"
     "@types/babel__preset-env": ^7
     "@types/fs-extra": ^9.0.13
     "@types/node": ^18.8.4
