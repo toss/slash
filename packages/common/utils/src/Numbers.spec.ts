@@ -57,6 +57,16 @@ describe('Numbers', () => {
         shouldHaveSpaceBeforeWon: true,
       })
     ).toEqual('1,320만 9,802 원');
+    expect(
+      formatToKRW(13209802, { 
+        floorUnit: 10000 
+      })
+    ).toEqual('1,320만원');
+    expect(
+      formatToKRW(13209802, { 
+        ceilUnit: 10000 
+      })
+    ).toEqual('1,321만원');
   });
 
   test('formatPhoneNumber', () => {

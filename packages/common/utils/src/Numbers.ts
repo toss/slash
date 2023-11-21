@@ -38,18 +38,12 @@ export function formatToKoreanNumber(
   value: number,
   options: { floorUnit?: number; ceilUnit?: number; formatAllDigits?: boolean } = {},
 ) {
-  let val = 0;
-  if (options.floorUnit > 0) {
-    val = floorToUnit(value, options.floorUnit || 1);
-  } else if (options.ceilUnit > 0) {
-    val = ceilToUnit(value, options.ceilUnit || 1);
+  const unit = options.floorUnit !== undefined ? floorToUnit(value, options.floorUnit || 1) : ceilToUnit(value, options.ceilUnit || 1);
+  if(unit === 0){
+    return '0';
   }
-
-  if (val === 0) {
-    return "0";
-  }
-
-  return chunk(val, 4)
+  
+  return chunk(unit, 4)
     .reduce((prevFormatted, currChunkNum, index) => {
       if (currChunkNum === 0) {
         return prevFormatted;
@@ -59,7 +53,7 @@ export function formatToKoreanNumber(
       const unit = units[index * 4];
 
       return `${val}${unit} ${prevFormatted}`;
-    }, "")
+    }, '')
     .trim();
 }
 
