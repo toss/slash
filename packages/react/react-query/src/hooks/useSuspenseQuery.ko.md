@@ -1,8 +1,8 @@
 ---
-title: useSuspendedQuery
+title: useSuspenseQuery
 ---
 
-# useSuspendedQuery
+# useSuspenseQuery
 
 기본적으로 suspense를 default로 이용하는 useQuery입니다.
 
@@ -10,26 +10,26 @@ title: useSuspendedQuery
 
 react-query useQuery의 반환값과 대부분 동일하나 data가 non-nullable입니다. 추가적으로 error, isLoading, isError, isFetching이 존재하지 않습니다.
 
-그러나 useSuspendedQuery의 enabled(기본 값은 true)가 false일 경우 data에 undefined가 올 수 있습니다.
+그러나 useSuspenseQuery의 enabled(기본 값은 true)가 false일 경우 data에 undefined가 올 수 있습니다.
 
 ## Examples
 
 ```typescript
 // data: number
-const { data } = useSuspendedQuery({
+const { data } = useSuspenseQuery({
   queryKey: ['key'],
   queryFn: () => 1,
 });
 
 // data: number | undefined
-const { data } = useSuspendedQuery({
+const { data } = useSuspenseQuery({
   queryKey: ['key'],
   queryFn: () => 1,
   enabled: Math.random() > 0.5,
 });
 
 // data: undefined
-const { data } = useSuspendedQuery({
+const { data } = useSuspenseQuery({
   queryKey: ['key'],
   queryFn: () => 1,
   enabled: false,

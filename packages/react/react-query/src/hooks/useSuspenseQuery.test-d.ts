@@ -1,6 +1,6 @@
 /** @tossdocs-ignore */
 import { expectError, expectType } from 'tsd';
-import { useSuspendedQuery } from '../../dist/hooks/useSuspendedQuery';
+import { useSuspenseQuery } from './useSuspenseQuery';
 
 const queryKey = ['key'] as const;
 const queryFn = async () => 'response' as const;
@@ -11,36 +11,36 @@ type AwaitedQueryFnReturn = Awaited<ReturnType<typeof queryFn>>;
 /* eslint-disable react-hooks/rules-of-hooks */
 // arg1:queryKey, arg2: queryFn, arg3: options
 expectType<AwaitedQueryFnReturn>(
-  useSuspendedQuery(queryKey, queryFn, {
+  useSuspenseQuery(queryKey, queryFn, {
     enabled: true,
   }).data
 );
 expectType<AwaitedQueryFnReturn | undefined>(
-  useSuspendedQuery(queryKey, queryFn, {
+  useSuspenseQuery(queryKey, queryFn, {
     enabled: boolean,
   }).data
 );
 expectType<undefined>(
-  useSuspendedQuery(queryKey, queryFn, {
+  useSuspenseQuery(queryKey, queryFn, {
     enabled: false,
   }).data
 );
 
 // arg1:queryKey, arg2: options
 expectType<AwaitedQueryFnReturn>(
-  useSuspendedQuery(queryKey, {
+  useSuspenseQuery(queryKey, {
     queryFn,
     enabled: true,
   }).data
 );
 expectType<AwaitedQueryFnReturn | undefined>(
-  useSuspendedQuery(queryKey, {
+  useSuspenseQuery(queryKey, {
     queryFn,
     enabled: boolean,
   }).data
 );
 expectType<undefined>(
-  useSuspendedQuery(queryKey, {
+  useSuspenseQuery(queryKey, {
     queryFn,
     enabled: false,
   }).data
@@ -48,21 +48,21 @@ expectType<undefined>(
 
 // arg1: options
 expectType<AwaitedQueryFnReturn>(
-  useSuspendedQuery({
+  useSuspenseQuery({
     queryKey,
     queryFn,
     enabled: true,
   }).data
 );
 expectType<AwaitedQueryFnReturn | undefined>(
-  useSuspendedQuery({
+  useSuspenseQuery({
     queryKey,
     queryFn,
     enabled: boolean,
   }).data
 );
 expectType<undefined>(
-  useSuspendedQuery({
+  useSuspenseQuery({
     queryKey,
     queryFn,
     enabled: false,
@@ -70,4 +70,4 @@ expectType<undefined>(
 );
 
 // no arg
-expectError(useSuspendedQuery());
+expectError(useSuspenseQuery());
