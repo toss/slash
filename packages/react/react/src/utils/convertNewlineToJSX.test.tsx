@@ -4,7 +4,7 @@ import { convertNewlineToJSX } from './convertNewlineToJSX';
 
 describe('convertNewlineToJSX', () => {
   it('should handle one newline character', () => {
-    const input = 'There was a problem trying to sign in. please try again.';
+    const input = 'There was a problem trying to sign in.\n please try again.';
     const result = convertNewlineToJSX(input);
 
     render(<React.Fragment>{result}</React.Fragment>);
@@ -23,7 +23,7 @@ describe('convertNewlineToJSX', () => {
   });
 
   it('should handle multiple newline characters', () => {
-    const input = 'There was a problem trying to sign in. please try again.';
+    const input = 'There was a problem\n trying to\n sign in. please\n try again.';
     const result = convertNewlineToJSX(input);
 
     render(<React.Fragment>{result}</React.Fragment>);
