@@ -16,7 +16,7 @@ describe('TypedStorage', () => {
     });
 
     it('should return null if options parameter is empty', () => {
-      const key = 'get-asd-key';
+      const key = 'get-empty-options-key';
       const typed = new TypedStorage(key);
 
       expect(typed.get()).toBeNull();
