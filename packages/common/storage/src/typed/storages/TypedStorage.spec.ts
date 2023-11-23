@@ -7,6 +7,20 @@ describe('TypedStorage', () => {
       const typed = new TypedStorage(key, { initialValue: 'some-value' });
       expect(typed.get()).toEqual('some-value');
     });
+
+    it('should return null due to "Date" initialValue', () => {
+      const key = 'get-null-key';
+      const typed = new TypedStorage(key, { initialValue: Date });
+
+      expect(typed.get()).toBeNull();
+    });
+
+    it('should return null if options parameter is empty', () => {
+      const key = 'get-asd-key';
+      const typed = new TypedStorage(key);
+
+      expect(typed.get()).toBeNull();
+    });
   });
 
   describe('using set() method', () => {
