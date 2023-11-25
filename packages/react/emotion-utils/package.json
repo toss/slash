@@ -1,6 +1,6 @@
 {
   "name": "@toss/emotion-utils",
-  "version": "1.1.11",
+  "version": "1.1.12",
   "sideEffects": false,
   "exports": {
     ".": {
@@ -23,7 +23,7 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.14.8",
-    "@toss/utils": "workspace:^1.4.5",
+    "@toss/utils": "workspace:^1.4.6",
     "csstype": "^3.0.9"
   },
   "devDependencies": {
@@ -36,7 +36,7 @@
     "@emotion/react": "^11.9.3",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
-    "@toss/rollup-config": "workspace:^0.1.4",
+    "@toss/rollup-config": "workspace:^0.1.5",
     "@tossteam/jest": "^17",
     "@types/babel__core": "^7",
     "@types/jest": "^28.1.8",
