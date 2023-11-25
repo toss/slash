@@ -1,6 +1,8 @@
 /** @tossdocs-ignore */
 export const COMPLETE_HANGUL_START_CHARCODE = '가'.charCodeAt(0);
 export const COMPLETE_HANGUL_END_CHARCODE = '힣'.charCodeAt(0);
+export const NUMBER_OF_JONGSUNG = 28;
+export const NUMBER_OF_JUNGSUNG = 21;
 
 /**
  * ㄱ -> 'ㄱ'
@@ -90,8 +92,14 @@ export const HANGUL_CHARACTERS_BY_FIRST_INDEX = [
   'ㅎ',
 ];
 
+/**
+ * 중성으로 올 수 있는 한글 글자
+ */
 export const HANGUL_CHARACTERS_BY_MIDDLE_INDEX = Object.values(DISASSEMBLED_VOWELS_BY_VOWEL) as string[];
 
+/**
+ * 종성으로 올 수 있는 한글 글자
+ */
 export const HANGUL_CHARACTERS_BY_LAST_INDEX = [
   '',
   'ㄱ',
