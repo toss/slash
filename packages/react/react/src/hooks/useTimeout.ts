@@ -6,7 +6,7 @@ export function useTimeout(callback: () => void, delay = 0) {
 
   useEffect(() => {
     savedCallback.current = callback;
-  });
+  }, [callback]);
 
   useEffect(() => {
     function handleTimeout() {
@@ -15,10 +15,10 @@ export function useTimeout(callback: () => void, delay = 0) {
       }
     }
 
-    const id = window.setTimeout(handleTimeout, delay);
+    const timeoutId = window.setTimeout(handleTimeout, delay);
 
     return () => {
-      window.clearTimeout(id);
+      window.clearTimeout(timeoutId);
     };
   }, [delay]);
 }

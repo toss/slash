@@ -1,6 +1,6 @@
 {
   "name": "@toss/validators",
-  "version": "1.1.10",
+  "version": "1.2.1",
   "sideEffects": false,
   "exports": {
     ".": {
@@ -21,12 +21,12 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@toss/utils": "workspace:^1.4.4"
+    "@toss/utils": "workspace:^1.4.6"
   },
   "devDependencies": {
     "@babel/core": "^7",
     "@babel/runtime": "^7.13.10",
-    "@toss/rollup-config": "workspace:^0.1.4",
+    "@toss/rollup-config": "workspace:^0.1.5",
     "@tossteam/jest": "^17",
     "@types/jest": "^28.1.8",
     "@types/node": "^14.14.41",
