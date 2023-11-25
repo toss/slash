@@ -2,7 +2,7 @@
 import { usePreservedCallback, useRefEffect } from '@toss/react';
 import { noop } from '@toss/utils';
 import debounce from 'lodash.debounce';
-import { useMemo, useRef } from 'react';
+import { useCallback, useEffect, useMemo, useRef } from 'react';
 import { ImpressionAreaProps } from './ImpressionArea';
 
 type Options = Pick<
@@ -16,59 +16,86 @@ export function useImpressionRef<Element extends HTMLElement>({
   timeThreshold = 0,
   root,
   rootMargin,
-  areaThreshold: impressionRatio = 0,
+  areaThreshold: intersectThreshold = 0,
 }: Options) {
   const onImpressionStart = usePreservedCallback(_onImpressionStart ?? noop);
   const onImpressionEnd = usePreservedCallback(_onImpressionEnd ?? noop);
 
-  const state = useRef({ isImpressed: false }).current;
+  const isIntersectingRef = useRef(false);
+  const setDebouncedIsImpressed = useSetDebouncedBooleanValue({
+    onValueChange: isImpressed => {
+      if (isImpressed) {
+        onImpressionStart();
+      } else {
+        onImpressionEnd();
+      }
+    },
+    timeThreshold,
+  });
 
+  const intersectionObserverRef = useIntersectionObserver<Element>(
+    ({ isIntersecting }) => {
+      if (document.visibilityState === 'hidden') {
+        return;
+      }
+
+      isIntersectingRef.current = isIntersecting;
+      setDebouncedIsImpressed(isIntersecting);
+    },
+    {
+      root,
+      rootMargin,
+      threshold: intersectThreshold,
+    }
+  );
+
+  useDocumentVisibilityChange(documentVisible => {
+    if (!isIntersectingRef.current) {
+      return;
+    }
+
+    setDebouncedIsImpressed(documentVisible);
+  });
+
+  return intersectionObserverRef;
+}
+
+function useDocumentVisibilityChange(_callback: (isVisible: boolean) => void) {
+  const callback = usePreservedCallback(_callback);
+
+  useEffect(() => {
+    const handleVisibilityChange = () => {
+      callback(document.visibilityState === 'visible');
+    };
+
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+
+    return () => {
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
+    };
+  }, [callback]);
+}
+
+function useIntersectionObserver<Element extends HTMLElement>(
+  _callback: (entry: IntersectionObserverEntry) => void,
+  options: IntersectionObserverInit
+) {
+  const callback = usePreservedCallback(_callback);
   const observer = useMemo(() => {
     if (typeof IntersectionObserver === 'undefined') {
       return;
     }
 
-    const handleImpression = (entries: IntersectionObserverEntry[]) => {
-      const entry = entries[0]!;
-      const currentRatio = entry.intersectionRatio;
-
-      const didImpressionEnd = impressionRatio === 0 ? !entry.isIntersecting : currentRatio < impressionRatio;
-
-      const handleImpressionStart = debounce(() => {
-        if (state.isImpressed) {
-          return;
-        }
-
-        onImpressionStart?.();
-        state.isImpressed = true;
-      }, timeThreshold);
-
-      const handleImpressionEnd = debounce(() => {
-        if (!state.isImpressed) {
-          return;
-        }
-
-        onImpressionEnd?.();
-        state.isImpressed = false;
-      }, timeThreshold);
-
-      if (didImpressionEnd) {
-        handleImpressionStart.cancel();
-        handleImpressionEnd();
-      } else {
-        handleImpressionEnd.cancel();
-        handleImpressionStart();
+    const observer = new IntersectionObserver(([entry]) => {
+      if (!entry) {
+        return;
       }
-    };
 
-    const observer = new IntersectionObserver(handleImpression, {
-      root,
-      rootMargin,
-      threshold: impressionRatio,
-    });
+      callback(entry);
+    }, options);
 
     return observer;
-  }, [impressionRatio, onImpressionEnd, onImpressionStart, root, rootMargin, state, timeThreshold]);
+  }, [callback, options]);
 
   const ref = useRefEffect<Element>(
     element => {
@@ -78,8 +105,41 @@ export function useImpressionRef<Element extends HTMLElement>({
         observer?.unobserve(element);
       };
     },
-    [onImpressionStart, onImpressionEnd]
+    [callback, options]
   );
 
   return ref;
+}
+
+function useSetDebouncedBooleanValue(options: { onValueChange: (newValue: boolean) => void; timeThreshold: number }) {
+  const { onValueChange, timeThreshold } = options;
+  const handleValueChange = usePreservedCallback(onValueChange);
+  const ref = useRef({ value: false, cancelPrevDebounce: () => { } });
+
+  const setDebouncedValue = useCallback(
+    (newValue: boolean) => {
+      if (newValue === ref.current.value) {
+        return;
+      }
+
+      const debounced = debounce(() => {
+        handleValueChange(newValue);
+        ref.current.value = newValue;
+      }, timeThreshold);
+
+      ref.current.cancelPrevDebounce();
+      debounced();
+      ref.current.cancelPrevDebounce = debounced.cancel;
+    },
+    [handleValueChange, timeThreshold]
+  );
+
+  useEffect(() => {
+    const current = ref.current;
+    return () => {
+      current.cancelPrevDebounce();
+    };
+  }, []);
+
+  return setDebouncedValue;
 }

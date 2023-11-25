@@ -82,10 +82,10 @@ const KyoboLifeFunnel = () => {
   return (
     <Funnel>
       <Funnel.Step name="apartment-type">
-        <ApartmentTypeStep goToSelectRegion={() => setState(prev => ({...prev, step: 'select-region', isApartment: true})} />
+        <ApartmentTypeStep goToSelectRegion={() => setState(prev => ({...prev, step: 'select-region', isApartment: true}))} />
       </Funnel.Step>
       <Funnel.Step name="select-region">
-        <SelectRegionStep onSelectRegion={(regionInfo) => setState(prev => ({...prev, step: 'done', region: regionInfo})} />
+        <SelectRegionStep onSelectRegion={(regionInfo) => setState(prev => ({...prev, step: 'done', region: regionInfo}))} />
       </Funnel.Step>
       <Funnel.Step name="done">
         <DoneStep request={() => requestForConsultation(state)} />

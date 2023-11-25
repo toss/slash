@@ -1,11 +1,11 @@
-interface Props<Case extends string> {
+interface Props<Case extends string | number> {
   caseBy: Partial<Record<Case, JSX.Element | null>>;
   value: Case;
   defaultComponent?: JSX.Element | null;
 }
 
 /** @tossdocs-ignore */
-export function SwitchCase<Case extends string>({
+export function SwitchCase<Case extends string | number>({
   value,
   caseBy,
   defaultComponent: defaultComponent = null,
