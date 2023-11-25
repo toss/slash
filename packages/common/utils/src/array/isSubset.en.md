@@ -3,7 +3,7 @@
 Check if the first array is a subset of the second array
 
 ```typescript
-function isSubset(subSet: Array<string | number>, wholeSet: Array<string | number>): boolean;
+function isSubset(subset: Array<string | number>, wholeSet: Array<string | number>): boolean;
 ```
 
 ## Examples
