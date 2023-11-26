@@ -11,32 +11,32 @@ describe('HiddenHeading', () => {
     expect(heading?.innerHTML).toEqual('Test');
   });
 
-  it('HiddenHeading의 as의 기본값은 h1이다.', () => {
+  it('should have the default tag as h1.', () => {
     const { container } = render(<HiddenHeading>Test</HiddenHeading>);
 
     expect(container.querySelector('h1')).toBeInTheDocument();
   });
 
-  it('HiddenHeading의 as의 기본값은 h2가 아니다.', () => {
+  it('should not have the default tag as h2.', () => {
     const { container } = render(<HiddenHeading>Test</HiddenHeading>);
 
     expect(container.querySelector('h2')).not.toBeInTheDocument();
   });
 
-  it('HiddenHeading의 as를 통해 as의 태그로 렌더링된다', () => {
+  it('should render with the provided "as" tag.', () => {
     const { container } = render(<HiddenHeading as="h3">Test</HiddenHeading>);
 
     expect(container.querySelector('h3')).toBeInTheDocument();
   });
 
-  it('HiddenHeading의 className 속성을 통해 className을 줄 수 있다.', () => {
+  it('should accept a className through the className attribute.', () => {
     const className = 'class-name';
     const { container } = render(<HiddenHeading className={className}>Test</HiddenHeading>);
 
     expect(container.querySelector('h1')).toHaveClass(className);
   });
 
-  it('HiddenHeading은 default style을 가진다.', () => {
+  it('should have default styles.', () => {
     const { container } = render(<HiddenHeading as="h3">Test</HiddenHeading>);
 
     const defaultStyle = `
