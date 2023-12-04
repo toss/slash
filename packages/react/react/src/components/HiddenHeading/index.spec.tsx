@@ -2,7 +2,7 @@ import { render } from '@testing-library/react';
 import { HiddenHeading } from '.';
 
 describe('HiddenHeading', () => {
-  it('should provide an id.', () => {
+  it('can be given an id attribute.', () => {
     render(<HiddenHeading id="test-heading">Test</HiddenHeading>);
 
     const heading = document.getElementById('test-heading');
