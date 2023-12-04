@@ -2,9 +2,9 @@
 /** @jsxImportSource react */
 import { Children, Fragment, isValidElement, PropsWithChildren, ReactNode } from 'react';
 
-type Props = {
+interface Props extends PropsWithChildren {
   with: ReactNode;
-} & PropsWithChildren;
+}
 
 export function Separated({ children, with: separator }: Props) {
   const childrenArray = Children.toArray(children).filter(isValidElement);
