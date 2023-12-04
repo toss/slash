@@ -4,13 +4,13 @@ title: TypedStorage
 
 # TypedStorage
 
-There are some repetitive logics for WebStorage:
+There are some repetitive logics for Web Storage:
 
 - JSON.parse and JSON.stringify
 - try/catch
 - ...
 
-`TypedStorage` makes WebStorage easy-to-use and type-safe by abstracting those repetitive logics.
+`TypedStorage` makes Web Storage easy-to-use and type-safe by abstracting those repetitive logics.
 
 ## Note
 
