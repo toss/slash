@@ -5,7 +5,7 @@ sidebar_label: decommaizeNumber
 
 # decommaizeNumber
 
-[commaize](https://slash.page/ko/libraries/common/utils/src/Numbers_commaize.i18n)된 숫자에서 콤마를 제거합니다.
+[commaize](https://slash.page/ko/libraries/common/utils/src/Numbers_commaizeNumber.i18n)된 숫자에서 콤마를 제거합니다.
 
 ```typescript
 function decommaizeNumber(numStr: string): number;
