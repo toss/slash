@@ -24,12 +24,12 @@ function mockNavigator(mock: FakeNavigator) {
   fakeNavigator = mock;
 }
 
-describe('clipboard는', () => {
+describe('clipboard', () => {
   afterEach(() => {
     clearNavigator();
   });
 
-  test('writeText로 클립보드에 텍스트를 입력할 수 있다.', async () => {
+  it('should be able to enter text into the clipboard', async () => {
     mockNavigator({
       clipboard: {
         writeText: jest.fn(),
@@ -37,12 +37,12 @@ describe('clipboard는', () => {
     });
 
     const spy = jest.spyOn(navigator.clipboard, 'writeText');
-    const success = await clipboard.writeText('카피');
+    const success = await clipboard.writeText('copy!');
     expect(spy).toHaveBeenCalled();
     expect(success).toBe(true);
   });
 
-  test('IE에서는 writeText 대신 execCommand 한다.', async () => {
+  it('should use execCommand instead of writeText in IE', async () => {
     document.queryCommandSupported = jest.fn(command => command === 'copy');
     document.execCommand = jest.fn();
 
@@ -51,8 +51,24 @@ describe('clipboard는', () => {
     });
 
     const spy = jest.spyOn(document, 'execCommand');
-    const success = await clipboard.writeText('IE 카피');
+    const success = await clipboard.writeText('IE copy!');
     expect(spy).toHaveBeenCalled();
     expect(success).toBe(true);
+  });
+
+  it('should execute the catch block in case of failure', async () => {
+    mockNavigator({
+      clipboard: {
+        writeText: jest.fn().mockRejectedValue(new Error('Clipboard write failed')),
+      },
+      userAgent: 'user agent',
+    });
+
+    document.queryCommandSupported = jest.fn(command => command !== 'copy');
+
+    const writeTextSpy = jest.spyOn(navigator.clipboard, 'writeText');
+    const fail = await clipboard.writeText('copy!');
+    expect(writeTextSpy).toHaveBeenCalled();
+    expect(fail).toBe(false);
   });
 });
