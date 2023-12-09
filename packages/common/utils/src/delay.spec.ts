@@ -10,10 +10,10 @@ describe('delay', () => {
   });
 
   it('should return a promise which is resolved after given milliseconds', () => {
-    const milliseconds = 3000;
-    const promise = delay(milliseconds);
+    const DELAYING_TIME = 3000;
+    const promise = delay(DELAYING_TIME);
 
-    jest.advanceTimersByTime(milliseconds);
+    jest.advanceTimersByTime(DELAYING_TIME);
 
     expect(promise).resolves.toBeUndefined();
   });
