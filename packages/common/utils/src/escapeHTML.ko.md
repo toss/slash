@@ -1,7 +1,7 @@
 # escapeHTML
 
 ```typescript
-function escapeHTML(str: string): string;
+function escapeHTML(text: string): string;
 ```
 
 특수 문자를 HTML 엔티티로 치환해 줍니다.
