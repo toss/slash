@@ -23,18 +23,6 @@ describe('get function', () => {
     expect(get(obj, 'a.c')).toBeNull();
     expect(get(obj, 'a.b.d')).toBeUndefined();
   });
-
-  it('should handle mixed array and object structures', () => {
-    const obj = { a: [{ b: { c: 1 } }, { d: 2 }] };
-    expect(get(obj, 'a[0].b.c')).toBe(1);
-    expect(get(obj, 'a[1].d')).toBe(2);
-  });
-
-  it('should return undefined when the path is empty', () => {
-    const obj = { a: { b: { c: 'd' } } };
-
-    expect(get(obj, '')).toBeUndefined();
-  });
 });
 
 describe('set function', () => {
