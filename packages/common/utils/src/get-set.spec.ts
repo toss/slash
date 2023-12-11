@@ -17,6 +17,24 @@ describe('get function', () => {
   it('should work correctly with empty objects', () => {
     expect(get({}, 'a')).toBeUndefined();
   });
+  it('should handle paths leading to undefined or null values inside nested objects', () => {
+    const obj = { a: { b: undefined, c: null } };
+    expect(get(obj, 'a.b')).toBeUndefined();
+    expect(get(obj, 'a.c')).toBeNull();
+    expect(get(obj, 'a.b.d')).toBeUndefined();
+  });
+
+  it('should handle mixed array and object structures', () => {
+    const obj = { a: [{ b: { c: 1 } }, { d: 2 }] };
+    expect(get(obj, 'a[0].b.c')).toBe(1);
+    expect(get(obj, 'a[1].d')).toBe(2);
+  });
+
+  it('should return undefined when the path is empty', () => {
+    const obj = { a: { b: { c: 'd' } } };
+
+    expect(get(obj, '')).toBeUndefined();
+  });
 });
 
 describe('set function', () => {
