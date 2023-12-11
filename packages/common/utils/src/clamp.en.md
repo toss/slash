@@ -16,7 +16,7 @@ function clamp(value: number, min: number, max: number): number;
 ## Examples
 
 ```typescript
-clamp(3, 1); // 3
+clamp(3, 1); // 1
 clamp(3, 1, 5); // 3
 clamp(3, 5); // 3
 clamp(7, 3, 5); // 5
