@@ -5,7 +5,7 @@ sidebar_label: formatBusinessRegistrationNumber
 
 # formatBusinessRegistrationNumber
 
-Separates Korean corporate registration number by hypen(`-`).
+Separates Korean corporate registration number by hyphen(`-`).
 
 ```typescript
 function formatBusinessRegistrationNumber(businessRegistrationNumber: string): string;
