@@ -7,35 +7,81 @@ import { Flex } from './flex';
 
 describe('Flex', () => {
   describe('as', () => {
-    it(`Flex는 div로 렌더링된다`, () => {
+    it(`should render as a div.`, () => {
       const { container } = render(<Flex data-testid="root">Text Message</Flex>);
       expect(container.querySelector('div')).toBeInTheDocument();
     });
 
-    it(`Flex의 as를 통해 as의 태그로 렌더링된다`, () => {
+    it(`should render as a span tag through 'as' in Flex.`, () => {
       const { container } = render(
-        <Flex as="a" href="asdf" data-testid="root">
+        <Flex as="span" data-testid="root">
           Text Message
         </Flex>
       );
-      expect(container.querySelector('a')).toBeInTheDocument();
+      expect(container.querySelector('span')).toBeInTheDocument();
     });
   });
 
   describe('align', () => {
-    it(`Flex의 align의 기본값은 stretch이다`, () => {
+    it(`should be 'stretch' by default for 'align' in Flex.`, () => {
       const { container } = render(<Flex data-testid="root">Text Message</Flex>);
       expect(container.querySelector('div')).toHaveStyle('align-items: stretch');
     });
 
-    it(`Flex의 align의 기본값은 flex-start가 아니다`, () => {
+    it(`should not default to 'flex-start' for 'align' in Flex.`, () => {
       const { container } = render(<Flex data-testid="root">Text Message</Flex>);
       expect(container.querySelector('div')).not.toHaveStyle('align-items: flex-start');
+    });
+
+    it(`should be 'center' for 'align' in Flex.`, () => {
+      const { container } = render(
+        <Flex align="center" data-testid="root">
+          Text Message
+        </Flex>
+      );
+      expect(container.querySelector('div')).toHaveStyle('align-items: center');
+    });
+  });
+
+  describe('justify', () => {
+    it(`should be 'flex-start' by default for 'justify' in Flex.`, () => {
+      const { container } = render(<Flex data-testid="root">Text Message</Flex>);
+      expect(container.querySelector('div')).toHaveStyle('justify-content: flex-start');
+    });
+
+    it(`should not default to 'flex-end' for 'justify' in Flex.`, () => {
+      const { container } = render(<Flex data-testid="root">Text Message</Flex>);
+      expect(container.querySelector('div')).not.toHaveStyle('justify-content: flex-end');
+    });
+
+    it(`should be 'center' for 'justify' in Flex.`, () => {
+      const { container } = render(
+        <Flex justify="center" data-testid="root">
+          Text Message
+        </Flex>
+      );
+      expect(container.querySelector('div')).toHaveStyle('justify-content: center');
+    });
+  });
+
+  describe('direction', () => {
+    it(`should be 'row' by default for 'direction' in Flex.`, () => {
+      const { container } = render(<Flex data-testid="root">Text Message</Flex>);
+      expect(container.querySelector('div')).toHaveStyle('flex-direction: row');
+    });
+
+    it(`should be 'column' for 'direction' in Flex.`, () => {
+      const { container } = render(
+        <Flex direction="column" data-testid="root">
+          Text Message
+        </Flex>
+      );
+      expect(container.querySelector('div')).toHaveStyle('flex-direction: column');
     });
   });
 
   describe('ref', () => {
-    it(`Flex는 ref를 받을 수 있어야 한다`, () => {
+    it(`should be able to accept a ref in Flex.`, () => {
       const {
         result: { current: ref },
       } = renderHook(() => useRef<HTMLButtonElement>(null));

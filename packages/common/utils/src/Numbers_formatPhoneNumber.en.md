@@ -5,7 +5,7 @@ sidebar_label: formatPhoneNumber
 
 # formatPhoneNumber
 
-Separates the given phone number by hypen(`-`).
+Separates the given phone number by hyphen(`-`).
 
 ```typescript
 function formatPhoneNumber(phoneNumber: string): string;
