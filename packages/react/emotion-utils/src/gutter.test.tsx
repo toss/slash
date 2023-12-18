@@ -10,7 +10,7 @@ describe('gutter', () => {
   describe('direction: vertical', () => {
     const direction = 'vertical';
 
-    it(`첫 번째 인자에 '${direction}'을 넘기는 경우 두번째 노드부터 상단 여백 값을 가진다.`, () => {
+    it(`should have top margin starting from the second child when '${direction}' is passed as the first parameter.`, () => {
       const { getAllByTestId } = render(
         <div css={gutter(direction)}>
           <div data-testid="child" />
@@ -27,7 +27,7 @@ describe('gutter', () => {
       });
     });
 
-    it(`상단 여백 값을 두 번째 인자로 넘길 수 있다.`, () => {
+    it(`should accept top margin value as the second parameter.`, () => {
       const gutterSpace = 48;
 
       const { getAllByTestId } = render(
@@ -46,7 +46,7 @@ describe('gutter', () => {
       });
     });
 
-    it(`여백을 줄 하위 노드를 세 번째 인자에 지정할 수 있다.`, () => {
+    it(`should accept a selector for child nodes with margin.`, () => {
       const selector = 'button';
 
       const { getAllByTestId } = render(
@@ -69,7 +69,7 @@ describe('gutter', () => {
       });
     });
 
-    it(`인자 값을 객체로 넘기는 것이 가능하다.`, () => {
+    it(`should accept an object as an argument for options.`, () => {
       const selector = 'button';
       const gutterOptions: GutterOptions = {
         direction,
@@ -101,7 +101,7 @@ describe('gutter', () => {
   describe('direction: horizontal', () => {
     const direction = 'horizontal';
 
-    it(`첫 번째 인자에 '${direction}'을 넘기는 경우 두번째 노드부터 좌측 여백 값을 가진다.`, () => {
+    it(`should have left margin for nodes starting from the second when passing '${direction}' as the first argument`, () => {
       const { getAllByTestId } = render(
         <div css={gutter(direction)}>
           <div data-testid="child" />
@@ -118,7 +118,7 @@ describe('gutter', () => {
       });
     });
 
-    it(`좌측 여백 값을 두 번째 인자로 넘길 수 있다.`, () => {
+    it(`should be able to pass left margin value as the second argument`, () => {
       const gutterSpace = 48;
 
       const { getAllByTestId } = render(
@@ -137,7 +137,7 @@ describe('gutter', () => {
       });
     });
 
-    it(`여백을 줄 하위 노드를 세 번째 인자에 지정할 수 있다.`, () => {
+    it(`should specify the child for margin as the third argument`, () => {
       const selector = 'button';
 
       const { getAllByTestId } = render(
@@ -160,7 +160,7 @@ describe('gutter', () => {
       });
     });
 
-    it(`인자 값을 객체로 넘기는 것이 가능하다.`, () => {
+    it(`should be possible to pass arguments as an object`, () => {
       const selector = 'button';
       const gutterOptions: GutterOptions = {
         direction,
@@ -189,7 +189,7 @@ describe('gutter', () => {
     });
   });
 
-  it('style tag는 gutter 대상에 포함시키지 않는다', () => {
+  it('should not include the style tag in the gutter targets', () => {
     const { getAllByTestId } = render(
       <div css={gutter('vertical')}>
         <style data-emotion="css asdf" />
@@ -207,7 +207,7 @@ describe('gutter', () => {
     });
   });
 
-  it('오브젝트 형태로도 넘길수있음', () => {
+  it('should be able to pass arguments as an object', () => {
     const { getAllByTestId } = render(
       <div css={gutter({ direction: 'vertical' })}>
         <style data-emotion="css asdf" />
