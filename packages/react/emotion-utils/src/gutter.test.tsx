@@ -2,7 +2,7 @@
 
 import { render } from '@testing-library/react';
 
-import { GutterOptions, gutter } from './gutter';
+import { gutter, GutterOptions } from './gutter';
 
 const DEFAULT_GUTTER_SPACE = 24;
 
@@ -190,10 +190,26 @@ describe('gutter', () => {
   });
 
   it('style tag는 gutter 대상에 포함시키지 않는다', () => {
-    const direction = 'vertical';
-
     const { getAllByTestId } = render(
-      <div css={gutter(direction)}>
+      <div css={gutter('vertical')}>
+        <style data-emotion="css asdf" />
+        <div data-testid="child" />
+        <div data-testid="child" />
+      </div>
+    );
+
+    getAllByTestId('child').forEach((element, index) => {
+      if (index > 0) {
+        expect(element).toHaveStyle(`margin-top: ${DEFAULT_GUTTER_SPACE}px`);
+      } else {
+        expect(element).not.toHaveStyle(`margin-top: ${DEFAULT_GUTTER_SPACE}px`);
+      }
+    });
+  });
+
+  it('오브젝트 형태로도 넘길수있음', () => {
+    const { getAllByTestId } = render(
+      <div css={gutter({ direction: 'vertical' })}>
         <style data-emotion="css asdf" />
         <div data-testid="child" />
         <div data-testid="child" />
