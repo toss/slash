@@ -12,8 +12,8 @@ afterEach(() => {
   jest.useRealTimers();
 });
 
-describe('useOverlay는', () => {
-  describe('exitOnUnmount 옵션을', () => {
+describe('useOverlay is', () => {
+  describe('exitOnUnmount option', () => {
     const closeDuration = 1000;
 
     function TestOverlay({ open }: { open: boolean }) {
@@ -50,7 +50,7 @@ describe('useOverlay는', () => {
       return <>{open && <OverlayCallerComponent exitOnUnmount={exitOnUnmount} />}</>;
     }
 
-    it('true로 설정하면 useOverlay를 호출한 컴포넌트가 unmount 될 때 같이 unmount 된다.', async () => {
+    it('If set to true, it will be unmounted when the component that called useOverlay is unmounted.', async () => {
       renderWithContext(<TestComponent exitOnUnmount={true} />);
 
       await waitFor(() => {
@@ -68,7 +68,7 @@ describe('useOverlay는', () => {
       });
     });
 
-    it('false로 설정하면 useOverlay를 호출한 컴포넌트가 unmount 되어도 같이 unmount 되지 않는다.', async () => {
+    it('If set to false, it will not be unmounted even if the component that called useOverlay is unmounted.', async () => {
       renderWithContext(<TestComponent exitOnUnmount={false} />);
 
       await waitFor(() => {
