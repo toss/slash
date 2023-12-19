@@ -34,14 +34,16 @@ export const floorToUnit = createNumberFormatterBy(Math.floor);
 
 export const roundToUnit = createNumberFormatterBy(Math.round);
 
-export function formatToKoreanNumber(value: number, options: { floorUnit?: number; formatAllDigits?: boolean } = {}) {
-  const flooredVal = floorToUnit(value, options.floorUnit || 1);
-
-  if (flooredVal === 0) {
+export function formatToKoreanNumber(
+  value: number,
+  options: { floorUnit?: number; ceilUnit?: number; formatAllDigits?: boolean } = {},
+) {
+  const unit = options.floorUnit !== undefined ? floorToUnit(value, options.floorUnit || 1) : ceilToUnit(value, options.ceilUnit || 1);
+  if(unit === 0){
     return '0';
   }
-
-  return chunk(flooredVal, 4)
+  
+  return chunk(unit, 4)
     .reduce((prevFormatted, currChunkNum, index) => {
       if (currChunkNum === 0) {
         return prevFormatted;

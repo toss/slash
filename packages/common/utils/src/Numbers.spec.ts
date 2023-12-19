@@ -65,7 +65,17 @@ describe('Numbers', () => {
       formatToKRW(13209802, {
         shouldHaveSpaceBeforeWon: true,
       })
-    ).toBe('1,320만 9,802 원');
+    ).toEqual('1,320만 9,802 원');
+    expect(
+      formatToKRW(13209802, { 
+        floorUnit: 10000 
+      })
+    ).toEqual('1,320만원');
+    expect(
+      formatToKRW(13209802, { 
+        ceilUnit: 10000 
+      })
+    ).toEqual('1,321만원');
   });
 
   it('should separate the given phone number by hyphen(`-`)', () => {
