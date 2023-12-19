@@ -12,7 +12,7 @@ afterEach(() => {
   jest.useRealTimers();
 });
 
-describe('useOverlay is', () => {
+describe('useOverlay', () => {
   describe('exitOnUnmount option', () => {
     const closeDuration = 1000;
 
