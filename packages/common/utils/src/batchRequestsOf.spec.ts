@@ -2,8 +2,8 @@ import { batchRequestsOf } from './batchRequestsOf';
 
 jest.useFakeTimers();
 
-describe('batchRequestsOf는', () => {
-  it('action이 끝나기 전까지 request을 모으다가, action이 끝나면 모인 request를 모두 실행한다.', async () => {
+describe('batchRequestsOf', () => {
+  it('should accumulate requests until the action completes, and then execute all gathered requests', async () => {
     const actualRequest = jest.fn();
     actualRequest.mockImplementation(async () => timeout(500, 'foo'));
 
@@ -39,7 +39,7 @@ describe('batchRequestsOf는', () => {
     expect(subscriber3).toBeCalledTimes(1);
   });
 
-  it('종료된 action 값을 request들의 인자로 전달해준다.', async () => {
+  it('should pass the resolved value of the action as arguments to the requests', async () => {
     const actualRequest = jest.fn();
     const actualResponse = { foo: 'bar' };
     actualRequest.mockImplementation(async () => timeout(500, actualResponse));
@@ -65,7 +65,7 @@ describe('batchRequestsOf는', () => {
     expect(subscriber2).toBeCalledWith(actualResponse);
   });
 
-  it('key에 해당하는 buffer만 release할 수 있다.', async () => {
+  it('should only release the buffer corresponding to a specific key', async () => {
     const resolvingValue = 'yayyay';
     const neverEndingPromise = new Promise(() => {});
 
