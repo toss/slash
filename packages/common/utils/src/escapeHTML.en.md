@@ -1,7 +1,7 @@
 # escapeHTML
 
 ```typescript
-function escapeHTML(str: string): string;
+function escapeHTML(text: string): string;
 ```
 
 Replaces a special character with an HTML entity.
