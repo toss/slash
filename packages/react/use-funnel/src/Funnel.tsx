@@ -18,7 +18,7 @@ export const Funnel = <Steps extends NonEmptyArray<string>>({ steps, step, child
 
   const targetStep = validChildren.find(child => child.props.name === step);
 
-  assert(targetStep !== null, `${step} 스텝 컴포넌트를 찾지 못했습니다.`);
+  assert(targetStep != null, `${step} 스텝 컴포넌트를 찾지 못했습니다.`);
 
   return <>{targetStep}</>;
 };
