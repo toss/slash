@@ -50,7 +50,7 @@ describe('useOverlay', () => {
       return <>{open && <OverlayCallerComponent exitOnUnmount={exitOnUnmount} />}</>;
     }
 
-    it('If set to true, it will be unmounted when the component that called useOverlay is unmounted.', async () => {
+    it('will be unmounted if exitOnUnmount is true and the component is unmounted.', async () => {
       renderWithContext(<TestComponent exitOnUnmount={true} />);
 
       await waitFor(() => {
