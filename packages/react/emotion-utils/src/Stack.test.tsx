@@ -9,6 +9,12 @@ const items = ['1', '2', '3'];
 const DEFAULT_GUTTER = 24;
 
 describe('<Stack />', () => {
+  it(`should have flex-direction: column.`, () => {
+    const { container } = render(<Stack>test</Stack>);
+
+    expect(container.querySelector('div')).toHaveStyle('flex-direction: column');
+  });
+
   describe('<Stack direction="vertical" />', () => {
     function renderStack(props?: ComponentProps<typeof Stack.Vertical>) {
       return render(
@@ -24,13 +30,13 @@ describe('<Stack />', () => {
       );
     }
 
-    it(`flex-direction: column이다.`, () => {
+    it(`should have flex-direction: column.`, () => {
       const { getByTestId } = renderStack();
 
       expect(getByTestId('stack')).toHaveStyle('flex-direction: column');
     });
 
-    it(`두 번째 노드부터 상단 여백 값을 가진다.`, () => {
+    it(`should have top margin from the second node onwards.`, () => {
       const { getAllByTestId } = renderStack();
 
       getAllByTestId('stack-item').forEach((element, index) => {
@@ -42,7 +48,7 @@ describe('<Stack />', () => {
       });
     });
 
-    it(`상단 여백 값을 gutter prop으로 넘길 수 있다.`, () => {
+    it(`should accept top margin via the gutter prop.`, () => {
       const gutter = 48;
 
       const { getAllByTestId } = renderStack({ gutter });
@@ -56,7 +62,7 @@ describe('<Stack />', () => {
       });
     });
 
-    it(`ref를 받을 수 있어야 한다.`, () => {
+    it(`should be able to accept a ref.`, () => {
       const {
         result: { current: ref },
       } = renderHook(() => useRef<HTMLDivElement>(null));
@@ -82,13 +88,13 @@ describe('<Stack />', () => {
       );
     }
 
-    it(`flex-direction: column이다.`, () => {
+    it(`should have flex-direction: column.`, () => {
       const { getByTestId } = renderStack();
 
       expect(getByTestId('stack')).toHaveStyle('flex-direction: column');
     });
 
-    it(`두 번째 노드부터 상단 여백 값을 가진다.`, () => {
+    it(`should have top margin from the second node onwards.`, () => {
       const { getAllByTestId } = renderStack();
 
       getAllByTestId('stack-item').forEach((element, index) => {
@@ -100,7 +106,7 @@ describe('<Stack />', () => {
       });
     });
 
-    it(`상단 여백 값을 gutter prop으로 넘길 수 있다.`, () => {
+    it(`should accept top margin via the gutter prop.`, () => {
       const gutter = 48;
 
       const { getAllByTestId } = renderStack({ gutter });
@@ -114,7 +120,7 @@ describe('<Stack />', () => {
       });
     });
 
-    it(`ref를 받을 수 있어야 한다.`, () => {
+    it(`should be able to accept a ref.`, () => {
       const {
         result: { current: ref },
       } = renderHook(() => useRef<HTMLDivElement>(null));
@@ -140,13 +146,13 @@ describe('<Stack />', () => {
       );
     }
 
-    it(`flex-direction: row이다.`, () => {
+    it(`should have flex-direction: row.`, () => {
       const { getByTestId } = renderStack();
 
       expect(getByTestId('stack')).toHaveStyle('flex-direction: row');
     });
 
-    it(`두 번째 노드부터 좌측 여백 값을 가진다.`, () => {
+    it(`should have left margin from the second node onwards.`, () => {
       const { getAllByTestId } = renderStack();
 
       getAllByTestId('stack-item').forEach((element, index) => {
@@ -158,7 +164,7 @@ describe('<Stack />', () => {
       });
     });
 
-    it(`좌측 여백 값을 gutter prop으로 넘길 수 있다.`, () => {
+    it(`should accept left margin via the gutter prop.`, () => {
       const gutter = 48;
 
       const { getAllByTestId } = renderStack({ gutter });
@@ -188,13 +194,13 @@ describe('<Stack />', () => {
       );
     }
 
-    it(`flex-direction: row이다.`, () => {
+    it(`should have flex-direction: row.`, () => {
       const { getByTestId } = renderStack();
 
       expect(getByTestId('stack')).toHaveStyle('flex-direction: row');
     });
 
-    it(`두 번째 노드부터 좌측 여백 값을 가진다.`, () => {
+    it(`should have left margin from the second node onwards.`, () => {
       const { getAllByTestId } = renderStack();
 
       getAllByTestId('stack-item').forEach((element, index) => {
@@ -206,7 +212,7 @@ describe('<Stack />', () => {
       });
     });
 
-    it(`좌측 여백 값을 gutter prop으로 넘길 수 있다.`, () => {
+    it(`should accept left margin via the gutter prop.`, () => {
       const gutter = 48;
 
       const { getAllByTestId } = renderStack({ gutter });
@@ -220,7 +226,7 @@ describe('<Stack />', () => {
       });
     });
 
-    it(`ref를 받을 수 있어야 한다.`, () => {
+    it(`should be able to accept a ref.`, () => {
       const {
         result: { current: ref },
       } = renderHook(() => useRef<HTMLDivElement>(null));
