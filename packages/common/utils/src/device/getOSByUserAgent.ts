@@ -1,4 +1,5 @@
 /** @tossdocs-ignore */
+import { isAndroid } from './isAndroid';
 import { isIOS } from './isIOS';
 import { isServer } from './isServer';
 
@@ -11,9 +12,7 @@ export function getOSByUserAgent() {
     return 'ios';
   }
 
-  const isAndroid = window.navigator.userAgent.match(/Android/i) !== null;
-
-  if (isAndroid) {
+  if (isAndroid()) {
     return 'android';
   }
 
