@@ -1,4 +1,5 @@
 /** @tossdocs-ignore */
+import { isIOS } from './isIOS';
 import { isServer } from './isServer';
 
 export function getOSByUserAgent() {
@@ -6,9 +7,7 @@ export function getOSByUserAgent() {
     return false;
   }
 
-  const isIos = window.navigator.userAgent.match(/ipad|iphone/i) !== null;
-
-  if (isIos) {
+  if (isIOS()) {
     return 'ios';
   }
 

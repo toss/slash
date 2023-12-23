@@ -1,3 +1,5 @@
+import { isIOS } from './device/isIOS';
+
 /**
  * @name copyToClipboard
  * @deprecated clipboard.writeText를 사용하세요.
@@ -13,10 +15,6 @@ export function copyToClipboard(text: string): boolean {
 
 function clipboardCopySupported() {
   return document.queryCommandSupported?.('copy') ?? false;
-}
-
-function isIOS() {
-  return navigator.userAgent.match(/ipad|iphone/i) != null;
 }
 
 function copy(text: string) {
