@@ -1,4 +1,4 @@
-# isIE
+# isIOS
 
 Checks if the current JavaScript runtime is running on IOS device.
 
