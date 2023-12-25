@@ -1,4 +1,4 @@
-import { isAndroid } from './isAndroid'; // Adjust the import path as needed
+import { isAndroid } from './isAndroid';
 import * as serverCheckModule from './isServer';
 
 describe('isAndroid', () => {
