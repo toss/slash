@@ -5870,6 +5870,7 @@ __metadata:
     "@types/lodash.debounce": ^4
     "@types/lodash.throttle": ^4.1.6
     "@types/react": ^18.0.21
+    "@types/react-test-renderer": ^18.0.3
     "@types/testing-library__jest-dom": ^5.9.5
     "@types/testing-library__react-hooks": ^3.2.0
     "@types/webpack": ^4
@@ -6965,6 +6966,15 @@ __metadata:
   dependencies:
     "@types/react": ^17
   checksum: 0be325798b6b38cc31fbb11f2f1e1a5578cc3b23eddf1ddd1ab58ccf50966e8f779383084d8bc3a7db3108ad815af8fbae5c0f54329a88d52200e01547d85c33
+  languageName: node
+  linkType: hard
+
+"@types/react-test-renderer@npm:^18.0.3":
+  version: 18.0.3
+  resolution: "@types/react-test-renderer@npm:18.0.3"
+  dependencies:
+    "@types/react": "*"
+  checksum: 6834c7c998d9e699b7b9aca31ce0f550a29a63526a9ab15f62764eeade28fcce634030e5cfd223a8417e8c53234e01bfb961906b35fd9a72dd513aba549181f0
   languageName: node
   linkType: hard
 
