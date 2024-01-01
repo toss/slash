@@ -12,8 +12,8 @@ afterEach(() => {
   jest.useRealTimers();
 });
 
-describe('useOverlay는', () => {
-  it(`close()의 레퍼런스가 변경되지 않는다.`, async () => {
+describe('useOverlay is', () => {
+  it(`The reference of close() does not change.`, async () => {
     const closeDuration = 1000;
     const handleClose = jest.fn();
 
