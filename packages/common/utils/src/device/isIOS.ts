@@ -1,3 +1,4 @@
+/** @tossdocs-ignore */
 import { isServer } from './isServer';
 
 export function isIOS() {
