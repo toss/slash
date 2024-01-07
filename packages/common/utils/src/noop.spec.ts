@@ -1,7 +1,15 @@
-import { asyncNoop } from '.';
+import { asyncNoop, noop } from '.';
 
-describe('asyncNoop', () => {
-  it('Promise를 반환한다.', () => {
-    expect(asyncNoop()).toEqual(expect.any(Promise));
+describe('noop functions', () => {
+  describe('noop', () => {
+    it('should return "undefined"', () => {
+      expect(noop()).toBeUndefined();
+    });
+  });
+
+  describe('asyncNoop', () => {
+    it('should return Promise', () => {
+      expect(asyncNoop()).toEqual(expect.any(Promise));
+    });
   });
 });
