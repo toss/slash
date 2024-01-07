@@ -2,7 +2,7 @@ import { asyncNoop, noop } from '.';
 
 describe('noop functions', () => {
   describe('noop', () => {
-    it('should return "undefined"', () => {
+    it('should return undefined', () => {
       expect(noop()).toBeUndefined();
     });
   });
