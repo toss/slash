@@ -11,6 +11,8 @@ describe('isBirthDate6', () => {
     expect(isBirthDate6('foobar')).toEqual(false);
     expect(isBirthDate6('000000')).toEqual(false);
     expect(isBirthDate6('960732')).toEqual(false);
+    expect(isBirthDate6('951301')).toEqual(false);
+    expect(isBirthDate6('950231')).toEqual(false);
     expect(isBirthDate6('')).toEqual(false);
   });
 });
