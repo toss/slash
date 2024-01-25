@@ -19,7 +19,7 @@ describe('useLocalStorageChangeDetector', () => {
   describe('When it becomes visible, the value should be updated', () => {
     it('When the clearStorage function is executed, the value should be null.', () => {
       const { result } = renderHook(() => useLocalStorageChangeDetector(tossKey));
-      const [_, { clearStorage }] = result.current;
+      const { clearStorage } = result.current[1];
 
       expect(result.current[0]).toBe(tossValue);
 
@@ -44,7 +44,7 @@ describe('useLocalStorageChangeDetector', () => {
   describe('The value should not be updated when it is hidden', () => {
     it('The value should not be updated when the clearStorage function is executed', () => {
       const { result } = renderHook(() => useLocalStorageChangeDetector(tossKey));
-      const [_, { clearStorage }] = result.current;
+      const { clearStorage } = result.current[1];
 
       expect(result.current[0]).toBe(tossValue);
 
