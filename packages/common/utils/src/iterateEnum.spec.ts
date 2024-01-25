@@ -1,3 +1,5 @@
+import { iterateEnum } from './iterateEnum';
+
 enum Language {
   KOR = 'KOR',
   ENG = 'ENG',
