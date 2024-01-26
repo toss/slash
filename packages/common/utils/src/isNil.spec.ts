@@ -1,6 +1,6 @@
 import { isNil } from '.';
 
-describe('isNil should', () => {
+describe('isNil', () => {
   it('should return false when a value other than null or undefined is passed', () => {
     for (const val of [1, 'dasdsa', { foo: 'bar' }, () => {}, Symbol()]) {
       expect(isNil(val)).toBe(false);
