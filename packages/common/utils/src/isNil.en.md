@@ -3,7 +3,7 @@
 Checks if the given value is `null` or `undefined`;
 
 ```typescript
-function isNil<T>(value: T | null | undefined): value is T;
+function isNil<T>(value: T | null | undefined): value is null | undefined;
 ```
 
 ## Example
