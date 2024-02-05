@@ -3,7 +3,7 @@ import { useCombinedRefs } from '@toss/react';
 import { forwardRef, PropsWithChildren } from 'react';
 import { useImpressionRef } from './useImpressionRef';
 
-export interface ImpressionAreaProps extends IntersectionObserverInit {
+export interface ImpressionAreaProps extends Omit<IntersectionObserverInit, 'threshold'> {
   onImpressionStart?: () => void;
   onImpressionEnd?: () => void;
   /**
