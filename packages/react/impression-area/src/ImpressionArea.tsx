@@ -1,13 +1,11 @@
 /** @tossdocs-ignore */
 import { useCombinedRefs } from '@toss/react';
-import { forwardRef, Ref } from 'react';
+import { forwardRef, PropsWithChildren } from 'react';
 import { useImpressionRef } from './useImpressionRef';
 
-export interface ImpressionAreaProps {
+export interface ImpressionAreaProps extends Omit<IntersectionObserverInit, 'threshold'> {
   onImpressionStart?: () => void;
   onImpressionEnd?: () => void;
-  root?: Document | Element | null;
-  rootMargin?: string;
   /**
    * 몇 퍼센트 이상 화면에 표시되면 "보인다"고 생각할지 결정합니다.
    * 예를 들어, 0.5가 주어지면 0.5 이상이 보여졌을 때 `onImpressionStart`, 이하가 보여졌을 때 `onImpressionEnd`가 호출됩니다.
@@ -21,14 +19,13 @@ export interface ImpressionAreaProps {
    */
   timeThreshold?: number;
   className?: string;
-  children?: React.ReactNode;
   style?: React.CSSProperties;
   role?: string;
   'aria-label'?: string;
   'aria-hidden'?: boolean | 'false' | 'true';
 }
 
-export const ImpressionArea = forwardRef(
+export const ImpressionArea = forwardRef<HTMLDivElement, PropsWithChildren<ImpressionAreaProps>>(
   (
     {
       root,
@@ -41,8 +38,8 @@ export const ImpressionArea = forwardRef(
       onImpressionEnd,
       style,
       ...otherProps
-    }: ImpressionAreaProps,
-    forwardedRef: Ref<HTMLDivElement>
+    },
+    forwardedRef
   ) => {
     const impressionRef = useImpressionRef<HTMLDivElement>({
       onImpressionStart,
