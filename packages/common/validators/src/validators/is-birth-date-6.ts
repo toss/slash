@@ -23,5 +23,5 @@ export function isBirthDate6(birthDate: string) {
 }
 
 function isLeapYear(year: number) {
-  return year !== 0 && year % 4 === 0;
+  return year % 4 === 0;
 }
