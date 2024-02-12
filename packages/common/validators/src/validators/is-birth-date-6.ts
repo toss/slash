@@ -8,10 +8,10 @@ export function isBirthDate6(birthDate: string) {
   const month = parseInt(birthDate.substring(2, 4), 10);
   const day = parseInt(birthDate.substring(4, 6), 10);
 
-  const MIN_MONTH = 1;
-  const MAX_MONTH = 12;
+  const JANUARY = 1;
+  const DECEMBER = 12;
 
-  if (month < MIN_MONTH || month > MAX_MONTH) {
+  if (month < JANUARY || month > DECEMBER) {
     return false;
   }
 
