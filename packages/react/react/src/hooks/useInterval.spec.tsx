@@ -43,4 +43,22 @@ describe('useInterval', () => {
 
     expect(callback).toBeCalledTimes(2);
   });
+
+  it('Should not set the interval when delay is null.', () => {
+    const callback = jest.fn();
+
+    renderHook(() => useInterval(callback, { delay: null }));
+
+    jest.advanceTimersByTime(3000);
+
+    expect(callback).not.toBeCalled();
+  });
+
+  it('Should execute the callback immediately when the trailing option is false.', () => {
+    const callback = jest.fn();
+
+    renderHook(() => useInterval(callback, { delay: 3000, trailing: false }));
+
+    expect(callback).toBeCalledTimes(1);
+  });
 });
