@@ -1,5 +1,5 @@
 import { isAndroid } from './isAndroid';
-import * as serverCheckModule from './isServer';
+import { isServer } from './isServer';
 
 describe('isAndroid', () => {
   it('should return false if on server', () => {
@@ -11,7 +11,9 @@ describe('isAndroid', () => {
   });
 
   it('should return true for Android user agent', () => {
-    jest.spyOn(serverCheckModule, 'isServer').mockReturnValue(false);
+    jest.mock(isServer, () => ({
+      isServer: () => false,
+    }));
     Object.defineProperty(window.navigator, 'userAgent', { value: 'Android', writable: true });
 
     expect(isAndroid).toBe(true);
