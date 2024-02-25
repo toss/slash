@@ -7,7 +7,7 @@ Used to run browser-specific logics.
 ## Example
 
 ```typescript
-if (isClient()) {
+if (isClient) {
   // Guarantees to be run on the client-side
   doSomethingInBrowser();
 }
