@@ -5,5 +5,5 @@ export const isIOS = (function () {
     return false;
   }
 
-  return navigator.userAgent.match(/ipad|iphone/i) != null;
+  return window.navigator.userAgent.match(/ipad|iphone/i) != null;
 })();
