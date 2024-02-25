@@ -9,5 +9,5 @@ It checks if the user agent includes any of the strings below:
 - android
 
 ```typescript
-function isMobileWeb(): boolean;
+const isMobileWeb: boolean;
 ```

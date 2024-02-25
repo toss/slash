@@ -1,11 +1,11 @@
 /** @tossdocs-ignore */
 import { getOSByUserAgent } from './getOSByUserAgent';
 
-export function isMobileWeb() {
+export const isMobileWeb = (function () {
   const userAgent = getOSByUserAgent();
 
   if (userAgent === 'ios' || userAgent === 'android') {
     return true;
   }
   return false;
-}
+})();
