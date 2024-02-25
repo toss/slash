@@ -1,7 +1,7 @@
 import { isServer } from './isServer';
 
 export const isIOS = (function () {
-  if (isServer()) {
+  if (isServer) {
     return false;
   }
 

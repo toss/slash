@@ -2,7 +2,7 @@
 import { isServer } from './isServer';
 
 export function isIE() {
-  if (isServer()) {
+  if (isServer) {
     return false;
   }
 

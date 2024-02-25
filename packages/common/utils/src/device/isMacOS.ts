@@ -2,7 +2,7 @@
 import { isServer } from './isServer';
 
 export function isMacOS() {
-  if (isServer()) {
+  if (isServer) {
     return false;
   }
 

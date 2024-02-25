@@ -1,7 +1,7 @@
 import { isServer } from './isServer';
 
 export const isAndroid = (function () {
-  if (isServer()) {
+  if (isServer) {
     return false;
   }
 

@@ -2,7 +2,7 @@
 import { isServer } from './device/index';
 
 function loadScript(source: string) {
-  if (isServer()) {
+  if (isServer) {
     return Promise.resolve();
   }
 

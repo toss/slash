@@ -1,6 +1,6 @@
 /** @tossdocs-ignore */
 declare const global: unknown;
 
-export function isServer() {
+export const isServer = (function () {
   return typeof window === 'undefined' && typeof global !== 'undefined';
-}
+})();

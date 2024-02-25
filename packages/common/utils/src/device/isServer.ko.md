@@ -7,7 +7,7 @@ SSR 환경에서 서버에서만 실행되는 로직을 작성할 때 사용합�
 ## Example
 
 ```typescript
-if (isServer()) {
+if (isServer) {
   // Node.js 서버 환경임이 보장된다.
   doSomethingInServer();
 }

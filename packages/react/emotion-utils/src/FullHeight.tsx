@@ -4,7 +4,7 @@ import { css } from '@emotion/react';
 import { isServer } from '@toss/utils';
 import { HTMLAttributes, ReactNode, useEffect, useLayoutEffect, useState } from 'react';
 
-const useIsomorphicLayoutEffect = isServer() ? useEffect : useLayoutEffect;
+const useIsomorphicLayoutEffect = isServer ? useEffect : useLayoutEffect;
 
 export function FullHeight({ children, ...props }: { children: ReactNode } & HTMLAttributes<HTMLDivElement>) {
   const [height, setHeight] = useState(0);

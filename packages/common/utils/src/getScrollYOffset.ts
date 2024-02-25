@@ -2,7 +2,7 @@
 import { isServer } from './device/index';
 
 export function getScrollYOffset(): number {
-  if (isServer()) {
+  if (isServer) {
     return 0;
   }
 

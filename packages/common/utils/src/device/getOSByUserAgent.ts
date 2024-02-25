@@ -4,7 +4,7 @@ import { isIOS } from './isIOS';
 import { isServer } from './isServer';
 
 export function getOSByUserAgent() {
-  if (isServer()) {
+  if (isServer) {
     return false;
   }
 
