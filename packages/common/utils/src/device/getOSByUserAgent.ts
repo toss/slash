@@ -8,7 +8,7 @@ export function getOSByUserAgent() {
     return false;
   }
 
-  if (isIOS()) {
+  if (isIOS) {
     return 'ios';
   }
 
