@@ -12,7 +12,7 @@ export function getOSByUserAgent() {
     return 'ios';
   }
 
-  if (isAndroid()) {
+  if (isAndroid) {
     return 'android';
   }
 
