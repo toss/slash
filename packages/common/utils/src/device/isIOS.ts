@@ -1,9 +1,5 @@
-import { isServer } from './isServer';
-
-export function isIOS() {
-  if (isServer()) {
-    return false;
-  }
-
-  return navigator.userAgent.match(/ipad|iphone/i) != null;
-}
+export const isIOS = (() => {
+  return () => {
+    return /iPad|iPhone|iPod/.test(navigator.userAgent);
+  };
+})();

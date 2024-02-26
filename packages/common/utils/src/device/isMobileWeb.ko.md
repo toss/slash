@@ -9,5 +9,5 @@ User Agent에 아래 문자열 중 어느 하나라도 포함하는지 검사합
 - android
 
 ```typescript
-function isMobileWeb(): boolean;
+const isMobileWeb: boolean;
 ```

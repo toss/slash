@@ -1,6 +1,4 @@
 /** @tossdocs-ignore */
 import { isServer } from './isServer';
 
-export function isClient() {
-  return !isServer();
-}
+export const isClient = !isServer;

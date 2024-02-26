@@ -27,7 +27,7 @@ function copy(text: string) {
   textArea.style.userSelect = 'text';
   textArea.style.webkitUserSelect = 'text';
   focusingContainer.insertBefore(textArea, focusingContainer.firstChild);
-  if (isIOS()) {
+  if (isIOS) {
     const range = document.createRange();
     range.selectNodeContents(textArea);
     const selection = window.getSelection();

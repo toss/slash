@@ -7,7 +7,7 @@ SSR 환경에서 브라우저에서만 실행되는 로직을 작성할 때 사�
 ## Example
 
 ```typescript
-if (isClient()) {
+if (isClient) {
   // 브라우저 환경임이 보장된다.
   doSomethingInBrowser();
 }

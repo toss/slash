@@ -3,7 +3,7 @@ import { isServer } from './device/index';
 import { getScrollYOffset } from './getScrollYOffset';
 
 export function getScrollPercent() {
-  if (isServer() || !document.documentElement) {
+  if (isServer || !document.documentElement) {
     return 0;
   }
 

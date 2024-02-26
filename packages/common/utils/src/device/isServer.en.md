@@ -1,7 +1,7 @@
 # isServer
 
 ```typescript
-function isServer(): boolean;
+const isServer: boolean;
 ```
 
 Checks if the current JavaScript runtime is Node.js.
@@ -11,7 +11,7 @@ It can be used to run some logic only in the server, when developing server-side
 ## Example
 
 ```typescript
-if (isServer()) {
+if (isServer) {
   // Guarantees to be run on the server-side
   doSomethingInServer();
 }

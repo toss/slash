@@ -10,5 +10,5 @@
 - Mac68K
 
 ```typescript
-function isMacOS(): boolean;
+const isMacOS: boolean;
 ```

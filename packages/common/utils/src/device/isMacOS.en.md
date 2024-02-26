@@ -10,5 +10,5 @@ It returns if `navigator.platform` includes any of the strings below:
 - Mac68K
 
 ```typescript
-function isMacOS(): boolean;
+const isMacOS: boolean;
 ```
