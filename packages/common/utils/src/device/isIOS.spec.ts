@@ -7,7 +7,7 @@ describe('isIOS', () => {
       isServer: true,
     }));
 
-    expect(isIOS).toBe(false);
+    expect(isIOS()).toBe(false);
   });
 
   it('should return true for iOS user agent', () => {
@@ -16,7 +16,7 @@ describe('isIOS', () => {
     // }));
     Object.defineProperty(window.navigator, 'userAgent', { value: 'iPhone', writable: true });
 
-    expect(isIOS).toBe(true);
+    expect(isIOS()).toBe(true);
   });
 
   it('should return false for non-iOS user agent', () => {
@@ -25,6 +25,6 @@ describe('isIOS', () => {
     }));
     Object.defineProperty(window.navigator, 'userAgent', { value: 'Android', writable: true });
 
-    expect(isIOS).toBe(false);
+    expect(isIOS()).toBe(false);
   });
 });
