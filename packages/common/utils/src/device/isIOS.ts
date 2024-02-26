@@ -1,7 +1,5 @@
-export const isIOS = (function () {
-  // if (isServer) {
-  //   return false;
-  // }
-
-  return navigator.userAgent.match(/iPhone|iPad|iPod/i) != null;
+export const isIOS = (() => {
+  return () => {
+    return /iPad|iPhone|iPod/.test(navigator.userAgent);
+  };
 })();

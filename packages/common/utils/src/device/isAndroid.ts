@@ -1,7 +1,5 @@
-export const isAndroid = (function () {
-  // if (isServer) {
-  //   return false;
-  // }
-
-  return navigator.userAgent.match(/Android/i) != null;
+export const isAndroid = (() => {
+  return () => {
+    return /Android/.test(navigator.userAgent);
+  };
 })();
