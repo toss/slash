@@ -35,7 +35,7 @@ describe('TypedStorage', () => {
       const key = 'set-boolean-test-key';
       const typed = new TypedStorage(key, { initialValue: false });
       typed.set(true);
-      expect(typed.get()).toEqual(false);
+      expect(typed.get()).toEqual(true);
       expect(typeof typed.get()).toEqual('boolean');
     });
   });
