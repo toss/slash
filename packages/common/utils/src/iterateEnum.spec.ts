@@ -6,17 +6,23 @@ enum Language {
   JPN = 'JPN',
 }
 
+enum LanguageNum {
+  KOR = 1,
+  ENG = 2,
+  JPN = 3,
+}
+
 export default describe('iterateEnum', () => {
-  it('should iterate over enum correctly', () => {
+  it('should iterate over string enum correctly', () => {
     const expectedArray = [Language.KOR, Language.ENG, Language.JPN];
 
     expect(iterateEnum(Language)).toEqual(expectedArray);
   });
 
-  it('should produce the same result as Object.keys', () => {
-    const expectedArray = Object.keys(Language);
+  it('should iterate over number enum correctly', () => {
+    const expectedArray = ['KOR', 'ENG', 'JPN'];
 
-    expect(iterateEnum(Language)).toEqual(expectedArray);
+    expect(iterateEnum(LanguageNum)).toEqual(expectedArray);
   });
 
   it('should infer the correct type', () => {
