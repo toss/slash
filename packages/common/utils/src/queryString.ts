@@ -18,7 +18,7 @@ export function createQueryString(params: Record<string, any>) {
 }
 
 /**
- * 전달하는 object를 nilable value를 필터링하고 URLSearchParams로 파싱하고 string을 반환합니다.
+ * 전달하는 object의 nullable value를 필터링하고 URLSearchParams로 파싱하고 string을 반환합니다.
  * @example
  * createSearchParamString({ foo: 1, bar: ['a', 'b'], baz: undefined }) // foo=1&bar=a&bar=b
  * @param params query로 변환하고자 하는 object
