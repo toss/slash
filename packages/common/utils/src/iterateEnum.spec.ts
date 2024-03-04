@@ -19,7 +19,7 @@ export default describe('iterateEnum', () => {
     expect(iterateEnum(Language)).toEqual(expectedArray);
   });
 
-  it('should iterate over number enum correctly', () => {
+  it('should iterate over numeric enum correctly', () => {
     const expectedArray = ['KOR', 'ENG', 'JPN'];
 
     expect(iterateEnum(LanguageNum)).toEqual(expectedArray);
