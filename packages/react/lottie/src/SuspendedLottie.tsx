@@ -1,3 +1,4 @@
+/** @tossdocs-ignore */
 import { forwardRef, Ref } from 'react';
 import { suspend } from 'suspend-react';
 import { BaseLottie, BaseLottieProps } from './BaseLottie';
