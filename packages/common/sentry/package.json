@@ -11,6 +11,11 @@
     "dist",
     "esm"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/toss/slash.git",
+    "directory": "packages/common/sentry"
+  },
   "scripts": {
     "build": "concurrently \"tsc -p tsconfig.json\" \"tsc -p tsconfig.esm.json\"",
     "prepack": "yarn build",
