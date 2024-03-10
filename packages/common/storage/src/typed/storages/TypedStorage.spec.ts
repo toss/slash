@@ -30,6 +30,14 @@ describe('TypedStorage', () => {
       typed.set('changed-value');
       expect(typed.get()).toEqual('changed-value');
     });
+
+    it('should return boolean type for boolean initialValue', () => {
+      const key = 'set-boolean-test-key';
+      const typed = new TypedStorage(key, { initialValue: false });
+      typed.set(true);
+      expect(typed.get()).toEqual(true);
+      expect(typeof typed.get()).toEqual('boolean');
+    });
   });
 
   describe('using clear() method', () => {
