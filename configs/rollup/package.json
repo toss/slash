@@ -19,5 +19,10 @@
   "publishConfig": {
     "access": "public"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/toss/slash.git",
+    "directory": "configs/rollup"
+  },
   "gitHead": "6a4434621e29e014d537ae3dc0f026364b893a69"
 }

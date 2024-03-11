@@ -13,6 +13,11 @@
     "esm",
     "typed.d.ts"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/toss/slash.git",
+    "directory": "packages/common/storage"
+  },
   "scripts": {
     "build": "tsc --emitDeclarationOnly --outDir types && rollup -c && rm -rf types",
     "prepack": "yarn build",
