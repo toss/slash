@@ -4,7 +4,10 @@ import { NumberTypedStorage, TypedStorage, TypedStorageOptions } from './storage
 
 type Result<T> = T extends number ? NumberTypedStorage : TypedStorage<T>;
 
-function createTypedStorage<T>(key: string, options: TypedStorageOptions<T> = {}): Result<T> {
+function createTypedStorage<T>(
+  key: string,
+  options: TypedStorageOptions<T extends boolean ? boolean : T> = {}
+): Result<T> {
   const { initialValue, ...others } = options;
 
   if (typeof initialValue === 'number') {
@@ -14,10 +17,16 @@ function createTypedStorage<T>(key: string, options: TypedStorageOptions<T> = {}
   return new TypedStorage(key, options) as any;
 }
 
-export function createTypedLocalStorage<T>(key: string, options: Omit<TypedStorageOptions<T>, 'storage'> = {}) {
+export function createTypedLocalStorage<T>(
+  key: string,
+  options: Omit<TypedStorageOptions<T extends boolean ? boolean : T>, 'storage'> = {}
+) {
   return createTypedStorage<T>(key, { ...options, storage: safeLocalStorage });
 }
 
-export function createTypedSessionStorage<T>(key: string, options: Omit<TypedStorageOptions<T>, 'storage'> = {}) {
+export function createTypedSessionStorage<T>(
+  key: string,
+  options: Omit<TypedStorageOptions<T extends boolean ? boolean : T>, 'storage'> = {}
+) {
   return createTypedStorage<T>(key, { ...options, storage: safeSessionStorage });
 }
