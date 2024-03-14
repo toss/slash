@@ -6,5 +6,5 @@ export function isMacOS() {
     return false;
   }
 
-  return navigator.platform.match(/Macintosh|MacIntel|MacPPC|Mac68K/) != null;
+  return navigator.platform.match(/Macintosh|MacIntel|MacPPC|Mac68K/) !== null;
 }
