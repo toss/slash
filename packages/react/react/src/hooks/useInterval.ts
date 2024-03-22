@@ -1,4 +1,6 @@
-import { useEffect, useRef } from 'react';
+import { noop } from '@toss/utils';
+import { useEffect } from 'react';
+import { usePreservedCallback } from './usePreservedCallback';
 
 type IntervalOptions =
   | number
@@ -8,20 +10,16 @@ type IntervalOptions =
     };
 
 /** @tossdocs-ignore */
-export function useInterval(callback: () => void, options: IntervalOptions) {
+export function useInterval(callback = noop, options: IntervalOptions) {
   const delay = typeof options === 'number' ? options : options.delay;
   const trailing = typeof options === 'number' ? undefined : options.trailing;
-  const savedCallback = useRef<() => void>();
+  const savedCallback = usePreservedCallback(callback);
 
   useEffect(() => {
-    savedCallback.current = callback;
-  });
-
-  useEffect(() => {
-    if (trailing === false && savedCallback.current) {
-      savedCallback.current();
+    if (trailing === false) {
+      savedCallback();
     }
-  }, [trailing]);
+  }, [trailing, savedCallback]);
 
   useEffect(() => {
     if (delay === null) {
@@ -31,12 +29,10 @@ export function useInterval(callback: () => void, options: IntervalOptions) {
     }
 
     function tick() {
-      if (savedCallback.current) {
-        savedCallback.current();
-      }
+      savedCallback();
     }
 
     const id = window.setInterval(tick, delay);
     return () => window.clearInterval(id);
-  }, [delay]);
+  }, [delay, savedCallback]);
 }
