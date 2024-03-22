@@ -10,10 +10,10 @@ type IntervalOptions =
     };
 
 /** @tossdocs-ignore */
-export function useInterval(callback = noop, options: IntervalOptions) {
+export function useInterval(callback: () => void, options: IntervalOptions) {
   const delay = typeof options === 'number' ? options : options.delay;
   const trailing = typeof options === 'number' ? undefined : options.trailing;
-  const savedCallback = usePreservedCallback(callback);
+  const savedCallback = usePreservedCallback(callback ?? noop);
 
   useEffect(() => {
     if (trailing === false) {
