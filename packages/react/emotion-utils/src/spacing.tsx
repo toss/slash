@@ -4,13 +4,15 @@ import { memo } from 'react';
 import { coerceCssPixelValue } from './coerceCssPixelValue';
 import { AxisDirection, CSSPixelValue, ExtendHTMLProps } from './types';
 
-type SpacingProps = ExtendHTMLProps<
-  HTMLDivElement,
-  {
-    children?: never;
-    direction?: AxisDirection;
-    size: CSSPixelValue;
-  }
+type SpacingProps = Omit<
+  ExtendHTMLProps<
+    HTMLDivElement,
+    {
+      direction?: AxisDirection;
+      size: CSSPixelValue;
+    }
+  >,
+  'children'
 >;
 
 export const Spacing = memo(function Spacing({ direction = 'vertical', size, ...props }: SpacingProps) {

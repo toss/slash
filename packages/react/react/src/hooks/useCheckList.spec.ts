@@ -110,4 +110,35 @@ describe('useCheckList', () => {
 
     expect(result.current.list[0]).toEqual({ id: 1, checked: true, foo: 'bar' });
   });
+
+  it('should not update items when they are already set to the target checked state', () => {
+    const items = [
+      { id: 1, checked: true },
+      { id: 3, checked: true },
+      { id: 5, checked: true },
+    ];
+    const { result } = renderHook(() => useCheckList(items));
+
+    const mockUpdateList = jest.fn();
+    act(() => {
+      result.current.set = mockUpdateList;
+    });
+    act(() => {
+      result.current.updateAll(true);
+    });
+    expect(mockUpdateList).not.toHaveBeenCalled();
+  });
+
+  it('should not update any item if the given id does not exist in the list', () => {
+    const items = [
+      { id: 1, checked: false },
+      { id: 3, checked: true },
+      { id: 5, checked: false },
+    ];
+    const { result } = renderHook(() => useCheckList(items));
+    act(() => {
+      result.current.updateItem(135, true);
+    });
+    expect(result.current.list).toEqual(items);
+  });
 });

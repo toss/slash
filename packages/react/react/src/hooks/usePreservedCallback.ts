@@ -8,10 +8,7 @@ export function usePreservedCallback<Callback extends (...args: any[]) => any>(c
     callbackRef.current = callback;
   }, [callback]);
 
-  return useCallback(
-    (...args: any[]) => {
-      return callbackRef.current(...args);
-    },
-    [callbackRef]
-  ) as Callback;
+  return useCallback((...args: any[]) => {
+    return callbackRef.current(...args);
+  }, []) as Callback;
 }

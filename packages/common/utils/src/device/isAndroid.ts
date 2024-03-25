@@ -1,3 +1,4 @@
+/** @tossdocs-ignore */
 import { isServer } from './isServer';
 
 export function isAndroid() {
@@ -5,5 +6,5 @@ export function isAndroid() {
     return false;
   }
 
-  return navigator.userAgent.match(/Android/i) != null;
+  return navigator.userAgent.match(/Android/i) !== null;
 }
