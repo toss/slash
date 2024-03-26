@@ -1,2 +1,4 @@
+import { NonEmptyArray } from '@toss/utils';
+
 /** @tossdocs-ignore */
-export type NonEmptyArray<T> = readonly [T, ...T[]];
+export type StepsType = Readonly<NonEmptyArray<string>>;
