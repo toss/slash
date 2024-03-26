@@ -6,7 +6,7 @@ title: ScreenReaderOnly
 
 A component which is not visible but can be read by a screen reader.
 
-This component is used when dealing with accessbility and some text is needed to be read only by the screen reader.
+This component is used when dealing with accessibility and some text is needed to be read only by the screen reader.
 
 ## When is it needed?
 
