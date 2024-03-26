@@ -1,7 +1,6 @@
 /** @tossdocs-ignore */
-import { useIsMounted } from '@toss/react';
-import { createContext, ReactNode, useContext, useEffect, useMemo, useRef } from 'react';
-import { useKey } from './hooks';
+import { createContext, ReactNode, useContext, useEffect, useMemo } from 'react';
+import { useIsChanged, useKey } from './hooks';
 
 export const ErrorBoundaryGroupContext = createContext<{ reset: () => void; resetKey: number } | undefined>(undefined);
 if (process.env.NODE_ENV !== 'production') {
@@ -39,16 +38,15 @@ export const ErrorBoundaryGroup = ({
    */
   children?: ReactNode;
 }) => {
-  const blockOutsideRef = useRef(blockOutside);
-  const isMounted = useIsMounted();
-  const group = useContext(ErrorBoundaryGroupContext);
   const [resetKey, reset] = useKey();
+  const parentGroup = useContext(ErrorBoundaryGroupContext);
+  const isParentGroupResetKeyChanged = useIsChanged(parentGroup?.resetKey);
 
   useEffect(() => {
-    if (isMounted && !blockOutsideRef.current) {
+    if (!blockOutside && isParentGroupResetKeyChanged) {
       reset();
     }
-  }, [group?.resetKey, isMounted, reset]);
+  }, [isParentGroupResetKeyChanged, reset, blockOutside]);
 
   const value = useMemo(() => ({ reset, resetKey }), [reset, resetKey]);
 
