@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.4.0](https://github.com/toss/slash/compare/@toss/storage@1.3.1...@toss/storage@1.4.0) (2024-03-26)
+
+
+### Bug Fixes
+
+* **@toss/storage:** Fix boolean type inference for TypedStorage  ([#442](https://github.com/toss/slash/issues/442)) ([36ecfce](https://github.com/toss/slash/commit/36ecfced3181aa549ca7373c4d3d193d6580db64))
+
+
+### Features
+
+* **packages:** add repository information in package.json ([#446](https://github.com/toss/slash/issues/446)) ([063cc5d](https://github.com/toss/slash/commit/063cc5d4699b1ba0dc20db3d2bb7dc673947500b))
+
+
+
+
+
 # [1.3.0](https://github.com/toss/slash/compare/@toss/storage@1.2.0...@toss/storage@1.3.0) (2023-06-13)
 
 
