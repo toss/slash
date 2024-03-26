@@ -6275,6 +6275,7 @@ __metadata:
     "@types/node": ^14.14.41
     babel-jest: ^29
     concurrently: ^4.1.0
+    date-fns: ^2.25.0
     jest: ^29.0.1
     jest-environment-jsdom: ^29
     rollup: ^2.77.0
