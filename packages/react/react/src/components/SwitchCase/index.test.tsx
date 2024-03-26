@@ -1,6 +1,11 @@
 import { render } from '@testing-library/react';
 import { SwitchCase } from '.';
 
+enum TestEnum {
+  A = 'a',
+  B = 'b',
+}
+
 describe('SwitchCase', () => {
   function prepare(key: string) {
     return render(
@@ -34,5 +39,41 @@ describe('SwitchCase', () => {
     expect(controls.queryByText('Hello A')).not.toBeInTheDocument();
     expect(controls.queryByText('Hello B')).not.toBeInTheDocument();
     expect(controls.getByText('Default')).toBeInTheDocument();
+  });
+
+  describe('SwitchCase with enum', () => {
+    function prepare(key: TestEnum) {
+      return render(
+        <SwitchCase
+          value={key}
+          caseBy={{
+            [TestEnum.A]: <>Hello A</>,
+            [TestEnum.B]: <>Hello B</>,
+          }}
+          defaultComponent={<>Default</>}
+        />
+      );
+    }
+
+    it(`should render 'Hello A' when the value is 'a'.`, () => {
+      const controls = prepare(TestEnum.A);
+
+      expect(controls.getByText('Hello A')).toBeInTheDocument();
+    });
+
+    it(`should not render 'Hello B' when the value is 'a'.`, () => {
+      const controls = prepare(TestEnum.A);
+
+      expect(controls.getByText('Hello A')).toBeInTheDocument();
+      expect(controls.queryByText('Hello B')).not.toBeInTheDocument();
+    });
+
+    it(`should render 'Default' if no satisfying value is provided.`, () => {
+      const controls = prepare('cc' as TestEnum);
+
+      expect(controls.queryByText('Hello A')).not.toBeInTheDocument();
+      expect(controls.queryByText('Hello B')).not.toBeInTheDocument();
+      expect(controls.getByText('Default')).toBeInTheDocument();
+    });
   });
 });

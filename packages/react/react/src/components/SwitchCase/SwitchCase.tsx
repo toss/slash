@@ -1,11 +1,12 @@
-interface Props<Case extends string | number> {
+type EnumKeys<E> = E extends Record<infer K, number | string> ? K : never;
+
+interface Props<Case extends string | number | EnumKeys<any>> {
   caseBy: Partial<Record<Case, JSX.Element | null>>;
   value: Case;
   defaultComponent?: JSX.Element | null;
 }
 
-/** @tossdocs-ignore */
-export function SwitchCase<Case extends string | number>({
+export function SwitchCase<Case extends string | number | EnumKeys<any>>({
   value,
   caseBy,
   defaultComponent: defaultComponent = null,
