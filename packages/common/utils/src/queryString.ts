@@ -7,7 +7,7 @@
  * createQueryString({}) // ''
  * @param  {Params} params The property names must be strings, and the values must be of type string | number | string[] | number[].
  */
-export function createQueryString(params: Record<string, any>) {
+function createQueryString(params: Record<string, any>) {
   const queryString = createSearchParamString(params);
 
   if (queryString === '') {
@@ -23,7 +23,7 @@ export function createQueryString(params: Record<string, any>) {
  * createSearchParamString({ foo: 1, bar: ['a', 'b'], baz: undefined }) // foo=1&bar=a&bar=b
  * @param params params The object to convert into a query
  */
-export function createSearchParamString(params: Record<string, any>) {
+function createSearchParamString(params: Record<string, any>) {
   return (
     new URLSearchParams(
       Object.entries(params)
@@ -48,7 +48,7 @@ export function createSearchParamString(params: Record<string, any>) {
  * @warn
  * Using parseQueryString without the first parameter is unsafe for SSR.
  */
-export function parseQueryString<Result = Record<string, string>>(
+function parseQueryString<Result = Record<string, string>>(
   queryString: string = typeof location !== 'undefined' ? location.search : ''
 ): Result {
   const query = queryString.trim().replace(/^[?#&]/, '');
@@ -86,7 +86,7 @@ function getQueryString<T = string>(name: string, parser?: (val: string) => T) {
   }
 }
 
-export function setQueryString(search: string, key: string, value: string) {
+function setQueryString(search: string, key: string, value: string) {
   const parsed = parseQueryString(search);
 
   return createQueryString({
