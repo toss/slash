@@ -1,14 +1,14 @@
 import { createQueryString, createSearchParamString, parseQueryString, QS } from './queryString';
 
-describe('parseQueryString은', () => {
-  it('정상적으로 query string을 파싱한다.', () => {
+describe('parseQueryString', () => {
+  it('should correctly parse a query string.', () => {
     const result = parseQueryString<{ foo: string; bar: string }>('?foo=bar&bar=baz');
 
     expect(result.foo).toEqual('bar');
     expect(result.bar).toEqual('baz');
   });
 
-  it('정상적으로 인코딩된 query string을 파싱한다.', () => {
+  it('should correctly parse an encoded query string.', () => {
     const url = 'https://toss.im';
 
     const result = parseQueryString<{ url: string }>(
@@ -23,13 +23,13 @@ describe('parseQueryString은', () => {
   /**
    * @see https://stackoverflow.com/questions/31670413/plus-sign-in-encoded-url
    */
-  it('space가 포함된 문자열을 RFC3986에 맞게 잘 디코딩한다', () => {
+  it('should correctly decode a string with spaces according to RFC3986.', () => {
     const result = parseQueryString<{ prop1: string }>('?prop1=%EC%A0%95%EC%B9%98%20%ED%9B%84%EC%9B%90%EA%B8%88');
 
     expect(result.prop1).toEqual('정치 후원금');
   });
 
-  it('space가 포함된 문자열의 배열을 RFC3986에 맞게 잘 디코딩한다', () => {
+  it('should correctly decode an array of strings with spaces according to RFC3986.', () => {
     const result = parseQueryString<{ prop4: string[] }>(
       '?prop4=%EC%A0%95%EC%B9%98%20%ED%9B%84%EC%9B%90%EA%B8%88&prop4=%EB%A7%88%EC%9D%B4%20%EB%8D%B0%EC%9D%B4%ED%84%B0'
     );
@@ -38,7 +38,7 @@ describe('parseQueryString은', () => {
     expect(result.prop4).toContain('마이 데이터');
   });
 
-  it('+가 포함된 문자열을 RFC3986에 맞게 잘 인코딩한다', () => {
+  it('should correctly encode a string containing a + according to RFC3986.', () => {
     const result = parseQueryString<{ prop1: string }>('?prop1=%EC%A0%95%EC%B9%98%2B%ED%9B%84%EC%9B%90%EA%B8%88');
     expect(result.prop1).toEqual('정치+후원금');
   });
@@ -51,15 +51,15 @@ interface Params {
   prop4?: string[];
 }
 
-describe('createQueryString은', () => {
-  it('빈 객체를 받으면 빈 문자열을 반환한다.', () => {
+describe('createQueryString', () => {
+  it('should return an empty string when given an empty object.', () => {
     const params: Params = {};
     const result = createQueryString(params);
 
     expect(result).toEqual('');
   });
 
-  it('object를 받으면 정상적인 queryString을 반환한다.', () => {
+  it('should return a valid queryString when given an object.', () => {
     const params: Params = {
       prop1: 'prop1',
       prop2: 2,
@@ -69,7 +69,7 @@ describe('createQueryString은', () => {
     expect(result).toEqual('?prop1=prop1&prop2=2');
   });
 
-  it('배열을 받으면 정상적인 queryString을 반환한다.', () => {
+  it('should return a valid queryString when given an array.', () => {
     const params: Params = {
       prop1: 'prop1',
       prop2: 2,
@@ -84,7 +84,7 @@ describe('createQueryString은', () => {
   /**
    * @see https://stackoverflow.com/questions/31670413/plus-sign-in-encoded-url
    */
-  it('space가 포함된 문자열을 RFC3986에 맞게 잘 인코딩한다', () => {
+  it('should correctly encode a string with spaces according to RFC3986.', () => {
     const params: Params = {
       prop1: '정치 후원금',
     };
@@ -93,7 +93,7 @@ describe('createQueryString은', () => {
     expect(result).toEqual('?prop1=%EC%A0%95%EC%B9%98%20%ED%9B%84%EC%9B%90%EA%B8%88');
   });
 
-  it('space가 포함된 문자열의 배열을 RFC3986에 맞게 잘 인코딩한다', () => {
+  it('should correctly encode an array of strings with spaces according to RFC3986.', () => {
     const params: Params = {
       prop4: ['정치 후원금', '마이 데이터'],
     };
@@ -104,7 +104,7 @@ describe('createQueryString은', () => {
     );
   });
 
-  it('+가 포함된 문자열을 RFC3986에 맞게 잘 인코딩한다', () => {
+  it('should correctly encode a string containing + according to RFC3986.', () => {
     const params: Params = {
       prop1: '정치+후원금',
     };
@@ -114,8 +114,8 @@ describe('createQueryString은', () => {
   });
 });
 
-describe('createSearchParamString은', () => {
-  it('전달받은 params을 프로토콜 규약에 맞게 파싱한다.', () => {
+describe('createSearchParamString', () => {
+  it('should correctly parse the given params according to protocol specifications.', () => {
     const params = {
       foo: '1',
       bar: 2,
@@ -127,7 +127,7 @@ describe('createSearchParamString은', () => {
     expect(result).toEqual('foo=1&bar=2&baz=a&baz=b&baz=c');
   });
 
-  it('space가 포함된 문자열을 RFC3986에 맞게 잘 인코딩한다', () => {
+  it('should correctly encode a string with spaces according to RFC3986.', () => {
     const params: Params = {
       prop1: '정치 후원금',
     };
@@ -136,7 +136,7 @@ describe('createSearchParamString은', () => {
     expect(result).toEqual('?prop1=%EC%A0%95%EC%B9%98%20%ED%9B%84%EC%9B%90%EA%B8%88');
   });
 
-  it('space가 포함된 문자열의 배열을 RFC3986에 맞게 잘 인코딩한다', () => {
+  it('should correctly encode an array of strings with spaces according to RFC3986.', () => {
     const params: Params = {
       prop4: ['정치 후원금', '마이 데이터'],
     };
@@ -147,7 +147,7 @@ describe('createSearchParamString은', () => {
     );
   });
 
-  it('+가 포함된 문자열을 RFC3986에 맞게 잘 인코딩한다', () => {
+  it('should correctly encode a string containing a + according to RFC3986.', () => {
     const params: Params = {
       prop1: '정치+후원금',
     };
@@ -158,7 +158,7 @@ describe('createSearchParamString은', () => {
 });
 
 describe('QS.set', () => {
-  it('쿼리 파라미터를 RFC 3986에 따라 설정한다.', () => {
+  it('should set query parameters according to RFC 3986.', () => {
     expect(QS.set('?with_space=hi%20hi', 'referrer', 'foo')).toMatchInlineSnapshot(
       `"?with_space=hi%20hi&referrer=foo"`
     );
