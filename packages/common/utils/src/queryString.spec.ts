@@ -114,6 +114,31 @@ describe('QS.create', () => {
   });
 });
 
+describe('QS.get', () => {
+  beforeEach(() => {
+    QS.parse = jest.fn().mockImplementation(() => ({
+      prop1: 'prop1',
+      prop2: 'prop2',
+      prop3: '40',
+    }));
+  });
+
+  it('should correctly return an existing single string value', () => {
+    const name = QS.get('prop1');
+    expect(name).toEqual('prop1');
+  });
+
+  it('should return undefined for a non-existing key', () => {
+    const result = QS.get('prop4');
+    expect(result).toBeUndefined();
+  });
+
+  it('should apply a parser function to convert a string to a number', () => {
+    const age = QS.get('prop3', Number);
+    expect(age).toEqual(40);
+  });
+});
+
 describe('QS.set', () => {
   it('should set query parameters according to RFC 3986.', () => {
     expect(QS.set('?with_space=hi%20hi', 'referrer', 'foo')).toMatchInlineSnapshot(
