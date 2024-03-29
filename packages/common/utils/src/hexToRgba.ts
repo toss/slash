@@ -27,7 +27,7 @@ export function hexToRgba(hex: string, alpha = 1) {
   const b = parseHexValueStr(normalizedHex.slice(4, 6));
 
   if ([r, g, b].some(value => Number.isNaN(value) || !isRGBDecimalValue(value))) {
-    throw new Error(`잘못된 hex 값입니다: ${hex}`);
+    throw new Error(`잘못된 hex값 입니다: ${hex}`);
   }
 
   return `rgba(${r},${g},${b},${alpha})`;
