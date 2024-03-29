@@ -16,14 +16,18 @@ export function hexToRgba(hex: string, alpha = 1) {
     throw new Error(`잘못된 알파값 입니다(0~1): ${alpha}`);
   }
 
-  hex = hex.length === 7 ? hex.slice(1) : hex;
+  const normalizedHex = hex.startsWith('#') ? hex.slice(1) : hex;
 
-  const r = parseHexValueStr(hex.slice(0, 2));
-  const g = parseHexValueStr(hex.slice(2, 4));
-  const b = parseHexValueStr(hex.slice(4, 6));
+  if (normalizedHex.length !== 6) {
+    throw new Error(`잘못된 normalizedHex 값의 길이입니다. 정확히 6자리여야 합니다: ${normalizedHex}`);
+  }
 
-  if ([r, g, b].some(x => Number.isNaN(x) || !isRGBDecimalValue(x))) {
-    throw new Error(`잘못된 hex값 입니다.: ${hex}`);
+  const r = parseHexValueStr(normalizedHex.slice(0, 2));
+  const g = parseHexValueStr(normalizedHex.slice(2, 4));
+  const b = parseHexValueStr(normalizedHex.slice(4, 6));
+
+  if ([r, g, b].some(value => Number.isNaN(value) || !isRGBDecimalValue(value))) {
+    throw new Error(`잘못된 hex 값입니다: ${hex}`);
   }
 
   return `rgba(${r},${g},${b},${alpha})`;
