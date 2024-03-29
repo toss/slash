@@ -10,10 +10,6 @@ describe('utils.hexToRgba', () => {
       expect(hexToRgba('#e3e3e3')).toEqual('rgba(227,227,227,1)');
     });
 
-    test('"e3e3e33"는 잘못된 형식이다)', () => {
-      expect(() => hexToRgba('e3e3e33')).toThrowError();
-    });
-
     test('#17171c -> rgba(23,23,28,1)', () => {
       expect(hexToRgba('#17171c')).toEqual('rgba(23,23,28,1)');
     });
@@ -36,6 +32,12 @@ describe('utils.hexToRgba', () => {
 
       // 255 초과
       expect(() => hexToRgba('#ggaabb')).toThrowError();
+
+      // 잘못된 길이
+      expect(() => hexToRgba('e3e3e33')).toThrowError();
+
+      // 잘못된 길이
+      expect(() => hexToRgba('#e3e3e33')).toThrowError();
 
       // 지원하지 않는 형식
       expect(() => hexToRgba('#fff')).toThrowError();
