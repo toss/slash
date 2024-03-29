@@ -28,6 +28,9 @@ describe('utils.hexToRgba', () => {
 
       // 255 초과
       expect(() => hexToRgba('#ggaabb')).toThrowError();
+
+      // 지원하지 않는 형식
+      expect(() => hexToRgba('#fff')).toThrowError();
     });
   });
 });
