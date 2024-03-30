@@ -1,8 +1,8 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 /** @tossdocs-ignore */
 import { OverlayController, OverlayControlRef } from './OverlayController';
+import { useOverlayContext } from './OverlayProvider';
 import { CreateOverlayElement } from './types';
-import { useOverlayContext } from './useOverlayContext';
 
 let elementId = 1;
 

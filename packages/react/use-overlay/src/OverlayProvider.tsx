@@ -1,13 +1,11 @@
 /** @tossdocs-ignore */
-import React, { createContext, PropsWithChildren, useCallback, useMemo, useState } from 'react';
+import { buildContext } from '@toss/react';
+import React, { PropsWithChildren, useCallback, useState } from 'react';
 
-export const OverlayContext = createContext<{
+export const [OverlayContextProvider, useOverlayContext] = buildContext<{
   mount(id: string, element: JSX.Element): void;
   unmount(id: string): void;
-} | null>(null);
-if (process.env.NODE_ENV !== 'production') {
-  OverlayContext.displayName = 'OverlayContext';
-}
+}>('OverlayContext', null);
 
 export function OverlayProvider({ children }: PropsWithChildren) {
   const [overlayById, setOverlayById] = useState<Map<string, JSX.Element>>(new Map());
@@ -28,14 +26,14 @@ export function OverlayProvider({ children }: PropsWithChildren) {
     });
   }, []);
 
-  const context = useMemo(() => ({ mount, unmount }), [mount, unmount]);
+  const value = { mount, unmount };
 
   return (
-    <OverlayContext.Provider value={context}>
+    <OverlayContextProvider {...value}>
       {children}
       {[...overlayById.entries()].map(([id, element]) => (
         <React.Fragment key={id}>{element}</React.Fragment>
       ))}
-    </OverlayContext.Provider>
+    </OverlayContextProvider>
   );
 }
