@@ -18,29 +18,32 @@ describe('utils.hexToRgba', () => {
       expect(hexToRgba('#17171c', 0.5)).toEqual('rgba(23,23,28,0.5)');
     });
 
-    test('hex값 앞에 "#"을 붙이지 않아도 잘 파싱한다.', () => {
+    test('Parses hex values correctly even without a "#" prefix.', () => {
       expect(hexToRgba('17171c')).toEqual('rgba(23,23,28,1)');
     });
 
-    test('잘못된 alpha 값인 경우 오류를 발생시킨다.', () => {
+    test('Throws an error for invalid alpha values.', () => {
       expect(() => hexToRgba('#ececec', 3)).toThrowError();
     });
 
-    test('잘못된 hex 값인 경우 오류를 발생시킨다.', () => {
+    test('Throws an error for invalid hex values.', () => {
       // NaN
       expect(() => hexToRgba('#ecec1')).toThrowError();
 
-      // 255 초과
+      // Exceeding 255
       expect(() => hexToRgba('#ggaabb')).toThrowError();
 
-      // 잘못된 길이
+      // Incorrect length
       expect(() => hexToRgba('e3e3e33')).toThrowError();
 
-      // 잘못된 길이
+      // Incorrect length with '#'
       expect(() => hexToRgba('#e3e3e33')).toThrowError();
 
-      // 지원하지 않는 형식
+      // Short HEX format not supported
       expect(() => hexToRgba('#fff')).toThrowError();
+
+      // Hex values with alpha channel not supported
+      expect(() => hexToRgba('#ffffff80')).toThrowError();
     });
   });
 });
