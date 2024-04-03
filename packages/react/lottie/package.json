@@ -24,6 +24,7 @@
     "lint": "yarn run -T eslint src/**/*.{js,ts,tsx}",
     "prepack": "yarn build",
     "test": "echo \"no test specified.\"",
+    "coverage": "jest --coverage",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
