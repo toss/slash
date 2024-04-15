@@ -1,16 +1,5 @@
-import { fireEvent, render, renderHook, screen } from '@testing-library/react';
+import { act, renderHook } from '@testing-library/react';
 import { useToggleState } from './useToggleState';
-
-const TestComponent = () => {
-  const [bool, toggle] = useToggleState(false);
-
-  return (
-    <div>
-      <p role={'paragraph'}>{`${bool}`}</p>
-      <button onClick={toggle}>button</button>
-    </div>
-  );
-};
 
 describe('useToggleState', () => {
   describe('Return Value Type Check ', () => {
@@ -52,24 +41,27 @@ describe('useToggleState', () => {
 
   describe('Execute toggle', () => {
     it('When toggle is executed, the value of bool changes from true to false, or from false to true.', () => {
-      render(<TestComponent />);
+      const { result } = renderHook(() => useToggleState());
 
-      const button = screen.getByRole('button');
-      const paragraph = screen.getByRole('paragraph');
+      const [, toggle] = result.current;
 
-      expect(paragraph).toHaveTextContent('false');
+      {
+        act(toggle);
+        const bool = result.current[0];
+        expect(bool).toBe(true);
+      }
 
-      fireEvent.click(button);
+      {
+        act(toggle);
+        const bool = result.current[0];
+        expect(bool).toBe(false);
+      }
 
-      expect(paragraph).toHaveTextContent('true');
-
-      fireEvent.click(button);
-
-      expect(paragraph).toHaveTextContent('false');
-
-      fireEvent.click(button);
-
-      expect(paragraph).toHaveTextContent('true');
+      {
+        act(toggle);
+        const bool = result.current[0];
+        expect(bool).toBe(true);
+      }
     });
   });
 });
