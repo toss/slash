@@ -1,7 +1,7 @@
 /** @tossdocs-ignore */
-import { createContext, ReactNode, useContext, useMemo } from 'react';
+import { createContext, useContext, useMemo, type PropsWithChildren } from 'react';
 
-type ProviderProps<ContextValuesType> = (ContextValuesType & { children: ReactNode }) | { children: ReactNode };
+type ProviderProps<ContextValuesType> = PropsWithChildren<ContextValuesType>;
 
 export function buildContext<ContextValuesType extends object>(
   contextName: string,
