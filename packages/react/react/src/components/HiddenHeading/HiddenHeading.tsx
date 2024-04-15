@@ -1,6 +1,6 @@
 /** @jsxImportSource react */
 import classnames from 'classnames';
-import { ComponentType, HTMLAttributes, ReactNode } from 'react';
+import { ComponentType, HTMLAttributes, PropsWithChildren } from 'react';
 import Style, { generateClassNames } from '../../utils/Style';
 
 type HeadingType = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
@@ -11,12 +11,11 @@ interface Props {
    */
   as?: HeadingType;
   className?: string;
-  children?: ReactNode;
   id?: string;
 }
 
 /** @tossdocs-ignore */
-export function HiddenHeading({ as = 'h1', id, className, children }: Props) {
+export function HiddenHeading({ as = 'h1', id, className, children }: PropsWithChildren<Props>) {
   const Heading = as as unknown as ComponentType<HTMLAttributes<HTMLHeadingElement>>;
 
   return (

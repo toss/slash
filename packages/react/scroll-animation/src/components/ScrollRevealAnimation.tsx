@@ -1,12 +1,10 @@
 /** @tossdocs-ignore */
-import { HTMLAttributes, ReactNode } from 'react';
+import { HTMLAttributes, PropsWithChildren } from 'react';
 import { useScrollProgress } from '../hooks';
 
-interface Props extends HTMLAttributes<HTMLDivElement> {
-  children?: ReactNode;
-}
+interface Props extends HTMLAttributes<HTMLDivElement> {}
 
-export function ScrollRevealAnimation({ style, ...rest }: Props) {
+export function ScrollRevealAnimation({ style, ...rest }: PropsWithChildren<Props>) {
   const { ref, scrollYProgress } = useScrollProgress<HTMLDivElement>({
     triggerHook: 0.6,
     duration: '20vh',

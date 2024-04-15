@@ -1,13 +1,9 @@
 /** @tossdocs-ignore */
-import { ReactNode } from 'react';
+import { PropsWithChildren } from 'react';
 import { ScrollProgressContext } from '../contexts';
 import { useWindowScrollPosition } from '../hooks';
 
-interface Props {
-  children?: ReactNode;
-}
-
-export function ScrollProgressController({ children }: Props) {
+export function ScrollProgressController({ children }: PropsWithChildren) {
   const windowScrollPosition = useWindowScrollPosition();
 
   return <ScrollProgressContext.Provider value={windowScrollPosition}>{children}</ScrollProgressContext.Provider>;

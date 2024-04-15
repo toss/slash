@@ -1,6 +1,6 @@
 /** @tossdocs-ignore */
 import { useIsMounted } from '@toss/react';
-import { createContext, ReactNode, useContext, useEffect, useMemo, useRef } from 'react';
+import { createContext, PropsWithChildren, useContext, useEffect, useMemo, useRef } from 'react';
 import { useKey } from './hooks';
 
 export const ErrorBoundaryGroupContext = createContext<{ reset: () => void; resetKey: number } | undefined>(undefined);
@@ -28,17 +28,13 @@ if (process.env.NODE_ENV !== 'production') {
 export const ErrorBoundaryGroup = ({
   blockOutside = false,
   children,
-}: {
+}: PropsWithChildren<{
   /**
    * @description If you use blockOutside as true, ErrorBoundaryGroup will protect multiple ErrorBoundaries as its children from external ErrorBoundaryGroup's resetKey
    * @default false
    */
   blockOutside?: boolean;
-  /**
-   * @description Use multiple ErrorBoundaries inside of children
-   */
-  children?: ReactNode;
-}) => {
+}>) => {
   const blockOutsideRef = useRef(blockOutside);
   const isMounted = useIsMounted();
   const group = useContext(ErrorBoundaryGroupContext);

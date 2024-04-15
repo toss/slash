@@ -1,8 +1,8 @@
 /** @tossdocs-ignore */
 /** @jsxImportSource react */
-import { ReactNode } from 'react';
+import { PropsWithChildren } from 'react';
 
-export default function Style({ css, children }: { css: string; children?: ReactNode }) {
+export default function Style({ css, children }: PropsWithChildren<{ css: string }>) {
   return (
     <>
       <style type="text/css">{css}</style>
