@@ -4769,7 +4769,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sentry/browser@npm:6.19.7, @sentry/browser@npm:^6.16.1, @sentry/browser@npm:^6.18.1":
+"@sentry/browser@npm:6.19.7, @sentry/browser@npm:^6.18.1":
   version: 6.19.7
   resolution: "@sentry/browser@npm:6.19.7"
   dependencies:
@@ -4869,7 +4869,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sentry/node@npm:6.19.7, @sentry/node@npm:^6.16.1, @sentry/node@npm:^6.18.1":
+"@sentry/node@npm:6.19.7, @sentry/node@npm:^6.18.1":
   version: 6.19.7
   resolution: "@sentry/node@npm:6.19.7"
   dependencies:
@@ -5442,9 +5442,9 @@ __metadata:
     "@testing-library/dom": "npm:^8.13.0"
     "@testing-library/jest-dom": "npm:^5.16.4"
     "@testing-library/react": "npm:^13.3.0"
+    "@toss/jest": "workspace:^"
     "@toss/rollup-config": "workspace:^0.2.0"
     "@toss/utils": "workspace:^1.5.0"
-    "@tossteam/jest": "npm:^17"
     "@types/jest": "npm:^28.1.8"
     "@types/node": "npm:^14.14.41"
     "@types/react": "npm:^18.0.21"
@@ -5471,9 +5471,9 @@ __metadata:
     "@babel/preset-env": "npm:^7.16.4"
     "@babel/preset-typescript": "npm:^7.18.6"
     "@babel/runtime": "npm:^7.16.3"
+    "@toss/jest": "workspace:^"
     "@toss/rollup-config": "workspace:^0.2.0"
     "@toss/utils": "workspace:^1.5.0"
-    "@tossteam/jest": "npm:^17"
     "@types/babel__core": "npm:^7"
     "@types/babel__preset-env": "npm:^7"
     "@types/jest": "npm:^28.1.8"
@@ -5498,8 +5498,8 @@ __metadata:
     "@testing-library/jest-dom": "npm:^5.16.4"
     "@testing-library/react": "npm:^13.3.0"
     "@toss/error-boundary": "workspace:^1.5.0"
+    "@toss/jest": "workspace:^"
     "@toss/rollup-config": "workspace:^0.2.0"
-    "@tossteam/jest": "npm:^17"
     "@types/babel__core": "npm:^7"
     "@types/babel__preset-env": "npm:^7"
     "@types/jest": "npm:^28.1.8"
@@ -5526,9 +5526,9 @@ __metadata:
   dependencies:
     "@babel/core": "npm:^7"
     "@babel/runtime": "npm:^7.13.10"
+    "@toss/jest": "workspace:^"
     "@toss/react": "workspace:^1.7.0"
     "@toss/rollup-config": "workspace:^0.2.0"
-    "@tossteam/jest": "npm:^17"
     "@types/jest": "npm:^28.1.8"
     "@types/node": "npm:^14.14.41"
     "@types/react": "npm:^18.0.21"
@@ -5560,8 +5560,8 @@ __metadata:
     "@rollup/plugin-babel": "npm:^5.3.1"
     "@rollup/plugin-commonjs": "npm:^22.0.1"
     "@rollup/plugin-node-resolve": "npm:^13.3.0"
+    "@toss/jest": "workspace:^"
     "@toss/rollup-config": "workspace:^0.2.0"
-    "@tossteam/jest": "npm:^17"
     "@types/babel__plugin-transform-runtime": "npm:^7"
     "@types/babel__preset-env": "npm:^7"
     "@types/bn.js": "npm:^5"
@@ -5585,8 +5585,8 @@ __metadata:
   dependencies:
     "@babel/core": "npm:^7"
     "@babel/runtime": "npm:^7.13.10"
+    "@toss/jest": "workspace:^"
     "@toss/rollup-config": "workspace:^0.2.0"
-    "@tossteam/jest": "npm:^17"
     "@types/babel__core": "npm:^7"
     "@types/jest": "npm:^28.1.8"
     "@types/node": "npm:^18.8.2"
@@ -5616,9 +5616,9 @@ __metadata:
     "@emotion/react": "npm:^11.9.3"
     "@testing-library/jest-dom": "npm:^5.16.4"
     "@testing-library/react": "npm:^13.3.0"
+    "@toss/jest": "workspace:^"
     "@toss/rollup-config": "workspace:^0.2.0"
     "@toss/utils": "workspace:^1.5.0"
-    "@tossteam/jest": "npm:^17"
     "@types/babel__core": "npm:^7"
     "@types/jest": "npm:^28.1.8"
     "@types/node": "npm:^16.11.11"
@@ -5654,10 +5654,10 @@ __metadata:
     "@testing-library/jest-dom": "npm:^5.16.4"
     "@testing-library/react": "npm:^13.3.0"
     "@testing-library/user-event": "npm:^14.4.3"
+    "@toss/jest": "workspace:^"
     "@toss/react": "workspace:^1.7.0"
     "@toss/rollup-config": "workspace:^0.2.0"
     "@toss/utils": "workspace:^1.5.0"
-    "@tossteam/jest": "npm:^17"
     "@types/babel__core": "npm:^7"
     "@types/babel__preset-env": "npm:^7"
     "@types/jest": "npm:^28.1.8"
@@ -5691,8 +5691,8 @@ __metadata:
     "@babel/runtime": "npm:^7.16.5"
     "@testing-library/jest-dom": "npm:^5.16.4"
     "@testing-library/react": "npm:^13.3.0"
+    "@toss/jest": "workspace:^"
     "@toss/rollup-config": "workspace:^0.2.0"
-    "@tossteam/jest": "npm:^17"
     "@types/babel__core": "npm:^7"
     "@types/babel__preset-env": "npm:^7"
     "@types/jest": "npm:^28.1.8"
@@ -5718,8 +5718,8 @@ __metadata:
     "@babel/core": "npm:^7"
     "@babel/runtime": "npm:^7.13.10"
     "@testing-library/jest-dom": "npm:^5.16.4"
+    "@toss/jest": "workspace:^"
     "@toss/rollup-config": "workspace:^0.2.0"
-    "@tossteam/jest": "npm:^17"
     "@types/jest": "npm:^28.1.8"
     "@types/node": "npm:^14.14.41"
     "@types/testing-library__jest-dom": "npm:^5"
@@ -5740,10 +5740,10 @@ __metadata:
     "@babel/runtime": "npm:^7.13.10"
     "@testing-library/jest-dom": "npm:^5.16.4"
     "@testing-library/react": "npm:^13.3.0"
+    "@toss/jest": "workspace:^"
     "@toss/react": "workspace:^1.7.0"
     "@toss/rollup-config": "workspace:^0.2.0"
     "@toss/utils": "workspace:^1.5.0"
-    "@tossteam/jest": "npm:^17"
     "@types/jest": "npm:^28.1.8"
     "@types/lodash.debounce": "npm:^4"
     "@types/node": "npm:^14.14.41"
@@ -5764,13 +5764,29 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@toss/jest@workspace:^, @toss/jest@workspace:configs/jest":
+  version: 0.0.0-use.local
+  resolution: "@toss/jest@workspace:configs/jest"
+  dependencies:
+    "@babel/core": "npm:^7.19.3"
+    "@rollup/plugin-babel": "npm:^5.3.1"
+    "@rollup/plugin-commonjs": "npm:^22.0.2"
+    "@rollup/plugin-json": "npm:^4.1.0"
+    "@rollup/plugin-node-resolve": "npm:^14.1.0"
+    builtin-modules: "npm:^3.3.0"
+    rollup: "npm:^2.79.1"
+  peerDependencies:
+    rollup: ^2
+  languageName: unknown
+  linkType: soft
+
 "@toss/ky@workspace:packages/common/ky":
   version: 0.0.0-use.local
   resolution: "@toss/ky@workspace:packages/common/ky"
   dependencies:
     "@babel/core": "npm:^7"
     "@babel/runtime": "npm:^7.13.10"
-    "@tossteam/jest": "npm:^17"
+    "@toss/jest": "workspace:^"
     "@types/jest": "npm:^28.1.8"
     "@types/node": "npm:^14.14.41"
     "@yarnpkg/esbuild-plugin-pnp": "npm:^3.0.0-rc.14"
@@ -5795,10 +5811,10 @@ __metadata:
     "@babel/core": "npm:^7"
     "@babel/runtime": "npm:^7.13.10"
     "@toss/impression-area": "workspace:^1.4.0"
+    "@toss/jest": "workspace:^"
     "@toss/react": "workspace:^1.7.0"
     "@toss/rollup-config": "workspace:^0.2.0"
     "@toss/utils": "workspace:^1.5.0"
-    "@tossteam/jest": "npm:^17"
     "@types/jest": "npm:^28.1.8"
     "@types/lodash.debounce": "npm:^4"
     "@types/node": "npm:^14.14.41"
@@ -5825,8 +5841,8 @@ __metadata:
   dependencies:
     "@babel/core": "npm:^7"
     "@babel/runtime": "npm:^7.13.10"
+    "@toss/jest": "workspace:^"
     "@toss/rollup-config": "workspace:^0.2.0"
-    "@tossteam/jest": "npm:^17"
     "@types/jest": "npm:^28.1.8"
     "@types/node": "npm:^14.14.41"
     "@yarnpkg/pnpify": "npm:^4.0.0-rc.27"
@@ -5859,12 +5875,13 @@ __metadata:
     "@babel/preset-typescript": "npm:^7.18.6"
     "@babel/runtime": "npm:^7.14.8"
     "@testing-library/dom": "npm:^8.13.0"
+    "@testing-library/jest-dom": "npm:^5.16.4"
     "@testing-library/react": "npm:^13.3.0"
     "@testing-library/user-event": "npm:^14.2.0"
+    "@toss/jest": "workspace:^"
     "@toss/rollup-config": "workspace:^0.2.0"
     "@toss/storage": "workspace:^1.4.0"
     "@toss/utils": "workspace:^1.5.0"
-    "@tossteam/jest": "npm:^17"
     "@types/babel__preset-env": "npm:^7"
     "@types/jest": "npm:^28.1.8"
     "@types/lodash.debounce": "npm:^4"
@@ -5904,8 +5921,8 @@ __metadata:
     "@babel/runtime": "npm:^7.13.10"
     "@testing-library/jest-dom": "npm:^5.16.4"
     "@testing-library/react": "npm:^13.3.0"
+    "@toss/jest": "workspace:^"
     "@toss/rollup-config": "workspace:^0.2.0"
-    "@tossteam/jest": "npm:^17"
     "@types/jest": "npm:^28.1.8"
     "@types/node": "npm:^14.14.41"
     "@types/react": "npm:^18.0.21"
@@ -5936,8 +5953,8 @@ __metadata:
     "@testing-library/react": "npm:^13.3.0"
     "@toss/assert": "workspace:^1.2.0"
     "@toss/error-boundary": "workspace:^1.5.0"
+    "@toss/jest": "workspace:^"
     "@toss/rollup-config": "workspace:^0.2.0"
-    "@tossteam/jest": "npm:^17"
     "@types/jest": "npm:^28.1.8"
     "@types/node": "npm:^14.14.41"
     "@types/react": "npm:^18.0.21"
@@ -5982,8 +5999,8 @@ __metadata:
     "@babel/runtime": "npm:^7.16.5"
     "@testing-library/jest-dom": "npm:^5.16.4"
     "@testing-library/react": "npm:^13.3.0"
+    "@toss/jest": "workspace:^"
     "@toss/rollup-config": "workspace:^0.2.0"
-    "@tossteam/jest": "npm:^17"
     "@types/babel__core": "npm:^7"
     "@types/babel__preset-env": "npm:^7"
     "@types/jest": "npm:^28.1.8"
@@ -6014,7 +6031,7 @@ __metadata:
     "@sentry/nextjs": "npm:^6.18.1"
     "@sentry/node": "npm:^6.18.1"
     "@sentry/types": "npm:^6.18.1"
-    "@tossteam/jest": "npm:^17"
+    "@toss/jest": "workspace:^"
     "@types/jest": "npm:^28.1.8"
     "@types/node": "npm:^14.14.41"
     babel-jest: "npm:^29"
@@ -6044,7 +6061,7 @@ __metadata:
     "@rollup/plugin-babel": "npm:^5.3.1"
     "@rollup/plugin-commonjs": "npm:^22.0.2"
     "@rollup/plugin-node-resolve": "npm:^14.1.0"
-    "@tossteam/jest": "npm:^17"
+    "@toss/jest": "workspace:^"
     "@types/babel__core": "npm:^7"
     "@types/jest": "npm:^28.1.8"
     "@types/node": "npm:^14.14.41"
@@ -6073,12 +6090,12 @@ __metadata:
     "@testing-library/react-hooks": "npm:^5.1.0"
     "@testing-library/user-event": "npm:^14.1.1"
     "@toss/assert": "workspace:^1.2.0"
+    "@toss/jest": "workspace:^"
     "@toss/react": "workspace:^1.7.0"
     "@toss/rollup-config": "workspace:^0.2.0"
     "@toss/storage": "workspace:^1.4.0"
     "@toss/use-query-param": "workspace:^1.3.0"
     "@toss/utils": "workspace:^1.5.0"
-    "@tossteam/jest": "npm:^17"
     "@types/babel__core": "npm:^7"
     "@types/babel__preset-env": "npm:^7"
     "@types/jest": "npm:^28.1.8"
@@ -6114,8 +6131,8 @@ __metadata:
   dependencies:
     "@babel/core": "npm:^7"
     "@testing-library/react": "npm:^13.3.0"
+    "@toss/jest": "workspace:^"
     "@toss/rollup-config": "workspace:^0.2.0"
-    "@tossteam/jest": "npm:^17"
     "@types/babel__core": "npm:^7"
     "@types/jest": "npm:^28.1.8"
     "@types/node": "npm:^14.14.41"
@@ -6150,10 +6167,10 @@ __metadata:
     "@testing-library/jest-dom": "npm:^5.16.4"
     "@testing-library/react": "npm:^13.3.0"
     "@testing-library/user-event": "npm:^14.2.0"
+    "@toss/jest": "workspace:^"
     "@toss/react": "workspace:^1.7.0"
     "@toss/rollup-config": "workspace:^0.2.0"
     "@toss/utils": "workspace:^1.5.0"
-    "@tossteam/jest": "npm:^17"
     "@types/babel__preset-env": "npm:^7"
     "@types/jest": "npm:^28.1.8"
     "@types/node": "npm:^14.14.41"
@@ -6185,8 +6202,8 @@ __metadata:
     "@babel/runtime": "npm:^7.16.3"
     "@testing-library/jest-dom": "npm:^5.16.4"
     "@testing-library/react": "npm:^13.3.0"
+    "@toss/jest": "workspace:^"
     "@toss/rollup-config": "workspace:^0.2.0"
-    "@tossteam/jest": "npm:^17"
     "@types/babel__core": "npm:^7"
     "@types/babel__preset-env": "npm:^7"
     "@types/concurrently": "npm:^6"
@@ -6217,7 +6234,7 @@ __metadata:
   dependencies:
     "@babel/core": "npm:^7"
     "@babel/runtime": "npm:^7.13.10"
-    "@tossteam/jest": "npm:^17"
+    "@toss/jest": "workspace:^"
     "@types/jest": "npm:^28.1.8"
     "@types/node": "npm:^14.14.41"
     babel-jest: "npm:^29"
@@ -6243,8 +6260,8 @@ __metadata:
     "@rollup/plugin-commonjs": "npm:^22.0.1"
     "@rollup/plugin-json": "npm:^4.1.0"
     "@rollup/plugin-node-resolve": "npm:^13.3.0"
+    "@toss/jest": "workspace:^"
     "@toss/rollup-config": "workspace:^0.2.0"
-    "@tossteam/jest": "npm:^17"
     "@types/babel__core": "npm:^7"
     "@types/babel__preset-env": "npm:^7"
     "@types/jest": "npm:^28.1.8"
@@ -6268,9 +6285,9 @@ __metadata:
   dependencies:
     "@babel/core": "npm:^7"
     "@babel/runtime": "npm:^7.13.10"
+    "@toss/jest": "workspace:^"
     "@toss/rollup-config": "workspace:^0.2.0"
     "@toss/utils": "workspace:^1.5.0"
-    "@tossteam/jest": "npm:^17"
     "@types/jest": "npm:^28.1.8"
     "@types/node": "npm:^14.14.41"
     babel-jest: "npm:^29"
@@ -6282,44 +6299,6 @@ __metadata:
     typescript: "npm:4.8.3"
   languageName: unknown
   linkType: soft
-
-"@tossteam/jest@npm:^17":
-  version: 17.187.2
-  resolution: "@tossteam/jest@npm:17.187.2"
-  dependencies:
-    "@sentry/browser": "npm:^6.16.1"
-    "@sentry/node": "npm:^6.16.1"
-    "@testing-library/jest-dom": "npm:^5.16.4"
-    compare-versions: "npm:^4.1.3"
-    enhanced-resolve: "npm:^5.8.3"
-    jest-canvas-mock: "npm:^2.3.1"
-  peerDependencies:
-    "@babel/core": "*"
-    "@babel/preset-env": "*"
-    "@babel/preset-typescript": "*"
-    "@babel/runtime": "*"
-    "@tossteam/tosscore": "*"
-    "@tossteam/tosscore-http": "*"
-    "@types/jest": "*"
-    jest: "*"
-  peerDependenciesMeta:
-    "@babel/core":
-      optional: true
-    "@babel/preset-env":
-      optional: true
-    "@babel/preset-typescript":
-      optional: true
-    "@babel/runtime":
-      optional: true
-    "@tossteam/toss-app-bridge":
-      optional: true
-    "@tossteam/tosscore":
-      optional: true
-    "@tossteam/tosscore-http":
-      optional: true
-  checksum: 10/b13ade16cec2f16b353226e26c9fd8d754fe207d5652fdf41eeb81cf34899122789000862c8224521809a5308798cea2ae9a1ed9d69fc45f05babc6cdf6edeaa
-  languageName: node
-  linkType: hard
 
 "@trysound/sax@npm:0.2.0":
   version: 0.2.0
@@ -9733,7 +9712,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"color-name@npm:^1.1.4, color-name@npm:~1.1.4":
+"color-name@npm:~1.1.4":
   version: 1.1.4
   resolution: "color-name@npm:1.1.4"
   checksum: 10/b0445859521eb4021cd0fb0cc1a75cecf67fceecae89b63f62b201cca8d345baf8b952c966862a9d9a2632987d4f6581f0ec8d957dfacece86f0a7919316f610
@@ -9852,13 +9831,6 @@ __metadata:
     array-ify: "npm:^1.0.0"
     dot-prop: "npm:^5.1.0"
   checksum: 10/fb71d70632baa1e93283cf9d80f30ac97f003aabee026e0b4426c9716678079ef5fea7519b84d012cbed938c476493866a38a79760564a9e21ae9433e40e6f0d
-  languageName: node
-  linkType: hard
-
-"compare-versions@npm:^4.1.3":
-  version: 4.1.4
-  resolution: "compare-versions@npm:4.1.4"
-  checksum: 10/0c4f0d943477b824234f5c6600ea7404a86ef506c696b9d91ee67979bd32c08371a8b6532cc17e6e17cf2916e46ef16d499dce70245a4f6786c3c055afcea697
   languageName: node
   linkType: hard
 
@@ -10494,13 +10466,6 @@ __metadata:
   bin:
     cssesc: bin/cssesc
   checksum: 10/0e161912c1306861d8f46e1883be1cbc8b1b2879f0f509287c0db71796e4ddfb97ac96bdfca38f77f452e2c10554e1bb5678c99b07a5cf947a12778f73e47e12
-  languageName: node
-  linkType: hard
-
-"cssfontparser@npm:^1.2.1":
-  version: 1.2.1
-  resolution: "cssfontparser@npm:1.2.1"
-  checksum: 10/952d487cddab591fb944f2a4c326a7736bc963784a6d92b6ad4051f3bf5ee49a732eff62e29a52ff085197cb07f5bd66525a2245ded7fd356113ac81be9238b9
   languageName: node
   linkType: hard
 
@@ -11603,7 +11568,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"enhanced-resolve@npm:^5.10.0, enhanced-resolve@npm:^5.8.3":
+"enhanced-resolve@npm:^5.10.0":
   version: 5.10.0
   resolution: "enhanced-resolve@npm:5.10.0"
   dependencies:
@@ -15365,16 +15330,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jest-canvas-mock@npm:^2.3.1":
-  version: 2.4.0
-  resolution: "jest-canvas-mock@npm:2.4.0"
-  dependencies:
-    cssfontparser: "npm:^1.2.1"
-    moo-color: "npm:^1.0.2"
-  checksum: 10/897ee3ef505c18aa4f8368e478261ece2cccd12bee4859457e25dff54b74af9672ee6f461c14ce424be147c1bfcac4b6cd9ab1bbec349a935de257ccac848261
-  languageName: node
-  linkType: hard
-
 "jest-changed-files@npm:^29.0.0":
   version: 29.0.0
   resolution: "jest-changed-files@npm:29.0.0"
@@ -17956,15 +17911,6 @@ __metadata:
   version: 1.0.1
   resolution: "modify-values@npm:1.0.1"
   checksum: 10/16fa93f7ddb2540a8e82c99738ae4ed0e8e8cae57c96e13a0db9d68dfad074fd2eec542929b62ebbb18b357bbb3e4680b92d3a4099baa7aeb32360cb1c8f0247
-  languageName: node
-  linkType: hard
-
-"moo-color@npm:^1.0.2":
-  version: 1.0.3
-  resolution: "moo-color@npm:1.0.3"
-  dependencies:
-    color-name: "npm:^1.1.4"
-  checksum: 10/a0c48927214d2acb02b3fd1a2b1439fa8130edbda7406594748146e398c22336af855b7d348ba9e657995909c9099084635a199db1e2098efd7117d92eb2cb59
   languageName: node
   linkType: hard
 

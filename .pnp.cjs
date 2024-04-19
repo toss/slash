@@ -14,6 +14,10 @@ const RAW_RUNTIME_STATE =
       "reference": "workspace:."\
     },\
     {\
+      "name": "@toss/jest",\
+      "reference": "workspace:configs/jest"\
+    },\
+    {\
       "name": "@toss/rollup-config",\
       "reference": "workspace:configs/rollup"\
     },\
@@ -144,6 +148,7 @@ const RAW_RUNTIME_STATE =
     ["@toss/framer-motion", ["workspace:packages/react/framer-motion"]],\
     ["@toss/hangul", ["workspace:packages/common/hangul"]],\
     ["@toss/impression-area", ["virtual:d417fb7527a88160b05d2e6baabe48df062b15ea0efd0d02920705bd1d19cf6486917235459b80cd4e5025244ee3ea15a7da8977541501b0bf2c3dc703c1a644#workspace:packages/react/impression-area", "workspace:packages/react/impression-area"]],\
+    ["@toss/jest", ["virtual:bcd0c1141064bf940376b9b2c4f8a211deda5f9c27293f215379edb7c7917846a6a1d22044c7c1b3bb8002672fb9461cbd1f53c3889b2fe3b5bfbab9a70f1ac4#workspace:configs/jest", "workspace:configs/jest"]],\
     ["@toss/ky", ["workspace:packages/common/ky"]],\
     ["@toss/lottie", ["workspace:packages/react/lottie"]],\
     ["@toss/react", ["virtual:b5b5dfb1662b30d0d5b62f084f8b8fddd0eee56dd8737572197395ab6309e644fa76525392b1d0250ce3c07c5eeeb90901439953af682fc76f8ab38f71b8b09d#workspace:packages/react/react", "workspace:packages/react/react"]],\
@@ -8200,14 +8205,14 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "SOFT"\
       }],\
-      ["virtual:36b3f06c76cf9bc81ee62479546e248512ee1bfc453ae16a09419adac9251dbac705e48393318b5eb9ebdf1aac639cfd21e410885c301a7a1637cd16dcc0955c#npm:5.3.1", {\
-        "packageLocation": "./.yarn/__virtual__/@rollup-plugin-babel-virtual-92a47ea847/3/.yarn/berry/cache/@rollup-plugin-babel-npm-5.3.1-6039a4d033-10.zip/node_modules/@rollup/plugin-babel/",\
+      ["virtual:bcd0c1141064bf940376b9b2c4f8a211deda5f9c27293f215379edb7c7917846a6a1d22044c7c1b3bb8002672fb9461cbd1f53c3889b2fe3b5bfbab9a70f1ac4#npm:5.3.1", {\
+        "packageLocation": "./.yarn/__virtual__/@rollup-plugin-babel-virtual-098b91e9fb/3/.yarn/berry/cache/@rollup-plugin-babel-npm-5.3.1-6039a4d033-10.zip/node_modules/@rollup/plugin-babel/",\
         "packageDependencies": [\
-          ["@rollup/plugin-babel", "virtual:36b3f06c76cf9bc81ee62479546e248512ee1bfc453ae16a09419adac9251dbac705e48393318b5eb9ebdf1aac639cfd21e410885c301a7a1637cd16dcc0955c#npm:5.3.1"],\
+          ["@rollup/plugin-babel", "virtual:bcd0c1141064bf940376b9b2c4f8a211deda5f9c27293f215379edb7c7917846a6a1d22044c7c1b3bb8002672fb9461cbd1f53c3889b2fe3b5bfbab9a70f1ac4#npm:5.3.1"],\
           ["@babel/core", "npm:7.19.3"],\
           ["@babel/helper-module-imports", "npm:7.18.6"],\
-          ["@rollup/pluginutils", "virtual:92a47ea8476e082b47cd2cd9ee6d2bcd4bb424406064ed336b2d66a19f27d8f57f91f69538f84e4c9f1893518467c8023a785365a1ee0c2b154c74f669a959e7#npm:3.1.0"],\
-          ["@types/babel__core", null],\
+          ["@rollup/pluginutils", "virtual:00cc6c81268b65dbe3f2e7f17ffb61a58aaff18028bfe79ab60c0e328f00cc96b865dc2dc7e7fffc1274e148325956b28059705507030ef8fa9b90d74d75530f#npm:3.1.0"],\
+          ["@types/babel__core", "npm:7.1.19"],\
           ["@types/rollup", null],\
           ["rollup", "npm:2.79.1"]\
         ],\
@@ -8219,14 +8224,14 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "HARD"\
       }],\
-      ["virtual:bcd0c1141064bf940376b9b2c4f8a211deda5f9c27293f215379edb7c7917846a6a1d22044c7c1b3bb8002672fb9461cbd1f53c3889b2fe3b5bfbab9a70f1ac4#npm:5.3.1", {\
-        "packageLocation": "./.yarn/__virtual__/@rollup-plugin-babel-virtual-098b91e9fb/3/.yarn/berry/cache/@rollup-plugin-babel-npm-5.3.1-6039a4d033-10.zip/node_modules/@rollup/plugin-babel/",\
+      ["virtual:deed4193335023688383863b4cd44904710ed734c8713b84381894852069f5f91c1267813438caeea6f0ca3bfed64071b862d547f009786c92a9e3f10ff1f191#npm:5.3.1", {\
+        "packageLocation": "./.yarn/__virtual__/@rollup-plugin-babel-virtual-00cc6c8126/3/.yarn/berry/cache/@rollup-plugin-babel-npm-5.3.1-6039a4d033-10.zip/node_modules/@rollup/plugin-babel/",\
         "packageDependencies": [\
-          ["@rollup/plugin-babel", "virtual:bcd0c1141064bf940376b9b2c4f8a211deda5f9c27293f215379edb7c7917846a6a1d22044c7c1b3bb8002672fb9461cbd1f53c3889b2fe3b5bfbab9a70f1ac4#npm:5.3.1"],\
+          ["@rollup/plugin-babel", "virtual:deed4193335023688383863b4cd44904710ed734c8713b84381894852069f5f91c1267813438caeea6f0ca3bfed64071b862d547f009786c92a9e3f10ff1f191#npm:5.3.1"],\
           ["@babel/core", "npm:7.19.3"],\
           ["@babel/helper-module-imports", "npm:7.18.6"],\
-          ["@rollup/pluginutils", "virtual:92a47ea8476e082b47cd2cd9ee6d2bcd4bb424406064ed336b2d66a19f27d8f57f91f69538f84e4c9f1893518467c8023a785365a1ee0c2b154c74f669a959e7#npm:3.1.0"],\
-          ["@types/babel__core", "npm:7.1.19"],\
+          ["@rollup/pluginutils", "virtual:00cc6c81268b65dbe3f2e7f17ffb61a58aaff18028bfe79ab60c0e328f00cc96b865dc2dc7e7fffc1274e148325956b28059705507030ef8fa9b90d74d75530f#npm:3.1.0"],\
+          ["@types/babel__core", null],\
           ["@types/rollup", null],\
           ["rollup", "npm:2.79.1"]\
         ],\
@@ -8247,11 +8252,11 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "SOFT"\
       }],\
-      ["virtual:36b3f06c76cf9bc81ee62479546e248512ee1bfc453ae16a09419adac9251dbac705e48393318b5eb9ebdf1aac639cfd21e410885c301a7a1637cd16dcc0955c#npm:22.0.2", {\
-        "packageLocation": "./.yarn/__virtual__/@rollup-plugin-commonjs-virtual-71fe6a10a8/3/.yarn/berry/cache/@rollup-plugin-commonjs-npm-22.0.2-56609c90a0-10.zip/node_modules/@rollup/plugin-commonjs/",\
+      ["virtual:deed4193335023688383863b4cd44904710ed734c8713b84381894852069f5f91c1267813438caeea6f0ca3bfed64071b862d547f009786c92a9e3f10ff1f191#npm:22.0.2", {\
+        "packageLocation": "./.yarn/__virtual__/@rollup-plugin-commonjs-virtual-a05872ab25/3/.yarn/berry/cache/@rollup-plugin-commonjs-npm-22.0.2-56609c90a0-10.zip/node_modules/@rollup/plugin-commonjs/",\
         "packageDependencies": [\
-          ["@rollup/plugin-commonjs", "virtual:36b3f06c76cf9bc81ee62479546e248512ee1bfc453ae16a09419adac9251dbac705e48393318b5eb9ebdf1aac639cfd21e410885c301a7a1637cd16dcc0955c#npm:22.0.2"],\
-          ["@rollup/pluginutils", "virtual:92a47ea8476e082b47cd2cd9ee6d2bcd4bb424406064ed336b2d66a19f27d8f57f91f69538f84e4c9f1893518467c8023a785365a1ee0c2b154c74f669a959e7#npm:3.1.0"],\
+          ["@rollup/plugin-commonjs", "virtual:deed4193335023688383863b4cd44904710ed734c8713b84381894852069f5f91c1267813438caeea6f0ca3bfed64071b862d547f009786c92a9e3f10ff1f191#npm:22.0.2"],\
+          ["@rollup/pluginutils", "virtual:00cc6c81268b65dbe3f2e7f17ffb61a58aaff18028bfe79ab60c0e328f00cc96b865dc2dc7e7fffc1274e148325956b28059705507030ef8fa9b90d74d75530f#npm:3.1.0"],\
           ["@types/rollup", null],\
           ["commondir", "npm:1.0.1"],\
           ["estree-walker", "npm:2.0.2"],\
@@ -8276,11 +8281,11 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "SOFT"\
       }],\
-      ["virtual:36b3f06c76cf9bc81ee62479546e248512ee1bfc453ae16a09419adac9251dbac705e48393318b5eb9ebdf1aac639cfd21e410885c301a7a1637cd16dcc0955c#npm:4.1.0", {\
-        "packageLocation": "./.yarn/__virtual__/@rollup-plugin-json-virtual-aa4ac63e98/3/.yarn/berry/cache/@rollup-plugin-json-npm-4.1.0-c932de6f49-10.zip/node_modules/@rollup/plugin-json/",\
+      ["virtual:deed4193335023688383863b4cd44904710ed734c8713b84381894852069f5f91c1267813438caeea6f0ca3bfed64071b862d547f009786c92a9e3f10ff1f191#npm:4.1.0", {\
+        "packageLocation": "./.yarn/__virtual__/@rollup-plugin-json-virtual-ea86f5c6a8/3/.yarn/berry/cache/@rollup-plugin-json-npm-4.1.0-c932de6f49-10.zip/node_modules/@rollup/plugin-json/",\
         "packageDependencies": [\
-          ["@rollup/plugin-json", "virtual:36b3f06c76cf9bc81ee62479546e248512ee1bfc453ae16a09419adac9251dbac705e48393318b5eb9ebdf1aac639cfd21e410885c301a7a1637cd16dcc0955c#npm:4.1.0"],\
-          ["@rollup/pluginutils", "virtual:92a47ea8476e082b47cd2cd9ee6d2bcd4bb424406064ed336b2d66a19f27d8f57f91f69538f84e4c9f1893518467c8023a785365a1ee0c2b154c74f669a959e7#npm:3.1.0"],\
+          ["@rollup/plugin-json", "virtual:deed4193335023688383863b4cd44904710ed734c8713b84381894852069f5f91c1267813438caeea6f0ca3bfed64071b862d547f009786c92a9e3f10ff1f191#npm:4.1.0"],\
+          ["@rollup/pluginutils", "virtual:00cc6c81268b65dbe3f2e7f17ffb61a58aaff18028bfe79ab60c0e328f00cc96b865dc2dc7e7fffc1274e148325956b28059705507030ef8fa9b90d74d75530f#npm:3.1.0"],\
           ["@types/rollup", null],\
           ["rollup", "npm:2.79.1"]\
         ],\
@@ -8306,11 +8311,11 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "SOFT"\
       }],\
-      ["virtual:36b3f06c76cf9bc81ee62479546e248512ee1bfc453ae16a09419adac9251dbac705e48393318b5eb9ebdf1aac639cfd21e410885c301a7a1637cd16dcc0955c#npm:14.1.0", {\
-        "packageLocation": "./.yarn/__virtual__/@rollup-plugin-node-resolve-virtual-ea5c64aad5/3/.yarn/berry/cache/@rollup-plugin-node-resolve-npm-14.1.0-470c873f5d-10.zip/node_modules/@rollup/plugin-node-resolve/",\
+      ["virtual:bcd0c1141064bf940376b9b2c4f8a211deda5f9c27293f215379edb7c7917846a6a1d22044c7c1b3bb8002672fb9461cbd1f53c3889b2fe3b5bfbab9a70f1ac4#npm:13.3.0", {\
+        "packageLocation": "./.yarn/__virtual__/@rollup-plugin-node-resolve-virtual-70d7825a11/3/.yarn/berry/cache/@rollup-plugin-node-resolve-npm-13.3.0-a93dd11647-10.zip/node_modules/@rollup/plugin-node-resolve/",\
         "packageDependencies": [\
-          ["@rollup/plugin-node-resolve", "virtual:36b3f06c76cf9bc81ee62479546e248512ee1bfc453ae16a09419adac9251dbac705e48393318b5eb9ebdf1aac639cfd21e410885c301a7a1637cd16dcc0955c#npm:14.1.0"],\
-          ["@rollup/pluginutils", "virtual:92a47ea8476e082b47cd2cd9ee6d2bcd4bb424406064ed336b2d66a19f27d8f57f91f69538f84e4c9f1893518467c8023a785365a1ee0c2b154c74f669a959e7#npm:3.1.0"],\
+          ["@rollup/plugin-node-resolve", "virtual:bcd0c1141064bf940376b9b2c4f8a211deda5f9c27293f215379edb7c7917846a6a1d22044c7c1b3bb8002672fb9461cbd1f53c3889b2fe3b5bfbab9a70f1ac4#npm:13.3.0"],\
+          ["@rollup/pluginutils", "virtual:00cc6c81268b65dbe3f2e7f17ffb61a58aaff18028bfe79ab60c0e328f00cc96b865dc2dc7e7fffc1274e148325956b28059705507030ef8fa9b90d74d75530f#npm:3.1.0"],\
           ["@types/resolve", "npm:1.17.1"],\
           ["@types/rollup", null],\
           ["deepmerge", "npm:4.2.2"],\
@@ -8325,11 +8330,11 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "HARD"\
       }],\
-      ["virtual:bcd0c1141064bf940376b9b2c4f8a211deda5f9c27293f215379edb7c7917846a6a1d22044c7c1b3bb8002672fb9461cbd1f53c3889b2fe3b5bfbab9a70f1ac4#npm:13.3.0", {\
-        "packageLocation": "./.yarn/__virtual__/@rollup-plugin-node-resolve-virtual-70d7825a11/3/.yarn/berry/cache/@rollup-plugin-node-resolve-npm-13.3.0-a93dd11647-10.zip/node_modules/@rollup/plugin-node-resolve/",\
+      ["virtual:deed4193335023688383863b4cd44904710ed734c8713b84381894852069f5f91c1267813438caeea6f0ca3bfed64071b862d547f009786c92a9e3f10ff1f191#npm:14.1.0", {\
+        "packageLocation": "./.yarn/__virtual__/@rollup-plugin-node-resolve-virtual-1c524d1ce3/3/.yarn/berry/cache/@rollup-plugin-node-resolve-npm-14.1.0-470c873f5d-10.zip/node_modules/@rollup/plugin-node-resolve/",\
         "packageDependencies": [\
-          ["@rollup/plugin-node-resolve", "virtual:bcd0c1141064bf940376b9b2c4f8a211deda5f9c27293f215379edb7c7917846a6a1d22044c7c1b3bb8002672fb9461cbd1f53c3889b2fe3b5bfbab9a70f1ac4#npm:13.3.0"],\
-          ["@rollup/pluginutils", "virtual:92a47ea8476e082b47cd2cd9ee6d2bcd4bb424406064ed336b2d66a19f27d8f57f91f69538f84e4c9f1893518467c8023a785365a1ee0c2b154c74f669a959e7#npm:3.1.0"],\
+          ["@rollup/plugin-node-resolve", "virtual:deed4193335023688383863b4cd44904710ed734c8713b84381894852069f5f91c1267813438caeea6f0ca3bfed64071b862d547f009786c92a9e3f10ff1f191#npm:14.1.0"],\
+          ["@rollup/pluginutils", "virtual:00cc6c81268b65dbe3f2e7f17ffb61a58aaff18028bfe79ab60c0e328f00cc96b865dc2dc7e7fffc1274e148325956b28059705507030ef8fa9b90d74d75530f#npm:3.1.0"],\
           ["@types/resolve", "npm:1.17.1"],\
           ["@types/rollup", null],\
           ["deepmerge", "npm:4.2.2"],\
@@ -8353,10 +8358,10 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "SOFT"\
       }],\
-      ["virtual:92a47ea8476e082b47cd2cd9ee6d2bcd4bb424406064ed336b2d66a19f27d8f57f91f69538f84e4c9f1893518467c8023a785365a1ee0c2b154c74f669a959e7#npm:3.1.0", {\
-        "packageLocation": "./.yarn/__virtual__/@rollup-pluginutils-virtual-f56a8c0e0a/3/.yarn/berry/cache/@rollup-pluginutils-npm-3.1.0-b44b222e7d-10.zip/node_modules/@rollup/pluginutils/",\
+      ["virtual:00cc6c81268b65dbe3f2e7f17ffb61a58aaff18028bfe79ab60c0e328f00cc96b865dc2dc7e7fffc1274e148325956b28059705507030ef8fa9b90d74d75530f#npm:3.1.0", {\
+        "packageLocation": "./.yarn/__virtual__/@rollup-pluginutils-virtual-e34c1e8fc0/3/.yarn/berry/cache/@rollup-pluginutils-npm-3.1.0-b44b222e7d-10.zip/node_modules/@rollup/pluginutils/",\
         "packageDependencies": [\
-          ["@rollup/pluginutils", "virtual:92a47ea8476e082b47cd2cd9ee6d2bcd4bb424406064ed336b2d66a19f27d8f57f91f69538f84e4c9f1893518467c8023a785365a1ee0c2b154c74f669a959e7#npm:3.1.0"],\
+          ["@rollup/pluginutils", "virtual:00cc6c81268b65dbe3f2e7f17ffb61a58aaff18028bfe79ab60c0e328f00cc96b865dc2dc7e7fffc1274e148325956b28059705507030ef8fa9b90d74d75530f#npm:3.1.0"],\
           ["@types/estree", "npm:0.0.39"],\
           ["@types/rollup", null],\
           ["estree-walker", "npm:1.0.1"],\
@@ -9362,9 +9367,9 @@ const RAW_RUNTIME_STATE =
           ["@testing-library/dom", "npm:8.18.1"],\
           ["@testing-library/jest-dom", "npm:5.16.5"],\
           ["@testing-library/react", "virtual:62cb29918b2e63dff97923d985a18238631a18b918521fd9ac48de2be213715676e8b999d7ab4431ea536d1917af1465d5695ceae059c69bf4c14df5968dd6a1#npm:13.4.0"],\
+          ["@toss/jest", "virtual:bcd0c1141064bf940376b9b2c4f8a211deda5f9c27293f215379edb7c7917846a6a1d22044c7c1b3bb8002672fb9461cbd1f53c3889b2fe3b5bfbab9a70f1ac4#workspace:configs/jest"],\
           ["@toss/rollup-config", "virtual:bcd0c1141064bf940376b9b2c4f8a211deda5f9c27293f215379edb7c7917846a6a1d22044c7c1b3bb8002672fb9461cbd1f53c3889b2fe3b5bfbab9a70f1ac4#workspace:configs/rollup"],\
           ["@toss/utils", "workspace:packages/common/utils"],\
-          ["@tossteam/jest", "virtual:55e030f4e280704fb3c8fb1f5442518cdfa67839a0eec1be27dcc560d69cd26b152fe91949e78fd51e5877ad1e56ceeeea20eb02c239e5ccca466c5488cbdc0d#npm:17.187.2"],\
           ["@types/jest", "npm:29.1.2"],\
           ["@types/node", "npm:14.18.31"],\
           ["@types/react", "npm:18.0.21"],\
@@ -9391,9 +9396,9 @@ const RAW_RUNTIME_STATE =
           ["@babel/preset-env", "virtual:bcd0c1141064bf940376b9b2c4f8a211deda5f9c27293f215379edb7c7917846a6a1d22044c7c1b3bb8002672fb9461cbd1f53c3889b2fe3b5bfbab9a70f1ac4#npm:7.19.3"],\
           ["@babel/preset-typescript", "virtual:bcd0c1141064bf940376b9b2c4f8a211deda5f9c27293f215379edb7c7917846a6a1d22044c7c1b3bb8002672fb9461cbd1f53c3889b2fe3b5bfbab9a70f1ac4#npm:7.18.6"],\
           ["@babel/runtime", "npm:7.19.0"],\
+          ["@toss/jest", "virtual:bcd0c1141064bf940376b9b2c4f8a211deda5f9c27293f215379edb7c7917846a6a1d22044c7c1b3bb8002672fb9461cbd1f53c3889b2fe3b5bfbab9a70f1ac4#workspace:configs/jest"],\
           ["@toss/rollup-config", "virtual:bcd0c1141064bf940376b9b2c4f8a211deda5f9c27293f215379edb7c7917846a6a1d22044c7c1b3bb8002672fb9461cbd1f53c3889b2fe3b5bfbab9a70f1ac4#workspace:configs/rollup"],\
           ["@toss/utils", "workspace:packages/common/utils"],\
-          ["@tossteam/jest", "virtual:bcd0c1141064bf940376b9b2c4f8a211deda5f9c27293f215379edb7c7917846a6a1d22044c7c1b3bb8002672fb9461cbd1f53c3889b2fe3b5bfbab9a70f1ac4#npm:17.187.2"],\
           ["@types/babel__core", "npm:7.1.19"],\
           ["@types/babel__preset-env", "npm:7.9.2"],\
           ["@types/jest", "npm:29.1.2"],\
@@ -9420,8 +9425,8 @@ const RAW_RUNTIME_STATE =
           ["@testing-library/jest-dom", "npm:5.16.5"],\
           ["@testing-library/react", "virtual:62cb29918b2e63dff97923d985a18238631a18b918521fd9ac48de2be213715676e8b999d7ab4431ea536d1917af1465d5695ceae059c69bf4c14df5968dd6a1#npm:13.4.0"],\
           ["@toss/error-boundary", "virtual:7a74fcab29040ff837408b387048e2be3766ca2349cbcd1b3e995824fbefafa8873bf518f24421452709a1f5b3e74a33e0d01df9f80851a0802e06430b9ddbcb#workspace:packages/react/error-boundary"],\
+          ["@toss/jest", "virtual:bcd0c1141064bf940376b9b2c4f8a211deda5f9c27293f215379edb7c7917846a6a1d22044c7c1b3bb8002672fb9461cbd1f53c3889b2fe3b5bfbab9a70f1ac4#workspace:configs/jest"],\
           ["@toss/rollup-config", "virtual:bcd0c1141064bf940376b9b2c4f8a211deda5f9c27293f215379edb7c7917846a6a1d22044c7c1b3bb8002672fb9461cbd1f53c3889b2fe3b5bfbab9a70f1ac4#workspace:configs/rollup"],\
-          ["@tossteam/jest", "virtual:bcd0c1141064bf940376b9b2c4f8a211deda5f9c27293f215379edb7c7917846a6a1d22044c7c1b3bb8002672fb9461cbd1f53c3889b2fe3b5bfbab9a70f1ac4#npm:17.187.2"],\
           ["@types/babel__core", "npm:7.1.19"],\
           ["@types/babel__preset-env", "npm:7.9.2"],\
           ["@types/jest", "npm:29.1.2"],\
@@ -9448,9 +9453,9 @@ const RAW_RUNTIME_STATE =
           ["@toss/async-stylesheet", "workspace:packages/react/async-stylesheet"],\
           ["@babel/core", "npm:7.19.3"],\
           ["@babel/runtime", "npm:7.19.0"],\
+          ["@toss/jest", "virtual:bcd0c1141064bf940376b9b2c4f8a211deda5f9c27293f215379edb7c7917846a6a1d22044c7c1b3bb8002672fb9461cbd1f53c3889b2fe3b5bfbab9a70f1ac4#workspace:configs/jest"],\
           ["@toss/react", "virtual:b5b5dfb1662b30d0d5b62f084f8b8fddd0eee56dd8737572197395ab6309e644fa76525392b1d0250ce3c07c5eeeb90901439953af682fc76f8ab38f71b8b09d#workspace:packages/react/react"],\
           ["@toss/rollup-config", "virtual:bcd0c1141064bf940376b9b2c4f8a211deda5f9c27293f215379edb7c7917846a6a1d22044c7c1b3bb8002672fb9461cbd1f53c3889b2fe3b5bfbab9a70f1ac4#workspace:configs/rollup"],\
-          ["@tossteam/jest", "virtual:55e030f4e280704fb3c8fb1f5442518cdfa67839a0eec1be27dcc560d69cd26b152fe91949e78fd51e5877ad1e56ceeeea20eb02c239e5ccca466c5488cbdc0d#npm:17.187.2"],\
           ["@types/jest", "npm:29.1.2"],\
           ["@types/node", "npm:14.18.31"],\
           ["@types/react", "npm:18.0.21"],\
@@ -9477,11 +9482,11 @@ const RAW_RUNTIME_STATE =
           ["@babel/preset-env", "virtual:01ae7c33d4655a48cbb29902912466a761e01d57e32af25620c31e36065eb1601cc4f6394afcb6b2f9c9f1b941b9fbeecba9aa1bca8ca304ae87cee07a6864e9#npm:7.19.3"],\
           ["@babel/preset-typescript", "virtual:01ae7c33d4655a48cbb29902912466a761e01d57e32af25620c31e36065eb1601cc4f6394afcb6b2f9c9f1b941b9fbeecba9aa1bca8ca304ae87cee07a6864e9#npm:7.18.6"],\
           ["@babel/runtime", "npm:7.19.0"],\
-          ["@rollup/plugin-babel", "virtual:36b3f06c76cf9bc81ee62479546e248512ee1bfc453ae16a09419adac9251dbac705e48393318b5eb9ebdf1aac639cfd21e410885c301a7a1637cd16dcc0955c#npm:5.3.1"],\
-          ["@rollup/plugin-commonjs", "virtual:36b3f06c76cf9bc81ee62479546e248512ee1bfc453ae16a09419adac9251dbac705e48393318b5eb9ebdf1aac639cfd21e410885c301a7a1637cd16dcc0955c#npm:22.0.2"],\
+          ["@rollup/plugin-babel", "virtual:deed4193335023688383863b4cd44904710ed734c8713b84381894852069f5f91c1267813438caeea6f0ca3bfed64071b862d547f009786c92a9e3f10ff1f191#npm:5.3.1"],\
+          ["@rollup/plugin-commonjs", "virtual:deed4193335023688383863b4cd44904710ed734c8713b84381894852069f5f91c1267813438caeea6f0ca3bfed64071b862d547f009786c92a9e3f10ff1f191#npm:22.0.2"],\
           ["@rollup/plugin-node-resolve", "virtual:bcd0c1141064bf940376b9b2c4f8a211deda5f9c27293f215379edb7c7917846a6a1d22044c7c1b3bb8002672fb9461cbd1f53c3889b2fe3b5bfbab9a70f1ac4#npm:13.3.0"],\
+          ["@toss/jest", "virtual:bcd0c1141064bf940376b9b2c4f8a211deda5f9c27293f215379edb7c7917846a6a1d22044c7c1b3bb8002672fb9461cbd1f53c3889b2fe3b5bfbab9a70f1ac4#workspace:configs/jest"],\
           ["@toss/rollup-config", "virtual:bcd0c1141064bf940376b9b2c4f8a211deda5f9c27293f215379edb7c7917846a6a1d22044c7c1b3bb8002672fb9461cbd1f53c3889b2fe3b5bfbab9a70f1ac4#workspace:configs/rollup"],\
-          ["@tossteam/jest", "virtual:62cb29918b2e63dff97923d985a18238631a18b918521fd9ac48de2be213715676e8b999d7ab4431ea536d1917af1465d5695ceae059c69bf4c14df5968dd6a1#npm:17.187.2"],\
           ["@types/babel__plugin-transform-runtime", "npm:7.9.2"],\
           ["@types/babel__preset-env", "npm:7.9.2"],\
           ["@types/bn.js", "npm:5.1.1"],\
@@ -9505,8 +9510,8 @@ const RAW_RUNTIME_STATE =
           ["@toss/date", "workspace:packages/common/date"],\
           ["@babel/core", "npm:7.19.3"],\
           ["@babel/runtime", "npm:7.19.0"],\
+          ["@toss/jest", "virtual:bcd0c1141064bf940376b9b2c4f8a211deda5f9c27293f215379edb7c7917846a6a1d22044c7c1b3bb8002672fb9461cbd1f53c3889b2fe3b5bfbab9a70f1ac4#workspace:configs/jest"],\
           ["@toss/rollup-config", "virtual:bcd0c1141064bf940376b9b2c4f8a211deda5f9c27293f215379edb7c7917846a6a1d22044c7c1b3bb8002672fb9461cbd1f53c3889b2fe3b5bfbab9a70f1ac4#workspace:configs/rollup"],\
-          ["@tossteam/jest", "virtual:77b9278f6063d24f0826f1238c7d240e6c3d430ba15f429ce398b0875deacf8945d3b28505e564b694919aafcc4d437ae3bca4f1e3b77f986659859e8a894a46#npm:17.187.2"],\
           ["@types/babel__core", "npm:7.1.19"],\
           ["@types/jest", "npm:29.1.2"],\
           ["@types/node", "npm:18.8.2"],\
@@ -9538,9 +9543,9 @@ const RAW_RUNTIME_STATE =
           ["@emotion/react", "virtual:0835ce41fe753ee669a09c94e84dd26310451851363a65d2417959e3e0283ec86ca67d0fd1af37d1ef29305b0e8874a5ee5f46b0b0361b1a5cb993fb9b79e9eb#npm:11.10.4"],\
           ["@testing-library/jest-dom", "npm:5.16.5"],\
           ["@testing-library/react", "virtual:62cb29918b2e63dff97923d985a18238631a18b918521fd9ac48de2be213715676e8b999d7ab4431ea536d1917af1465d5695ceae059c69bf4c14df5968dd6a1#npm:13.4.0"],\
+          ["@toss/jest", "virtual:bcd0c1141064bf940376b9b2c4f8a211deda5f9c27293f215379edb7c7917846a6a1d22044c7c1b3bb8002672fb9461cbd1f53c3889b2fe3b5bfbab9a70f1ac4#workspace:configs/jest"],\
           ["@toss/rollup-config", "virtual:bcd0c1141064bf940376b9b2c4f8a211deda5f9c27293f215379edb7c7917846a6a1d22044c7c1b3bb8002672fb9461cbd1f53c3889b2fe3b5bfbab9a70f1ac4#workspace:configs/rollup"],\
           ["@toss/utils", "workspace:packages/common/utils"],\
-          ["@tossteam/jest", "virtual:0835ce41fe753ee669a09c94e84dd26310451851363a65d2417959e3e0283ec86ca67d0fd1af37d1ef29305b0e8874a5ee5f46b0b0361b1a5cb993fb9b79e9eb#npm:17.187.2"],\
           ["@types/babel__core", "npm:7.1.19"],\
           ["@types/jest", "npm:29.1.2"],\
           ["@types/node", "npm:16.11.64"],\
@@ -9574,10 +9579,10 @@ const RAW_RUNTIME_STATE =
           ["@testing-library/jest-dom", "npm:5.16.5"],\
           ["@testing-library/react", "virtual:62cb29918b2e63dff97923d985a18238631a18b918521fd9ac48de2be213715676e8b999d7ab4431ea536d1917af1465d5695ceae059c69bf4c14df5968dd6a1#npm:13.4.0"],\
           ["@testing-library/user-event", "virtual:9b0054e10472894acc6e1831a01d94bc6960af68ced3a77c0569df2dcc99996305ccf0051fd1e1f3827bc2f0f81d464cccbf0994c97c6b9eadb0efa4a1509c16#npm:14.4.3"],\
+          ["@toss/jest", "virtual:bcd0c1141064bf940376b9b2c4f8a211deda5f9c27293f215379edb7c7917846a6a1d22044c7c1b3bb8002672fb9461cbd1f53c3889b2fe3b5bfbab9a70f1ac4#workspace:configs/jest"],\
           ["@toss/react", "virtual:b5b5dfb1662b30d0d5b62f084f8b8fddd0eee56dd8737572197395ab6309e644fa76525392b1d0250ce3c07c5eeeb90901439953af682fc76f8ab38f71b8b09d#workspace:packages/react/react"],\
           ["@toss/rollup-config", "virtual:bcd0c1141064bf940376b9b2c4f8a211deda5f9c27293f215379edb7c7917846a6a1d22044c7c1b3bb8002672fb9461cbd1f53c3889b2fe3b5bfbab9a70f1ac4#workspace:configs/rollup"],\
           ["@toss/utils", "workspace:packages/common/utils"],\
-          ["@tossteam/jest", "virtual:9b0054e10472894acc6e1831a01d94bc6960af68ced3a77c0569df2dcc99996305ccf0051fd1e1f3827bc2f0f81d464cccbf0994c97c6b9eadb0efa4a1509c16#npm:17.187.2"],\
           ["@types/babel__core", "npm:7.1.19"],\
           ["@types/babel__preset-env", "npm:7.9.2"],\
           ["@types/jest", "npm:29.1.2"],\
@@ -9615,10 +9620,10 @@ const RAW_RUNTIME_STATE =
           ["@testing-library/jest-dom", "npm:5.16.5"],\
           ["@testing-library/react", "virtual:62cb29918b2e63dff97923d985a18238631a18b918521fd9ac48de2be213715676e8b999d7ab4431ea536d1917af1465d5695ceae059c69bf4c14df5968dd6a1#npm:13.4.0"],\
           ["@testing-library/user-event", "virtual:9b0054e10472894acc6e1831a01d94bc6960af68ced3a77c0569df2dcc99996305ccf0051fd1e1f3827bc2f0f81d464cccbf0994c97c6b9eadb0efa4a1509c16#npm:14.4.3"],\
+          ["@toss/jest", "virtual:bcd0c1141064bf940376b9b2c4f8a211deda5f9c27293f215379edb7c7917846a6a1d22044c7c1b3bb8002672fb9461cbd1f53c3889b2fe3b5bfbab9a70f1ac4#workspace:configs/jest"],\
           ["@toss/react", "virtual:b5b5dfb1662b30d0d5b62f084f8b8fddd0eee56dd8737572197395ab6309e644fa76525392b1d0250ce3c07c5eeeb90901439953af682fc76f8ab38f71b8b09d#workspace:packages/react/react"],\
           ["@toss/rollup-config", "virtual:bcd0c1141064bf940376b9b2c4f8a211deda5f9c27293f215379edb7c7917846a6a1d22044c7c1b3bb8002672fb9461cbd1f53c3889b2fe3b5bfbab9a70f1ac4#workspace:configs/rollup"],\
           ["@toss/utils", "workspace:packages/common/utils"],\
-          ["@tossteam/jest", "virtual:9b0054e10472894acc6e1831a01d94bc6960af68ced3a77c0569df2dcc99996305ccf0051fd1e1f3827bc2f0f81d464cccbf0994c97c6b9eadb0efa4a1509c16#npm:17.187.2"],\
           ["@types/babel__core", "npm:7.1.19"],\
           ["@types/babel__preset-env", "npm:7.9.2"],\
           ["@types/jest", "npm:29.1.2"],\
@@ -9652,8 +9657,8 @@ const RAW_RUNTIME_STATE =
           ["@babel/runtime", "npm:7.19.0"],\
           ["@testing-library/jest-dom", "npm:5.16.5"],\
           ["@testing-library/react", "virtual:a27e190cfafeeee5c910137530d3c7f25959973eb1c2654b848e4a60c7694c9b3ea51ce1186ac489f016c6cdea36ba4dee6b8c44c65a70c015f14fbb8b3b7253#npm:13.4.0"],\
+          ["@toss/jest", "virtual:bcd0c1141064bf940376b9b2c4f8a211deda5f9c27293f215379edb7c7917846a6a1d22044c7c1b3bb8002672fb9461cbd1f53c3889b2fe3b5bfbab9a70f1ac4#workspace:configs/jest"],\
           ["@toss/rollup-config", "virtual:bcd0c1141064bf940376b9b2c4f8a211deda5f9c27293f215379edb7c7917846a6a1d22044c7c1b3bb8002672fb9461cbd1f53c3889b2fe3b5bfbab9a70f1ac4#workspace:configs/rollup"],\
-          ["@tossteam/jest", "virtual:bcd0c1141064bf940376b9b2c4f8a211deda5f9c27293f215379edb7c7917846a6a1d22044c7c1b3bb8002672fb9461cbd1f53c3889b2fe3b5bfbab9a70f1ac4#npm:17.187.2"],\
           ["@types/babel__core", "npm:7.1.19"],\
           ["@types/babel__preset-env", "npm:7.9.2"],\
           ["@types/jest", "npm:29.1.2"],\
@@ -9677,8 +9682,8 @@ const RAW_RUNTIME_STATE =
           ["@babel/core", "npm:7.19.3"],\
           ["@babel/runtime", "npm:7.19.0"],\
           ["@testing-library/jest-dom", "npm:5.16.5"],\
+          ["@toss/jest", "virtual:bcd0c1141064bf940376b9b2c4f8a211deda5f9c27293f215379edb7c7917846a6a1d22044c7c1b3bb8002672fb9461cbd1f53c3889b2fe3b5bfbab9a70f1ac4#workspace:configs/jest"],\
           ["@toss/rollup-config", "virtual:bcd0c1141064bf940376b9b2c4f8a211deda5f9c27293f215379edb7c7917846a6a1d22044c7c1b3bb8002672fb9461cbd1f53c3889b2fe3b5bfbab9a70f1ac4#workspace:configs/rollup"],\
-          ["@tossteam/jest", "virtual:55e030f4e280704fb3c8fb1f5442518cdfa67839a0eec1be27dcc560d69cd26b152fe91949e78fd51e5877ad1e56ceeeea20eb02c239e5ccca466c5488cbdc0d#npm:17.187.2"],\
           ["@types/jest", "npm:29.1.2"],\
           ["@types/node", "npm:14.18.31"],\
           ["@types/testing-library__jest-dom", "npm:5.14.5"],\
@@ -9701,10 +9706,10 @@ const RAW_RUNTIME_STATE =
           ["@babel/runtime", "npm:7.19.0"],\
           ["@testing-library/jest-dom", "npm:5.16.5"],\
           ["@testing-library/react", "virtual:62cb29918b2e63dff97923d985a18238631a18b918521fd9ac48de2be213715676e8b999d7ab4431ea536d1917af1465d5695ceae059c69bf4c14df5968dd6a1#npm:13.4.0"],\
+          ["@toss/jest", "virtual:bcd0c1141064bf940376b9b2c4f8a211deda5f9c27293f215379edb7c7917846a6a1d22044c7c1b3bb8002672fb9461cbd1f53c3889b2fe3b5bfbab9a70f1ac4#workspace:configs/jest"],\
           ["@toss/react", "virtual:b5b5dfb1662b30d0d5b62f084f8b8fddd0eee56dd8737572197395ab6309e644fa76525392b1d0250ce3c07c5eeeb90901439953af682fc76f8ab38f71b8b09d#workspace:packages/react/react"],\
           ["@toss/rollup-config", "virtual:bcd0c1141064bf940376b9b2c4f8a211deda5f9c27293f215379edb7c7917846a6a1d22044c7c1b3bb8002672fb9461cbd1f53c3889b2fe3b5bfbab9a70f1ac4#workspace:configs/rollup"],\
           ["@toss/utils", "workspace:packages/common/utils"],\
-          ["@tossteam/jest", "virtual:55e030f4e280704fb3c8fb1f5442518cdfa67839a0eec1be27dcc560d69cd26b152fe91949e78fd51e5877ad1e56ceeeea20eb02c239e5ccca466c5488cbdc0d#npm:17.187.2"],\
           ["@types/jest", "npm:29.1.2"],\
           ["@types/lodash.debounce", "npm:4.0.7"],\
           ["@types/node", "npm:14.18.31"],\
@@ -9734,10 +9739,10 @@ const RAW_RUNTIME_STATE =
           ["@babel/runtime", "npm:7.19.0"],\
           ["@testing-library/jest-dom", "npm:5.16.5"],\
           ["@testing-library/react", "virtual:62cb29918b2e63dff97923d985a18238631a18b918521fd9ac48de2be213715676e8b999d7ab4431ea536d1917af1465d5695ceae059c69bf4c14df5968dd6a1#npm:13.4.0"],\
+          ["@toss/jest", "virtual:bcd0c1141064bf940376b9b2c4f8a211deda5f9c27293f215379edb7c7917846a6a1d22044c7c1b3bb8002672fb9461cbd1f53c3889b2fe3b5bfbab9a70f1ac4#workspace:configs/jest"],\
           ["@toss/react", "virtual:b5b5dfb1662b30d0d5b62f084f8b8fddd0eee56dd8737572197395ab6309e644fa76525392b1d0250ce3c07c5eeeb90901439953af682fc76f8ab38f71b8b09d#workspace:packages/react/react"],\
           ["@toss/rollup-config", "virtual:bcd0c1141064bf940376b9b2c4f8a211deda5f9c27293f215379edb7c7917846a6a1d22044c7c1b3bb8002672fb9461cbd1f53c3889b2fe3b5bfbab9a70f1ac4#workspace:configs/rollup"],\
           ["@toss/utils", "workspace:packages/common/utils"],\
-          ["@tossteam/jest", "virtual:55e030f4e280704fb3c8fb1f5442518cdfa67839a0eec1be27dcc560d69cd26b152fe91949e78fd51e5877ad1e56ceeeea20eb02c239e5ccca466c5488cbdc0d#npm:17.187.2"],\
           ["@types/jest", "npm:29.1.2"],\
           ["@types/lodash.debounce", "npm:4.0.7"],\
           ["@types/node", "npm:14.18.31"],\
@@ -9757,6 +9762,41 @@ const RAW_RUNTIME_STATE =
         "linkType": "SOFT"\
       }]\
     ]],\
+    ["@toss/jest", [\
+      ["virtual:bcd0c1141064bf940376b9b2c4f8a211deda5f9c27293f215379edb7c7917846a6a1d22044c7c1b3bb8002672fb9461cbd1f53c3889b2fe3b5bfbab9a70f1ac4#workspace:configs/jest", {\
+        "packageLocation": "./.yarn/__virtual__/@toss-jest-virtual-fca09a466b/1/configs/jest/",\
+        "packageDependencies": [\
+          ["@toss/jest", "virtual:bcd0c1141064bf940376b9b2c4f8a211deda5f9c27293f215379edb7c7917846a6a1d22044c7c1b3bb8002672fb9461cbd1f53c3889b2fe3b5bfbab9a70f1ac4#workspace:configs/jest"],\
+          ["@babel/core", "npm:7.19.3"],\
+          ["@rollup/plugin-babel", "virtual:deed4193335023688383863b4cd44904710ed734c8713b84381894852069f5f91c1267813438caeea6f0ca3bfed64071b862d547f009786c92a9e3f10ff1f191#npm:5.3.1"],\
+          ["@rollup/plugin-commonjs", "virtual:deed4193335023688383863b4cd44904710ed734c8713b84381894852069f5f91c1267813438caeea6f0ca3bfed64071b862d547f009786c92a9e3f10ff1f191#npm:22.0.2"],\
+          ["@rollup/plugin-json", "virtual:deed4193335023688383863b4cd44904710ed734c8713b84381894852069f5f91c1267813438caeea6f0ca3bfed64071b862d547f009786c92a9e3f10ff1f191#npm:4.1.0"],\
+          ["@rollup/plugin-node-resolve", "virtual:deed4193335023688383863b4cd44904710ed734c8713b84381894852069f5f91c1267813438caeea6f0ca3bfed64071b862d547f009786c92a9e3f10ff1f191#npm:14.1.0"],\
+          ["@types/rollup", null],\
+          ["builtin-modules", "npm:3.3.0"],\
+          ["rollup", "npm:2.79.1"]\
+        ],\
+        "packagePeers": [\
+          "@types/rollup",\
+          "rollup"\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["workspace:configs/jest", {\
+        "packageLocation": "./configs/jest/",\
+        "packageDependencies": [\
+          ["@toss/jest", "workspace:configs/jest"],\
+          ["@babel/core", "npm:7.19.3"],\
+          ["@rollup/plugin-babel", "virtual:deed4193335023688383863b4cd44904710ed734c8713b84381894852069f5f91c1267813438caeea6f0ca3bfed64071b862d547f009786c92a9e3f10ff1f191#npm:5.3.1"],\
+          ["@rollup/plugin-commonjs", "virtual:deed4193335023688383863b4cd44904710ed734c8713b84381894852069f5f91c1267813438caeea6f0ca3bfed64071b862d547f009786c92a9e3f10ff1f191#npm:22.0.2"],\
+          ["@rollup/plugin-json", "virtual:deed4193335023688383863b4cd44904710ed734c8713b84381894852069f5f91c1267813438caeea6f0ca3bfed64071b862d547f009786c92a9e3f10ff1f191#npm:4.1.0"],\
+          ["@rollup/plugin-node-resolve", "virtual:deed4193335023688383863b4cd44904710ed734c8713b84381894852069f5f91c1267813438caeea6f0ca3bfed64071b862d547f009786c92a9e3f10ff1f191#npm:14.1.0"],\
+          ["builtin-modules", "npm:3.3.0"],\
+          ["rollup", "npm:2.79.1"]\
+        ],\
+        "linkType": "SOFT"\
+      }]\
+    ]],\
     ["@toss/ky", [\
       ["workspace:packages/common/ky", {\
         "packageLocation": "./packages/common/ky/",\
@@ -9764,7 +9804,7 @@ const RAW_RUNTIME_STATE =
           ["@toss/ky", "workspace:packages/common/ky"],\
           ["@babel/core", "npm:7.19.3"],\
           ["@babel/runtime", "npm:7.19.0"],\
-          ["@tossteam/jest", "virtual:55e030f4e280704fb3c8fb1f5442518cdfa67839a0eec1be27dcc560d69cd26b152fe91949e78fd51e5877ad1e56ceeeea20eb02c239e5ccca466c5488cbdc0d#npm:17.187.2"],\
+          ["@toss/jest", "virtual:bcd0c1141064bf940376b9b2c4f8a211deda5f9c27293f215379edb7c7917846a6a1d22044c7c1b3bb8002672fb9461cbd1f53c3889b2fe3b5bfbab9a70f1ac4#workspace:configs/jest"],\
           ["@types/jest", "npm:29.1.2"],\
           ["@types/node", "npm:14.18.31"],\
           ["@yarnpkg/esbuild-plugin-pnp", "virtual:516d25321473a70055e53a89093986545a1794bc9f2d3eee64fff7848fedff22577699c8acb3300be0223f1f686497d7307e238e0d1c1eba061b1c2b8c6bfb0c#npm:3.0.0-rc.15"],\
@@ -9794,10 +9834,10 @@ const RAW_RUNTIME_STATE =
           ["@babel/core", "npm:7.19.3"],\
           ["@babel/runtime", "npm:7.19.0"],\
           ["@toss/impression-area", "virtual:d417fb7527a88160b05d2e6baabe48df062b15ea0efd0d02920705bd1d19cf6486917235459b80cd4e5025244ee3ea15a7da8977541501b0bf2c3dc703c1a644#workspace:packages/react/impression-area"],\
+          ["@toss/jest", "virtual:bcd0c1141064bf940376b9b2c4f8a211deda5f9c27293f215379edb7c7917846a6a1d22044c7c1b3bb8002672fb9461cbd1f53c3889b2fe3b5bfbab9a70f1ac4#workspace:configs/jest"],\
           ["@toss/react", "virtual:b5b5dfb1662b30d0d5b62f084f8b8fddd0eee56dd8737572197395ab6309e644fa76525392b1d0250ce3c07c5eeeb90901439953af682fc76f8ab38f71b8b09d#workspace:packages/react/react"],\
           ["@toss/rollup-config", "virtual:bcd0c1141064bf940376b9b2c4f8a211deda5f9c27293f215379edb7c7917846a6a1d22044c7c1b3bb8002672fb9461cbd1f53c3889b2fe3b5bfbab9a70f1ac4#workspace:configs/rollup"],\
           ["@toss/utils", "workspace:packages/common/utils"],\
-          ["@tossteam/jest", "virtual:55e030f4e280704fb3c8fb1f5442518cdfa67839a0eec1be27dcc560d69cd26b152fe91949e78fd51e5877ad1e56ceeeea20eb02c239e5ccca466c5488cbdc0d#npm:17.187.2"],\
           ["@types/jest", "npm:29.1.2"],\
           ["@types/lodash.debounce", "npm:4.0.7"],\
           ["@types/node", "npm:14.18.31"],\
@@ -9832,12 +9872,13 @@ const RAW_RUNTIME_STATE =
           ["@babel/preset-typescript", "virtual:01ae7c33d4655a48cbb29902912466a761e01d57e32af25620c31e36065eb1601cc4f6394afcb6b2f9c9f1b941b9fbeecba9aa1bca8ca304ae87cee07a6864e9#npm:7.18.6"],\
           ["@babel/runtime", "npm:7.19.0"],\
           ["@testing-library/dom", "npm:8.18.1"],\
+          ["@testing-library/jest-dom", "npm:5.16.5"],\
           ["@testing-library/react", "virtual:62cb29918b2e63dff97923d985a18238631a18b918521fd9ac48de2be213715676e8b999d7ab4431ea536d1917af1465d5695ceae059c69bf4c14df5968dd6a1#npm:13.4.0"],\
           ["@testing-library/user-event", "virtual:62cb29918b2e63dff97923d985a18238631a18b918521fd9ac48de2be213715676e8b999d7ab4431ea536d1917af1465d5695ceae059c69bf4c14df5968dd6a1#npm:14.4.3"],\
+          ["@toss/jest", "virtual:bcd0c1141064bf940376b9b2c4f8a211deda5f9c27293f215379edb7c7917846a6a1d22044c7c1b3bb8002672fb9461cbd1f53c3889b2fe3b5bfbab9a70f1ac4#workspace:configs/jest"],\
           ["@toss/rollup-config", "virtual:bcd0c1141064bf940376b9b2c4f8a211deda5f9c27293f215379edb7c7917846a6a1d22044c7c1b3bb8002672fb9461cbd1f53c3889b2fe3b5bfbab9a70f1ac4#workspace:configs/rollup"],\
           ["@toss/storage", "workspace:packages/common/storage"],\
           ["@toss/utils", "workspace:packages/common/utils"],\
-          ["@tossteam/jest", "virtual:62cb29918b2e63dff97923d985a18238631a18b918521fd9ac48de2be213715676e8b999d7ab4431ea536d1917af1465d5695ceae059c69bf4c14df5968dd6a1#npm:17.187.2"],\
           ["@types/babel__preset-env", "npm:7.9.2"],\
           ["@types/jest", "npm:29.1.2"],\
           ["@types/lodash.debounce", "npm:4.0.7"],\
@@ -9885,12 +9926,13 @@ const RAW_RUNTIME_STATE =
           ["@babel/preset-typescript", "virtual:01ae7c33d4655a48cbb29902912466a761e01d57e32af25620c31e36065eb1601cc4f6394afcb6b2f9c9f1b941b9fbeecba9aa1bca8ca304ae87cee07a6864e9#npm:7.18.6"],\
           ["@babel/runtime", "npm:7.19.0"],\
           ["@testing-library/dom", "npm:8.18.1"],\
+          ["@testing-library/jest-dom", "npm:5.16.5"],\
           ["@testing-library/react", "virtual:62cb29918b2e63dff97923d985a18238631a18b918521fd9ac48de2be213715676e8b999d7ab4431ea536d1917af1465d5695ceae059c69bf4c14df5968dd6a1#npm:13.4.0"],\
           ["@testing-library/user-event", "virtual:62cb29918b2e63dff97923d985a18238631a18b918521fd9ac48de2be213715676e8b999d7ab4431ea536d1917af1465d5695ceae059c69bf4c14df5968dd6a1#npm:14.4.3"],\
+          ["@toss/jest", "virtual:bcd0c1141064bf940376b9b2c4f8a211deda5f9c27293f215379edb7c7917846a6a1d22044c7c1b3bb8002672fb9461cbd1f53c3889b2fe3b5bfbab9a70f1ac4#workspace:configs/jest"],\
           ["@toss/rollup-config", "virtual:bcd0c1141064bf940376b9b2c4f8a211deda5f9c27293f215379edb7c7917846a6a1d22044c7c1b3bb8002672fb9461cbd1f53c3889b2fe3b5bfbab9a70f1ac4#workspace:configs/rollup"],\
           ["@toss/storage", "workspace:packages/common/storage"],\
           ["@toss/utils", "workspace:packages/common/utils"],\
-          ["@tossteam/jest", "virtual:62cb29918b2e63dff97923d985a18238631a18b918521fd9ac48de2be213715676e8b999d7ab4431ea536d1917af1465d5695ceae059c69bf4c14df5968dd6a1#npm:17.187.2"],\
           ["@types/babel__preset-env", "npm:7.9.2"],\
           ["@types/jest", "npm:29.1.2"],\
           ["@types/lodash.debounce", "npm:4.0.7"],\
@@ -9928,8 +9970,8 @@ const RAW_RUNTIME_STATE =
           ["@toss/react-query", "workspace:packages/react/react-query"],\
           ["@babel/core", "npm:7.19.3"],\
           ["@babel/runtime", "npm:7.19.0"],\
+          ["@toss/jest", "virtual:bcd0c1141064bf940376b9b2c4f8a211deda5f9c27293f215379edb7c7917846a6a1d22044c7c1b3bb8002672fb9461cbd1f53c3889b2fe3b5bfbab9a70f1ac4#workspace:configs/jest"],\
           ["@toss/rollup-config", "virtual:bcd0c1141064bf940376b9b2c4f8a211deda5f9c27293f215379edb7c7917846a6a1d22044c7c1b3bb8002672fb9461cbd1f53c3889b2fe3b5bfbab9a70f1ac4#workspace:configs/rollup"],\
-          ["@tossteam/jest", "virtual:55e030f4e280704fb3c8fb1f5442518cdfa67839a0eec1be27dcc560d69cd26b152fe91949e78fd51e5877ad1e56ceeeea20eb02c239e5ccca466c5488cbdc0d#npm:17.187.2"],\
           ["@types/jest", "npm:29.1.2"],\
           ["@types/node", "npm:14.18.31"],\
           ["@yarnpkg/pnpify", "npm:4.0.0-rc.27"],\
@@ -9957,8 +9999,8 @@ const RAW_RUNTIME_STATE =
           ["@babel/runtime", "npm:7.19.0"],\
           ["@testing-library/jest-dom", "npm:5.16.5"],\
           ["@testing-library/react", "virtual:62cb29918b2e63dff97923d985a18238631a18b918521fd9ac48de2be213715676e8b999d7ab4431ea536d1917af1465d5695ceae059c69bf4c14df5968dd6a1#npm:13.4.0"],\
+          ["@toss/jest", "virtual:bcd0c1141064bf940376b9b2c4f8a211deda5f9c27293f215379edb7c7917846a6a1d22044c7c1b3bb8002672fb9461cbd1f53c3889b2fe3b5bfbab9a70f1ac4#workspace:configs/jest"],\
           ["@toss/rollup-config", "virtual:bcd0c1141064bf940376b9b2c4f8a211deda5f9c27293f215379edb7c7917846a6a1d22044c7c1b3bb8002672fb9461cbd1f53c3889b2fe3b5bfbab9a70f1ac4#workspace:configs/rollup"],\
-          ["@tossteam/jest", "virtual:55e030f4e280704fb3c8fb1f5442518cdfa67839a0eec1be27dcc560d69cd26b152fe91949e78fd51e5877ad1e56ceeeea20eb02c239e5ccca466c5488cbdc0d#npm:17.187.2"],\
           ["@types/jest", "npm:29.1.2"],\
           ["@types/node", "npm:14.18.31"],\
           ["@types/react", "npm:18.0.21"],\
@@ -9988,8 +10030,8 @@ const RAW_RUNTIME_STATE =
           ["@testing-library/react", "virtual:62cb29918b2e63dff97923d985a18238631a18b918521fd9ac48de2be213715676e8b999d7ab4431ea536d1917af1465d5695ceae059c69bf4c14df5968dd6a1#npm:13.4.0"],\
           ["@toss/assert", "workspace:packages/common/assert"],\
           ["@toss/error-boundary", "virtual:7a74fcab29040ff837408b387048e2be3766ca2349cbcd1b3e995824fbefafa8873bf518f24421452709a1f5b3e74a33e0d01df9f80851a0802e06430b9ddbcb#workspace:packages/react/error-boundary"],\
+          ["@toss/jest", "virtual:bcd0c1141064bf940376b9b2c4f8a211deda5f9c27293f215379edb7c7917846a6a1d22044c7c1b3bb8002672fb9461cbd1f53c3889b2fe3b5bfbab9a70f1ac4#workspace:configs/jest"],\
           ["@toss/rollup-config", "virtual:bcd0c1141064bf940376b9b2c4f8a211deda5f9c27293f215379edb7c7917846a6a1d22044c7c1b3bb8002672fb9461cbd1f53c3889b2fe3b5bfbab9a70f1ac4#workspace:configs/rollup"],\
-          ["@tossteam/jest", "virtual:55e030f4e280704fb3c8fb1f5442518cdfa67839a0eec1be27dcc560d69cd26b152fe91949e78fd51e5877ad1e56ceeeea20eb02c239e5ccca466c5488cbdc0d#npm:17.187.2"],\
           ["@types/jest", "npm:29.1.2"],\
           ["@types/node", "npm:14.18.31"],\
           ["@types/react", "npm:18.0.21"],\
@@ -10013,10 +10055,10 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["@toss/rollup-config", "virtual:bcd0c1141064bf940376b9b2c4f8a211deda5f9c27293f215379edb7c7917846a6a1d22044c7c1b3bb8002672fb9461cbd1f53c3889b2fe3b5bfbab9a70f1ac4#workspace:configs/rollup"],\
           ["@babel/core", "npm:7.19.3"],\
-          ["@rollup/plugin-babel", "virtual:36b3f06c76cf9bc81ee62479546e248512ee1bfc453ae16a09419adac9251dbac705e48393318b5eb9ebdf1aac639cfd21e410885c301a7a1637cd16dcc0955c#npm:5.3.1"],\
-          ["@rollup/plugin-commonjs", "virtual:36b3f06c76cf9bc81ee62479546e248512ee1bfc453ae16a09419adac9251dbac705e48393318b5eb9ebdf1aac639cfd21e410885c301a7a1637cd16dcc0955c#npm:22.0.2"],\
-          ["@rollup/plugin-json", "virtual:36b3f06c76cf9bc81ee62479546e248512ee1bfc453ae16a09419adac9251dbac705e48393318b5eb9ebdf1aac639cfd21e410885c301a7a1637cd16dcc0955c#npm:4.1.0"],\
-          ["@rollup/plugin-node-resolve", "virtual:36b3f06c76cf9bc81ee62479546e248512ee1bfc453ae16a09419adac9251dbac705e48393318b5eb9ebdf1aac639cfd21e410885c301a7a1637cd16dcc0955c#npm:14.1.0"],\
+          ["@rollup/plugin-babel", "virtual:deed4193335023688383863b4cd44904710ed734c8713b84381894852069f5f91c1267813438caeea6f0ca3bfed64071b862d547f009786c92a9e3f10ff1f191#npm:5.3.1"],\
+          ["@rollup/plugin-commonjs", "virtual:deed4193335023688383863b4cd44904710ed734c8713b84381894852069f5f91c1267813438caeea6f0ca3bfed64071b862d547f009786c92a9e3f10ff1f191#npm:22.0.2"],\
+          ["@rollup/plugin-json", "virtual:deed4193335023688383863b4cd44904710ed734c8713b84381894852069f5f91c1267813438caeea6f0ca3bfed64071b862d547f009786c92a9e3f10ff1f191#npm:4.1.0"],\
+          ["@rollup/plugin-node-resolve", "virtual:deed4193335023688383863b4cd44904710ed734c8713b84381894852069f5f91c1267813438caeea6f0ca3bfed64071b862d547f009786c92a9e3f10ff1f191#npm:14.1.0"],\
           ["@types/rollup", null],\
           ["builtin-modules", "npm:3.3.0"],\
           ["rollup", "npm:2.79.1"]\
@@ -10032,10 +10074,10 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["@toss/rollup-config", "workspace:configs/rollup"],\
           ["@babel/core", "npm:7.19.3"],\
-          ["@rollup/plugin-babel", "virtual:36b3f06c76cf9bc81ee62479546e248512ee1bfc453ae16a09419adac9251dbac705e48393318b5eb9ebdf1aac639cfd21e410885c301a7a1637cd16dcc0955c#npm:5.3.1"],\
-          ["@rollup/plugin-commonjs", "virtual:36b3f06c76cf9bc81ee62479546e248512ee1bfc453ae16a09419adac9251dbac705e48393318b5eb9ebdf1aac639cfd21e410885c301a7a1637cd16dcc0955c#npm:22.0.2"],\
-          ["@rollup/plugin-json", "virtual:36b3f06c76cf9bc81ee62479546e248512ee1bfc453ae16a09419adac9251dbac705e48393318b5eb9ebdf1aac639cfd21e410885c301a7a1637cd16dcc0955c#npm:4.1.0"],\
-          ["@rollup/plugin-node-resolve", "virtual:36b3f06c76cf9bc81ee62479546e248512ee1bfc453ae16a09419adac9251dbac705e48393318b5eb9ebdf1aac639cfd21e410885c301a7a1637cd16dcc0955c#npm:14.1.0"],\
+          ["@rollup/plugin-babel", "virtual:deed4193335023688383863b4cd44904710ed734c8713b84381894852069f5f91c1267813438caeea6f0ca3bfed64071b862d547f009786c92a9e3f10ff1f191#npm:5.3.1"],\
+          ["@rollup/plugin-commonjs", "virtual:deed4193335023688383863b4cd44904710ed734c8713b84381894852069f5f91c1267813438caeea6f0ca3bfed64071b862d547f009786c92a9e3f10ff1f191#npm:22.0.2"],\
+          ["@rollup/plugin-json", "virtual:deed4193335023688383863b4cd44904710ed734c8713b84381894852069f5f91c1267813438caeea6f0ca3bfed64071b862d547f009786c92a9e3f10ff1f191#npm:4.1.0"],\
+          ["@rollup/plugin-node-resolve", "virtual:deed4193335023688383863b4cd44904710ed734c8713b84381894852069f5f91c1267813438caeea6f0ca3bfed64071b862d547f009786c92a9e3f10ff1f191#npm:14.1.0"],\
           ["builtin-modules", "npm:3.3.0"],\
           ["rollup", "npm:2.79.1"]\
         ],\
@@ -10053,8 +10095,8 @@ const RAW_RUNTIME_STATE =
           ["@babel/runtime", "npm:7.19.0"],\
           ["@testing-library/jest-dom", "npm:5.16.5"],\
           ["@testing-library/react", "virtual:62cb29918b2e63dff97923d985a18238631a18b918521fd9ac48de2be213715676e8b999d7ab4431ea536d1917af1465d5695ceae059c69bf4c14df5968dd6a1#npm:13.4.0"],\
+          ["@toss/jest", "virtual:bcd0c1141064bf940376b9b2c4f8a211deda5f9c27293f215379edb7c7917846a6a1d22044c7c1b3bb8002672fb9461cbd1f53c3889b2fe3b5bfbab9a70f1ac4#workspace:configs/jest"],\
           ["@toss/rollup-config", "virtual:bcd0c1141064bf940376b9b2c4f8a211deda5f9c27293f215379edb7c7917846a6a1d22044c7c1b3bb8002672fb9461cbd1f53c3889b2fe3b5bfbab9a70f1ac4#workspace:configs/rollup"],\
-          ["@tossteam/jest", "virtual:bcd0c1141064bf940376b9b2c4f8a211deda5f9c27293f215379edb7c7917846a6a1d22044c7c1b3bb8002672fb9461cbd1f53c3889b2fe3b5bfbab9a70f1ac4#npm:17.187.2"],\
           ["@types/babel__core", "npm:7.1.19"],\
           ["@types/babel__preset-env", "npm:7.9.2"],\
           ["@types/jest", "npm:29.1.2"],\
@@ -10085,7 +10127,7 @@ const RAW_RUNTIME_STATE =
           ["@sentry/nextjs", "virtual:5a3e47f6d8a146cd2e379e3235cb9986cfbde9867482d290454438363953e6777be8e336ed73f021f4d6a1440b25e87e2c5ce219324971820b26a13ca63304d3#npm:6.19.7"],\
           ["@sentry/node", "npm:6.19.7"],\
           ["@sentry/types", "npm:6.19.7"],\
-          ["@tossteam/jest", "virtual:55e030f4e280704fb3c8fb1f5442518cdfa67839a0eec1be27dcc560d69cd26b152fe91949e78fd51e5877ad1e56ceeeea20eb02c239e5ccca466c5488cbdc0d#npm:17.187.2"],\
+          ["@toss/jest", "virtual:bcd0c1141064bf940376b9b2c4f8a211deda5f9c27293f215379edb7c7917846a6a1d22044c7c1b3bb8002672fb9461cbd1f53c3889b2fe3b5bfbab9a70f1ac4#workspace:configs/jest"],\
           ["@types/jest", "npm:29.1.2"],\
           ["@types/node", "npm:14.18.31"],\
           ["babel-jest", "virtual:785204e63ba96625a23f896ee431c9a36baff7a533742c7d2c1d3e8c51b41da4d9b22d61afa2e1bb44d0338b2a9e895a7c77e29d79f3a357a12dae28feb7f916#npm:29.1.2"],\
@@ -10107,9 +10149,9 @@ const RAW_RUNTIME_STATE =
           ["@babel/core", "npm:7.19.3"],\
           ["@babel/runtime", "npm:7.19.0"],\
           ["@rollup/plugin-babel", "virtual:bcd0c1141064bf940376b9b2c4f8a211deda5f9c27293f215379edb7c7917846a6a1d22044c7c1b3bb8002672fb9461cbd1f53c3889b2fe3b5bfbab9a70f1ac4#npm:5.3.1"],\
-          ["@rollup/plugin-commonjs", "virtual:36b3f06c76cf9bc81ee62479546e248512ee1bfc453ae16a09419adac9251dbac705e48393318b5eb9ebdf1aac639cfd21e410885c301a7a1637cd16dcc0955c#npm:22.0.2"],\
-          ["@rollup/plugin-node-resolve", "virtual:36b3f06c76cf9bc81ee62479546e248512ee1bfc453ae16a09419adac9251dbac705e48393318b5eb9ebdf1aac639cfd21e410885c301a7a1637cd16dcc0955c#npm:14.1.0"],\
-          ["@tossteam/jest", "virtual:77b9278f6063d24f0826f1238c7d240e6c3d430ba15f429ce398b0875deacf8945d3b28505e564b694919aafcc4d437ae3bca4f1e3b77f986659859e8a894a46#npm:17.187.2"],\
+          ["@rollup/plugin-commonjs", "virtual:deed4193335023688383863b4cd44904710ed734c8713b84381894852069f5f91c1267813438caeea6f0ca3bfed64071b862d547f009786c92a9e3f10ff1f191#npm:22.0.2"],\
+          ["@rollup/plugin-node-resolve", "virtual:deed4193335023688383863b4cd44904710ed734c8713b84381894852069f5f91c1267813438caeea6f0ca3bfed64071b862d547f009786c92a9e3f10ff1f191#npm:14.1.0"],\
+          ["@toss/jest", "virtual:bcd0c1141064bf940376b9b2c4f8a211deda5f9c27293f215379edb7c7917846a6a1d22044c7c1b3bb8002672fb9461cbd1f53c3889b2fe3b5bfbab9a70f1ac4#workspace:configs/jest"],\
           ["@types/babel__core", "npm:7.1.19"],\
           ["@types/jest", "npm:29.1.2"],\
           ["@types/node", "npm:14.18.31"],\
@@ -10140,12 +10182,12 @@ const RAW_RUNTIME_STATE =
           ["@testing-library/react-hooks", "virtual:f6f04cf8049b336fe9077f5cdeccd69700881bd0ab0d34b6b3879d0cc74d55c0a524e5afdef6f46cf27faeec9176afe77367e6cf342fc58f394c0a51e51c18b1#npm:5.1.3"],\
           ["@testing-library/user-event", "virtual:62cb29918b2e63dff97923d985a18238631a18b918521fd9ac48de2be213715676e8b999d7ab4431ea536d1917af1465d5695ceae059c69bf4c14df5968dd6a1#npm:14.4.3"],\
           ["@toss/assert", "workspace:packages/common/assert"],\
+          ["@toss/jest", "virtual:bcd0c1141064bf940376b9b2c4f8a211deda5f9c27293f215379edb7c7917846a6a1d22044c7c1b3bb8002672fb9461cbd1f53c3889b2fe3b5bfbab9a70f1ac4#workspace:configs/jest"],\
           ["@toss/react", "virtual:b5b5dfb1662b30d0d5b62f084f8b8fddd0eee56dd8737572197395ab6309e644fa76525392b1d0250ce3c07c5eeeb90901439953af682fc76f8ab38f71b8b09d#workspace:packages/react/react"],\
           ["@toss/rollup-config", "virtual:bcd0c1141064bf940376b9b2c4f8a211deda5f9c27293f215379edb7c7917846a6a1d22044c7c1b3bb8002672fb9461cbd1f53c3889b2fe3b5bfbab9a70f1ac4#workspace:configs/rollup"],\
           ["@toss/storage", "workspace:packages/common/storage"],\
           ["@toss/use-query-param", "virtual:f6f04cf8049b336fe9077f5cdeccd69700881bd0ab0d34b6b3879d0cc74d55c0a524e5afdef6f46cf27faeec9176afe77367e6cf342fc58f394c0a51e51c18b1#workspace:packages/react/use-query-param"],\
           ["@toss/utils", "workspace:packages/common/utils"],\
-          ["@tossteam/jest", "virtual:bcd0c1141064bf940376b9b2c4f8a211deda5f9c27293f215379edb7c7917846a6a1d22044c7c1b3bb8002672fb9461cbd1f53c3889b2fe3b5bfbab9a70f1ac4#npm:17.187.2"],\
           ["@types/babel__core", "npm:7.1.19"],\
           ["@types/babel__preset-env", "npm:7.9.2"],\
           ["@types/jest", "npm:29.1.2"],\
@@ -10178,8 +10220,8 @@ const RAW_RUNTIME_STATE =
           ["@toss/use-loading", "workspace:packages/react/use-loading"],\
           ["@babel/core", "npm:7.19.3"],\
           ["@testing-library/react", "virtual:62cb29918b2e63dff97923d985a18238631a18b918521fd9ac48de2be213715676e8b999d7ab4431ea536d1917af1465d5695ceae059c69bf4c14df5968dd6a1#npm:13.4.0"],\
+          ["@toss/jest", "virtual:bcd0c1141064bf940376b9b2c4f8a211deda5f9c27293f215379edb7c7917846a6a1d22044c7c1b3bb8002672fb9461cbd1f53c3889b2fe3b5bfbab9a70f1ac4#workspace:configs/jest"],\
           ["@toss/rollup-config", "virtual:bcd0c1141064bf940376b9b2c4f8a211deda5f9c27293f215379edb7c7917846a6a1d22044c7c1b3bb8002672fb9461cbd1f53c3889b2fe3b5bfbab9a70f1ac4#workspace:configs/rollup"],\
-          ["@tossteam/jest", "virtual:28eef7b64459c6407253c5ed756ca2415d0777dbb81d0a9fb624f3fb48f6b40995056551769991561cf82183fd85bdeb97dea6a0cec5339b508bb55dc7c6b35b#npm:17.187.2"],\
           ["@types/babel__core", "npm:7.1.19"],\
           ["@types/jest", "npm:29.1.2"],\
           ["@types/node", "npm:14.18.31"],\
@@ -10214,10 +10256,10 @@ const RAW_RUNTIME_STATE =
           ["@testing-library/jest-dom", "npm:5.16.5"],\
           ["@testing-library/react", "virtual:62cb29918b2e63dff97923d985a18238631a18b918521fd9ac48de2be213715676e8b999d7ab4431ea536d1917af1465d5695ceae059c69bf4c14df5968dd6a1#npm:13.4.0"],\
           ["@testing-library/user-event", "virtual:62cb29918b2e63dff97923d985a18238631a18b918521fd9ac48de2be213715676e8b999d7ab4431ea536d1917af1465d5695ceae059c69bf4c14df5968dd6a1#npm:14.4.3"],\
+          ["@toss/jest", "virtual:bcd0c1141064bf940376b9b2c4f8a211deda5f9c27293f215379edb7c7917846a6a1d22044c7c1b3bb8002672fb9461cbd1f53c3889b2fe3b5bfbab9a70f1ac4#workspace:configs/jest"],\
           ["@toss/react", "virtual:b5b5dfb1662b30d0d5b62f084f8b8fddd0eee56dd8737572197395ab6309e644fa76525392b1d0250ce3c07c5eeeb90901439953af682fc76f8ab38f71b8b09d#workspace:packages/react/react"],\
           ["@toss/rollup-config", "virtual:bcd0c1141064bf940376b9b2c4f8a211deda5f9c27293f215379edb7c7917846a6a1d22044c7c1b3bb8002672fb9461cbd1f53c3889b2fe3b5bfbab9a70f1ac4#workspace:configs/rollup"],\
           ["@toss/utils", "workspace:packages/common/utils"],\
-          ["@tossteam/jest", "virtual:62cb29918b2e63dff97923d985a18238631a18b918521fd9ac48de2be213715676e8b999d7ab4431ea536d1917af1465d5695ceae059c69bf4c14df5968dd6a1#npm:17.187.2"],\
           ["@types/babel__preset-env", "npm:7.9.2"],\
           ["@types/jest", "npm:29.1.2"],\
           ["@types/node", "npm:14.18.31"],\
@@ -10249,8 +10291,8 @@ const RAW_RUNTIME_STATE =
           ["@babel/runtime", "npm:7.19.0"],\
           ["@testing-library/jest-dom", "npm:5.16.5"],\
           ["@testing-library/react", "virtual:62cb29918b2e63dff97923d985a18238631a18b918521fd9ac48de2be213715676e8b999d7ab4431ea536d1917af1465d5695ceae059c69bf4c14df5968dd6a1#npm:13.4.0"],\
+          ["@toss/jest", "virtual:bcd0c1141064bf940376b9b2c4f8a211deda5f9c27293f215379edb7c7917846a6a1d22044c7c1b3bb8002672fb9461cbd1f53c3889b2fe3b5bfbab9a70f1ac4#workspace:configs/jest"],\
           ["@toss/rollup-config", "virtual:bcd0c1141064bf940376b9b2c4f8a211deda5f9c27293f215379edb7c7917846a6a1d22044c7c1b3bb8002672fb9461cbd1f53c3889b2fe3b5bfbab9a70f1ac4#workspace:configs/rollup"],\
-          ["@tossteam/jest", "virtual:bcd0c1141064bf940376b9b2c4f8a211deda5f9c27293f215379edb7c7917846a6a1d22044c7c1b3bb8002672fb9461cbd1f53c3889b2fe3b5bfbab9a70f1ac4#npm:17.187.2"],\
           ["@types/babel__core", "npm:7.1.19"],\
           ["@types/babel__preset-env", "npm:7.9.2"],\
           ["@types/concurrently", "npm:6.4.0"],\
@@ -10290,8 +10332,8 @@ const RAW_RUNTIME_STATE =
           ["@babel/runtime", "npm:7.19.0"],\
           ["@testing-library/jest-dom", "npm:5.16.5"],\
           ["@testing-library/react", "virtual:62cb29918b2e63dff97923d985a18238631a18b918521fd9ac48de2be213715676e8b999d7ab4431ea536d1917af1465d5695ceae059c69bf4c14df5968dd6a1#npm:13.4.0"],\
+          ["@toss/jest", "virtual:bcd0c1141064bf940376b9b2c4f8a211deda5f9c27293f215379edb7c7917846a6a1d22044c7c1b3bb8002672fb9461cbd1f53c3889b2fe3b5bfbab9a70f1ac4#workspace:configs/jest"],\
           ["@toss/rollup-config", "virtual:bcd0c1141064bf940376b9b2c4f8a211deda5f9c27293f215379edb7c7917846a6a1d22044c7c1b3bb8002672fb9461cbd1f53c3889b2fe3b5bfbab9a70f1ac4#workspace:configs/rollup"],\
-          ["@tossteam/jest", "virtual:bcd0c1141064bf940376b9b2c4f8a211deda5f9c27293f215379edb7c7917846a6a1d22044c7c1b3bb8002672fb9461cbd1f53c3889b2fe3b5bfbab9a70f1ac4#npm:17.187.2"],\
           ["@types/babel__core", "npm:7.1.19"],\
           ["@types/babel__preset-env", "npm:7.9.2"],\
           ["@types/concurrently", "npm:6.4.0"],\
@@ -10320,7 +10362,7 @@ const RAW_RUNTIME_STATE =
           ["@toss/utility-types", "workspace:packages/common/utility-types"],\
           ["@babel/core", "npm:7.19.3"],\
           ["@babel/runtime", "npm:7.19.0"],\
-          ["@tossteam/jest", "virtual:55e030f4e280704fb3c8fb1f5442518cdfa67839a0eec1be27dcc560d69cd26b152fe91949e78fd51e5877ad1e56ceeeea20eb02c239e5ccca466c5488cbdc0d#npm:17.187.2"],\
+          ["@toss/jest", "virtual:bcd0c1141064bf940376b9b2c4f8a211deda5f9c27293f215379edb7c7917846a6a1d22044c7c1b3bb8002672fb9461cbd1f53c3889b2fe3b5bfbab9a70f1ac4#workspace:configs/jest"],\
           ["@types/jest", "npm:29.1.2"],\
           ["@types/node", "npm:14.18.31"],\
           ["babel-jest", "virtual:785204e63ba96625a23f896ee431c9a36baff7a533742c7d2c1d3e8c51b41da4d9b22d61afa2e1bb44d0338b2a9e895a7c77e29d79f3a357a12dae28feb7f916#npm:29.1.2"],\
@@ -10345,11 +10387,11 @@ const RAW_RUNTIME_STATE =
           ["@babel/preset-typescript", "virtual:bcd0c1141064bf940376b9b2c4f8a211deda5f9c27293f215379edb7c7917846a6a1d22044c7c1b3bb8002672fb9461cbd1f53c3889b2fe3b5bfbab9a70f1ac4#npm:7.18.6"],\
           ["@babel/runtime", "npm:7.19.0"],\
           ["@rollup/plugin-babel", "virtual:bcd0c1141064bf940376b9b2c4f8a211deda5f9c27293f215379edb7c7917846a6a1d22044c7c1b3bb8002672fb9461cbd1f53c3889b2fe3b5bfbab9a70f1ac4#npm:5.3.1"],\
-          ["@rollup/plugin-commonjs", "virtual:36b3f06c76cf9bc81ee62479546e248512ee1bfc453ae16a09419adac9251dbac705e48393318b5eb9ebdf1aac639cfd21e410885c301a7a1637cd16dcc0955c#npm:22.0.2"],\
-          ["@rollup/plugin-json", "virtual:36b3f06c76cf9bc81ee62479546e248512ee1bfc453ae16a09419adac9251dbac705e48393318b5eb9ebdf1aac639cfd21e410885c301a7a1637cd16dcc0955c#npm:4.1.0"],\
+          ["@rollup/plugin-commonjs", "virtual:deed4193335023688383863b4cd44904710ed734c8713b84381894852069f5f91c1267813438caeea6f0ca3bfed64071b862d547f009786c92a9e3f10ff1f191#npm:22.0.2"],\
+          ["@rollup/plugin-json", "virtual:deed4193335023688383863b4cd44904710ed734c8713b84381894852069f5f91c1267813438caeea6f0ca3bfed64071b862d547f009786c92a9e3f10ff1f191#npm:4.1.0"],\
           ["@rollup/plugin-node-resolve", "virtual:bcd0c1141064bf940376b9b2c4f8a211deda5f9c27293f215379edb7c7917846a6a1d22044c7c1b3bb8002672fb9461cbd1f53c3889b2fe3b5bfbab9a70f1ac4#npm:13.3.0"],\
+          ["@toss/jest", "virtual:bcd0c1141064bf940376b9b2c4f8a211deda5f9c27293f215379edb7c7917846a6a1d22044c7c1b3bb8002672fb9461cbd1f53c3889b2fe3b5bfbab9a70f1ac4#workspace:configs/jest"],\
           ["@toss/rollup-config", "virtual:bcd0c1141064bf940376b9b2c4f8a211deda5f9c27293f215379edb7c7917846a6a1d22044c7c1b3bb8002672fb9461cbd1f53c3889b2fe3b5bfbab9a70f1ac4#workspace:configs/rollup"],\
-          ["@tossteam/jest", "virtual:bcd0c1141064bf940376b9b2c4f8a211deda5f9c27293f215379edb7c7917846a6a1d22044c7c1b3bb8002672fb9461cbd1f53c3889b2fe3b5bfbab9a70f1ac4#npm:17.187.2"],\
           ["@types/babel__core", "npm:7.1.19"],\
           ["@types/babel__preset-env", "npm:7.9.2"],\
           ["@types/jest", "npm:29.1.2"],\
@@ -10375,9 +10417,9 @@ const RAW_RUNTIME_STATE =
           ["@toss/validators", "workspace:packages/common/validators"],\
           ["@babel/core", "npm:7.19.3"],\
           ["@babel/runtime", "npm:7.19.0"],\
+          ["@toss/jest", "virtual:bcd0c1141064bf940376b9b2c4f8a211deda5f9c27293f215379edb7c7917846a6a1d22044c7c1b3bb8002672fb9461cbd1f53c3889b2fe3b5bfbab9a70f1ac4#workspace:configs/jest"],\
           ["@toss/rollup-config", "virtual:bcd0c1141064bf940376b9b2c4f8a211deda5f9c27293f215379edb7c7917846a6a1d22044c7c1b3bb8002672fb9461cbd1f53c3889b2fe3b5bfbab9a70f1ac4#workspace:configs/rollup"],\
           ["@toss/utils", "workspace:packages/common/utils"],\
-          ["@tossteam/jest", "virtual:55e030f4e280704fb3c8fb1f5442518cdfa67839a0eec1be27dcc560d69cd26b152fe91949e78fd51e5877ad1e56ceeeea20eb02c239e5ccca466c5488cbdc0d#npm:17.187.2"],\
           ["@types/jest", "npm:29.1.2"],\
           ["@types/node", "npm:14.18.31"],\
           ["babel-jest", "virtual:785204e63ba96625a23f896ee431c9a36baff7a533742c7d2c1d3e8c51b41da4d9b22d61afa2e1bb44d0338b2a9e895a7c77e29d79f3a357a12dae28feb7f916#npm:29.1.2"],\
@@ -10389,344 +10431,6 @@ const RAW_RUNTIME_STATE =
           ["typescript", "patch:typescript@npm%3A4.7.4#optional!builtin<compat/typescript>::version=4.7.4&hash=65a307"]\
         ],\
         "linkType": "SOFT"\
-      }]\
-    ]],\
-    ["@tossteam/jest", [\
-      ["npm:17.187.2", {\
-        "packageLocation": "../../.yarn/berry/cache/@tossteam-jest-npm-17.187.2-1d2785a4bd-10.zip/node_modules/@tossteam/jest/",\
-        "packageDependencies": [\
-          ["@tossteam/jest", "npm:17.187.2"]\
-        ],\
-        "linkType": "SOFT"\
-      }],\
-      ["virtual:0835ce41fe753ee669a09c94e84dd26310451851363a65d2417959e3e0283ec86ca67d0fd1af37d1ef29305b0e8874a5ee5f46b0b0361b1a5cb993fb9b79e9eb#npm:17.187.2", {\
-        "packageLocation": "./.yarn/__virtual__/@tossteam-jest-virtual-754751fa7d/3/.yarn/berry/cache/@tossteam-jest-npm-17.187.2-1d2785a4bd-10.zip/node_modules/@tossteam/jest/",\
-        "packageDependencies": [\
-          ["@tossteam/jest", "virtual:0835ce41fe753ee669a09c94e84dd26310451851363a65d2417959e3e0283ec86ca67d0fd1af37d1ef29305b0e8874a5ee5f46b0b0361b1a5cb993fb9b79e9eb#npm:17.187.2"],\
-          ["@babel/core", "npm:7.19.3"],\
-          ["@babel/preset-env", "virtual:bcd0c1141064bf940376b9b2c4f8a211deda5f9c27293f215379edb7c7917846a6a1d22044c7c1b3bb8002672fb9461cbd1f53c3889b2fe3b5bfbab9a70f1ac4#npm:7.19.3"],\
-          ["@babel/preset-typescript", "virtual:bcd0c1141064bf940376b9b2c4f8a211deda5f9c27293f215379edb7c7917846a6a1d22044c7c1b3bb8002672fb9461cbd1f53c3889b2fe3b5bfbab9a70f1ac4#npm:7.18.6"],\
-          ["@babel/runtime", "npm:7.19.0"],\
-          ["@sentry/browser", "npm:6.19.7"],\
-          ["@sentry/node", "npm:6.19.7"],\
-          ["@testing-library/jest-dom", "npm:5.16.5"],\
-          ["@tossteam/toss-app-bridge", null],\
-          ["@tossteam/tosscore", null],\
-          ["@tossteam/tosscore-http", null],\
-          ["@types/babel__core", "npm:7.1.19"],\
-          ["@types/babel__preset-env", null],\
-          ["@types/babel__preset-typescript", null],\
-          ["@types/babel__runtime", null],\
-          ["@types/jest", "npm:29.1.2"],\
-          ["@types/tossteam__toss-app-bridge", null],\
-          ["@types/tossteam__tosscore", null],\
-          ["@types/tossteam__tosscore-http", null],\
-          ["compare-versions", "npm:4.1.4"],\
-          ["enhanced-resolve", "npm:5.10.0"],\
-          ["jest", "virtual:01ae7c33d4655a48cbb29902912466a761e01d57e32af25620c31e36065eb1601cc4f6394afcb6b2f9c9f1b941b9fbeecba9aa1bca8ca304ae87cee07a6864e9#npm:29.1.2"],\
-          ["jest-canvas-mock", "npm:2.4.0"]\
-        ],\
-        "packagePeers": [\
-          "@babel/core",\
-          "@babel/preset-env",\
-          "@babel/preset-typescript",\
-          "@babel/runtime",\
-          "@tossteam/toss-app-bridge",\
-          "@tossteam/tosscore-http",\
-          "@tossteam/tosscore",\
-          "@types/babel__core",\
-          "@types/babel__preset-env",\
-          "@types/babel__preset-typescript",\
-          "@types/babel__runtime",\
-          "@types/jest",\
-          "@types/tossteam__toss-app-bridge",\
-          "@types/tossteam__tosscore-http",\
-          "@types/tossteam__tosscore",\
-          "jest"\
-        ],\
-        "linkType": "HARD"\
-      }],\
-      ["virtual:28eef7b64459c6407253c5ed756ca2415d0777dbb81d0a9fb624f3fb48f6b40995056551769991561cf82183fd85bdeb97dea6a0cec5339b508bb55dc7c6b35b#npm:17.187.2", {\
-        "packageLocation": "./.yarn/__virtual__/@tossteam-jest-virtual-23566a37ec/3/.yarn/berry/cache/@tossteam-jest-npm-17.187.2-1d2785a4bd-10.zip/node_modules/@tossteam/jest/",\
-        "packageDependencies": [\
-          ["@tossteam/jest", "virtual:28eef7b64459c6407253c5ed756ca2415d0777dbb81d0a9fb624f3fb48f6b40995056551769991561cf82183fd85bdeb97dea6a0cec5339b508bb55dc7c6b35b#npm:17.187.2"],\
-          ["@babel/core", "npm:7.19.3"],\
-          ["@babel/preset-env", null],\
-          ["@babel/preset-typescript", null],\
-          ["@babel/runtime", null],\
-          ["@sentry/browser", "npm:6.19.7"],\
-          ["@sentry/node", "npm:6.19.7"],\
-          ["@testing-library/jest-dom", "npm:5.16.5"],\
-          ["@tossteam/toss-app-bridge", null],\
-          ["@tossteam/tosscore", null],\
-          ["@tossteam/tosscore-http", null],\
-          ["@types/babel__core", "npm:7.1.19"],\
-          ["@types/babel__preset-env", null],\
-          ["@types/babel__preset-typescript", null],\
-          ["@types/babel__runtime", null],\
-          ["@types/jest", "npm:29.1.2"],\
-          ["@types/tossteam__toss-app-bridge", null],\
-          ["@types/tossteam__tosscore", null],\
-          ["@types/tossteam__tosscore-http", null],\
-          ["compare-versions", "npm:4.1.4"],\
-          ["enhanced-resolve", "npm:5.10.0"],\
-          ["jest", "virtual:01ae7c33d4655a48cbb29902912466a761e01d57e32af25620c31e36065eb1601cc4f6394afcb6b2f9c9f1b941b9fbeecba9aa1bca8ca304ae87cee07a6864e9#npm:29.1.2"],\
-          ["jest-canvas-mock", "npm:2.4.0"]\
-        ],\
-        "packagePeers": [\
-          "@babel/core",\
-          "@babel/preset-env",\
-          "@babel/preset-typescript",\
-          "@babel/runtime",\
-          "@tossteam/toss-app-bridge",\
-          "@tossteam/tosscore-http",\
-          "@tossteam/tosscore",\
-          "@types/babel__core",\
-          "@types/babel__preset-env",\
-          "@types/babel__preset-typescript",\
-          "@types/babel__runtime",\
-          "@types/jest",\
-          "@types/tossteam__toss-app-bridge",\
-          "@types/tossteam__tosscore-http",\
-          "@types/tossteam__tosscore",\
-          "jest"\
-        ],\
-        "linkType": "HARD"\
-      }],\
-      ["virtual:55e030f4e280704fb3c8fb1f5442518cdfa67839a0eec1be27dcc560d69cd26b152fe91949e78fd51e5877ad1e56ceeeea20eb02c239e5ccca466c5488cbdc0d#npm:17.187.2", {\
-        "packageLocation": "./.yarn/__virtual__/@tossteam-jest-virtual-8b432d3654/3/.yarn/berry/cache/@tossteam-jest-npm-17.187.2-1d2785a4bd-10.zip/node_modules/@tossteam/jest/",\
-        "packageDependencies": [\
-          ["@tossteam/jest", "virtual:55e030f4e280704fb3c8fb1f5442518cdfa67839a0eec1be27dcc560d69cd26b152fe91949e78fd51e5877ad1e56ceeeea20eb02c239e5ccca466c5488cbdc0d#npm:17.187.2"],\
-          ["@babel/core", "npm:7.19.3"],\
-          ["@babel/preset-env", null],\
-          ["@babel/preset-typescript", null],\
-          ["@babel/runtime", "npm:7.19.0"],\
-          ["@sentry/browser", "npm:6.19.7"],\
-          ["@sentry/node", "npm:6.19.7"],\
-          ["@testing-library/jest-dom", "npm:5.16.5"],\
-          ["@tossteam/toss-app-bridge", null],\
-          ["@tossteam/tosscore", null],\
-          ["@tossteam/tosscore-http", null],\
-          ["@types/babel__core", null],\
-          ["@types/babel__preset-env", null],\
-          ["@types/babel__preset-typescript", null],\
-          ["@types/babel__runtime", null],\
-          ["@types/jest", "npm:29.1.2"],\
-          ["@types/tossteam__toss-app-bridge", null],\
-          ["@types/tossteam__tosscore", null],\
-          ["@types/tossteam__tosscore-http", null],\
-          ["compare-versions", "npm:4.1.4"],\
-          ["enhanced-resolve", "npm:5.10.0"],\
-          ["jest", "virtual:01ae7c33d4655a48cbb29902912466a761e01d57e32af25620c31e36065eb1601cc4f6394afcb6b2f9c9f1b941b9fbeecba9aa1bca8ca304ae87cee07a6864e9#npm:29.1.2"],\
-          ["jest-canvas-mock", "npm:2.4.0"]\
-        ],\
-        "packagePeers": [\
-          "@babel/core",\
-          "@babel/preset-env",\
-          "@babel/preset-typescript",\
-          "@babel/runtime",\
-          "@tossteam/toss-app-bridge",\
-          "@tossteam/tosscore-http",\
-          "@tossteam/tosscore",\
-          "@types/babel__core",\
-          "@types/babel__preset-env",\
-          "@types/babel__preset-typescript",\
-          "@types/babel__runtime",\
-          "@types/jest",\
-          "@types/tossteam__toss-app-bridge",\
-          "@types/tossteam__tosscore-http",\
-          "@types/tossteam__tosscore",\
-          "jest"\
-        ],\
-        "linkType": "HARD"\
-      }],\
-      ["virtual:62cb29918b2e63dff97923d985a18238631a18b918521fd9ac48de2be213715676e8b999d7ab4431ea536d1917af1465d5695ceae059c69bf4c14df5968dd6a1#npm:17.187.2", {\
-        "packageLocation": "./.yarn/__virtual__/@tossteam-jest-virtual-d91ad397c9/3/.yarn/berry/cache/@tossteam-jest-npm-17.187.2-1d2785a4bd-10.zip/node_modules/@tossteam/jest/",\
-        "packageDependencies": [\
-          ["@tossteam/jest", "virtual:62cb29918b2e63dff97923d985a18238631a18b918521fd9ac48de2be213715676e8b999d7ab4431ea536d1917af1465d5695ceae059c69bf4c14df5968dd6a1#npm:17.187.2"],\
-          ["@babel/core", "npm:7.19.3"],\
-          ["@babel/preset-env", "virtual:01ae7c33d4655a48cbb29902912466a761e01d57e32af25620c31e36065eb1601cc4f6394afcb6b2f9c9f1b941b9fbeecba9aa1bca8ca304ae87cee07a6864e9#npm:7.19.3"],\
-          ["@babel/preset-typescript", "virtual:01ae7c33d4655a48cbb29902912466a761e01d57e32af25620c31e36065eb1601cc4f6394afcb6b2f9c9f1b941b9fbeecba9aa1bca8ca304ae87cee07a6864e9#npm:7.18.6"],\
-          ["@babel/runtime", "npm:7.19.0"],\
-          ["@sentry/browser", "npm:6.19.7"],\
-          ["@sentry/node", "npm:6.19.7"],\
-          ["@testing-library/jest-dom", "npm:5.16.5"],\
-          ["@tossteam/toss-app-bridge", null],\
-          ["@tossteam/tosscore", null],\
-          ["@tossteam/tosscore-http", null],\
-          ["@types/babel__core", null],\
-          ["@types/babel__preset-env", "npm:7.9.2"],\
-          ["@types/babel__preset-typescript", null],\
-          ["@types/babel__runtime", null],\
-          ["@types/jest", "npm:29.1.2"],\
-          ["@types/tossteam__toss-app-bridge", null],\
-          ["@types/tossteam__tosscore", null],\
-          ["@types/tossteam__tosscore-http", null],\
-          ["compare-versions", "npm:4.1.4"],\
-          ["enhanced-resolve", "npm:5.10.0"],\
-          ["jest", "virtual:01ae7c33d4655a48cbb29902912466a761e01d57e32af25620c31e36065eb1601cc4f6394afcb6b2f9c9f1b941b9fbeecba9aa1bca8ca304ae87cee07a6864e9#npm:29.1.2"],\
-          ["jest-canvas-mock", "npm:2.4.0"]\
-        ],\
-        "packagePeers": [\
-          "@babel/core",\
-          "@babel/preset-env",\
-          "@babel/preset-typescript",\
-          "@babel/runtime",\
-          "@tossteam/toss-app-bridge",\
-          "@tossteam/tosscore-http",\
-          "@tossteam/tosscore",\
-          "@types/babel__core",\
-          "@types/babel__preset-env",\
-          "@types/babel__preset-typescript",\
-          "@types/babel__runtime",\
-          "@types/jest",\
-          "@types/tossteam__toss-app-bridge",\
-          "@types/tossteam__tosscore-http",\
-          "@types/tossteam__tosscore",\
-          "jest"\
-        ],\
-        "linkType": "HARD"\
-      }],\
-      ["virtual:77b9278f6063d24f0826f1238c7d240e6c3d430ba15f429ce398b0875deacf8945d3b28505e564b694919aafcc4d437ae3bca4f1e3b77f986659859e8a894a46#npm:17.187.2", {\
-        "packageLocation": "./.yarn/__virtual__/@tossteam-jest-virtual-5459db075c/3/.yarn/berry/cache/@tossteam-jest-npm-17.187.2-1d2785a4bd-10.zip/node_modules/@tossteam/jest/",\
-        "packageDependencies": [\
-          ["@tossteam/jest", "virtual:77b9278f6063d24f0826f1238c7d240e6c3d430ba15f429ce398b0875deacf8945d3b28505e564b694919aafcc4d437ae3bca4f1e3b77f986659859e8a894a46#npm:17.187.2"],\
-          ["@babel/core", "npm:7.19.3"],\
-          ["@babel/preset-env", null],\
-          ["@babel/preset-typescript", null],\
-          ["@babel/runtime", "npm:7.19.0"],\
-          ["@sentry/browser", "npm:6.19.7"],\
-          ["@sentry/node", "npm:6.19.7"],\
-          ["@testing-library/jest-dom", "npm:5.16.5"],\
-          ["@tossteam/toss-app-bridge", null],\
-          ["@tossteam/tosscore", null],\
-          ["@tossteam/tosscore-http", null],\
-          ["@types/babel__core", "npm:7.1.19"],\
-          ["@types/babel__preset-env", null],\
-          ["@types/babel__preset-typescript", null],\
-          ["@types/babel__runtime", null],\
-          ["@types/jest", "npm:29.1.2"],\
-          ["@types/tossteam__toss-app-bridge", null],\
-          ["@types/tossteam__tosscore", null],\
-          ["@types/tossteam__tosscore-http", null],\
-          ["compare-versions", "npm:4.1.4"],\
-          ["enhanced-resolve", "npm:5.10.0"],\
-          ["jest", "virtual:01ae7c33d4655a48cbb29902912466a761e01d57e32af25620c31e36065eb1601cc4f6394afcb6b2f9c9f1b941b9fbeecba9aa1bca8ca304ae87cee07a6864e9#npm:29.1.2"],\
-          ["jest-canvas-mock", "npm:2.4.0"]\
-        ],\
-        "packagePeers": [\
-          "@babel/core",\
-          "@babel/preset-env",\
-          "@babel/preset-typescript",\
-          "@babel/runtime",\
-          "@tossteam/toss-app-bridge",\
-          "@tossteam/tosscore-http",\
-          "@tossteam/tosscore",\
-          "@types/babel__core",\
-          "@types/babel__preset-env",\
-          "@types/babel__preset-typescript",\
-          "@types/babel__runtime",\
-          "@types/jest",\
-          "@types/tossteam__toss-app-bridge",\
-          "@types/tossteam__tosscore-http",\
-          "@types/tossteam__tosscore",\
-          "jest"\
-        ],\
-        "linkType": "HARD"\
-      }],\
-      ["virtual:9b0054e10472894acc6e1831a01d94bc6960af68ced3a77c0569df2dcc99996305ccf0051fd1e1f3827bc2f0f81d464cccbf0994c97c6b9eadb0efa4a1509c16#npm:17.187.2", {\
-        "packageLocation": "./.yarn/__virtual__/@tossteam-jest-virtual-32b9b1ecc8/3/.yarn/berry/cache/@tossteam-jest-npm-17.187.2-1d2785a4bd-10.zip/node_modules/@tossteam/jest/",\
-        "packageDependencies": [\
-          ["@tossteam/jest", "virtual:9b0054e10472894acc6e1831a01d94bc6960af68ced3a77c0569df2dcc99996305ccf0051fd1e1f3827bc2f0f81d464cccbf0994c97c6b9eadb0efa4a1509c16#npm:17.187.2"],\
-          ["@babel/core", "npm:7.19.3"],\
-          ["@babel/preset-env", "virtual:bcd0c1141064bf940376b9b2c4f8a211deda5f9c27293f215379edb7c7917846a6a1d22044c7c1b3bb8002672fb9461cbd1f53c3889b2fe3b5bfbab9a70f1ac4#npm:7.19.3"],\
-          ["@babel/preset-typescript", "virtual:bcd0c1141064bf940376b9b2c4f8a211deda5f9c27293f215379edb7c7917846a6a1d22044c7c1b3bb8002672fb9461cbd1f53c3889b2fe3b5bfbab9a70f1ac4#npm:7.18.6"],\
-          ["@babel/runtime", null],\
-          ["@sentry/browser", "npm:6.19.7"],\
-          ["@sentry/node", "npm:6.19.7"],\
-          ["@testing-library/jest-dom", "npm:5.16.5"],\
-          ["@tossteam/toss-app-bridge", null],\
-          ["@tossteam/tosscore", null],\
-          ["@tossteam/tosscore-http", null],\
-          ["@types/babel__core", "npm:7.1.19"],\
-          ["@types/babel__preset-env", "npm:7.9.2"],\
-          ["@types/babel__preset-typescript", null],\
-          ["@types/babel__runtime", null],\
-          ["@types/jest", "npm:29.1.2"],\
-          ["@types/tossteam__toss-app-bridge", null],\
-          ["@types/tossteam__tosscore", null],\
-          ["@types/tossteam__tosscore-http", null],\
-          ["compare-versions", "npm:4.1.4"],\
-          ["enhanced-resolve", "npm:5.10.0"],\
-          ["jest", "virtual:01ae7c33d4655a48cbb29902912466a761e01d57e32af25620c31e36065eb1601cc4f6394afcb6b2f9c9f1b941b9fbeecba9aa1bca8ca304ae87cee07a6864e9#npm:29.1.2"],\
-          ["jest-canvas-mock", "npm:2.4.0"]\
-        ],\
-        "packagePeers": [\
-          "@babel/core",\
-          "@babel/preset-env",\
-          "@babel/preset-typescript",\
-          "@babel/runtime",\
-          "@tossteam/toss-app-bridge",\
-          "@tossteam/tosscore-http",\
-          "@tossteam/tosscore",\
-          "@types/babel__core",\
-          "@types/babel__preset-env",\
-          "@types/babel__preset-typescript",\
-          "@types/babel__runtime",\
-          "@types/jest",\
-          "@types/tossteam__toss-app-bridge",\
-          "@types/tossteam__tosscore-http",\
-          "@types/tossteam__tosscore",\
-          "jest"\
-        ],\
-        "linkType": "HARD"\
-      }],\
-      ["virtual:bcd0c1141064bf940376b9b2c4f8a211deda5f9c27293f215379edb7c7917846a6a1d22044c7c1b3bb8002672fb9461cbd1f53c3889b2fe3b5bfbab9a70f1ac4#npm:17.187.2", {\
-        "packageLocation": "./.yarn/__virtual__/@tossteam-jest-virtual-627b6b0ead/3/.yarn/berry/cache/@tossteam-jest-npm-17.187.2-1d2785a4bd-10.zip/node_modules/@tossteam/jest/",\
-        "packageDependencies": [\
-          ["@tossteam/jest", "virtual:bcd0c1141064bf940376b9b2c4f8a211deda5f9c27293f215379edb7c7917846a6a1d22044c7c1b3bb8002672fb9461cbd1f53c3889b2fe3b5bfbab9a70f1ac4#npm:17.187.2"],\
-          ["@babel/core", "npm:7.19.3"],\
-          ["@babel/preset-env", "virtual:bcd0c1141064bf940376b9b2c4f8a211deda5f9c27293f215379edb7c7917846a6a1d22044c7c1b3bb8002672fb9461cbd1f53c3889b2fe3b5bfbab9a70f1ac4#npm:7.19.3"],\
-          ["@babel/preset-typescript", "virtual:bcd0c1141064bf940376b9b2c4f8a211deda5f9c27293f215379edb7c7917846a6a1d22044c7c1b3bb8002672fb9461cbd1f53c3889b2fe3b5bfbab9a70f1ac4#npm:7.18.6"],\
-          ["@babel/runtime", "npm:7.19.0"],\
-          ["@sentry/browser", "npm:6.19.7"],\
-          ["@sentry/node", "npm:6.19.7"],\
-          ["@testing-library/jest-dom", "npm:5.16.5"],\
-          ["@tossteam/toss-app-bridge", null],\
-          ["@tossteam/tosscore", null],\
-          ["@tossteam/tosscore-http", null],\
-          ["@types/babel__core", "npm:7.1.19"],\
-          ["@types/babel__preset-env", "npm:7.9.2"],\
-          ["@types/babel__preset-typescript", null],\
-          ["@types/babel__runtime", null],\
-          ["@types/jest", "npm:29.1.2"],\
-          ["@types/tossteam__toss-app-bridge", null],\
-          ["@types/tossteam__tosscore", null],\
-          ["@types/tossteam__tosscore-http", null],\
-          ["compare-versions", "npm:4.1.4"],\
-          ["enhanced-resolve", "npm:5.10.0"],\
-          ["jest", "virtual:01ae7c33d4655a48cbb29902912466a761e01d57e32af25620c31e36065eb1601cc4f6394afcb6b2f9c9f1b941b9fbeecba9aa1bca8ca304ae87cee07a6864e9#npm:29.1.2"],\
-          ["jest-canvas-mock", "npm:2.4.0"]\
-        ],\
-        "packagePeers": [\
-          "@babel/core",\
-          "@babel/preset-env",\
-          "@babel/preset-typescript",\
-          "@babel/runtime",\
-          "@tossteam/toss-app-bridge",\
-          "@tossteam/tosscore-http",\
-          "@tossteam/tosscore",\
-          "@types/babel__core",\
-          "@types/babel__preset-env",\
-          "@types/babel__preset-typescript",\
-          "@types/babel__runtime",\
-          "@types/jest",\
-          "@types/tossteam__toss-app-bridge",\
-          "@types/tossteam__tosscore-http",\
-          "@types/tossteam__tosscore",\
-          "jest"\
-        ],\
-        "linkType": "HARD"\
       }]\
     ]],\
     ["@trysound/sax", [\
@@ -15088,15 +14792,6 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
-    ["compare-versions", [\
-      ["npm:4.1.4", {\
-        "packageLocation": "../../.yarn/berry/cache/compare-versions-npm-4.1.4-7ea14e31a1-10.zip/node_modules/compare-versions/",\
-        "packageDependencies": [\
-          ["compare-versions", "npm:4.1.4"]\
-        ],\
-        "linkType": "HARD"\
-      }]\
-    ]],\
     ["component-emitter", [\
       ["npm:1.3.0", {\
         "packageLocation": "../../.yarn/berry/cache/component-emitter-npm-1.3.0-4b848565b9-10.zip/node_modules/component-emitter/",\
@@ -15832,15 +15527,6 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "../../.yarn/berry/cache/cssesc-npm-3.0.0-15ec56f86f-10.zip/node_modules/cssesc/",\
         "packageDependencies": [\
           ["cssesc", "npm:3.0.0"]\
-        ],\
-        "linkType": "HARD"\
-      }]\
-    ]],\
-    ["cssfontparser", [\
-      ["npm:1.2.1", {\
-        "packageLocation": "../../.yarn/berry/cache/cssfontparser-npm-1.2.1-f48947509b-10.zip/node_modules/cssfontparser/",\
-        "packageDependencies": [\
-          ["cssfontparser", "npm:1.2.1"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -21391,17 +21077,6 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
-    ["jest-canvas-mock", [\
-      ["npm:2.4.0", {\
-        "packageLocation": "../../.yarn/berry/cache/jest-canvas-mock-npm-2.4.0-f993bb2728-10.zip/node_modules/jest-canvas-mock/",\
-        "packageDependencies": [\
-          ["jest-canvas-mock", "npm:2.4.0"],\
-          ["cssfontparser", "npm:1.2.1"],\
-          ["moo-color", "npm:1.0.3"]\
-        ],\
-        "linkType": "HARD"\
-      }]\
-    ]],\
     ["jest-changed-files", [\
       ["npm:29.0.0", {\
         "packageLocation": "../../.yarn/berry/cache/jest-changed-files-npm-29.0.0-86775e11cc-10.zip/node_modules/jest-changed-files/",\
@@ -24242,16 +23917,6 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "../../.yarn/berry/cache/modify-values-npm-1.0.1-9b2377e166-10.zip/node_modules/modify-values/",\
         "packageDependencies": [\
           ["modify-values", "npm:1.0.1"]\
-        ],\
-        "linkType": "HARD"\
-      }]\
-    ]],\
-    ["moo-color", [\
-      ["npm:1.0.3", {\
-        "packageLocation": "../../.yarn/berry/cache/moo-color-npm-1.0.3-50b8650764-10.zip/node_modules/moo-color/",\
-        "packageDependencies": [\
-          ["moo-color", "npm:1.0.3"],\
-          ["color-name", "npm:1.1.4"]\
         ],\
         "linkType": "HARD"\
       }]\

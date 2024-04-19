@@ -36,7 +36,7 @@
   "devDependencies": {
     "@babel/core": "^7",
     "@babel/runtime": "^7.13.10",
-    "@tossteam/jest": "^17",
+    "@toss/jest": "workspace:^",
     "@types/jest": "^28.1.8",
     "@types/node": "^14.14.41",
     "@yarnpkg/esbuild-plugin-pnp": "^3.0.0-rc.14",

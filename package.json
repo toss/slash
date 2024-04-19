@@ -56,7 +56,7 @@
     "jest-environment-jsdom": "29",
     "babel-jest": "29",
     "@types/jest": "29",
-    "@tossteam/jest": "^17",
+    "@toss/jest": "workspace:^",
     "esbuild": "npm:esbuild-wasm@0.15.10",
     "documentation": "patch:documentation@npm:14.0.0#.yarn/patches/documentation-npm-14.0.0-c422c3490f.patch"
   },
