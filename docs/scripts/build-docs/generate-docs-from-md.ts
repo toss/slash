@@ -8,7 +8,7 @@ const KO_OUTDIR = path.resolve(DOCUSAURUS_ROOT, 'i18n/ko/docusaurus-plugin-conte
 
 export async function generateDocsFromMD() {
   return await Promise.all([
-    copyMDDocs(EN_OUTDIR, ['**/*.en.md', '**/*.ko.md', '**/README.md', '**/CHANGELOG.md']),
+    copyMDDocs(EN_OUTDIR, ['**/*.en.md', '**/*.ko.md', '**/README.md', '**/CHANGELOG.md', '**/node_modules/**/*']),
     generateLanguageDocs('en', EN_OUTDIR),
     generateLanguageDocs('ko', KO_OUTDIR),
     generateDefaultREADMEDocs(EN_OUTDIR),
