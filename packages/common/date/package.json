@@ -1,6 +1,6 @@
 {
   "name": "@toss/date",
-  "version": "1.1.8",
+  "version": "1.2.0",
   "sideEffects": false,
   "exports": {
     ".": {
@@ -32,8 +32,8 @@
   "devDependencies": {
     "@babel/core": "^7",
     "@babel/runtime": "^7.13.10",
-    "@toss/rollup-config": "workspace:^0.1.5",
-    "@tossteam/jest": "^17",
+    "@toss/jest": "workspace:^",
+    "@toss/rollup-config": "workspace:^0.2.0",
     "@types/babel__core": "^7",
     "@types/jest": "^28.1.8",
     "@types/node": "^18.8.2",
@@ -44,7 +44,7 @@
     "jest-mock": "^27.4.2",
     "rollup": "^2.77.0",
     "ts-node": "^10.9.1",
-    "typescript": "4.8.3"
+    "typescript": "^5.4.5"
   },
   "publishConfig": {
     "access": "public",

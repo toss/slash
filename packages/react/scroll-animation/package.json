@@ -1,6 +1,6 @@
 {
   "name": "@toss/scroll-animation",
-  "version": "1.2.6",
+  "version": "1.3.0",
   "exports": {
     ".": {
       "require": "./src/index.ts",
@@ -32,8 +32,8 @@
     "@babel/runtime": "^7.16.5",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
-    "@toss/rollup-config": "workspace:^0.1.5",
-    "@tossteam/jest": "^17",
+    "@toss/jest": "workspace:^",
+    "@toss/rollup-config": "workspace:^0.2.0",
     "@types/babel__core": "^7",
     "@types/babel__preset-env": "^7",
     "@types/jest": "^28.1.8",
@@ -48,7 +48,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "rollup": "^2.77.0",
-    "typescript": "4.8.3"
+    "typescript": "^5.4.5"
   },
   "peerDependencies": {
     "react": "^16.8 || ^17.0 || ^18"

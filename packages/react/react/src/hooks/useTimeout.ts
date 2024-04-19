@@ -1,24 +1,14 @@
-import { useEffect, useRef } from 'react';
+import { noop } from '@toss/utils';
+import { useEffect } from 'react';
+import { usePreservedCallback } from './usePreservedCallback';
 
 /** @tossdocs-ignore */
 export function useTimeout(callback: () => void, delay = 0) {
-  const savedCallback = useRef<() => void>();
+  const savedCallback = usePreservedCallback(callback ?? noop);
 
   useEffect(() => {
-    savedCallback.current = callback;
-  }, [callback]);
+    const timeoutId = window.setTimeout(savedCallback, delay);
 
-  useEffect(() => {
-    function handleTimeout() {
-      if (savedCallback.current) {
-        savedCallback.current();
-      }
-    }
-
-    const timeoutId = window.setTimeout(handleTimeout, delay);
-
-    return () => {
-      window.clearTimeout(timeoutId);
-    };
-  }, [delay]);
+    return () => window.clearTimeout(timeoutId);
+  }, [delay, savedCallback]);
 }

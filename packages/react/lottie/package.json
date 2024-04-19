@@ -1,6 +1,6 @@
 {
   "name": "@toss/lottie",
-  "version": "1.2.1",
+  "version": "1.3.0",
   "sideEffects": false,
   "exports": {
     ".": {
@@ -28,9 +28,9 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@toss/impression-area": "workspace:^1.3.1",
-    "@toss/react": "workspace:^1.6.1",
-    "@toss/utils": "workspace:^1.4.6",
+    "@toss/impression-area": "workspace:^1.4.0",
+    "@toss/react": "workspace:^1.7.0",
+    "@toss/utils": "workspace:^1.5.0",
     "lodash.debounce": "^4.0.8",
     "lottie-web": "^5.5.9",
     "suspend-react": "^0.1.3"
@@ -38,8 +38,8 @@
   "devDependencies": {
     "@babel/core": "^7",
     "@babel/runtime": "^7.13.10",
-    "@toss/rollup-config": "workspace:^0.1.5",
-    "@tossteam/jest": "^17",
+    "@toss/jest": "workspace:^",
+    "@toss/rollup-config": "workspace:^0.2.0",
     "@types/jest": "^28.1.8",
     "@types/lodash.debounce": "^4",
     "@types/node": "^14.14.41",
@@ -50,7 +50,7 @@
     "jest-environment-jsdom": "^29",
     "require-from-string": "^2.0.2",
     "rollup": "^2.77.0",
-    "typescript": "4.8.3"
+    "typescript": "^5.4.5"
   },
   "peerDependencies": {
     "react": "^16.0.0 || ^17.0.0 || ^18",

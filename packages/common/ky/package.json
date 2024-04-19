@@ -1,6 +1,6 @@
 {
   "name": "@toss/ky",
-  "version": "1.1.3",
+  "version": "1.2.0",
   "sideEffects": false,
   "exports": {
     ".": {
@@ -37,7 +37,7 @@
   "devDependencies": {
     "@babel/core": "^7",
     "@babel/runtime": "^7.13.10",
-    "@tossteam/jest": "^17",
+    "@toss/jest": "workspace:^",
     "@types/jest": "^28.1.8",
     "@types/node": "^14.14.41",
     "@yarnpkg/esbuild-plugin-pnp": "^3.0.0-rc.14",
@@ -50,7 +50,7 @@
     "ky": "^0.31.1",
     "node-fetch": "^3.2.10",
     "tsup": "^6.2.0",
-    "typescript": "4.8.3",
+    "typescript": "^5.4.5",
     "web-streams-polyfill": "^3.2.1"
   },
   "gitHead": "0e9ecc319f9d7df27372fb6e8e0a4281f420619d"
