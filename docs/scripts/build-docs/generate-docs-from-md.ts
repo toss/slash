@@ -35,7 +35,7 @@ async function copyMDDocs(outdir: string, exclude: string[]) {
 
 async function generateLanguageDocs(lang: string, outdir: string) {
   const filepaths = await glob(`**/*.${lang}.md`, {
-    ignore: [`**/README.${lang}.md`],
+    ignore: [`**/README.${lang}.md`, '**/node_modules/**/*'],
     cwd: PACKAGES_ROOT,
   });
 
@@ -51,7 +51,7 @@ async function generateLanguageDocs(lang: string, outdir: string) {
 }
 
 async function generateDefaultREADMEDocs(outdir: string) {
-  const filepaths = await glob(`**/README.md`, { cwd: PACKAGES_ROOT });
+  const filepaths = await glob(`**/README.md`, { cwd: PACKAGES_ROOT, ignore: ['**/node_modules/**/*'] });
 
   await Promise.all(
     filepaths.map(async filepath => {
@@ -67,7 +67,7 @@ async function generateDefaultREADMEDocs(outdir: string) {
 }
 
 async function generateI18nREADMEDocs(lang: string, outdir: string) {
-  const filepaths = await glob(`**/README.${lang}.md`, { cwd: PACKAGES_ROOT });
+  const filepaths = await glob(`**/README.${lang}.md`, { cwd: PACKAGES_ROOT, ignore: ['**/node_modules/**/*'] });
 
   await Promise.all(
     filepaths.map(async filepath => {
