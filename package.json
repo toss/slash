@@ -1,6 +1,6 @@
 {
   "name": "frontend-libraries-open-source",
-  "packageManager": "yarn@3.2.3",
+  "packageManager": "yarn@4.1.1",
   "workspaces": [
     "docs",
     "packages/**/**",
