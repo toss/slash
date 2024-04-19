@@ -5457,7 +5457,7 @@ __metadata:
     react-dom: "npm:^18.2.0"
     require-from-string: "npm:^2.0.2"
     rollup: "npm:^2.77.0"
-    typescript: "npm:4.8.3"
+    typescript: "npm:^5.4.5"
   peerDependencies:
     react: ^16.0.0 || ^17.0.0 || ^18
   languageName: unknown
@@ -5483,7 +5483,7 @@ __metadata:
     jest: "npm:^29.0.1"
     jest-environment-jsdom: "npm:^29"
     rollup: "npm:^2.77.0"
-    typescript: "npm:4.8.3"
+    typescript: "npm:^5.4.5"
   languageName: unknown
   linkType: soft
 
@@ -5514,7 +5514,7 @@ __metadata:
     react: "npm:^18.2.0"
     react-dom: "npm:^18.2.0"
     rollup: "npm:^2.77.0"
-    typescript: "npm:4.8.3"
+    typescript: "npm:^5.4.5"
   peerDependencies:
     react: ^16.8 || ^17 || ^18
   languageName: unknown
@@ -5540,7 +5540,7 @@ __metadata:
     react: "npm:^18.2.0"
     react-dom: "npm:^18.2.0"
     rollup: "npm:^2.77.0"
-    typescript: "npm:4.8.3"
+    typescript: "npm:^5.4.5"
   peerDependencies:
     next: ^8 || ^9 || ^10 || ^11 || ^12
     react: ^16.0.0 || ^17.0.0 || ^18
@@ -5573,7 +5573,7 @@ __metadata:
     jest: "npm:^29.0.1"
     jest-environment-jsdom: "npm:^29"
     rollup: "npm:^2.77.0"
-    typescript: "npm:4.8.3"
+    typescript: "npm:^5.4.5"
   peerDependencies:
     bn.js: ^5
   languageName: unknown
@@ -5598,7 +5598,7 @@ __metadata:
     jest-mock: "npm:^27.4.2"
     rollup: "npm:^2.77.0"
     ts-node: "npm:^10.9.1"
-    typescript: "npm:4.8.3"
+    typescript: "npm:^5.4.5"
   languageName: unknown
   linkType: soft
 
@@ -5634,7 +5634,7 @@ __metadata:
     react: "npm:^18.2.0"
     react-dom: "npm:^18.2.0"
     rollup: "npm:^2.77.0"
-    typescript: "npm:4.8.3"
+    typescript: "npm:^5.4.5"
   peerDependencies:
     "@emotion/react": "*"
     react: ^16 || ^17 || ^18
@@ -5675,7 +5675,7 @@ __metadata:
     react-dom: "npm:^18.2.0"
     regenerator-runtime: "npm:^0.13.7"
     rollup: "npm:^2.77.0"
-    typescript: "npm:4.8.3"
+    typescript: "npm:^5.4.5"
   peerDependencies:
     react: ^16.8 || ^17 || ^18
   languageName: unknown
@@ -5703,7 +5703,7 @@ __metadata:
     jest: "npm:^29.0.1"
     jest-environment-jsdom: "npm:^28.1.0"
     rollup: "npm:^2.77.0"
-    typescript: "npm:4.8.3"
+    typescript: "npm:^5.4.5"
   peerDependencies:
     framer-motion: "*"
     react: ^16.8.0 || ^17.0.0 || ^18
@@ -5728,7 +5728,7 @@ __metadata:
     jest: "npm:^29.0.1"
     jest-environment-jsdom: "npm:^28.1.1"
     rollup: "npm:^2.77.0"
-    typescript: "npm:4.8.3"
+    typescript: "npm:^5.4.5"
   languageName: unknown
   linkType: soft
 
@@ -5758,7 +5758,7 @@ __metadata:
     react: "npm:^18.2.0"
     react-dom: "npm:^18.2.0"
     rollup: "npm:^2.77.0"
-    typescript: "npm:4.8.3"
+    typescript: "npm:^5.4.5"
   peerDependencies:
     react: "*"
   languageName: unknown
@@ -5799,7 +5799,7 @@ __metadata:
     ky: "npm:^0.31.1"
     node-fetch: "npm:^3.2.10"
     tsup: "npm:^6.2.0"
-    typescript: "npm:4.8.3"
+    typescript: "npm:^5.4.5"
     web-streams-polyfill: "npm:^3.2.1"
   languageName: unknown
   linkType: soft
@@ -5828,7 +5828,7 @@ __metadata:
     require-from-string: "npm:^2.0.2"
     rollup: "npm:^2.77.0"
     suspend-react: "npm:^0.1.3"
-    typescript: "npm:4.8.3"
+    typescript: "npm:^5.4.5"
   peerDependencies:
     react: ^16.0.0 || ^17.0.0 || ^18
     react-dom: ^16.0.0 || ^17.0.0 || ^18
@@ -5853,7 +5853,7 @@ __metadata:
     react-query: "npm:@tanstack/react-query@4.0.10"
     rollup: "npm:^2.77.0"
     tsd: "npm:^0.24.1"
-    typescript: "npm:4.8.3"
+    typescript: "npm:^5.4.5"
   peerDependencies:
     react: ^16.8.0 || ^17.0.0 || ^18
     react-query: "*"
@@ -5906,7 +5906,7 @@ __metadata:
     require-from-string: "npm:^2.0.2"
     rollup: "npm:^2.77.0"
     tslib: "npm:^2.0.0"
-    typescript: "npm:4.8.3"
+    typescript: "npm:^5.4.5"
     webpack: "npm:^5.65.0"
   peerDependencies:
     react: ^16.0.0 || ^17.0.0 || ^18
@@ -5936,7 +5936,7 @@ __metadata:
     react-dom: "npm:^18.2.0"
     recoil: "npm:^0.7.6"
     rollup: "npm:^2.77.0"
-    typescript: "npm:4.8.3"
+    typescript: "npm:^5.4.5"
   peerDependencies:
     react: ^16.8 || ^17 || ^18
     recoil: "*"
@@ -5967,7 +5967,7 @@ __metadata:
     react: "npm:^18.2.0"
     react-dom: "npm:^18.2.0"
     rollup: "npm:^2.77.0"
-    typescript: "npm:4.8.3"
+    typescript: "npm:^5.4.5"
   peerDependencies:
     react: ^17 || ^18
   languageName: unknown
@@ -6015,7 +6015,7 @@ __metadata:
     react: "npm:^18.2.0"
     react-dom: "npm:^18.2.0"
     rollup: "npm:^2.77.0"
-    typescript: "npm:4.8.3"
+    typescript: "npm:^5.4.5"
   peerDependencies:
     react: ^16.8 || ^17.0 || ^18
   languageName: unknown
@@ -6039,7 +6039,7 @@ __metadata:
     jest: "npm:^29.0.1"
     jest-environment-jsdom: "npm:^29"
     sentry-testkit: "npm:^3.3.7"
-    typescript: "npm:4.8.3"
+    typescript: "npm:^5.4.5"
     wait-for-expect: "npm:^3.0.2"
   peerDependencies:
     next: "*"
@@ -6071,7 +6071,7 @@ __metadata:
     jest-environment-jsdom: "npm:^29"
     rollup: "npm:^2.79.1"
     rollup-plugin-dts: "npm:^4.2.2"
-    typescript: "npm:4.8.3"
+    typescript: "npm:^5.4.5"
   languageName: unknown
   linkType: soft
 
@@ -6116,7 +6116,7 @@ __metadata:
     react-dom: "npm:^18.2.0"
     react-query: "npm:^3.39.1"
     rollup: "npm:^2.77.0"
-    typescript: "npm:4.8.3"
+    typescript: "npm:^5.4.5"
   peerDependencies:
     next: ^11.1 || ^12 || ^13
     react: ^16.8 || ^17 || ^18
@@ -6147,7 +6147,7 @@ __metadata:
     react-dom: "npm:^18.2.0"
     react-test-renderer: "npm:^18.2.0"
     rollup: "npm:^2.77.0"
-    typescript: "npm:4.8.3"
+    typescript: "npm:^5.4.5"
   peerDependencies:
     react: ^16.8 || ^17 || ^18
   languageName: unknown
@@ -6186,7 +6186,7 @@ __metadata:
     react-dom: "npm:^18.2.0"
     require-from-string: "npm:^2.0.2"
     rollup: "npm:^2.77.0"
-    typescript: "npm:4.8.3"
+    typescript: "npm:^5.4.5"
   peerDependencies:
     react: ^16.8 || ^17 || ^18
   languageName: unknown
@@ -6220,7 +6220,7 @@ __metadata:
     react: "npm:^18.2.0"
     react-dom: "npm:^18.2.0"
     rollup: "npm:^2.77.0"
-    typescript: "npm:4.8.3"
+    typescript: "npm:^5.4.5"
   peerDependencies:
     next: ^11.1 || ^12 || ^13
     react: ^16.8 || ^17 || ^18
@@ -6241,7 +6241,7 @@ __metadata:
     concurrently: "npm:^4.1.0"
     jest: "npm:^29.0.1"
     jest-environment-jsdom: "npm:^29"
-    typescript: "npm:4.8.3"
+    typescript: "npm:^5.4.5"
   languageName: unknown
   linkType: soft
 
@@ -6275,7 +6275,7 @@ __metadata:
     jest-mock: "npm:^27.4.2"
     rollup: "npm:^2.77.0"
     tslib: "npm:^2.0.0"
-    typescript: "npm:4.8.3"
+    typescript: "npm:^5.4.5"
   languageName: unknown
   linkType: soft
 
@@ -6296,7 +6296,7 @@ __metadata:
     jest: "npm:^29.0.1"
     jest-environment-jsdom: "npm:^29"
     rollup: "npm:^2.77.0"
-    typescript: "npm:4.8.3"
+    typescript: "npm:^5.4.5"
   languageName: unknown
   linkType: soft
 
@@ -11138,7 +11138,7 @@ __metadata:
     react: "npm:^18.2.0"
     react-dom: "npm:^18.2.0"
     ts-node: "npm:^10.9.1"
-    typescript: "npm:^4.7"
+    typescript: "npm:^5.4.5"
     url-loader: "npm:^4.1.1"
     webpack: "npm:^5.65.0"
   languageName: unknown
@@ -12972,7 +12972,7 @@ __metadata:
     prettier: "npm:^2.7.1"
     sort-package-json: "npm:^2.0.0"
     ts-node: "npm:^10.9.1"
-    typescript: "npm:4.7.4"
+    typescript: "npm:^5.4.5"
   dependenciesMeta:
     "@sentry/cli":
       built: false

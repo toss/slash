@@ -49,7 +49,7 @@
     "ky": "^0.31.1",
     "node-fetch": "^3.2.10",
     "tsup": "^6.2.0",
-    "typescript": "4.8.3",
+    "typescript": "^5.4.5",
     "web-streams-polyfill": "^3.2.1"
   },
   "gitHead": "0e9ecc319f9d7df27372fb6e8e0a4281f420619d"
