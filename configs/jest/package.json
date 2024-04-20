@@ -1,5 +1,6 @@
 {
-  "name": "@toss/rollup-config",
+  "name": "@toss/jest",
+  "private": true,
   "version": "0.2.0",
   "main": "./src/index.js",
   "dependencies": {
