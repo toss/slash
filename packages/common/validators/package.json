@@ -26,7 +26,8 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@toss/utils": "workspace:^1.4.6"
+    "@toss/utils": "workspace:^1.4.6",
+    "date-fns": "^2.25.0"
   },
   "devDependencies": {
     "@babel/core": "^7",
