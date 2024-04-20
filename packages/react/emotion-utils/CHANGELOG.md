@@ -3,18 +3,6 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-# [1.2.0](https://github.com/toss/slash/compare/@toss/emotion-utils@1.1.12...@toss/emotion-utils@1.2.0) (2024-03-26)
-
-
-### Features
-
-* **@toss/emotion-utils:** improve stack test coverage ([#403](https://github.com/toss/slash/issues/403)) ([638c499](https://github.com/toss/slash/commit/638c4998047672513d3cce746e261554c3ff2c58))
-* **packages:** add repository information in package.json ([#446](https://github.com/toss/slash/issues/446)) ([063cc5d](https://github.com/toss/slash/commit/063cc5d4699b1ba0dc20db3d2bb7dc673947500b))
-
-
-
-
-
 ## [1.1.11](https://github.com/toss/slash/compare/@toss/emotion-utils@1.1.10...@toss/emotion-utils@1.1.11) (2023-10-04)
 
 ### Bug Fixes

@@ -3,17 +3,6 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-# [1.3.0](https://github.com/toss/slash/compare/@toss/redirect@1.2.1...@toss/redirect@1.3.0) (2024-03-26)
-
-
-### Features
-
-* **packages:** add repository information in package.json ([#446](https://github.com/toss/slash/issues/446)) ([063cc5d](https://github.com/toss/slash/commit/063cc5d4699b1ba0dc20db3d2bb7dc673947500b))
-
-
-
-
-
 # [1.2.0](https://github.com/toss/slash/compare/@toss/redirect@1.1.11...@toss/redirect@1.2.0) (2023-10-04)
 
 ### Features

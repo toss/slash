@@ -1,6 +1,6 @@
 {
   "name": "@toss/date",
-  "version": "1.2.0",
+  "version": "1.1.8",
   "sideEffects": false,
   "exports": {
     ".": {
@@ -31,7 +31,7 @@
   "devDependencies": {
     "@babel/core": "^7",
     "@babel/runtime": "^7.13.10",
-    "@toss/rollup-config": "workspace:^0.2.0",
+    "@toss/rollup-config": "workspace:^0.1.5",
     "@tossteam/jest": "^17",
     "@types/babel__core": "^7",
     "@types/jest": "^28.1.8",

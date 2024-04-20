@@ -3,17 +3,6 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-# [1.7.0](https://github.com/toss/slash/compare/@toss/hangul@1.6.1...@toss/hangul@1.7.0) (2024-03-26)
-
-
-### Features
-
-* **packages:** add repository information in package.json ([#446](https://github.com/toss/slash/issues/446)) ([063cc5d](https://github.com/toss/slash/commit/063cc5d4699b1ba0dc20db3d2bb7dc673947500b))
-
-
-
-
-
 # [1.6.0](https://github.com/toss/slash/compare/@toss/hangul@1.5.0...@toss/hangul@1.6.0) (2023-10-04)
 
 ### Bug Fixes

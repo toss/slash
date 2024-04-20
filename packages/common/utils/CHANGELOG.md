@@ -3,27 +3,6 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-# [1.5.0](https://github.com/toss/slash/compare/@toss/utils@1.4.6...@toss/utils@1.5.0) (2024-03-26)
-
-
-### Bug Fixes
-
-* **@toss/utils:** Add 'Deno' in globalThis for isServer() ([#447](https://github.com/toss/slash/issues/447)) ([798e2dc](https://github.com/toss/slash/commit/798e2dcd40d2774655fdb31d00282b060e81d256))
-* **@toss/utils:** ceilUnit parameter was missing ([#371](https://github.com/toss/slash/issues/371)) ([f0dc25d](https://github.com/toss/slash/commit/f0dc25d3247a14ee1a90b4dd732512240a3dac9f))
-* hypen -> hyphen ([#391](https://github.com/toss/slash/issues/391)) ([fd23662](https://github.com/toss/slash/commit/fd236628a000b1533e45b1a0fe3c404aceebfcba))
-
-
-### Features
-
-* **@toss/utils:** Add `isNil` util function ([#423](https://github.com/toss/slash/issues/423)) ([556ab99](https://github.com/toss/slash/commit/556ab99a33d017ce9de7b582d01762d76eec4c8e))
-* **@toss/utils:** Add delay test code and match parameter ([#388](https://github.com/toss/slash/issues/388)) ([389147e](https://github.com/toss/slash/commit/389147e7e3d56c2312c93452612a733f492d3380))
-* **@toss/utils:** Translate tests codes for `escapeHTML` and update docs to match parameter name ([a732221](https://github.com/toss/slash/commit/a732221611579922240720d6973ea9f875975f43))
-* **packages:** add repository information in package.json ([#446](https://github.com/toss/slash/issues/446)) ([063cc5d](https://github.com/toss/slash/commit/063cc5d4699b1ba0dc20db3d2bb7dc673947500b))
-
-
-
-
-
 ## [1.4.5](https://github.com/toss/slash/compare/@toss/utils@1.4.4...@toss/utils@1.4.5) (2023-10-04)
 
 ### Bug Fixes

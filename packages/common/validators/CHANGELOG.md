@@ -3,22 +3,6 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-# [1.3.0](https://github.com/toss/slash/compare/@toss/validators@1.2.1...@toss/validators@1.3.0) (2024-03-26)
-
-
-### Bug Fixes
-
-* **@toss/validators:** Increase the accuracy of verification for isBirthDate6 ([#420](https://github.com/toss/slash/issues/420)) ([81c332e](https://github.com/toss/slash/commit/81c332e6b6044a8d46ad0513b2d473fd675b25ea))
-
-
-### Features
-
-* **packages:** add repository information in package.json ([#446](https://github.com/toss/slash/issues/446)) ([063cc5d](https://github.com/toss/slash/commit/063cc5d4699b1ba0dc20db3d2bb7dc673947500b))
-
-
-
-
-
 # [1.2.0](https://github.com/toss/slash/compare/@toss/validators@1.1.10...@toss/validators@1.2.0) (2023-10-04)
 
 ### Features
