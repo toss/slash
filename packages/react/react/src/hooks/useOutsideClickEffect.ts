@@ -30,9 +30,11 @@ export function useOutsideClickEffect(container: OneOrMore<HTMLElement | null>, 
 
   useEffect(() => {
     document.addEventListener('click', handleDocumentClick);
+    document.addEventListener('touchstart', handleDocumentClick);
 
     return () => {
       document.removeEventListener('click', handleDocumentClick);
+      document.removeEventListener('touchstart', handleDocumentClick);
     };
   }, [handleDocumentClick]);
 }
