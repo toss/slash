@@ -1,6 +1,6 @@
 /** @tossdocs-ignore */
 // eslint-disable-next-line import/no-duplicates
-import { format as _format, isAfter, isBefore, isEqual, isValid } from 'date-fns';
+import { format as _format, isValid } from 'date-fns';
 import locale from 'date-fns/locale/ko/index.js';
 
 // eslint-disable-next-line import/no-duplicates
@@ -44,11 +44,11 @@ export function getDateDistance(startDate: Date, endDate: Date) {
 }
 
 export function isEqualOrBefore(lhs: Date, rhs: Date) {
-  return isEqual(lhs, rhs) || isBefore(lhs, rhs);
+  return lhs <= rhs;
 }
 
 export function isEqualOrAfter(lhs: Date, rhs: Date) {
-  return isEqual(lhs, rhs) || isAfter(lhs, rhs);
+  return lhs >= rhs;
 }
 
 export type TimeUnits = {
