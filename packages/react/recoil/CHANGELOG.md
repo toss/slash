@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.2.0](https://github.com/toss/slash/compare/@toss/recoil@1.1.6...@toss/recoil@1.2.0) (2024-03-26)
+
+
+### Features
+
+* **packages:** add repository information in package.json ([#446](https://github.com/toss/slash/issues/446)) ([063cc5d](https://github.com/toss/slash/commit/063cc5d4699b1ba0dc20db3d2bb7dc673947500b))
+
+
+
+
+
 ## [1.1.5](https://github.com/toss/slash/compare/@toss/recoil@1.1.4...@toss/recoil@1.1.5) (2023-02-27)
 
 **Note:** Version bump only for package @toss/recoil

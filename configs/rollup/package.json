@@ -1,6 +1,6 @@
 {
   "name": "@toss/rollup-config",
-  "version": "0.1.5",
+  "version": "0.2.0",
   "main": "./src/index.js",
   "dependencies": {
     "@babel/core": "^7.19.3",
@@ -18,6 +18,11 @@
   },
   "publishConfig": {
     "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/toss/slash.git",
+    "directory": "configs/rollup"
   },
   "gitHead": "6a4434621e29e014d537ae3dc0f026364b893a69"
 }

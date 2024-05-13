@@ -1,6 +1,6 @@
 {
   "name": "@toss/sentry",
-  "version": "1.0.12",
+  "version": "1.1.0",
   "sideEffects": false,
   "exports": {
     ".": "./src/index.node.ts",
@@ -11,6 +11,11 @@
     "dist",
     "esm"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/toss/slash.git",
+    "directory": "packages/common/sentry"
+  },
   "scripts": {
     "build": "concurrently \"tsc -p tsconfig.json\" \"tsc -p tsconfig.esm.json\"",
     "prepack": "yarn build",
@@ -27,14 +32,14 @@
   "devDependencies": {
     "@babel/core": "^7",
     "@babel/runtime": "^7.13.10",
-    "@tossteam/jest": "^17",
+    "@toss/jest": "workspace:^",
     "@types/jest": "^28.1.8",
     "@types/node": "^14.14.41",
     "babel-jest": "^29",
     "concurrently": "^4.1.0",
     "jest": "^29.0.1",
     "jest-environment-jsdom": "^29",
-    "typescript": "4.8.3",
+    "typescript": "^5.4.5",
     "wait-for-expect": "^3.0.2"
   },
   "peerDependencies": {

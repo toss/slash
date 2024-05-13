@@ -1,12 +1,13 @@
-import { useCallback, useEffect } from 'react';
+import { useEffect } from 'react';
+import { usePreservedCallback } from './usePreservedCallback';
 
 type VisibilityState = Document['visibilityState'];
 
 /** @tossdocs-ignore */
 export function useVisibilityEvent(callback: (visibilityState: VisibilityState) => void) {
-  const handleVisibilityChange = useCallback(() => {
+  const handleVisibilityChange = usePreservedCallback(() => {
     callback(document.visibilityState);
-  }, [callback]);
+  });
 
   useEffect(() => {
     document.addEventListener('visibilitychange', handleVisibilityChange);

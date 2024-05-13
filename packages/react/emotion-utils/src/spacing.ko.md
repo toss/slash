@@ -8,7 +8,6 @@ Space를 선언적으로 주는 컴포넌트
 
 ```ts
 function Spacing(props: {
-  children?: never;
   // default: 'vertical'
   direction?: AxisDirection;
   size: CSSPixelValue;

@@ -6,7 +6,6 @@ title: isBusinessRegNo
 
 Business number validation
 
-- http://seoulcredit.co.kr/business_id
 - https://myhappyman.tistory.com/129
 
 ```typescript

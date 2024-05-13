@@ -1,5 +1,5 @@
 /** @tossdocs-ignore */
-import { usePreservedCallback, useRefEffect } from '@toss/react';
+import { usePreservedCallback, useRefEffect, useVisibilityEvent } from '@toss/react';
 import { noop } from '@toss/utils';
 import debounce from 'lodash.debounce';
 import { useCallback, useEffect, useMemo, useRef } from 'react';
@@ -11,17 +11,18 @@ type Options = Pick<
 >;
 
 export function useImpressionRef<Element extends HTMLElement>({
-  onImpressionStart: _onImpressionStart,
-  onImpressionEnd: _onImpressionEnd,
+  onImpressionStart: _onImpressionStart = noop,
+  onImpressionEnd: _onImpressionEnd = noop,
   timeThreshold = 0,
   root,
   rootMargin,
   areaThreshold: intersectThreshold = 0,
 }: Options) {
-  const onImpressionStart = usePreservedCallback(_onImpressionStart ?? noop);
-  const onImpressionEnd = usePreservedCallback(_onImpressionEnd ?? noop);
+  const onImpressionStart = usePreservedCallback(_onImpressionStart);
+  const onImpressionEnd = usePreservedCallback(_onImpressionEnd);
 
   const isIntersectingRef = useRef(false);
+
   const setDebouncedIsImpressed = useSetDebouncedBooleanValue({
     onValueChange: isImpressed => {
       if (isImpressed) {
@@ -49,31 +50,15 @@ export function useImpressionRef<Element extends HTMLElement>({
     }
   );
 
-  useDocumentVisibilityChange(documentVisible => {
+  useVisibilityEvent(visibilityState => {
     if (!isIntersectingRef.current) {
       return;
     }
 
-    setDebouncedIsImpressed(documentVisible);
+    setDebouncedIsImpressed(visibilityState === 'visible');
   });
 
   return intersectionObserverRef;
-}
-
-function useDocumentVisibilityChange(_callback: (isVisible: boolean) => void) {
-  const callback = usePreservedCallback(_callback);
-
-  useEffect(() => {
-    const handleVisibilityChange = () => {
-      callback(document.visibilityState === 'visible');
-    };
-
-    document.addEventListener('visibilitychange', handleVisibilityChange);
-
-    return () => {
-      document.removeEventListener('visibilitychange', handleVisibilityChange);
-    };
-  }, [callback]);
 }
 
 function useIntersectionObserver<Element extends HTMLElement>(
@@ -111,10 +96,13 @@ function useIntersectionObserver<Element extends HTMLElement>(
   return ref;
 }
 
-function useSetDebouncedBooleanValue(options: { onValueChange: (newValue: boolean) => void; timeThreshold: number }) {
+function useSetDebouncedBooleanValue(options: {
+  onValueChange: (newValue: boolean) => void;
+  timeThreshold: Options['timeThreshold'];
+}) {
   const { onValueChange, timeThreshold } = options;
   const handleValueChange = usePreservedCallback(onValueChange);
-  const ref = useRef({ value: false, cancelPrevDebounce: () => { } });
+  const ref = useRef({ value: false, cancelPrevDebounce: noop });
 
   const setDebouncedValue = useCallback(
     (newValue: boolean) => {
