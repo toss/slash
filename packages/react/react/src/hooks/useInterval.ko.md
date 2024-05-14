@@ -1,6 +1,7 @@
 # useInterval
 
 window.setInterval 를 쉽게 사용할 수 있는 hook 입니다.
+'resume', 'stop'을 통해 interval을 중지, 재개합니다.
 
 ```ts
 // number 혹은 IntervalOptions를 입력해주세요
@@ -17,5 +18,5 @@ type IntervalOptions =
 ## Example
 
 ```ts
-useInterval(updateServerTime, { delay: interval });
+const { intervalRunning, stop, continueTimer } = useInterval(updateServerTime, { delay: interval });
 ```
