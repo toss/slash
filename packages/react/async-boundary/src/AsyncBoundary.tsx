@@ -7,7 +7,7 @@ type SuspenseProps = Omit<ComponentProps<typeof Suspense>, 'fallback'>;
 
 type Props = SuspenseProps &
   ErrorBoundaryProps & {
-    rejectedFallback: ComponentProps<typeof ErrorBoundary>['renderFallback'];
+    rejectedFallback?: ComponentProps<typeof ErrorBoundary>['renderFallback'];
     pendingFallback: ComponentProps<typeof Suspense>['fallback'];
   };
 
