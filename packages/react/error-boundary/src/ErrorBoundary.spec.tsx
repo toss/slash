@@ -1,9 +1,10 @@
 import { act, render, renderHook, screen } from '@testing-library/react';
 import { ComponentRef, createRef } from 'react';
-import { ErrorBoundary, useErrorBoundary } from './ErrorBoundary';
+import { ErrorBoundary, useErrorBoundary, useErrorBoundaryContext } from './ErrorBoundary';
 
 const TEXT_ERROR = `This is an error`;
 const TEXT_NO_ERROR = `This is no error`;
+const RESET_MESSAGE = 'Retry';
 
 describe('ErrorBoundary', () => {
   it('can catch errors in children', () => {
@@ -18,6 +19,61 @@ describe('ErrorBoundary', () => {
     );
 
     expect(screen.getByText(`${TEXT_ERROR}`)).toBeInTheDocument();
+  });
+
+  it('can catch erros in children with custom fallback, without renderFallback prop.', () => {
+    const ErrorComponent = (): JSX.Element => {
+      throw new Error(TEXT_ERROR);
+    };
+
+    const CustomFallback = ({ children }: { children: JSX.Element }): JSX.Element => {
+      const { error, reset } = useErrorBoundaryContext();
+
+      if (error != null) {
+        return (
+          <button type="button" onClick={() => reset()}>
+            {RESET_MESSAGE}
+          </button>
+        );
+      }
+      return children;
+    };
+
+    render(
+      <ErrorBoundary>
+        <CustomFallback>
+          <ErrorComponent />
+        </CustomFallback>
+      </ErrorBoundary>
+    );
+
+    expect(screen.getByText(RESET_MESSAGE)).toBeInTheDocument();
+  });
+
+  it('render renderFallback if both renderFallback and customFallback are provided', () => {
+    const ErrorComponent = (): JSX.Element => {
+      throw new Error(TEXT_ERROR);
+    };
+
+    const CustomFallback = ({ children }: { children: JSX.Element }): JSX.Element => {
+      const { error } = useErrorBoundaryContext();
+
+      if (error != null) {
+        return <div>{RESET_MESSAGE}</div>;
+      }
+
+      return <div>{children}</div>;
+    };
+
+    render(
+      <ErrorBoundary renderFallback={({ error }) => <div>{error.message}</div>}>
+        <CustomFallback>
+          <ErrorComponent />
+        </CustomFallback>
+      </ErrorBoundary>
+    );
+
+    expect(screen.getByText(TEXT_ERROR)).toBeInTheDocument();
   });
 
   it('can be reset by ref.current.reset', () => {
