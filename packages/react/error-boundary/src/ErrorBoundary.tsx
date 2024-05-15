@@ -1,4 +1,5 @@
 /** @tossdocs-ignore */
+import { buildContext } from '@toss/react';
 import { isDifferentArray } from '@toss/utils';
 import {
   Component,
@@ -17,6 +18,11 @@ import {
 import { ErrorBoundaryGroupContext } from './ErrorBoundaryGroup';
 import { ComponentPropsWithoutChildren } from './types/index';
 
+export const [ErrorBoundaryProvider, useErrorBoundaryContext] = buildContext<{
+  error: Error | null;
+  reset: () => void;
+}>('ErrorBoundaryContext');
+
 type RenderFallbackProps<ErrorType extends Error = Error> = {
   error: ErrorType;
   reset: () => void;
@@ -31,7 +37,7 @@ type Props<ErrorType extends Error = Error> = {
    */
   resetKeys?: unknown[];
   onReset?(): void;
-  renderFallback: RenderFallbackType;
+  renderFallback?: RenderFallbackType;
   onError?(error: ErrorType, info: ErrorInfo): void;
   /*
    * @description 이 ErrorBoundary Context에서 처리하지 않고 throw해줄 error의 조건을 명시할 callback
@@ -94,18 +100,29 @@ class BaseErrorBoundary extends Component<PropsWithRef<PropsWithChildren<Props>>
     }
   }
 
-  render() {
-    const { children, renderFallback } = this.props;
+  generateRenderedChildren() {
     const { error } = this.state;
+    const { children, renderFallback } = this.props;
 
-    if (error != null) {
+    if (error != null && renderFallback) {
       return renderFallback({
         error,
         reset: this.resetErrorBoundary,
       });
     }
-
     return children;
+  }
+
+  render() {
+    const { error } = this.state;
+
+    const renderedChildren = this.generateRenderedChildren();
+    const ErrorboundaryProviderProps = {
+      error,
+      reset: this.resetErrorBoundary,
+    };
+
+    return <ErrorBoundaryProvider {...ErrorboundaryProviderProps}>{renderedChildren}</ErrorBoundaryProvider>;
   }
 }
 
