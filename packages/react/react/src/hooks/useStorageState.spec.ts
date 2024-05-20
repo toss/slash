@@ -131,7 +131,7 @@ describe('useLocalStorageState는', () => {
     expect(result.current[0]).toEqual({ foo: 'baz' });
   });
 
-  it('setState를 했을 때 해당 키를 의존하는 useStorageState의 값이 동기화된다. . ', () => {
+  it('setState를 했을 때 해당 키를 의존하는 useStorageState의 값이 동기화된다.', () => {
     const key = '@@render-synchronization';
     const storage = createMockStorage();
 
