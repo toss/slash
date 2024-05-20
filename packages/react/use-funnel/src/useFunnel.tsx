@@ -40,14 +40,14 @@ export const useFunnel = <Steps extends NonEmptyArray<string>>(
   withState: <StateExcludeStep extends Record<string, unknown> & { step?: never }>(
     initialState: StateExcludeStep
   ) => [
-      FunnelComponent<Steps>,
-      StateExcludeStep,
-      (
-        next:
-          | Partial<StateExcludeStep & { step: Steps[number] }>
-          | ((next: Partial<StateExcludeStep & { step: Steps[number] }>) => StateExcludeStep & { step: Steps[number] })
-      ) => void
-    ];
+    FunnelComponent<Steps>,
+    StateExcludeStep,
+    (
+      next:
+        | Partial<StateExcludeStep & { step: Steps[number] }>
+        | ((next: Partial<StateExcludeStep & { step: Steps[number] }>) => StateExcludeStep & { step: Steps[number] })
+    ) => void
+  ];
 } => {
   const router = useRouter();
   const stepQueryKey = options?.stepQueryKey ?? DEFAULT_STEP_QUERY_KEY;
@@ -106,72 +106,26 @@ export const useFunnel = <Steps extends NonEmptyArray<string>>(
     [options, router]
   );
 
-  /**
-   * 아래부터 withState() 구현입니다.
-   * 외부 함수로 분리하기 어려워 당장은 inline 해둡니다.
-   * FIXME: @junyong-lee withState() 구현을 외부 함수로 분리하기
-   */
-
-  type S = Record<string, unknown>;
-  const [state, _setState] = useFunnelState<S>({});
-  type Step = Steps[number];
-  type NextState = S & { step?: Step };
-
-  const nextPendingStepRef = useRef<Step | null>(null);
-  const nextStateRef = useRef<Partial<S> | null>(null);
-  const setState = useCallback(
-    (next: Partial<NextState> | ((next: Partial<NextState>) => NextState)) => {
-      let nextStepValue: Partial<NextState>;
-      if (typeof next === 'function') {
-        nextStepValue = next(state);
-      } else {
-        nextStepValue = next;
-      }
-
-      if (nextStepValue.step != null) {
-        nextPendingStepRef.current = nextStepValue.step;
-      }
-      nextStateRef.current = nextStepValue;
-
-      _setState(next);
-    },
-    [_setState, state]
-  );
-
-  useEffect(() => {
-    if (nextPendingStepRef.current == null) {
-      return;
-    }
-    if (deepEqual(nextStateRef.current, state)) {
-      setStep(nextPendingStepRef.current);
-      nextPendingStepRef.current = null;
-    }
-  }, [setStep, state]);
-
-  const initializedRef = useRef(false);
-  function withState<State extends Record<string, unknown>>(initialState: State) {
-    if (!initializedRef.current) {
-      setState(initialState);
-      initializedRef.current = true;
-    }
-    return [FunnelComponent, state, setState] as const;
-  }
-
-  return Object.assign([FunnelComponent, setStep] as const, { withState }) as unknown as readonly [
+  return Object.assign([FunnelComponent, setStep] as const, {
+    withState: useWithState.bind(null, FunnelComponent as FunnelComponent<NonEmptyArray<string>>, setStep),
+  }) as unknown as readonly [
     FunnelComponent<Steps>,
     (step: Steps[number], options?: SetStepOptions) => Promise<void>
   ] & {
-    withState: <StateExcludeStep extends Record<string, unknown> & { step?: never }>(
+    withState: <
+      Steps extends NonEmptyArray<string>,
+      StateExcludeStep extends Record<string, unknown> & { step?: never }
+    >(
       initialState: StateExcludeStep
     ) => [
-        FunnelComponent<Steps>,
-        StateExcludeStep,
-        (
-          next:
-            | Partial<StateExcludeStep & { step: Steps[number] }>
-            | ((next: Partial<StateExcludeStep & { step: Steps[number] }>) => StateExcludeStep & { step: Steps[number] })
-        ) => void
-      ];
+      FunnelComponent<Steps>,
+      StateExcludeStep,
+      (
+        next:
+          | Partial<StateExcludeStep & { step: Steps[number] }>
+          | ((next: Partial<StateExcludeStep & { step: Steps[number] }>) => StateExcludeStep & { step: Steps[number] })
+      ) => void
+    ];
   };
 };
 
@@ -260,3 +214,57 @@ function useFunnelState<T extends Record<string, any>>(
 
   return [_state, setState, clearState] as const;
 }
+
+const useWithState = <
+  Steps extends NonEmptyArray<string>,
+  StateExcludeStep extends Record<string, unknown> & { step?: never }
+>(
+  FunnelComponent: FunnelComponent<Steps>,
+  setStep: (step: Steps[number], setStepOptions?: SetStepOptions) => void,
+  initialState: StateExcludeStep
+) => {
+  type S = Record<string, unknown>;
+  const [state, _setState] = useFunnelState<S>({});
+
+  type Step = Steps[number];
+  type NextState = S & { step?: Step };
+
+  const nextPendingStepRef = useRef<Step | null>(null);
+  const nextStateRef = useRef<Partial<S> | null>(null);
+  const setState = useCallback(
+    (next: Partial<NextState> | ((next: Partial<NextState>) => NextState)) => {
+      let nextStepValue: Partial<NextState>;
+      if (typeof next === 'function') {
+        nextStepValue = next(state);
+      } else {
+        nextStepValue = next;
+      }
+
+      if (nextStepValue.step != null) {
+        nextPendingStepRef.current = nextStepValue.step;
+      }
+      nextStateRef.current = nextStepValue;
+
+      _setState(next);
+    },
+    [_setState, state]
+  );
+
+  useEffect(() => {
+    if (nextPendingStepRef.current == null) {
+      return;
+    }
+    if (deepEqual(nextStateRef.current, state)) {
+      setStep(nextPendingStepRef.current);
+      nextPendingStepRef.current = null;
+    }
+  }, [setStep, state]);
+
+  const initializedRef = useRef(false);
+  if (!initializedRef.current) {
+    setState(initialState);
+    initializedRef.current = true;
+  }
+
+  return [FunnelComponent, state, setState] as const;
+};
