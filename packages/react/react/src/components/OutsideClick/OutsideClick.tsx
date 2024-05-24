@@ -1,4 +1,4 @@
-import { ComponentProps, ElementType, PropsWithChildren, ReactNode, useState } from 'react';
+import { ComponentProps, ElementType, forwardRef, ReactNode, useState } from 'react';
 import { useOutsideClickEffect } from '../../index';
 
 type NonHaveChildElements =
@@ -20,23 +20,20 @@ type NoChildren<Tag extends ElementType> = Tag extends NonHaveChildElements
   ? { children?: never }
   : { children: ReactNode };
 
-type AsRequired<Tag extends ElementType> = Tag extends 'div' ? { as?: Tag } : { as: Tag };
+type TagRequired<Tag extends ElementType> = Tag extends 'div' ? { as?: Tag } : { as: Tag };
 
 type AllowedTagName<Tag extends ElementType> = Tag extends keyof HTMLElementTagNameMap
   ? HTMLElementTagNameMap[Tag]
   : HTMLElement;
 
-type OutsideClickProp<Tag extends ElementType> = PropsWithChildren<ComponentProps<Tag>> &
-  AsRequired<Tag> &
+type OutsideClickProp<Tag extends ElementType> = ComponentProps<Tag> &
+  TagRequired<Tag> &
   NoChildren<Tag> & {
     callback: () => void;
   };
 
-export default function OutsideClick<
-  Tag extends ElementType = 'div',
-  E extends AllowedTagName<Tag> = AllowedTagName<Tag>
->({ as, children, callback, ...props }: OutsideClickProp<Tag>) {
-  const [element, setElement] = useState<E | null>(null);
+function OutsideClick<Tag extends ElementType = 'div'>({ as, children, callback, ...props }: OutsideClickProp<Tag>) {
+  const [element, setElement] = useState<AllowedTagName<Tag> | null>(null);
 
   useOutsideClickEffect(element, callback);
 
@@ -48,3 +45,7 @@ export default function OutsideClick<
     </Component>
   );
 }
+
+const OutsideClickWithForwardRef = forwardRef(OutsideClick) as typeof OutsideClick;
+
+export { OutsideClickWithForwardRef as OutsideClick };
