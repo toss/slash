@@ -18,7 +18,7 @@ type NonHaveChildElements =
 
 type NoChildren<Tag extends ElementType> = Tag extends NonHaveChildElements
   ? { children?: never }
-  : { children?: ReactNode };
+  : { children: ReactNode };
 
 type AsRequired<Tag extends ElementType> = Tag extends 'div' ? { as?: Tag } : { as: Tag };
 
