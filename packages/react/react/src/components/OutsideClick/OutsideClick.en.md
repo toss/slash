@@ -16,25 +16,47 @@ If you click outside the component wrapped in `OutsideClick`, `callback` is exec
 
 ## Attributes
 
-You can assign an `ElementType` by assigning a type to `<OutsideClick>`.
+You can assign an `ElementType` to `<OutsideClick>`.
 
 You can use `HTMLAttributes` as needed.
 
 ```tsx
 function Component() {
   return (
-    <OutsideClick<HTMLInputElement, 'input'>
+    <OutsideClick<'input'>
+      as="input"
       callback={() => {
         console.log('outside clicked!');
       }}
-      {/* input disabled */}
-      disabled
-    >
-      Inside
-    </OutsideClick>
+    />
   );
 }
 ```
+
+<br/>
+
+### Caveats
+
+```ts
+type NonHaveChildElements =
+  | 'input'
+  | 'textarea'
+  | 'img'
+  | 'br'
+  | 'hr'
+  | 'meta'
+  | 'link'
+  | 'base'
+  | 'col'
+  | 'embed'
+  | 'source'
+  | 'track'
+  | 'wbr';
+```
+
+Tags belonging to `NonHaveChildElements` use `self-closing tags` because they do not have children.
+
+<br/>
 
 ## Examples
 
