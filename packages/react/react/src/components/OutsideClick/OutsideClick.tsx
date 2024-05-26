@@ -1,4 +1,5 @@
-import { ComponentProps, ElementType, forwardRef, ReactNode, useState } from 'react';
+import { ComponentProps, ElementType, ForwardedRef, forwardRef, ReactNode, useState } from 'react';
+import { useCombinedRefs } from '../../hooks';
 import { useOutsideClickEffect } from '../../index';
 
 type NonHaveChildElements =
@@ -32,7 +33,10 @@ type OutsideClickProp<Tag extends ElementType> = ComponentProps<Tag> &
     callback: () => void;
   };
 
-function OutsideClick<Tag extends ElementType = 'div'>({ as, children, callback, ...props }: OutsideClickProp<Tag>) {
+function OutsideClick<Tag extends ElementType = 'div'>(
+  { as, children, callback, ...props }: OutsideClickProp<Tag>,
+  ref: ForwardedRef<any>
+) {
   const [element, setElement] = useState<AllowedTagName<Tag> | null>(null);
 
   useOutsideClickEffect(element, callback);
@@ -40,7 +44,7 @@ function OutsideClick<Tag extends ElementType = 'div'>({ as, children, callback,
   const Component = as || 'div';
 
   return (
-    <Component ref={setElement} {...props}>
+    <Component ref={useCombinedRefs(setElement, ref)} {...props}>
       {children}
     </Component>
   );

@@ -1,5 +1,6 @@
 import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import { createRef } from 'react';
 import { OutsideClick } from './OutsideClick';
 
 describe('OutsideClick', () => {
@@ -42,5 +43,19 @@ describe('OutsideClick', () => {
 
     await userEvent.click(screen.getByTestId('inside'));
     expect(onEffect).not.toHaveBeenCalled();
+  });
+
+  it('should expose internal DOM element through external ref', () => {
+    const ref = createRef<HTMLDivElement>();
+    const onEffect = jest.fn();
+
+    render(
+      <OutsideClick ref={ref} callback={onEffect}>
+        <div>Inside Component</div>
+      </OutsideClick>
+    );
+
+    const insideElement = screen.getByText('Inside Component');
+    expect(ref.current?.contains(insideElement)).toBeTruthy();
   });
 });
