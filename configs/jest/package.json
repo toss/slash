@@ -1,0 +1,29 @@
+{
+  "name": "@toss/jest",
+  "private": true,
+  "version": "0.2.0",
+  "main": "./src/index.js",
+  "dependencies": {
+    "@babel/core": "^7.19.3",
+    "@rollup/plugin-babel": "^5.3.1",
+    "@rollup/plugin-commonjs": "^22.0.2",
+    "@rollup/plugin-json": "^4.1.0",
+    "@rollup/plugin-node-resolve": "^14.1.0",
+    "builtin-modules": "^3.3.0"
+  },
+  "devDependencies": {
+    "rollup": "^2.79.1"
+  },
+  "peerDependencies": {
+    "rollup": "^2"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/toss/slash.git",
+    "directory": "configs/rollup"
+  },
+  "gitHead": "6a4434621e29e014d537ae3dc0f026364b893a69"
+}
