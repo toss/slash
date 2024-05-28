@@ -1,4 +1,4 @@
-module.exports = require('@tossteam/jest').config({
+module.exports = require('@toss/jest').config({
   testEnvironment: 'jsdom',
   rootDir: __dirname,
 });
