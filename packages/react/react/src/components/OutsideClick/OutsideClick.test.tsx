@@ -51,11 +51,11 @@ describe('OutsideClick', () => {
 
     render(
       <OutsideClick ref={ref} callback={onEffect}>
-        <div>Inside Component</div>
+        <div data-testid="inside">inside</div>
       </OutsideClick>
     );
 
-    const insideElement = screen.getByText('Inside Component');
+    const insideElement = screen.getByTestId('inside');
     expect(ref.current?.contains(insideElement)).toBeTruthy();
   });
 });
