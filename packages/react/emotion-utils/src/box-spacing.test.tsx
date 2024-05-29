@@ -4,9 +4,9 @@ import { cleanup, render } from '@testing-library/react';
 import { BoxSpacingPresets, margin, padding } from './box-spacing';
 
 function renderFixture(style: SerializedStyles, testId = 'fixture') {
-  const { getByTestId } = render(<div data-testid={testId} css={style} />);
+  const { getByRole } = render(<div role={testId} css={style} />);
 
-  return getByTestId(testId);
+  return getByRole(testId);
 }
 
 const properties = ['x', 'y', 'top', 'right', 'bottom', 'left'];

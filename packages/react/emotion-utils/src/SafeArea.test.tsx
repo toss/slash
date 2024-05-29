@@ -16,7 +16,7 @@ describe('SafeArea', () => {
 
     it(`SafeArea는 as를 통해 as의 태그로 렌더링된다`, () => {
       const { container } = render(
-        <SafeArea as="a" href="asdf" data-testid="root">
+        <SafeArea as="a" href="asdf" role="root">
           <p>Text Message</p>
         </SafeArea>
       );

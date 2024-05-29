@@ -27,11 +27,11 @@ describe('useOutsideClickEffect', () => {
 
       return (
         <>
-          <div data-testid="outside">outside</div>
+          <div role="outside">outside</div>
           {range(containerCount).map(index => (
-            <div key={index} ref={updateContainer} data-testid={`container-${index}`}>
+            <div key={index} ref={updateContainer} role={`container-${index}`}>
               container {index}
-              <span data-testid={`inside-${index}`}>inside {index}</span>
+              <span role={`inside-${index}`}>inside {index}</span>
             </div>
           ))}
         </>
@@ -46,10 +46,10 @@ describe('useOutsideClickEffect', () => {
     const onEffect = jest.fn();
     prepare({ onEffect });
 
-    await user.click(screen.getByTestId('container-0'));
+    await user.click(screen.getByRole('container-0'));
     expect(onEffect).not.toHaveBeenCalled();
 
-    await user.click(screen.getByTestId('outside'));
+    await user.click(screen.getByRole('outside'));
 
     await waitFor(() => {
       expect(onEffect).toHaveBeenCalledTimes(1);
@@ -67,7 +67,7 @@ describe('useOutsideClickEffect', () => {
     const onEffect = jest.fn();
     prepare({ onEffect });
 
-    await user.click(screen.getByTestId('inside-0'));
+    await user.click(screen.getByRole('inside-0'));
     expect(onEffect).not.toHaveBeenCalled();
   });
 
@@ -76,19 +76,19 @@ describe('useOutsideClickEffect', () => {
     const onEffect = jest.fn();
     prepare({ containerCount: 3, onEffect });
 
-    await user.click(screen.getByTestId('container-0'));
+    await user.click(screen.getByRole('container-0'));
     expect(onEffect).not.toHaveBeenCalled();
 
-    await user.click(screen.getByTestId('container-1'));
+    await user.click(screen.getByRole('container-1'));
     expect(onEffect).not.toHaveBeenCalled();
 
-    await user.click(screen.getByTestId('container-2'));
+    await user.click(screen.getByRole('container-2'));
     expect(onEffect).not.toHaveBeenCalled();
 
-    await user.click(screen.getByTestId('inside-2'));
+    await user.click(screen.getByRole('inside-2'));
     expect(onEffect).not.toHaveBeenCalled();
 
-    await user.click(screen.getByTestId('outside'));
+    await user.click(screen.getByRole('outside'));
 
     await waitFor(() => {
       expect(onEffect).toHaveBeenCalled();

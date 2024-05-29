@@ -18,10 +18,10 @@ describe('<Stack />', () => {
   describe('<Stack direction="vertical" />', () => {
     function renderStack(props?: ComponentProps<typeof Stack.Vertical>) {
       return render(
-        <Stack data-testid="stack" direction="vertical" {...props}>
+        <Stack role="stack" direction="vertical" {...props}>
           {items.map(item => {
             return (
-              <div data-testid="stack-item" key={item}>
+              <div role="stack-item" key={item}>
                 {item}
               </div>
             );
@@ -31,15 +31,15 @@ describe('<Stack />', () => {
     }
 
     it(`should have flex-direction: column.`, () => {
-      const { getByTestId } = renderStack();
+      const { getByRole } = renderStack();
 
-      expect(getByTestId('stack')).toHaveStyle('flex-direction: column');
+      expect(getByRole('stack')).toHaveStyle('flex-direction: column');
     });
 
     it(`should have top margin from the second node onwards.`, () => {
-      const { getAllByTestId } = renderStack();
+      const { getAllByRole } = renderStack();
 
-      getAllByTestId('stack-item').forEach((element, index) => {
+      getAllByRole('stack-item').forEach((element, index) => {
         if (index > 0) {
           expect(element).toHaveStyle(`margin-top: ${DEFAULT_GUTTER}px`);
         } else {
@@ -51,9 +51,9 @@ describe('<Stack />', () => {
     it(`should accept top margin via the gutter prop.`, () => {
       const gutter = 48;
 
-      const { getAllByTestId } = renderStack({ gutter });
+      const { getAllByRole } = renderStack({ gutter });
 
-      getAllByTestId('stack-item').forEach((element, index) => {
+      getAllByRole('stack-item').forEach((element, index) => {
         if (index > 0) {
           expect(element).toHaveStyle(`margin-top: ${gutter}px`);
         } else {
@@ -76,10 +76,10 @@ describe('<Stack />', () => {
   describe('<Stack.Vertical />', () => {
     function renderStack(props?: ComponentProps<typeof Stack.Vertical>) {
       return render(
-        <Stack.Vertical data-testid="stack" {...props}>
+        <Stack.Vertical role="stack" {...props}>
           {items.map(item => {
             return (
-              <div data-testid="stack-item" key={item}>
+              <div role="stack-item" key={item}>
                 {item}
               </div>
             );
@@ -89,15 +89,15 @@ describe('<Stack />', () => {
     }
 
     it(`should have flex-direction: column.`, () => {
-      const { getByTestId } = renderStack();
+      const { getByRole } = renderStack();
 
-      expect(getByTestId('stack')).toHaveStyle('flex-direction: column');
+      expect(getByRole('stack')).toHaveStyle('flex-direction: column');
     });
 
     it(`should have top margin from the second node onwards.`, () => {
-      const { getAllByTestId } = renderStack();
+      const { getAllByRole } = renderStack();
 
-      getAllByTestId('stack-item').forEach((element, index) => {
+      getAllByRole('stack-item').forEach((element, index) => {
         if (index > 0) {
           expect(element).toHaveStyle(`margin-top: ${DEFAULT_GUTTER}px`);
         } else {
@@ -109,9 +109,9 @@ describe('<Stack />', () => {
     it(`should accept top margin via the gutter prop.`, () => {
       const gutter = 48;
 
-      const { getAllByTestId } = renderStack({ gutter });
+      const { getAllByRole } = renderStack({ gutter });
 
-      getAllByTestId('stack-item').forEach((element, index) => {
+      getAllByRole('stack-item').forEach((element, index) => {
         if (index > 0) {
           expect(element).toHaveStyle(`margin-top: ${gutter}px`);
         } else {
@@ -134,10 +134,10 @@ describe('<Stack />', () => {
   describe('<Stack direction="horizontal" />', () => {
     function renderStack(props?: ComponentProps<typeof Stack.Horizontal>) {
       return render(
-        <Stack direction="horizontal" data-testid="stack" {...props}>
+        <Stack direction="horizontal" role="stack" {...props}>
           {items.map(item => {
             return (
-              <div data-testid="stack-item" key={item}>
+              <div role="stack-item" key={item}>
                 {item}
               </div>
             );
@@ -147,15 +147,15 @@ describe('<Stack />', () => {
     }
 
     it(`should have flex-direction: row.`, () => {
-      const { getByTestId } = renderStack();
+      const { getByRole } = renderStack();
 
-      expect(getByTestId('stack')).toHaveStyle('flex-direction: row');
+      expect(getByRole('stack')).toHaveStyle('flex-direction: row');
     });
 
     it(`should have left margin from the second node onwards.`, () => {
-      const { getAllByTestId } = renderStack();
+      const { getAllByRole } = renderStack();
 
-      getAllByTestId('stack-item').forEach((element, index) => {
+      getAllByRole('stack-item').forEach((element, index) => {
         if (index > 0) {
           expect(element).toHaveStyle(`margin-left: ${DEFAULT_GUTTER}px`);
         } else {
@@ -167,9 +167,9 @@ describe('<Stack />', () => {
     it(`should accept left margin via the gutter prop.`, () => {
       const gutter = 48;
 
-      const { getAllByTestId } = renderStack({ gutter });
+      const { getAllByRole } = renderStack({ gutter });
 
-      getAllByTestId('stack-item').forEach((element, index) => {
+      getAllByRole('stack-item').forEach((element, index) => {
         if (index > 0) {
           expect(element).toHaveStyle(`margin-left: ${gutter}px`);
         } else {
@@ -182,10 +182,10 @@ describe('<Stack />', () => {
   describe('<Stack.Horizontal />', () => {
     function renderStack(props?: ComponentProps<typeof Stack.Horizontal>) {
       return render(
-        <Stack.Horizontal data-testid="stack" {...props}>
+        <Stack.Horizontal role="stack" {...props}>
           {items.map(item => {
             return (
-              <div data-testid="stack-item" key={item}>
+              <div role="stack-item" key={item}>
                 {item}
               </div>
             );
@@ -195,15 +195,15 @@ describe('<Stack />', () => {
     }
 
     it(`should have flex-direction: row.`, () => {
-      const { getByTestId } = renderStack();
+      const { getByRole } = renderStack();
 
-      expect(getByTestId('stack')).toHaveStyle('flex-direction: row');
+      expect(getByRole('stack')).toHaveStyle('flex-direction: row');
     });
 
     it(`should have left margin from the second node onwards.`, () => {
-      const { getAllByTestId } = renderStack();
+      const { getAllByRole } = renderStack();
 
-      getAllByTestId('stack-item').forEach((element, index) => {
+      getAllByRole('stack-item').forEach((element, index) => {
         if (index > 0) {
           expect(element).toHaveStyle(`margin-left: ${DEFAULT_GUTTER}px`);
         } else {
@@ -215,9 +215,9 @@ describe('<Stack />', () => {
     it(`should accept left margin via the gutter prop.`, () => {
       const gutter = 48;
 
-      const { getAllByTestId } = renderStack({ gutter });
+      const { getAllByRole } = renderStack({ gutter });
 
-      getAllByTestId('stack-item').forEach((element, index) => {
+      getAllByRole('stack-item').forEach((element, index) => {
         if (index > 0) {
           expect(element).toHaveStyle(`margin-left: ${gutter}px`);
         } else {

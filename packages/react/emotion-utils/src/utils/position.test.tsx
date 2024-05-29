@@ -7,9 +7,9 @@ expect.extend(matchers);
 
 describe('position 테스트', () => {
   test(`position('absolute', 0, 0, 0, 0)`, () => {
-    const { getByTestId } = render(<div data-testid="test" css={position('absolute', 0, 0, 0, 0)} />);
+    const { getByRole } = render(<div role="test" css={position('absolute', 0, 0, 0, 0)} />);
 
-    const el = getByTestId('test');
+    const el = getByRole('test');
 
     expect(el).toHaveStyleRule('position', 'absolute');
     expect(el).toHaveStyleRule('top', '0');
@@ -19,9 +19,9 @@ describe('position 테스트', () => {
   });
 
   test(`position(0, 0, 0, 0)`, () => {
-    const { getByTestId } = render(<div data-testid="test" css={position(0, 0, 0, 0)} />);
+    const { getByRole } = render(<div role="test" css={position(0, 0, 0, 0)} />);
 
-    const el = getByTestId('test');
+    const el = getByRole('test');
 
     expect(el).toBeInTheDocument();
 
@@ -33,9 +33,9 @@ describe('position 테스트', () => {
   });
 
   test(`position('absolute', {top: 0, left: 0})`, () => {
-    const { getByTestId } = render(<div data-testid="test" css={position('absolute', { top: 0, left: 0 })} />);
+    const { getByRole } = render(<div role="test" css={position('absolute', { top: 0, left: 0 })} />);
 
-    const el = getByTestId('test');
+    const el = getByRole('test');
 
     expect(el).toBeInTheDocument();
 
@@ -49,9 +49,9 @@ describe('position 테스트', () => {
   describe('position methods', () => {
     describe('absolute', () => {
       it('position.absolute({top: 0, left: 0})', () => {
-        const { getByTestId } = render(<div data-testid="test" css={position.absolute({ top: 0, left: 0 })} />);
+        const { getByRole } = render(<div role="test" css={position.absolute({ top: 0, left: 0 })} />);
 
-        const el = getByTestId('test');
+        const el = getByRole('test');
 
         expect(el).toBeInTheDocument();
 
@@ -63,9 +63,9 @@ describe('position 테스트', () => {
       });
 
       it('position.absolute(0, 0, 0, 0)', () => {
-        const { getByTestId } = render(<div data-testid="test" css={position.absolute(0, 0, 0, 0)} />);
+        const { getByRole } = render(<div role="test" css={position.absolute(0, 0, 0, 0)} />);
 
-        const el = getByTestId('test');
+        const el = getByRole('test');
 
         expect(el).toBeInTheDocument();
 
@@ -79,9 +79,9 @@ describe('position 테스트', () => {
 
     describe('fixed', () => {
       it('position.fixed({top: 0, left: 0})', () => {
-        const { getByTestId } = render(<div data-testid="test" css={position.fixed({ top: 0, left: 0 })} />);
+        const { getByRole } = render(<div role="test" css={position.fixed({ top: 0, left: 0 })} />);
 
-        const el = getByTestId('test');
+        const el = getByRole('test');
 
         expect(el).toBeInTheDocument();
 
@@ -93,9 +93,9 @@ describe('position 테스트', () => {
       });
 
       it('position.fixed(0, 0, 0, 0)', () => {
-        const { getByTestId } = render(<div data-testid="test" css={position.fixed(0, 0, 0, 0)} />);
+        const { getByRole } = render(<div role="test" css={position.fixed(0, 0, 0, 0)} />);
 
-        const el = getByTestId('test');
+        const el = getByRole('test');
 
         expect(el).toBeInTheDocument();
 
@@ -109,9 +109,9 @@ describe('position 테스트', () => {
 
     describe('sticky', () => {
       it('position.sticky({top: 0, left: 0})', () => {
-        const { getByTestId } = render(<div data-testid="test" css={position.sticky({ top: 0, left: 0 })} />);
+        const { getByRole } = render(<div role="test" css={position.sticky({ top: 0, left: 0 })} />);
 
-        const el = getByTestId('test');
+        const el = getByRole('test');
 
         expect(el).toBeInTheDocument();
 
@@ -123,9 +123,9 @@ describe('position 테스트', () => {
       });
 
       it('position.sticky(0, 0, 0, 0)', () => {
-        const { getByTestId } = render(<div data-testid="test" css={position.sticky(0, 0, 0, 0)} />);
+        const { getByRole } = render(<div role="test" css={position.sticky(0, 0, 0, 0)} />);
 
-        const el = getByTestId('test');
+        const el = getByRole('test');
 
         expect(el).toBeInTheDocument();
 

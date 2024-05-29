@@ -10,17 +10,17 @@ describe('OutsideClick', () => {
     render(
       <>
         <OutsideClick callback={onEffect}>
-          <div data-testid="inside">inside</div>
+          <div role="inside">inside</div>
         </OutsideClick>
 
-        <div data-testid="outside">outside</div>
+        <div role="outside">outside</div>
       </>
     );
 
-    await userEvent.click(screen.getByTestId('inside'));
+    await userEvent.click(screen.getByRole('inside'));
     expect(onEffect).not.toHaveBeenCalled();
 
-    await userEvent.click(screen.getByTestId('outside'));
+    await userEvent.click(screen.getByRole('outside'));
 
     await waitFor(() => {
       expect(onEffect).toHaveBeenCalledTimes(1);
@@ -37,11 +37,11 @@ describe('OutsideClick', () => {
     const onEffect = jest.fn();
     render(
       <OutsideClick callback={onEffect}>
-        <div data-testid="inside">inside</div>
+        <div role="inside">inside</div>
       </OutsideClick>
     );
 
-    await userEvent.click(screen.getByTestId('inside'));
+    await userEvent.click(screen.getByRole('inside'));
     expect(onEffect).not.toHaveBeenCalled();
   });
 

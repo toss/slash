@@ -11,14 +11,14 @@ describe('gutter', () => {
     const direction = 'vertical';
 
     it(`should have top margin starting from the second child when '${direction}' is passed as the first parameter.`, () => {
-      const { getAllByTestId } = render(
+      const { getAllByRole } = render(
         <div css={gutter(direction)}>
-          <div data-testid="child" />
-          <div data-testid="child" />
+          <div role="child" />
+          <div role="child" />
         </div>
       );
 
-      getAllByTestId('child').forEach((element, index) => {
+      getAllByRole('child').forEach((element, index) => {
         if (index > 0) {
           expect(element).toHaveStyle(`margin-top: ${DEFAULT_GUTTER_SPACE}px`);
         } else {
@@ -30,14 +30,14 @@ describe('gutter', () => {
     it(`should accept top margin value as the second parameter.`, () => {
       const gutterSpace = 48;
 
-      const { getAllByTestId } = render(
+      const { getAllByRole } = render(
         <div css={gutter(direction, gutterSpace)}>
-          <div data-testid="child" />
-          <div data-testid="child" />
+          <div role="child" />
+          <div role="child" />
         </div>
       );
 
-      getAllByTestId('child').forEach((element, index) => {
+      getAllByRole('child').forEach((element, index) => {
         if (index > 0) {
           expect(element).toHaveStyle(`margin-top: ${gutterSpace}px`);
         } else {
@@ -49,18 +49,18 @@ describe('gutter', () => {
     it(`should accept a selector for child nodes with margin.`, () => {
       const selector = 'button';
 
-      const { getAllByTestId } = render(
+      const { getAllByRole } = render(
         <div css={gutter(direction, DEFAULT_GUTTER_SPACE, selector)}>
-          <button data-testid="child" />
-          <div data-testid="child" />
-          <button data-testid="child" />
-          <button data-testid="child" />
-          <div data-testid="child" />
-          <button data-testid="child" />
+          <button role="child" />
+          <div role="child" />
+          <button role="child" />
+          <button role="child" />
+          <div role="child" />
+          <button role="child" />
         </div>
       );
 
-      getAllByTestId('child').forEach((element, index) => {
+      getAllByRole('child').forEach((element, index) => {
         if (element.tagName === selector.toUpperCase() && index > 0) {
           expect(element).toHaveStyle(`margin-top: ${DEFAULT_GUTTER_SPACE}px`);
         } else {
@@ -77,18 +77,18 @@ describe('gutter', () => {
         selector,
       };
 
-      const { getAllByTestId } = render(
+      const { getAllByRole } = render(
         <div css={gutter(gutterOptions)}>
-          <button data-testid="child" />
-          <div data-testid="child" />
-          <button data-testid="child" />
-          <button data-testid="child" />
-          <div data-testid="child" />
-          <button data-testid="child" />
+          <button role="child" />
+          <div role="child" />
+          <button role="child" />
+          <button role="child" />
+          <div role="child" />
+          <button role="child" />
         </div>
       );
 
-      getAllByTestId('child').forEach((element, index) => {
+      getAllByRole('child').forEach((element, index) => {
         if (element.tagName === selector.toUpperCase() && index > 0) {
           expect(element).toHaveStyle(`margin-top: ${DEFAULT_GUTTER_SPACE}px`);
         } else {
@@ -102,14 +102,14 @@ describe('gutter', () => {
     const direction = 'horizontal';
 
     it(`should have left margin for nodes starting from the second when passing '${direction}' as the first argument`, () => {
-      const { getAllByTestId } = render(
+      const { getAllByRole } = render(
         <div css={gutter(direction)}>
-          <div data-testid="child" />
-          <div data-testid="child" />
+          <div role="child" />
+          <div role="child" />
         </div>
       );
 
-      getAllByTestId('child').forEach((element, index) => {
+      getAllByRole('child').forEach((element, index) => {
         if (index > 0) {
           expect(element).toHaveStyle(`margin-left: ${DEFAULT_GUTTER_SPACE}px`);
         } else {
@@ -121,14 +121,14 @@ describe('gutter', () => {
     it(`should be able to pass left margin value as the second argument`, () => {
       const gutterSpace = 48;
 
-      const { getAllByTestId } = render(
+      const { getAllByRole } = render(
         <div css={gutter(direction, gutterSpace)}>
-          <div data-testid="child" />
-          <div data-testid="child" />
+          <div role="child" />
+          <div role="child" />
         </div>
       );
 
-      getAllByTestId('child').forEach((element, index) => {
+      getAllByRole('child').forEach((element, index) => {
         if (index > 0) {
           expect(element).toHaveStyle(`margin-left: ${gutterSpace}px`);
         } else {
@@ -140,18 +140,18 @@ describe('gutter', () => {
     it(`should specify the child for margin as the third argument`, () => {
       const selector = 'button';
 
-      const { getAllByTestId } = render(
+      const { getAllByRole } = render(
         <div css={gutter(direction, DEFAULT_GUTTER_SPACE, selector)}>
-          <button data-testid="child" />
-          <div data-testid="child" />
-          <button data-testid="child" />
-          <button data-testid="child" />
-          <div data-testid="child" />
-          <button data-testid="child" />
+          <button role="child" />
+          <div role="child" />
+          <button role="child" />
+          <button role="child" />
+          <div role="child" />
+          <button role="child" />
         </div>
       );
 
-      getAllByTestId('child').forEach((element, index) => {
+      getAllByRole('child').forEach((element, index) => {
         if (element.tagName === selector.toUpperCase() && index > 0) {
           expect(element).toHaveStyle(`margin-left: ${DEFAULT_GUTTER_SPACE}px`);
         } else {
@@ -168,18 +168,18 @@ describe('gutter', () => {
         selector,
       };
 
-      const { getAllByTestId } = render(
+      const { getAllByRole } = render(
         <div css={gutter(gutterOptions)}>
-          <button data-testid="child" />
-          <div data-testid="child" />
-          <button data-testid="child" />
-          <button data-testid="child" />
-          <div data-testid="child" />
-          <button data-testid="child" />
+          <button role="child" />
+          <div role="child" />
+          <button role="child" />
+          <button role="child" />
+          <div role="child" />
+          <button role="child" />
         </div>
       );
 
-      getAllByTestId('child').forEach((element, index) => {
+      getAllByRole('child').forEach((element, index) => {
         if (element.tagName === selector.toUpperCase() && index > 0) {
           expect(element).toHaveStyle(`margin-left: ${DEFAULT_GUTTER_SPACE}px`);
         } else {
@@ -190,15 +190,15 @@ describe('gutter', () => {
   });
 
   it('should not include the style tag in the gutter targets', () => {
-    const { getAllByTestId } = render(
+    const { getAllByRole } = render(
       <div css={gutter('vertical')}>
         <style data-emotion="css asdf" />
-        <div data-testid="child" />
-        <div data-testid="child" />
+        <div role="child" />
+        <div role="child" />
       </div>
     );
 
-    getAllByTestId('child').forEach((element, index) => {
+    getAllByRole('child').forEach((element, index) => {
       if (index > 0) {
         expect(element).toHaveStyle(`margin-top: ${DEFAULT_GUTTER_SPACE}px`);
       } else {
@@ -208,15 +208,15 @@ describe('gutter', () => {
   });
 
   it('should be able to pass arguments as an object', () => {
-    const { getAllByTestId } = render(
+    const { getAllByRole } = render(
       <div css={gutter({ direction: 'vertical' })}>
         <style data-emotion="css asdf" />
-        <div data-testid="child" />
-        <div data-testid="child" />
+        <div role="child" />
+        <div role="child" />
       </div>
     );
 
-    getAllByTestId('child').forEach((element, index) => {
+    getAllByRole('child').forEach((element, index) => {
       if (index > 0) {
         expect(element).toHaveStyle(`margin-top: ${DEFAULT_GUTTER_SPACE}px`);
       } else {

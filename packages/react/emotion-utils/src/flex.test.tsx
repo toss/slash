@@ -8,13 +8,13 @@ import { flex, Flex } from './flex';
 describe('Flex', () => {
   describe('as', () => {
     it(`should render as a div.`, () => {
-      const { container } = render(<Flex data-testid="root">Text Message</Flex>);
+      const { container } = render(<Flex role="root">Text Message</Flex>);
       expect(container.querySelector('div')).toBeInTheDocument();
     });
 
     it(`should render as a span tag through 'as' in Flex.`, () => {
       const { container } = render(
-        <Flex as="span" data-testid="root">
+        <Flex as="span" role="root">
           Text Message
         </Flex>
       );
@@ -24,18 +24,18 @@ describe('Flex', () => {
 
   describe('align', () => {
     it(`should be 'stretch' by default for 'align' in Flex.`, () => {
-      const { container } = render(<Flex data-testid="root">Text Message</Flex>);
+      const { container } = render(<Flex role="root">Text Message</Flex>);
       expect(container.querySelector('div')).toHaveStyle('align-items: stretch');
     });
 
     it(`should not default to 'flex-start' for 'align' in Flex.`, () => {
-      const { container } = render(<Flex data-testid="root">Text Message</Flex>);
+      const { container } = render(<Flex role="root">Text Message</Flex>);
       expect(container.querySelector('div')).not.toHaveStyle('align-items: flex-start');
     });
 
     it(`should be 'center' for 'align' in Flex.`, () => {
       const { container } = render(
-        <Flex align="center" data-testid="root">
+        <Flex align="center" role="root">
           Text Message
         </Flex>
       );
@@ -45,18 +45,18 @@ describe('Flex', () => {
 
   describe('justify', () => {
     it(`should be 'flex-start' by default for 'justify' in Flex.`, () => {
-      const { container } = render(<Flex data-testid="root">Text Message</Flex>);
+      const { container } = render(<Flex role="root">Text Message</Flex>);
       expect(container.querySelector('div')).toHaveStyle('justify-content: flex-start');
     });
 
     it(`should not default to 'flex-end' for 'justify' in Flex.`, () => {
-      const { container } = render(<Flex data-testid="root">Text Message</Flex>);
+      const { container } = render(<Flex role="root">Text Message</Flex>);
       expect(container.querySelector('div')).not.toHaveStyle('justify-content: flex-end');
     });
 
     it(`should be 'center' for 'justify' in Flex.`, () => {
       const { container } = render(
-        <Flex justify="center" data-testid="root">
+        <Flex justify="center" role="root">
           Text Message
         </Flex>
       );
@@ -66,13 +66,13 @@ describe('Flex', () => {
 
   describe('direction', () => {
     it(`should be 'row' by default for 'direction' in Flex.`, () => {
-      const { container } = render(<Flex data-testid="root">Text Message</Flex>);
+      const { container } = render(<Flex role="root">Text Message</Flex>);
       expect(container.querySelector('div')).toHaveStyle('flex-direction: row');
     });
 
     it(`should be 'column' for 'direction' in Flex.`, () => {
       const { container } = render(
-        <Flex direction="column" data-testid="root">
+        <Flex direction="column" role="root">
           Text Message
         </Flex>
       );
@@ -87,7 +87,7 @@ describe('Flex', () => {
       } = renderHook(() => useRef<HTMLButtonElement>(null));
 
       render(
-        <Flex data-testid="root" as="button" ref={ref}>
+        <Flex role="root" as="button" ref={ref}>
           Text Message
         </Flex>
       );

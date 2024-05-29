@@ -8,7 +8,7 @@ function createTestInput(...params: Parameters<typeof useInputState>) {
     const [value, handleValueChange] = useInputState(...params);
 
     return createElement('input', {
-      'data-testid': 'input',
+      role: 'input',
       type: 'text',
       value,
       onChange: handleValueChange,
@@ -62,8 +62,8 @@ describe('`useInputState`', () => {
     afterEach(cleanup);
 
     it('change 이벤트 발생 시, `value`가 변경된다.', () => {
-      const { getByTestId } = render(createElement(createTestInput()));
-      const input = getByTestId('input') as HTMLInputElement;
+      const { getByRole } = render(createElement(createTestInput()));
+      const input = getByRole('input') as HTMLInputElement;
 
       expect(input.value).toBe('');
 
@@ -81,9 +81,9 @@ describe('`useInputState`', () => {
     afterEach(cleanup);
 
     it('transformValue 함수에 따라 값을 변경한다.', () => {
-      const { getByTestId } = render(createElement(createTestInput('', v => v.toLowerCase())));
+      const { getByRole } = render(createElement(createTestInput('', v => v.toLowerCase())));
 
-      const input = getByTestId('input') as HTMLInputElement;
+      const input = getByRole('input') as HTMLInputElement;
       fireEvent.change(input, { target: { value: 'MUST BE LOWERCASE' } });
 
       expect(input.value).toBe('must be lowercase');
