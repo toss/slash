@@ -20,10 +20,10 @@ describe('roundUpHoursInDays', () => {
   });
 
   it('should be rounded up to the next 24-hour unit if more than 24 hours', () => {
-    expect(roundUpHoursInDays(25)).toBe(48);
-    expect(roundUpHoursInDays(47)).toBe(48);
-    expect(roundUpHoursInDays(49)).toBe(72);
-    expect(roundUpHoursInDays(63)).toBe(72);
+    expect(roundUpHoursInDays(24 + 1)).toBe(48);
+    expect(roundUpHoursInDays(24 + 23)).toBe(48);
+    expect(roundUpHoursInDays(48 + 1)).toBe(72);
+    expect(roundUpHoursInDays(48 + 15)).toBe(72);
   });
 
   it('should be maintained as 0 hours', () => {
