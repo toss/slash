@@ -24,6 +24,7 @@
     "build": "rm -rf dist esm && tsc -p tsconfig.build.json --declaration --emitDeclarationOnly --declarationDir dist && rollup -c rollup.config.js",
     "prepack": "yarn build",
     "test": "jest",
+    "coverage": "jest --coverage",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
@@ -42,6 +43,7 @@
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
     "@toss/jest": "workspace:^",
+    "@toss/react": "workspace:^1.7.0",
     "@toss/rollup-config": "workspace:^0.2.0",
     "@types/babel__core": "^7",
     "@types/jest": "^28.1.8",

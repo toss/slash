@@ -29,6 +29,10 @@ export function useOutsideClickEffect(container: OneOrMore<HTMLElement | null>, 
   });
 
   useEffect(() => {
+    containers.current = [container].flat(1).filter(isNotNil);
+  }, [container]);
+
+  useEffect(() => {
     document.addEventListener('click', handleDocumentClick);
     document.addEventListener('touchstart', handleDocumentClick);
 

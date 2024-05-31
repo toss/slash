@@ -19,6 +19,11 @@ type JosaOption =
 
 const 로_조사: JosaOption[] = ['으로/로', '으로서/로서', '으로써/로써', '으로부터/로부터'];
 
+/**
+ * This method has been moved to the es-hangul library.
+ * Please use es-hangul for this functionality going forward.
+ * @deprecated This feature is now available in the es-hangul package.
+ */
 export function josa(word: string, josa: JosaOption): string {
   if (word.length === 0) {
     return word;

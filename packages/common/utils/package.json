@@ -24,10 +24,12 @@
     "prepack": "yarn build",
     "test": "jest -c jest.config.js && tsc --noEmit",
     "test:unit": "jest -c jest.config.js",
+    "coverage": "jest --coverage",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@babel/runtime": "^7.14.8",
+    "@toss/utility-types": "workspace:^",
     "date-fns": "^2.25.0"
   },
   "devDependencies": {

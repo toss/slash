@@ -5617,6 +5617,7 @@ __metadata:
     "@testing-library/jest-dom": "npm:^5.16.4"
     "@testing-library/react": "npm:^13.3.0"
     "@toss/jest": "workspace:^"
+    "@toss/react": "workspace:^1.7.0"
     "@toss/rollup-config": "workspace:^0.2.0"
     "@toss/utils": "workspace:^1.5.0"
     "@types/babel__core": "npm:^7"
@@ -6228,7 +6229,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@toss/utility-types@workspace:packages/common/utility-types":
+"@toss/utility-types@workspace:^, @toss/utility-types@workspace:packages/common/utility-types":
   version: 0.0.0-use.local
   resolution: "@toss/utility-types@workspace:packages/common/utility-types"
   dependencies:
@@ -6262,6 +6263,7 @@ __metadata:
     "@rollup/plugin-node-resolve": "npm:^13.3.0"
     "@toss/jest": "workspace:^"
     "@toss/rollup-config": "workspace:^0.2.0"
+    "@toss/utility-types": "workspace:^"
     "@types/babel__core": "npm:^7"
     "@types/babel__preset-env": "npm:^7"
     "@types/jest": "npm:^28.1.8"
