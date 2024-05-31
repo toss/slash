@@ -32,7 +32,9 @@ export function buildContext<ContextValuesType extends object>(
 
     throw new Error(`\`${contextName}Context\` must be used within \`${contextName}Provider\``);
   }
-
+  if (process.env.NODE_ENV !== 'production') {
+    Context.displayName = contextName;
+  }
   Provider.displayName = contextName + 'Provider';
 
   return [Provider, useInnerContext] as const;
