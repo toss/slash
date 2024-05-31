@@ -31,6 +31,7 @@
     "build": "bash ./scripts/build.sh",
     "prepack": "echo [Already built: yarn build로 수동 빌드할 수 있습니다.]",
     "test": "jest",
+    "coverage": "jest --coverage",
     "typecheck": "tsc --noEmit"
   },
   "devDependencies": {

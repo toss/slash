@@ -22,6 +22,7 @@
     "build": "tsc --emitDeclarationOnly --outDir types && rollup -c && rm -rf types",
     "prepack": "yarn build",
     "test": "jest",
+    "coverage": "jest --coverage",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
