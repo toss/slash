@@ -94,11 +94,15 @@ export function decommaizeNumber(numStr: string) {
 }
 
 export function formatPhoneNumber(phoneNumber: string) {
-  const isSeoulNumber = phoneNumber.startsWith('02');
   // 서울 국번(02)인 경우에만 지역번호가 2자리입니다.
-  const areaCodeEndIndex = isSeoulNumber ? 2 : 3;
+  const isSeoulNumber = phoneNumber.startsWith('02');
 
-  // 10자리 전화번호 (또는 서울인 경우, 9자리 전화번호)에 대응하기 위해서
+  // 12자리 전화번호는 앞자리가 4개입니다.
+  const is12Number = phoneNumber.length === 12;
+
+  const areaCodeEndIndex = isSeoulNumber ? 2 : is12Number ? 4 : 3;
+
+  // 9 ~ 12자리 전화번호에 대응하기 위해서
   // [0:areaCodeEndIndex], [areaCodeEndIndex:length-4], [length-4:length] 형식으로 나누고 join합니다.
   return [
     phoneNumber.slice(0, areaCodeEndIndex),
