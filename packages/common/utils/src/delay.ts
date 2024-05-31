@@ -1,6 +1,6 @@
 /** @tossdocs-ignore */
-export function delay(ms: number) {
+export function delay(milliseconds: number) {
   return new Promise<void>(resolve => {
-    setTimeout(resolve, ms);
+    setTimeout(resolve, milliseconds);
   });
 }

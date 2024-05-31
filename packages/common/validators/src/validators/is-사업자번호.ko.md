@@ -6,7 +6,6 @@ title: is사업자번호
 
 사업자번호 유효성 검사
 
-- http://seoulcredit.co.kr/business_id
 - https://myhappyman.tistory.com/129
 
 ```typescript

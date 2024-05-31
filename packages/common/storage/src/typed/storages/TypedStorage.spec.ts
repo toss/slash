@@ -7,6 +7,20 @@ describe('TypedStorage', () => {
       const typed = new TypedStorage(key, { initialValue: 'some-value' });
       expect(typed.get()).toEqual('some-value');
     });
+
+    it('should return null due to "Date" initialValue', () => {
+      const key = 'get-null-key';
+      const typed = new TypedStorage(key, { initialValue: Date });
+
+      expect(typed.get()).toBeNull();
+    });
+
+    it('should return null if options parameter is empty', () => {
+      const key = 'get-empty-options-key';
+      const typed = new TypedStorage(key);
+
+      expect(typed.get()).toBeNull();
+    });
   });
 
   describe('using set() method', () => {
@@ -15,6 +29,14 @@ describe('TypedStorage', () => {
       const typed = new TypedStorage(key, { initialValue: 'some-value' });
       typed.set('changed-value');
       expect(typed.get()).toEqual('changed-value');
+    });
+
+    it('should return boolean type for boolean initialValue', () => {
+      const key = 'set-boolean-test-key';
+      const typed = new TypedStorage(key, { initialValue: false });
+      typed.set(true);
+      expect(typed.get()).toEqual(true);
+      expect(typeof typed.get()).toEqual('boolean');
     });
   });
 

@@ -8,7 +8,7 @@ const TOSSDOCS_IGNORE_SYMBOL = '/** @tossdocs-ignore */';
 
 export async function generateDocsFromJSDoc() {
   const filepaths = await glob('**/*.{ts,tsx}', {
-    ignore: ['**/*.{spec,test,d,setup,stories,config}.{ts,tsx}', 'docs/**/*'],
+    ignore: ['**/*.{spec,test,d,setup,stories,config}.{ts,tsx}', 'docs/**/*', '**/node_modules/**/*'],
     cwd: PACKAGES_ROOT,
   });
 

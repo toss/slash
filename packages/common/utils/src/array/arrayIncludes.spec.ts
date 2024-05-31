@@ -4,10 +4,10 @@ describe('arrayIncludes', () => {
   it('should work identical to Array.prototype.includes', () => {
     const arr: Array<'a' | 'b' | 'c'> = ['a', 'b', 'c'];
 
-    const includedElement = 'a';
+    const includedElement = 'a' as string;
     expect(arrayIncludes(arr, includedElement)).toBe(true);
 
-    const excludedElement = 'd';
+    const excludedElement = 'd' as string;
     expect(arrayIncludes(arr, excludedElement)).toBe(false);
   });
 

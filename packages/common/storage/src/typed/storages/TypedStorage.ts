@@ -9,7 +9,7 @@ export interface TypedStorageOptions<T> {
 export class TypedStorage<T> {
   private storage: Storage;
 
-  constructor(private key: string, options: TypedStorageOptions<T> = {}) {
+  constructor(private key: string, options: TypedStorageOptions<T extends boolean ? boolean : T> = {}) {
     this.storage = options.storage ?? safeLocalStorage;
 
     if (options.initialValue != null && this.get() == null) {
@@ -22,7 +22,7 @@ export class TypedStorage<T> {
     return value ? this.deserialize(value) : null;
   }
 
-  public set(next: T): void {
+  public set(next: T extends boolean ? boolean : T): void {
     this.storage.set(this.key, this.serialize(next));
   }
 
@@ -30,7 +30,7 @@ export class TypedStorage<T> {
     this.storage.remove(this.key);
   }
 
-  private serialize(value: T): string {
+  private serialize(value: T extends boolean ? boolean : T): string {
     return JSON.stringify(value);
   }
 
