@@ -16,6 +16,7 @@
     "build": "concurrently \"tsc -p tsconfig.json\" \"tsc -p tsconfig.esm.json\"",
     "prepack": "yarn build",
     "test": "echo \"no test specified.\"",
+    "coverage": "jest --coverage",
     "typecheck": "tsc --noEmit"
   },
   "devDependencies": {

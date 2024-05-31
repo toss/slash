@@ -24,6 +24,7 @@
     "prepack": "yarn build",
     "test": "jest -c jest.config.js && tsc --noEmit",
     "test:unit": "jest -c jest.config.js",
+    "coverage": "jest --coverage",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {

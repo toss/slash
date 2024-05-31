@@ -23,6 +23,7 @@
     "build": "rm -rf dist/ && rm -rf esm/ && rollup -c && tsc -p tsconfig.build.json --declaration --emitDeclarationOnly --declarationDir dist",
     "prepack": "yarn build",
     "test": "jest",
+    "coverage": "jest --coverage",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
