@@ -24,10 +24,12 @@
     "prepack": "yarn build",
     "test": "jest -c jest.config.js && tsc --noEmit",
     "test:unit": "jest -c jest.config.js",
+    "coverage": "jest --coverage",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@babel/runtime": "^7.14.8",
+    "@toss/utility-types": "workspace:^",
     "date-fns": "^2.25.0"
   },
   "devDependencies": {
@@ -41,8 +43,8 @@
     "@rollup/plugin-commonjs": "^22.0.1",
     "@rollup/plugin-json": "^4.1.0",
     "@rollup/plugin-node-resolve": "^13.3.0",
+    "@toss/jest": "workspace:^",
     "@toss/rollup-config": "workspace:^0.2.0",
-    "@tossteam/jest": "^17",
     "@types/babel__core": "^7",
     "@types/babel__preset-env": "^7",
     "@types/jest": "^28.1.8",
@@ -55,7 +57,7 @@
     "jest-mock": "^27.4.2",
     "rollup": "^2.77.0",
     "tslib": "^2.0.0",
-    "typescript": "4.8.3"
+    "typescript": "^5.4.5"
   },
   "publishConfig": {
     "access": "public",

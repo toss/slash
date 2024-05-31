@@ -7,10 +7,6 @@ type OneOrMore<T> = T | T[];
 export function useOutsideClickEffect(container: OneOrMore<HTMLElement | null>, callback: () => void) {
   const containers = useRef<HTMLElement[]>([]);
 
-  useEffect(() => {
-    containers.current = (Array.isArray(container) ? container : [container]).filter(isNotNil);
-  }, [container]);
-
   const handleDocumentClick = useCallback(
     ({ target }: MouseEvent | TouchEvent) => {
       if (target === null) {
@@ -31,6 +27,10 @@ export function useOutsideClickEffect(container: OneOrMore<HTMLElement | null>, 
   );
 
   useEffect(() => {
+    containers.current = [container].flat(1).filter(isNotNil);
+  }, [container]);
+
+  useEffect(() => {
     document.addEventListener('click', handleDocumentClick);
     document.addEventListener('touchstart', handleDocumentClick);
 
@@ -38,5 +38,5 @@ export function useOutsideClickEffect(container: OneOrMore<HTMLElement | null>, 
       document.removeEventListener('click', handleDocumentClick);
       document.removeEventListener('touchstart', handleDocumentClick);
     };
-  });
+  }, [handleDocumentClick]);
 }
