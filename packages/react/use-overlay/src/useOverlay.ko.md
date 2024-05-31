@@ -16,16 +16,16 @@ type CreateOverlayElement = (props: {
   // 이 함수가 호출되면 isOpen이 false로 바뀝니다. 주로 Overlay로 띄울 컴포넌트의 onClose 함수에 이 함수를 주입합니다.
   close: () => void;
   // 이 함수가 호출되면 해당 Overlay가 unmount됩니다.
-  // close와 exit이 분리되어 있는 이유는 Overlay를 닫으면서 fade-out 애니메이션을 주고 싶을 때 close와 동시에 unmount시켜버리면 애니메이션이 먹히기때문입니다.
+  // close와 exit이 분리되어 있는 이유는 Overlay를 닫으면서 fade-out 애니메이션을 주고 싶을 때 close와 동시에 unmount시켜버리면 애니메이션이 먹히기 때문입니다.
   exit: () => void;
 }) => JSX.Element;
 
 function useOverlay(options?: {
   // useOverlay를 호출한 컴포넌트가 unmount 되면 overlay도 같이 unmount(=exit) 됩니다.
-  // exitOnUnmount의 값을 false로 설정하였다면 useOverlay를 호출한 컴포넌트가 unmount 되도 overlay가 같이 unmount 되지 않습니다.
+  // exitOnUnmount의 값을 false로 설정하였다면 useOverlay를 호출한 컴포넌트가 unmount 되어도 overlay가 같이 unmount 되지 않습니다.
   // 따라서 원하는 타이밍에 overlay의 exit 함수를 직접 실행하여 overlay를 unmount 시킬 수 있습니다. exit 함수를 실행시키지 않는다면
   // 등록된 overlay가 메모리 상에 계속 남아있게 됩니다. exitOnUnmount의 값을 false로 설정하였다면 반드시 exit 함수를 실행시켜주세요.
-  // close와 exit이 분리되어 있는 이유는 Overlay를 닫으면서 fade-out 애니메이션을 주고 싶을 때 close와 동시에 unmount시켜버리면 애니메이션이 먹히기때문입니다.
+  // close와 exit이 분리되어 있는 이유는 Overlay를 닫으면서 fade-out 애니메이션을 주고 싶을 때 close와 동시에 unmount시켜버리면 애니메이션이 먹히기 때문입니다.
   // default: true
   exitOnUnmount?: boolean;
 }): {
