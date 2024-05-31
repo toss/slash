@@ -3,6 +3,11 @@ import { HANGUL_CHARACTERS_BY_FIRST_INDEX } from './constants';
 import { disassembleHangulToGroups } from './disassemble';
 import { getFirstConsonants } from './utils';
 
+/**
+ * This method has been moved to the es-hangul library.
+ * Please use es-hangul for this functionality going forward.
+ * @deprecated This feature is now available in the es-hangul package.
+ */
 export function chosungIncludes(x: string, y: string) {
   if (!isOnlyInitialConsonant(y)) {
     return false;

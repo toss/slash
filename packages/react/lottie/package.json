@@ -24,6 +24,7 @@
     "lint": "yarn run -T eslint src/**/*.{js,ts,tsx}",
     "prepack": "yarn build",
     "test": "echo \"no test specified.\"",
+    "coverage": "jest --coverage",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
@@ -37,8 +38,8 @@
   "devDependencies": {
     "@babel/core": "^7",
     "@babel/runtime": "^7.13.10",
+    "@toss/jest": "workspace:^",
     "@toss/rollup-config": "workspace:^0.2.0",
-    "@tossteam/jest": "^17",
     "@types/jest": "^28.1.8",
     "@types/lodash.debounce": "^4",
     "@types/node": "^14.14.41",
@@ -49,7 +50,7 @@
     "jest-environment-jsdom": "^29",
     "require-from-string": "^2.0.2",
     "rollup": "^2.77.0",
-    "typescript": "4.8.3"
+    "typescript": "^5.4.5"
   },
   "peerDependencies": {
     "react": "^16.0.0 || ^17.0.0 || ^18",

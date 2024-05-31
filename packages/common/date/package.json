@@ -23,6 +23,7 @@
     "build": "rm -rf dist esm && tsc -p tsconfig.build.json --declaration --emitDeclarationOnly --declarationDir dist && rollup -c rollup.config.js",
     "prepack": "yarn build",
     "test": "jest -c jest.config.js && tsc --noEmit",
+    "coverage": "jest --coverage",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
@@ -31,8 +32,8 @@
   "devDependencies": {
     "@babel/core": "^7",
     "@babel/runtime": "^7.13.10",
+    "@toss/jest": "workspace:^",
     "@toss/rollup-config": "workspace:^0.2.0",
-    "@tossteam/jest": "^17",
     "@types/babel__core": "^7",
     "@types/jest": "^28.1.8",
     "@types/node": "^18.8.2",
@@ -43,7 +44,7 @@
     "jest-mock": "^27.4.2",
     "rollup": "^2.77.0",
     "ts-node": "^10.9.1",
-    "typescript": "4.8.3"
+    "typescript": "^5.4.5"
   },
   "publishConfig": {
     "access": "public",

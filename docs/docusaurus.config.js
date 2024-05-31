@@ -1,25 +1,7 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
-const pnpapi = require('pnpapi');
 const path = require('path');
-
-require('@babel/register')({
-  presets: [['@babel/preset-env', { targets: { node: 'current' } }], '@babel/preset-typescript'],
-  extensions: ['.js', '.jsx', '.ts', '.tsx'],
-  ignore: [
-    path => {
-      const locator = pnpapi.findPackageLocator(path);
-
-      if (locator.name.startsWith('@toss/')) {
-        return false;
-      }
-
-      return true;
-    },
-  ],
-  cache: true,
-});
 
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {

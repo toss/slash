@@ -2,6 +2,11 @@
 import { DISASSEMBLED_CONSONANTS_BY_CONSONANT, DISASSEMBLED_VOWELS_BY_VOWEL } from './constants';
 import { disassembleCompleteHangulCharacter } from './disassembleCompleteHangulCharacter';
 
+/**
+ * This method has been moved to the es-hangul library.
+ * Please use es-hangul for this functionality going forward.
+ * @deprecated This feature is now available in the es-hangul package.
+ */
 export function disassembleHangulToGroups(str: string) {
   /*
    * FIXME(@raon0211):
@@ -40,6 +45,11 @@ export function disassembleHangulToGroups(str: string) {
   return result;
 }
 
+/**
+ * This method has been moved to the es-hangul library.
+ * Please use es-hangul for this functionality going forward.
+ * @deprecated This feature is now available in the es-hangul package.
+ */
 export function disassembleHangul(str: string) {
   return disassembleHangulToGroups(str).reduce((hanguls, disassembleds) => `${hanguls}${disassembleds.join('')}`, '');
 }
