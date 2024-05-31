@@ -8,9 +8,6 @@ type OneOrMore<T> = T | T[];
 export function useOutsideClickEffect(container: OneOrMore<HTMLElement | null>, callback: () => void) {
   const containers = useRef<HTMLElement[]>([]);
 
-  useEffect(() => {
-    containers.current = (Array.isArray(container) ? container : [container]).filter(isNotNil);
-  }, [container]);
 
   const handleDocumentClick = usePreservedCallback(({ target }: MouseEvent | TouchEvent) => {
     if (target === null) {
