@@ -1,6 +1,6 @@
 /** @tossdocs-ignore */
+import { ElementType } from '@toss/utility-types';
 import { ObjectKeys, objectKeys } from './object-keys';
-import { ElementType } from './types';
 
 export function omit<ObjectType extends Record<PropertyKey, any>, KeyTypes extends Array<ObjectKeys<ObjectType>>>(
   obj: ObjectType,
