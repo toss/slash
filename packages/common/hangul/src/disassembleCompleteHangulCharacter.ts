@@ -27,8 +27,8 @@ export function disassembleCompleteHangulCharacter(
   const firstIndex = Math.floor((hangulCode - lastIndex) / NUMBER_OF_JONGSUNG / NUMBER_OF_JUNGSUNG);
 
   return {
-    first: HANGUL_CHARACTERS_BY_FIRST_INDEX[firstIndex] ?? '',
-    middle: HANGUL_CHARACTERS_BY_MIDDLE_INDEX[middleIndex] ?? '',
-    last: HANGUL_CHARACTERS_BY_LAST_INDEX[lastIndex] ?? '',
+    first: HANGUL_CHARACTERS_BY_FIRST_INDEX[firstIndex]!,
+    middle: HANGUL_CHARACTERS_BY_MIDDLE_INDEX[middleIndex]!,
+    last: HANGUL_CHARACTERS_BY_LAST_INDEX[lastIndex]!,
   };
 }
