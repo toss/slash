@@ -27,8 +27,11 @@ export function disassembleCompleteHangulCharacter(
   const firstIndex = Math.floor((hangulCode - lastIndex) / NUMBER_OF_JONGSUNG / NUMBER_OF_JUNGSUNG);
 
   return {
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     first: HANGUL_CHARACTERS_BY_FIRST_INDEX[firstIndex]!,
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     middle: HANGUL_CHARACTERS_BY_MIDDLE_INDEX[middleIndex]!,
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     last: HANGUL_CHARACTERS_BY_LAST_INDEX[lastIndex]!,
   };
 }
