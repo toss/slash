@@ -1,33 +1,56 @@
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
+import { PropsWithChildren } from 'react';
 import { OpenGraph } from '.';
 
 describe('OpenGraph', () => {
-  const getMeta = (metaName: string) => {
-    const metas = document.getElementsByTagName('meta');
-    for (let i = 0; i < metas.length; i += 1) {
-      if (metas[i].getAttribute('property') === metaName) {
-        return metas[i].getAttribute('content');
+  const getMetaContent = (metaName: string, container: HTMLElement | Document = document) => {
+    const metaCollection = container.getElementsByTagName('meta');
+
+    for (const meta of metaCollection) {
+      if (meta.getAttribute('property') === metaName) {
+        return meta.getAttribute('content');
       }
     }
     throw new Error('cannot find your meta tag');
   };
-  it(`should render inserted title`, () => {
-    const title = '토스';
+
+  it('should render inserted title', () => {
+    const title = 'toss';
+
     render(<OpenGraph title={title} />);
-    expect(getMeta('og:title')).toEqual(title);
+    expect(getMetaContent('og:title')).toEqual(title);
   });
-  it(`should render inserted description`, () => {
-    const description = '금융의 모든 것, 토스에서 쉽고 간편하게';
+
+  it('should render inserted description', () => {
+    const description = 'Every moment in finance, made easy with Toss';
+
     render(<OpenGraph description={description} />);
-    expect(getMeta('og:description')).toEqual(description);
+    expect(getMetaContent('og:description')).toEqual(description);
   });
-  it(`should render inserted imageUrl`, () => {
+
+  it('should render inserted imageUrl', () => {
     const imageUrl = 'https://static.toss.im/homepage-static/newtoss/newtoss-og.jpg';
+
     render(<OpenGraph imageUrl={imageUrl} />);
-    expect(getMeta('og:image')).toEqual(imageUrl);
+    expect(getMetaContent('og:image')).toEqual(imageUrl);
   });
-  it(`should throw error when no meta tag is found `, () => {
+
+  it('should throw error when no meta tag is found ', () => {
     render(<OpenGraph />);
-    expect(() => getMeta('og:title')).toThrowError();
+    expect(() => getMetaContent('og:title')).toThrowError();
+  });
+
+  it('should have a meta tag inside the container', () => {
+    const title = 'toss';
+
+    const TestContainer = ({ children }: PropsWithChildren) => {
+      return <div role="container">{children}</div>;
+    };
+
+    render(<OpenGraph container={TestContainer} title={title} />);
+
+    const container = screen.getByRole('container');
+
+    expect(getMetaContent('og:title', container)).toEqual(title);
   });
 });

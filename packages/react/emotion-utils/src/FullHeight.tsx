@@ -1,10 +1,9 @@
 /** @tossdocs-ignore */
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
-import { isServer } from '@toss/utils';
-import { HTMLAttributes, ReactNode, useEffect, useLayoutEffect, useState } from 'react';
+import { useIsomorphicLayoutEffect } from '@toss/react';
 
-const useIsomorphicLayoutEffect = isServer() ? useEffect : useLayoutEffect;
+import { HTMLAttributes, ReactNode, useState } from 'react';
 
 export function FullHeight({ children, ...props }: { children: ReactNode } & HTMLAttributes<HTMLDivElement>) {
   const [height, setHeight] = useState(0);
