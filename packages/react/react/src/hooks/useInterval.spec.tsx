@@ -1,4 +1,4 @@
-import { renderHook, act } from '@testing-library/react';
+import { renderHook } from '@testing-library/react';
 import { useInterval } from './useInterval';
 
 jest.useFakeTimers();
@@ -7,13 +7,11 @@ describe('useInterval', () => {
   it('Should execute a callback every time a set time passes.', () => {
     const callback = jest.fn();
 
-    const { result } = renderHook(() =>
+    renderHook(() =>
       useInterval(callback, {
         delay: 3000,
       })
     );
-
-    expect(result.current.intervalRunning).toBe(true);
 
     jest.advanceTimersByTime(2900);
 
@@ -64,30 +62,26 @@ describe('useInterval', () => {
     expect(callback).toBeCalledTimes(1);
   });
 
-  it('Should not execute the callback when stop function has been called.', () => {
+  it('Should not execute the callback when enable option is false', () => {
     const callback = jest.fn();
 
-    const { result } = renderHook(() => useInterval(callback, { delay: 3000 }));
-
-    act(() => result.current.stop());
-
+    renderHook(() => useInterval(callback, { delay: 3000, enabled: false }));
     jest.advanceTimersByTime(3000);
 
     expect(callback).not.toBeCalled();
   });
 
-  it('Should resume the interval When continueTimer function is called.', () => {
+  it('Should resume the interval When enable options become true.', () => {
     const callback = jest.fn();
+    const props = { delay: 3000, enabled: false };
 
-    const { result } = renderHook(() => useInterval(callback, { delay: 3000 }));
-
-    act(() => result.current.stop());
-
+    const { rerender } = renderHook(() => useInterval(callback, props));
     jest.advanceTimersByTime(3000);
 
     expect(callback).not.toBeCalled();
 
-    act(() => result.current.resume());
+    props.enabled = true;
+    rerender();
 
     jest.advanceTimersByTime(3000);
 

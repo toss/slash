@@ -1,5 +1,5 @@
 import { noop } from '@toss/utils';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { usePreservedCallback } from './usePreservedCallback';
 
 type IntervalOptions =
@@ -7,20 +7,24 @@ type IntervalOptions =
   | {
       delay: number | null;
       trailing?: boolean;
+      enabled?: boolean;
     };
+
+const getEnabled = (options: IntervalOptions) => {
+  if (typeof options === 'number' || options.enabled === undefined) return true;
+  return options.enabled;
+};
 
 /** @tossdocs-ignore */
 export function useInterval(callback: () => void, options: IntervalOptions) {
-  const [running, setRunning] = useState(true);
   const delay = typeof options === 'number' ? options : options.delay;
   const trailing = typeof options === 'number' ? undefined : options.trailing;
+  const enabled = getEnabled(options);
+
   const savedCallback = usePreservedCallback(callback ?? noop);
 
-  const stop = () => setRunning(false);
-  const resume = () => setRunning(true);
-
   useEffect(() => {
-    if (trailing === false) {
+    if (trailing === false && enabled) {
       savedCallback();
     }
   }, [trailing, savedCallback]);
@@ -33,12 +37,10 @@ export function useInterval(callback: () => void, options: IntervalOptions) {
     }
 
     function tick() {
-      if (running) savedCallback();
+      if (enabled) savedCallback();
     }
 
     const id = window.setInterval(tick, delay);
     return () => window.clearInterval(id);
-  }, [delay, savedCallback, running]);
-
-  return { intervalRunning: running, stop, resume };
+  }, [delay, savedCallback, enabled]);
 }

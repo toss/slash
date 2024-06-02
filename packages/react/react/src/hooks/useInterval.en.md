@@ -1,7 +1,7 @@
 # useInterval
 
 This hook makes it easy to use window.setInterval.
-Stop and resume interval with 'resume' and 'stop'.
+
 ```ts
 // Please enter a number or IntervalOptions
 type IntervalOptions =
@@ -11,11 +11,13 @@ type IntervalOptions =
       delay: number | null;
       // If it is specified as false, the Effect will run immediately.
       trailing?: boolean;
+      // If it is false, the effect is not performed.
+      enabled?: boolean;
     };
 ```
 
 ## Example
 
 ```ts
-const { intervalRunning, stop, continueTimer } = useInterval(updateServerTime, { delay: interval });
+useInterval(updateServerTime, { delay: interval });
 ```
