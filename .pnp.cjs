@@ -10221,6 +10221,7 @@ const RAW_RUNTIME_STATE =
           ["@babel/core", "npm:7.19.3"],\
           ["@testing-library/react", "virtual:62cb29918b2e63dff97923d985a18238631a18b918521fd9ac48de2be213715676e8b999d7ab4431ea536d1917af1465d5695ceae059c69bf4c14df5968dd6a1#npm:13.4.0"],\
           ["@toss/jest", "virtual:c6e97c02ff6957ec6d58006615a24c3ed93ca6c6a4b1c05476bae8b3a9a4c7a9b0985c4ffe860426c2c1337bd1fed494cae88a1c2351247b3ed6db832ce84d55#workspace:configs/jest"],\
+          ["@toss/react", "virtual:b5b5dfb1662b30d0d5b62f084f8b8fddd0eee56dd8737572197395ab6309e644fa76525392b1d0250ce3c07c5eeeb90901439953af682fc76f8ab38f71b8b09d#workspace:packages/react/react"],\
           ["@toss/rollup-config", "virtual:bcd0c1141064bf940376b9b2c4f8a211deda5f9c27293f215379edb7c7917846a6a1d22044c7c1b3bb8002672fb9461cbd1f53c3889b2fe3b5bfbab9a70f1ac4#workspace:configs/rollup"],\
           ["@types/babel__core", "npm:7.1.19"],\
           ["@types/jest", "npm:29.1.2"],\
