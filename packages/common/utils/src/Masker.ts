@@ -28,7 +28,7 @@ function maskName(name: string) {
 function maskExceptForEdge(text: string, edgeSize: number) {
   return (
     text.slice(0, edgeSize) +
-    text.slice(edgeSize, text.length - edgeSize).replace(/[a-zA-Z가-힇]/g, '*') +
+    text.slice(edgeSize, text.length - edgeSize).replace(/[a-zA-Z가-힣]/g, '*') +
     text.slice(text.length - edgeSize, text.length)
   );
 }
