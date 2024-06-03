@@ -1,5 +1,5 @@
 /** @tossdocs-ignore */
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/router.js';
 import { waitForRouterReady } from '../utils/waitForRouterReady';
 
 interface Options {
