@@ -30,17 +30,13 @@ export function useInterval(callback: () => void, options: IntervalOptions) {
   }, [trailing, savedCallback]);
 
   useEffect(() => {
-    if (delay === null) {
+    if (delay === null || !enabled) {
       return () => {
         return;
       };
     }
 
-    function tick() {
-      if (enabled) savedCallback();
-    }
-
-    const id = window.setInterval(tick, delay);
+    const id = window.setInterval(savedCallback, delay);
     return () => window.clearInterval(id);
   }, [delay, savedCallback, enabled]);
 }

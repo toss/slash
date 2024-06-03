@@ -63,12 +63,16 @@ describe('useInterval', () => {
   });
 
   it('Should not execute the callback when enable option is false', () => {
+    const savedInterval = Window.setinterval;
+    Window.setInterval = jest.fn();
     const callback = jest.fn();
 
     renderHook(() => useInterval(callback, { delay: 3000, enabled: false }));
+    expect(Window.setInterval).not.toBeCalled();
     jest.advanceTimersByTime(3000);
 
     expect(callback).not.toBeCalled();
+    Window.setInterval = savedInterval;
   });
 
   it('Should resume the interval When enable options become true.', () => {
