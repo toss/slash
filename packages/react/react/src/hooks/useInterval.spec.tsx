@@ -61,4 +61,34 @@ describe('useInterval', () => {
 
     expect(callback).toBeCalledTimes(1);
   });
+
+  it('Should not execute the callback when enable option is false', () => {
+    const savedInterval = Window.setinterval;
+    Window.setInterval = jest.fn();
+    const callback = jest.fn();
+
+    renderHook(() => useInterval(callback, { delay: 3000, enabled: false }));
+    expect(Window.setInterval).not.toBeCalled();
+    jest.advanceTimersByTime(3000);
+
+    expect(callback).not.toBeCalled();
+    Window.setInterval = savedInterval;
+  });
+
+  it('Should resume the interval When enable options become true.', () => {
+    const callback = jest.fn();
+    const props = { delay: 3000, enabled: false };
+
+    const { rerender } = renderHook(() => useInterval(callback, props));
+    jest.advanceTimersByTime(3000);
+
+    expect(callback).not.toBeCalled();
+
+    props.enabled = true;
+    rerender();
+
+    jest.advanceTimersByTime(3000);
+
+    expect(callback).toBeCalled();
+  });
 });
