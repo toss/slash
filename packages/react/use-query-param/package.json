@@ -1,6 +1,6 @@
 {
   "name": "@toss/use-query-param",
-  "version": "1.1.7",
+  "version": "1.3.0",
   "sideEffects": false,
   "exports": {
     ".": {
@@ -14,10 +14,16 @@
     "dist",
     "esm"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/toss/slash.git",
+    "directory": "packages/react/use-query-param"
+  },
   "scripts": {
     "build": "rm -rf dist esm && tsc -p tsconfig.build.json --declaration --emitDeclarationOnly --declarationDir dist && rollup -c rollup.config.js",
     "prepack": "yarn build",
     "test": "jest",
+    "coverage": "jest --coverage",
     "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
@@ -27,8 +33,8 @@
     "@babel/runtime": "^7.16.3",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
-    "@toss/rollup-config": "workspace:^0.1.4",
-    "@tossteam/jest": "^17",
+    "@toss/jest": "workspace:^",
+    "@toss/rollup-config": "workspace:^0.2.0",
     "@types/babel__core": "^7",
     "@types/babel__preset-env": "^7",
     "@types/concurrently": "^6",
@@ -45,7 +51,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "rollup": "^2.77.0",
-    "typescript": "4.8.3"
+    "typescript": "^5.4.5"
   },
   "peerDependencies": {
     "next": "^11.1 || ^12 || ^13",

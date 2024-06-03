@@ -34,14 +34,16 @@ export const floorToUnit = createNumberFormatterBy(Math.floor);
 
 export const roundToUnit = createNumberFormatterBy(Math.round);
 
-export function formatToKoreanNumber(value: number, options: { floorUnit?: number; formatAllDigits?: boolean } = {}) {
-  const flooredVal = floorToUnit(value, options.floorUnit || 1);
-
-  if (flooredVal === 0) {
+export function formatToKoreanNumber(
+  value: number,
+  options: { floorUnit?: number; ceilUnit?: number; formatAllDigits?: boolean } = {},
+) {
+  const unit = options.floorUnit !== undefined ? floorToUnit(value, options.floorUnit || 1) : ceilToUnit(value, options.ceilUnit || 1);
+  if(unit === 0){
     return '0';
   }
-
-  return chunk(flooredVal, 4)
+  
+  return chunk(unit, 4)
     .reduce((prevFormatted, currChunkNum, index) => {
       if (currChunkNum === 0) {
         return prevFormatted;
@@ -92,11 +94,15 @@ export function decommaizeNumber(numStr: string) {
 }
 
 export function formatPhoneNumber(phoneNumber: string) {
-  const isSeoulNumber = phoneNumber.startsWith('02');
   // 서울 국번(02)인 경우에만 지역번호가 2자리입니다.
-  const areaCodeEndIndex = isSeoulNumber ? 2 : 3;
+  const isSeoulNumber = phoneNumber.startsWith('02');
 
-  // 10자리 전화번호 (또는 서울인 경우, 9자리 전화번호)에 대응하기 위해서
+  // 12자리 전화번호는 앞자리가 4개입니다.
+  const is12Number = phoneNumber.length === 12;
+
+  const areaCodeEndIndex = isSeoulNumber ? 2 : is12Number ? 4 : 3;
+
+  // 9 ~ 12자리 전화번호에 대응하기 위해서
   // [0:areaCodeEndIndex], [areaCodeEndIndex:length-4], [length-4:length] 형식으로 나누고 join합니다.
   return [
     phoneNumber.slice(0, areaCodeEndIndex),

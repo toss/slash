@@ -1,6 +1,6 @@
 {
   "name": "@toss/emotion-utils",
-  "version": "1.1.10",
+  "version": "1.2.0",
   "sideEffects": false,
   "exports": {
     ".": {
@@ -14,16 +14,22 @@
     "dist",
     "esm"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/toss/slash.git",
+    "directory": "packages/react/emotion-utils"
+  },
   "scripts": {
     "prebuild": "rimraf dist esm",
     "build": "rm -rf dist esm && tsc -p tsconfig.build.json --declaration --emitDeclarationOnly --declarationDir dist && rollup -c rollup.config.js",
     "prepack": "yarn build",
     "test": "jest",
+    "coverage": "jest --coverage",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@babel/runtime": "^7.14.8",
-    "@toss/utils": "workspace:^1.4.4",
+    "@toss/utils": "workspace:^1.5.0",
     "csstype": "^3.0.9"
   },
   "devDependencies": {
@@ -36,8 +42,9 @@
     "@emotion/react": "^11.9.3",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
-    "@toss/rollup-config": "workspace:^0.1.4",
-    "@tossteam/jest": "^17",
+    "@toss/jest": "workspace:^",
+    "@toss/react": "workspace:^1.7.0",
+    "@toss/rollup-config": "workspace:^0.2.0",
     "@types/babel__core": "^7",
     "@types/jest": "^28.1.8",
     "@types/node": "^16.11.11",
@@ -52,12 +59,12 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "rollup": "^2.77.0",
-    "typescript": "4.8.3"
+    "typescript": "^5.4.5"
   },
   "peerDependencies": {
     "@emotion/react": "*",
-    "react": ">= 16 || ^18",
-    "react-dom": ">= 16 || ^18"
+    "react": "^16 || ^17 || ^18",
+    "react-dom": "^16 || ^17 || ^18"
   },
   "publishConfig": {
     "access": "public",

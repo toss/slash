@@ -1,13 +1,13 @@
 /** @tossdocs-ignore */
 /**
- * GET 파라미터로 전달되는 쿼리 스트링을 제작합니다.
- * 주의: params가 비었을 경우, 빈 문자열을 반환하지만, params에 키-값 쌍이 존재하면 `?`가 앞에 추가됩니다.
+ * Constructs a query string from the GET parameters provided.
+ * Note: If the params object is empty, an empty string is returned. However, if the params object contains key-value pairs, a `?` is prefixed.
  * @example
  * createQueryString({ a: 1, b: 2, c: '가나다' }) // '?a=1&b=2&c=%EA%B0%80%EB%82%98%EB%8B%A4',
  * createQueryString({}) // ''
- * @param  {Params} params 프로퍼티의 이름은 string이고, 값은 string | number | string[] | number[]이어야 합니다.
+ * @param  {Params} params The property names must be strings, and the values must be of type string | number | string[] | number[].
  */
-export function createQueryString(params: Record<string, any>) {
+function createQueryString(params: Record<string, any>) {
   const queryString = createSearchParamString(params);
 
   if (queryString === '') {
@@ -18,12 +18,12 @@ export function createQueryString(params: Record<string, any>) {
 }
 
 /**
- * 전달하는 object를 nilable value를 필터링하고 URLSearchParams로 파싱하고 string을 반환합니다.
+ * Filters nullable values ​​​​from the provided object and returns them as a string using URLSearchParams.
  * @example
  * createSearchParamString({ foo: 1, bar: ['a', 'b'], baz: undefined }) // foo=1&bar=a&bar=b
- * @param params query로 변환하고자 하는 object
+ * @param params params The object to convert into a query
  */
-export function createSearchParamString(params: Record<string, any>) {
+function createSearchParamString(params: Record<string, any>) {
   return (
     new URLSearchParams(
       Object.entries(params)
@@ -37,18 +37,18 @@ export function createSearchParamString(params: Record<string, any>) {
         .flat()
     )
       .toString()
-      // RFC1738 -> RFC3986 스펙에 맞게 space character를 변환합니다.
+      // Convert space characters to '%20' according to RFC3986 spec, from RFC1738.
       .replace(/\+/g, '%20')
   );
 }
 
 /**
- * URL 쿼리 문자열을 파싱하여 타입 파라미터 `Result` 형식으로 반환합니다.
- * @param [queryString=location.search] - 파싱 대상 문자열(`?foo=bar` 형태), 기본값 `location.search`
+ * Parses a URL query string and returns an object of type 'result'.
+ * @param [queryString=location.search] - The query string to parse (`?foo=bar` format), defaults to `location.search`
  * @warn
- * parseQueryString을 첫 번째 파라미터 없이 사용하는 것은 SSR unsafe합니다.
+ * Using parseQueryString without the first parameter is unsafe for SSR.
  */
-export function parseQueryString<Result = Record<string, string>>(
+function parseQueryString<Result = Record<string, string>>(
   queryString: string = typeof location !== 'undefined' ? location.search : ''
 ): Result {
   const query = queryString.trim().replace(/^[?#&]/, '');
@@ -86,7 +86,7 @@ function getQueryString<T = string>(name: string, parser?: (val: string) => T) {
   }
 }
 
-export function setQueryString(search: string, key: string, value: string) {
+function setQueryString(search: string, key: string, value: string) {
   const parsed = parseQueryString(search);
 
   return createQueryString({
@@ -98,20 +98,20 @@ export function setQueryString(search: string, key: string, value: string) {
 /**
  * @name QS
  * @description
- * queryString과 관련된 유틸리티 함수를 모아놓은 모듈입니다. `QS`는 세 유틸리티 함수들을 묶어서 export한 객체입니다.
+ * A module that bundles utility functions related to query strings. `QS` exports three utility functions.
  */
 export const QS = {
   /**
    * @name QS.create (createQueryString)
    * @description
-   * GET 파라미터로 전달되는 쿼리 스트링을 제작합니다.
+   * Constructs a query string from the provided GET parameters.
    *
-   * - 첫 번째 파라미터 Record의 key는 string이고, 값은 string | number | string[] | number[]이어야 합니다.
-   * - 주의: params가 비었을 경우, 빈 문자열을 반환하지만, params에 키-값 쌍이 존재하면 `?`가 앞에 추가됩니다.
+   * - The first parameter Record's keys must be strings, and the values can be strings, numbers, arrays of strings, or arrays of numbers.
+   * - Note: If params is empty, it returns an empty string, but if there are key-value pairs, it prefixes with a `?`.
    *
    * ```typescript
    * QS.create(
-   *   // 쿼리 파라미터로 바꿀 문자열
+   *   // The object to convert into a query parameter string
    *   obj: Record<string, string | number | string[] | number[]>
    * ): string
    * ```
@@ -124,17 +124,16 @@ export const QS = {
   /**
    * @name QS.parse (parseQueryString)
    * @description
-   * URL 쿼리 문자열을 파싱하여 타입 파라미터 `Result` 형식으로 반환합니다.
+   * Parses the URL query string and returns an object of type 'Result'.
    *
-   * - 주의: QS.parse를 첫 번째 파라미터 없이 사용하는 것은 SSR unsafe합니다.
+   * - Caution: Using QS.parse without the first parameter is unsafe for SSR.
    *
    * ```typescript
    * QS.parse<Result = Record<string, string>>(
-   *   // 파싱할 쿼리 스트링
-   *   // @default location.search 값
+   *   // The query string to parse
+   *   // @default the value of location.search
    *   queryString: string
    * ): Result
-   * ```
    *
    * @example
    * QS.parse('?prop1=%EC%A0%95%EC%B9%98%20%ED%9B%84%EC%9B%90%EA%B8%88') // { 'prop1': '정치 후원금' }
@@ -143,11 +142,11 @@ export const QS = {
   /**
    * @name QS.get (getQueryString)
    * @description
-   * 현재 쿼리 파라미터의 값을 가져옵니다.
+   * Gets the value of the current query parameter.
    *
    * ```typescript
    * QS.get<T>(
-   *   // 가져올 쿼리 파라미터의 키
+   *   // Key of query parameters to retrieve
    *   name: string
    * ): T
    * ```
@@ -155,14 +154,14 @@ export const QS = {
   get: getQueryString,
   /**
    * @name QS.set (setQueryString)
-   * 주어진 쿼리 스트링에 새로운 값을 추가하거나, 값을 수정합니다.
+   * Adds a new value to the given query string or modifies an existing value.
    * ```typescript
    * QS.set(
-   *   // 수정할 쿼리 파라미터 문자열
+   *   // The query string to modify
    *   qs: string
-   *   // 추가할 쿼리 파라미터의 키
+   *   // The key of the query parameter to add
    *   key: string,
-   *   // 추가할 쿼리 파라미터의 값
+   *   // The value of the query parameter to add
    *   value: string
    * ): string
    * ```

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.3.0](https://github.com/toss/slash/compare/@toss/scroll-animation@1.2.6...@toss/scroll-animation@1.3.0) (2024-03-26)
+
+
+### Features
+
+* **packages:** add repository information in package.json ([#446](https://github.com/toss/slash/issues/446)) ([063cc5d](https://github.com/toss/slash/commit/063cc5d4699b1ba0dc20db3d2bb7dc673947500b))
+
+
+
+
+
 ## [1.2.5](https://github.com/toss/slash/compare/@toss/scroll-animation@1.2.4...@toss/scroll-animation@1.2.5) (2023-04-12)
 
 **Note:** Version bump only for package @toss/scroll-animation

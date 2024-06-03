@@ -1,6 +1,6 @@
 {
   "name": "@toss/recoil",
-  "version": "1.1.5",
+  "version": "1.2.0",
   "sideEffects": false,
   "exports": {
     ".": {
@@ -14,10 +14,16 @@
     "dist",
     "esm"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/toss/slash.git",
+    "directory": "packages/react/recoil"
+  },
   "scripts": {
     "build": "rm -rf dist esm && tsc -p tsconfig.build.json --declaration --emitDeclarationOnly --declarationDir dist && rollup -c rollup.config.js",
     "prepack": "yarn build",
     "test": "jest",
+    "coverage": "jest --coverage",
     "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
@@ -25,8 +31,8 @@
     "@babel/runtime": "^7.13.10",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
-    "@toss/rollup-config": "workspace:^0.1.4",
-    "@tossteam/jest": "^17",
+    "@toss/jest": "workspace:^",
+    "@toss/rollup-config": "workspace:^0.2.0",
     "@types/jest": "^28.1.8",
     "@types/node": "^14.14.41",
     "@types/react": "^18.0.21",
@@ -40,7 +46,7 @@
     "react-dom": "^18.2.0",
     "recoil": "^0.7.6",
     "rollup": "^2.77.0",
-    "typescript": "4.8.3"
+    "typescript": "^5.4.5"
   },
   "peerDependencies": {
     "react": "^16.8 || ^17 || ^18",

@@ -1,29 +1,31 @@
 /** @tossdocs-ignore */
+
 import { assert } from '@toss/assert';
 import { safeSessionStorage } from '@toss/storage';
 import { useQueryParam } from '@toss/use-query-param';
 import { QS } from '@toss/utils';
 import deepEqual from 'fast-deep-equal';
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/router.js';
 import { SetStateAction, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { useQuery } from 'react-query';
 import { Funnel, FunnelProps, Step, StepProps } from './Funnel';
-import { NonEmptyArray } from './models';
+import { StepsType } from './models';
 
 interface SetStepOptions {
   stepChangeType?: 'push' | 'replace';
   preserveQuery?: boolean;
+  query?: Record<string, any>;
 }
 
-type RouteFunnelProps<Steps extends NonEmptyArray<string>> = Omit<FunnelProps<Steps>, 'steps' | 'step'>;
+type RouteFunnelProps<Steps extends StepsType> = Omit<FunnelProps<Steps>, 'steps' | 'step'>;
 
-type FunnelComponent<Steps extends NonEmptyArray<string>> = ((props: RouteFunnelProps<Steps>) => JSX.Element) & {
+type FunnelComponent<Steps extends StepsType> = ((props: RouteFunnelProps<Steps>) => JSX.Element) & {
   Step: (props: StepProps<Steps>) => JSX.Element;
 };
 
 const DEFAULT_STEP_QUERY_KEY = 'funnel-step';
 
-export const useFunnel = <Steps extends NonEmptyArray<string>>(
+export const useFunnel = <Steps extends StepsType>(
   steps: Steps,
   options?: {
     /**
@@ -76,10 +78,11 @@ export const useFunnel = <Steps extends NonEmptyArray<string>>(
 
   const setStep = useCallback(
     (step: Steps[number], setStepOptions?: SetStepOptions) => {
-      const { preserveQuery = true } = setStepOptions ?? {};
+      const { preserveQuery = true, query = {} } = setStepOptions ?? {};
 
       const url = `${QS.create({
         ...(preserveQuery ? router.query : undefined),
+        ...query,
         [stepQueryKey]: step,
       })}`;
 
@@ -154,9 +157,9 @@ export const useFunnel = <Steps extends NonEmptyArray<string>>(
     return [FunnelComponent, state, setState] as const;
   }
 
-  return Object.assign([FunnelComponent, setStep] as const, { withState }) as readonly [
+  return Object.assign([FunnelComponent, setStep] as const, { withState }) as unknown as readonly [
     FunnelComponent<Steps>,
-    (step: Steps[number], options?: SetStepOptions) => void
+    (step: Steps[number], options?: SetStepOptions) => Promise<void>
   ] & {
     withState: <StateExcludeStep extends Record<string, unknown> & { step?: never }>(
       initialState: StateExcludeStep

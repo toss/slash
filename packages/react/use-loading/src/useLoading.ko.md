@@ -29,7 +29,7 @@ function postConfirmation(data: Data): Promise<Result> {
 function ConfirmButton({ data }: { data: Data }) {
   const [loading, startTransition] = useLoading();
 
-  const handleSubmit = useCallback(() => {
+  const handleSubmit = useCallback(async () => {
     const result = await startTransition(postConfirmation(data));
     router.push(`/success?id=${result.id}`);
   }, [call]);

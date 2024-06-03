@@ -1,38 +1,36 @@
 import { render } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import { ClickArea } from '.';
 
 describe('ClickArea', () => {
-  it('정상적으로 rendering 된다', () => {
-    const result = render(<ClickArea enabled={true}>click</ClickArea>);
+  const ENABLED_CLASS_NAME = 'tossteam-react__click-area__enabled';
 
-    expect(result.getByText('click')).toBeInTheDocument();
-  });
-  it('enabled 가 true일 때 classname에 tossteam-react__click-area__enabled가 포함된다', () => {
-    const result = render(<ClickArea enabled={true}>click</ClickArea>);
-
-    expect(result.getAllByRole('button')[0]).toHaveClass('tossteam-react__click-area__enabled');
+  it('should render correctly', () => {
+    const result = render(<ClickArea>click</ClickArea>);
+    expect(result.getByRole('button')).toHaveTextContent('click');
   });
 
-  it('enabled 가 false 때 classname에 tossteam-react__click-area__enabled가 포함되지 않는다', () => {
+  it('should apply enabled class when enabled', () => {
+    const result = render(<ClickArea enabled>click</ClickArea>);
+    expect(result.getByRole('button')).toHaveClass(ENABLED_CLASS_NAME);
+  });
+
+  it('should not apply enabled class when not enabled', () => {
     const result = render(<ClickArea enabled={false}>click</ClickArea>);
-
-    expect(result.getAllByRole('button')[0]).not.toHaveClass('tossteam-react__click-area__enabled');
+    expect(result.getByRole('button')).not.toHaveClass(ENABLED_CLASS_NAME);
   });
 
-  it('enabled 가 true일 때 onClick 이벤트가 발생한다', () => {
+  it('should call onClick when enabled and clicked', async () => {
+    const user = userEvent.setup();
     const onClick = jest.fn();
-    const result = render(
-      <ClickArea enabled={true} onClick={onClick}>
-        click
-      </ClickArea>
-    );
+    const result = render(<ClickArea onClick={onClick}>click</ClickArea>);
 
-    result.getAllByRole('button')[0].click();
-
-    expect(onClick).toHaveBeenCalled();
+    await user.click(result.getByRole('button'));
+    expect(onClick).toHaveBeenCalledTimes(1);
   });
 
-  it('enabled 가 false일 때 onClick 이벤트가 발생하지 않는다', () => {
+  it('should not call onClick when not enabled and clicked', async () => {
+    const user = userEvent.setup();
     const onClick = jest.fn();
     const result = render(
       <ClickArea enabled={false} onClick={onClick}>
@@ -40,8 +38,7 @@ describe('ClickArea', () => {
       </ClickArea>
     );
 
-    result.getAllByRole('button')[0].click();
-
+    await user.click(result.getByRole('button'));
     expect(onClick).not.toHaveBeenCalled();
   });
 });

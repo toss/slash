@@ -6,7 +6,7 @@ import { RedirectionBoundary } from './index';
 describe('RedirectionBoundary', () => {
   beforeEach(() => jest.resetAllMocks());
 
-  it(`throw 된 것이 없으면 children을 렌더한다`, () => {
+  it('should render children if no error is thrown', () => {
     const result = render(
       <RedirectionBoundary>
         <Throwable />
@@ -16,7 +16,7 @@ describe('RedirectionBoundary', () => {
     expect(result.getByText('Rendered')).toBeInTheDocument();
   });
 
-  it(`throw 된 것이 Redirection이 아니면 ignore 한다`, () => {
+  it('should ignore errors that are not of type Redirection', () => {
     const renderFallback = jest.fn(() => null);
 
     render(
@@ -30,13 +30,13 @@ describe('RedirectionBoundary', () => {
     expect(renderFallback).toBeCalled();
   });
 
-  it(`throw 된 RedirectionBoundary에 onRedirect 값이 있으면 호출한다`, () => {
+  it('should call the provided onRedirect when a Redirection error is thrown', () => {
     const onRedirect = jest.fn(() => null);
     const onRedirectBoundary = jest.fn(() => null);
 
     render(
       <RedirectionBoundary onRedirect={onRedirectBoundary}>
-        <Throwable error={Redirection.of({ destination: '/unicorn-land', onRedirect })} />
+        <Throwable error={Redirection.of({ destination: '/unicorn-land' })} />
       </RedirectionBoundary>
     );
 
@@ -44,28 +44,28 @@ describe('RedirectionBoundary', () => {
     expect(onRedirectBoundary).toBeCalled();
   });
 
-  it(`throw 된 RedirectionBoundary에 onRedirect 값이 없으면 throw 된 Redirection의 onRedirect를 호출한다`, async () => {
+  it('should call the Redirections onRedirect when no onRedirect prop is provided to RedirectionBoundary', async () => {
     const onRedirect = jest.fn(() => null);
 
     render(
-      <RedirectionBoundary>
-        <Throwable error={Redirection.of({ destination: '/unicorn-land', onRedirect })} />
+      <RedirectionBoundary onRedirect={onRedirect}>
+        <Throwable error={Redirection.of({ destination: '/unicorn-land' })} />
       </RedirectionBoundary>
     );
 
     waitFor(() => expect(onRedirect).toBeCalled());
   });
 
-  it(`throw 된 RedirectionBoundary에 onRedirect 값이 없고 throw 된 Redirection의 onRedirect도 없으면 onRedirectFallback을 호출한다`, async () => {
-    const onRedirectFallback = jest.fn(() => null);
+  it('should call onRedirect when no onRedirect prop is provided, and the thrown Redirection error does not have an onRedirect method', async () => {
+    const onRedirect = jest.fn(() => null);
 
     render(
-      <RedirectionBoundary onRedirectFallback={onRedirectFallback}>
+      <RedirectionBoundary onRedirect={onRedirect}>
         <Throwable error={Redirection.of({ destination: '/unicorn-land' })} />
       </RedirectionBoundary>
     );
 
-    await waitFor(() => expect(onRedirectFallback).toBeCalled());
+    await waitFor(() => expect(onRedirect).toBeCalled());
   });
 });
 
