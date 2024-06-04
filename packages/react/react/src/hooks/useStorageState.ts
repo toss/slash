@@ -91,7 +91,7 @@ export function useStorageState<T>(
   }, [defaultValue, getValue]);
 
   useEffect(() => {
-    if (defaultValue) {
+    if (defaultValue != null) {
       set(getValue());
     }
   }, [set, getValue, defaultValue]);
