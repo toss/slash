@@ -9,6 +9,14 @@ Slash 라이브러리는 [토스](https://toss.im)에서 사용하는 TypeScript
 
 [Slash 라이브러리 공식 문서](https://slash.page/ko)
 
+## 프로젝트 상태
+
+- Slash는 레거시 프로젝트이고, 현재 유지보수되고 있지 않습니다.
+- Slash의 여러 유용한 기능들은 [es-hangul](https://github.com/toss/es-hangul), [es-toolkit](https://github.com/toss/es-toolkit)과 같은 별도의 패키지들로 분리될 예정이며, 현재 개발 진행 중입니다.
+  - es-hangul은 쉽게 한글을 다룰 수 있도록 돕는 JavaScript 라이브러리입니다.
+  - es-toolkit은 높은 성능과 작은 번들 사이즈, 강력한 타입을 자랑하는 현대적인 JavaScript 유틸리티 라이브러리입니다.
+- Slash 기여를 원하시는 분들은 Slash가 아닌 위 패키지들에 기여를 부탁드립니다.
+
 ## 기여하기
 
 Slash 라이브러리에는 토스 팀원이 아니더라도 누구나 기여할 수 있어요. Slash 라이브러리에 기여하고 싶다고 생각하셨다면 아래 문서를 참고해주세요.

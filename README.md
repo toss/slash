@@ -18,6 +18,14 @@ Slash is a collection of TypeScript/JavaScript packages used in [Toss](https://t
 
 [Check out our Slash libraries docs.](https://slash.page)
 
+## Project Status
+
+- Slash is a legacy project and is not currently being maintained.
+- Many of Slash's useful features will be separated into separate packages, such as [es-hangul](https://github.com/toss/es-hangul) and [es-toolkit](https://github.com/toss/es-toolkit), which are currently under development.
+  - es-hangul is a JavaScript library that makes it easy to work with Hangul.
+  - es-toolkit is a modern JavaScript utility library with high performance, small bundle size, and strong types.
+- If you would like to contribute to Slash, please contribute to these packages, not Slash.
+
 ## Contributing
 
 We welcome contribution from everyone in the community. Read below for detailed contribution guide.
