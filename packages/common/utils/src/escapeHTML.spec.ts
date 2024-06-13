@@ -1,19 +1,19 @@
 import { escapeHTML } from './escapeHTML';
 
-describe('escapeHTML은', () => {
-  it('텍스트에 포함된 특수문자를 치환하여 반환합니다.', () => {
-    const text1 = "'특수&문자'";
-    expect(escapeHTML(text1)).toBe('&#39;특수&amp;문자&#39;');
+describe('escapeHTML', () => {
+  it('should replace special characters in the text and return it', () => {
+    const REPLACED_TEXT = "'Tom&Jerry'";
+    expect(escapeHTML(REPLACED_TEXT)).toBe('&#39;Tom&amp;Jerry&#39;');
 
-    const text2 = '<테스트>';
-    expect(escapeHTML(text2)).toBe('&lt;테스트&gt;');
+    const REPLACED_TEXT2 = '<Test>';
+    expect(escapeHTML(REPLACED_TEXT2)).toBe('&lt;Test&gt;');
 
-    const text3 = '"테스트"';
-    expect(escapeHTML(text3)).toBe('&quot;테스트&quot;');
+    const REPLACED_TEXT3 = '"Test"';
+    expect(escapeHTML(REPLACED_TEXT3)).toBe('&quot;Test&quot;');
   });
 
-  it('텍스트에 특수문자가 포함되지 않았으면 텍스트를 그대로 반환합니다.', () => {
-    const text = '테스트';
-    expect(escapeHTML(text)).toBe('테스트');
+  it('should return the text as it is if there are no special characters', () => {
+    const REPLACED_TEXT = 'Test';
+    expect(escapeHTML(REPLACED_TEXT)).toBe('Test');
   });
 });

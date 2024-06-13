@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 const path = require('path');
 const babel = require('@rollup/plugin-babel').default;
 const commonjs = require('@rollup/plugin-commonjs');
@@ -5,7 +6,7 @@ const json = require('@rollup/plugin-json');
 const resolve = require('@rollup/plugin-node-resolve').default;
 const builtins = require('builtin-modules');
 
-exports.generateRollupConfig = function generateRollupConfig({ packageDir, entrypoints: _entrypoints }) {
+exports.generateRollupConfig = function generateRollupConfig({ packageDir }) {
   const packageJSON = require(path.join(packageDir, 'package.json'));
 
   if (packageJSON.exports == null) {
@@ -15,7 +16,9 @@ exports.generateRollupConfig = function generateRollupConfig({ packageDir, entry
   const entrypoints = Object.keys(packageJSON.exports).filter(x => x !== './package.json');
 
   const external = pkg => {
-    const externals = [...Object.keys({ ...packageJSON.dependencies, ...packageJSON.peerDependencies }), ...builtins];
+    const dependencies = Object.keys(packageJSON.dependencies || {});
+    const peerDependencies = Object.keys(packageJSON.peerDependencies || {});
+    const externals = [...dependencies, ...peerDependencies, ...builtins];
 
     return externals.some(externalPkg => {
       return pkg.startsWith(externalPkg);
@@ -26,13 +29,20 @@ exports.generateRollupConfig = function generateRollupConfig({ packageDir, entry
 
   function buildJS(input, output, format) {
     const isESMFormat = format === 'es';
+
     return {
       input,
       external,
       output: [
         {
           format,
-          ...(isESMFormat ? { dir: path.dirname(output), entryFileNames: `[name]${path.extname(output)}` } : { file: output }),
+          ...(isESMFormat
+            ? {
+                dir: path.dirname(output),
+                entryFileNames: `[name]${path.extname(output)}`,
+                preserveModulesRoot: isESMFormat ? path.dirname(input) : undefined,
+              }
+            : { file: output }),
         },
       ],
       plugins: [
@@ -71,10 +81,7 @@ exports.generateRollupConfig = function generateRollupConfig({ packageDir, entry
 
     const esmEntrypoint = path.resolve(
       packageDir,
-      ensure(
-        handleESMEntrypoint(packageJSON.exports, entrypoint),
-        'ESM entrypoint not found'
-      )
+      ensure(handleESMEntrypoint(packageJSON.exports, entrypoint), 'ESM entrypoint not found')
     );
     const esmOutput = path.resolve(
       packageDir,
@@ -108,8 +115,6 @@ function handleESMEntrypoint(exports = {}, entrypoint) {
 
   return undefined;
 }
-
-
 
 function ensure(value, message) {
   if (value == null) {

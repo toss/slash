@@ -1,5 +1,5 @@
 /** @tossdocs-ignore */
-import Router from 'next/router';
+import Router from 'next/router.js';
 
 export function waitForRouterReady() {
   return new Promise<void>(resolve => {

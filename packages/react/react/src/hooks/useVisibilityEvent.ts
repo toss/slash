@@ -1,15 +1,13 @@
-import { useEffect, useCallback } from 'react';
+import { useEffect } from 'react';
+import { usePreservedCallback } from './usePreservedCallback';
 
 type VisibilityState = Document['visibilityState'];
 
-/**
- * @description
- * document의 visibilitychange 이벤트가 발생하면 callback 함수를 호출합니다.
- */
-export default function useVisibilityEvent(callback: (visibilityState: VisibilityState) => void) {
-  const handleVisibilityChange = useCallback(() => {
+/** @tossdocs-ignore */
+export function useVisibilityEvent(callback: (visibilityState: VisibilityState) => void) {
+  const handleVisibilityChange = usePreservedCallback(() => {
     callback(document.visibilityState);
-  }, [callback]);
+  });
 
   useEffect(() => {
     document.addEventListener('visibilitychange', handleVisibilityChange);

@@ -130,6 +130,36 @@ describe('useLocalStorageState는', () => {
 
     expect(result.current[0]).toEqual({ foo: 'baz' });
   });
+
+  it('setState를 했을 때 해당 키를 의존하는 useStorageState의 값이 동기화된다.', () => {
+    const key = '@@render-synchronization';
+    const storage = createMockStorage();
+
+    const renderA = () => renderHook(() => useStorageState<T>(key, { storage }));
+    const renderB = () => renderHook(() => useStorageState<T>(key, { storage }));
+
+    const mockReturnValue = { foo: 'bar' };
+
+    storage.get.mockReturnValue(JSON.stringify(mockReturnValue));
+
+    const { result: resultA } = renderA();
+    const { result: resultB } = renderB();
+
+    expect(resultA.current[0]).toEqual(mockReturnValue);
+    expect(resultB.current[0]).toEqual(mockReturnValue);
+
+    const valueToSet = { foo: 'baz' };
+
+    act(() => {
+      const [, set] = resultA.current;
+
+      storage.get.mockReturnValue(JSON.stringify(valueToSet));
+      set(valueToSet);
+    });
+
+    expect(resultA.current[0]).toEqual(valueToSet);
+    expect(resultB.current[0]).toEqual(valueToSet);
+  });
 });
 
 function createMockStorage() {
@@ -137,6 +167,7 @@ function createMockStorage() {
     get: jest.fn(),
     set: jest.fn(),
     remove: jest.fn(),
+    clear: jest.fn(),
   };
 }
 

@@ -1,29 +1,31 @@
 /** @tossdocs-ignore */
+
 import { assert } from '@toss/assert';
 import { safeSessionStorage } from '@toss/storage';
 import { useQueryParam } from '@toss/use-query-param';
 import { QS } from '@toss/utils';
 import deepEqual from 'fast-deep-equal';
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/router.js';
 import { SetStateAction, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { useQuery } from 'react-query';
 import { Funnel, FunnelProps, Step, StepProps } from './Funnel';
-import { NonEmptyArray } from './models';
+import { StepsType } from './models';
 
 interface SetStepOptions {
   stepChangeType?: 'push' | 'replace';
   preserveQuery?: boolean;
+  query?: Record<string, any>;
 }
 
-type RouteFunnelProps<Steps extends NonEmptyArray<string>> = Omit<FunnelProps<Steps>, 'steps' | 'step'>;
+type RouteFunnelProps<Steps extends StepsType> = Omit<FunnelProps<Steps>, 'steps' | 'step'>;
 
-type FunnelComponent<Steps extends NonEmptyArray<string>> = ((props: RouteFunnelProps<Steps>) => JSX.Element) & {
+type FunnelComponent<Steps extends StepsType> = ((props: RouteFunnelProps<Steps>) => JSX.Element) & {
   Step: (props: StepProps<Steps>) => JSX.Element;
 };
 
 const DEFAULT_STEP_QUERY_KEY = 'funnel-step';
 
-export const useFunnel = <Steps extends NonEmptyArray<string>>(
+export const useFunnel = <Steps extends StepsType>(
   steps: Steps,
   options?: {
     /**
@@ -38,14 +40,14 @@ export const useFunnel = <Steps extends NonEmptyArray<string>>(
   withState: <StateExcludeStep extends Record<string, unknown> & { step?: never }>(
     initialState: StateExcludeStep
   ) => [
-      FunnelComponent<Steps>,
-      StateExcludeStep,
-      (
-        next:
-          | Partial<StateExcludeStep & { step: Steps[number] }>
-          | ((next: Partial<StateExcludeStep & { step: Steps[number] }>) => StateExcludeStep & { step: Steps[number] })
-      ) => void
-    ];
+    FunnelComponent<Steps>,
+    StateExcludeStep,
+    (
+      next:
+        | Partial<StateExcludeStep & { step: Steps[number] }>
+        | ((next: Partial<StateExcludeStep & { step: Steps[number] }>) => StateExcludeStep & { step: Steps[number] })
+    ) => void
+  ];
 } => {
   const router = useRouter();
   const stepQueryKey = options?.stepQueryKey ?? DEFAULT_STEP_QUERY_KEY;
@@ -76,10 +78,11 @@ export const useFunnel = <Steps extends NonEmptyArray<string>>(
 
   const setStep = useCallback(
     (step: Steps[number], setStepOptions?: SetStepOptions) => {
-      const { preserveQuery = true } = setStepOptions ?? {};
+      const { preserveQuery = true, query = {} } = setStepOptions ?? {};
 
       const url = `${QS.create({
         ...(preserveQuery ? router.query : undefined),
+        ...query,
         [stepQueryKey]: step,
       })}`;
 
@@ -154,21 +157,21 @@ export const useFunnel = <Steps extends NonEmptyArray<string>>(
     return [FunnelComponent, state, setState] as const;
   }
 
-  return Object.assign([FunnelComponent, setStep] as const, { withState }) as readonly [
+  return Object.assign([FunnelComponent, setStep] as const, { withState }) as unknown as readonly [
     FunnelComponent<Steps>,
-    (step: Steps[number], options?: SetStepOptions) => void
+    (step: Steps[number], options?: SetStepOptions) => Promise<void>
   ] & {
     withState: <StateExcludeStep extends Record<string, unknown> & { step?: never }>(
       initialState: StateExcludeStep
     ) => [
-        FunnelComponent<Steps>,
-        StateExcludeStep,
-        (
-          next:
-            | Partial<StateExcludeStep & { step: Steps[number] }>
-            | ((next: Partial<StateExcludeStep & { step: Steps[number] }>) => StateExcludeStep & { step: Steps[number] })
-        ) => void
-      ];
+      FunnelComponent<Steps>,
+      StateExcludeStep,
+      (
+        next:
+          | Partial<StateExcludeStep & { step: Steps[number] }>
+          | ((next: Partial<StateExcludeStep & { step: Steps[number] }>) => StateExcludeStep & { step: Steps[number] })
+      ) => void
+    ];
   };
 };
 
@@ -178,12 +181,8 @@ function createFunnelStateId(id: string): FunnelStateId {
   return `use-funnel-state__${id}`;
 }
 
-/*
+/**
  * NOTE: 이후 Secure Storage 등 다른 스토리지를 사용하도록 스펙이 변경될 수 있으므로, Asynchronous 함수로 만듭니다.
- *
- * @param funnelStateId
- * @param storage
- * @returns
  */
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 function createFunnelStorage<T>(funnelStateId: FunnelStateId, storageType = 'sessionStorage'): FunnelStorage<T> {

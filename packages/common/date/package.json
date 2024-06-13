@@ -1,6 +1,6 @@
 {
   "name": "@toss/date",
-  "version": "1.0.1",
+  "version": "1.2.0",
   "sideEffects": false,
   "exports": {
     ".": {
@@ -10,10 +10,20 @@
     "./package.json": "./package.json"
   },
   "main": "./src/index.ts",
+  "files": [
+    "dist",
+    "esm"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/toss/slash.git",
+    "directory": "packages/common/date"
+  },
   "scripts": {
-    "build": "rm -rf dist esm && tsc --declaration --emitDeclarationOnly --declarationDir dist && rollup -c rollup.config.js",
+    "build": "rm -rf dist esm && tsc -p tsconfig.build.json --declaration --emitDeclarationOnly --declarationDir dist && rollup -c rollup.config.js",
     "prepack": "yarn build",
     "test": "jest -c jest.config.js && tsc --noEmit",
+    "coverage": "jest --coverage",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
@@ -22,8 +32,8 @@
   "devDependencies": {
     "@babel/core": "^7",
     "@babel/runtime": "^7.13.10",
-    "@slash/rollup-config": "workspace:^",
-    "@tossteam/jest": "^17",
+    "@toss/jest": "workspace:^",
+    "@toss/rollup-config": "workspace:^0.2.0",
     "@types/babel__core": "^7",
     "@types/jest": "^28.1.8",
     "@types/node": "^18.8.2",
@@ -34,7 +44,7 @@
     "jest-mock": "^27.4.2",
     "rollup": "^2.77.0",
     "ts-node": "^10.9.1",
-    "typescript": "4.8.3"
+    "typescript": "^5.4.5"
   },
   "publishConfig": {
     "access": "public",
@@ -51,5 +61,5 @@
     "module": "./esm/index.mjs",
     "types": "./dist/index.d.ts"
   },
-  "gitHead": "18cb6253ca2131397da2c209932a2413d9cd93c1"
+  "gitHead": "6a4434621e29e014d537ae3dc0f026364b893a69"
 }

@@ -1,6 +1,6 @@
+import { act, render, renderHook } from '@testing-library/react';
 import { useState } from 'react';
-import { renderHook, render, act } from '@testing-library/react';
-import useTimeout from './useTimeout';
+import { useTimeout } from './useTimeout';
 
 jest.useFakeTimers();
 

@@ -1,5 +1,5 @@
 import { createTypedLocalStorage, createTypedSessionStorage } from './factory';
-import { TypedStorage, NumberTypedStorage } from './storages';
+import { NumberTypedStorage, TypedStorage } from './storages';
 
 describe('createTypedLocalStorage는', () => {
   describe('initial value가 number인 경우', () => {
@@ -18,10 +18,6 @@ describe('createTypedLocalStorage는', () => {
 });
 
 describe('createTypedSessionStorage는', () => {
-  it('NumberTypedStorage의 instance를 리턴한다.', () => {
-    expect(createTypedSessionStorage('number-type-value', { initialValue: 0 })).toBeInstanceOf(NumberTypedStorage);
-  });
-
   describe('initial value가 number인 경우', () => {
     it('NumberTypedStorage의 instance를 리턴한다.', () => {
       expect(createTypedSessionStorage('number-type-value', { initialValue: 0 })).toBeInstanceOf(NumberTypedStorage);

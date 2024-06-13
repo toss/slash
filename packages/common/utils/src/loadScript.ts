@@ -1,15 +1,6 @@
+/** @tossdocs-ignore */
 import { isServer } from './device/index';
 
-/**
- * @name loadScript
- * @description
- * `source` 로 주어진 URL의 스크립트를 동적으로 로드합니다.
- * ```typescript
- * loadScript(source: string): Promise<void>
- * ```
- * @example
- * loadScript('https://example.com/script.js')
- */
 function loadScript(source: string) {
   if (isServer()) {
     return Promise.resolve();
@@ -32,5 +23,7 @@ function loadScript(source: string) {
     script.addEventListener('load', resolve);
   });
 }
+
+export { loadScript };
 
 export default loadScript;

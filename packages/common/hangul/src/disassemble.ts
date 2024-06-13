@@ -1,25 +1,11 @@
-import { disassembleCompleteHangulCharacter } from './disassembleCompleteHangulCharacter';
+/** @tossdocs-ignore */
 import { DISASSEMBLED_CONSONANTS_BY_CONSONANT, DISASSEMBLED_VOWELS_BY_VOWEL } from './constants';
+import { disassembleCompleteHangulCharacter } from './disassembleCompleteHangulCharacter';
 
 /**
- * @name disassembleHangulToGroups
- * @description
- * 한글 문자열을 글자별로 초성/중성/종성 단위로 완전히 분리합니다.
- * `ㄵ`와 같은 겹자음은 `'ㄴㅈ'`와 같이 풀고, `ㅘ`와 같은 겹모음은 `'ㅗㅏ'`와 같이 풉니다.
- *
- * 자세한 예시는 아래 Example을 참고하세요.
- *
- * ```typescript
- * disassembleHangulToGroups(
- *   // 분리할 한글 문자열
- *   str: string
- * ): string[][]
- * ```
- * @example
- * disassembleHangulToGroups('값')      // [['ㄱ', 'ㅏ', 'ㅂ', 'ㅅ']]
- * disassembleHangulToGroups('토스 짱')  // [['ㅌ', 'ㅗ'], ['ㅅ', 'ㅡ'], [' '], ['ㅉ', 'ㅏ', 'ㅇ']]
- * disassembleHangulToGroups('ㅘ')      // [['ㅗ', 'ㅏ']]
- * disassembleHangulToGroups('ㄵ')      // [['ㄴ', 'ㅈ']]
+ * This method has been moved to the es-hangul library.
+ * Please use es-hangul for this functionality going forward.
+ * @deprecated This feature is now available in the es-hangul package.
  */
 export function disassembleHangulToGroups(str: string) {
   /*
@@ -60,23 +46,9 @@ export function disassembleHangulToGroups(str: string) {
 }
 
 /**
- * @name disassembleHangul
- * @description
- * 한글 문자열을 글자별로 초성/중성/종성 단위로 완전히 분리하여, 하나의 문자열로 만듭니다.
- *
- * 자세한 예시는 아래 Example을 참고하세요.
- *
- * ```typescript
- * disassembleHangul(
- *   // 분리할 한글 문자열
- *   str: string
- * ): string
- * ```
- * @example
- * disassembleHangulToGroups('값')         // 'ㄱㅏㅂㅅ'
- * disassembleHangulToGroups('값이 비싸다')  // 'ㄱㅏㅂㅅㅇㅣ ㅂㅣㅆㅏㄷㅏ'
- * disassembleHangulToGroups('ㅘ')         // 'ㅗㅏ'
- * disassembleHangulToGroups('ㄵ')         // 'ㄴㅈ'
+ * This method has been moved to the es-hangul library.
+ * Please use es-hangul for this functionality going forward.
+ * @deprecated This feature is now available in the es-hangul package.
  */
 export function disassembleHangul(str: string) {
   return disassembleHangulToGroups(str).reduce((hanguls, disassembleds) => `${hanguls}${disassembleds.join('')}`, '');

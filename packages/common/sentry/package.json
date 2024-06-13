@@ -1,16 +1,26 @@
 {
   "name": "@toss/sentry",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "sideEffects": false,
   "exports": {
     ".": "./src/index.node.ts",
     "./nextjs": "./src/index.nextjs.ts"
   },
   "main": "./src/index.node.ts",
+  "files": [
+    "dist",
+    "esm"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/toss/slash.git",
+    "directory": "packages/common/sentry"
+  },
   "scripts": {
     "build": "concurrently \"tsc -p tsconfig.json\" \"tsc -p tsconfig.esm.json\"",
     "prepack": "yarn build",
     "test": "jest",
+    "coverage": "jest --coverage",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
@@ -23,14 +33,14 @@
   "devDependencies": {
     "@babel/core": "^7",
     "@babel/runtime": "^7.13.10",
-    "@tossteam/jest": "^17",
+    "@toss/jest": "workspace:^",
     "@types/jest": "^28.1.8",
     "@types/node": "^14.14.41",
     "babel-jest": "^29",
     "concurrently": "^4.1.0",
     "jest": "^29.0.1",
     "jest-environment-jsdom": "^29",
-    "typescript": "4.8.3",
+    "typescript": "^5.4.5",
     "wait-for-expect": "^3.0.2"
   },
   "peerDependencies": {
@@ -47,7 +57,7 @@
   },
   "publishConfig": {
     "access": "public",
-    "browser": "esm/index.browser.mjs",
+    "browser": "./esm/index.browser.mjs",
     "exports": {
       ".": {
         "require": "./dist/index.node.js",
@@ -60,11 +70,16 @@
         "types": "./dist/index.nextjs.d.ts",
         "browser": "./esm/index.browser.mjs",
         "import": "./esm/index.nextjs.mjs"
+      },
+      "./testing": {
+        "require": "./dist/testing/index.js",
+        "types": "./dist/testing/index.d.ts",
+        "import": "./esm/testing/index.mjs"
       }
     },
-    "main": "dist/index.node.js",
-    "module": "esm/index.node.mjs",
-    "types": "dist/index.node.d.ts"
+    "main": "./dist/index.node.js",
+    "module": "./esm/index.node.mjs",
+    "types": "./dist/index.node.d.ts"
   },
-  "gitHead": "18cb6253ca2131397da2c209932a2413d9cd93c1"
+  "gitHead": "a71b5aeeb766e24d776edb8efacd036b56181dde"
 }

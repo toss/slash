@@ -1,4 +1,4 @@
-import { useRef, useCallback, useEffect } from 'react';
+import { useCallback, useEffect, useRef } from 'react';
 
 /* Possible politeness levels. */
 type AriaLivePoliteness = 'off' | 'polite' | 'assertive';
@@ -32,24 +32,15 @@ function removeLiveElement() {
 interface AnnounceOptions {
   message: string;
   politeness?: AriaLivePoliteness;
-  /*
+  /**
    * 몇 milliseconds 이후에 Announcer Element를 제거할지 시간을 설정합니다.
    * 단, Announcer Element가 100ms 이후에 삽입되므로, 대기시간은 100ms 이후에 적용됩니다.
    */
   duration?: number;
 }
 
-/**
- * @description
- * 스크린리더 사용자에게 메시지를 표시합니다.
- *
- * @example
- * const { announce, clear } = useLiveAnnouncer();
- *
- * announce('안녕 세상!');
- * clear();
- */
-export default function useLiveAnnouncer() {
+/** @tossdocs-ignore */
+export function useLiveAnnouncer() {
   const previousTimeout = useRef<number>();
 
   const clear = useCallback(() => {

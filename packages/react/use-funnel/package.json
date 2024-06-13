@@ -1,6 +1,6 @@
 {
   "name": "@toss/use-funnel",
-  "version": "1.0.1",
+  "version": "1.4.0",
   "sideEffects": false,
   "exports": {
     ".": {
@@ -10,18 +10,28 @@
     "./package.json": "./package.json"
   },
   "main": "./src/index.ts",
+  "files": [
+    "dist",
+    "esm"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/toss/slash.git",
+    "directory": "packages/react/use-funnel"
+  },
   "scripts": {
-    "build": "rm -rf dist esm && tsc --declaration --emitDeclarationOnly --declarationDir dist && rollup -c rollup.config.js",
+    "build": "rm -rf dist esm && tsc -p tsconfig.build.json --declaration --emitDeclarationOnly --declarationDir dist && rollup -c rollup.config.js",
     "prepack": "yarn build",
     "test": "jest",
+    "coverage": "jest --coverage",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@toss/assert": "workspace:^1.0.1",
-    "@toss/react": "workspace:^1.1.0",
-    "@toss/storage": "workspace:^1.0.1",
-    "@toss/use-query-param": "workspace:^1.0.1",
-    "@toss/utils": "workspace:^1.0.1",
+    "@toss/assert": "workspace:^1.2.0",
+    "@toss/react": "workspace:^1.7.0",
+    "@toss/storage": "workspace:^1.4.0",
+    "@toss/use-query-param": "workspace:^1.3.0",
+    "@toss/utils": "workspace:^1.5.0",
     "fast-deep-equal": "^3.1.3"
   },
   "devDependencies": {
@@ -30,13 +40,13 @@
     "@babel/preset-react": "^7.14.5",
     "@babel/preset-typescript": "^7.16.0",
     "@babel/runtime": "^7.13.10",
-    "@slash/rollup-config": "workspace:^",
     "@testing-library/dom": "^8.13.0",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
     "@testing-library/react-hooks": "^5.1.0",
     "@testing-library/user-event": "^14.1.1",
-    "@tossteam/jest": "^17",
+    "@toss/jest": "workspace:^",
+    "@toss/rollup-config": "workspace:^0.2.0",
     "@types/babel__core": "^7",
     "@types/babel__preset-env": "^7",
     "@types/jest": "^28.1.8",
@@ -56,12 +66,12 @@
     "react-dom": "^18.2.0",
     "react-query": "^3.39.1",
     "rollup": "^2.77.0",
-    "typescript": "4.8.3"
+    "typescript": "^5.4.5"
   },
   "peerDependencies": {
-    "next": ">=11",
-    "react": "^16.0.0 || ^17.0.0",
-    "react-dom": "^16.0.0 || ^17.0.0",
+    "next": "^11.1 || ^12 || ^13",
+    "react": "^16.8 || ^17 || ^18",
+    "react-dom": "^16.8 || ^17 || ^18",
     "react-query": "^3"
   },
   "publishConfig": {
@@ -79,5 +89,5 @@
     "module": "./esm/index.mjs",
     "types": "./dist/index.d.ts"
   },
-  "gitHead": "18cb6253ca2131397da2c209932a2413d9cd93c1"
+  "gitHead": "6a4434621e29e014d537ae3dc0f026364b893a69"
 }

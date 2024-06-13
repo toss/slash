@@ -1,25 +1,12 @@
+/** @tossdocs-ignore */
 import { HANGUL_CHARACTERS_BY_FIRST_INDEX } from './constants';
 import { disassembleHangulToGroups } from './disassemble';
 import { getFirstConsonants } from './utils';
 
 /**
- * @name chosungIncludes
- * @description
- * 문자열의 초성 일치 검색을 수행합니다.
- *
- * ```typescript
- * chosungIncludes(
- *   // 초성 일치하는지 검사할 문자열 (e.g. '프론트엔드')
- *   x: string,
- *   // 초성 문자열 (e.g. 'ㅍㄹㅌㅇㄷ')
- *   y: string
- * ): boolean
- * ```
- * @example
- * chosungIncludes('프론트엔드', 'ㅍㄹㅌ')   // true
- * chosungIncludes('00프론트엔드', 'ㅍㄹㅌ') // true
- * chosungIncludes('프론트엔드', 'ㅍㅌ')    // false
- * chosungIncludes('프론트엔드', '푸롴트')  // false
+ * This method has been moved to the es-hangul library.
+ * Please use es-hangul for this functionality going forward.
+ * @deprecated This feature is now available in the es-hangul package.
  */
 export function chosungIncludes(x: string, y: string) {
   if (!isOnlyInitialConsonant(y)) {

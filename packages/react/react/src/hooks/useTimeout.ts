@@ -1,37 +1,14 @@
-// import { useEffect } from 'react';
-import { useEffect, useRef } from 'react';
+import { noop } from '@toss/utils';
+import { useEffect } from 'react';
+import { usePreservedCallback } from './usePreservedCallback';
 
-/**
- * @description
- * window.setTimeout 를 편리하게 이용할 수 있는 hook 입니다.
- *
- * @example
- * useTimeout(() => {
- *   setTitle(`상품을 찾고있어요`);
- * }, 2000);
- *
- * useTimeout(() => {
- *   setTitle(`거의 다 끝났어요`);
- * }, 4000);
- */
-export default function useTimeout(callback: () => void, delay = 0) {
-  const savedCallback = useRef<() => void>();
+/** @tossdocs-ignore */
+export function useTimeout(callback: () => void, delay = 0) {
+  const savedCallback = usePreservedCallback(callback ?? noop);
 
   useEffect(() => {
-    savedCallback.current = callback;
-  });
+    const timeoutId = window.setTimeout(savedCallback, delay);
 
-  useEffect(() => {
-    function handleTimeout() {
-      if (savedCallback.current) {
-        savedCallback.current();
-      }
-    }
-
-    const id = window.setTimeout(handleTimeout, delay);
-
-    return () => {
-      window.clearTimeout(id);
-    };
-  }, [delay]);
+    return () => window.clearTimeout(timeoutId);
+  }, [delay, savedCallback]);
 }

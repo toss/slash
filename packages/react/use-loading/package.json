@@ -1,6 +1,6 @@
 {
   "name": "@toss/use-loading",
-  "version": "1.0.1",
+  "version": "1.2.0",
   "sideEffects": false,
   "exports": {
     ".": {
@@ -10,17 +10,30 @@
     "./package.json": "./package.json"
   },
   "main": "./src/index.ts",
+  "files": [
+    "dist",
+    "esm"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/toss/slash.git",
+    "directory": "packages/react/use-loading"
+  },
   "scripts": {
-    "build": "rm -rf dist esm && tsc --declaration --emitDeclarationOnly --declarationDir dist && rollup -c rollup.config.js",
+    "build": "rm -rf dist esm && tsc -p tsconfig.build.json --declaration --emitDeclarationOnly --declarationDir dist && rollup -c rollup.config.js",
     "prepack": "yarn build",
     "test": "jest",
+    "coverage": "jest --coverage",
     "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@toss/react": "workspace:^1.5.0"
   },
   "devDependencies": {
     "@babel/core": "^7",
-    "@slash/rollup-config": "workspace:^",
     "@testing-library/react": "^13.3.0",
-    "@tossteam/jest": "^17",
+    "@toss/jest": "workspace:^",
+    "@toss/rollup-config": "workspace:^0.2.0",
     "@types/babel__core": "^7",
     "@types/jest": "^28.1.8",
     "@types/node": "^14.14.41",
@@ -35,7 +48,7 @@
     "react-dom": "^18.2.0",
     "react-test-renderer": "^18.2.0",
     "rollup": "^2.77.0",
-    "typescript": "4.8.3"
+    "typescript": "^5.4.5"
   },
   "peerDependencies": {
     "react": "^16.8 || ^17 || ^18"
@@ -55,5 +68,5 @@
     "module": "./esm/index.mjs",
     "types": "./dist/index.d.ts"
   },
-  "gitHead": "18cb6253ca2131397da2c209932a2413d9cd93c1"
+  "gitHead": "6a4434621e29e014d537ae3dc0f026364b893a69"
 }

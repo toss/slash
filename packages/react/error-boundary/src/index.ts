@@ -1,3 +1,4 @@
 /** @tossdocs-ignore */
-export { default as ErrorBoundary } from './ErrorBoundary';
-export { default as useErrorBoundary } from './useErrorBoundary';
+export { ErrorBoundary, useErrorBoundary, withErrorBoundary } from './ErrorBoundary';
+export { ErrorBoundaryGroup, useErrorBoundaryGroup } from './ErrorBoundaryGroup';
+export { withErrorBoundaryGroup } from './withErrorBoundaryGroup';

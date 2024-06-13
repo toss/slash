@@ -1,8 +1,8 @@
 import { render } from '@testing-library/react';
-import SwitchCase from './index';
+import { SwitchCase } from '.';
 
 describe('SwitchCase', () => {
-  function prepare(key: any) {
+  function prepare(key: string) {
     return render(
       <SwitchCase
         value={key}
@@ -14,20 +14,21 @@ describe('SwitchCase', () => {
       />
     );
   }
-  it(`'a' 라는 값을 주면 'Hello A' 가 렌더링 된다.`, () => {
+
+  it(`should render 'Hello A' when the value is 'a'.`, () => {
     const controls = prepare('a');
 
     expect(controls.getByText('Hello A')).toBeInTheDocument();
   });
 
-  it(`'a' 라는 값을 주면 'Hello B' 는 렌더링되면 안됩니다.`, () => {
+  it(`should not render 'Hello B' when the value is 'a'.`, () => {
     const controls = prepare('a');
 
     expect(controls.getByText('Hello A')).toBeInTheDocument();
     expect(controls.queryByText('Hello B')).not.toBeInTheDocument();
   });
 
-  it(`만족하는 값이 없다면 'Default' 가 렌더링 되어야 합니다.`, () => {
+  it(`should render 'Default' if no satisfying value is provided.`, () => {
     const controls = prepare('cc');
 
     expect(controls.queryByText('Hello A')).not.toBeInTheDocument();

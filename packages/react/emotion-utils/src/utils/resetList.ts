@@ -1,7 +1,7 @@
 import { css } from '@emotion/react';
 
 /**
- * @name resetButton
+ * @name resetList
  * @description list(`<ol>`, `<ul>`)의 기본 스타일을 제거하는 유틸리티입니다.
  *
  * ```ts

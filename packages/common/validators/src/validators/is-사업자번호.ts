@@ -1,18 +1,8 @@
-import { zip, sum } from '@toss/utils';
+/** @tossdocs-ignore */
+import { sum, zip } from '@toss/utils';
 
 const BUSINESS_REG_NO_KEYS = [1, 3, 7, 1, 3, 7, 1, 3, 5];
 
-/**
- * @name is사업자번호 (isBusinessRegNo)
- * 사업자번호 유효성 검사
- * - http://seoulcredit.co.kr/business_id
- * - https://myhappyman.tistory.com/129
- * @param value 사업자번호
- *
- * @example
- * is사업자번호('1231231231');
- * // => true
- */
 export function is사업자번호(value: string) {
   const numberMap = [...value.replace(/-/gi, '')].map(v => parseInt(v, 10));
 

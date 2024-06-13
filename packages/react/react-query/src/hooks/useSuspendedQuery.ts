@@ -1,7 +1,9 @@
+/** @tossdocs-ignore */
 import { QueryFunction, QueryKey, useQuery, UseQueryOptions, UseQueryResult } from 'react-query';
+import { parseQueryArgs } from '../utils';
 
 export interface BaseSuspendedUseQueryResult<TData>
-  extends Omit<UseQueryResult<TData, never>, 'data' | 'status' | 'error' | 'isLoading' | 'isError' | 'isFetching'> {
+  extends Omit<UseQueryResult, 'data' | 'status' | 'error' | 'isLoading' | 'isError' | 'isFetching'> {
   data: TData;
   status: 'success' | 'idle';
 }
@@ -11,7 +13,7 @@ export type SuspendedUseQueryResultOnSuccess<TData> = BaseSuspendedUseQueryResul
   isSuccess: true;
   isIdle: false;
 };
-export type SuspendedUseQueryResultOnIdle<TData> = BaseSuspendedUseQueryResult<TData> & {
+export type SuspendedUseQueryResultOnIdle = BaseSuspendedUseQueryResult<undefined> & {
   status: 'idle';
   isSuccess: false;
   isIdle: true;
@@ -22,38 +24,9 @@ export type SuspendedUseQueryOptions<
   TError = unknown,
   TData = TQueryFnData,
   TQueryKey extends QueryKey = QueryKey
-> = Omit<UseQueryOptions<TQueryFnData, TError, TData, TQueryKey>, 'suspense'>;
+> = Omit<UseQueryOptions<TQueryFnData, TError, TData, TQueryKey>, 'suspense' | 'networkMode'>;
 
-/**
- * @name useSuspendedQuery
- *
- * @description
- * 기본적으로 suspense를 default로 이용하는 useQuery입니다.
- *
- * 기본적인 API는 [react-query](https://tanstack.com/query/v4/?from=reactQueryV3&original=https://react-query-v3.tanstack.com/) 와 동일합니다.
- *
- * - 반환하는 `data` 값이 nullable이 아니고, 항상 존재합니다. (Suspense를 사용하기 때문)
- *
- *
- * ```typescript
- * function useSuspendedQuery(
- *   queryKey: TQueryKey,
- *   queryFn: QueryFunction<TQueryFnData, TQueryKey>,
- *   options?: SuspendedUseQueryOptions<TQueryFnData, TError, TData, TQueryKey>
- * )
- * ```
- *
- * @returns `BaseSuspendedUseQueryResult<TData>`
- *
- * react-query useQuery의 반환값과 대부분 동일하나 data가 non-nullable입니다. 추가적으로 isLoading, isError, isFetching이 존재하지 않습니다.
- *
- * @example
- * const { data } = useSuspendedQuery(['key'], fetchSomething);
- *
- * // data는 undefined가 아님
- *
- * @see https://www.youtube.com/watch?v=FvRtoViujGg 프론트엔드 웹 서비스에서 우아하게 비동기 처리하기
- */
+// arg1: queryKey, arg2: queryFn, arg3: options
 export function useSuspendedQuery<
   TQueryFnData = unknown,
   TError = unknown,
@@ -62,7 +35,7 @@ export function useSuspendedQuery<
 >(
   queryKey: TQueryKey,
   queryFn: QueryFunction<TQueryFnData, TQueryKey>,
-  options?: Omit<SuspendedUseQueryOptions<TQueryFnData, TError, TData, TQueryKey>, 'enabled'>
+  options?: Omit<SuspendedUseQueryOptions<TQueryFnData, TError, TData, TQueryKey>, 'enabled' | 'queryKey' | 'queryFn'>
 ): SuspendedUseQueryResultOnSuccess<TData>;
 export function useSuspendedQuery<
   TQueryFnData = unknown,
@@ -72,7 +45,10 @@ export function useSuspendedQuery<
 >(
   queryKey: TQueryKey,
   queryFn: QueryFunction<TQueryFnData, TQueryKey>,
-  options: Omit<SuspendedUseQueryOptions<TQueryFnData, TError, TData, TQueryKey>, 'enabled'> & {
+  options: Omit<
+    SuspendedUseQueryOptions<TQueryFnData, TError, TData, TQueryKey>,
+    'enabled' | 'queryKey' | 'queryFn'
+  > & {
     enabled?: true;
   }
 ): SuspendedUseQueryResultOnSuccess<TData>;
@@ -84,29 +60,120 @@ export function useSuspendedQuery<
 >(
   queryKey: TQueryKey,
   queryFn: QueryFunction<TQueryFnData, TQueryKey>,
+  options: Omit<
+    SuspendedUseQueryOptions<TQueryFnData, TError, TData, TQueryKey>,
+    'enabled' | 'queryKey' | 'queryFn'
+  > & {
+    enabled: false;
+  }
+): SuspendedUseQueryResultOnIdle;
+export function useSuspendedQuery<
+  TQueryFnData = unknown,
+  TError = unknown,
+  TData = TQueryFnData,
+  TQueryKey extends QueryKey = QueryKey
+>(
+  queryKey: TQueryKey,
+  queryFn: QueryFunction<TQueryFnData, TQueryKey>,
+  options: Omit<SuspendedUseQueryOptions<TQueryFnData, TError, TData, TQueryKey>, 'queryKey' | 'queryFn'>
+): SuspendedUseQueryResultOnSuccess<TData> | SuspendedUseQueryResultOnIdle;
+
+// arg1: queryKey, arg2: options
+export function useSuspendedQuery<
+  TQueryFnData = unknown,
+  TError = unknown,
+  TData = TQueryFnData,
+  TQueryKey extends QueryKey = QueryKey
+>(
+  queryKey: TQueryKey,
+  options?: Omit<SuspendedUseQueryOptions<TQueryFnData, TError, TData, TQueryKey>, 'enabled' | 'queryKey'>
+): SuspendedUseQueryResultOnSuccess<TData>;
+export function useSuspendedQuery<
+  TQueryFnData = unknown,
+  TError = unknown,
+  TData = TQueryFnData,
+  TQueryKey extends QueryKey = QueryKey
+>(
+  queryKey: TQueryKey,
+  options: Omit<SuspendedUseQueryOptions<TQueryFnData, TError, TData, TQueryKey>, 'enabled' | 'queryKey'> & {
+    enabled?: true;
+  }
+): SuspendedUseQueryResultOnSuccess<TData>;
+export function useSuspendedQuery<
+  TQueryFnData = unknown,
+  TError = unknown,
+  TData = TQueryFnData,
+  TQueryKey extends QueryKey = QueryKey
+>(
+  queryKey: TQueryKey,
+  options: Omit<SuspendedUseQueryOptions<TQueryFnData, TError, TData, TQueryKey>, 'enabled' | 'queryKey'> & {
+    enabled: false;
+  }
+): SuspendedUseQueryResultOnIdle;
+export function useSuspendedQuery<
+  TQueryFnData = unknown,
+  TError = unknown,
+  TData = TQueryFnData,
+  TQueryKey extends QueryKey = QueryKey
+>(
+  queryKey: TQueryKey,
+  options: Omit<SuspendedUseQueryOptions<TQueryFnData, TError, TData, TQueryKey>, 'queryKey'>
+): SuspendedUseQueryResultOnSuccess<TData> | SuspendedUseQueryResultOnIdle;
+
+// arg1: options
+export function useSuspendedQuery<
+  TQueryFnData = unknown,
+  TError = unknown,
+  TData = TQueryFnData,
+  TQueryKey extends QueryKey = QueryKey
+>(
+  options: Omit<SuspendedUseQueryOptions<TQueryFnData, TError, TData, TQueryKey>, 'enabled'>
+): SuspendedUseQueryResultOnSuccess<TData>;
+export function useSuspendedQuery<
+  TQueryFnData = unknown,
+  TError = unknown,
+  TData = TQueryFnData,
+  TQueryKey extends QueryKey = QueryKey
+>(
+  options: Omit<SuspendedUseQueryOptions<TQueryFnData, TError, TData, TQueryKey>, 'enabled'> & {
+    enabled?: true;
+  }
+): SuspendedUseQueryResultOnSuccess<TData>;
+export function useSuspendedQuery<
+  TQueryFnData = unknown,
+  TError = unknown,
+  TData = TQueryFnData,
+  TQueryKey extends QueryKey = QueryKey
+>(
   options: Omit<SuspendedUseQueryOptions<TQueryFnData, TError, TData, TQueryKey>, 'enabled'> & {
     enabled: false;
   }
-): SuspendedUseQueryResultOnIdle<undefined>;
+): SuspendedUseQueryResultOnIdle;
 export function useSuspendedQuery<
   TQueryFnData = unknown,
   TError = unknown,
   TData = TQueryFnData,
   TQueryKey extends QueryKey = QueryKey
 >(
-  queryKey: TQueryKey,
-  queryFn: QueryFunction<TQueryFnData, TQueryKey>,
   options: SuspendedUseQueryOptions<TQueryFnData, TError, TData, TQueryKey>
-): BaseSuspendedUseQueryResult<TData | undefined>;
+): SuspendedUseQueryResultOnSuccess<TData> | SuspendedUseQueryResultOnIdle;
+
+// base useSuspendedQuery
 export function useSuspendedQuery<
   TQueryFnData = unknown,
   TError = unknown,
   TData = TQueryFnData,
   TQueryKey extends QueryKey = QueryKey
 >(
-  queryKey: TQueryKey,
-  queryFn: QueryFunction<TQueryFnData, TQueryKey>,
-  options?: SuspendedUseQueryOptions<TQueryFnData, TError, TData, TQueryKey>
+  arg1: TQueryKey | SuspendedUseQueryOptions<TQueryFnData, TError, TData, TQueryKey>,
+  arg2?:
+    | QueryFunction<TQueryFnData, TQueryKey>
+    | Omit<SuspendedUseQueryOptions<TQueryFnData, TError, TData, TQueryKey>, 'queryKey'>,
+  arg3?: Omit<SuspendedUseQueryOptions<TQueryFnData, TError, TData, TQueryKey>, 'queryKey' | 'queryFn'>
 ) {
-  return useQuery(queryKey, queryFn, { ...options, suspense: true }) as BaseSuspendedUseQueryResult<TData>;
+  return useQuery({
+    ...parseQueryArgs(arg1, arg2, arg3),
+    suspense: true,
+    networkMode: 'always',
+  }) as BaseSuspendedUseQueryResult<TData>;
 }

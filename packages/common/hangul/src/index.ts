@@ -3,3 +3,4 @@ export * from './disassemble';
 export * from './hangulIncludes';
 export * from './chosungIncludes';
 export * from './josa';
+export * from './utils';

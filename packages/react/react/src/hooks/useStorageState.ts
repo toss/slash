@@ -1,8 +1,11 @@
 /** @tossdocs-ignore */
 import { safeLocalStorage, Storage } from '@toss/storage';
-import { SetStateAction, useCallback, useState } from 'react';
+import { SetStateAction, useCallback, useEffect, useState } from 'react';
 
-export type Serializable<T> = T extends string | number | boolean | unknown[] | Record<string, unknown> ? T : never;
+type ToPrimitive<T> = T extends string ? string : T extends number ? number : T extends boolean ? boolean : never;
+type ToObject<T> = T extends unknown[] | Record<string, unknown> ? T : never;
+
+export type Serializable<T> = T extends string | number | boolean ? ToPrimitive<T> : ToObject<T>;
 
 interface StorageStateOptions<T> {
   storage?: Storage;
@@ -53,6 +56,10 @@ export function useStorageState<T>(
     }
   }, [defaultValue, key, storage]);
 
+  useStorageEvent(key, () => {
+    setState(getValue);
+  });
+
   const [state, setState] = useState<Serializable<T> | undefined>(getValue);
 
   const set = useCallback(
@@ -66,6 +73,13 @@ export function useStorageState<T>(
           storage.set(key, JSON.stringify(nextValue));
         }
 
+        window.dispatchEvent(
+          new StorageEvent('storage', {
+            key,
+            newValue: JSON.stringify(nextValue),
+          })
+        );
+
         return nextValue;
       });
     },
@@ -77,4 +91,20 @@ export function useStorageState<T>(
   }, [defaultValue, getValue]);
 
   return [state, set, refresh] as const;
+}
+
+function useStorageEvent(key: string, callback: () => void) {
+  useEffect(() => {
+    const handler = (event: StorageEvent) => {
+      if (event.key === key) {
+        callback();
+      }
+    };
+
+    window.addEventListener('storage', handler);
+
+    return () => {
+      window.removeEventListener('storage', handler);
+    };
+  }, [key, callback]);
 }
