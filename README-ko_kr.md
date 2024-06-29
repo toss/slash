@@ -16,6 +16,7 @@ Slash 라이브러리는 [토스](https://toss.im)에서 사용하는 TypeScript
   - [es-hangul](https://github.com/toss/es-hangul)은 쉽게 한글을 다룰 수 있도록 돕는 JavaScript 라이브러리입니다.
   - [es-toolkit](https://github.com/toss/es-toolkit)은 높은 성능과 작은 번들 사이즈, 강력한 타입을 자랑하는 현대적인 JavaScript 유틸리티 라이브러리입니다.
   - [suspensive](https://github.com/toss/suspensive)는 React의 Suspense와 ErrorBoundary를 우아하게 다루는 JavaScript 라이브러리입니다.
+  - [overlay-kit](https://github.com/toss/overlay-kit)은 React의 오버레이를 선언적으로 다루는 JavaScript 라이브러리입니다.
 - Slash 기여를 원하시는 분들은 Slash가 아닌 위 패키지들에 기여를 부탁드립니다.
 
 ## 기여하기
