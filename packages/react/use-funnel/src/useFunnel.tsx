@@ -25,6 +25,11 @@ type FunnelComponent<Steps extends StepsType> = ((props: RouteFunnelProps<Steps>
 
 const DEFAULT_STEP_QUERY_KEY = 'funnel-step';
 
+/**
+ * This method has been moved to the `@use-funnel` library.
+ * Please use `@use-funnel` for this functionality going forward.
+ * @deprecated This feature is now available in the `@use-funnel` package.
+ */
 export const useFunnel = <Steps extends StepsType>(
   steps: Steps,
   options?: {

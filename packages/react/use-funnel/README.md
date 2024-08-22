@@ -2,6 +2,16 @@
 
 A funnel controller designed to manage funnel steps declaratively and explicitly, and to give you a clear view of the flow of state for your funnel.
 
+## Deprecation Notice
+
+Please note that `@toss/use-funnel` has been deprecated. We have transitioned to a new package, `@use-funnel`, which offers improved functionality and performance.
+
+### Recommended Actions:
+
+- Refer to the [@use-funnel](https://use-funnel.slash.page) documentation for new features and implementation details.
+
+Thank you for your continued support and understanding.
+
 ## Table of Contents
 
 - [Initialize](#initialize)

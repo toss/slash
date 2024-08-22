@@ -25,6 +25,7 @@ Slash is a collection of TypeScript/JavaScript packages used in [Toss](https://t
   - [es-hangul](https://github.com/toss/es-hangul) is a JavaScript library that makes it easy to work with Hangul.
   - [es-toolkit](https://github.com/toss/es-toolkit) is a modern JavaScript utility library with high performance, small bundle size, and strong types.
   - [suspensive](https://github.com/toss/suspensive) is a JavaScript library that elegantly handles React's suspense and error boundaries.
+  - [use-funnel](https://github.com/toss/use-funnel) is a powerful and safe step-by-step state management React library
 - If you would like to contribute to Slash, please contribute to these packages, not Slash.
 
 ## Contributing
