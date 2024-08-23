@@ -90,6 +90,12 @@ export function useStorageState<T>(
     setState(getValue() ?? defaultValue);
   }, [defaultValue, getValue]);
 
+  useEffect(() => {
+    if (defaultValue != null) {
+      set(getValue());
+    }
+  }, [set, getValue, defaultValue]);
+
   return [state, set, refresh] as const;
 }
 
