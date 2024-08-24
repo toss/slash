@@ -1,6 +1,6 @@
 interface Props<Case extends string | number> {
   caseBy: Partial<Record<Case, JSX.Element | null>>;
-  value: Case;
+  value: Case | null;
   defaultComponent?: JSX.Element | null;
 }
 
