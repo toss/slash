@@ -6,5 +6,11 @@ export function isIOS() {
     return false;
   }
 
-  return navigator.userAgent.match(/ipad|iphone/i) !== null;
+  return (
+    navigator.userAgent.match(/iPad|iPhone/i) !== null ||
+    (navigator.userAgent.match(/Macintosh|Intel Mac/i) !== null &&
+      navigator.maxTouchPoints > 0 &&
+      window.screen.availWidth >= 375 &&
+      window.screen.availWidth <= 1366)
+  );
 }
