@@ -1,6 +1,6 @@
 /** @tossdocs-ignore */
 /** @jsxImportSource react */
-import { Children, Fragment, isValidElement, PropsWithChildren, ReactNode } from 'react';
+import { Children, Fragment, PropsWithChildren, ReactNode } from 'react';
 
 interface Props extends PropsWithChildren {
   with: ReactNode;
@@ -9,7 +9,7 @@ interface Props extends PropsWithChildren {
 }
 
 export function Separated({ children, with: separator, first = false, last = false }: Props) {
-  const childrenArray = Children.toArray(children).filter(isValidElement);
+  const childrenArray = Children.toArray(children);
   const childrenLength = childrenArray.length;
 
   return (
