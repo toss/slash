@@ -1,6 +1,6 @@
 /** @tossdocs-ignore */
 /** @jsxImportSource react */
-import { Children, Fragment, PropsWithChildren, ReactNode } from 'react';
+import { Children, Fragment, isValidElement, PropsWithChildren, ReactNode } from 'react';
 
 interface Props extends PropsWithChildren {
   with: ReactNode;
@@ -15,10 +15,10 @@ export function Separated({ children, with: separator, first = false, last = fal
   return (
     <>
       {first && separator}
-      {childrenArray.map((child, i) => (
-        <Fragment key={i}>
+      {childrenArray.map((child, index) => (
+        <Fragment key={isValidElement(child) ? child.key : index}>
           {child}
-          {i + 1 !== childrenLength ? separator : null}
+          {index + 1 !== childrenLength && separator}
         </Fragment>
       ))}
       {last && separator}
