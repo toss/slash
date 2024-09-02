@@ -34,4 +34,58 @@ describe('Separated', () => {
 
     expect(screen.queryByTestId(/separator/)).not.toBeInTheDocument();
   });
+
+  it('should render separator at the beginning when first prop is true', () => {
+    const CHILDREN_COUNT = 10;
+    const separator = <span data-testid="separator" />;
+    const children = Array.from({ length: CHILDREN_COUNT }, (_, i) => (
+      <div key={i} data-testid={i}>
+        container_{i}
+      </div>
+    ));
+
+    const { container } = render(
+      <Separated with={separator} first>
+        {children}
+      </Separated>
+    );
+
+    expect(container.firstChild).toHaveAttribute('data-testid', 'separator');
+    expect(screen.getAllByText(/container/)).toHaveLength(CHILDREN_COUNT);
+    expect(screen.getAllByTestId(/separator/)).toHaveLength(CHILDREN_COUNT);
+  });
+
+  it('should render separator at the end when last prop is true', () => {
+    const CHILDREN_COUNT = 10;
+    const separator = <span data-testid="separator" />;
+    const children = Array.from({ length: CHILDREN_COUNT }, (_, i) => (
+      <div key={i} data-testid={i}>
+        container_{i}
+      </div>
+    ));
+
+    const { container } = render(
+      <Separated with={separator} last>
+        {children}
+      </Separated>
+    );
+
+    expect(container.lastChild).toHaveAttribute('data-testid', 'separator');
+    expect(screen.getAllByText(/container/)).toHaveLength(CHILDREN_COUNT);
+    expect(screen.getAllByTestId(/separator/)).toHaveLength(CHILDREN_COUNT);
+  });
+
+  it('should render all ReactNode types', () => {
+    const separator = <span data-testid="separator" />;
+
+    render(
+      <Separated with={separator}>
+        string
+        {0}
+        string
+      </Separated>
+    );
+
+    expect(screen.getAllByTestId(/separator/)).toHaveLength(2);
+  });
 });
