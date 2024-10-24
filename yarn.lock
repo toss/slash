@@ -5444,7 +5444,7 @@ __metadata:
     "@testing-library/react": "npm:^13.3.0"
     "@toss/jest": "workspace:^0.2.1"
     "@toss/rollup-config": "workspace:^0.2.0"
-    "@toss/utils": "workspace:^1.6.0"
+    "@toss/utils": "workspace:^1.6.1"
     "@types/jest": "npm:^28.1.8"
     "@types/node": "npm:^14.14.41"
     "@types/react": "npm:^18.0.21"
@@ -5463,7 +5463,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@toss/assert@workspace:^1.2.1, @toss/assert@workspace:packages/common/assert":
+"@toss/assert@workspace:^1.2.2, @toss/assert@workspace:packages/common/assert":
   version: 0.0.0-use.local
   resolution: "@toss/assert@workspace:packages/common/assert"
   dependencies:
@@ -5473,7 +5473,7 @@ __metadata:
     "@babel/runtime": "npm:^7.16.3"
     "@toss/jest": "workspace:^0.2.1"
     "@toss/rollup-config": "workspace:^0.2.0"
-    "@toss/utils": "workspace:^1.6.0"
+    "@toss/utils": "workspace:^1.6.1"
     "@types/babel__core": "npm:^7"
     "@types/babel__preset-env": "npm:^7"
     "@types/jest": "npm:^28.1.8"
@@ -5497,7 +5497,7 @@ __metadata:
     "@babel/runtime": "npm:^7.16.5"
     "@testing-library/jest-dom": "npm:^5.16.4"
     "@testing-library/react": "npm:^13.3.0"
-    "@toss/error-boundary": "workspace:^1.5.1"
+    "@toss/error-boundary": "workspace:^1.5.2"
     "@toss/jest": "workspace:^0.2.1"
     "@toss/rollup-config": "workspace:^0.2.0"
     "@types/babel__core": "npm:^7"
@@ -5527,7 +5527,7 @@ __metadata:
     "@babel/core": "npm:^7"
     "@babel/runtime": "npm:^7.13.10"
     "@toss/jest": "workspace:^0.2.1"
-    "@toss/react": "workspace:^1.8.0"
+    "@toss/react": "workspace:^1.8.1"
     "@toss/rollup-config": "workspace:^0.2.0"
     "@types/jest": "npm:^28.1.8"
     "@types/node": "npm:^14.14.41"
@@ -5617,9 +5617,9 @@ __metadata:
     "@testing-library/jest-dom": "npm:^5.16.4"
     "@testing-library/react": "npm:^13.3.0"
     "@toss/jest": "workspace:^0.2.1"
-    "@toss/react": "workspace:^1.8.0"
+    "@toss/react": "workspace:^1.8.1"
     "@toss/rollup-config": "workspace:^0.2.0"
-    "@toss/utils": "workspace:^1.6.0"
+    "@toss/utils": "workspace:^1.6.1"
     "@types/babel__core": "npm:^7"
     "@types/jest": "npm:^28.1.8"
     "@types/node": "npm:^16.11.11"
@@ -5643,7 +5643,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@toss/error-boundary@workspace:^1.5.1, @toss/error-boundary@workspace:packages/react/error-boundary":
+"@toss/error-boundary@workspace:^1.5.2, @toss/error-boundary@workspace:packages/react/error-boundary":
   version: 0.0.0-use.local
   resolution: "@toss/error-boundary@workspace:packages/react/error-boundary"
   dependencies:
@@ -5656,9 +5656,9 @@ __metadata:
     "@testing-library/react": "npm:^13.3.0"
     "@testing-library/user-event": "npm:^14.4.3"
     "@toss/jest": "workspace:^0.2.1"
-    "@toss/react": "workspace:^1.8.0"
+    "@toss/react": "workspace:^1.8.1"
     "@toss/rollup-config": "workspace:^0.2.0"
-    "@toss/utils": "workspace:^1.6.0"
+    "@toss/utils": "workspace:^1.6.1"
     "@types/babel__core": "npm:^7"
     "@types/babel__preset-env": "npm:^7"
     "@types/jest": "npm:^28.1.8"
@@ -5733,7 +5733,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@toss/impression-area@workspace:^1.4.1, @toss/impression-area@workspace:packages/react/impression-area":
+"@toss/impression-area@workspace:^1.4.2, @toss/impression-area@workspace:packages/react/impression-area":
   version: 0.0.0-use.local
   resolution: "@toss/impression-area@workspace:packages/react/impression-area"
   dependencies:
@@ -5742,9 +5742,9 @@ __metadata:
     "@testing-library/jest-dom": "npm:^5.16.4"
     "@testing-library/react": "npm:^13.3.0"
     "@toss/jest": "workspace:^0.2.1"
-    "@toss/react": "workspace:^1.8.0"
+    "@toss/react": "workspace:^1.8.1"
     "@toss/rollup-config": "workspace:^0.2.0"
-    "@toss/utils": "workspace:^1.6.0"
+    "@toss/utils": "workspace:^1.6.1"
     "@types/jest": "npm:^28.1.8"
     "@types/lodash.debounce": "npm:^4"
     "@types/node": "npm:^14.14.41"
@@ -5811,11 +5811,11 @@ __metadata:
   dependencies:
     "@babel/core": "npm:^7"
     "@babel/runtime": "npm:^7.13.10"
-    "@toss/impression-area": "workspace:^1.4.1"
+    "@toss/impression-area": "workspace:^1.4.2"
     "@toss/jest": "workspace:^0.2.1"
-    "@toss/react": "workspace:^1.8.0"
+    "@toss/react": "workspace:^1.8.1"
     "@toss/rollup-config": "workspace:^0.2.0"
-    "@toss/utils": "workspace:^1.6.0"
+    "@toss/utils": "workspace:^1.6.1"
     "@types/jest": "npm:^28.1.8"
     "@types/lodash.debounce": "npm:^4"
     "@types/node": "npm:^14.14.41"
@@ -5861,7 +5861,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@toss/react@workspace:^1.8.0, @toss/react@workspace:packages/react/react":
+"@toss/react@workspace:^1.8.1, @toss/react@workspace:packages/react/react":
   version: 0.0.0-use.local
   resolution: "@toss/react@workspace:packages/react/react"
   dependencies:
@@ -5882,7 +5882,7 @@ __metadata:
     "@toss/jest": "workspace:^0.2.1"
     "@toss/rollup-config": "workspace:^0.2.0"
     "@toss/storage": "workspace:^1.4.1"
-    "@toss/utils": "workspace:^1.6.0"
+    "@toss/utils": "workspace:^1.6.1"
     "@types/babel__preset-env": "npm:^7"
     "@types/jest": "npm:^28.1.8"
     "@types/lodash.debounce": "npm:^4"
@@ -5952,8 +5952,8 @@ __metadata:
     "@babel/runtime": "npm:^7.13.10"
     "@testing-library/jest-dom": "npm:^5.16.4"
     "@testing-library/react": "npm:^13.3.0"
-    "@toss/assert": "workspace:^1.2.1"
-    "@toss/error-boundary": "workspace:^1.5.1"
+    "@toss/assert": "workspace:^1.2.2"
+    "@toss/error-boundary": "workspace:^1.5.2"
     "@toss/jest": "workspace:^0.2.1"
     "@toss/rollup-config": "workspace:^0.2.0"
     "@types/jest": "npm:^28.1.8"
@@ -6090,13 +6090,13 @@ __metadata:
     "@testing-library/react": "npm:^13.3.0"
     "@testing-library/react-hooks": "npm:^5.1.0"
     "@testing-library/user-event": "npm:^14.1.1"
-    "@toss/assert": "workspace:^1.2.1"
+    "@toss/assert": "workspace:^1.2.2"
     "@toss/jest": "workspace:^0.2.1"
-    "@toss/react": "workspace:^1.8.0"
+    "@toss/react": "workspace:^1.8.1"
     "@toss/rollup-config": "workspace:^0.2.0"
     "@toss/storage": "workspace:^1.4.1"
     "@toss/use-query-param": "workspace:^1.3.1"
-    "@toss/utils": "workspace:^1.6.0"
+    "@toss/utils": "workspace:^1.6.1"
     "@types/babel__core": "npm:^7"
     "@types/babel__preset-env": "npm:^7"
     "@types/jest": "npm:^28.1.8"
@@ -6133,7 +6133,7 @@ __metadata:
     "@babel/core": "npm:^7"
     "@testing-library/react": "npm:^13.3.0"
     "@toss/jest": "workspace:^0.2.1"
-    "@toss/react": "workspace:^1.8.0"
+    "@toss/react": "workspace:^1.8.1"
     "@toss/rollup-config": "workspace:^0.2.0"
     "@types/babel__core": "npm:^7"
     "@types/jest": "npm:^28.1.8"
@@ -6170,9 +6170,9 @@ __metadata:
     "@testing-library/react": "npm:^13.3.0"
     "@testing-library/user-event": "npm:^14.2.0"
     "@toss/jest": "workspace:^0.2.1"
-    "@toss/react": "workspace:^1.8.0"
+    "@toss/react": "workspace:^1.8.1"
     "@toss/rollup-config": "workspace:^0.2.0"
-    "@toss/utils": "workspace:^1.6.0"
+    "@toss/utils": "workspace:^1.6.1"
     "@types/babel__preset-env": "npm:^7"
     "@types/jest": "npm:^28.1.8"
     "@types/node": "npm:^14.14.41"
@@ -6247,7 +6247,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@toss/utils@workspace:^1.6.0, @toss/utils@workspace:packages/common/utils":
+"@toss/utils@workspace:^1.6.1, @toss/utils@workspace:packages/common/utils":
   version: 0.0.0-use.local
   resolution: "@toss/utils@workspace:packages/common/utils"
   dependencies:
@@ -6290,7 +6290,7 @@ __metadata:
     "@babel/runtime": "npm:^7.13.10"
     "@toss/jest": "workspace:^0.2.1"
     "@toss/rollup-config": "workspace:^0.2.0"
-    "@toss/utils": "workspace:^1.6.0"
+    "@toss/utils": "workspace:^1.6.1"
     "@types/jest": "npm:^28.1.8"
     "@types/node": "npm:^14.14.41"
     babel-jest: "npm:^29"
@@ -11127,8 +11127,8 @@ __metadata:
     "@docusaurus/types": "npm:^2.1.0"
     "@mdx-js/react": "npm:^1.6.21"
     "@svgr/webpack": "npm:^5.5.0"
-    "@toss/react": "workspace:^1.8.0"
-    "@toss/utils": "workspace:^1.6.0"
+    "@toss/react": "workspace:^1.8.1"
+    "@toss/utils": "workspace:^1.6.1"
     "@types/babel__preset-env": "npm:^7"
     "@types/fs-extra": "npm:^9.0.13"
     "@types/node": "npm:^18.8.4"
