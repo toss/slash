@@ -15,6 +15,15 @@ describe('isIOS', () => {
     expect(isIOS()).toBe(true);
   });
 
+  it('should return true for iOS with Request Desktop Website enabled', () => {
+    jest.spyOn(serverCheckModule, 'isServer').mockReturnValue(false);
+    Object.defineProperty(window.navigator, 'userAgent', { value: 'Intel Mac', writable: true });
+    Object.defineProperty(window.navigator, 'maxTouchPoints', { value: 1 });
+    Object.defineProperty(window.screen, 'availWidth', { value: 375 });
+
+    expect(isIOS()).toBe(true);
+  });
+
   it('should return false for non-iOS user agent', () => {
     jest.spyOn(serverCheckModule, 'isServer').mockReturnValue(false);
     Object.defineProperty(window.navigator, 'userAgent', { value: 'Android', writable: true });
