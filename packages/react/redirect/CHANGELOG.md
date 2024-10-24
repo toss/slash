@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.1](https://github.com/toss/slash/compare/@toss/redirect@1.3.0...@toss/redirect@1.3.1) (2024-10-24)
+
+**Note:** Version bump only for package @toss/redirect
+
+
+
+
+
 # [1.3.0](https://github.com/toss/slash/compare/@toss/redirect@1.2.1...@toss/redirect@1.3.0) (2024-03-26)
 
 

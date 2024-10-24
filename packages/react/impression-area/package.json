@@ -1,6 +1,6 @@
 {
   "name": "@toss/impression-area",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "sideEffects": false,
   "exports": {
     ".": "./src/index.ts",
@@ -25,8 +25,8 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@toss/react": "workspace:^1.7.0",
-    "@toss/utils": "workspace:^1.5.0",
+    "@toss/react": "workspace:^1.8.0",
+    "@toss/utils": "workspace:^1.6.0",
     "@types/react": "^18.0.21",
     "lodash.debounce": "^4.0.8"
   },
@@ -35,7 +35,7 @@
     "@babel/runtime": "^7.13.10",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
-    "@toss/jest": "workspace:^",
+    "@toss/jest": "workspace:^0.2.1",
     "@toss/rollup-config": "workspace:^0.2.0",
     "@types/jest": "^28.1.8",
     "@types/lodash.debounce": "^4",

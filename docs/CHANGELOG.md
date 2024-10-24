@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.20](https://github.com/toss/slash/compare/docs@1.0.19...docs@1.0.20) (2024-10-24)
+
+**Note:** Version bump only for package docs
+
+
+
+
+
 ## [1.0.19](https://github.com/toss/slash/compare/docs@1.0.18...docs@1.0.19) (2024-03-26)
 
 **Note:** Version bump only for package docs

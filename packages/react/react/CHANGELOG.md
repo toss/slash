@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.8.0](https://github.com/toss/slash/compare/@toss/react@1.7.0...@toss/react@1.8.0) (2024-10-24)
+
+
+### Bug Fixes
+
+* **@toss/react:** @toss/react State synchronization issue in useStorageState ([#478](https://github.com/toss/slash/issues/478)) ([ccc78b3](https://github.com/toss/slash/commit/ccc78b33302da055e2c35a7f45c97d94ff69e648))
+* **@toss/react:** add useOutsideClickEffect dependency for preventing keep add and remove eventlistener ([#453](https://github.com/toss/slash/issues/453)) ([2ef5b0f](https://github.com/toss/slash/commit/2ef5b0fe38bbe4be1f157cdbfc58455b9f68c7b7)), closes [#420](https://github.com/toss/slash/issues/420) [#420](https://github.com/toss/slash/issues/420)
+* **@toss/react:** change container array conversion logic, change useEffect order to improve readability, add dependencies ([#481](https://github.com/toss/slash/issues/481)) ([cbd7278](https://github.com/toss/slash/commit/cbd72780a28eeab4812d5d83a03d5db3262993d8))
+* **@toss/react:** Remove touchStart event listener from useOutsideClickEffect ([#451](https://github.com/toss/slash/issues/451)) ([08983ce](https://github.com/toss/slash/commit/08983ce4e0967523ad0fef8ce2a0429fca9704d0))
+* **@toss/react, @toss/use-loading:** implement `useIsMountedRef` and modified `useLoading` to avoid state updates when the component is unmounted ([#296](https://github.com/toss/slash/issues/296)) ([d96b004](https://github.com/toss/slash/commit/d96b00406359981b556b47f1c51962cb8d8c80e9))
+
+
+### Features
+
+* **@toss/react:** add displayName to Context in the development environment ([#459](https://github.com/toss/slash/issues/459)) ([d2e6ca4](https://github.com/toss/slash/commit/d2e6ca4ac38a1f213152e27a581e74fd0bbd6bde))
+* **@toss/react:** OutsideClick Component ([#482](https://github.com/toss/slash/issues/482)) ([0beaed1](https://github.com/toss/slash/commit/0beaed14ce3053fbd77247962e1a5da9308ff065))
+* **@toss/react:** Support stop & resume in useInterval ([#476](https://github.com/toss/slash/issues/476)) ([17e900d](https://github.com/toss/slash/commit/17e900dddec43c3404da9bc70cefe07b04f12a7c))
+
+
+
+
+
 # [1.7.0](https://github.com/toss/slash/compare/@toss/react@1.6.1...@toss/react@1.7.0) (2024-03-26)
 
 

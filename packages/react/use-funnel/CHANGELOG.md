@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.1](https://github.com/toss/slash/compare/@toss/use-funnel@1.4.0...@toss/use-funnel@1.4.1) (2024-10-24)
+
+
+### Bug Fixes
+
+* **use-funnel:** Fix NonEmptyArray type in model.ts. ([#363](https://github.com/toss/slash/issues/363)) ([e29afa7](https://github.com/toss/slash/commit/e29afa72df4ade5a64c9fcd0963bc0361322fd2a))
+
+
+
+
+
 # [1.4.0](https://github.com/toss/slash/compare/@toss/use-funnel@1.3.1...@toss/use-funnel@1.4.0) (2024-03-26)
 
 

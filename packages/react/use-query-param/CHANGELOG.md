@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.1](https://github.com/toss/slash/compare/@toss/use-query-param@1.3.0...@toss/use-query-param@1.3.1) (2024-10-24)
+
+
+### Bug Fixes
+
+* **@toss/use-query-param:** Add extension .js to import next/router ([#469](https://github.com/toss/slash/issues/469)) ([97d371b](https://github.com/toss/slash/commit/97d371bf28e3c5283d766bb3d3a9d8006775c5b7))
+
+
+
+
+
 # [1.3.0](https://github.com/toss/slash/compare/@toss/use-query-param@1.2.1...@toss/use-query-param@1.3.0) (2024-03-26)
 
 

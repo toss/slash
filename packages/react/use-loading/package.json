@@ -1,6 +1,6 @@
 {
   "name": "@toss/use-loading",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "sideEffects": false,
   "exports": {
     ".": {
@@ -27,12 +27,12 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@toss/react": "workspace:^1.5.0"
+    "@toss/react": "workspace:^1.8.0"
   },
   "devDependencies": {
     "@babel/core": "^7",
     "@testing-library/react": "^13.3.0",
-    "@toss/jest": "workspace:^",
+    "@toss/jest": "workspace:^0.2.1",
     "@toss/rollup-config": "workspace:^0.2.0",
     "@types/babel__core": "^7",
     "@types/jest": "^28.1.8",

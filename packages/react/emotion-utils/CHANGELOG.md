@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.1](https://github.com/toss/slash/compare/@toss/emotion-utils@1.2.0...@toss/emotion-utils@1.2.1) (2024-10-24)
+
+
+### Bug Fixes
+
+* **@toss/emotion-utils:** Use useIsomorphicLayoutEffect in @toss/react ([#474](https://github.com/toss/slash/issues/474)) ([e95595c](https://github.com/toss/slash/commit/e95595cda8ad27091229571dcc2857062e6b35aa))
+
+
+
+
+
 # [1.2.0](https://github.com/toss/slash/compare/@toss/emotion-utils@1.1.12...@toss/emotion-utils@1.2.0) (2024-03-26)
 
 

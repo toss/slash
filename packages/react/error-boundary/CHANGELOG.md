@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.5.1](https://github.com/toss/slash/compare/@toss/error-boundary@1.5.0...@toss/error-boundary@1.5.1) (2024-10-24)
+
+
+### Bug Fixes
+
+* **error-boundary:** remove ErrorBoundaryGroup's not on purpose reset because of isMounted's side effect ([#287](https://github.com/toss/slash/issues/287)) ([62441d4](https://github.com/toss/slash/commit/62441d4429a56f738676257a5c28f5a6f29a5a86))
+
+
+
+
+
 # [1.5.0](https://github.com/toss/slash/compare/@toss/error-boundary@1.4.6...@toss/error-boundary@1.5.0) (2024-03-26)
 
 

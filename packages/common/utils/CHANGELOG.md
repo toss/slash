@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.6.0](https://github.com/toss/slash/compare/@toss/utils@1.5.0...@toss/utils@1.6.0) (2024-10-24)
+
+
+### Bug Fixes
+
+* **@toss/utils:** correct hex validation to prevent unexpected color parsing ([#458](https://github.com/toss/slash/issues/458)) ([3853784](https://github.com/toss/slash/commit/38537845e586556863f0c126e63da1aea7aa0907))
+* **@toss/utils:** replace 힇 to 힣 ([#492](https://github.com/toss/slash/issues/492)) ([5d6d291](https://github.com/toss/slash/commit/5d6d291ed1a76b9c8db90d9f6c160a080cc89001))
+
+
+### Features
+
+* **utils:** Notify that some functions were moved to es-toolkit ([16159d1](https://github.com/toss/slash/commit/16159d1869743ace6d6f6b25445bad03374fd6d3))
+* format 12-length phone number ([#470](https://github.com/toss/slash/issues/470)) ([e4f221f](https://github.com/toss/slash/commit/e4f221fb8d82461c4214836b8d4531e3bf08de00))
+
+
+
+
+
 # [1.5.0](https://github.com/toss/slash/compare/@toss/utils@1.4.6...@toss/utils@1.5.0) (2024-03-26)
 
 

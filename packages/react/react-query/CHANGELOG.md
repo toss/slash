@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.4.0](https://github.com/toss/slash/compare/@toss/react-query@1.3.0...@toss/react-query@1.4.0) (2024-10-24)
+
+
+### Features
+
+* **react-query:** add useSuspendedInfiniteQuery hook ([#332](https://github.com/toss/slash/issues/332)) ([a5a9b02](https://github.com/toss/slash/commit/a5a9b027211db7d54915f85b7b5f49010d857924))
+
+
+
+
+
 # [1.3.0](https://github.com/toss/slash/compare/@toss/react-query@1.2.1...@toss/react-query@1.3.0) (2024-03-26)
 
 

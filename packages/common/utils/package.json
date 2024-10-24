@@ -1,6 +1,6 @@
 {
   "name": "@toss/utils",
-  "version": "1.5.0",
+  "version": "1.6.0",
   "sideEffects": false,
   "exports": {
     ".": {
@@ -29,7 +29,7 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.14.8",
-    "@toss/utility-types": "workspace:^",
+    "@toss/utility-types": "workspace:^1.2.1",
     "date-fns": "^2.25.0"
   },
   "devDependencies": {
@@ -43,7 +43,7 @@
     "@rollup/plugin-commonjs": "^22.0.1",
     "@rollup/plugin-json": "^4.1.0",
     "@rollup/plugin-node-resolve": "^13.3.0",
-    "@toss/jest": "workspace:^",
+    "@toss/jest": "workspace:^0.2.1",
     "@toss/rollup-config": "workspace:^0.2.0",
     "@types/babel__core": "^7",
     "@types/babel__preset-env": "^7",

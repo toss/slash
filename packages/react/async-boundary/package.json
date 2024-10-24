@@ -1,6 +1,6 @@
 {
   "name": "@toss/async-boundary",
-  "version": "1.5.0",
+  "version": "1.5.1",
   "sideEffects": false,
   "exports": {
     ".": {
@@ -27,7 +27,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@toss/error-boundary": "workspace:^1.5.0"
+    "@toss/error-boundary": "workspace:^1.5.1"
   },
   "devDependencies": {
     "@babel/core": "^7",
@@ -36,7 +36,7 @@
     "@babel/runtime": "^7.16.5",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
-    "@toss/jest": "workspace:^",
+    "@toss/jest": "workspace:^0.2.1",
     "@toss/rollup-config": "workspace:^0.2.0",
     "@types/babel__core": "^7",
     "@types/babel__preset-env": "^7",

@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.1](https://github.com/toss/slash/compare/@toss/crypto@1.2.0...@toss/crypto@1.2.1) (2024-10-24)
+
+**Note:** Version bump only for package @toss/crypto
+
+
+
+
+
 # [1.2.0](https://github.com/toss/slash/compare/@toss/crypto@1.1.8...@toss/crypto@1.2.0) (2024-03-26)
 
 
