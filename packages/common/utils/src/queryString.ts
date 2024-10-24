@@ -7,7 +7,7 @@
  * createQueryString({}) // ''
  * @param  {Params} params The property names must be strings, and the values must be of type string | number | string[] | number[].
  */
-function createQueryString(params: Record<string, any>) {
+export function createQueryString(params: Record<string, any>) {
   const queryString = createSearchParamString(params);
 
   if (queryString === '') {
@@ -23,7 +23,7 @@ function createQueryString(params: Record<string, any>) {
  * createSearchParamString({ foo: 1, bar: ['a', 'b'], baz: undefined }) // foo=1&bar=a&bar=b
  * @param params params The object to convert into a query
  */
-function createSearchParamString(params: Record<string, any>) {
+export function createSearchParamString(params: Record<string, any>) {
   return (
     new URLSearchParams(
       Object.entries(params)
@@ -48,7 +48,7 @@ function createSearchParamString(params: Record<string, any>) {
  * @warn
  * Using parseQueryString without the first parameter is unsafe for SSR.
  */
-function parseQueryString<Result = Record<string, string>>(
+export function parseQueryString<Result = Record<string, string>>(
   queryString: string = typeof location !== 'undefined' ? location.search : ''
 ): Result {
   const query = queryString.trim().replace(/^[?#&]/, '');
@@ -74,9 +74,9 @@ function fromEntries<T extends readonly [string | number, unknown]>(iterable: It
   return result;
 }
 
-function getQueryString(name: string): string | undefined;
-function getQueryString<T>(name: string, parser: (val: string) => T): T | undefined;
-function getQueryString<T = string>(name: string, parser?: (val: string) => T) {
+export function getQueryString(name: string): string | undefined;
+export function getQueryString<T>(name: string, parser: (val: string) => T): T | undefined;
+export function getQueryString<T = string>(name: string, parser?: (val: string) => T) {
   const value = QS.parse<{ [name: string]: string | undefined }>()[name];
 
   if (parser == null || value == null) {
@@ -86,7 +86,7 @@ function getQueryString<T = string>(name: string, parser?: (val: string) => T) {
   }
 }
 
-function setQueryString(search: string, key: string, value: string) {
+export function setQueryString(search: string, key: string, value: string) {
   const parsed = parseQueryString(search);
 
   return createQueryString({
