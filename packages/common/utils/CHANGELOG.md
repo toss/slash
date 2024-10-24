@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.6.1](https://github.com/toss/slash/compare/@toss/utils@1.6.0...@toss/utils@1.6.1) (2024-10-24)
+
+
+### Bug Fixes
+
+* **utils:** Fix missing exports in utils ([8b97f9a](https://github.com/toss/slash/commit/8b97f9a2e87419afe2324cad281d18f2b53b3ee4))
+
+
+
+
+
 # [1.6.0](https://github.com/toss/slash/compare/@toss/utils@1.5.0...@toss/utils@1.6.0) (2024-10-24)
 
 

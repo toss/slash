@@ -1,6 +1,6 @@
 {
   "name": "@toss/error-boundary",
-  "version": "1.5.1",
+  "version": "1.5.2",
   "sideEffects": false,
   "exports": {
     ".": {
@@ -27,8 +27,8 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@toss/react": "workspace:^1.8.0",
-    "@toss/utils": "workspace:^1.6.0"
+    "@toss/react": "workspace:^1.8.1",
+    "@toss/utils": "workspace:^1.6.1"
   },
   "devDependencies": {
     "@babel/core": "^7",
