@@ -1,4 +1,7 @@
 /** @tossdocs-ignore */
+/**
+ * @deprecated This feature is now available in the es-toolkit package.
+ */
 export function uniqBy<T>(arr: T[], hasher: (value: T) => unknown): T[] {
   const result: T[] = [];
   const addedElements = new Set<unknown>();

@@ -1,4 +1,7 @@
 /** @tossdocs-ignore */
+/**
+ * @deprecated This feature is now available in the es-toolkit package.
+ */
 export function clamp(value: number, bound1: number, bound2?: number) {
   if (bound2 == null) {
     return Math.min(value, bound1);

@@ -1,5 +1,8 @@
 /** @tossdocs-ignore */
 
+/**
+ * @deprecated This feature is now available in the es-toolkit package.
+ */
 export function chunk<T>(arr: T[], size: number) {
   if (size < 1) {
     return [];

@@ -1,4 +1,7 @@
 /** @tossdocs-ignore */
+/**
+ * @deprecated This feature is now available in the es-toolkit package.
+ */
 export function shuffle<T>(array: T[]): T[] {
   let currentIndex = array.length;
   let randomIndex;

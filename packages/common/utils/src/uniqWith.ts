@@ -1,4 +1,7 @@
 /** @tossdocs-ignore */
+/**
+ * @deprecated This feature is now available in the es-toolkit package.
+ */
 export function uniqWith<T>(arr: T[], comparator: (x: T, y: T) => boolean) {
   const result: T[] = [];
 

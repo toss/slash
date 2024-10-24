@@ -1,4 +1,7 @@
 /** @tossdocs-ignore */
+/**
+ * @deprecated This feature is now available in the es-toolkit package.
+ */
 export const get = <T = any>(obj: Record<string, any>, path: string, defaultValue?: T): T => {
   const travel = (regexp: RegExp) =>
     String.prototype.split
@@ -9,6 +12,9 @@ export const get = <T = any>(obj: Record<string, any>, path: string, defaultValu
   return (result === undefined || result === obj ? defaultValue : result) as T;
 };
 
+/**
+ * @deprecated This feature is now available in the es-toolkit package.
+ */
 export const set = (obj: Record<string, any>, path: string, value: any) => {
   // Regex explained: https://regexr.com/58j0k
   const pathArray = path.match(/([^[.\]])+/g);

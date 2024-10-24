@@ -1,4 +1,7 @@
 /** @tossdocs-ignore */
+/**
+ * @deprecated This feature is now available in the es-toolkit package.
+ */
 export function escapeHTML(text: string) {
   return text.replace(/[&<>'"]/g, entity => {
     switch (entity) {

@@ -2,6 +2,12 @@
 
 `@toss/utils` is a package of utility functions which can be used in any environment, including React, Node.js, and Vanilla JS.
 
+## Deprecation Notice
+
+Please note that `@toss/utils` is no longer being maintained. We've moved to a new package called [es-toolkit](https://es-toolkit.slash.page), which provides clearer functionalities and better performance.
+
+## Installation
+
 ```shell
 $ npm install @toss/utils
 ```
