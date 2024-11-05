@@ -1,6 +1,6 @@
+/** @tossdocs-ignore */
 import { ComponentProps, ElementType, ForwardedRef, forwardRef, ReactNode, useState } from 'react';
-import { useCombinedRefs } from '../../hooks';
-import { useOutsideClickEffect } from '../../index';
+import { useCombinedRefs, useOutsideClickEffect } from '../../hooks';
 
 type NonHaveChildElements =
   | 'input'
