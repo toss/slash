@@ -112,6 +112,16 @@ hide_table_of_contents: true
 - [**@toss/utils**](https://slash.page/ko/libraries/common/utils/README.i18n) 는 Node.js와 브라우저 환경에서 사용할 수 있는 간단하고 모던한 유틸리티 함수를 제공해요.
 - [**@toss/hangul**](https://slash.page/ko/libraries/common/hangul/README.i18n) 는 [hangul](https://en.wikipedia.org/wiki/Hangul) 문자를 다루기 위한 유틸리티 함수를 제공해요.
 
+## 프로젝트 상태
+
+- Slash는 레거시 프로젝트이고, 현재 유지보수되고 있지 않습니다.
+- Slash의 여러 유용한 기능들은 여러 개의 별도 패키지들로 분리될 예정이며, 현재 개발 진행 중입니다.
+  - [es-hangul](https://github.com/toss/es-hangul)은 쉽게 한글을 다룰 수 있도록 돕는 JavaScript 라이브러리입니다.
+  - [es-toolkit](https://github.com/toss/es-toolkit)은 높은 성능과 작은 번들 사이즈, 강력한 타입을 자랑하는 현대적인 JavaScript 유틸리티 라이브러리입니다.
+  - [suspensive](https://github.com/toss/suspensive)는 React의 Suspense와 ErrorBoundary를 우아하게 다루는 JavaScript 라이브러리입니다.
+  - [use-funnel](https://github.com/toss/use-funnel)은 강력하고 안전한 단계별 상태 관리 React 라이브러리입니다.
+- Slash 기여를 원하시는 분들은 Slash가 아닌 위 패키지들에 기여를 부탁드립니다.
+
 <div style={{ height: 24 }} />
 
 ## 더 읽기
