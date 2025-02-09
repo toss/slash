@@ -116,6 +116,16 @@ hide_table_of_contents: true
 - [**@toss/utils**](https://slash.page/libraries/common/utils/README.i18n) provides simple and modern helper libraries which can be used both in Node.js and browser environments.
 - [**@toss/hangul**](https://slash.page/libraries/common/hangul/README.i18n) provides utility functions to manipulate [hangul](https://en.wikipedia.org/wiki/Hangul) characters.
 
+## Project Status
+
+- Slash is a legacy project and is not currently being maintained.
+- Many of Slash's useful features will be separated into several individual packages that are currently under development.
+  - [es-hangul](https://github.com/toss/es-hangul) is a JavaScript library that makes it easy to work with Hangul.
+  - [es-toolkit](https://github.com/toss/es-toolkit) is a modern JavaScript utility library with high performance, small bundle size, and strong types.
+  - [suspensive](https://github.com/toss/suspensive) is a JavaScript library that elegantly handles React's suspense and error boundaries.
+  - [use-funnel](https://github.com/toss/use-funnel) is a powerful and safe step-by-step state management React library
+- If you would like to contribute to Slash, please contribute to these packages, not Slash.
+
 <div style={{ height: 24 }} />
 
 ## More reading
