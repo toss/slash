@@ -1,5 +1,9 @@
 # useFunnel
 
+<head>
+  <link rel="canonical" href="https://use-funnel.slash.page" />
+</head>
+
 선언적이고 명시적으로 퍼널 스텝을 관리하고, 퍼널에 대한 상태의 흐름을 명확하게 파악할 수 있도록 만든 퍼널 컨트롤러입니다.
 
 ## 지원 종료 안내
@@ -9,6 +13,7 @@
 ### 추천 조치 사항:
 
 - 새 기능과 구현 세부사항에 대해서는 [@use-funnel](https://use-funnel.slash.page) 문서를 참고해 주세요.
+- `@toss/use-funnel` 을 `@use-funnel` 으로 마이그레이션을 하고 싶다면 [문서]([https://use-funnel.slash.page/docs/migration])를 참고해 주세요.
 
 지속적인 지원과 이해에 감사드립니다.
 
