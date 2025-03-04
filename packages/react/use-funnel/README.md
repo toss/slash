@@ -1,5 +1,9 @@
 # useFunnel
 
+<head>
+  <link rel="canonical" href="https://use-funnel.slash.page" />
+</head>
+
 A funnel controller designed to manage funnel steps declaratively and explicitly, and to give you a clear view of the flow of state for your funnel.
 
 ## Deprecation Notice
@@ -9,6 +13,7 @@ Please note that `@toss/use-funnel` has been deprecated. We have transitioned to
 ### Recommended Actions:
 
 - Refer to the [@use-funnel](https://use-funnel.slash.page) documentation for new features and implementation details.
+- If you want to migrate from `@toss/use-funnel` to `@use-funnel`, please refer to the [migration documentation](https://use-funnel.slash.page/docs/migration).
 
 Thank you for your continued support and understanding.
 
