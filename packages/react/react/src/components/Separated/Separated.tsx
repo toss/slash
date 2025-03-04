@@ -4,20 +4,24 @@ import { Children, Fragment, isValidElement, PropsWithChildren, ReactNode } from
 
 interface Props extends PropsWithChildren {
   with: ReactNode;
+  first?: boolean;
+  last?: boolean;
 }
 
-export function Separated({ children, with: separator }: Props) {
-  const childrenArray = Children.toArray(children).filter(isValidElement);
+export function Separated({ children, with: separator, first = false, last = false }: Props) {
+  const childrenArray = Children.toArray(children);
   const childrenLength = childrenArray.length;
 
   return (
     <>
-      {childrenArray.map((child, i) => (
-        <Fragment key={i}>
+      {first && separator}
+      {childrenArray.map((child, index) => (
+        <Fragment key={isValidElement(child) ? child.key : index}>
           {child}
-          {i + 1 !== childrenLength ? separator : null}
+          {index + 1 !== childrenLength && separator}
         </Fragment>
       ))}
+      {last && separator}
     </>
   );
 }
