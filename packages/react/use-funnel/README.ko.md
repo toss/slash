@@ -13,7 +13,7 @@
 ### 추천 조치 사항:
 
 - 새 기능과 구현 세부사항에 대해서는 [@use-funnel](https://use-funnel.slash.page) 문서를 참고해 주세요.
-- `@toss/use-funnel` 을 `@use-funnel` 으로 마이그레이션을 하고 싶다면 [문서]([https://use-funnel.slash.page/docs/migration])를 참고해 주세요.
+- `@toss/use-funnel` 을 `@use-funnel` 으로 마이그레이션을 하고 싶다면 [문서](https://use-funnel.slash.page/docs/migration)를 참고해 주세요.
 
 지속적인 지원과 이해에 감사드립니다.
 
