@@ -134,3 +134,8 @@ export function formatBusinessRegistrationNumber(businessRegistrationNumber: str
 
   return businessRegistrationNumber.replace(/(\d{3})(\d{2})(\d{5})/, '$1-$2-$3');
 }
+
+export function removeFormat(value: string) {
+  // 숫자가 아닌 모든 문자를 제거합니다
+  return value.replaceAll(/[^\d]/g, '');
+}
