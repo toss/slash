@@ -8,6 +8,7 @@ import {
   formatPhoneNumber,
   formatToKoreanNumber,
   formatToKRW,
+  removeHyphenFormat,
   roundToUnit,
 } from '.';
 
@@ -117,5 +118,10 @@ describe('Numbers', () => {
   it('should round the given number and commaize', () => {
     expect(floorAndFormatNumber(123456789)).toBe('123,456,789');
     expect(floorAndFormatNumber(123456.098023)).toBe('123,456');
+  });
+
+  it('should remove hyphen from number', () => {
+    expect(removeHyphenFormat('1234-56789')).toBe('123456789');
+    expect(removeHyphenFormat('000-00-00000')).toBe('0000000000');
   });
 });
