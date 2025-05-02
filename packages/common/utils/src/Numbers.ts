@@ -36,13 +36,16 @@ export const roundToUnit = createNumberFormatterBy(Math.round);
 
 export function formatToKoreanNumber(
   value: number,
-  options: { floorUnit?: number; ceilUnit?: number; formatAllDigits?: boolean } = {},
+  options: { floorUnit?: number; ceilUnit?: number; formatAllDigits?: boolean } = {}
 ) {
-  const unit = options.floorUnit !== undefined ? floorToUnit(value, options.floorUnit || 1) : ceilToUnit(value, options.ceilUnit || 1);
-  if(unit === 0){
+  const unit =
+    options.floorUnit !== undefined
+      ? floorToUnit(value, options.floorUnit || 1)
+      : ceilToUnit(value, options.ceilUnit || 1);
+  if (unit === 0) {
     return '0';
   }
-  
+
   return chunk(unit, 4)
     .reduce((prevFormatted, currChunkNum, index) => {
       if (currChunkNum === 0) {
@@ -135,7 +138,7 @@ export function formatBusinessRegistrationNumber(businessRegistrationNumber: str
   return businessRegistrationNumber.replace(/(\d{3})(\d{2})(\d{5})/, '$1-$2-$3');
 }
 
-export function removeFormat(value: string) {
+export function removeHyphenFormat(value: string) {
   // 숫자가 아닌 모든 문자를 제거합니다
   return value.replaceAll(/[^\d]/g, '');
 }
