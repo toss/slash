@@ -114,7 +114,7 @@ describe('Numbers', () => {
     }).toThrow('사업자등록번호는 [0-9] 이어야 합니다.');
   });
 
-  it('should round the given number and commaize', () => {
+  it('should floor the given number and commaize', () => {
     expect(floorAndFormatNumber(123456789)).toBe('123,456,789');
     expect(floorAndFormatNumber(123456.098023)).toBe('123,456');
   });
