@@ -27,6 +27,6 @@ function formatToKRW(
 ```typescript
 formatToKRW(13209802); // '1,320만 9,802원'
 formatToKRW(13209802, { floorUnit: 10000 }); // '1,320만원'
-formatToKRW(13209802, { ceilUnit: 10000 }); // '1,320만 9,802원'
+formatToKRW(13209802, { ceilUnit: 10000 }); // '1,321만원'
 formatToKRW(13200000, { formatAllDigits: true }); // '천3백2십만원'
 ```
