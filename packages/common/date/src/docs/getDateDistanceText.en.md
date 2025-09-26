@@ -1,6 +1,6 @@
 # getDateDistanceText
 
-Formats a value returned by [getDateDistance()](https://slash.page/libraries/common/date/src/docs/getdatedistance.i18n).
+Formats a value returned by [getDateDistance()](https://slash.page/libraries/common/date/src/docs/getDateDistance.i18n).
 
 ```typescript
 function getDateDistanceText(
