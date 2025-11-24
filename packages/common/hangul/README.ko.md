@@ -27,8 +27,8 @@
 
 ## 제공하는 함수 리스트
 
-- [chosungIncludes](https://slash.page/ko/libraries/common/hangul/src/chosungincludes.i18n)
+- [chosungIncludes](https://slash.page/ko/libraries/common/hangul/src/chosungIncludes.i18n)
 - [disassembleHangul](https://slash.page/ko/libraries/common/hangul/src/disassemble.i18n)
 - [disassembleHangulToGroups](https://slash.page/ko/libraries/common/hangul/src/disassemble.i18n)
-- [hangulIncludes](https://slash.page/ko/libraries/common/hangul/src/hangulincludes.i18n)
+- [hangulIncludes](https://slash.page/ko/libraries/common/hangul/src/hangulIncludes.i18n)
 - [josa](https://slash.page/ko/libraries/common/hangul/src/josa.i18n)
