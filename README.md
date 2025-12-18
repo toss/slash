@@ -1,11 +1,13 @@
 > [!NOTE]
-> - Slash is a legacy project and is not currently being maintained.
-> - Many of Slash's useful features will be separated into several individual packages that are currently under development.
+> Slash is a legacy project and is not currently being maintained.
+>
+> Many of Slash's useful features will be separated into several individual packages that are currently under development.
 >  - [es-hangul](https://github.com/toss/es-hangul) is a JavaScript library that makes it easy to work with Hangul.
 >  - [es-toolkit](https://github.com/toss/es-toolkit) is a modern JavaScript utility library with high performance, small bundle size, and strong types.
 >  - [suspensive](https://github.com/toss/suspensive) is a JavaScript library that elegantly handles React's suspense and error boundaries.
 >  - [use-funnel](https://github.com/toss/use-funnel) is a powerful and safe step-by-step state management React library
-> - If you would like to contribute to Slash, please contribute to these packages, not Slash.
+>
+> If you would like to contribute to Slash, please contribute to these packages, not Slash.
 
 <div align="center">
   <a href="https://slash.page" title="Slash - A collection of TypeScript/JavaScript packages to build high-quality web services.">

@@ -1,11 +1,13 @@
 > [!NOTE]
-> - Slash는 레거시 프로젝트이며 현재 유지보수가 이루어지지 않아요.
-> - Slash의 유용한 기능들은 별도의 여러 패키지로 분리될 예정이며, 현재 개발이 진행 중이에요.
+> Slash는 레거시 프로젝트이며 현재 유지보수가 이루어지지 않아요.
+>
+> Slash의 유용한 기능들은 별도의 여러 패키지로 분리될 예정이며, 현재 개발이 진행 중이에요.
 >   - [es-hangul](https://github.com/toss/es-hangul)은 한글을 쉽고 편하게 다룰 수 있는 JavaScript 라이브러리예요.
 >   - [es-toolkit](https://github.com/toss/es-toolkit)은 성능이 뛰어나고 번들 크기가 작으며, 타입이 강력한 현대적인 JavaScript 유틸리티 라이브러리예요.
 >   - [suspensive](https://github.com/toss/suspensive)는 React의 Suspense와 Error Boundary를 우아하게 처리하는 JavaScript 라이브러리예요.
 >   - [use-funnel](https://github.com/toss/use-funnel)은 강력하고 안전한 단계별 상태 관리 React 라이브러리예요.
-> - Slash에 기여하고 싶으시다면 Slash가 아닌 위의 패키지들에 기여해 주세요.
+>
+> Slash에 기여하고 싶으시다면 Slash가 아닌 위의 패키지들에 기여해 주세요.
 
 # [Slash](https://slash.page) 라이브러리 &middot; [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/toss/slash/blob/main/LICENSE) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/toss/slash/blob/main/.github/CONTRIBUTING.md)
 
