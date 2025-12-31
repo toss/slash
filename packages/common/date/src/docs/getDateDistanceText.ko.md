@@ -1,6 +1,6 @@
 # getDateDistanceText
 
-[getDateDistance()](https://slash.page/ko/libraries/common/date/src/docs/getdatedistance.i18n)가 반환하는 값을 인자로 받아서, 문자열로 포맷팅 해줍니다.
+[getDateDistance()](https://slash.page/ko/libraries/common/date/src/docs/getDateDistance.i18n)가 반환하는 값을 인자로 받아서, 문자열로 포맷팅 해줍니다.
 
 ```typescript
 function getDateDistanceText(
