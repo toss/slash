@@ -64,7 +64,7 @@ return (
     </Funnel.Step>
 
     <Funnel.Step name="enter social security number">
-      <EnterSocialSecurityNumberStep /> Render when ?funnel-step="enter social security number"
+      <EnterSocialSecurityNumberStep /> // Render when ?funnel-step="enter social security number"
     </Funnel.Step>
 
     <Funnel.Step name="done">
