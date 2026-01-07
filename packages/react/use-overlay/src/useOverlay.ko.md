@@ -4,7 +4,7 @@ title: useOverlay
 
 `useOverlay`는 Overlay를 선언적으로 다루기 위한 유틸리티입니다.
 
-- Overlay란? BottomSheet과 Dialog처럼 별도의 UI 레이어에 띄우는 컴포넌트
+- Overlay란? BottomSheet와 Dialog처럼 별도의 UI 레이어에 띄우는 컴포넌트
 - 사용하기 위해선 \_app.tsx에 `<OverlayProvider />`를 추가해야 합니다.
 - useOverlay를 여러 번 호출해서 여러 개의 Overlay를 만들 수 있습니다.
 - Promise와 함께 사용할 수 있습니다.
